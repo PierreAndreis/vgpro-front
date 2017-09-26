@@ -1,0 +1,408 @@
+@media only screen and (max-width: 1420px) {
+	.profile .profile_stats .kp {
+		display: none;
+	}
+	.profile_name {
+		font-size: 20px;
+	}
+	.profile .profile_stats {
+		width: auto;
+	}
+}
+@media only screen and (max-width: 1190px) {
+
+	.content .match_history {
+		width: 100%;
+	}
+	.content .match_history_content .match_filter .blueside {
+		margin: 5px 0;
+	}
+	.content .match_history_content {
+		width: 100%;
+	}
+	.content .wrap {
+		text-align: center;
+	}
+	.content .match_history {
+		text-align: left;
+	}
+	.content .sidebar {
+		display: block;
+		width: 100%;
+		margin: 0;
+		padding-left: 0;
+	}
+	.content .sidebar .box {
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		margin: 5px 0;
+		min-height: 480px;
+	}
+	.profile .profile_stats {
+		width: auto;
+		margin-left: -20px;
+	}
+	form {
+		margin-bottom: 0;
+	}
+
+	.content .match_history .match_history_box .stats {
+		display: none;
+	}
+	.profile .profile_stats .kp {
+		display: none;
+	}
+	.profile_second .box .gamemodes div[id^='priv'], .profile_second .box .gamemodes div[id*='priv'] {
+		display: none;
+	}
+	.profile_second .box .gamemodes div[id^='Priv'], .profile_second .box .gamemodes div[id*='Priv'] {
+		display: none;
+	}
+	.profile_second .box .aka {
+		margin-left: -90px;
+	}
+	.more_team .more_wrap {
+		width: 100%;
+	}
+	.more_team .more_wrap .more_namet {
+		left: 0;
+	}
+	.profile .profile_stuff {
+		width: 400px;
+	}
+  .draft_content {
+  width: 300px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+	.content .match_history_content .match_filter > div {
+		width: 100% !important;
+	}
+	.content .match_history .match_history_more .sidestats div.tier {
+		display: inline-block;
+	}
+	.profile {
+		height: auto;
+		padding-bottom: 70px;
+		background: rgb(38, 38, 43);
+		background: #19191E url('./../../styles/images/searchbar.png') no-repeat center;
+		overflow: hidden;
+	}
+	.profile_img_wrap {
+		width: 100%;
+		text-align: center;
+		height: 170px;
+	}
+	.profile .profile_stuff {
+		width: 100%;
+		text-align: center;
+	}
+	.profile .profile_img {
+		width: 130px;
+		height: 173px;
+		background: white;
+		z-index: 99;
+		margin: 40px 20px;
+	}
+	.profile .profile_hero {
+		width: 200px;
+		height: 250px;
+		margin: 40px 20px;
+		text-align: center;
+	}
+	.profile_title {
+		width: 100%;
+		z-index: 999;
+	}
+	.profile .update {
+		margin:0 auto;
+	}
+	.profile .profile_img .player_img {
+		width: 120px;
+		height: 163px;
+		margin: 5px auto;
+		background-size: 100%;
+		background-repeat: no-repeat;
+	}
+	.profile .profile_hero .hero_img {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+	}
+	.profile .profile_team {
+		display: block;
+		padding-top: 0;
+	}
+	.profile .profile_desc .update {
+		width: 100%;
+	}
+	.profile .profile_stats .kda {
+		font-size: 17px;
+	}
+	.profile .profile_stats h3 {
+		bottom: 63px;
+		width: 100px;
+		font-size: 17px;
+	}
+	.profile .profile_stats h2 {
+		width: 100px;
+		font-size: 14px;
+	}
+	.profile .profile_stats h4 {
+		font-size: 13px;
+		margin-top:-25px;
+	}
+	.profile .profile_stats div {
+		position: relative;
+		margin: 0 15px;
+		width: 100px;
+		height: 140px;
+	}
+	.profile .profile_stats {
+		display: block;
+		width: 100%;
+		height: auto;
+		margin: 0;
+		text-align: center;
+		position: relative;
+	}
+
+	.profile .profile_stats .kp {
+		display: inline-block;
+	}
+	.profile_second {
+		height: auto;
+		padding-bottom: 15px;
+	}
+	.profile_second .box {
+		margin: 0;
+		width: 100%;
+		text-align: center;
+	}
+	.profile_second .box .gamemodes {
+		float: none;
+		width: 100%;
+		height: auto;
+		font-size: 11px !important;
+	}
+
+	.header .menu {
+		display: none;
+	}
+
+	.content .sidebar .box {
+		width: 100%;
+	}
+	.content .sidebar .box .box_title {
+		width: 100%;
+	}
+	.content .match_history_content .match_filter {
+		width: 100%;
+		box-sizing: border-box;
+		margin: 0;
+	}
+	.content .match_history_content .match_filter .filter {
+		width: 100%;
+	}
+	.content .match_history .match_history_box {
+		height: auto;
+		margin: 5px 0;
+		box-shadow: none;
+		background: rgb(242, 242, 242) no-repeat center bottom;
+		width: 100%;
+		position: relative;
+		overflow: none;
+	}
+	.content .match_history .match_history_box:hover {
+		box-shadow: none;
+	}
+	.profile_second .box .aka h2 {
+		font-size: 13px;
+		font-weight: 500;
+		position: absolute;
+		width: 140px;
+		top: 5px;
+		color: white;
+		left: -15px;
+	}
+	.profile_second .box .aka {
+		float: left;
+		position: absolute;
+		z-index: 101;
+		top: -70px;
+		margin-left: 15px;
+	}
+	.profile_second .box .aka .aka_names {
+		font-size: 11px;
+	}
+	.profile_second .box .aka .aka_names {
+		overflow: hidden;
+	}
+	.profile_second .box .aka .aka_names span {
+		background: rgb(242, 191, 0);
+		padding: 5px;
+	}
+	.content .match_history .match_history_box .match_history_title {
+		font-size: 12px;
+	}
+	.content .match_history .match_history_box .match_history_title span {
+		font-size: 10px;
+		padding: 0 3px;
+	}
+	.content .match_history .match_history_box .hero_img {
+		width: 50px;
+		height: 50px;
+		margin: 7px 5px;
+	}
+	.content .match_history .match_history_box .kda {
+		font-size: 17px;
+		margin: 0;
+	}
+	.content .match_history .match_history_box .kda .totalkda {
+		font-size: 15px;
+	}
+	.content .match_history .match_history_box .items {
+		position: initial;
+		display: inline-block;
+		vertical-align: top;
+		float: right;
+		text-align: left;
+		box-sizing: border-box;
+		padding: 5px 20px;
+	}
+	.content .match_history .match_history_box .items .item_img {
+		width: 25px;
+		height: 25px;
+		margin: 0;
+		box-sizing: border-box;
+		overflow: hidden;
+	}
+	.content .match_history .match_history_box .player_list {
+		display: block;
+		height: 110px;
+		box-sizing: border-box;
+		float: none;
+		padding: 15px 50px 0 50px;
+		padding-bottom: 5px;
+		z-index: 99;
+		position: relative;
+		font-family: 'Arial';
+		width: 100%;
+		color: #8D8D8E;
+		font-size: 13px;
+	}
+	.content .match_history .match_history_box .player_list .aside {
+		margin-right: -15px;
+	}
+	.content .match_history .match_history_box .player_list .bside {
+		margin-right: -35px;
+	}
+	.content .match_history .match_history_box .stats {
+		display: inline-block;
+		margin: 20px -20px;
+		padding: 0;
+		line-height: 31px;
+		width: 155px;
+		height: 70px;
+		vertical-align: top;
+	}
+	.content .match_history .match_history_more .sidestats {
+		padding: 0;
+	}
+	.content .match_history .match_history_more .sidestats .each > div {
+		padding: 2px;
+	}
+	.content .match_history .match_history_more .sidestats .each {
+		text-align: left;
+		height: auto;
+	}
+	.content .match_history .match_history_more .sidestats .head_side div:not(.info) {
+		display: none;
+	}
+	.content .match_history .match_history_more .sidestats div.info {
+		width: 120px;
+	}
+	.content .match_history .match_history_more .sidestats div.each .items .item_img {
+		overflow: hidden;
+	}
+	.content .match_history .match_history_more {
+		margin: -10px 0 0 0;
+	}
+	.content .match_history .match_history_more .sidestats div.each .info .player_name {
+		padding: 10px 0 5px 2px;
+		font-size: 12px;
+		width: 80px;
+	}
+	.content .match_history .match_history_more .sidestats div.items {
+		width: 150px;
+	}
+	.content .match_history .match_history_more .sidestats div.cs {
+		width: 180px;
+	}
+	.content .match_history .match_history_more .sidestats div.each .tier {
+		overflow: hidden;
+	}
+	.content .match_history .match_history_more .sidestats .team_stats .stats#not {
+		display: none;
+	}
+	.content .match_history .match_history_more .sidestats .team_stats .stats {
+		margin: 10px 5px;
+		font-size: 14px;
+	}
+	.content .match_history .match_history_more .sidestats .team_stats {
+		width: 100%;
+		border: 0;
+		margin: 10px 0 0;
+		text-align: center;
+		height: auto;
+	}
+	.more_team .more_wrap .more_hero_name {
+		display: none;
+	}
+	.map {
+		width: 319px;
+		background-size: 100% 100%;
+		height: 159px;
+	}
+	.map .heatmap { 
+		width: 319px;
+		height: 159px;
+	}
+	.tab#vision {
+		display: none;
+	}
+	.content_killmap .point {
+		width: 5px;
+		height: 5px;
+	}
+	.content_builds .skill_order .skill .level {
+		padding: 3px 3px;
+	}
+	.stats_content .stats_heroes {
+		width: 100%;
+		padding: 0;
+	}
+	.stats_content .stats_heroes .stats_each {
+		margin: 0 2px;
+		font-size: 15px;
+	}
+	.stats_content .stats_heroes .stats_caption {
+		font-size: 9px;
+	}
+	.stats_content .hero_desc {
+		width: 100%;
+		margin: 15px auto 15px;
+	}
+	.content .match_history .match_history_more .tab_header .tab {
+		padding: 2px 5px;
+	}
+}
+@media only screen and (max-width: 500px) {
+	.content .match_history .match_history_box .stats {
+		display: none;
+	}
+	.profile .profile_desc h3 {
+		font-size: 12px;
+	}
+}

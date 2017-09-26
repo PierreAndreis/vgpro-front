@@ -1,0 +1,172 @@
+    .teams_up {
+    position: relative;
+    background: #E9C040;
+    width: 100%;
+    height: 50px;
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.4);
+    border-bottom: 1px solid #555555;
+}
+
+.teams_up .regieach {
+    text-align: center;
+}
+
+.teams_up .regieach div {
+    box-shadow: inset 0 7px 9px -7px rgba(0, 0, 0, 0.4);
+    display: inline-block;
+    vertical-align: top;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 16px;
+    margin: 0 -2px;
+    background: #313131;
+    border-left: 1px solid rgba(0,0,0,0.3);
+        cursor: pointer;
+    color: white;
+}
+.teams_up .regieach div:last-child {
+     border-right: 1px solid rgba(0,0,0,0.3);
+}
+
+.teams_up .regieach div:hover {
+    background: rgba(0,0,0,0.7);
+}
+.teams_up .regieach div.select {
+    background: #1c1c1c;
+}
+.content {
+    text-align: center;
+    min-height: 100%;
+}
+
+.content .boxes {
+     display: table;
+    width: 100%;
+    margin: 1% auto;
+    text-align: left;
+font-size:0;
+       border-collapse: collapse;
+    
+}
+.content .boxes .team_row {
+       display:  table-row;
+
+     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.content .boxes .team {
+    display: table-cell;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    vertical-align: top;
+    width: 50%;
+    min-height: 355px;
+    font-size: 15px;
+}
+.content .boxes .team:nth-child(n+2){
+    border-right: 0;
+}
+.content .boxes .team_row:last-child{
+    border-bottom: 0;
+}
+.content .boxes .team .side {
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+    position: relative;
+}
+
+.content .boxes .team .side .logo {
+    width: 70%;
+    height: 160px;
+    background-color: #f2f2f2;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin: 30px;
+
+}
+
+.content .boxes .team .side .logo .logo_img {
+    background-size: 80%;
+        background-repeat: no-repeat;
+    background-position: center;
+    width: 95px;
+    height: 95px;
+    margin: 5px auto;
+}
+
+.content .boxes .team .side .logo .name {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+    width: 100%;
+    height: 25px;
+    background: #d1d1d1;
+}
+
+.content .boxes .team .side .logo .desc {
+    width: 100%;
+    height: 25px;
+    font-size: 12px;
+    color: #191919;
+    text-align: center;
+    line-height: 32px;
+}
+
+.content .boxes .team .side .player {
+    width: 110%;
+    box-sizing: border-box;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding:10px;
+    transition: all 100ms;
+    cursor: pointer;
+}
+.content .boxes .team .side .player:hover {
+    background: rgba(0, 0, 0, 0.1);
+
+}
+.content .boxes .team .side .player .player_img {
+	float: left;
+	margin-right: 5px;
+    width: 55px;
+    background-size: 160%;
+    background-color: #106629;
+    background-position: center -9px;
+    background-repeat: no-repeat;
+    height: 55px;
+    border-radius: 2px;
+}
+.content .boxes .team .side .player .player_name {
+	display:inline-block;
+	vertical-align: top;
+	font-weight: bold;
+	vertical-align: top;
+	margin: 5px 5px 5px 0;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 17px;
+	color: #2f2f2f;
+}
+.content .boxes .team .side .player .player_desc {
+	vertical-align: top;
+	font-family: 'Roboto', sans-serif;
+	color: #545454;
+	font-size: 13px;
+    height: 23px;
+}
+.content .boxes .team .side .player .player_role {
+   
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #313131;
+    border: 1px solid #9c9c9c;
+    border-radius: 2px;
+    width: 30px;
+    height: 30px;
+}

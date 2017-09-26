@@ -1,0 +1,571 @@
+.content .wrap {
+	display: flex;
+	flex-flow: row;
+}
+.leaderbox {
+	width: 30%;
+	order: 2;
+	font-size: 0px;
+	background-color: #f2f2f2;
+  margin: 10px 5px;
+  -webkit-box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
+  margin-left: 15px;
+}
+
+.content-out {
+	width: 80%;
+	order: 1;
+	vertical-align: top;
+	position: relative;
+}
+
+.news {
+	width: 100%;
+
+}
+
+.news .each-article {
+	width: 32.3%;
+	height: 200px;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin: 1% 1% 1% 0;
+	box-sizing: border-box;
+}
+
+.news .each-article .article-img {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	position: relative;
+	background-position: center;
+	border-radius: 5px;
+	transition: all 100ms;
+	cursor: pointer;
+}
+
+.news .each-article .article-img .article-title {
+	position: absolute;
+	bottom: 0;
+	border-radius: 5px;
+	height: 80px;
+	width: 100%;
+	
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 60%, rgba(0, 0, 0, 0.9) 100%);
+	transition: all 100ms;
+	box-sizing: border-box;
+
+}
+
+.news .each-article .article-img:hover {
+	transition: all 100ms ease-in;
+	filter:grayscale(0.6);
+}
+
+.news .each-article .article-img:hover .article-title {
+	height: 50%;
+}
+
+.news .each-article .article-img:hover .article-title h1 {
+	font-size: 18px;
+	transition: all 300ms;
+	text-align: center;
+}
+.news .each-article .article-img:hover .article-title h2 {
+	font-size: 15px;
+	transition: all 300ms;
+	text-align: center;
+}
+.news .each-article .article-img .article-title h1 {
+	color: white;
+	font-size: 14px;
+	text-align: center;
+	margin: 30px 10px 0;
+	text-transform: uppercase;
+	font-family: "Roboto Condensed", Helvetica, sans-serif;
+}
+
+.news .each-article .article-img .article-title h2 {
+	margin: 2px 10px;
+	color: #E3E3E3;
+	text-align: center;
+	font-size: 12px;
+	bottom: 5px;
+}
+
+.leaderbox .lead_content .eachbox {
+	width: 100%;
+	box-sizing: border-box;
+	background: #f2f2f2;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.leaderbox .lead_content .eachbox:last-child {
+	border-right: 0;
+}
+
+.leaderbox .lead_content .eachbox .title {
+	height: 35px;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 10px 0;
+	border-bottom: 1px solid #bababa;
+}
+
+.leaderbox .lead_content .eachbox .title span {
+	color: #7d7d7d;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+.leaderbox .lead_content .eachbox .subtitle div {
+	display: inline-block;
+	vertical-align: top;
+	font-weight: bolder;
+	height: 25px;
+	font-size: 12px;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 5px;
+  text-transform: uppercase;
+  display: none;
+}
+
+.leaderbox .lead_content .eachbox .reg {
+	width: 20%;
+	color: #6a6a6b;
+}
+
+.leaderbox .lead_content .eachbox .hero_w {
+	width: 40%;
+	color: #3c9e2f;
+}
+
+.leaderbox .lead_content .eachbox .hero_l {
+	width: 40%;
+	color: #e55757;
+}
+
+.leaderbox .lead_content .eachbox .eachdata {
+	display: block;
+	width: 100%;
+	height: 40px;
+	background: #e2e2e2;
+	margin-bottom: 2px;
+}
+
+.leaderbox .lead_content .eachbox .eachdata:hover {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.leaderbox .lead_content .eachbox .soon {
+	font-size: 13px;
+	color: #39393f;
+	line-height: 37px;
+	text-align: center;
+	width: 100%;
+	background-color: #DADADA;
+	height: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.leaderbox .lead_content .eachbox .eachdata div {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+	font-weight: bold;
+	color: #39393f;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 5px;
+	line-height: 21px;
+}
+
+.leaderbox .lead_content .eachbox .reg span {
+	text-transform: uppercase;
+	line-height: 30px;
+	color: #5285c9;
+	background: white;
+	padding: 2px 5px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+}
+
+.leaderbox .lead_content .eachbox .hero_img {
+	background-size: 120%;
+	display: inline-block;
+	vertical-align: top;
+	background-position: center;
+	border-radius: 2px;
+	width: 30px;
+	height: 30px;
+}
+
+.leaderbox .lead_content .eachbox .hero_name {
+	width: 55px;
+	margin-left: 5px;
+	font-weight: bold;
+	text-align: left !important;
+}
+
+.leaderbox .lead_content .eachbox .hero_value {
+	width: 30px;
+	margin-left: 2px;
+	font-weight: bold;
+}
+
+.leaderbox .lead_content .eachbox .hero_w .hero_value {
+	color: #3c9e2f;
+}
+
+.leaderbox .lead_content .eachbox .hero_l .hero_value {
+	color: #e55757;
+}
+
+.leaderbox .lead_content .eachbox .number {
+	width: 10%;
+	font-size: 13px;
+}
+
+.leaderbox .lead_content .eachbox .number span {
+	text-transform: uppercase;
+	line-height: 30px;
+	color: #5285c9;
+	background: white;
+	padding: 2px 5px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+}
+
+.leaderbox .lead_content .eachbox .skilltier {
+	width: 10%;
+}
+
+.leaderbox .lead_content .eachbox .skilltier .skilltier_img {
+	background-color: white;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	background-size: 160%;
+	background-position: center -2px;
+	display: inline-block;
+	vertical-align: top;
+	border-radius: 2px;
+	width: 30px;
+	height: 30px;
+}
+
+.leaderbox .lead_content .eachbox .player_name {
+	width: 40%;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 13px !important;
+	line-height: 30px !important;
+	text-align: left !important;
+}
+
+.leaderbox .lead_content .eachbox .player_name span {
+	text-transform: uppercase;
+	line-height: 20px !important;
+	color: #5285c9;
+	background: white;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 15px;
+	margin: -10px 2px;
+  text-align: right;
+  
+  font-size: 10px;
+  padding: 2px 3px;
+  margin-right: 3px;
+}
+
+.leaderbox .lead_content .eachbox .kda {
+	width: 20%;
+}
+
+.leaderbox .lead_content .eachbox .eachdata .kda {
+	font-size: 13px !important;
+	line-height: 32px !important;
+	color: green!important;
+}
+
+.leaderbox .lead_content .eachbox .eachdata .rating {
+	font-size: 14px !important;
+	line-height: 32px !important;
+	color: black!important;
+}
+
+.leaderbox .lead_content .eachbox .rating {
+	width: 20%;
+	font-size: 13px;
+}
+
+.pro-feed {
+	width: 100%;
+	text-align: left;
+	background: #f2f2f2;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
+  box-shadow: 0px 0px 29px -3px rgba(0,0,0,0.3);
+  margin-left: -15px;
+}
+
+.box_title {
+	background: #e9c040 url("./../../styles/images/box_bg.png") center no-repeat;
+	height: 20px;
+	color: #393940;
+	font-weight: bolder;
+	font-size: 18px;
+	padding: 15px;
+}
+
+.box_title span {
+	font-weight: 400;
+	font-size: 12px;
+}
+
+.leaderbox .lead_content .eachbox .eachdata div {
+	font-size: 12px;
+}
+
+.pro-feed .header {
+	background: #f2f2f2;
+	height: 20px;
+	font-size: 0px;
+  text-align: center;
+  display: none;
+}
+
+.pro-feed .header div {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	font-size: 13px;
+	height: 20px;
+	color: black;
+	line-height: 24px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.pro-feed div.time {
+	width: 12%;
+	color: #3d3d3d;
+	text-align: center;
+}
+
+.pro-feed div.photo {
+	width: 10%;
+}
+
+.pro-feed div.player_name {
+	width: 130px;
+}
+
+.pro-feed div.reg {
+	width: 40px;
+	text-align: left;
+}
+
+.pro-feed div.victory {
+	width: 10%;
+	text-align: center;
+}
+
+.pro-feed div.kda {
+	width: 6%;
+	text-align: left;
+}
+
+.pro-feed div.role {
+	width: 13%;
+	text-align: center;
+}
+
+.pro-feed div.item {
+	width: 200px;
+}
+
+.pro-feed .match {
+	display: block;
+	width: 100%;
+	font-size: 0px;
+	color: #393939;
+	text-align: center;
+	height: 50px;
+	background: #e2e2e2;
+	line-height: 50px;
+  transition: all 300ms;
+  border-top: none;
+}
+.pro-feed_history a:nth-child(2n-1) {
+  background-color: rgb(238,238,238) !important;
+}
+.pro-feed_history a:nth-child(2n) {
+  background-color: rgb(248,248,248) !important;
+}
+
+.pro-feed .match:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.pro-feed .match div {
+	text-align: left;
+	font-family: "Roboto Condensed", sans-serif;
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.pro-feed .match .team .team_img {
+	display: none;
+	position: absolute;
+	background-size: 90%;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 42px;
+	margin-top: 1px;
+	background-color: rgba(255, 255, 255, 0.6);
+	padding: 3px;
+}
+
+.pro-feed .match .pro_img {
+	background-size: 160%;
+	background-position: center -6px;
+	background-repeat: no-repeat;
+	width: 35px;
+	height: 35px;
+	margin-top: 7px;
+	background-color: hsl(161,100%,21%);
+	border-radius: 2px;
+}
+
+.pro-feed .match .hero_img {
+	background-size: 120%;
+	background-position: center;
+	width: 35px;
+	height: 35px;
+	margin: 7px 2px 0 0;
+	border-radius: 2px;
+}
+
+.pro-feed .match .item_img {
+	background-size: cover;
+	width: 32px;
+	height: 32px;
+	margin-top: 10px;
+}
+
+.pro-feed .match .player_name {
+	font-weight: bold;
+	font-size: 15px;
+	text-align: left;
+	color: #313131;
+}
+
+.pro-feed .match .reg span {
+	text-transform: uppercase;
+	font-size: 13px;
+	font-weight: bold;
+	color: #5285c9;
+	background: white;
+	padding: 2px 5px;
+	border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  
+}
+
+.pro-feed .match .kda {
+	text-align: left;
+	font-size: 14px;
+}
+
+.pro-feed .match .role {
+	text-transform: capitalize;
+	text-align: center;
+	font-size: 13px;
+}
+
+.pro-feed .match .victory {
+	text-align: center;
+	font-weight: bold;
+}
+
+.pro-feed .match .victory#Win {
+  position: relative;
+  left: calc(-50% + 6px + 2px);
+  background-color: hsl(205, 86%, 65%);
+  font-size: 0;
+  width: 12px;
+}
+
+.pro-feed .match .victory#Loss {
+  position: relative;
+  left: calc(-50% + 6px + 2px);
+  background-color: hsl(6, 86%, 65%);
+  font-size: 0;
+  width: 12px;
+}
+
+.view_more {
+	padding: 10px;
+	color: white;
+	font-size: 14px;
+	display: inline-block;
+	vertical-align: top;
+	background: #26262B;
+	border: 2px solid #26262B;
+	transition: all 400ms;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+.lead_content .view_more {
+	padding: 5px;
+	margin: 2px auto;
+}
+.view_more:hover {
+	background: transparent;
+	color: black;
+}
+
+/**
+overriding ugly red
+**/
+.pro-feed .match .reg span,
+.leaderbox .lead_content .eachbox .number span,
+.leaderbox .lead_content .eachbox .reg span,
+.leaderbox .lead_content .eachbox .player_name span
+  {
+    border: none;
+    color: #fff;
+    background-color: rgb(190,190,190);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: "Roboto",sans-serif;
+    font-size: 12px;
+  }
+
+
+  #all > a:nth-child(odd) > div, /*Leaderboard*/
+  #winrate > div.box_content_winrate > div:nth-child(odd), /*Hero winrate*/
+  #pickrate > div.box_content_pickrate > div:nth-child(even)
+    {
+   /*Hero pickrate*/
+      background-color: rgb(238,238,238) !important;
+      margin: 0;
+    }
+  
+    #all > a:nth-child(even) > div, /*Leaderboard*/
+  #winrate > div.box_content_winrate > div:nth-child(even), /*Hero winrate*/
+  #pickrate > div.box_content_pickrate > div:nth-child(even)
+    {
+   /*Hero pickrate*/
+      margin: 0;
+    }

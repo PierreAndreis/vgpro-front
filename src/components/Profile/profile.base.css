@@ -1,0 +1,1759 @@
+#avg {
+	color: rgb(191, 211, 239) !important;
+}
+#high {
+	color: rgb(82, 133, 201) !important;
+}
+#superhigh {
+	color: rgb(116, 201, 82) !important;
+}
+#low {
+	color: rgb(160, 160, 160)  !important;
+}
+#suplow {
+	color: rgb(95, 95, 95)  !important;
+}
+
+
+.profile {
+	position: relative;
+	width: 100%;
+	height: 260px;
+	background: #19191E url('./../../styles/images/profile_bg.png') no-repeat center;
+	overflow: visible;
+}
+.profile_stats_wrap {
+	width: 100%;
+	position: relative;
+}
+.profile_img_wrap {
+	display: inline-block;
+	vertical-align: top;
+}
+.profile .profile_img {
+	display: inline-block;
+	position: relative;
+	width: 217px;
+	height: 268px;
+	background: white;
+	z-index: 99;
+	margin: 40px 15px 40px 50px;
+}
+.profile .profile_hero {
+	display: inline-block;
+	position: relative;
+	width: 217px;
+	height: 268px;
+	z-index: 99;
+	margin: 40px 15px 40px 50px;
+}
+.profile .profile_hero .hero_img {
+	width: 350px;
+	height: 350px;
+	margin: -10px -50px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.profile .profile_img .player_img {
+	width: 200px;
+	height: 250px;
+	margin: 10px auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.profile .profile_stuff {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	width: 500px;
+}
+.profile .profile_title {
+	position: absolute;
+	margin-top: 30px;
+	text-align: center;
+}
+.profile .profile_title>span {
+	padding: 7px;
+	font-family: 'Roboto Condensed', sans-serif;
+	background-color: rgba(255,255,255,0.1);
+	color: #F2BF00;
+	font-size: 14px;
+}
+.profile .profile_title>span span {
+	margin-left: 5px;
+}
+.profile .profile_name {
+	display: inline-block;
+	font-family: 'Roboto Condensed', sans-serif;
+	vertical-align: top;
+	height: 50px;
+	padding-top: 50px;
+	font-size: 35px;
+	font-weight: bold;
+	color: white;
+}
+.profile .profile_team {
+	font-size: 20px;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	padding-top: 55px;
+	color: #737373;
+	font-weight: 400;
+}
+.profile .profile_team .team_name {
+	color: #F5C800;
+}
+.profile .profile_team .team_role {
+	color: white;
+	text-transform: capitalize;
+}
+.profile .profile_team .from {
+	width: 100%;
+	font-size: 15px;
+	color: #737373;
+}
+.profile .profile_team .from .flag-icon {
+	width: 15px;
+	height: 15px;
+}
+.profile .profile_desc {
+	display: inline-block;
+	width: 100%;
+	vertical-align: top;
+	font-size: 13px;
+	font-weight: 400;
+	color: white;
+	position: relative;
+	z-index: 99;
+}
+.profile .profile_desc h3 {
+	font-weight: 300;
+	margin: -3px 0;
+	padding: 15px 0 2px;
+}
+.profile .update {
+	color: white;
+	font-size: 13px;
+	width: 200px;
+}
+.profile .profile_desc .heroes_img {
+	display: inline-block;
+	vertical-align: top;
+	width: 40px;
+	height: 40px;
+  border-radius: 100%;
+  box-shadow: 0 0px 6px 2px rgba(0,0,0,0.45);
+	background-size: 100%;
+	margin-right: 8px;
+}
+
+.profile .profile_desc .match_result {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	margin-left: 5px;
+	background-color: white;
+}
+.profile .profile_desc .match_result#v:before {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #1F8ECD;
+	border-radius: 50%;
+	margin: 3px auto;
+}
+
+.profile .profile_desc .match_result#d:before {
+	content: '';
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-color: #EE5A52;
+	border-radius: 50%;
+	margin: 3px auto;
+}
+
+.profile .profile_stats {
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	width: 600px;
+	height: 200px;
+	top: 30px;
+	z-index: 2;
+}
+
+.profile .profile_stats div {
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	margin-top: 15px;
+	margin-left: 25px;
+	width: 150px;
+	height: 200px;
+	color: white;
+	font-weight: 400;
+	font-size: 25px;
+	text-align: center;
+}
+.profile .profile_stats div canvas {
+	position: relative;
+	z-index: 3;
+}
+.profile .profile_stats h3 {
+	position: absolute;
+	z-index: 2;
+	bottom: 80px;
+	text-align: center;
+	width: 150px;
+}
+.profile .profile_stats h2 {
+	position: absolute;
+	z-index: 4;
+	bottom: 0;
+	width: 150px;
+	font-size: 18px;
+	font-weight: 300;
+	text-align: center;
+	color: white;
+}
+.profile .profile_stats .kda #good {
+	color: rgb(13, 159, 120) !important;
+}
+
+.profile .profile_stats #mortes {
+	color: #EE5A52 !important;
+}
+.profile .profile_stats h4 {
+	font-size: 18px;
+	font-weight: 300;
+	margin-top: -35px;
+}
+
+
+
+.profile_second {
+	position: relative;
+	border-top: 2px solid white;
+	background: #F2BF00;
+	width: 100%;
+	height: 80px;
+	border-bottom: 2px solid white;
+}
+.profile_second .box {
+	width: calc(100% - 320px);
+	height: auto;
+	position: relative;
+	margin: 0 0 0 280px ;
+}
+.profile_second .box .aka {
+	float: left;
+	position: absolute;
+	z-index: 101;
+}
+.profile_second .box .aka h2 {
+	font-size: 13px;
+	font-weight: 500;
+	position: absolute;
+	width: 140px;
+	top: 5px;
+	text-transform: uppercase;
+}
+.profile_second .box .aka .aka_names {
+	margin-top: 40px;
+	font-size: 14px;
+}
+
+.profile_second .box .aka .aka_names span {
+	background: #26262B;
+	color: white;
+	padding: 5px;
+	margin-right: 2px;
+	border-radius: 2px;
+}
+.profile_second .box .gamemodes {
+	float: right;
+	margin-right: 15px;
+}
+.profile_second .box .gamemodes div {
+	display: inline-block;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 11px;
+	vertical-align: top;
+	margin: 20px -4px 0 0;
+	border-left: 1px solid rgba(0,0,0,0.5);
+	background-color: #26262B;
+	color: white;
+	line-height: 22px;
+	height: 20px;
+	padding: 12px;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-weight: 300;
+	-webkit-transition: all 300ms;
+	        transition: all 300ms;
+}
+
+.profile_second .box .gamemodes div span {
+	color: grey;
+}
+.profile_second .box .gamemodes .gamemode.select {
+	background: black;
+	font-weight: 500;
+}
+.profile_second .box .gamemodes div:hover {
+	background: #19191E;
+}
+.profile_second .box .gamemodes div:first-of-type {
+	border-left: 0;
+	border-radius: 4px 0 0 4px;
+}
+.profile_second .box .gamemodes div:last-child {
+	border-radius: 0 4px 4px 0;
+}
+.content {
+	width: 100%;
+	position: relative;
+}
+.content .sidebar {
+	width: 300px;
+	display: inline-block;
+	height: auto;
+	padding-bottom: 50px;
+	padding-left: 5px;
+}
+.content .sidebar .box {
+	width: 300px;
+	background: #19191E;
+	margin: 10px auto;
+	position: relative;
+	box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+.content .sidebar .box .box_title {
+	width: 100%;
+	background: #000000;
+	font-family: 'Roboto Condensed', sans-serif;
+	height: 50px;
+	box-sizing: border-box;
+	color: white;
+	font-weight: 300;
+	font-size: 18px;
+	padding: 15px;
+	text-transform: uppercase;
+}
+.content .match_history_content {
+	width: calc(100% - 320px);
+	margin: 0;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+.content .match_history_content .match_filter {
+	margin: 10px;
+	width: 100%;
+	height: auto;
+	padding: 5px 10px 5px 5px;
+	box-sizing: border-box;
+	background: #F2F2F2;
+	position: relative;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.2);
+	font-size: 0;
+}
+.content .match_history_content .match_filter > div {
+	display: inline-block;
+	vertical-align: top;
+}
+.content .match_history_content .match_filter div {
+	display: inline-block;
+}
+.content .match_history_content .match_filter .stats_filter {
+	width: 33.3%;
+	text-align: center;
+}
+.content .match_history_content .match_filter .not-filter {
+	width: 33.3%;
+	text-align: center;
+}
+.content .match_history_content .match_filter .filter {
+	width: 33.3%;
+}
+.content .match_history_content .match_filter .redside {
+	width: 90px;
+	height: 90px;
+	margin: 5px 35px 0 35px;
+}
+.content .match_history_content .match_filter .blueside {
+	width: 90px;
+	height: 90px;
+	//margin: 5px 35px 0 35px;
+}
+.content .match_history_content .match_filter .filter .box_filter {
+	background: #F2F2F2;
+	margin: 10px 0;
+	width: 100%;
+	border: 1px solid #B3B6B9;
+	border-radius: 5px;
+	height: auto;
+}
+.content .match_history_content .match_filter .filter .box_filter .head {
+	background: #D1DAE9;
+	height: 35px;
+	width: 100%;
+	text-align: left;
+	padding: 6px 7px;
+	font-weight: 300;
+	font-size: 18px;
+	box-sizing: border-box;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent {
+	width: 90%;
+	text-align: left;
+	height: auto;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent > div {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+	position: relative;
+	box-sizing: border-box;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent .label {
+	font-size: 13px;
+	color: grey;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent .teammate i {
+	position: absolute;
+	left: 5px;
+	box-sizing: border-box;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	background-color: #D6D6D6;
+	border-radius: 2px 0 0 2px;
+	border: 1px solid rgba(0,0,0,0.3);
+	top: 24px;
+	padding-top: 4px;
+	color: grey;
+	font-size: 13px;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent .teammate input {
+	display: inline-block;
+	background: #FFFFFF;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	outline: 0;
+	width: 95%;
+	padding-left: 26px;
+	margin-top: 5px;
+	height: 25px;
+	font-size: 12px;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent .hero .dropdown {
+	background-image: url('./../../styles/images/dropdown.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: #D6D6D6;
+	border: 1px solid rgba(0,0,0,0.3);
+	box-sizing: border-box;
+	position: absolute;
+	border-radius: 2px 0 0 2px;
+	left: 5px;
+	top: 24px;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent .hero select {
+	background: #FFFFFF;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	outline: 0;
+	width: 95%;
+	padding-left: 5px;
+	margin-top: 5px;
+	height: 25px;
+	font-size: 12px;
+}
+.content .match_history_content .match_filter .filter .box_filter .boxcontent .hero select option {
+	background: url('./../../styles/images/dropdown.png');
+}
+
+.content .match_history_content .match_filter canvas {
+	position: relative;
+	z-index: 999;
+}
+.content .match_history_content .match_filter h2 {
+	position: absolute;
+	margin: 37px 21px;
+	width: 50px;
+	text-align: center;
+	font-size: 15px;
+}
+.content .match_history_content .match_filter h3 {
+	font-size: 16px;
+	margin: 5px -55px;
+	text-align: center;
+	width: 200px;
+	font-weight: 300;
+}
+
+
+.content .match_history_content .stats_each {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 5px;
+	text-align: center;
+}
+.content .match_history_content .match_filter h4 {
+	display: inline-block;
+	font-size: 18px;
+	width: 100%;
+	margin: 15px 0;
+	text-align: center;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+}
+.content .match_history_content .stats_each .stats_qty {
+	display: block;
+	font-size: 29px;
+	margin: 0 10px;
+}
+.content .match_history_content .stats_each .stats_name {
+	font-size: 18px;
+	font-weight: 300;
+}
+
+
+
+.content .match_history_content .view_more {
+	padding: 10px;
+	color: white;
+	display: inline-block;
+	vertical-align: top;
+	background: #26262B;
+	border: 2px solid #26262B;
+	-webkit-transition: all 400ms;
+	        transition: all 400ms;
+	cursor: pointer;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+.content .match_history_content .view_more:hover {
+	background: transparent;
+	color: black;
+}
+.content .match_history_box {
+	height: 140px;
+	margin: 10px 10px 0;
+	width: 100%;
+	box-sizing: border-box;
+	background: url('./../../styles/images/match_bg.png') #F2F2F2 no-repeat center bottom;
+	border: 1px solid rgba(0,0,0,0.2);
+	position: relative;
+	text-align: left;
+	line-height: 35px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	-webkit-transition: all 300ms;
+	        transition: all 300ms;
+	cursor: pointer;
+}
+.content .match_history_box:hover {
+	box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.content .match_history_box .match_history_title {
+	width: 100%;
+	height: 35px;
+	padding: 0 15px;
+	font-weight: 400;
+	color: #282828;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+.content .match_history_box .match_history_title span {
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	font-size: 11px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: rgba(255,255,255,1);
+	color: rgb(0, 0, 0);
+	padding: 0 5px;
+	margin-top: 2px;
+	margin-left: 15px;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 5px;
+	box-sizing: border-box;
+	-webkit-transition: all 300ms;
+          transition: all 300ms;
+  display: none;
+}
+.content .match_history_box .match_history_title span:hover {
+	background: rgba(255,255,255,0.2);
+}
+.content .match_history_box .match_history_title:after {
+	display: inline-block;
+	float: right;
+	//color: rgba(0,0,0,0.6);
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.content .match_history_box .match_history_title#v {
+  background-color: #5285c9;
+  color: #afc7e6;
+}
+.content .match_history_box .match_history_title#v:after {
+	content: 'Win';
+	color: white;
+}
+.content .match_history_box .match_history_title#ads {
+	background-color: #26262B;
+		color:white;
+	cursor: normal;
+}
+.content .match_history_box .match_history_title#ads:after {
+	content: 'ADS';
+	color: white;
+}
+.content .match_history_box .match_history_title#d {
+  background-color: #c95257;
+  color: #e6afb1;
+}
+.content .match_history_box .match_history_title#d:after {
+	content: 'Loss';
+  color: #fff;
+}
+div#d.match-result {
+  background-color: rgba(0,0,0,0) !important;
+}
+.content .match_history_box .hero_img {
+	display: inline-block;
+	width: 90px;
+	height: 90px;
+	background-size: 110%;
+	background-position: center;
+  margin: 7px 15px;
+  border-radius: 100%;
+  box-shadow: 0 0px 6px 2px rgba(0,0,0,0.45);
+}
+
+.content .match_history_box .kda {
+	text-align: center;
+	width: 120px;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 25px;
+	font-weight: bold;
+	margin: 30px 10px;
+	color: #19191E;
+}
+.content .match_history_box .kda .deaths {
+	color: #FF5945;
+}
+.content .match_history_box .kda .totalkda {
+	display: block;
+	font-size: 15px;
+	color: #A5A5A5;
+	font-weight: normal;
+	text-align: center;
+	margin-top: -12px;
+}
+.content .match_history_box .kda .totalkda span {
+	color: black;
+}
+.content .match_history_box .stats {
+	font-size: 12px;
+	width: 15%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 25px 0;
+	font-size: 14px;
+	text-align: center;
+	color: #8D8D8E;
+	font-weight: bold;
+}
+.content .match_history_box .stats div {
+	margin: -15px 0 0 0;
+}
+
+.content .match_history_box .items {
+	width: 130px;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 20px;
+	position: absolute;
+	right: 34%;
+	top: 35px;
+}
+.content .match_history_box .items .item_img {
+	margin: 2px 2px;
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.content .match_history_box .player_list {
+	display: inline-block;
+	float: right;
+	padding: 10px 50px;
+	padding-bottom: 0;
+	position: relative;
+	width: 25%;
+	color: black;
+	font-size: 15px;
+}
+.content .match_history_box .player_list .aside {
+	width: 40%;
+	float: left;
+	//border-right: 2px solid #C44B44;
+}
+.content .match_history_box .player_list .bside {
+	width: 40%;
+	float: right;
+	text-align: left;
+	position: relative;
+}
+.content .match_history_box .player_list .bside:after {
+	display: block;
+	position: absolute;
+	content: '';
+	height: 90px;
+	top: 0;
+	width: 2px;
+	right: -5px;
+	//background-color: #1F8ECD;
+}
+.content .match_history_box .player_list a .player_list_name {
+	font-family: 'Roboto Condensed', sans-serif;
+	display: block;
+	overflow: hidden;
+	text-align: left;
+	text-overflow: ellipsis;
+	width: 100%;
+	height: 30px;
+	line-height: 25px;
+	font-weight: bold;
+	color: rgba(0,0,0,0.4);
+	-webkit-transition: all 300ms;
+	        transition: all 300ms;
+}
+.content .match_history_box .player_list .player_list_name#name {
+	color: black !important;
+	font-weight: bold;
+}
+.content .match_history_box .player_list .player_list_name:hover {
+	color: black;
+}
+.content .match_history_box .player_list .aside .player_list_hero {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: 20px;
+	background-size: 100%;
+	border-radius: 2px;
+}
+.content .match_history_box .player_list .bside .player_list_hero {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	left: -30px;
+	background-size: 100%;
+	border-radius: 2px;
+}
+.content .match_history .match_history_more {
+	margin: 0 10px 0 10px;
+	background: #F2F2F2 no-repeat center bottom;
+	border: 1px solid rgba(0,0,0,0.2);
+	border-top: 0;
+	width: 100%;
+	position: relative;
+	box-sizing: border-box;
+	text-align: center;
+}
+.content .match_history .match_history_more .tab_header {
+	width: 100%;
+	height: 40px;
+	position: relative;
+	text-align: left;
+	box-sizing: border-box;
+	background: #DBDBDB;
+	box-shadow: inset  0 7px 9px -7px rgba(0,0,0,0.4);
+}
+.content .match_history .match_history_more .tab_header .tab {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 13px;
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	padding: 2px 10px;
+	margin: 0;
+	line-height: 35px;
+	-webkit-transition: all 300ms;
+	        transition: all 300ms;
+	cursor: pointer;
+}
+.content .match_history .match_history_more .tab_header .tab:hover {
+	box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.3);
+	background: #C0C0C0;
+}
+.content .match_history .match_history_more .tab_header .tab.select {
+	background: #F0D05C;
+	box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.3);
+}
+.content .match_history .match_history_more .sidestats {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #A9A9A9;
+	width: 100%;
+	text-align: left;
+	position: relative;
+}
+
+.content .match_history .match_history_more .sidestats .head_side {
+	width: 100%;
+	height: 50px;
+	background: white;
+	font-size: 0;
+	text-align: center;
+}
+.content .match_history .match_history_more .sidestats .head_side div.info {
+	color: #828282;
+	text-transform: capitalize;
+}
+.content .match_history .match_history_more .sidestats .head_side div span#loss {
+	color: #FF5945 !important;
+	font-weight: bold;
+}
+.content .match_history .match_history_more .sidestats .head_side div span#win {
+	color: #5C8CCC !important;
+	font-weight: bold;
+}
+.content .match_history .match_history_more .sidestats .head_side div {
+	display: inline-block;
+	vertical-align: top;
+	padding: 20px 15px;
+	font-size: 13px;
+}
+.content .match_history .match_history_more .sidestats .each {
+	width: 100%;
+	height: 45px;
+	background: #F2F2F2;
+	border-top: 1px solid #D7D7D7;
+	text-align: center;
+}
+.content .match_history .match_history_more .sidestats .each:first-child {
+	border-top: 2px solid #D7D7D7;
+}
+.content .match_history .match_history_more .sidestats .each div {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+.content .match_history .match_history_more .sidestats .each > div {
+	padding: 6px 15px;
+}
+.content .match_history .match_history_more .sidestats div.info {
+	width: 150px;
+}
+.content .match_history .match_history_more .sidestats div.items {
+	width: 180px;
+	text-align: center;
+}
+.content .match_history .match_history_more .sidestats div.kda {
+	width: 70px;
+}
+.content .match_history .match_history_more .sidestats div.damage {
+	width: 100px;
+}
+.content .match_history .match_history_more .sidestats div.cs {
+	width: 50px;
+}
+.content .match_history .match_history_more .sidestats div.gold {
+	width: 60px;
+}
+.content .match_history .match_history_more .sidestats div.tier {
+	width: 50px;
+}
+.content .match_history .match_history_more .sidestats div.each .info .hero_img {
+	display: inline-block;
+	vertical-align: top;
+	background-size: 110%;
+	background-position: center;
+	border-radius: 2px;
+	padding: 0;
+	width: 35px;
+	box-sizing: border-box;
+	height: 35px;
+}
+.content .match_history .match_history_more .sidestats div.each .info .player_name {
+	font-family: 'Roboto Condensed', sans-serif;
+	display: inline-block;
+	width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	vertical-align: top;
+	color: rgb(55, 55, 55);
+	font-weight: bold;
+	font-size: 15px;
+	font-weight: 400;
+	padding: 10px 5px;
+
+}
+.content .match_history .match_history_more .sidestats div.each .items .item_img {
+	display: inline-block;
+	padding: 5px 0;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: top;
+	background-size: 100%;
+	width: 25px;
+	height: 25px;
+	margin: 0;
+}
+.content .match_history .match_history_more .sidestats div.each .cs span {
+	display: block;
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+}
+.content .match_history .match_history_more .sidestats div.each .cs span.jungle {
+	display: block;
+	margin-top: 2px;
+	font-size: 11px;
+	text-align: center;
+	font-weight: 300;
+}
+.content .match_history .match_history_more .sidestats div.each .kda {
+	text-align: center;
+}
+.content .match_history .match_history_more .sidestats div.each .kda span.kda {
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+}
+.content .match_history .match_history_more .sidestats div.each .kda span.numb {
+	display: block;
+	font-size: 13px;
+	font-weight: 300;
+}
+.content .match_history .match_history_more .sidestats div.each .kda span.numb span.death {
+	color: rgb(255, 89, 69);
+}
+.content .match_history .match_history_more .sidestats div.each .tier {
+	text-align: center;
+	font-size: 13px;
+	margin-top: -2px;
+}
+.content .match_history .match_history_more .sidestats div.each .tier .tier_img {
+	width: 35px;
+	height: 35px;
+  border: 1px solid #cdcdcd;
+  background-size: 145%;
+  background-position: center -3px;
+}
+.content .match_history .match_history_more .sidestats div.damage .bar {
+	margin-left: 4px;
+	margin-top: 3px;
+	width: 100px;
+	height: 15px;
+  position: relative;
+  border: 1px solid #ccc;
+  background-color: #ddd;
+}
+.content .match_history .match_history_more .sidestats div.damage span {
+	display: block;
+	text-align: center;
+	font-size: 13px;
+}
+.content .match_history .match_history_more .sidestats div.damage .bar .fill {
+	z-index: 1;
+	height: 15px;
+	background: #EE5A52;
+	-webkit-transition: all 300ms;
+          transition: all 300ms;
+  border: 1px solid hsl(3, 54%, 51%);
+  background-color: hsl(3, 82%, 63%);
+  position: relative;
+  top: -1px;
+}
+.content .match_history .match_history_more .sidestats div.each .tier#bronze {
+	text-shadow: 0 0 5px#593C36;
+}
+.content .match_history .match_history_more .sidestats div.each .tier#silver {
+	text-shadow: 0 0 5px black;
+}
+.content .match_history .match_history_more .sidestats div.each .tier#gold {
+	text-shadow: 0 0 5px gold;
+}
+.content .match_history .match_history_more .sidestats .team_stats {
+	width: 100%;
+  height: 40px;
+  margin-bottom: -5px;
+  margin-top: 5px;
+  text-align: center;
+  background-color: #e0e0e0;
+  color: #1e1e1e;
+}
+.content .match_history .match_history_more .sidestats .team_stats .stats {
+	font-size: 16px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 11px 24px;
+}
+.content .match_history .match_history_more .sidestats .team_stats .stats .name#sentrygun {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: -4px;
+	background: url('./../../styles/images/sentrygun.png');
+	width: 25px;
+	height: 21px;
+}
+.content .match_history .match_history_more .sidestats .team_stats .stats span.name {
+	font-weight: bold;
+}
+.content .match_history .match_history_more .sidestats .team_stats .stats span.value {
+	font-size: 15px;
+}
+
+.content .sidebar .body_box {
+	width: 100%;
+}
+.content .sidebar .body_box #charts {
+	width: 150px;
+	margin: 0 auto;
+	color: white;
+	font-weight: 400;
+	font-size: 15px;
+	text-align: center;
+}
+.content .sidebar .body #charts canvas {
+	position: relative;
+	z-index: 99;
+}
+.content .sidebar .winrate h3 {
+	position: absolute;
+	text-align: center;
+}
+.content .sidebar .winrate h2 {
+	position: absolute;
+	font-size: 18px;
+	font-weight: 300;
+	text-align: center;
+	color: white;
+}
+
+.content .sidebar .allroles {
+	text-align: left;
+	padding: 10px;
+}
+.content .sidebar .allroles .eachrole {
+	padding: 10px 0;
+	border-bottom: 1px dashed white;
+	position: relative;
+}
+.content .sidebar .allroles .eachrole .role_img {
+	display: inline-block;
+	background-size: 90%;
+	width: 25px;
+	height: 25px;
+	padding: 10px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.content .sidebar .allroles .eachrole .role_img#carry {
+	background-image: url('./../../styles/images/roles/carry.png');
+	background-color: #A02E2D;
+}
+.content .sidebar .allroles .eachrole .role_img#jungler {
+	background-image: url('./../../styles/images/roles/jungler.png');
+	background-color: #6ab70b;
+}
+.content .sidebar .allroles .eachrole .role_img#captain {
+	background-image: url('./../../styles/images/roles/captain.png');
+	background-color: #BF9601;
+}
+.content .sidebar .allroles .eachrole .role_desc {
+	font-family: 'Roboto Condensed', sans-serif;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 19px;
+	line-height: 32px;
+	margin-left: 15px;
+	font-weight: 300;
+	text-transform: uppercase;
+	text-align: center;
+	color: grey;
+	width: 150px;
+}
+.content .sidebar .allroles .eachrole .role_desc span {
+	font-weight: 400;
+	color: white;
+}
+.content .sidebar .allroles .eachrole .role_desc span.d {
+	color: rgb(255, 89, 69) !important;
+}
+.content .sidebar .allroles .eachrole .role_kda {
+	display: block;
+	width: 150px;
+	position: absolute;
+	color: white;
+	content: 'AVG KDA';
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 62px;
+	margin-top: -15px;
+	text-align: center;
+}
+.content .sidebar .allroles .eachrole .role_winrate {
+	font-family: 'Roboto Condensed', sans-serif;
+	position: absolute;
+	display: inline-block;
+	vertical-align: top;
+	right: 0;
+	bottom: 30px;
+	color: white;
+	font-weight: bold;
+	width: 70px;
+	font-size: 21px;
+	text-align: center;
+}
+
+.content .sidebar .allroles .eachrole .role_games {
+	position: absolute;
+	right: 0;
+	bottom: 11px;
+	color: white;
+	font-size: 12px;
+	width: 70px;
+	text-align: center;
+	font-weight: 300;
+}
+.content .sidebar .rating {
+	text-align: center;
+	padding: 10px;
+	color: white;
+}
+.content .sidebar .rating_number {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 50px;
+	color: #F2BF00;
+	text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.content .sidebar .rating_caption {
+	font-size: 20px;
+	color: gray;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed rgba(128, 128, 128, 0.3);
+}
+.content .sidebar .info {
+	padding: 10px;
+	text-align: center;
+	color: rgba(255,255,255,0.4);
+	font-size: 12px;
+}
+.content .sidebar .position {
+	font-family: 'Roboto Condensed', sans-serif;
+	border-bottom: 1px dashed rgba(128, 128, 128, 0.3);
+	padding: 5px;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+.content .sidebar .position span {
+	font-weight: bold;
+}
+.content .sidebar .champions {
+	text-align: left;
+	padding: 10px;
+}
+.content .sidebar .champions .hero_each {
+	width: 100%;
+	color: white;
+	margin-bottom: 5px;
+	padding: 5px 0;
+	box-sizing: border-box;
+	position: relative;
+}
+.content .sidebar .champions .hero_each:hover {
+	background: rgba(255,255,255,0.1);
+}
+.content .sidebar .champions .hero_each div {
+	display: inline-block;
+	vertical-align: top;
+}
+.content .sidebar .champions .hero_each .hero_img {
+	background-size: 100%;
+	width: 40px;
+	height: 40px;
+	margin-left: 5px;
+}
+.content .sidebar .champions .hero_each .hero_name {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 18px;
+	line-height: 25px;
+	width: 90px;
+	margin-left: 10px;
+	text-align: left;
+}
+.content .sidebar .champions .hero_each .hero_winrate {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 21px;
+	position: static;
+	float: right;
+	font-weight: bold;
+	width: 70px;
+	text-align: center;
+}
+.content .sidebar .champions .hero_each .hero_games {
+	font-size: 12px;
+	font-weight: 300;
+	position: absolute;
+	right: 0;
+	width: 70px;
+	text-align: center;
+	float: right;
+	bottom: 4px;
+}
+.content .sidebar .champions .hero_each .hero_kda {
+	position: absolute;
+	width: 140px;
+	bottom: 4px;
+	text-align: left;
+	left: 55px;
+	font-weight: 300;
+}
+.content .sidebar .champions .hero_each .hero_kda span.kda {
+	float: right;
+	font-weight: 400;
+}
+.content .sidebar .view_morediv {
+	text-align: center;
+}
+.content .sidebar .view_more {
+	font-size: 13px;
+	padding: 10px;
+	color: black;
+	display: inline-block;
+	margin: 5px auto;
+	background: #E5E5E5;
+	border: 2px solid #E5E5E5;
+	-webkit-transition: all 400ms;
+	        transition: all 400ms;
+	cursor: pointer;
+	text-align: center;
+}
+.content .sidebar .view_more:hover {
+	background: transparent;
+	color: white;
+}
+
+.content .sidebar .recent_played {
+	text-align: left;
+	padding: 5px;
+	color: white;
+}
+.content .sidebar .recent_played .recent_played_each {
+	height: 30px;
+	position: relative;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	border-bottom: 1px dashed grey;
+	-webkit-transition: all 150ms;
+	        transition: all 150ms;
+}
+.content .sidebar .recent_played .recent_played_each:hover {
+	background: rgba(255,255,255,0.1);
+}
+.content .sidebar .recent_played .recent_played_each div {
+	display: inline-block;
+	vertical-align: top;
+}
+.content .sidebar .recent_played .recent_played_each .recent_played_name {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 14px;
+	width: 130px;
+	display: inline-block;
+	overflow: hidden;
+	text-align: left;
+	text-overflow: ellipsis;
+	line-height: 35px;
+	padding-left: 5px;
+}
+.content .sidebar .recent_played .recent_played_each .recent_played_win {
+	font-size: 16px;
+	height: 30px;
+	line-height: 35px;
+	color: green;
+}
+.content .sidebar .recent_played .recent_played_each .recent_played_win:after {
+	content: '-';
+	color: white;
+}
+.content .sidebar .recent_played .recent_played_each .recent_played_loss {
+	font-size: 16px;
+	line-height: 35px;
+	color: brown;
+}
+.content .sidebar .recent_played .recent_played_each .recent_played_winrate {
+	font-size: 16px;
+	float: right;
+	width: 60px;
+	text-align: center;
+	font-weight: bold;
+}
+.content .sidebar .recent_played .recent_played_each .recent_played_games {
+	font-size: 10px;
+	position: absolute;
+	float: right;
+	bottom: 5px;
+	right: 0;
+	text-align: center;
+	width: 60px;
+	font-weight: 300;
+}
+
+.more_team {
+	width: 100%;
+	background-color: white;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.more_team .more_wrap {
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+
+.more_team .more_wrap .more_namet {
+	font-family: 'Open Sans', Sans-serif;
+	font-size: 15px;
+	line-height: 45px;
+	font-weight: bold;
+	color: #5285C9;
+	position: absolute;
+	left: -15px;
+}
+.more_team .more_wrap .more_namet.red {
+	color: #FF5944;
+}
+
+
+.more_team .more_wrap .more_heroes {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	margin-top: 2px;
+	cursor: pointer;
+	margin-right: 20px;
+	-webkit-transition: all 300ms;
+	        transition: all 300ms;
+}
+.more_team .more_wrap .more_heroes.selected {
+	font-weight: bold;
+	background: rgba(0,0,0,0.1);
+}
+.more_team .more_wrap .more_heroes:hover {
+	background: rgba(0,0,0,0.2);
+}
+.more_team .more_wrap .more_hero_img {
+	display: inline-block;
+	vertical-align: top;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 40px;
+	height: 40px;
+}
+.more_team .more_wrap .more_hero_name {
+	font-family: 'Open Sans', Sans-serif;
+	font-size: 13px;
+	display: inline-block;
+	vertical-align: top;
+	width: 100px;
+	height: 25px;
+	overflow: hidden;
+	margin: 13px 5px;
+	margin-bottom: 0;
+	text-align: left;
+	text-overflow: ellipsis;
+}
+
+ .map {
+	background: url('./../../styles/images/map.png') no-repeat center;
+	background-size: 100%;
+	width: 746px;
+	max-width: 746px;
+	max-height: 290px;
+	margin: 5px auto;
+	height: 290px;
+	position: relative;
+}
+.map .heatmap {
+	position: absolute !important;
+	top:0;
+	width: 746px;
+	height: 290px;
+}
+.map .heatmap canvas {
+	 height: 100%; 
+  width: 100%; 
+  display: block;
+}
+.content_killmap .point {
+	opacity: 0.9;
+	border: 2px solid black;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+}
+.content_killmap .point.Red {
+	box-shadow: 0 0 10px red;
+}
+.content_killmap .point.Blue {
+	box-shadow: 0 0 10px blue;
+}
+.content_killmap .deaths {
+	opacity: 0.7;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	position: absolute;
+}
+
+.content_builds .skill_wrap {
+	width: 90%;
+	margin: 0 auto;
+  text-align: center;
+  padding-bottom: 10px !important;
+}
+.content_builds .skill_overdrive {
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 0 20px;
+	margin-right: 10%;
+}
+.content_builds .skill_overdrive h2 {
+	font-size: 15px;
+	font-family: 'Open Sans', Sans-serif;
+	font-weight: lighter;
+	text-transform: uppercase;
+	color: rgba(0,0,0,0.4);
+	margin: 10px;
+}
+.content_builds .skill_overdrive .skill_img {
+	background-size: 100%;
+	display: inline-block;
+	width: 50px;
+	margin-left: 5px;
+	height: 50px;
+}
+.content_builds .skill_order {
+	display: inline-table;
+	vertical-align: top;
+	border-collapse: separate;
+	border-spacing: 0 5px;
+}
+.content_builds .skill_order .skill {
+	display: table-row;
+}
+
+.content_builds .skill_order .skill .skill_img {
+	display: table-cell;
+	width: 30px;
+	height: 30px;
+	border-right: 5px transparent solid;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: right;
+}
+.content_builds .skill_order .skill .level {
+	display: table-cell;
+	background: white;
+	color: white;
+  border: 1px solid #f2f2f2;
+  border-radius: 100%;
+  width: 30px;
+  height: 32px;
+  padding: 0;
+  padding-top: 7px;
+  text-align: center;
+}
+.content_builds .skill_order .skill .level:after {
+  width: 1px;
+}
+.content_builds .skill_order .skill .level.levelup {
+  background-color: hsl(47, 83%, 65%);
+  color: #000;
+  border-color: hsl(47, 83%, 65%);
+}
+.content_builds .skill_order .skill .level.level_12 {
+	border-right: 1px solid rgba(0,0,0,0.2);
+}
+.content_builds .build_wrap {
+	width: 80%;
+	margin: 10px auto;
+	text-align: left;
+}
+
+.content_builds .item {
+	display: inline-block;
+	position: relative;
+	border: 1px solid grey;
+	width: 40px;
+	margin: 10px 10px 0 0;
+}
+.content_builds .item .item_img {
+	width: 100%;
+	height: 40px;
+	background-size: 36px 36px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: rgba(0,0,0,0.1);
+}
+.content_builds .item .item_time {
+	font-size: 14px;
+	text-align: center;
+	padding: 2px;
+	background: white;
+	font-family: 'Open Sans', Sans-serif;
+}
+.content_builds .item:after {
+	content: ' ';
+	width: 15px;
+	height: 2px;
+	background: grey;
+	display: inline-block;
+	position: absolute;
+	margin-left: 40px;
+	margin-top: -35px;
+}
+.content_builds .item:last-of-type:after {
+	height: 0;
+}
+.content_builds .title {
+	margin: -5px 0 0;
+	padding: 5px;
+	box-sizing: border-box;
+	width: 100%;
+	background: white;
+	text-align: center;
+	font-size: 14px;
+	font-family: 'Open Sans', Sans-serif;
+	font-weight: bold;
+	text-transform: uppercase;
+  color: rgba(0,0,0,0.6);
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+.stats_content .hero_desc {
+	width: 70%;
+	margin: 15px auto -5px;
+	text-align: left;
+}
+.stats_content .hero_desc .hero_names {
+	display: inline-table;
+	vertical-align: top;
+	font-family: 'Open Sans', Sans-serif;
+}
+.stats_content .hero_desc .hero_names .hero_name {
+	display: table-row;
+	font-size: 15px;
+	text-transform: capitalize;
+	color: grey;
+}
+.stats_content .hero_desc .hero_names .player_name {
+	display: table-row;
+	font-size: 24px;
+}
+.stats_content .hero_desc .hero_img {
+	display: inline-block;
+	width: 55px;
+	height: 55px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.stats_content .stats_heroes {
+	width: 650px;
+	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+.stats_content .stats_heroes .stats_each {
+	display: table;
+	margin: 5px 10px;
+	font-family: 'Open Sans', Sans-serif;
+	font-size: 25px;
+	text-align: center;
+}
+
+.stats_content .stats_heroes .stats_caption {
+	display: table-caption;
+	text-align: center;
+	font-size: 14px;
+	color: grey;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.stats_content .stats_heroes .stats_each.kda span {
+	margin: 5px;
+}
+.stats_content .stats_heroes .stats_each.kda span.kill {
+	color: green;
+}
+.stats_content .stats_heroes .stats_each.kda span.death {
+	color: brown;
+}
+
+.stats_content .stats_heroes .stats_each.kda span.assists {
+	color: gold;
+}
+.stats_content .below_charts {
+	width: 80%;
+	text-align: center;
+	margin: 10px auto;
+	padding-bottom: 40px;
+}
+.stats_content .below_charts h2 {
+	font-size: 21px;
+	text-transform: uppercase;
+	margin: 5px;
+	color: rgba(0,0,0,0.4);
+	text-align: center;
+}
+.stats_content .gold_source_chart {
+	width: 250px;
+	height: 250px;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+}
+.stats_content .damages_chart {
+	width: 350px;
+	height: 250px;
+	padding: 10px;
+	float: right;
+	text-align: right;
+}
+.stats_content .damages_chart .damage-title {
+	width: 100%;
+	text-transform: uppercase;
+	text-align: left;
+}
+.stats_content .damages_chart .damage-bar {
+	display: inline-block;
+	width: 250px;
+	height: 35px;
+	margin-bottom: 15px;
+	position: relative;
+	border: 1px solid rgba(0,0,0,0.3);
+	background: transparent;
+}
+.stats_content .damages_chart .damage-bar .damage-fill {
+	height: 100%;
+}
+.content_draft {
+  background: F2F2F2;
+}
+.draft_content {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  margin: 0 auto;
+  background: linear-gradient( rgba(0, 0, 0,.75), rgba(0, 0, 0, .75) ), url('http://pierreandreis.com/vgdraft/images/background.jpg');
+  background-position: center top;
+}
+
+.draft_content .team-a-c {
+  width: 100px;
+  background: linear-gradient(to right, rgba(94, 172, 198,0.3), rgba(94, 172, 198,0));
+}
+
+.draft_content .team-b-c {
+  width: 100px;
+  background: linear-gradient(to right, rgba(205, 122, 73,0), rgba(205, 122, 73,0.3));
+}
+
+
+.draft_content .draft-pick {
+  width: 75px;
+  height: 75px;
+  background: black;
+  margin: 5px;
+  border-width: 1px;
+  border-style: solid;
+}
+.draft_content .team-b.draft-pick {
+  border-color: #cd7a49;
+}
+.draft_content .team-a.draft-pick {
+  border-color: #5eacc6;
+}
+.draft_content .hero_img {
+  width: 75px;
+  height: 75px;
+  background-size: 100%;
+}
+
+.draft_content .draft-ban {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  margin: 5px;
+}
+.draft_content .draft-ban .hero_img {
+  width: 50px;
+  height: 50px;
+  filter: grayscale(1);
+  margin: 10px auto;
+}
+/*.content_draft .draft-hero {
+  background: grey;
+  width: 200px;
+  display: flex;
+  text-align: left;
+
+}
+
+.content_draft .draft-hero .draft-team-one {
+
+}
+.draft-team-two {
+  float: left;
+  background: red;
+
+}
+.draft-banned {
+  background-color: rgb(255, 89, 69);
+
+}
+.draft-picked {
+  background-color: blue;
+
+}
+.content_draft .draft-hero .hero_img {
+  float: right;
+  width: 25px;
+  height: 25px;
+  background-size: 100%;
+
+  
+}
+
+.content_draft .draft-hero .draft-team-two .hero_img {
+  float: right;
+}*/

@@ -26,6 +26,12 @@ form {
   height: 100%;
   background: rgba(0, 0, 0, 0.97);
 }
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
 .alert {
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;

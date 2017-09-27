@@ -2,6 +2,16 @@ import i18n from 'i18next';
 
 import resources from "./languages";
 
+import store from "../store";
+
+// Subscribing i18n to redux, so everytime there is a state change,
+// and current i18n language is different from the set,  it will trigger changeLanguage.
+store.subscribe(() => {
+  const state = store.getState();
+  if (state && state.i18n && state.i18n.current !== i18n.language) {
+    i18n.changeLanguage(state.i18n.current);
+  }
+})
 
 i18n
 .init({

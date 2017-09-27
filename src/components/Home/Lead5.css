@@ -1,0 +1,102 @@
+.Lead5 {
+  width: 100%;
+  font-size: 13px;
+}
+
+.Lead5-each {
+  height: 45px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Lead5-each:nth-child(even) {
+  background: rgba(241, 241, 241, 1);;
+}
+
+.Lead5-each-pos {
+  min-width: 50px;
+  font-size: 32px;
+  color: grey;
+  text-align: right;
+  font-weight: 500;
+  margin-right: 5px;
+}
+.Lead5-each-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.Lead5-each-vpr {
+  width: 100px;
+}
+
+.Lead5-each-info-name {
+  display: flex;
+  font-size: 14px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  color: rgba(57, 57, 57, 1);
+  margin-bottom: 1px;
+  
+}
+
+.Lead5-each-info-name span {
+  font-size: 12px;
+  align-self: flex-end;
+  margin-left: 1px;
+  /** lol, seriously? */
+  padding-bottom: 1px;
+
+  color: rgba(161, 161, 161, 1);
+  font-weight: normal;
+}
+.Lead5-each-info-skilltier {
+  display: none;
+}
+.Lead5-each-info-stats {
+  display: flex;
+  font-size: 11px;
+  color: rgba(214, 214, 214, 1);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.Lead5-each-vpr-number {
+  font-size: 22px;
+  color: rgba(134, 200, 91, 1);
+}
+
+.Lead5-each-vpr-name {
+  display: none;
+}
+
+.Lead5-each#featured {
+  height: 90px;
+}
+
+.Lead5-each#featured .Lead5-each-pos {
+  font-size: 72px;
+  color: rgba(234, 203, 93, 1);
+  /** What? To align the big number with the small */
+  letter-spacing: -10px;
+  
+}
+
+.Lead5-each#featured .Lead5-each-info-name {
+  font-size: 18px;
+}
+.Lead5-each#featured .Lead5-each-info-skilltier {
+  display: flex;
+  color: rgba(214, 214, 214, 1);
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.Lead5-each#featured .Lead5-each-vpr-name {
+  display: block;
+  color: rgba(130, 130, 130, 1);
+}

@@ -21,7 +21,6 @@ const RegionSelector = ({regions, visible, onClick}) => {
 
 }
 
-
 class SearchBar extends React.Component {
 
   componentWillMount() {
@@ -35,16 +34,16 @@ class SearchBar extends React.Component {
     const { 
       changeRegion,
       toggleRegion,
-      onSearch, 
+      // onSearch, 
       
 
       placeholder, 
 
       region,
       regions, 
-      recentlySearched,
-      regionStatus,
-      regionMessage,
+      // recentlySearched,
+      // regionStatus,
+      // regionMessage,
       openMenu,
     } = this.props;
 

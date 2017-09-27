@@ -18,13 +18,13 @@ const initialState = {
 
 const i18n = (state = initialState, action) => {
   switch (action.type) {
-  case 'SWITCH_LANGUAGE':
+  case "SWITCH_LANGUAGE":
     return {
       ...state,
       openMenu: false,
       current: action.language
     }
-  case 'TOGGLE_MENU_LANGUAGE':
+  case "TOGGLE_MENU_LANGUAGE":
     return {
       ...state,
       openMenu: !state.openMenu,

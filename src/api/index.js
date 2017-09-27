@@ -16,7 +16,7 @@ const request = axios.create();
 
 
 request.defaults.baseURL      = hostname;
-request.defaults.timeout      = 1000;
+request.defaults.timeout      = 10000;
 request.defaults.responseType = "json";
 request.defaults.httpAgent    =  new http.Agent({ keepAlive: true });
 request.defaults.httpsAgent   = new https.Agent({ keepAlive: true });
@@ -49,8 +49,15 @@ const sendRequest = async (url, data, method = "get") => {
   }
 }
 
+const API = {};
 
-
-export const getServers = () => {
+API.getServers = () => {
   return sendRequest("/servers");
 }
+
+API.getProFeed = () => {
+  // Lol, we need to remove this / at the end
+  return sendRequest("/promatches/");
+}
+
+export default API;

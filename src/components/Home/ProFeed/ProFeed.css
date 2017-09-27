@@ -1,0 +1,178 @@
+.ProFeed {
+  font-size: 13px;
+  width: 100%;
+  position: relative;
+}
+
+.ProFeed-each {
+  width: 100%;
+  height: 45px;
+  color: black;
+  display: flex;
+  background: rgba(241, 241, 241, 1);
+  flex-direction: space-between;
+  align-items: center;
+}
+
+.ProFeed-each:nth-child(even) {
+  background: white;
+}
+
+.ProFeed-each:hover {
+  background-color: #E7E7E7;
+}
+
+.ProFeed-each-status {
+  width: 6px;
+  height: 100%;
+}
+
+.ProFeed-each-status#Win {
+  background: hsl(205, 86%, 65%);
+}
+
+.ProFeed-each-status#Loss {
+  background: hsl(6, 86%, 65%);
+}
+
+.ProFeed-each-info {
+  display: flex;
+  width: 150px;
+  justify-content: space-around;
+  align-items: center;
+  padding-left: 2px;
+}
+
+.ProFeed-each-game {
+  display: flex;
+  flex-grow: 3;
+  width: 70px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2px
+}
+
+.ProFeed-each-items {
+  display: flex;
+  width: 60px;
+  height: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.ProFeed-each-arrow {
+  width: 15px;
+  height: 100%;
+  color: rgba(195, 195, 195, 0.6);
+  font-size: 35px;
+  padding-right: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ProFeed-each-info-picture {
+  width: 30px;
+  height: 30px;
+  background: green;
+  background-size: 180%;
+  background-position: center 4%;
+
+}
+
+.ProFeed-each-info-personal {
+  width: 80px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ProFeed-each-info-personal div {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 100;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ProFeed-each-info-personal span {
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 100;
+  margin-top: 1px;
+  font-size: 0.6rem;
+  color: #2E2E2E
+}
+
+.ProFeed-each-info-region {
+  margin-left: 2px;
+}
+
+.ProFeed-each-info-region span {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 11px;
+	color: white;
+	background: rgba(195, 195, 195, 1);
+	padding: 4px 7px;
+  border-radius: 2px;
+}
+
+.ProFeed-each-game-hero {
+  width: 25px;
+  height: 25px;
+  background-size: 100%;
+  border-radius: 50%;
+}
+
+.ProFeed-each-game-kda {
+  width: 40px;
+  font-size: 12px;
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.ProFeed-each-game-role {
+  width: 12px;
+  height: 12px;
+  background-size: 100%;
+  background: red;
+  border-radius: 50%;
+}
+
+.ProFeed-each-items-each {
+  width: 15px;
+  height: 15px;
+  background: rgba(195, 195, 195, 1);
+  border-radius: 50%;
+  margin: 0 1px;
+  background-size: 100%;
+  
+}
+
+.ProFeed-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.view_more {
+  width: 60px;
+  font-size: 11px;
+  height: 15px;
+  padding: 10px 5px;
+  line-height: 15px;
+  background: rgba(68, 68, 68, 1);
+  color: white;
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.view_more:hover {
+  background: #535353;
+}
+
+.view_more#disabled{
+  opacity: 0.4;
+  cursor: not-allowed;
+}

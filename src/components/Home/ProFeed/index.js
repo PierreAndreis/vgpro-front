@@ -3,7 +3,6 @@ import React from "react";
 import FeedMatch from "./FeedMatch";
 
 import {fetchProFeed} from "./../../../actions/feed";
-
 import "./ProFeed.css";
 
 const PRO_FEED_ITEM_PER_PAGE = 5;
@@ -55,10 +54,6 @@ class ProFeed extends React.Component {
       })
     }
     catch(e) {
-      this.setState({
-        status: "error",
-        payload: e
-      });
       console.warn(e);
     }
     
@@ -74,31 +69,23 @@ class ProFeed extends React.Component {
 
     const {status, payload, page} = this.state;
 
-    let matches = null;
+    let matches = [];
     let lastPage;
 
-    if (status === "loading") matches = "Loading...";
+    if (status === "loading") return <p>Loading</p>;
     else if (status === "loaded") {
 
       const itemPerPage = PRO_FEED_ITEM_PER_PAGE;
-
-      const endIndex = page * itemPerPage;
-
-      const startIndex = endIndex - itemPerPage;
-
       lastPage = (payload) ? (payload.length / itemPerPage) : 1;
 
-      console.log(page, lastPage, page <= lastPage)
-      
-      matches = payload.map((match, i) => {
+      const endIndex   = page     * itemPerPage;
+      const startIndex = endIndex - itemPerPage;
+      payload.forEach((match, i) => {
 
         if ((i >= startIndex) && (i <= endIndex)) {
-          return <FeedMatch key={i} t={t} data={match} />
+          matches.push(<FeedMatch key={i} t={t} data={match} />);
         }
-
-        return null;
-
-
+        
       })
     }
 

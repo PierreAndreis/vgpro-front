@@ -3,7 +3,7 @@ import React from "react";
 import {translate} from "react-i18next";
 
 
-const FeedMatch = ({t, data}) => {
+const FeedMatch = ({t, data, style}) => {
 
   const {
     ign, 
@@ -41,7 +41,7 @@ const FeedMatch = ({t, data}) => {
   }
 
   return (
-    <a href="" className="ProFeed-each">
+    <a href="" className="ProFeed-each" style={style}>
     <div className="ProFeed-each-status" id={win}/>
     <div className="ProFeed-each-info">
       <div className="ProFeed-each-info-picture" style={{
@@ -51,9 +51,7 @@ const FeedMatch = ({t, data}) => {
         <div>{ign}</div>
         <span>{Team.name}</span>
       </div>
-      <div className="ProFeed-each-info-region">
-        <span>{region}</span>
-      </div>
+    <div className="ProFeed-each-info-region">{region}</div>
     </div>
     <div className="ProFeed-each-game">
       <div className="ProFeed-each-game-hero" style={{

@@ -1,8 +1,15 @@
+
+* {
+  text-rendering: optimizeLegibility!important;
+  -webkit-font-smoothing: antialiased!important;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   touch-action: manipulation;
 }
 body {
-  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #E5E5E5;
   background-attachment: fixed;
   overflow-x: none;

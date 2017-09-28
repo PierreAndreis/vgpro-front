@@ -53,19 +53,6 @@ class HomePage extends React.Component {
                 </div> 
                 
                 <div className="Lead5-each">
-                  <div className="Lead5-each-pos">2</div>
-                  <div className="Lead5-each-info">
-                    <div className="Lead5-each-info-name">MiniDookie <span>SA</span></div>
-                    <div className="Lead5-each-info-skilltier">Vainglorious Gold</div>
-                    <div className="Lead5-each-info-stats">AVG KDA 5.11 - CARRY</div>
-                  </div>
-                  <div className="Lead5-each-vpr">
-                    <div className="Lead5-each-vpr-number">3031</div>
-                    <div className="Lead5-each-vpr-name">VPR</div>
-                  </div>
-                </div> 
-
-                <div className="Lead5-each">
                   <div className="Lead5-each-pos">3</div>
                   <div className="Lead5-each-info">
                     <div className="Lead5-each-info-name">MiniDookie <span>SA</span></div>
@@ -103,6 +90,7 @@ class HomePage extends React.Component {
                     <div className="Lead5-each-vpr-name">VPR</div>
                   </div>
                 </div> 
+
               </div>
               
             </div>

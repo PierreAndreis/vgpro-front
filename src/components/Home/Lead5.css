@@ -58,14 +58,14 @@
 }
 .Lead5-each-info-stats {
   display: flex;
-  font-size: 11px;
+  font-size: 10px;
   color: rgba(214, 214, 214, 1);
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .Lead5-each-vpr-number {
-  font-size: 22px;
+  font-size: 24px;
   color: rgba(134, 200, 91, 1);
 }
 
@@ -88,15 +88,21 @@
 .Lead5-each#featured .Lead5-each-info-name {
   font-size: 18px;
 }
+
+.Lead5-each-info-stats {
+  font-size: 11px;
+}
+
 .Lead5-each#featured .Lead5-each-info-skilltier {
   display: flex;
   color: rgba(214, 214, 214, 1);
   font-size: 11px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 500; 
 }
 
 .Lead5-each#featured .Lead5-each-vpr-name {
+  font-size: 17px;
   display: block;
   color: rgba(130, 130, 130, 1);
 }

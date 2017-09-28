@@ -2,6 +2,8 @@
   font-size: 13px;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .ProFeed-each {
@@ -22,6 +24,8 @@
   background-color: #E7E7E7;
 }
 
+/** ========= EACH STATUS ========= */
+
 .ProFeed-each-status {
   width: 6px;
   height: 100%;
@@ -35,41 +39,14 @@
   background: hsl(6, 86%, 65%);
 }
 
+/** ========= EACH INFO ========= */
+
 .ProFeed-each-info {
   display: flex;
-  width: 150px;
+  width: 140px;
   justify-content: space-around;
   align-items: center;
   padding-left: 2px;
-}
-
-.ProFeed-each-game {
-  display: flex;
-  flex-grow: 3;
-  width: 70px;
-  justify-content: space-between;
-  align-items: center;
-  padding-left: 2px
-}
-
-.ProFeed-each-items {
-  display: flex;
-  width: 60px;
-  height: 80%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.ProFeed-each-arrow {
-  width: 15px;
-  height: 100%;
-  color: rgba(195, 195, 195, 0.6);
-  font-size: 35px;
-  padding-right: 2px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .ProFeed-each-info-picture {
@@ -87,10 +64,12 @@
   flex-wrap: nowrap;
   flex-direction: column;
   justify-content: center;
+  text-align: left;
 }
 
 .ProFeed-each-info-personal div {
   font-family: "Roboto Condensed", sans-serif;
+  color: rgba(57, 57, 57, 1);
   font-weight: 100;
   font-size: 0.8rem;
   font-weight: bold;
@@ -107,23 +86,27 @@
 }
 
 .ProFeed-each-info-region {
-  margin-left: 2px;
+  text-transform: uppercase;
+  font-size: 10px;
+	color: rgba(161, 161, 161, 1);
 }
 
-.ProFeed-each-info-region span {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 11px;
-	color: white;
-	background: rgba(195, 195, 195, 1);
-	padding: 4px 7px;
-  border-radius: 2px;
+/** ========= EACH GAME ========= */
+
+.ProFeed-each-game {
+  display: flex;
+  flex-grow: 3;
+  width: 70px;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2px
 }
 
 .ProFeed-each-game-hero {
   width: 25px;
   height: 25px;
-  background-size: 100%;
+  background-size: 130%;
+  background-position: center;
   border-radius: 50%;
 }
 
@@ -131,7 +114,6 @@
   width: 40px;
   font-size: 12px;
   white-space: nowrap;
-  font-weight: bold;
 }
 
 .ProFeed-each-game-role {
@@ -140,6 +122,17 @@
   background-size: 100%;
   background: red;
   border-radius: 50%;
+}
+
+/** ========= EACH ITEMS ========= */
+
+.ProFeed-each-items {
+  display: flex;
+  width: 60px;
+  height: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .ProFeed-each-items-each {
@@ -152,9 +145,26 @@
   
 }
 
+/** ========= EACH ARROW ========= */
+
+.ProFeed-each-arrow {
+  width: 15px;
+  height: 100%;
+  color: rgba(195, 195, 195, 0.6);
+  font-size: 35px;
+  padding-right: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/** ===== ACTIONS BUTTONS ====== */
+
 .ProFeed-buttons {
+  margin-top: auto;
   display: flex;
   justify-content: space-around;
+  background: rgba(195, 195, 195, 0.3);
 }
 .view_more {
   width: 60px;
@@ -168,6 +178,10 @@
   cursor: pointer;
 }
 
+.view_more::selection{
+  background-color:transparent !important;
+}
+
 .view_more:hover {
   background: #535353;
 }
@@ -175,4 +189,13 @@
 .view_more#disabled{
   opacity: 0.4;
   cursor: not-allowed;
+}
+
+.anim-appear {
+  opacity: 0.01;
+}
+ 
+.anim-appear.anim-appear-active{
+  opacity: 2;
+  transition: opacity 5s ease-in;
 }

@@ -59,14 +59,14 @@
 .Lead5-each-info-stats {
   display: flex;
   font-size: 10px;
-  color: rgba(214, 214, 214, 1);
+  color: #A3A3A3;
   text-transform: uppercase;
   font-weight: 500;
 }
 
 .Lead5-each-vpr-number {
   font-size: 24px;
-  color: rgba(134, 200, 91, 1);
+  /* color: rgba(134, 200, 91, 1); */
 }
 
 .Lead5-each-vpr-name {
@@ -95,7 +95,7 @@
 
 .Lead5-each#featured .Lead5-each-info-skilltier {
   display: flex;
-  color: rgba(214, 214, 214, 1);
+  color: #A3A3A3;
   font-size: 11px;
   text-transform: uppercase;
   font-weight: 500; 

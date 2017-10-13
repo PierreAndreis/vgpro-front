@@ -8,6 +8,8 @@ import { connect }          from "react-redux";
 
 import { changeLanguage, toggleLanguage } from "./../../../actions/i18n";
 
+import "./LanguageSelector.css";
+
 const LANGS = [
   {  language: "en",    flag: "us"  },
   {  language: "jp",    flag: "jp"  },
@@ -31,7 +33,7 @@ const LANGS = [
 const MenuLanguage = ({onChange, open}) => (
   <div className="language_select">
   {
-    LANGS.map((l) => (
+    LANGS.map(l => (
         <div className="lang_sel" key={l.language} onClick={(e) => onChange(l.language, e)}>
           <span className={`flag-icon flag-icon-${l.flag}`} />{l.language.toUpperCase()}
         </div>
@@ -54,7 +56,7 @@ const LanguageSelector = ({language, changeLanguage, toggleLanguage, openMenu}) 
   let menu = null;
 
   if (openMenu) {
-    menu = <MenuLanguage onChange={changeLanguage} />;
+    menu = <MenuLanguage onChange={changeLanguage} current={current} />;
   }
 
   return (

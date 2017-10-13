@@ -2,6 +2,8 @@ import React from "react";
 
 import {translate} from "react-i18next";
 
+import Utils from "utils";
+import { Link }   from 'react-router-dom';
 
 const FeedMatch = ({t, data, style}) => {
 
@@ -15,7 +17,8 @@ const FeedMatch = ({t, data, style}) => {
     deaths,
     assists,
     Items,
-    Team
+    Team,
+    role
   } = data;
 
   // Uhh... Why is this a string?
@@ -41,30 +44,29 @@ const FeedMatch = ({t, data, style}) => {
   }
 
   return (
-    <a href="" className="ProFeed-each" style={style}>
+  <Link to={Utils.goToPlayer(region, ign)} className="ProFeed-each" style={style}>
     <div className="ProFeed-each-status" id={win}/>
     <div className="ProFeed-each-info">
       <div className="ProFeed-each-info-picture" style={{
-         backgroundImage: `url(http://vgpro.gg/assets/${ProfilePic})`
+        backgroundImage: `url(http://vgpro.gg/assets/${ProfilePic})`
       }} />
       <div className="ProFeed-each-info-personal">
-        <div>{ign}</div>
+        <div>{ign} {" "}<span>{region}</span></div>
         <span>{Team.name}</span>
       </div>
-    <div className="ProFeed-each-info-region">{region}</div>
     </div>
     <div className="ProFeed-each-game">
       <div className="ProFeed-each-game-hero" style={{
       backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${actor}.gif)`
-    }} />
+    }} ><div className="ProFeed-each-game-role" id={role} /></div>
       <div className="ProFeed-each-game-kda">{kills}/{deaths}/{assists}</div>
-      <div className="ProFeed-each-game-role" id="carry" />
+      
     </div>
     <div className="ProFeed-each-items">
       {items}
     </div>
     <div className="ProFeed-each-arrow"> <i className="fa fa-angle-right" /> </div>
-  </a>
+  </Link>
   )
 
 }

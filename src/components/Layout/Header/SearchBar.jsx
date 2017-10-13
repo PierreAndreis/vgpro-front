@@ -5,6 +5,8 @@ import { connect }          from "react-redux";
 
 import { fetchRegions, changeRegion, toggleRegion } from "./../../../actions/regions";
 
+import "./SearchBar.css"
+
 const RegionSelector = ({regions, visible, onClick}) => {
 
   if (!visible) return null;

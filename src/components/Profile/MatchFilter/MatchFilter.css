@@ -1,0 +1,168 @@
+.Profile__MatchFilter {
+	margin: 10px;
+	width: 100%;
+	height: auto;
+	padding: 5px 10px 5px 5px;
+	box-sizing: border-box;
+	background: #F2F2F2;
+	position: relative;
+	text-align: left;
+	border: 1px solid rgba(0,0,0,0.2);
+	font-size: 0;
+}
+.Profile__MatchFilter > div {
+	display: inline-block;
+	vertical-align: top;
+}
+.Profile__MatchFilter div {
+	display: inline-block;
+}
+.Profile__MatchFilter .stats_filter {
+	width: 33.3%;
+	text-align: center;
+}
+.Profile__MatchFilter .not-filter {
+	width: 33.3%;
+	text-align: center;
+}
+.Profile__MatchFilter .filter {
+	width: 33.3%;
+}
+.Profile__MatchFilter .redside {
+	width: 90px;
+	height: 90px;
+	margin: 5px 35px 0 35px;
+}
+.Profile__MatchFilter .blueside {
+	width: 90px;
+	height: 90px;
+	/* //margin: 5px 35px 0 35px; */
+}
+.Profile__MatchFilter .filter .box_filter {
+	background: #F2F2F2;
+	margin: 10px 0;
+	width: 100%;
+	border: 1px solid #B3B6B9;
+	border-radius: 5px;
+	height: auto;
+}
+.Profile__MatchFilter .filter .box_filter .head {
+	background: #D1DAE9;
+	height: 35px;
+	width: 100%;
+	text-align: left;
+	padding: 6px 7px;
+	font-weight: 300;
+	font-size: 18px;
+	box-sizing: border-box;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent {
+	width: 90%;
+	text-align: left;
+	height: auto;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent > div {
+	width: 50%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 5px;
+	position: relative;
+	box-sizing: border-box;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent .label {
+	font-size: 13px;
+	color: grey;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent .teammate i {
+	position: absolute;
+	left: 5px;
+	box-sizing: border-box;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	background-color: #D6D6D6;
+	border-radius: 2px 0 0 2px;
+	border: 1px solid rgba(0,0,0,0.3);
+	top: 24px;
+	padding-top: 4px;
+	color: grey;
+	font-size: 13px;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent .teammate input {
+	display: inline-block;
+	background: #FFFFFF;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	outline: 0;
+	width: 95%;
+	padding-left: 26px;
+	margin-top: 5px;
+	height: 25px;
+	font-size: 12px;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent .hero .dropdown {
+	/* background-image: url('./../../styles/images/dropdown.png'); */
+	background-repeat: no-repeat;
+	background-position: center;
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	background-color: #D6D6D6;
+	border: 1px solid rgba(0,0,0,0.3);
+	box-sizing: border-box;
+	position: absolute;
+	border-radius: 2px 0 0 2px;
+	left: 5px;
+	top: 24px;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent .hero select {
+	background: #FFFFFF;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	outline: 0;
+	width: 95%;
+	padding-left: 5px;
+	margin-top: 5px;
+	height: 25px;
+	font-size: 12px;
+}
+.Profile__MatchFilter .filter .box_filter .boxcontent .hero select option {
+	/* background: url('./../../styles/images/dropdown.png'); */
+}
+
+.Profile__MatchFilter canvas {
+	position: relative;
+	z-index: 999;
+}
+.Profile__MatchFilter h2 {
+	position: absolute;
+	margin: 37px 21px;
+	width: 50px;
+	text-align: center;
+	font-size: 15px;
+}
+.Profile__MatchFilter h3 {
+	font-size: 16px;
+	margin: 5px -55px;
+	text-align: center;
+	width: 200px;
+	font-weight: 300;
+}
+
+
+.stats_each {
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 5px;
+	text-align: center;
+}
+.Profile__MatchFilter h4 {
+	display: inline-block;
+	font-size: 18px;
+	width: 100%;
+	margin: 15px 0;
+	text-align: center;
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+}

@@ -1,10 +1,12 @@
 import React         from 'react';
 import { translate } from 'react-i18next';
-import { Link }      from 'react-router-dom';
+import { NavLink, Link }   from 'react-router-dom'
 
 import Alert            from './Header/Alert';
 import LanguageSelector from './Header/LanguageSelector';
 import SearchBar        from './Header/SearchBar';
+
+import "./Header.css"
 
 const Header = ({ t }) => {
   
@@ -22,25 +24,22 @@ const Header = ({ t }) => {
 
   return (
     <div>
-
-      <LanguageSelector />
+      <Alert message={message} />
 
       <div className="menu">
+        <LanguageSelector />
         <div className="wrap">
-          <Link to="/">{t('menuhome')}</Link>
-          <Link to="/teams">{t('menuteams')}</Link>
-          <Link to="/leaderboard"> {t('leadboard')}</Link>
-          <Link to="/"> {t('menuheroes')} <i>{t('soon')}</i></Link>
-          <Link to="/"> {t('menuvg8')} <i>{t('soon')}</i></Link>
-          <Link to="/"> {t('menunews')} <i>{t('soon')}</i></Link>
+          <NavLink to="/"   exact    activeClassName="active"> {t('menuhome')  }                     </NavLink>
+          <NavLink to="/leaderboard" activeClassName="active"> {t('leadboard') }                     </NavLink>
+          <NavLink to="/teams"       activeClassName="active"> {t('menuteams') }                     </NavLink>
+          <NavLink to="/"            activeClassName="none"  > {t('menuheroes')} <i>{t('soon')}</i>  </NavLink>
+          <NavLink to="/"            activeClassName="none"  > {t('menuvg8')   } <i>{t('soon')}</i>  </NavLink>
+          <NavLink to="/"            activeClassName="none"  > {t('menunews')  } <i>{t('soon')}</i>  </NavLink>
         </div>
       </div>
 
       <header>
         <div className="wrap">
-          <div className="menu-mobile">
-            <i className="fa fa-bars" />
-          </div>
           <Link to="/">
             <div className="logo">
               <div className="img" />
@@ -48,8 +47,6 @@ const Header = ({ t }) => {
           </Link>
         </div>
       </header>
-
-      <Alert message={message} />
 
       <SearchBar  placeholder={t('search-placeholder')} 
                   regions={regions}

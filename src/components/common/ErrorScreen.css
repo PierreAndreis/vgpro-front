@@ -1,0 +1,23 @@
+.ErrorScreen {
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ErrorScreen-Bad {
+  width: 50px;
+  height: 96px;
+  background: url("/images/error.png") no-repeat;
+  background-size: 100%;
+  filter: grayscale(100%);
+  margin: 0 auto;
+  opacity: 0.6;
+}
+
+.ErrorScreen-Message {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 13px;
+  opacity: 0.4;
+}

@@ -1,11 +1,14 @@
 import React from "react";
 
 import FeedMatch from "./FeedMatch";
+import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
+import Loading                              from "./../../common/Loading";
+import ErrorScreen                          from "./../../common/ErrorScreen";
+import {fetchProFeed}                       from "./../../../actions/api";
 
-import {fetchProFeed} from "./../../../actions/feed";
 import "./ProFeed.css";
 
-const PRO_FEED_ITEM_PER_PAGE = 5;
+const PRO_FEED_ITEM_PER_PAGE = 6;
 
 class ProFeed extends React.Component {
 
@@ -13,7 +16,7 @@ class ProFeed extends React.Component {
     super();
 
     this.state = {
-      status: "none",
+      status: "loading",
       page: 1,
       payload: null
     }
@@ -54,7 +57,10 @@ class ProFeed extends React.Component {
       })
     }
     catch(e) {
-      console.warn(e);
+      this.setState({
+        status: "error",
+        payload: e
+      })
     }
     
   }
@@ -69,10 +75,11 @@ class ProFeed extends React.Component {
 
     const {status, payload, page} = this.state;
 
-    let matches = [];
     let lastPage;
+    let content = [];
 
-    if (status === "loading") return <p>Loading</p>;
+    /**/ if (status === "loading") content = <Loading items={PRO_FEED_ITEM_PER_PAGE}/>
+    else if (status === "error"  ) content = <ErrorScreen err={payload} />
     else if (status === "loaded") {
 
       const itemPerPage = PRO_FEED_ITEM_PER_PAGE;
@@ -82,23 +89,30 @@ class ProFeed extends React.Component {
       const startIndex = endIndex - itemPerPage;
       payload.forEach((match, i) => {
 
-        if ((i >= startIndex) && (i <= endIndex)) {
-          matches.push(<FeedMatch key={i} t={t} data={match} />);
+        if ((i >= startIndex) && (i < endIndex)) {
+          content.push(<FeedMatch key={i} t={t} data={match} />);
         }
         
       })
     }
 
     return (
-      <div className="ProFeed">
-        {matches}
-      <div className="ProFeed-buttons">
+
+      <Box>
+      <BoxTitle>{t('pro-history')}</BoxTitle>
+      <BoxBody>
+        <div className="ProFeed">
+          {content}
+        </div>
+      </BoxBody>
+      <BoxActions>
         <div className="view_more" id={(page > 1       ) ? "" : "disabled"}  onClick={this.paginateDown.bind(this)}> {t("view-less")} </div>
         <div className="view_more" id={(page < lastPage) ? "" : "disabled"}  onClick={this.paginateUp.bind(this)  } >{t("view-more")}</div>
-      </div>
-      </div>
+      </BoxActions>
+    </Box>
     )
   }
 }
+
 
 export default ProFeed;

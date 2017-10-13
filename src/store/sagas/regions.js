@@ -1,6 +1,6 @@
 import {call, put } from 'redux-saga/effects'
 
-import API from "./../../api";
+import API from "./../../utils/api";
 
 export function* fetchRegions(action) {
   try {

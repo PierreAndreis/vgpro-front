@@ -9,11 +9,11 @@
 import axios from "axios";
 const http = require('http');
 const https = require('https');
+
 //HARDCODED. CHANGE TO PROCESS FILE
 const hostname = "https://lyra.vgpro.gg";
 
 const request = axios.create();
-
 
 request.defaults.baseURL      = hostname;
 request.defaults.timeout      = 10000;
@@ -24,6 +24,7 @@ request.defaults.httpsAgent   = new https.Agent({ keepAlive: true });
 
 const errorRequest = (e) => {
   console.warn(e);
+  throw new Error(e);
 }
 
 const handleRequest = ({data, status}) => {
@@ -58,6 +59,14 @@ API.getServers = () => {
 API.getProFeed = () => {
   // Lol, we need to remove this / at the end
   return sendRequest("/promatches/");
+}
+
+API.getLead5 = () => {
+  return sendRequest("/topfive");
+}
+
+API.getTopHeroes = () => {
+  return sendRequest("/topheroes");
 }
 
 export default API;

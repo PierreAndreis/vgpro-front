@@ -1,0 +1,60 @@
+
+.Profile__Header-Stats {
+  z-index: 2;
+  background: red;
+  flex-grow: 1;
+  max-width: 600px;
+  margin-left: auto;
+}
+
+.Profile__Header-Stats div {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin-top: 15px;
+  margin-left: 25px;
+  width: 150px;
+  height: 200px;
+  color: white;
+  font-weight: 400;
+  font-size: 25px;
+  text-align: center;
+}
+
+.Profile__Header-Stats div canvas {
+  position: relative;
+  z-index: 3;
+}
+
+.Profile__Header-Stats h3 {
+  position: absolute;
+  z-index: 2;
+  bottom: 80px;
+  text-align: center;
+  width: 150px;
+}
+
+.Profile__Header-Stats h2 {
+  position: absolute;
+  z-index: 4;
+  bottom: 0;
+  width: 150px;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  color: white;
+}
+
+.Profile__Header-Stats .kda #good {
+  color: rgb(13, 159, 120) !important;
+}
+
+.Profile__Header-Stats #mortes {
+  color: #EE5A52 !important;
+}
+
+.Profile__Header-Stats h4 {
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: -35px;
+}

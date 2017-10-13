@@ -77,7 +77,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.ProFeed-each-info-personal span {
+.ProFeed-each-info-personal>span {
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 100;
   margin-top: 1px;
@@ -85,9 +85,10 @@
   color: #2E2E2E
 }
 
-.ProFeed-each-info-region {
+.ProFeed-each-info-personal div>span {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: 100;
 	color: rgba(161, 161, 161, 1);
 }
 
@@ -95,11 +96,10 @@
 
 .ProFeed-each-game {
   display: flex;
-  flex-grow: 3;
-  width: 70px;
+  width: 80px;
   justify-content: space-between;
   align-items: center;
-  padding-left: 2px
+  padding-left: 2px;
 }
 
 .ProFeed-each-game-hero {
@@ -108,10 +108,11 @@
   background-size: 130%;
   background-position: center;
   border-radius: 50%;
+  position: relative;
 }
 
 .ProFeed-each-game-kda {
-  width: 40px;
+  width: 60px;
   font-size: 12px;
   white-space: nowrap;
 }
@@ -119,25 +120,45 @@
 .ProFeed-each-game-role {
   width: 12px;
   height: 12px;
-  background-size: 100%;
-  background: red;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
   border-radius: 50%;
+
+  position: absolute;
+  top: -5px;
+  left: -5px;
+}
+
+.ProFeed-each-game-role#Captain {
+  background-color: rgb(191, 150, 1);
+  background-image: url("/roles/captain.png");
+}
+
+.ProFeed-each-game-role#Carry {
+  background-color: rgb(160, 46, 45);
+  background-image: url("/roles/carry.png");
+}
+
+.ProFeed-each-game-role#Jungler {
+  background-color: rgb(106, 183, 11);
+  background-image: url("/roles/jungler.png");
 }
 
 /** ========= EACH ITEMS ========= */
 
 .ProFeed-each-items {
   display: flex;
-  width: 60px;
-  height: 80%;
+  width: 80px;
+  height: 85%;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
 .ProFeed-each-items-each {
-  width: 15px;
-  height: 15px;
+  width: 19px;
+  height: 19px;
   background: rgba(195, 195, 195, 1);
   border-radius: 50%;
   margin: 0 1px;
@@ -156,39 +177,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-/** ===== ACTIONS BUTTONS ====== */
-
-.ProFeed-buttons {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-around;
-  background: rgba(195, 195, 195, 0.3);
-}
-.view_more {
-  width: 60px;
-  font-size: 11px;
-  height: 15px;
-  padding: 10px 5px;
-  line-height: 15px;
-  background: rgba(68, 68, 68, 1);
-  color: white;
-  margin: 5px 0;
-  cursor: pointer;
-}
-
-.view_more::selection{
-  background-color:transparent !important;
-}
-
-.view_more:hover {
-  background: #535353;
-}
-
-.view_more#disabled{
-  opacity: 0.4;
-  cursor: not-allowed;
 }
 
 .anim-appear {

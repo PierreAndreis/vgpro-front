@@ -1,0 +1,32 @@
+.Profile__PlayerImg {
+  display: flex;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.Profile__PlayerImg div{
+  display: flex;
+  position: relative;
+  width: 217px;
+  height: 268px;
+  z-index: 2;
+  /* margin: 40px 15px 40px 50px; */
+}
+
+.Profile__PlayerImg div .pro {
+  width: 200px;
+  height: 250px;
+  margin: 10px auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  border: 10px solid white;
+}
+
+.Profile__PlayerImg div .tier {
+  width: 270px;
+  height: 270px;
+  background-size: 150%;
+  background-position: center 10px;
+  background-repeat: no-repeat;
+}

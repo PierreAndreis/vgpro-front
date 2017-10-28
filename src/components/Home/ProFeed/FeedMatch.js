@@ -44,7 +44,7 @@ const FeedMatch = ({t, data, style}) => {
   }
 
   return (
-  <Link to={Utils.goToPlayer(region, ign)} className="ProFeed-each" style={style}>
+  <Link to={Utils.goToPlayer(ign)} className="ProFeed-each" style={style}>
     <div className="ProFeed-each-status" id={win}/>
     <div className="ProFeed-each-info">
       <div className="ProFeed-each-info-picture" style={{

@@ -8,9 +8,9 @@ const PlayerImg = () => {
 
     <div className="Profile__PlayerImg-Tier">
 
-      <div className="tier" style={{backgroundImage: "url(http://vgpro.gg/assets/images/skilltier/20.png)"}} />
+      {/* <div className="tier" style={{backgroundImage: "url(http://vgpro.gg/assets/images/skilltier/31.png)"}} /> */}
       
-      {/* <div className="pro"  style={{backgroundImage: "url(http://vgpro.gg/assets/players_pics/DNZio.png)"}} /> */}
+      <div className="pro"  style={{backgroundImage: "url(http://vgpro.gg/assets/players_pics/DNZio.png)"}} />
 
     </div>
 

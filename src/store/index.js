@@ -38,7 +38,7 @@ sagaMiddleware.run(Sagas)
 // However it can also be handy to persist the current state in the localStorage.
 
 store.subscribe(() => {
-  console.log(store.getState());
+  // console.log(store.getState());
 })
 
 export default store;

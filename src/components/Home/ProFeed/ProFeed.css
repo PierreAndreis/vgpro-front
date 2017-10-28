@@ -52,7 +52,7 @@
 .ProFeed-each-info-picture {
   width: 30px;
   height: 30px;
-  background: green;
+  background: rgb(80, 80, 80);
   background-size: 180%;
   background-position: center 4%;
 

@@ -1,15 +1,17 @@
 import React         from 'react';
 import { translate } from 'react-i18next';
-import { NavLink, Link }   from 'react-router-dom'
 
 import Alert            from './Header/Alert';
 import LanguageSelector from './Header/LanguageSelector';
 import SearchBar        from './Header/SearchBar';
+import MenuHeader       from "./Header/Menu";
+
+import { withRouter } from 'react-router';
 
 import "./Header.css"
 
-const Header = ({ t }) => {
-  
+const Header = ({t, location}) => {
+
   const message  = (
     <span>
       {t('alert')}
@@ -20,39 +22,38 @@ const Header = ({ t }) => {
     </span>
   );
 
-  const regions = [];
-
   return (
     <div>
       <Alert message={message} />
 
-      <div className="menu">
-        <LanguageSelector />
-        <div className="wrap">
-          <NavLink to="/"   exact    activeClassName="active"> {t('menuhome')  }                     </NavLink>
-          <NavLink to="/leaderboard" activeClassName="active"> {t('leadboard') }                     </NavLink>
-          <NavLink to="/teams"       activeClassName="active"> {t('menuteams') }                     </NavLink>
-          <NavLink to="/"            activeClassName="none"  > {t('menuheroes')} <i>{t('soon')}</i>  </NavLink>
-          <NavLink to="/"            activeClassName="none"  > {t('menuvg8')   } <i>{t('soon')}</i>  </NavLink>
-          <NavLink to="/"            activeClassName="none"  > {t('menunews')  } <i>{t('soon')}</i>  </NavLink>
-        </div>
+      <div className="Header">
+        <div className="wrap Header-wrap">
+          <div className="Header-Logo" />
+          <MenuHeader t={t} />
+          <form action="" onSubmit={(e) => e.preventDefault()} className="Header-Search">
+            <input type="text" className="Header-Search_input" placeholder={t('search-placeholder')} />
+            <button type="submit"><div className="fa fa-search" /></button>
+          </form>
+          <LanguageSelector />
+          </div>
       </div>
-
-      <header>
+      {   location.pathname === "/" 
+       || location.pathname === "/home" ? 
+      <header className="header-home">
         <div className="wrap">
-          <Link to="/">
-            <div className="logo">
-              <div className="img" />
-            </div>
-          </Link>
+          <div className="logo">
+            <div className="img" />
+          </div>
         </div>
+        <SearchBar  placeholder={t('search-placeholder')} 
+        />
       </header>
-
-      <SearchBar  placeholder={t('search-placeholder')} 
-                  regions={regions}
-      />
-    </div>
+      :
+      null
+      }
+      </div>
+      
   );
 };
 
-export default translate()(Header);
+export default translate()(withRouter(Header));

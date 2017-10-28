@@ -1,83 +1,15 @@
 
 .Profile__SubHeader {
 	position: relative;
-	background: #F2BF00;
 	/* background: rgba(0, 0, 0, .75); */
 	width: 100%;
 	height: 85px;
-	border-top: 2px solid white;
-	border-bottom: 2px solid white;
-}
-.Profile__SubHeader-Wrap {
-  display: flex;
-  height: 80px;
-  padding: 0 250px;
-  flex-direction: space-between;
-}
-.Profile__SubHeader-Wrap .aka {
-  display: flex;
-  max-width: 100%;
-  flex-direction: column;
-}
-.Profile__SubHeader-Wrap .aka h2 {
-	font-size: 13px;
-	font-weight: 500;
-  text-transform: uppercase;
-  font-weight: normal;
-  margin: 5px 0 0 0;
-}
-.Profile__SubHeader-Wrap .aka .aka_names {
-  font-size: 14px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+	
 }
 
-.Profile__SubHeader-Wrap .aka .aka_names a{
-	background: #26262B;
-	color: white;
-	padding: 5px;
-	margin: 5px 5px 0 0;
-	border-radius: 2px;
+.Profile__SubHeader-Team {
+	width: 200px;
+	height: 200px;
+	background: grey;
 }
 
-/* 
-.Profile__SubHeader-Wrap .gamemodes {
-	margin-left: auto;
-}
-.Profile__SubHeader-Wrap .gamemodes div {
-	display: inline-block;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 11px;
-	vertical-align: top;
-	margin: 20px -4px 0 0;
-	border-left: 1px solid rgba(0,0,0,0.5);
-	background-color: #26262B;
-	color: white;
-	line-height: 22px;
-	height: 20px;
-	padding: 12px;
-	text-transform: uppercase;
-	cursor: pointer;
-	font-weight: 300;
-	-webkit-transition: all 300ms;
-	        transition: all 300ms;
-}
-
-.Profile__SubHeader-Wrap .gamemodes div span {
-	color: grey;
-}
-.Profile__SubHeader-Wrap .gamemodes .gamemode.select {
-	background: black;
-	font-weight: 500;
-}
-.Profile__SubHeader-Wrap .gamemodes div:hover {
-	background: #19191E;
-}
-.Profile__SubHeader-Wrap .gamemodes div:first-of-type {
-	border-left: 0;
-	border-radius: 4px 0 0 4px;
-}
-.Profile__SubHeader-Wrap .gamemodes div:last-child {
-	border-radius: 0 4px 4px 0;
-} */

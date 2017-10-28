@@ -5,7 +5,6 @@ import "./teams.resp.css";
 
 class Team extends React.Component {
   render() {
-    console.log(this.props.t);
     return (
       <div>
         <div className="teams_up">

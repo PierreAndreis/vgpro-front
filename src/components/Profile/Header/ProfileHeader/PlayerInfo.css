@@ -8,7 +8,7 @@
   flex-wrap: nowrap;
 }
 
-.Profile__Title {
+/* .Profile__Title {
   position: absolute;
   margin-top: -25px;
   text-align: center;
@@ -24,23 +24,25 @@
 
 .Profile__Title>span span {
   margin-left: 5px;
-}
+} */
 
-.Profile__Info {
-  display: flex;
-  width: 100%;
-  flex-wrap: nowrap;
-}
-
-.Profile__Info-Name  {
+.Profile__Header-Name  {
   font-family: 'Roboto Condensed', sans-serif;
   vertical-align: top;
   height: 50px;
-  font-size: 35px;
+  font-size: 45px;
   font-weight: bold;
-  color: white;
+  text-shadow: 0px -1px 0px black;
 }
 
+.Profile__Header-update {
+  color: grey;
+  margin-top: auto;
+  margin-bottom: 15px;
+}
+
+
+/* 
 .Profile__Info-Team {
   font-size: 20px;
   white-space: nowrap;
@@ -53,7 +55,6 @@
 }
 
 .Profile__Info-Team .team_role {
-  color: white;
   text-transform: capitalize;
 }
 
@@ -66,15 +67,14 @@
 .Profile__Info-Team .from .flag-icon {
   width: 15px;
   height: 15px;
-}
-
+} */
+/* 
 .Profile__Desc {
   display: inline-block;
   width: 100%;
   vertical-align: top;
   font-size: 13px;
   font-weight: 400;
-  color: white;
   position: relative;
   z-index: 99;
 }
@@ -86,7 +86,6 @@
 }
 
 .update {
-  color: white;
   font-size: 13px;
   width: 200px;
 }
@@ -129,4 +128,4 @@
   background-color: #EE5A52;
   border-radius: 50%;
   margin: 3px auto;
-}
+} */

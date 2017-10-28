@@ -21,7 +21,7 @@ const LeadMember = ({
   }
 
   return (
-  <Link to={Utils.goToPlayer(region, name)} className="Lead5-each" id={id}>
+  <Link to={Utils.goToPlayer(name)} className="Lead5-each" id={id}>
     <div className="Lead5-each-pos">{position}</div>
     <div className="Lead5-each-info">
       <div className="Lead5-each-info-name">{name}

@@ -50,16 +50,15 @@ class Lead5 extends React.Component {
   
   render() {
     const {t} = this.props;
-    const {payload, region, status} = this.state;
+    const {payload, status} = this.state;
     let content = [];
-    console.log(status, payload);
 
     /**/ if (status === "loading") content = <Loading/>
     else if (status === "error"  ) content = <ErrorScreen err={payload} />
     else if (status === "loaded" ) {
 
-      const {all} = lodash.cloneDeep(payload)
-      console.log(all);
+      const {all} = lodash.cloneDeep(payload);
+      
       lodash.forEach(all, (each, position) => {
         each.position = position;
         content.push(<LeadMember key={`${position} - ${each.name}`} {...each} />);

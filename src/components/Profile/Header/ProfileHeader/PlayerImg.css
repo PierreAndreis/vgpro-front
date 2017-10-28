@@ -2,31 +2,36 @@
   display: flex;
   box-sizing: border-box;
   padding: 15px;
+  /* background: red; */
+  position: relative;
+
+  box-sizing: border-box;
 }
 
 .Profile__PlayerImg div{
   display: flex;
   position: relative;
-  width: 217px;
-  height: 268px;
+  width: 200px;
+  height: 170px;
   z-index: 2;
-  /* margin: 40px 15px 40px 50px; */
+  box-shadow: 0 5px 10px -2px rgba(63, 63, 63, 0.12);
 }
 
 .Profile__PlayerImg div .pro {
   width: 200px;
-  height: 250px;
+  height: 200px;
   margin: 10px auto;
-  background-size: 100%;
+  background-size: 120%;
+  background-position: center top;
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: rgb(151, 151, 151);
   border: 10px solid white;
 }
 
 .Profile__PlayerImg div .tier {
-  width: 270px;
-  height: 270px;
-  background-size: 150%;
+  width: 240px;
+  height: 250px;
+  background-size: 140%;
   background-position: center 10px;
   background-repeat: no-repeat;
 }

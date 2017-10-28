@@ -1,0 +1,49 @@
+.Footer {
+  width: 100%;
+  background: rgb(56, 56, 56);
+  margin: auto;
+  padding: 5px;
+  box-sizing: border-box;
+  color: rgb(136, 136, 136);
+
+  box-shadow: 0 -4px 2px -2px rgba(63, 63, 63, 0.12);
+  font-size: 10px;
+}
+
+.Footer-Wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer-Logo {
+  background: url("/images/logo_smaller.png") no-repeat;
+  width: 100px;
+  height: 35px;
+  background-size: 100%;
+}
+
+.Footer-Partners {
+  width: 300px;
+  margin: 15px 0;
+}
+
+.Footer-Partners_logos {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Footer-Partners .ezl-logo {
+  background: url("/images/ext/ezl.png") no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  width: 70px;
+  height: 30px;
+}
+.Footer-Partners .vyz-logo {
+  background: url("/images/ext/vyz.png") no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

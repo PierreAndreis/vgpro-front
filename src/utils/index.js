@@ -1,6 +1,3 @@
-import createHistory from "history/createBrowserHistory"
-import { Redirect } from 'react-router';
-
 import SkillTiers from "./resources/skilltiers";
 
 
@@ -8,10 +5,11 @@ const Utils = {};
 
 Utils.getSkillTier = (skillNumber) => {
   
-  const skill = (typeof skillNumber !== "Number") ? parseInt(skillNumber) : skillNumber;
-  console.log(skill);
+
+  const skill = (typeof skillNumber !== "number") ? parseInt(skillNumber, 10) : skillNumber;
+
   const result = SkillTiers.filter(st => (skill === st.name));
-  console.log(result);
+
   return (result[0] && result[0].friendlyName) ? result[0].friendlyName : "Unknown";
 
 }
@@ -23,8 +21,8 @@ Utils.transformRegion = (region) => {
   }[region] || region).toUpperCase();
 }
 
-Utils.goToPlayer = (region, name) => {
-  return `players/${region}/${name}`;
+Utils.goToPlayer = (name) => {
+  return `players/${name}`;
 }
 
 export default Utils;

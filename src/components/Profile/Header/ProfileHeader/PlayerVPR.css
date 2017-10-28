@@ -1,0 +1,65 @@
+.Profile__Header-VPR {
+  margin-left: auto;
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  /* margin-right: 30px; */
+
+
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+
+.Profile__VPR-desc {
+  font-size: 15px;
+  text-align: center;
+  display: none;
+}
+
+.Profile__VPR-Stat {
+  text-align: center;
+}
+
+.Profile__VPR-Stat div {
+  font-size: 25px;
+}
+
+.Profile__VPR-Stat span{
+  color: rgb(179, 179, 179)
+}
+
+
+
+.VPR {
+  margin-left: 75px;
+  position: relative;
+}
+
+.VPR div {
+  font-size: 42px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: rgba(255, 173, 0, 1);
+  text-shadow: 0 -1px 0 black;
+}
+
+.VPR:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  background: url("/images/logo_badge.png") no-repeat;
+  background-position: center center;
+  left: -65px;
+  background-size: 100%;
+}
+
+.VPR span {
+  font-size: 15px;
+}

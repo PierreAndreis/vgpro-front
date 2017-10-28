@@ -6,10 +6,10 @@ import {
 
 import { translate } from 'react-i18next';
 
-import HomePage    from './Home';
-import Teams       from './Teams';
-import Profile     from './Profile';
-import Leaderboard from './Leaderboard';
+import HomePage    from './Home/Home';
+import Teams       from './Teams/Teams';
+import Profile     from './Profile/Profile';
+import Leaderboard from './Leaderboard/Leaderboard';
 
 // then our route config
 const routes = [
@@ -18,7 +18,7 @@ const routes = [
     component: Teams
   },
   {
-    path: '/players/:region/:player',
+    path: '/players/:player',
     component: Profile,
   },
   {

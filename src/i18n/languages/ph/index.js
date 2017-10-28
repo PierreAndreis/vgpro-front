@@ -4,7 +4,7 @@ export default {
   "PrivateDraft": "Pribadong Draft",
   "error-search": "Error! export default {pangalanngmanlalaro} sa rehiyon export default {rehiyon} ay hindi mahanap.",
   "PrivateBR": "Pribadong BR",
-  "soon": "Sa lalong madaling panahon",
+  "soon": "Soon", // Sa lalong madaling panahon
   "skills": "Skills",
   "lane-cs": "Lane CS",
   "filter-players": "Mga manlalarong nakalaro:",

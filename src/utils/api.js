@@ -11,7 +11,8 @@ const http = require('http');
 const https = require('https');
 
 //HARDCODED. CHANGE TO PROCESS FILE
-const hostname = "https://lyra.vgpro.gg";
+// const hostname = "https://lyra.vgpro.gg";
+const hostname = "https://api.vgpro.gg";
 
 const request = axios.create();
 
@@ -23,8 +24,9 @@ request.defaults.httpsAgent   = new https.Agent({ keepAlive: true });
 
 
 const errorRequest = (e) => {
-  console.warn(e);
-  throw new Error(e);
+  // console.warn(e);
+  // throw new Error(e);
+  return [];
 }
 
 const handleRequest = ({data, status}) => {
@@ -52,17 +54,12 @@ const sendRequest = async (url, data, method = "get") => {
 
 const API = {};
 
-API.getServers = () => {
-  return sendRequest("/servers");
-}
-
 API.getProFeed = () => {
-  // Lol, we need to remove this / at the end
-  return sendRequest("/promatches/");
+  return sendRequest("/pro/history/");
 }
 
 API.getLead5 = () => {
-  return sendRequest("/topfive");
+  return sendRequest("/leaderboard/?limit=5");
 }
 
 API.getTopHeroes = () => {

@@ -130,19 +130,24 @@
   left: -5px;
 }
 
-.ProFeed-each-game-role#Captain {
+.ProFeed-each-game-role#captain {
   background-color: rgb(191, 150, 1);
   background-image: url("/roles/captain.png");
 }
 
-.ProFeed-each-game-role#Carry {
+.ProFeed-each-game-role#carry {
   background-color: rgb(160, 46, 45);
   background-image: url("/roles/carry.png");
 }
 
-.ProFeed-each-game-role#Jungler {
+.ProFeed-each-game-role#jungler {
   background-color: rgb(106, 183, 11);
   background-image: url("/roles/jungler.png");
+}
+
+.ProFeed-each-game-role#sub {
+  background-color: rgb(49, 49, 49);
+  background-image: url("/roles/sub.png");
 }
 
 /** ========= EACH ITEMS ========= */

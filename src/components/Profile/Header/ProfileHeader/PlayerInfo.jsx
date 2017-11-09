@@ -6,7 +6,7 @@ const PlayerInfo = ({t}) => {
   return (
     <div className="Profile__Header-Info">
 
-      <div className="Profile__Header-Name">DNZio</div>
+      <div className="Profile__Header-Name">StartingAllOver</div>
       <div className="Profile__Header-Region" data-tooltip="Something Something">North America (?)</div>
       
       <div className="Profile__Header-update">

@@ -12,7 +12,7 @@ export const Box = (props) => {
   }
 
   if (props.className) {
-    props.push(classNames);
+    classNames.push(props.className);
   }
 
   return (
@@ -31,7 +31,7 @@ export const BoxTitle = (props) => {
   }
 
   if (props.className) {
-    props.push(classNames);
+    classNames.push(props.className);
   }
 
   return (
@@ -50,7 +50,7 @@ export const BoxBody = (props) => {
   }
 
   if (props.className) {
-    props.push(classNames);
+    classNames.push(props.className);
   }
 
   return (
@@ -69,7 +69,7 @@ export const BoxActions = (props) => {
   }
 
   if (props.className) {
-    props.push(classNames);
+    classNames.push(props.className);
   }
 
   return (
@@ -77,4 +77,11 @@ export const BoxActions = (props) => {
       {props.children}
     </div>
   )
+}
+
+export default {
+  wrap:   Box,
+  title:  BoxTitle,
+  body:   BoxBody,
+  action: BoxActions,
 }

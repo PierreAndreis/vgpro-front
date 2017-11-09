@@ -1,0 +1,12 @@
+.HalfPie-Container {
+  position: relative;
+  overflow: visible;
+}
+
+.HalfPie-Label {
+  position: absolute;
+  bottom: 15%;
+
+  width: 100%;
+  text-align: center;
+}

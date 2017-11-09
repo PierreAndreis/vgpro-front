@@ -18,31 +18,10 @@
 	width: 100%;
 	position: relative;
 }
-.content .sidebar {
-	width: 300px;
+.sidebar {
+	width: 100%;
 	display: inline-block;
 	height: auto;
-	padding-bottom: 50px;
-	padding-left: 5px;
-}
-.content .sidebar .box {
-	width: 300px;
-	background: #19191E;
-	margin: 10px auto;
-	position: relative;
-	box-shadow: 0 0 5px rgba(0,0,0,0.4);
-}
-.content .sidebar .box .box_title {
-	width: 100%;
-	background: #000000;
-	font-family: 'Roboto Condensed', sans-serif;
-	height: 50px;
-	box-sizing: border-box;
-	color: white;
-	font-weight: 300;
-	font-size: 18px;
-	padding: 15px;
-	text-transform: uppercase;
 }
 .content .match_history_content {
 	width: calc(100% - 320px);
@@ -233,7 +212,7 @@
 
 .content .match_history_content .view_more {
 	padding: 10px;
-	color: white;
+	color: black;
 	display: inline-block;
 	vertical-align: top;
 	background: #26262B;
@@ -311,7 +290,7 @@
 }
 .content .match_history_box .match_history_title#v:after {
 	content: 'Win';
-	color: white;
+	color: black;
 }
 .content .match_history_box .match_history_title#ads {
 	background-color: #26262B;
@@ -320,7 +299,7 @@
 }
 .content .match_history_box .match_history_title#ads:after {
 	content: 'ADS';
-	color: white;
+	color: black;
 }
 .content .match_history_box .match_history_title#d {
   background-color: #c95257;
@@ -725,43 +704,43 @@ div#d.match-result {
 	font-size: 15px;
 }
 
-.content .sidebar .body_box {
+.sidebar .body_box {
 	width: 100%;
 }
-.content .sidebar .body_box #charts {
+.sidebar .body_box #charts {
 	width: 150px;
 	margin: 0 auto;
-	color: white;
+	color: black;
 	font-weight: 400;
 	font-size: 15px;
 	text-align: center;
 }
-.content .sidebar .body #charts canvas {
+.sidebar .body #charts canvas {
 	position: relative;
 	z-index: 99;
 }
-.content .sidebar .winrate h3 {
+.sidebar .winrate h3 {
 	position: absolute;
 	text-align: center;
 }
-.content .sidebar .winrate h2 {
+.sidebar .winrate h2 {
 	position: absolute;
 	font-size: 18px;
 	font-weight: 300;
 	text-align: center;
-	color: white;
+	color: black;
 }
 
-.content .sidebar .allroles {
+.sidebar .allroles {
 	text-align: left;
 	padding: 10px;
 }
-.content .sidebar .allroles .eachrole {
+.sidebar .allroles .eachrole {
 	padding: 10px 0;
 	border-bottom: 1px dashed white;
 	position: relative;
 }
-.content .sidebar .allroles .eachrole .role_img {
+.sidebar .allroles .eachrole .role_img {
 	display: inline-block;
 	background-size: 90%;
 	width: 25px;
@@ -770,19 +749,19 @@ div#d.match-result {
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.content .sidebar .allroles .eachrole .role_img#carry {
+.sidebar .allroles .eachrole .role_img#carry {
 	background-image: url('./../../styles/images/roles/carry.png');
 	background-color: #A02E2D;
 }
-.content .sidebar .allroles .eachrole .role_img#jungler {
+.sidebar .allroles .eachrole .role_img#jungler {
 	background-image: url('./../../styles/images/roles/jungler.png');
 	background-color: #6ab70b;
 }
-.content .sidebar .allroles .eachrole .role_img#captain {
+.sidebar .allroles .eachrole .role_img#captain {
 	background-image: url('./../../styles/images/roles/captain.png');
 	background-color: #BF9601;
 }
-.content .sidebar .allroles .eachrole .role_desc {
+.sidebar .allroles .eachrole .role_desc {
 	font-family: 'Roboto Condensed', sans-serif;
 	display: inline-block;
 	vertical-align: top;
@@ -795,18 +774,18 @@ div#d.match-result {
 	color: grey;
 	width: 150px;
 }
-.content .sidebar .allroles .eachrole .role_desc span {
+.sidebar .allroles .eachrole .role_desc span {
 	font-weight: 400;
-	color: white;
+	color: black;
 }
-.content .sidebar .allroles .eachrole .role_desc span.d {
+.sidebar .allroles .eachrole .role_desc span.d {
 	color: rgb(255, 89, 69) !important;
 }
-.content .sidebar .allroles .eachrole .role_kda {
+.sidebar .allroles .eachrole .role_kda {
 	display: block;
 	width: 150px;
 	position: absolute;
-	color: white;
+	color: black;
 	content: 'AVG KDA';
 	font-size: 15px;
 	font-weight: 300;
@@ -814,89 +793,89 @@ div#d.match-result {
 	margin-top: -15px;
 	text-align: center;
 }
-.content .sidebar .allroles .eachrole .role_winrate {
+.sidebar .allroles .eachrole .role_winrate {
 	font-family: 'Roboto Condensed', sans-serif;
 	position: absolute;
 	display: inline-block;
 	vertical-align: top;
 	right: 0;
 	bottom: 30px;
-	color: white;
+	color: black;
 	font-weight: bold;
 	width: 70px;
 	font-size: 21px;
 	text-align: center;
 }
 
-.content .sidebar .allroles .eachrole .role_games {
+.sidebar .allroles .eachrole .role_games {
 	position: absolute;
 	right: 0;
 	bottom: 11px;
-	color: white;
+	color: black;
 	font-size: 12px;
 	width: 70px;
 	text-align: center;
 	font-weight: 300;
 }
-.content .sidebar .rating {
+.sidebar .rating {
 	text-align: center;
 	padding: 10px;
-	color: white;
+	color: black;
 }
-.content .sidebar .rating_number {
+.sidebar .rating_number {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 50px;
 	color: #F2BF00;
 	text-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
-.content .sidebar .rating_caption {
+.sidebar .rating_caption {
 	font-size: 20px;
 	color: gray;
 	padding-bottom: 15px;
 	border-bottom: 1px dashed rgba(128, 128, 128, 0.3);
 }
-.content .sidebar .info {
+.sidebar .info {
 	padding: 10px;
 	text-align: center;
 	color: rgba(255,255,255,0.4);
 	font-size: 12px;
 }
-.content .sidebar .position {
+.sidebar .position {
 	font-family: 'Roboto Condensed', sans-serif;
 	border-bottom: 1px dashed rgba(128, 128, 128, 0.3);
 	padding: 5px;
 	font-size: 14px;
 	text-transform: uppercase;
 }
-.content .sidebar .position span {
+.sidebar .position span {
 	font-weight: bold;
 }
-.content .sidebar .champions {
+.sidebar .champions {
 	text-align: left;
 	padding: 10px;
 }
-.content .sidebar .champions .hero_each {
+.sidebar .champions .hero_each {
 	width: 100%;
-	color: white;
+	color: black;
 	margin-bottom: 5px;
 	padding: 5px 0;
 	box-sizing: border-box;
 	position: relative;
 }
-.content .sidebar .champions .hero_each:hover {
+.sidebar .champions .hero_each:hover {
 	background: rgba(255,255,255,0.1);
 }
-.content .sidebar .champions .hero_each div {
+.sidebar .champions .hero_each div {
 	display: inline-block;
 	vertical-align: top;
 }
-.content .sidebar .champions .hero_each .hero_img {
+.sidebar .champions .hero_each .hero_img {
 	background-size: 100%;
 	width: 40px;
 	height: 40px;
 	margin-left: 5px;
 }
-.content .sidebar .champions .hero_each .hero_name {
+.sidebar .champions .hero_each .hero_name {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 18px;
 	line-height: 25px;
@@ -904,7 +883,7 @@ div#d.match-result {
 	margin-left: 10px;
 	text-align: left;
 }
-.content .sidebar .champions .hero_each .hero_winrate {
+.sidebar .champions .hero_each .hero_winrate {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 21px;
 	position: static;
@@ -913,7 +892,7 @@ div#d.match-result {
 	width: 70px;
 	text-align: center;
 }
-.content .sidebar .champions .hero_each .hero_games {
+.sidebar .champions .hero_each .hero_games {
 	font-size: 12px;
 	font-weight: 300;
 	position: absolute;
@@ -923,7 +902,7 @@ div#d.match-result {
 	float: right;
 	bottom: 4px;
 }
-.content .sidebar .champions .hero_each .hero_kda {
+.sidebar .champions .hero_each .hero_kda {
 	position: absolute;
 	width: 140px;
 	bottom: 4px;
@@ -931,14 +910,14 @@ div#d.match-result {
 	left: 55px;
 	font-weight: 300;
 }
-.content .sidebar .champions .hero_each .hero_kda span.kda {
+.sidebar .champions .hero_each .hero_kda span.kda {
 	float: right;
 	font-weight: 400;
 }
-.content .sidebar .view_morediv {
+.sidebar .view_morediv {
 	text-align: center;
 }
-.content .sidebar .view_more {
+.sidebar .view_more {
 	font-size: 13px;
 	padding: 10px;
 	color: black;
@@ -951,17 +930,17 @@ div#d.match-result {
 	cursor: pointer;
 	text-align: center;
 }
-.content .sidebar .view_more:hover {
+.sidebar .view_more:hover {
 	background: transparent;
-	color: white;
+	color: black;
 }
 
-.content .sidebar .recent_played {
+.sidebar .recent_played {
 	text-align: left;
 	padding: 5px;
-	color: white;
+	color: black;
 }
-.content .sidebar .recent_played .recent_played_each {
+.sidebar .recent_played .recent_played_each {
 	height: 30px;
 	position: relative;
 	padding-bottom: 5px;
@@ -970,14 +949,14 @@ div#d.match-result {
 	-webkit-transition: all 150ms;
 	        transition: all 150ms;
 }
-.content .sidebar .recent_played .recent_played_each:hover {
+.sidebar .recent_played .recent_played_each:hover {
 	background: rgba(255,255,255,0.1);
 }
-.content .sidebar .recent_played .recent_played_each div {
+.sidebar .recent_played .recent_played_each div {
 	display: inline-block;
 	vertical-align: top;
 }
-.content .sidebar .recent_played .recent_played_each .recent_played_name {
+.sidebar .recent_played .recent_played_each .recent_played_name {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 14px;
 	width: 130px;
@@ -988,29 +967,29 @@ div#d.match-result {
 	line-height: 35px;
 	padding-left: 5px;
 }
-.content .sidebar .recent_played .recent_played_each .recent_played_win {
+.sidebar .recent_played .recent_played_each .recent_played_win {
 	font-size: 16px;
 	height: 30px;
 	line-height: 35px;
 	color: green;
 }
-.content .sidebar .recent_played .recent_played_each .recent_played_win:after {
+.sidebar .recent_played .recent_played_each .recent_played_win:after {
 	content: '-';
-	color: white;
+	color: black;
 }
-.content .sidebar .recent_played .recent_played_each .recent_played_loss {
+.sidebar .recent_played .recent_played_each .recent_played_loss {
 	font-size: 16px;
 	line-height: 35px;
 	color: brown;
 }
-.content .sidebar .recent_played .recent_played_each .recent_played_winrate {
+.sidebar .recent_played .recent_played_each .recent_played_winrate {
 	font-size: 16px;
 	float: right;
 	width: 60px;
 	text-align: center;
 	font-weight: bold;
 }
-.content .sidebar .recent_played .recent_played_each .recent_played_games {
+.sidebar .recent_played .recent_played_each .recent_played_games {
 	font-size: 10px;
 	position: absolute;
 	float: right;
@@ -1023,7 +1002,7 @@ div#d.match-result {
 
 .more_team {
 	width: 100%;
-	background-color: white;
+	background-color: black;
 	padding: 10px;
 	box-sizing: border-box;
 }
@@ -1182,7 +1161,7 @@ div#d.match-result {
 .content_builds .skill_order .skill .level {
 	display: table-cell;
 	background: white;
-	color: white;
+	color: black;
   border: 1px solid #f2f2f2;
   border-radius: 100%;
   width: 30px;

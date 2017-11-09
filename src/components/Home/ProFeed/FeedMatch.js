@@ -8,35 +8,57 @@ import { Link }   from 'react-router-dom';
 const FeedMatch = ({t, data, style}) => {
 
   const {
-    ign, 
-    region, 
-    ProfilePic, 
+    proInfo, 
     actor, 
     winner, 
     kills,
     deaths,
     assists,
-    Items,
-    Team,
-    role
+    items,
   } = data;
 
-  // Uhh... Why is this a string?
-  const win = (winner !== "0") ? "Win" : "Loss";
 
-  const items = [];
+  //   "createdAt": "2017-11-04T20:28:56Z",
+  //   "matchId": "c0b9d250-c19e-11e7-8607-0671096b3e30",
+  //   "proInfo": {
+  //     "name": "iLoveJoseph",
+  //     "position": "jungler",
+  //     "region": "na",
+  //     "team": "Cloud9"
+  //   },
+  //   "actor": "Reza",
+  //   "tier": 28,
+  //   "winner": true,
+  //   "kills": 6,
+  //   "deaths": 5,
+  //   "assists": 5,
+  //   "items": Array[6][
+  //     "Broken Myth",
+  //     "Aftershock",
+  //     "Metal Jacket",
+  //     "Heavy Prism",
+  //     "Reflex Block",
+  //     "Travel Boots"
+  //   ]
+  // },
+
+  const {name, position, region, team} = proInfo;
+
+  const win = (winner) ? "Win" : "Loss";
+
+  const itemsImage = [];
 
   for (let i = 0; i < 6; i++) {
     
     let style;
-
-    if (Items && Items[i]) {
+    if (items[i]) {
+      const name = items[i].replace(/([ ])+/g, "-").toLowerCase();
       style = {
-        backgroundImage: `url(http://vgpro.gg/assets/images/items/${Items[i]}.png)`
+        backgroundImage: `url(http://vgpro.gg/assets/images/items/${name}.png)`
       }
     }
 
-    items.push(
+    itemsImage.push(
       <div
         key={i}
         className="ProFeed-each-items-each"
@@ -44,26 +66,26 @@ const FeedMatch = ({t, data, style}) => {
   }
 
   return (
-  <Link to={Utils.goToPlayer(ign)} className="ProFeed-each" style={style}>
+  <Link to={Utils.goToPlayer(name)} className="ProFeed-each" style={style}>
     <div className="ProFeed-each-status" id={win}/>
     <div className="ProFeed-each-info">
       <div className="ProFeed-each-info-picture" style={{
-        backgroundImage: `url(http://vgpro.gg/assets/${ProfilePic})`
+        backgroundImage: `url(/players/${name}.png)`
       }} />
       <div className="ProFeed-each-info-personal">
-        <div>{ign} {" "}<span>{region}</span></div>
-        <span>{Team.name}</span>
+        <div>{name} {" "}<span>{region}</span></div>
+        <span>{team}</span>
       </div>
     </div>
     <div className="ProFeed-each-game">
       <div className="ProFeed-each-game-hero" style={{
-      backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${actor}.gif)`
-    }} ><div className="ProFeed-each-game-role" id={role} /></div>
+      backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${actor.toLowerCase()}.gif)`
+    }} ><div className="ProFeed-each-game-role" id={position} /></div>
       <div className="ProFeed-each-game-kda">{kills}/{deaths}/{assists}</div>
       
     </div>
     <div className="ProFeed-each-items">
-      {items}
+      {itemsImage}
     </div>
     <div className="ProFeed-each-arrow"> <i className="fa fa-angle-right" /> </div>
   </Link>

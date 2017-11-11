@@ -1,11 +1,11 @@
 
-.Profile__SubHeader {
+.ProfileMatchStats {
   position: relative;
   width: 100%;
   
 }
 
-.Profile__SubHeader-Box{
+.ProfileMatchStats-Box{
   display: flex;
   width: 100%;
   justify-content: space-around;
@@ -13,15 +13,15 @@
 }
 
 
-/* .Profile__SubHeader-Wrap  */
+/* .ProfileMatchStats-Wrap  */
 
-.Profile__SubHeader-Team {
+.ProfileMatchStats-Team {
   width: 350px;
   height: 200px;
   background: rgb(255, 255, 255);
 }
 
-.Profile__SubHeader-Stats {
+.ProfileMatchStats-Stats {
   width: 600px;
   height: 200px;
   background: rgb(255, 255, 255);
@@ -83,4 +83,91 @@
 .ProfileStats {
   display: flex;
   height: 100%;
+  justify-content: space-around;
+}
+.ProfileStats__Category {
+  display: flex;
+  position: relative;
+}
+.ProfileStats__Category h4 {
+  position: absolute;
+  color: grey;
+  width: 100%;
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.ProfileStats__Stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.ProfileStats__Stats-Chart {
+}
+
+.ProfileStats__Stats-Label {
+  text-align: center;
+  font-size: 15px;
+  position: absolute;
+  width: 100%;
+  color: grey;
+  font-weight: 500;
+  bottom: 30px;
+}
+.ProfileStats__Stats-Label.chart {
+  margin-top: -20px;
+}
+
+.ProfileStats__Stats-Value {
+  font-size: 32px;
+  text-align: center;
+  color: #FF6262
+}
+.ProfileStats__Stats-Desc {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.ProfileStats__Stats-Bar {
+  width: 100%;
+  height: 5px;
+  border-radius: 10px;
+  border: 1px solid rgb(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.ProfileStats__Stats-Bar .fill {
+  height: 100%;
+  flex-grow: 1;
+}
+
+.ProfileStats__KDA {
+
+  width: 30px;
+  text-align: center;
+  padding-top: 20px;
+  margin: 15px 10px;
+  background-image: url("/icons/death.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 13px;
+}
+
+.ProfileStats__KDA.Kill {
+  background-image: url("/icons/kill.svg");
+}
+.ProfileStats__KDA.Death {
+  background-image: url("/icons/Death.svg");
+  background-position: center -3px;
+  background-size: 15px;
+  color: rgb(199, 0, 0);
+}
+.ProfileStats__KDA.Assist {
+  background-image: url("/icons/assist.svg");
 }

@@ -51,7 +51,7 @@ const RouteWithSubRoutes = (route) => (
   )}/>
 )
 
-const RouteConfigExample = () => (
+const Routers = () => (
   <div>
     <Switch>
       {routes.map((route, i) => (
@@ -61,4 +61,4 @@ const RouteConfigExample = () => (
   </div>
 )
 
-export default RouteConfigExample;
+export default Routers;

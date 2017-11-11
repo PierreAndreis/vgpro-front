@@ -52,6 +52,23 @@ const sendRequest = async (url, data, method = "get") => {
   }
 }
 
+const sendRequest_Old = async (url, data, method = "get") => {
+
+  const options = {
+    baseURL: "https://lyra.vgpro.gg/",
+    url,
+    method,
+  }
+
+  try {
+    const req = await request(options);
+    return handleRequest(req);
+  }
+  catch(e) {
+    errorRequest(e);
+  }
+}
+
 const API = {};
 
 API.getProFeed = () => {
@@ -59,7 +76,8 @@ API.getProFeed = () => {
 }
 
 API.getLead5 = () => {
-  return sendRequest("/leaderboard/?limit=5");
+  // return sendRequest("/leaderboard/?limit=5");
+  return sendRequest_Old("/topfive/")
 }
 
 API.getTopHeroes = () => {

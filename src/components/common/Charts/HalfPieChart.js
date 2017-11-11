@@ -16,29 +16,33 @@ export default ({data, label}) => {
 
 
     composedData = [
-      { value: fadedPercent, fill: "rgba(0, 0, 0, 0.2)" },
+      { value: fadedPercent, fill: "rgba(0,0,0,0.1)" },
       ...data,
     ]
   }
 
-  const width = 150;
-  const height = width / 1.6;
-
-  const cy = height / 1.2;
-
-  const outerRadius = width / 2.3;
-  const innerRadius = outerRadius - 15;
+  const width = 180;
+  // const height = width / 1.6;
+  const height = width / 1.29;
+  
+  // const cy = height / 1.2;
+  const cy = height / 2;
+  const outerRadius = width / 2.6;
+  const innerRadius = outerRadius - 10;
 
   const fontSize = width / 7;
+
+  const startAngle = -50;
+  const endAngle = 180 + (startAngle * -1);
 
 
   return (
     <div className="HalfPie-Container" style={{width}}>
-      <PieChart width={width} stroke height={height}>
+      <PieChart width={width} stroke height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
         <Pie data={composedData}
             dataKey="value" 
-            startAngle={0} 
-            endAngle={180} 
+            startAngle={startAngle} 
+            endAngle={endAngle} 
             cy={cy}
             fill={"#00000"}
             outerRadius={outerRadius}

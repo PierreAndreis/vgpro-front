@@ -68,7 +68,6 @@ const GaugeChart = () => {
       <PieChart width={width} height={(width / 2) + 30}>
         <Pie
           activeIndex={activeSectorIndex}
-          activeShape={ActiveSectorMark}
           data={colorData}
           fill="#8884d8"
           { ...pieRadius }

@@ -3,6 +3,10 @@ import HalfPieChart from "../../common/Charts/HalfPieChart";
 import {Box, BoxBody} from "./../../common/Box";
 import "./MatchStats.css"
 
+const ChartSettings = {
+  width: 180
+}
+
 const winRate = [
   { value: 80, fill: '#288FCB' }
 ];

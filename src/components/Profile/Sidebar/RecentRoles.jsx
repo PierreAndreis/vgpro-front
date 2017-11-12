@@ -1,60 +1,43 @@
 import React from "react";
+import PieChart from "../../common/Charts/PieChart";
+import "./RecentRoles.css";
+
+const CARRY_COLOR   = "#9E2F31";
+const JUNGLE_COLOR  = "#9E2F31";
+const CAPTAIN_COLOR = "#9E2F31";
+
+const winRate = [
+  { value: 80, fill: '#9E2F31' }
+];
+
+const test = (
+   <div className="PlayerRole">
+      <div className="PlayerRole-Image">
+        <PieChart data={winRate}>
+          <div className="PlayerRole-Icon carry"/>
+        </PieChart>
+      </div>
+      <div className="PlayerRole-Stats">
+        <div className="PlayerRole-Stats-Value">2.84 KDA</div>
+
+        <div className="PlayerRole-Stats-Desc">
+          <div className="PlayerRole-Stats_KDA Kill">15</div>
+          <div className="PlayerRole-Stats_KDA Death">25</div>
+          <div className="PlayerRole-Stats_KDA Assist">30</div>
+        </div>
+      </div>
+      <div className="PlayerRole-WR">
+        <div className="PlayerRole-WR-value">32%</div>
+        <div className="PlayerRole-WR-desc">10 played</div>
+      </div>
+    </div>
+)
 
 const RecentRoles = ({t}) => (
-  <div>
-    <div className="allroles">
-      <div className="eachrole">
-        <div className="role_img" id="carry" data-tooltip={t("role-Carry")}/>
-        <div className="role_desc" id="carry">
-          <span>1</span>
-          /<span className='d'>
-            2
-          </span>/
-          <span>3</span>
-        </div>
-        <div className="role_kda" id="carry">
-          2.6 {t("kda")}
-        </div>
-        <div className="role_winrate" id="carry">
-          0%
-        </div>
-        <div className="role_games" id="carry">
-          15% {t("sidebar-played")}
-        </div>
-      </div>
-      <div className="eachrole">
-        <div className="role_img" id="jungler" data-tooltip={t("role-Jungler")}/>
-        <div className="role_desc" id="jungler">
-          1/2/3</div>
-        <div className="role_kda" id="jungler">
-          2.6 {t("kda")}
-        </div>
-        <div className="role_winrate" id="jungler">
-          0%
-        </div>
-        <div className="role_games" id="jungler">
-          15% {t("sidebar-played")}
-        </div>
-      </div>
-      <div className="eachrole">
-        <div className="role_img" id="captain" data-tooltip={t("role-Captain")}/>
-        <div className="role_desc" id="captain">
-          1/2/3</div>
-        <div className="role_kda" id="captain">
-          2.6 {t("kda")}
-        </div>
-        <div className="role_winrate" id="captain">
-          0%
-        </div>
-        <div className="role_games" id="captain">
-          15% {t("sidebar-played")}
-        </div>
-      </div>
-    </div>
-    <div className="role" id="charts" style={{
-      width: "200px"
-    }}>
-    </div>
+  <div className="PlayerRoles">
+    {test}
+    {test}
+    {test}
   </div>
 )
 

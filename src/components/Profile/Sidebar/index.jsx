@@ -10,6 +10,11 @@ import RecentPlayedWith from "./RecentPlayedWith";
 
 const SideBarItems = [
   {
+    label: "Recent Roles",
+    labelKey: "recent-roles",
+    componentBody: RecentRoles
+  },
+  {
     label: "Most Played Heroes",
     labelKey: "most-played-heroes",
     componentBody: HeroesPlayed
@@ -19,11 +24,6 @@ const SideBarItems = [
   //   labelKey: "ratings",
   //   componentBody: VPR
   // },
-  {
-    label: "Recent Roles",
-    labelKey: "recent-roles",
-    componentBody: RecentRoles
-  },
   {
     label: "Most Played Heroes",
     labelKey: "recent-played-with",

@@ -3,27 +3,27 @@ import HalfPieChart from "../../common/Charts/HalfPieChart";
 import {Box, BoxBody} from "./../../common/Box";
 import "./MatchStats.css"
 
-const ChartSettings = {
-  width: 180
-}
+// const ChartSettings = {
+//   width: 180
+// }
 
 const winRate = [
-  { value: 80, fill: '#288FCB' }
+  { value: 80, fill: 'url(#orange)', filter: "url(#blur)" }
 ];
 
 const KP = [
-  { value: 20, fill: 'rgb(100,100,100)' }
+  { value: 20, fill: 'url(#orange)', filter: "url(#blur)" }
 ];
 
 const BlueColor = "#288FCB";
 const RedColor = "#EC5B56";
 
 const Blue = [
-  { value: 45, fill: BlueColor },
+  { value: 100, fill: "url(#blue)", filter: "url(#blur)" },
 ];
 
 const Red = [
-  { value: 55, fill: RedColor }
+  { value: 55, fill: "url(#red)", filter: "url(#blur)"}
 ]
 
 class SubHeader extends React.Component {

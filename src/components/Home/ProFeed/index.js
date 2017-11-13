@@ -5,6 +5,7 @@ import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
 import Loading                              from "./../../common/Loading";
 import ErrorScreen                          from "./../../common/ErrorScreen";
 import {fetchProFeed}                       from "./../../../actions/api";
+import FadeProps from 'fade-props';
 
 import "./ProFeed.css";
 
@@ -102,7 +103,11 @@ class ProFeed extends React.Component {
       <BoxTitle>{t('pro-history')}</BoxTitle>
       <BoxBody>
         <div className="ProFeed">
-          {content}
+          <FadeProps animationLength={100}>
+            <div>
+              {content}
+            </div>
+          </FadeProps>
         </div>
       </BoxBody>
       <BoxActions>

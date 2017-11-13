@@ -2,12 +2,12 @@ import React from "react";
 import PieChart from "../../common/Charts/PieChart";
 import "./RecentRoles.css";
 
-const CARRY_COLOR   = "#9E2F31";
-const JUNGLE_COLOR  = "#9E2F31";
-const CAPTAIN_COLOR = "#9E2F31";
+// const CARRY_COLOR   = "#9E2F31";
+// const JUNGLE_COLOR  = "#9E2F31";
+// const CAPTAIN_COLOR = "#9E2F31";
 
 const winRate = [
-  { value: 80, fill: '#9E2F31' }
+  { value: 80, fill: 'url(#blue)' }
 ];
 
 const test = (

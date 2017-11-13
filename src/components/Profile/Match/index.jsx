@@ -6,6 +6,8 @@ class Match extends React.Component {
 
 
   render() {
+    const {t} = this.props;
+
     return (
       <div className="each_match" data-gohero="' + matchdata.actor + '">
       <div className="match_history_box" data-gohero="' + matchdata.actor + '" data-id="' + matchdata.MId + '">

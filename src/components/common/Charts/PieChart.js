@@ -48,6 +48,7 @@ export default ({data, label, children}) => {
             outerRadius={outerRadius}
             innerRadius={innerRadius} 
             stroke={"none"}
+            filter={"url(#blur)"}
             />
       </PieChart>
       <div className="FullPie-Label" style={{fontSize}} >{children}</div>

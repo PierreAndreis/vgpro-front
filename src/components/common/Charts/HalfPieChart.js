@@ -1,5 +1,5 @@
 import React from "react";
-import {PieChart, Pie} from "recharts";
+import {PieChart, Pie, Cell} from "recharts";
 
 import "./HalfPieChart.css";
 
@@ -16,35 +16,60 @@ export default ({data, label}) => {
 
 
     composedData = [
-      { value: fadedPercent, fill: "rgba(0,0,0,0.1)" },
       ...data,
+      { value: fadedPercent, fill: "rgba(0,0,0,0.1)"},
+      // { value: fadedPercent, fill: "url(#test)"}
     ]
   }
 
   const width = 180;
   // const height = width / 1.6;
-  const height = width / 1.29;
+  const height = width / 1;
   
   // const cy = height / 1.2;
-  const cy = height / 2;
+  const cy = height / 1.8;
   const outerRadius = width / 2.6;
   const innerRadius = outerRadius - 10;
 
   const fontSize = width / 7;
 
-  const startAngle = -50;
-  const endAngle = 180 + (startAngle * -1);
+  const endAngle = -50;
+  const startAngle = 180 + (endAngle * -1);
 
 
   return (
     <div className="HalfPie-Container" style={{width}}>
       <PieChart width={width} stroke height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
+
+        <defs>
+          <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
+            <stop offset="5%" stopColor="#FAD961" stopOpacity={1}/>
+            <stop offset="95%" stopColor="#F76B1C" stopOpacity={1}/>
+          </linearGradient>
+
+          <linearGradient id="red" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
+            <stop offset="5%" stopColor="#FF5D6B" stopOpacity={1}/>
+            <stop offset="95%" stopColor="#B1041E" stopOpacity={1}/>
+          </linearGradient>
+
+          <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
+            <stop offset="5%" stopColor="#51E1EC" stopOpacity={1}/>
+            <stop offset="95%" stopColor="#3023AE" stopOpacity={1}/>
+          </linearGradient>
+
+          <filter id="blur" x="0" y="0" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1.5" />
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+          </filter>
+
+        </defs>
         <Pie data={composedData}
             dataKey="value" 
             startAngle={startAngle} 
-            endAngle={endAngle} 
+            endAngle={endAngle}
+            animationBegin={100}
             cy={cy}
-            fill={"#00000"}
             outerRadius={outerRadius}
             innerRadius={innerRadius} 
             stroke={"none"}

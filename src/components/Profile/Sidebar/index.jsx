@@ -35,11 +35,11 @@ class Sidebar extends React.Component {
   render() {
     const {t} = this.props;
 
-    const components = SideBarItems.map(item => {
+    const components = SideBarItems.map((item, index) => {
       const ComponentBody = item.componentBody;
 
       return (
-        <Box.wrap className="ProfileSidebar-box">
+        <Box.wrap key={index} className="ProfileSidebar-box">
           <Box.title>{(item.labelKey) ? t(item.labelKey) : item.label}</Box.title>
           <Box.body> <ComponentBody t={t} /></Box.body>
         </Box.wrap>
@@ -50,8 +50,8 @@ class Sidebar extends React.Component {
 
     return (
       <div className="sidebar">
-      {components}
-    </div>
+        {components}
+      </div>
     )
   }
 }

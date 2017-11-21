@@ -57,6 +57,22 @@ export default ({data, label}) => {
             <stop offset="95%" stopColor="#3023AE" stopOpacity={1}/>
           </linearGradient>
 
+          <linearGradient id="carry" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
+            <stop offset="5%" stopColor="#F5515F" stopOpacity={1}/>
+            <stop offset="95%" stopColor="#9F041B" stopOpacity={1}/>
+          </linearGradient>
+
+          <linearGradient id="jungle" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
+            <stop offset="5%" stopColor="#B4EC51" stopOpacity={1}/>
+            <stop offset="95%" stopColor="#429321" stopOpacity={1}/>
+          </linearGradient>
+
+
+          <linearGradient id="captain" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
+            <stop offset="5%" stopColor="#FAD961" stopOpacity={1}/>
+            <stop offset="95%" stopColor="#F76B1C" stopOpacity={1}/>
+          </linearGradient>
+
           <filter id="blur" x="0" y="0" width="200%" height="200%">
             <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
             <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1.5" />

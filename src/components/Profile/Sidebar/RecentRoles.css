@@ -28,13 +28,22 @@
   border-radius: 50%;
   
   background-size: 25px 25px;
-  background-color: #9E2F31;
+  background-color: grey;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .PlayerRole-Icon.carry {
-  background-image: url('./../../../styles/images/roles/carry.png');
+  background-color: #9F041B;
+  background-image: url('/icons/carry.png');
+}
+.PlayerRole-Icon.jungle {
+  background-color: #429321;
+  background-image: url('/icons/jungler.png');
+}
+.PlayerRole-Icon.captain {
+  background-color: rgb(228, 197, 87);
+  background-image: url('/icons/captain.png');
 }
 
 .PlayerRole-Stats {

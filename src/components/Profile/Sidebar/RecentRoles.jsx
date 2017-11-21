@@ -6,15 +6,17 @@ import "./RecentRoles.css";
 // const JUNGLE_COLOR  = "#9E2F31";
 // const CAPTAIN_COLOR = "#9E2F31";
 
-const winRate = [
-  { value: 80, fill: 'url(#blue)' }
-];
+const winRate = {
+  "carry": [{ value: 80, fill: 'url(#carry)' }],
+  "jungle": [{value: 80, fill: 'url(#jungle)' }],
+  "captain": [{value: 80, fill: 'url(#captain)' }]
+};
 
-const test = (
+const Role = ({name}) => (
    <div className="PlayerRole">
       <div className="PlayerRole-Image">
-        <PieChart data={winRate}>
-          <div className="PlayerRole-Icon carry"/>
+        <PieChart data={winRate[name]}>
+          <div className={`PlayerRole-Icon ${name}`}/>
         </PieChart>
       </div>
       <div className="PlayerRole-Stats">
@@ -35,9 +37,9 @@ const test = (
 
 const RecentRoles = ({t}) => (
   <div className="PlayerRoles">
-    {test}
-    {test}
-    {test}
+    <Role name="carry" />
+    <Role name="jungle" />
+    <Role name="captain" />
   </div>
 )
 

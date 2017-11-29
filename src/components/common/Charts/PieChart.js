@@ -16,8 +16,8 @@ export default ({data, label, children}) => {
 
 
     composedData = [
-      { value: fadedPercent, fill: "rgba(0,0,0,0.1)" },
       ...data,
+      { value: fadedPercent, fill: "rgba(0,0,0,0.1)" },
     ]
   }
 
@@ -32,8 +32,8 @@ export default ({data, label, children}) => {
 
   const fontSize = width / 7;
 
-  const startAngle = 0;
-  const endAngle = 360;
+  const startAngle = 180;
+  const endAngle = -180;
 
 
   return (

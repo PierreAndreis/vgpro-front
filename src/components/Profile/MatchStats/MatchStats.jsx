@@ -7,24 +7,8 @@ import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
 
 import { connect }          from "react-redux";
 
-const winRate = [
-  { value: 80, fill: 'url(#orange)', filter: "url(#blur)" }
-];
-
-const KP = [
-  { value: 20, fill: 'url(#orange)', filter: "url(#blur)" }
-];
-
 const BlueColor = "#288FCB";
 const RedColor = "#EC5B56";
-
-const Blue = [
-  { value: 100, fill: "url(#blue)", filter: "url(#blur)" },
-];
-
-const Red = [
-  { value: 55, fill: "url(#red)", filter: "url(#blur)"}
-]
 
 class Loading extends React.Component {
 
@@ -103,7 +87,7 @@ class Loading extends React.Component {
 class Loaded extends React.Component {
 
   render() {
-    const {t, playerStats} = this.props;
+    const {playerStats} = this.props;
 
     const {
       winRate,
@@ -201,7 +185,6 @@ class Loaded extends React.Component {
     )
   }
 }
-
 
 let SubHeader = SkeletonContainer(Loading, Loaded);
 

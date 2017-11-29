@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 
 import i18n       from "./i18n";
-import regions  from "./regions";
+import player     from "./player";
 
 const reducers = combineReducers({
   i18n,
-  regions
+  player
 })
 
 export default reducers;

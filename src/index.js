@@ -5,7 +5,7 @@ import { I18nextProvider } from 'react-i18next';
 
 import App from './App';
 
-import registerServiceWorker from './registerServiceWorker';
+// import registerServiceWorker from './registerServiceWorker';
 
 import store from "./store";
 import i18n from './i18n';
@@ -17,4 +17,4 @@ ReactDOM.render(
     </I18nextProvider>
   </Provider>,
   document.getElementById('app'));
-registerServiceWorker();
+// registerServiceWorker();

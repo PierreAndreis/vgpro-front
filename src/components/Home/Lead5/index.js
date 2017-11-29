@@ -3,8 +3,10 @@ import * as lodash from "lodash";
 
 import {fetchLead5}                         from "./../../../actions/api";
 
+
+import {SkeletonPayload} from "../../common/Skeleton";
+
 import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
-import Loading                              from "./../../common/Loading";
 import ErrorScreen                          from "./../../common/ErrorScreen";
 import LeadMember from "./LeadMember";
 import "./Lead5.css";
@@ -16,7 +18,7 @@ class Lead5 extends React.Component {
     this.state = {
       status: "loading",
       region: "all", /* all, eu, na, sg, ea, cn */
-      payload: null
+      payload: {all: SkeletonPayload(5)}
     }
 
   }
@@ -53,15 +55,18 @@ class Lead5 extends React.Component {
     const {payload, status} = this.state;
     let content = [];
 
-    /**/ if (status === "loading") content = <Loading/>
-    else if (status === "error"  ) content = <ErrorScreen err={payload} />
-    else if (status === "loaded" ) {
+    if (status === "error"  ) content = <ErrorScreen err={payload} />
+    else {
 
-      const {all} = lodash.cloneDeep(payload);
-      
-      lodash.forEach(all, (each, position) => {
-        each.position = position;
-        content.push(<LeadMember key={`${position} - ${each.name}`} {...each} />);
+      const {all} = payload;
+      let index = 1;
+      lodash.forEach(all, (each) => {
+        let data = {
+          ...each,
+          position: index
+        }
+        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={data} />);
+        index++;
       })
 
 

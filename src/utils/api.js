@@ -84,4 +84,13 @@ API.getTopHeroes = () => {
   return sendRequest("/topheroes");
 }
 
+/* ==== PLAYER LOOKUP ===== */
+API.lookupPlayer = (playerName) => {
+  return sendRequest(`/player/${playerName}/find`);
+}
+
+API.fetchPlayerStats = (playerName) => {
+  return sendRequest(`/player/${playerName}/stats`);
+}
+
 export default API;

@@ -62,7 +62,7 @@ export default ({data, label}) => {
             <stop offset="95%" stopColor="#9F041B" stopOpacity={1}/>
           </linearGradient>
 
-          <linearGradient id="jungle" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
+          <linearGradient id="jungler" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
             <stop offset="5%" stopColor="#B4EC51" stopOpacity={1}/>
             <stop offset="95%" stopColor="#429321" stopOpacity={1}/>
           </linearGradient>

@@ -5,22 +5,30 @@ import PlayerInfo  from "./ProfileHeader/PlayerInfo";
 import PlayerVPR   from "./ProfileHeader/PlayerVPR";
 // import PlayerStats from "./PlayerStats";
 
+import { connect }          from "react-redux";
 
 import "./ProfileHeader.css";
 
 class ProfileHeader extends React.Component {
 
   render() {
-    const {t} = this.props;
+    const {t, status, playerStats} = this.props;
+
+    const passProps = {
+      status,
+      data: playerStats,
+      t,
+    }
+
     return (
       <div className="Profile__Header">
         <div className="wrap Profile__Header-Wrap">
 
-          <PlayerImg />
+          <PlayerImg {...passProps} />
 
-          <PlayerInfo t={t}/>
+          <PlayerInfo {...passProps} />
 
-          <PlayerVPR t={t} />
+          <PlayerVPR {...passProps} />
 
           {/* <PlayerStats2 t={t} /> */}
           {/* <PlayerStats t={t} /> */}
@@ -31,4 +39,14 @@ class ProfileHeader extends React.Component {
   }
 }
 
-export default ProfileHeader;
+
+const mapStateToProps = state => {
+
+  return {
+    ...state.player
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(ProfileHeader);

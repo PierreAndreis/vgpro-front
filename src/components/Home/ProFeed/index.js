@@ -1,15 +1,17 @@
 import React from "react";
 
-import FeedMatch from "./FeedMatch";
+import FeedMatch        from "./FeedMatch";
 import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
-import Loading                              from "./../../common/Loading";
+import {SkeletonPayload}                    from "../../common/Skeleton";
 import ErrorScreen                          from "./../../common/ErrorScreen";
 import {fetchProFeed}                       from "./../../../actions/api";
-import FadeProps from 'fade-props';
+
+
 
 import "./ProFeed.css";
 
 const PRO_FEED_ITEM_PER_PAGE = 6;
+
 
 class ProFeed extends React.Component {
 
@@ -19,7 +21,7 @@ class ProFeed extends React.Component {
     this.state = {
       status: "loading",
       page: 1,
-      payload: null
+      payload: SkeletonPayload(PRO_FEED_ITEM_PER_PAGE)
     }
 
   }
@@ -44,7 +46,6 @@ class ProFeed extends React.Component {
   }
   
   async fetch() {
-
     try {
       this.setState({
         status: "loading"
@@ -79,9 +80,8 @@ class ProFeed extends React.Component {
     let lastPage;
     let content = [];
 
-    /**/ if (status === "loading") content = <Loading items={PRO_FEED_ITEM_PER_PAGE}/>
-    else if (status === "error"  ) content = <ErrorScreen err={payload} />
-    else if (status === "loaded") {
+    if (status === "error"  ) content = <ErrorScreen err={payload} />
+    else {
 
       const itemPerPage = PRO_FEED_ITEM_PER_PAGE;
       lastPage = (payload) ? (payload.length / itemPerPage) : 1;
@@ -91,7 +91,7 @@ class ProFeed extends React.Component {
       payload.forEach((match, i) => {
 
         if ((i >= startIndex) && (i < endIndex)) {
-          content.push(<FeedMatch key={i} t={t} data={match} />);
+          content.push(<FeedMatch key={i} t={t} status={status} data={match} />);
         }
         
       })
@@ -103,11 +103,7 @@ class ProFeed extends React.Component {
       <BoxTitle>{t('pro-history')}</BoxTitle>
       <BoxBody>
         <div className="ProFeed">
-          <FadeProps animationLength={100}>
-            <div>
-              {content}
-            </div>
-          </FadeProps>
+          {content}
         </div>
       </BoxBody>
       <BoxActions>
@@ -118,6 +114,5 @@ class ProFeed extends React.Component {
     )
   }
 }
-
 
 export default ProFeed;

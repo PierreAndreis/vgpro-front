@@ -1,8 +1,36 @@
 import React from "react";
 
+import {Skeleton, SkeletonContainer} from "../../../common/Skeleton";
+
 import "./PlayerVPR.css";
 
-const PlayerVPR = ({t}) => {
+const Loading = () => {
+  return (
+    <div className="Profile__Header-VPR">
+
+      <div className="Profile__VPR-Stat VPR">
+        <div><Skeleton width="100px" height="25px"/></div>
+        <span><Skeleton width="40px" height="10px"/></span>
+      </div>
+
+      <div className="Profile__VPR-desc mobile">
+        <Skeleton width="100px" height="25px"/>
+      </div>
+
+      <div className="Profile__VPR-Stat">
+        <div><Skeleton width="100px" height="25px"/></div>
+        <span><Skeleton width="40px" height="10px"/></span>
+      </div>
+
+      <div className="Profile__VPR-Stat">
+        <div><Skeleton width="100px" height="25px"/></div>
+        <span><Skeleton width="40px" height="10px"/></span>
+      </div>
+    </div>
+  )
+}
+
+const Loaded = ({t}) => {
   return (
     <div className="Profile__Header-VPR">
 
@@ -27,5 +55,7 @@ const PlayerVPR = ({t}) => {
     </div>
   )
 }
+
+const PlayerVPR = SkeletonContainer(Loading, Loaded);
 
 export default PlayerVPR;

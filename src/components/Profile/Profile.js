@@ -9,16 +9,38 @@ import MatchFilter from "./MatchFilter";
 
 import MatchesManager from "./Matches/MatchesManager";
 
+import {fetchPlayerStats} from "./../../actions/player";
+
+import {bindActionCreators} from "redux";
+import { connect }          from "react-redux";
 
 import "./Profile.css";
 import "./profile.base.css";
 import "./profile.resp.css";
 
 class Profile extends React.Component {
-  render() {
 
+
+  componentWillReceiveProps(nextProps) {
+
+    const nextMatch = nextProps.match;
+    const nextPlayer = nextMatch.params.player;
+
+    const {match} = this.props;
+    const {player} = match.params;
+
+    if (player === nextPlayer) return;
+    else  this.props.fetchPlayerStats(nextPlayer);
+  }
+
+  componentDidMount() {
+    const {match} = this.props;
+    const {player} = match.params;
+    this.props.fetchPlayerStats(player);
+  }
+
+  render() {
     const {t} = this.props;
-    // const {player} = match;
 
     return (
       <div>
@@ -26,7 +48,7 @@ class Profile extends React.Component {
         <div className="wrap Profile-wrap">
 
           <div className="Profile__Sidebar">
-          <Sidebar t={t}/>
+          <Sidebar t={t} />
           </div>
           <div className="Profile__Main">
             <MatchStats t={t} />
@@ -40,4 +62,24 @@ class Profile extends React.Component {
   }
 }
 
-export default withRouter(Profile);
+const mapStateToProps = state => {
+
+  return {
+    ...state.player
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      fetchPlayerStats
+    },
+    dispatch
+  )
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(Profile));
+

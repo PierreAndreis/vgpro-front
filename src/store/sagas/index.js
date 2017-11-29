@@ -1,9 +1,10 @@
 import {all, takeLatest} from 'redux-saga/effects'
 
-import {fetchRegions} from "./regions";
+// import {fetchRegions} from "./regions";
+import {fetchPlayerStats} from "./player";
 
 export default function *watchMany() {
   yield all([
-    takeLatest("REGIONS_FETCH_REQUEST", fetchRegions),
+    takeLatest("PLAYER/STATS_FETCH_REQUEST", fetchPlayerStats),
   ])
 }

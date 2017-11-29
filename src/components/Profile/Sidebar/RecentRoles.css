@@ -37,7 +37,7 @@
   background-color: #9F041B;
   background-image: url('/icons/carry.png');
 }
-.PlayerRole-Icon.jungle {
+.PlayerRole-Icon.jungler {
   background-color: #429321;
   background-image: url('/icons/jungler.png');
 }
@@ -70,6 +70,7 @@
   text-align: center;
   padding-top: 20px;
   margin: 5px 5px;
+  font-size: 13px;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 13px;

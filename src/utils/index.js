@@ -22,7 +22,7 @@ Utils.transformRegion = (region) => {
 }
 
 Utils.goToPlayer = (name) => {
-  return `players/${name}`;
+  return `/players/${name}`;
 }
 
 export default Utils;

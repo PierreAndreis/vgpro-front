@@ -10,5 +10,12 @@ export const fetchProFeed = async () => {
 export const fetchLead5 = async () => {
   /** This is not a redux action */
   
-    return await API.getLead5();
-  }
+  return await API.getLead5();
+}
+
+export const lookupPlayer = async (player) => {
+  /** This is not a redux action */
+  
+  return await API.lookupPlayer(player);
+}
+

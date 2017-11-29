@@ -8,52 +8,120 @@ import MenuHeader       from "./Header/Menu";
 
 import { withRouter } from 'react-router';
 
+import {lookupPlayer} from "../../actions/api";
+import Utils from "../../utils"
+
 import "./Header.css"
 
-const Header = ({t, location}) => {
+const changeStatus = (instance, status) => {
+  clearTimeout(instance.timeout);
 
-  const message  = (
-    <span>
-      {t('alert')}
-      {" "}
-      <a href="http://twitter.com/vgprogg" target="_blank" rel="noopener noreferrer" >
-        @vgprogg
-      </a>
-    </span>
-  );
+  if (status === "loading") {
+    return instance.setState({status: "loading"});
+  }
 
-  return (
-    <div>
-      <Alert message={message} />
+  if (status === "error") {
+     instance.setState({status: "error"});
+     return instance.timeout = setTimeout(() => {
+       instance.setState({status: "ready"})
+     }, 2000)
+  }
 
-      <div className="Header">
-        <div className="wrap Header-wrap">
-          <div className="Header-Logo" />
-          <MenuHeader t={t} />
-          <form action="" onSubmit={(e) => e.preventDefault()} className="Header-Search">
-            <input type="text" className="Header-Search_input" placeholder={t('search-placeholder')} />
-            <button type="submit"><div className="fa fa-search" /></button>
-          </form>
-          <LanguageSelector />
-          </div>
-      </div>
-      {   location.pathname === "/" 
-       || location.pathname === "/home" ? 
-      <header className="header-home">
-        <div className="wrap">
-          <div className="logo">
-            <div className="img" />
-          </div>
-        </div>
-        <SearchBar  placeholder={t('search-placeholder')} 
-        />
-      </header>
-      :
-      null
+  if (status === "ready") {
+    return instance.setState({status: "ready"})
+  }
+}
+
+class Header extends React.Component {
+  
+  constructor() {
+    super();
+
+    this.state = {
+      playerField: "",
+      status: "ready",
+    }
+
+    this.timeout = null;
+  }
+
+  changeField = (e) => {
+    this.setState({
+      playerField: e.target.value,
+      status: "ready"
+    })
+  }
+
+  search = (playerName) => (e) => {
+    e.preventDefault();
+    
+    changeStatus(this, "loading");
+
+    lookupPlayer(playerName).then((result) => {
+
+      if (result && result.name) {
+        changeStatus(this, "ready");
+        return this.props.history.push(Utils.goToPlayer(result.name));
       }
-      </div>
-      
-  );
-};
+      changeStatus(this, "error");
+    });
+  }
+
+  render() {
+    const {t, location} = this.props;
+
+    const {
+      status
+    } = this.state;
+
+
+    const message  = (
+      <span>
+        {t('alert')}
+        {" "}
+        <a href="http://twitter.com/vgprogg" target="_blank" rel="noopener noreferrer" >
+          @vgprogg
+        </a>
+      </span>
+    );
+
+    return (
+      <div>
+        <Alert message={message} />
+
+        <div className="Header">
+          <div className="wrap Header-wrap">
+            <div className="Header-Logo" />
+            <MenuHeader t={t} />
+            <SearchBar mode="compact"
+                      placeholder={t('search-placeholder')} 
+                      status={status}
+                      onSearch={this.search}
+            />
+            <LanguageSelector />
+            </div>
+        </div>
+        {   location.pathname === "/" 
+        || location.pathname === "/home" ? 
+        <header className="header-home">
+          <div className="wrap">
+            <div className="logo">
+              <div className="img" />
+            </div>
+          </div>
+          <SearchBar  mode="main"
+                      placeholder={t('search-placeholder')} 
+                      status={status}
+                      onSearch={this.search}
+          />
+        </header>
+        :
+        null
+        }
+        </div>
+        
+    );
+  };
+}
 
 export default translate()(withRouter(Header));

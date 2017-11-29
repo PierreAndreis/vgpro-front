@@ -2,7 +2,8 @@ import React from "react";
 
 import Box from "../../common/Box";
 
-// import VPR              from "./VPR";
+import { connect }          from "react-redux";
+
 import HeroesPlayed     from "./HeroesPlayed";
 import RecentRoles      from "./RecentRoles";
 import RecentPlayedWith from "./RecentPlayedWith";
@@ -19,11 +20,6 @@ const SideBarItems = [
     labelKey: "most-played-heroes",
     componentBody: HeroesPlayed
   },
-  // {
-  //   label: "VPR",
-  //   labelKey: "ratings",
-  //   componentBody: VPR
-  // },
   {
     label: "Most Played Heroes",
     labelKey: "recent-played-with",
@@ -33,7 +29,13 @@ const SideBarItems = [
 
 class Sidebar extends React.Component {
   render() {
-    const {t} = this.props;
+    const {t, status, playerStats} = this.props;
+
+    let propsPass = {
+      t,
+      status,
+      data: playerStats
+    }
 
     const components = SideBarItems.map((item, index) => {
       const ComponentBody = item.componentBody;
@@ -41,7 +43,7 @@ class Sidebar extends React.Component {
       return (
         <Box.wrap key={index} className="ProfileSidebar-box">
           <Box.title>{(item.labelKey) ? t(item.labelKey) : item.label}</Box.title>
-          <Box.body> <ComponentBody t={t} /></Box.body>
+          <Box.body> <ComponentBody {...propsPass} /></Box.body>
         </Box.wrap>
       )
     })
@@ -56,4 +58,12 @@ class Sidebar extends React.Component {
   }
 }
 
-export default Sidebar;
+const mapStateToProps = state => {
+  return {
+    ...state.player
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(Sidebar);

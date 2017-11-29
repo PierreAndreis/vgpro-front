@@ -4,18 +4,41 @@ import {translate} from "react-i18next";
 
 import Utils from "utils";
 import { Link }   from 'react-router-dom';
+import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
 
-const FeedMatch = ({t, data, style}) => {
 
-  const {
-    proInfo, 
-    actor, 
-    winner, 
-    kills,
-    deaths,
-    assists,
-    items,
-  } = data;
+const Loading = () => {
+  return (
+      <div className="ProFeed-each skeletonDiv" >
+        <div className="ProFeed-each-status" />
+        <div className="ProFeed-each-info">
+          <Skeleton width={30} height={30}/>
+          <div className="ProFeed-each-info-personal">
+            <Skeleton width={50} height={10}/>
+            <span><Skeleton width={40} height={5}/></span>
+          </div>
+        </div>
+        <div className="ProFeed-each-game">
+          <Skeleton width={25} height={25} borderRadius={"50%"}/>
+          <div className="ProFeed-each-game-kda">
+            <Skeleton width={25} height={10}/>
+          </div>
+          
+        </div>
+        <div className="ProFeed-each-items">
+          <Skeleton width={20} height={20} borderRadius={"50%"}/>
+          <Skeleton width={20} height={20} borderRadius={"50%"}/>
+          <Skeleton width={20} height={20} borderRadius={"50%"}/>
+          <Skeleton width={20} height={20} borderRadius={"50%"}/>
+          <Skeleton width={20} height={20} borderRadius={"50%"}/>
+          <Skeleton width={20} height={20} borderRadius={"50%"}/>
+        </div>
+        <div className="ProFeed-each-arrow"> <i className="fa fa-angle-right" /> </div>
+      </div>
+  )
+}
+
+const Loaded = ({t, data, style}) => {
 
 
   //   "createdAt": "2017-11-04T20:28:56Z",
@@ -42,6 +65,16 @@ const FeedMatch = ({t, data, style}) => {
   //   ]
   // },
 
+
+  const {
+    proInfo, 
+    actor, 
+    winner, 
+    kills,
+    deaths,
+    assists,
+    items,
+  } = data;
   const {name, position, region, team} = proInfo;
 
   const win = (winner) ? "Win" : "Loss";
@@ -92,5 +125,7 @@ const FeedMatch = ({t, data, style}) => {
   )
 
 }
+
+const FeedMatch = SkeletonContainer(Loading, Loaded);
 
 export default translate()(FeedMatch);

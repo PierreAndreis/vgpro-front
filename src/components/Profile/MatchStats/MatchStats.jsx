@@ -87,7 +87,9 @@ class Loading extends React.Component {
 class Loaded extends React.Component {
 
   render() {
-    const {playerStats} = this.props;
+    const {playerStats, status} = this.props;
+    return <p>lol</p>
+    if (status === "error") return <p>Error</p>
 
     const {
       winRate,

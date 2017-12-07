@@ -26,7 +26,8 @@ request.defaults.httpsAgent   = new https.Agent({ keepAlive: true });
 const errorRequest = (e) => {
   // console.warn(e);
   // throw new Error(e);
-  return [];
+  // // return [];
+  return new Error(e);
 }
 
 const handleRequest = ({data, status}) => {

@@ -6,10 +6,12 @@ import {
 
 import { translate } from 'react-i18next';
 
-import HomePage    from './Home/Home';
-import Teams       from './Teams/Teams';
-import Profile     from './Profile/Profile';
-import Leaderboard from './Leaderboard/Leaderboard';
+import AsyncContainer from "./common/AsyncContainer";
+
+const HomePage    = AsyncContainer(() => import("./Home/Home"));
+const Teams       = AsyncContainer(() =>  import('./Teams/Teams'));
+const Profile     = AsyncContainer(() =>  import('./Profile/Profile'));
+const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard'));
 
 // then our route config
 const routes = [

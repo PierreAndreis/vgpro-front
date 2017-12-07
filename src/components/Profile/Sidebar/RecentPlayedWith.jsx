@@ -46,7 +46,7 @@ class Loaded extends React.Component{
     const wR = ((wins / games) * 100).toFixed(1);
 
     return (
-      <Link to={Utils.goToPlayer("4ever")} className="PlayerFriends-each">
+      <Link to={Utils.goToPlayer(name)} className="PlayerFriends-each">
         <div className="PlayerFriends-each_name">{name}</div>
         <div className="PlayerFriends-each_stats">
           <div className="PlayerFriends-each_stats_value">{wins}</div>

@@ -86,18 +86,26 @@ header {
 header .logo {
   box-sizing: border-box;
   max-width: 80%;
-  height: 150px;
+  height: 300px;
   /* background: url('/images/header.png') no-repeat right; */
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
 }
-header .logo .img {
+/* header .logo .img {
   box-sizing: border-box;
   width: 300px;
   height: 92px;
   background: url('/images/logo.png') no-repeat;
+  background-size: 100%;
+} */
+
+header .logo .img {
+  box-sizing: border-box;
+  width: 200px;
+  height: 238px;
+  background: url('/images/logo_shield.svg') no-repeat;
   background-size: 100%;
 }
 

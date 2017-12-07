@@ -1,6 +1,6 @@
 .box__card {
   width: 320px;
-  margin: 5px 0;
+  margin: 5px 0 20px;
   background: white;
   box-sizing: border-box;
   position: relative;
@@ -12,7 +12,6 @@
   /* Flex so we can have actions at bottom */
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 /* .box__card-Title {
@@ -62,35 +61,42 @@
 .box__card-Actions {
   /* Martin-top so it is on bottom :p */
   margin-top: auto;
-
+  height: 20px;
   display: flex;
   justify-content: space-around;
   background: rgba(195, 195, 195, 0.3);
-  margin-top: auto;
 }
 
 /** ===== ACTIONS BUTTONS ====== */
 
-.view_more {
+.button {
+  line-height: 12px;
+  border: 0;
+  display: block;
+  background: #dbab27;
+  color: #faf3d9;
+  padding: 10px 15px;
+  border-radius: 20px;
   font-size: 11px;
-  height: 15px;
-  padding: 10px 5px;
-  line-height: 15px;
-  background: rgba(68, 68, 68, 1);
-  color: white;
-  margin: 5px 0;
+  height: 12px;
+  box-shadow: 0 0 20px #e4b727;
+  margin: 5px;
+  transition: all 300ms;
   cursor: pointer;
 }
 
-.view_more::selection{
+.button::selection{
   background-color:transparent !important;
 }
 
-.view_more:hover {
-  background: #535353;
+.button:hover {
+  background: #f7d05b;
+  box-shadow: 0 0 20px #e4b727;
 }
 
-.view_more#disabled{
-  opacity: 0.4;
-  cursor: not-allowed;
+.button#disabled{
+  background: #d3d2d3;
+  color: #565656;
+  opacity: .9;
+  box-shadow: 0 0 0 #d3d2d3;
 }

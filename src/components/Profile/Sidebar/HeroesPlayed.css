@@ -28,15 +28,17 @@
 
 .PlayerHero-Info {
   margin-left: 10px;
+  width: 85px;
 }
 .PlayerHero-Name {
   font-weight: 500;
+  font-size: 14px;
   padding-bottom: 2px;
   color: #4A4A4A;
 }
 .PlayerHero-cs {
   color: grey;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .PlayerHero-Stats {

@@ -1,0 +1,44 @@
+.PlayerFriends {
+  width: 100%;
+  font-size: 10px;
+}
+
+.PlayerFriends-each {
+  color: black;
+  width: 100%;
+  height: 40px;
+  padding: 5px 15px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 300ms;
+}
+
+.PlayerFriends-each:nth-child(2n + 1) {
+  background: rgba(204, 204, 204, 0.205);
+}
+
+.PlayerFriends-each:hover {
+  background: rgba(128, 128, 128, 0.205);
+}
+
+.PlayerFriends-each_name {
+  font-size: 14px;
+  color: rgb(61, 61, 61);
+  width: 120px;
+}
+
+.PlayerFriends-each_stats {
+  text-align: center;
+  width: 50px;
+}
+
+.PlayerFriends-each_stats_value {
+  font-size: 13px;
+}
+
+.PlayerFriends-each_stats_name {
+  font-size: 11px;
+  color: rgb(83, 83, 83);
+}

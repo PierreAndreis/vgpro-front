@@ -2,6 +2,7 @@ import React from "react";
 
 import ProFeed from "./ProFeed";
 import Lead5   from "./Lead5";
+import Heroes   from "./Heroes";
 
 import "./Home.css";
 
@@ -15,7 +16,7 @@ class HomePage extends React.Component {
         <div className="wrap">
         <ProFeed t={t} />
         <Lead5   t={t} />
-        <ProFeed t={t} />
+        <Heroes  t={t} />
         </div>
       </div>
     );

@@ -3,7 +3,6 @@ import * as lodash from "lodash";
 
 import {fetchLead5}                         from "./../../../actions/api";
 
-
 import {SkeletonPayload} from "../../common/Skeleton";
 
 import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
@@ -51,7 +50,6 @@ class Lead5 extends React.Component {
   }
   
   render() {
-    const {t} = this.props;
     const {payload, status} = this.state;
     let content = [];
 
@@ -81,10 +79,7 @@ class Lead5 extends React.Component {
             {content}
          </div>
         </BoxBody>
-        <BoxActions>
-         <div className="view_more"> {t("view-less")} </div>
-         <div className="view_more"> {t("view-more")}</div>
-        </BoxActions>
+        <BoxActions/>
       </Box>
      
     )

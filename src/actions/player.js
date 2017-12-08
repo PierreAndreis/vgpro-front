@@ -4,3 +4,10 @@ export const fetchPlayerStats = (name) => {
     payload: name
   }
 }
+export const fetchPlayerMatches = (name, filters) => {
+  return {
+    type: 'PLAYER/MATCHES_FETCH_REQUEST',
+    payload: name,
+    filters: filters,
+  }
+}

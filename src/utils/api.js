@@ -94,4 +94,8 @@ API.fetchPlayerStats = (playerName) => {
   return sendRequest(`/player/${playerName}/stats`);
 }
 
+API.fetchPlayerMatches = (playerName, filters) => {
+  return sendRequest(`/matches/${playerName}`);
+}
+
 export default API;

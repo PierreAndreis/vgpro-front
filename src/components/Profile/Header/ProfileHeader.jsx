@@ -43,7 +43,7 @@ class ProfileHeader extends React.Component {
 const mapStateToProps = state => {
 
   return {
-    ...state.player
+    ...state.playerStats
   }
 }
 

@@ -15,8 +15,6 @@ import {bindActionCreators} from "redux";
 import { connect }          from "react-redux";
 
 import "./Profile.css";
-import "./profile.base.css";
-import "./profile.resp.css";
 
 class Profile extends React.Component {
 
@@ -65,7 +63,7 @@ class Profile extends React.Component {
 const mapStateToProps = state => {
 
   return {
-    ...state.player
+    ...state.playerStats
   }
 }
 

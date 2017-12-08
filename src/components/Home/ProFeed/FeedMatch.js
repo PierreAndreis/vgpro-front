@@ -65,6 +65,8 @@ const Loaded = ({t, data, style}) => {
   //   ]
   // },
 
+  console.log(data);
+
 
   const {
     proInfo, 

@@ -14,11 +14,10 @@
 const initialState = {
   name: "",
   playerStats: [],
-  matches: [],
   status: "loading"
 }
 
-const player = (state = initialState, action) => {
+const playerStats = (state = initialState, action) => {
   switch (action.type) {
   case "PLAYER/STATS_FETCH_REQUEST":
     return {
@@ -43,4 +42,4 @@ const player = (state = initialState, action) => {
   }
 }
 
-export default player;
+export default playerStats;

@@ -79,7 +79,6 @@ class ProFeed extends React.Component {
 
     let lastPage;
     let content = [];
-
     if (status === "error"  ) content = <ErrorScreen err={payload} />
     else {
 

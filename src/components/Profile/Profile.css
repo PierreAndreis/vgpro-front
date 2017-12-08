@@ -5,10 +5,10 @@
 }
 
 .Profile__Sidebar {
-  width: 450px;
   height: 100%;
   padding: 0 5px;
   box-sizing: border-box;
+  /* background: red; */
 }
 
 .ProfileSidebar-box {
@@ -17,4 +17,27 @@
 
 .Profile__Main {
   width: 100%;
+  padding: 0 10px;
+  /* background: blue; */
+}
+
+@media screen and (max-width: 1088px) {
+  .Profile-wrap { 
+    flex-wrap: wrap;
+  }
+  .Profile__Sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .Profile__Sidebar {
+    flex-direction: column;
+    /* background: blue; */
+  }
+  .ProfileSidebar-box { 
+    width: 100%;
+  }
 }

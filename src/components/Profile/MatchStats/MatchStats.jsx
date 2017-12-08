@@ -191,7 +191,7 @@ let SubHeader = SkeletonContainer(Loading, Loaded);
 
 const mapStateToProps = state => {
   return {
-    ...state.player
+    ...state.playerStats
   }
 }
 

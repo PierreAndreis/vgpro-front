@@ -51,7 +51,7 @@ class Sidebar extends React.Component {
 
 
     return (
-      <div className="sidebar">
+      <div className="Profile__Sidebar">
         {components}
       </div>
     )
@@ -60,7 +60,7 @@ class Sidebar extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    ...state.player
+    ...state.playerStats
   }
 }
 

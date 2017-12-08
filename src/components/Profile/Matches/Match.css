@@ -1,0 +1,254 @@
+.PlayerMatch {
+  width: 100%;
+  height: 120px;
+  margin: 10px 0;
+  border-left: 6px solid #F1685D;
+}
+
+.PlayerMatch-win {
+  border-left-color: #5DB4F1;
+}
+
+.PlayerMatch-body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.PlayerMatch-Avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgb(190, 190, 190);
+  border: 2px solid #9C9C9C;
+  background-size: 100%;
+  position: relative;
+}
+
+.PlayerMatch-Avatar-Role {
+  background: grey;
+  width: 35px;
+  height: 35px;
+  top: -8px;
+  right: -8px;
+  border-radius: 50%;
+  position: absolute;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@media screen and (max-width: 1168px) {
+  .PlayerMatch-Avatar {
+    width: 55px;
+    height: 55px;
+  }
+
+  .PlayerMatch-Avatar-Role {
+    width: 25px;
+    height: 25px;
+    top: -4px;
+    right: -4px;
+  }
+}
+
+
+
+.PlayerMatch-Avatar-Role#captain {
+  background-color: rgb(191, 150, 1);
+  background-image: url("/roles/captain.png");
+}
+
+.PlayerMatch-Avatar-Role#carry {
+  background-color: rgb(160, 46, 45);
+  background-image: url("/roles/carry.png");
+}
+
+.PlayerMatch-Avatar-Role#jungler {
+  background-color: rgb(106, 183, 11);
+  background-image: url("/roles/jungler.png");
+}
+
+
+.PlayerMatch-Info {
+  min-width: 60px;
+  max-width: 150px;
+  /* background: red; */
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+
+@media screen and (max-width: 1068px) {
+  .PlayerMatch-Info {
+    padding-left: 5px;
+  }
+}
+
+.PlayerMatch-Info h2 {
+  margin: 0;
+  color: #4A4A4A;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.PlayerMatch-Info .MatchTime {
+  color: #B1B1B1;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+.PlayerMatch-Info-KDA {
+  color: #B1B1B1;
+  font-size: 14px;
+}
+
+.PlayerMatch-Info-KDA span {
+  color: black;
+}
+.PlayerMatch-Info-KDA span.death {
+  color: rgb(192, 61, 61);
+}
+
+.PlayerMatch-Info-KDA-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #FF6262;
+}
+
+.PlayerMatch-Stats {
+  text-align: center;
+  flex-grow: 1;
+  min-width: 90px;
+  /* background: blue; */
+  font-size: 13px;
+  color: #B1B1B1;
+}
+.PlayerMatch-Stats-Gold div {
+  font-size: 14px;
+  color: #4A4A4A;
+  margin: 5px 0;
+  font-weight: 500;
+}
+.PlayerMatch-Stats-Gold div:after {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 5px;
+  width: 15px;
+  height: 15px;
+  
+  background: url("/icons/gold.svg");
+  background-size: 100%;
+}
+.PlayerMatch-Stats-CS div {
+  font-size: 14px;
+  color: #4A4A4A;
+  margin: 5px 0;
+  font-weight: 500;
+}
+.PlayerMatch-Stats-CS div:after {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 5px;
+  width: 15px;
+  height: 20px;
+  
+  background: url("/icons/cs.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+}
+
+.PlayerMatch-Items {
+  width: 130px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* background: red; */
+}
+
+.PlayerMatch-Item {
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+  border-radius: 50%;
+  background: #D8D8D8;
+  border: 1px solid #9C9C9C;
+  background-size: 100%;
+}
+
+.PlayerMatch-Players {
+  flex-grow: 1;
+  min-width: 240px;
+  display: flex;
+  justify-content: center;
+  /* background: blue; */
+}
+
+.PlayerMatch-Players-Team {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.PlayerMatch-Players-Player {
+  margin: 2px 0;
+  width: 130px;
+  text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 13px;
+  align-items: center;
+}
+.PlayerMatch-Players-Player a {
+  color: #4A4A4A;
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.PlayerMatch-Players-Player-Hero {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #D8D8D8;
+  margin: 0 3px;
+  border: 2px solid #499BD2;
+  background-size: 120%;
+  background-position: center center;
+}
+
+.PlayerMatch-Players-Team:last-of-type .PlayerMatch-Players-Player {
+  text-align: left;
+  flex-direction: row;
+}
+.PlayerMatch-Players-Team:last-of-type .PlayerMatch-Players-Player-Hero {
+  border: 2px solid #E64659;
+}
+
+.PlayerMatch-Status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 20px;
+  background: #F1685D;
+  font-size: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-bottom: auto;
+  border-radius: 30px;
+}
+
+.PlayerMatch-win .PlayerMatch-Status {
+  background-color: #5DB4F1;
+}

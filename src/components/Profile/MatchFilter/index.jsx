@@ -23,13 +23,7 @@ class MatchFilter extends React.Component {
       <div>
       <Box.wrap className="MatchFilter">
         <Box.body>
-          <Select
-  name="form-field-name"
-  value="one"
-  className="lol"
-  options={options}
-  onChange={logChange}
-/>
+          Filters here
         </Box.body>
       </Box.wrap>
       

@@ -1,9 +1,9 @@
 import React from "react";
-import {PieChart, Pie} from "recharts";
+import {PieChart, Pie, ResponsiveContainer} from "recharts";
 
 import "./HalfPieChart.css";
 
-export default ({data, label}) => {
+export default ({data, label, width}) => {
 
   let composedData = data;
 
@@ -22,7 +22,6 @@ export default ({data, label}) => {
     ]
   }
 
-  const width = 180;
   // const height = width / 1.6;
   const height = width / 1;
   

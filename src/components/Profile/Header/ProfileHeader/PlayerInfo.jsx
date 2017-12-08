@@ -1,6 +1,6 @@
 import React from "react";
 import {Skeleton, SkeletonContainer} from "../../../common/Skeleton";
-
+import TimeAgo from "../../../../i18n/timeAgo.js";
 import "./PlayerInfo.css";
 
 
@@ -27,7 +27,7 @@ const Loading = () => (
 const Loaded = ({t, status, data}) => {
   const {
     name,
-    lastUpdated,
+    lastCache,
     region,
   } = data;
 
@@ -40,7 +40,7 @@ const Loaded = ({t, status, data}) => {
       <div className="Profile__Header-update">
         {t("last-update")}
         {" "}
-        {lastUpdated}
+        <TimeAgo date={lastCache} />
       </div>
     </div>
   )

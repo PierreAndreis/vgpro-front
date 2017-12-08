@@ -30,6 +30,8 @@ class Loaded extends React.Component {
     const {payload} = this.props;
     const {duration, minutes, ended, gameMode, players} = payload;
 
+    let gM = gameMode.replace("Battle Royale", "BR");
+
     const me = players.find(p => p.me);
 
     let items = [];
@@ -65,7 +67,7 @@ class Loaded extends React.Component {
           </div>
           
           <div className="PlayerMatch-Info">
-            <h2>{gameMode}</h2>
+            <h2>{gM}</h2>
             <div className="MatchTime"><TimeAgo date={ended} /> - {minutes}</div>
             <div className="PlayerMatch-Info-KDA">
               <span>{me.kills}</span> / <span className="death">{me.deaths}</span> / <span>{me.assists}</span>

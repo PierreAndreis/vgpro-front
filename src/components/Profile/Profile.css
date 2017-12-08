@@ -29,10 +29,16 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    
+  }
+  .ProfileSidebar-box { 
+    flex-grow: 1;
+    margin: 2px;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 400px) {
   .Profile__Sidebar {
     flex-direction: column;
     /* background: blue; */

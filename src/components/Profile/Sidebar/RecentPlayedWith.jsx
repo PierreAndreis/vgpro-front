@@ -1,4 +1,8 @@
 import React from "react";
+
+import ErrorScreen from "../../common/ErrorScreen";
+
+import {Rate} from "../../common/ColoredValues";
 import {Link} from "react-router-dom";
 import Utils from "../../../utils";
 
@@ -57,7 +61,7 @@ class Loaded extends React.Component{
           <div className="PlayerFriends-each_stats_name">Losses</div>
         </div>
         <div className="PlayerFriends-each_stats">
-          <div className="PlayerFriends-each_stats_value">{wR}%</div>
+          <div className="PlayerFriends-each_stats_value"><Rate rate={wR} label="%" /></div>
           <div className="PlayerFriends-each_stats_name">W/R</div>
         </div>
         <div className="PlayerFriends-each_stats">
@@ -87,7 +91,7 @@ const RecentPlayedWith = ({status, data, t}) => {
     payload = SkeletonPayload(5);
   }
   else {
-    return (<p>Error!</p>);
+    return <ErrorScreen />
   }
 
   payload.forEach((friend, index) => {

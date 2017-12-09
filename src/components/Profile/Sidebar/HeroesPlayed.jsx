@@ -1,5 +1,7 @@
 import React from "react";
 
+import ErrorScreen from "../../common/ErrorScreen";
+import {KDA, Rate} from "../../common/ColoredValues";
 import {Skeleton, SkeletonContainer, SkeletonPayload} from "../../common/Skeleton";
 
 import "./HeroesPlayed.css";
@@ -63,13 +65,13 @@ const Loaded = ({data}) => {
       <div className="PlayerHero-cs">{avgCS} cs</div>
     </div>
     <div className="PlayerHero-Stats">
-      <div className="PlayerHero-KDA">{kda} KDA</div>
+      <div className="PlayerHero-KDA"><KDA kda={kda} /> KDA</div>
       <div className="PlayerHero-KDA-details">
       <span>{kills}</span>/<span id="deaths">{deaths}</span>/<span>{assists}</span>
       </div>
     </div>
     <div className="PlayerHero-WR">
-      <div className="PlayerHero-WR-value">{winRate}</div>
+      <div className="PlayerHero-WR-value"><Rate rate={winRate} /></div>
       <div className="PlayerHero-WR-desc">{games} played</div>
     </div>
   </div>
@@ -114,7 +116,7 @@ const HeroesPlayed = ({status, data, t}) => {
     payload = SkeletonPayload(5);
   }
   else {
-    return (<p>Error!</p>);
+    return <ErrorScreen />;
   }
 
   payload.forEach((hero, index) => {

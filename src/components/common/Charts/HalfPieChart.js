@@ -1,5 +1,5 @@
 import React from "react";
-import {PieChart, Pie, ResponsiveContainer} from "recharts";
+import {PieChart, Pie} from "recharts";
 
 import "./HalfPieChart.css";
 

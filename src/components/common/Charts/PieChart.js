@@ -32,8 +32,8 @@ export default ({data, label, children}) => {
 
   const fontSize = width / 7;
 
-  const startAngle = 180;
-  const endAngle = -180;
+  const startAngle = 90;
+  const endAngle = -360;
 
 
   return (

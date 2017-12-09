@@ -43,6 +43,7 @@ class Profile extends React.Component {
     return (
       <div>
         <Header t={t} />
+        <div className="Profile-ads" />
         <div className="wrap Profile-wrap">
 
           <div className="Profile__Sidebar">

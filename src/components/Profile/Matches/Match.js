@@ -1,6 +1,8 @@
 import React from "react";
 import Box from "../../common/Box";
 
+import {KDA, Rate} from "../../common/ColoredValues";
+
 import {Link} from "react-router-dom";
 
 import Utils from "../../../utils";
@@ -28,7 +30,7 @@ const PlayerTeam = ({player}) => (
 class Loaded extends React.Component {
   render() {
     const {payload} = this.props;
-    const {duration, minutes, ended, gameMode, players} = payload;
+    const {minutes, ended, gameMode, players} = payload;
 
     let gM = gameMode.replace("Battle Royale", "BR");
 
@@ -70,26 +72,27 @@ class Loaded extends React.Component {
             <h2>{gM}</h2>
             <div className="MatchTime"><TimeAgo date={ended} /> - {minutes}</div>
             <div className="PlayerMatch-Info-KDA">
-              <span>{me.kills}</span> / <span className="death">{me.deaths}</span> / <span>{me.assists}</span>
+              <span className="k">{me.kills}</span> / <span className="death">{me.deaths}</span> / <span className="k">{me.assists}</span>
             </div>
-            <div className="PlayerMatch-Info-KDA-text">{me.kda.toFixed(2)} KDA</div>
+            <div className="PlayerMatch-Info-KDA-text"><KDA kda={me.kda} /> KDA</div>
           </div>
-
-          <div className="PlayerMatch-Stats">
-            <div className="PlayerMatch-Stats-Gold">
-              <div>{Utils.minifyNumber(me.gold)}</div>
-              ({me.goldShare} share)
+          <div className="PlayerMatch-Stats-Items">
+            <div className="PlayerMatch-Stats">
+              <div className="PlayerMatch-Stats-Gold">
+                <div>{Utils.minifyNumber(me.gold)}</div>
+                (<Rate rate={me.goldShare} /> share)
+              </div>
+              <div className="PlayerMatch-Stats-CS">
+                <div>{me.cs} cs</div>
+                ({me.csMin} cs/min)
+              </div>
             </div>
-            <div className="PlayerMatch-Stats-CS">
-              <div>{me.cs} cs</div>
-              ({me.csMin} cs/min)
-            </div>
-          </div>
 
-          <div className="PlayerMatch-Items">
-            {
-              items
-            }
+            <div className="PlayerMatch-Items">
+              {
+                items
+              }
+            </div>
           </div>
 
           <div className="PlayerMatch-Players">

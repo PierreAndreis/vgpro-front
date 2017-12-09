@@ -13,6 +13,7 @@ const https = require('https');
 //HARDCODED. CHANGE TO PROCESS FILE
 // const hostname = "https://lyra.vgpro.gg";
 const hostname = "https://api.vgpro.gg";
+// const hostname = "http://localhost:8080";
 
 const request = axios.create();
 

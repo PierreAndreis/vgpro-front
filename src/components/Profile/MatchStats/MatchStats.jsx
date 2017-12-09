@@ -1,4 +1,6 @@
 import React from "react";
+import ErrorScreen from "../../common/ErrorScreen";
+
 import HalfPieChart from "../../common/Charts/HalfPieChart";
 import {Box, BoxBody} from "./../../common/Box";
 import "./MatchStats.css"
@@ -87,19 +89,20 @@ class Loading extends React.Component {
 class Loaded extends React.Component {
 
   componentDidMount() {
-    window.addEventListener("resize", () => {
-      console.log("lollx");
-      this.forceUpdate();
-    });
+    window.addEventListener("resize", this.resize.bind(this));
+  }
+
+  resize() {
+    this.forceUpdate();
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize");
+    window.removeEventListener("resize", this.resize.bind(this));
   }
 
   render() {
     const {playerStats, status} = this.props;
-    if (status === "error") return <p>Error</p>
+    if (status === "error") return <ErrorScreen />
 
     const {
       winRate,
@@ -117,9 +120,9 @@ class Loaded extends React.Component {
 
     const total = totalKills + totalAssists + totalDeaths;
 
-    const killsPercent = (totalKills / total) * 100;
-    const deathsPercent = (totalDeaths / total) * 100;
-    const assistsPercent = (totalAssists / total) * 100;
+    // const killsPercent = (totalKills / total) * 100;
+    // const deathsPercent = (totalDeaths / total) * 100;
+    // const assistsPercent = (totalAssists / total) * 100;
 
     const winRateGraph = [
       { value: parseFloat(winRate), fill: 'url(#orange)' }
@@ -136,16 +139,14 @@ class Loaded extends React.Component {
 
     let commonGraphProps = {
     width: 180,
-    }
-
-    console.log(document.documentElement.clientWidth);
+    };
 
     if (document.documentElement.clientWidth < 1211) {
       commonGraphProps["width"] = 150;
     }
 
     if (document.documentElement.clientWidth < 780) {
-      commonGraphProps["width"] = 100;
+      commonGraphProps["width"] = 120;
     }
 
 
@@ -158,6 +159,7 @@ class Loaded extends React.Component {
             <Box className="ProfileMatchStats-Stats">
               <BoxBody className="ProfileStats"> 
                 <div className="ProfileStats__Category">
+                  <h4>Overall</h4>
                   <div className="ProfileStats__Stats">
                     <div className="ProfileStats__Stats-Chart">
                       <HalfPieChart {...commonGraphProps} data={winRateGraph} label={winRate} />
@@ -171,11 +173,11 @@ class Loaded extends React.Component {
                 </div>
                 <div className="ProfileStats__Stats">
                   <div className="ProfileStats__Stats-Value">{kda}</div>
-                  <div className="ProfileStats__Stats-Bar">
+                  {/* <div className="ProfileStats__Stats-Bar">
                     <div className="fill" style={{width: `${killsPercent}%`, backgroundColor: "#9E2F31"}} />
                     <div className="fill" style={{width: `${deathsPercent}%`, backgroundColor: "#6CB525"}}  />
                     <div className="fill" style={{width: `${assistsPercent}%`, backgroundColor: "#BE9521"}}  />
-                  </div>
+                  </div> */}
 
                   <div className="ProfileStats__Stats-Desc">
                     <div className="ProfileStats__KDA Kill">{avgKills}</div>

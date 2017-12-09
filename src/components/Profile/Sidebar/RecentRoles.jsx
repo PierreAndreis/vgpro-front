@@ -1,4 +1,9 @@
 import React from "react";
+
+import ErrorScreen from "../../common/ErrorScreen";
+
+import {KDA, Rate} from "../../common/ColoredValues";
+
 import PieChart from "../../common/Charts/PieChart";
 import "./RecentRoles.css";
 
@@ -80,7 +85,7 @@ const Loaded = ({data}) => {
         </PieChart>
       </div>
       <div className="PlayerRole-Stats">
-        <div className="PlayerRole-Stats-Value">{kda} KDA</div>
+        <div className="PlayerRole-Stats-Value"><KDA kda={kda} /> KDA</div>
 
         <div className="PlayerRole-Stats-Desc">
           <div className="PlayerRole-Stats_KDA Kill">{avgKills}</div>
@@ -89,7 +94,7 @@ const Loaded = ({data}) => {
         </div>
       </div>
       <div className="PlayerRole-WR">
-        <div className="PlayerRole-WR-value">{winRate}</div>
+        <div className="PlayerRole-WR-value"><Rate rate={winRate} /></div>
         <div className="PlayerRole-WR-desc">{games} played</div>
       </div>
     </div>
@@ -113,7 +118,7 @@ const RecentRoles = ({t, status, data}) => {
     payload = SkeletonPayload(3);
   }
   else {
-    return (<p>Error!</p>);
+    return <ErrorScreen />;
   }
 
   payload.forEach((role, index) => {

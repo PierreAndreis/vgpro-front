@@ -3,7 +3,7 @@
   display: flex;
   position: relative;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 20px;
   max-width: 450px;
   flex-wrap: nowrap;
 }
@@ -38,7 +38,7 @@
 .Profile__Header-update {
   color: grey;
   margin-top: auto;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
 }
 
 

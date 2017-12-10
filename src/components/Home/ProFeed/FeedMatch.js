@@ -65,8 +65,6 @@ const Loaded = ({t, data, style}) => {
   //   ]
   // },
 
-  console.log(data);
-
 
   const {
     proInfo, 
@@ -77,6 +75,7 @@ const Loaded = ({t, data, style}) => {
     assists,
     items,
   } = data;
+  
   const {name, position, region, team} = proInfo;
 
   const win = (winner) ? "Win" : "Loss";

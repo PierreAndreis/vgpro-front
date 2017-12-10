@@ -50,6 +50,15 @@ Utils.minifyNumber = (number, decPlaces = 2) => {
     return number;
 }
 
+Utils.paginateArray = (array, itemsPerPage, page) => {
+  const endIndex   = page     * itemsPerPage;
+  const startIndex = endIndex - itemsPerPage;
+  return array.filter((item, i) => {
+    if ((i >= startIndex) && (i < endIndex)) return true;
+    return false;
+  })
+}
+
 Utils.transformRegion = (region) => {
   return ({
     "sg": "sea",

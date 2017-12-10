@@ -1,16 +1,16 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 import ErrorScreen from "../../common/ErrorScreen";
-
-import {Rate} from "../../common/ColoredValues";
-import {Link} from "react-router-dom";
-import Utils from "../../../utils";
+import Box         from "../../common/Box";
+import {Rate}      from "../../common/ColoredValues";
+import Utils       from "../../../utils";
 
 import {Skeleton, SkeletonContainer, SkeletonPayload} from "../../common/Skeleton";
 
 import "./RecentPlayedWith.css";
 
-function compare(a,b) {
+function compare (a,b) {
   if (a.games < b.games)
     return 1;
   if (a.games > b.games)
@@ -75,34 +75,76 @@ class Loaded extends React.Component{
 
 const Friends = SkeletonContainer(Loading, Loaded);
 
-const RecentPlayedWith = ({status, data, t}) => {
-
-  let payload;
-  let content = [];
-
-  if (status === "loaded" && (data && data.stats && data.stats.PlayedWith)) {
-
-    let playedWith = data.stats.PlayedWith;
-    playedWith = playedWith.sort(compare)
-    playedWith = playedWith.slice(0, 5);
-    payload = playedWith;
+class RecentPlayedWith extends React.Component {
+  
+  state = {
+    page: 1,
   }
-  else if (status === "loading") {
-    payload = SkeletonPayload(5);
-  }
-  else {
-    return <ErrorScreen />
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.status === "loading") return this.setState({page: 1});
   }
 
-  payload.forEach((friend, index) => {
-    content.push(<Friends key={index} status={status} data={friend} />);
-  });
+  paginateUp(e) {
+    if (e.target.id === "disabled") return;
+    
+    this.setState({
+      page: this.state.page + 1
+    })
+  }
 
-  return (
-  <div className="PlayerFriends">
-    {content}
-  </div>
-  )
+  paginateDown(e) {
+    if (   e.target.id === "disabled"
+        || this.state.page < 2) return;
+    this.setState({
+      page: this.state.page - 1
+    })
+  }
+
+  render() {
+    const {status, data, t} = this.props;
+    const {page} = this.state;
+
+    let payload;
+    let lastPage;
+    let content = [];
+
+    if (status === "loaded" && (data && data.stats && data.stats.PlayedWith)) {
+
+      let playedWith = data.stats.PlayedWith;
+      let itemPerPage = 5;
+      playedWith = playedWith.filter(p => p.games > 3);
+      playedWith = playedWith.sort(compare);
+      lastPage = (playedWith) ? (playedWith.length / itemPerPage) : 1;
+      playedWith = Utils.paginateArray(playedWith, itemPerPage, page);
+      payload = playedWith;
+    }
+    else if (status === "loading") {
+      payload = SkeletonPayload(5);
+    }
+    else {
+      return <ErrorScreen />
+    }
+
+    payload.forEach((friend, index) => {
+      content.push(<Friends key={index} status={status} data={friend} />);
+    });
+
+    return (
+    <div className="PlayerFriends">
+      {content}
+      <Box.action>
+        <div className="button" 
+        id={(page > 1       ) ? "" : "disabled"}  
+        onClick={this.paginateDown.bind(this)}
+            >Back</div>
+        <div className="button" 
+            id={(page < lastPage) ? "" : "disabled"} 
+            onClick={this.paginateUp.bind(this) } 
+            >Next</div>
+      </Box.action>
+    </div>
+    )
+  }
 }
 
 export default RecentPlayedWith;

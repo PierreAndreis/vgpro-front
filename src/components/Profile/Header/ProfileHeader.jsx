@@ -23,16 +23,9 @@ class ProfileHeader extends React.Component {
     return (
       <div className="Profile__Header">
         <div className="wrap Profile__Header-Wrap">
-
           <PlayerImg {...passProps} />
-
           <PlayerInfo {...passProps} />
-
           <PlayerVPR {...passProps} />
-
-          {/* <PlayerStats2 t={t} /> */}
-          {/* <PlayerStats t={t} /> */}
-          
         </div>
       </div>
     );

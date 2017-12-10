@@ -15,68 +15,12 @@
 
 /* .ProfileMatchStats-Wrap  */
 
-.ProfileMatchStats-Team {
-  width: 350px;
-  height: 200px;
-  background: rgb(255, 255, 255);
-}
-
 .ProfileMatchStats-Stats {
-  width: 600px;
-  height: 200px;
+  width: 100%;
+  height: auto;
   background: rgb(255, 255, 255);
   flex-grow: 1;
 }
-
-.ProfileTeam {
-  display: flex;
-  position: relative;
-}
-
-.ProfileTeam__SkillTier {
-  width: 150px;
-  height: 230px;
-  background-size: 150%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.ProfileTeam__SkillTier span {
-  font-size: 20px;
-  color: white;
-  /* color: black; */
-  font-weight: bold;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
-  text-align: center;
-  display: block;
-  margin-top: 100%;
-}
-
-.ProfileTeam__Team {
-  flex-grow: 1;
-  height: 200px;
-}
-
-.ProfileTeam__Team-Name {
-  color: black;
-  margin-bottom: 0;
-}
-
-.ProfileTeam__Team-Desc {
-  font-size: 12px;
-}
-
-.ProfileTeam__Team-Logo {
-  background-image: url("/teams/SK.png");
-  background-position: 50px bottom;
-  background-size: 50%;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 
 /** Profile Stats **/
 
@@ -85,9 +29,19 @@
   height: 100%;
   justify-content: space-around;
 }
+
+@media screen and (max-width: 660px) {
+  .ProfileStats {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .ProfileStats__Category {
   display: flex;
   position: relative;
+  justify-content: center;
 }
 .ProfileStats__Category h4 {
   position: absolute;
@@ -114,7 +68,7 @@
   width: 100%;
   color: grey;
   font-weight: 500;
-  bottom: 30px;
+  bottom: 10%;
 }
 .ProfileStats__Stats-Label.chart {
   margin-top: -20px;

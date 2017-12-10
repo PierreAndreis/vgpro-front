@@ -1,16 +1,17 @@
 .PlayerRoles {
   display: flex;
   flex-direction: column;
-  /* padding: 15px; */
 }
 
 .PlayerRole {
   width: 100%;
-  height: 70px;
-  padding: 10px 0;
+  height: 90px;
+  padding: 10px 5px;
+  box-sizing: border-box;
   background: rgba(204, 204, 204, 0.205);
   border-bottom: 1px solid rgba(0, 0, 0, 0.11);
   display: flex;
+  justify-content: space-around;
 }
 
 .PlayerRole:nth-child(2) {
@@ -19,6 +20,12 @@
 
 .PlayerRole:last-child {
   border-bottom: 0;
+}
+
+.PlayerRole-Image {
+  padding: 5px;
+  box-sizing: border-box;
+  
 }
 
 .PlayerRole-Icon {
@@ -50,7 +57,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  justify-content: center;
 }
 .PlayerRole-Stats-Value {
   font-size: 16px;
@@ -91,18 +98,19 @@
 
 .PlayerRole-WR {
   height: 100%;
-  flex-grow: 1;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .PlayerRole-WR-value {
-  font-size: 25px;
+  font-size: 21px;
   text-align: center;
   font-weight: 500;
 }
 .PlayerRole-WR-desc {
   text-align: center;
-  font-size: 15px;
+  font-size: 13px;
+  color: #808080;
 }

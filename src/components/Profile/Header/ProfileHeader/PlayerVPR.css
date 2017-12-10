@@ -16,7 +16,7 @@
 
 
 .Profile__VPR-desc {
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
   display: none;
 }
@@ -26,11 +26,12 @@
 }
 
 .Profile__VPR-Stat div {
-  font-size: 25px;
+  font-size: 21px;
 }
 
 .Profile__VPR-Stat span{
-  color: rgb(179, 179, 179)
+  /* color: rgb(179, 179, 179) */
+  color: #CCAA28;
 }
 
 
@@ -38,10 +39,11 @@
 .VPR {
   margin-left: 75px;
   position: relative;
+  text-align: left;
 }
 
 .VPR div {
-  font-size: 42px;
+  font-size: 32px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: rgba(255, 173, 0, 1);
@@ -61,5 +63,5 @@
 }
 
 .VPR span {
-  font-size: 15px;
+  font-size: 13px;
 }

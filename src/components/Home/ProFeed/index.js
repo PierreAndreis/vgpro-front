@@ -6,6 +6,7 @@ import {SkeletonPayload}                    from "../../common/Skeleton";
 import ErrorScreen                          from "./../../common/ErrorScreen";
 import {fetchProFeed}                       from "./../../../actions/api";
 
+import Utils from "../../../utils";
 
 
 import "./ProFeed.css";
@@ -78,22 +79,14 @@ class ProFeed extends React.Component {
     const {status, payload, page} = this.state;
 
     let lastPage;
-    let content = [];
+    let content = null;
     if (status === "error"  ) content = <ErrorScreen err={payload} />
     else {
 
       const itemPerPage = PRO_FEED_ITEM_PER_PAGE;
       lastPage = (payload) ? (payload.length / itemPerPage) : 1;
-
-      const endIndex   = page     * itemPerPage;
-      const startIndex = endIndex - itemPerPage;
-      payload.forEach((match, i) => {
-
-        if ((i >= startIndex) && (i < endIndex)) {
-          content.push(<FeedMatch key={i} t={t} status={status} data={match} />);
-        }
-        
-      })
+      const matches = Utils.paginateArray(payload, PRO_FEED_ITEM_PER_PAGE, page);
+      content = matches.map((match, i) => <FeedMatch key={i} t={t} status={status} data={match} />);
     }
 
     return (

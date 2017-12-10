@@ -18,7 +18,7 @@
 }
 
 .ProfileSidebar-box {
-  margin-bottom:25px;
+  /* margin-bottom:25px; */
 }
 
 .Profile__Main {
@@ -40,7 +40,6 @@
   }
   .ProfileSidebar-box { 
     flex-grow: 1;
-    margin: 2px;
   }
 }
 

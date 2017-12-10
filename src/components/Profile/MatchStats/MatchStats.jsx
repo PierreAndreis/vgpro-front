@@ -89,15 +89,15 @@ class Loading extends React.Component {
 class Loaded extends React.Component {
 
   componentDidMount() {
-    window.addEventListener("resize", this.resize.bind(this));
+    window.addEventListener("resize", this.resize);
   }
 
-  resize() {
+  resize = () => {
     this.forceUpdate();
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.resize.bind(this));
+    window.removeEventListener("resize", this.resize);
   }
 
   render() {
@@ -107,9 +107,9 @@ class Loaded extends React.Component {
     const {
       winRate,
       kda,
-      totalKills,
-      totalDeaths,
-      totalAssists,
+      // totalKills,
+      // totalDeaths,
+      // totalAssists,
       avgKills,
       avgDeaths,
       avgAssists,
@@ -118,7 +118,7 @@ class Loaded extends React.Component {
       redWinRate,
     } = playerStats.stats;
 
-    const total = totalKills + totalAssists + totalDeaths;
+    // const total = totalKills + totalAssists + totalDeaths;
 
     // const killsPercent = (totalKills / total) * 100;
     // const deathsPercent = (totalDeaths / total) * 100;

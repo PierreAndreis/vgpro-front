@@ -96,7 +96,7 @@ API.fetchPlayerStats = (playerName) => {
 }
 
 API.fetchPlayerMatches = (playerName, filters) => {
-  return sendRequest(`/matches/${playerName}`);
+  return sendRequest(`/matches/${playerName}?limit=5`);
 }
 
 export default API;

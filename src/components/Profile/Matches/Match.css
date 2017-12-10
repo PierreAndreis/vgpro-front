@@ -43,7 +43,7 @@
   background-position: center center;
 }
 
-@media screen and (max-width: 1168px) {
+@media screen and (max-width: 660px) {
   .PlayerMatch-Avatar {
     width: 55px;
     height: 55px;
@@ -91,6 +91,15 @@
   .PlayerMatch-Info  {
     padding-left: 10px;
   }
+  .PlayerMatch-Info h2 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .PlayerMatch-Info  {
+    /* flex-gr */
+  }
 }
 
 .PlayerMatch-Info h2 {
@@ -100,20 +109,29 @@
   font-size: 16px;
 }
 
-@media screen and (max-width: 1068px) {
-  .PlayerMatch-Info h2{
-    font-size: 14px;
-  }
-}
 
 .PlayerMatch-Info .MatchTime {
   color: #B1B1B1;
   font-size: 13px;
+  white-space: nowrap;
   margin-bottom: 5px;
 }
 .PlayerMatch-Info-KDA {
   color: #B1B1B1;
   font-size: 14px;
+}
+
+@media screen and (max-width: 1068px) {
+  .PlayerMatch-Info h2{
+    font-size: 14px;
+  }
+  .PlayerMatch-Info .MatchTime {
+    font-size: 11px;
+  }
+  .PlayerMatch-Info-KDA { 
+    font-size: 13px;
+  }
+
 }
 
 .PlayerMatch-Info-KDA span.k {
@@ -132,23 +150,36 @@
 .PlayerMatch-Stats-Items {
   display: flex;
   flex-direction: row;
-  flex-grow: 2;
+  flex-grow: 3;
+  flex-shrink: 0;
   align-items: center;
 }
 
 .PlayerMatch-Stats {
-  text-align: center;
   flex-grow: 2;
-  min-width: 90px;
+  width: 90px;
   display: flex;
-  justify-content: space-between;
+  text-align: center;
+  justify-content: center;
   flex-wrap: wrap;
   font-size: 13px;
   color: #B1B1B1;
 }
 
+@media screen and (max-width: 500px) {
+  .PlayerMatch-Stats {
+    width: 90px;
+  }
+}
+
+.PlayerMatch-Stats>div {
+  width: 90px;
+  margin: 0 5px;
+}
+
 .PlayerMatch-Stats-Gold div {
   font-size: 14px;
+  white-space: nowrap;
   color: #4A4A4A;
   font-weight: 500;
 }
@@ -201,19 +232,19 @@
   background-size: 100%;
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 790px) and (min-width: 590px) {
   .PlayerMatch-Stats-Items {
     flex-direction: column;
   }
   .PlayerMatch-Stats-Items>div {
     width: 100%;
+    flex-wrap: nowrap;
   }
   .PlayerMatch-Item {
     width: 25px;
     height: 25px;
   }
 }
-
 
 .PlayerMatch-Players {
   min-width: 240px;

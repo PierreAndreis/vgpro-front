@@ -1,5 +1,9 @@
 import React from "react";
 
+import Box from "./../../common/Box";
+
+import Utils from "../../../utils";
+
 import ErrorScreen from "../../common/ErrorScreen";
 import {KDA, Rate} from "../../common/ColoredValues";
 import {Skeleton, SkeletonContainer, SkeletonPayload} from "../../common/Skeleton";
@@ -100,35 +104,78 @@ const Loading = () => (
 
 const Hero = SkeletonContainer(Loading, Loaded);
 
-const HeroesPlayed = ({status, data, t}) => {
+class HeroesPlayed extends React.PureComponent {
 
-  let payload;
-  let content = [];
-
-  if (status === "loaded" && (data && data.stats && data.stats.Heroes)) {
-
-    let heroes = data.stats.Heroes;
-    heroes = heroes.sort(compare)
-    heroes = heroes.slice(0, 5);
-    payload = heroes;
+  state = {
+    page: 1,
   }
-  else if (status === "loading") {
-    payload = SkeletonPayload(5);
-  }
-  else {
-    return <ErrorScreen />;
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.status === "loading") return this.setState({page: 1});
   }
 
-  payload.forEach((hero, index) => {
-    content.push(<Hero key={index} status={status} data={hero} />);
-  });
+  paginateUp(e) {
+    if (e.target.id === "disabled") return;
+    
+    this.setState({
+      page: this.state.page + 1
+    })
+  }
 
-  return (
-  <div className="PlayerHeroes">
-    {content}
-  </div>
-  )
+  paginateDown(e) {
+    if (   e.target.id === "disabled"
+        || this.state.page < 2) return;
+    this.setState({
+      page: this.state.page - 1
+    })
+  }
+
+  render() {
+    const {status, data, t} = this.props;
+    const {page} = this.state;
+
+    let payload;
+    let content = [];
+    let lastPage;
+
+    if (status === "loaded" && (data && data.stats && data.stats.Heroes)) {
+
+      let heroes = data.stats.Heroes;
+      heroes = heroes.sort(compare);
+
+      const itemPerPage = 5;
+      lastPage = (heroes) ? (heroes.length / itemPerPage) : 1;
+
+      payload = Utils.paginateArray(heroes, 5, page);
+    }
+    else if (status === "loading") {
+      payload = SkeletonPayload(5);
+    }
+    else {
+      return <ErrorScreen />;
+    }
+
+    payload.forEach((hero, index) => {
+      content.push(<Hero key={index} status={status} data={hero} />);
+    });
+
+    return (
+    <div className="PlayerHeroes">
+      {content}
+      <Box.action>
+        <div className="button" 
+             id={(page > 1       ) ? "" : "disabled"}  
+             onClick={this.paginateDown.bind(this)}
+             >Back</div>
+        <div className="button" 
+            id={(page < lastPage) ? "" : "disabled"} 
+            onClick={this.paginateUp.bind(this) } 
+            >Next</div>
+      </Box.action>
+    </div>
+    )
+  }
 }
+
 
 
 export default HeroesPlayed;

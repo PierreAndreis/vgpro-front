@@ -1,6 +1,6 @@
 .box__card {
   width: 320px;
-  margin: 5px 0 20px;
+  margin: 5px 2px 35px;
   background: white;
   box-sizing: border-box;
   position: relative;
@@ -55,8 +55,6 @@
 
 .box__card-Body {
   /* font-size: 0; */
-
-  overflow: hidden;
 }
 
 .box__card-Actions {

@@ -4,7 +4,7 @@ import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
 
 export default () => (
   <Box>
-    <BoxTitle>Soon</BoxTitle>
+    <BoxTitle>Meta</BoxTitle>
     <BoxBody>Nothing for now</BoxBody>
     <BoxActions />
   </Box>

@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 
 import ProFeed from "./ProFeed";
 import Lead5   from "./Lead5";
@@ -13,6 +14,9 @@ class HomePage extends React.Component {
 
     return (
       <div className="content">
+        <Helmet titleTemplate="">
+          <title>VGPRO.gg - Stats, Leaderboard</title>
+        </Helmet>
         <div className="wrap">
         <ProFeed t={t} />
         <Lead5   t={t} />

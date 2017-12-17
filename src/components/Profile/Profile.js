@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 import { withRouter } from 'react-router';
 
 // import Header    from "./Header/ProfileHeader";
@@ -39,10 +40,15 @@ class Profile extends React.Component {
 
   render() {
     const {t} = this.props;
+    const {match} = this.props;
+    const {player} = match.params;
 
     return (
       <div>
         {/* <Header t={t} /> */}
+        <Helmet>
+          <title>{player}</title>
+        </Helmet>
         <div className="Profile-ads" />
         <div className="wrap Profile-wrap">
 

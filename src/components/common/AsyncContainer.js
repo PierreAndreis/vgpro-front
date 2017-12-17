@@ -26,8 +26,10 @@ export default function asyncComponent(importComponent) {
 
     render() {
       const C = this.state.component;
-
-      return C ? <C {...this.props} /> :  <div style={{margin: "10px auto", textAlign: "center"}}>Loading...</div>;
+      if (C) return <C {...this.props} />;
+      return (
+      <div className="Loading-Page"><div className="loader" /></div>
+      )
     }
   }
 

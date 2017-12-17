@@ -22,7 +22,6 @@ class Loading extends React.Component {
         <BoxBody className="ProfileStats"> 
 
           <div className="ProfileStats__Category">
-            <h4>Overall</h4>
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Chart">
                 <Skeleton width="100px" height="100px" borderRadius="50%"/>
@@ -51,7 +50,6 @@ class Loading extends React.Component {
 
 
           <div className="ProfileStats__Category">
-            <h4>Sides W/R</h4>
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Chart">
                 <Skeleton width="100px" height="100px" borderRadius="50%"/>

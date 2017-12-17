@@ -1,4 +1,5 @@
 import React from "react";
+import {Helmet} from "react-helmet";
 
 import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
@@ -24,6 +25,9 @@ class Layout extends React.Component {
   render() {
     return (
      <div style={style}> 
+        <Helmet titleTemplate="%s - VGPRO.gg">
+          <title>Loading</title>
+        </Helmet>
         <div className="Header-BG" />
         <Header/>
         <div style={contentStyle}><Routers/></div>

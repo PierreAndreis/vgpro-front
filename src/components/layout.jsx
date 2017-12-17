@@ -5,6 +5,8 @@ import Footer from "./Layout/Footer";
 
 import Routers from "./routers";
 
+import "./common/animate.css";
+
 /** small hack so footer is always at bottom */
 const style = {
   position: "relative",

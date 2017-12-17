@@ -91,7 +91,7 @@ class ProFeed extends React.Component {
 
     return (
 
-      <Box>
+      <Box className="animated fadeInLeft">
       <BoxTitle>{t('pro-history')}</BoxTitle>
       <BoxBody>
         <div className="ProFeed">

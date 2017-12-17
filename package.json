@@ -11,6 +11,7 @@
     "i18next": "^9.0.0",
     "lodash": "^4.17.4",
     "normalize-scss": "^7.0.0",
+    "query-string": "^5.0.1",
     "react": "^15.6.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^15.6.1",

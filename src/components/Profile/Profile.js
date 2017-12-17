@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from 'react-router';
 
-import Header    from "./Header/ProfileHeader";
+// import Header    from "./Header/ProfileHeader";
 import MatchStats from "./MatchStats/MatchStats";
 
 import Sidebar from "./Sidebar";
@@ -42,7 +42,7 @@ class Profile extends React.Component {
 
     return (
       <div>
-        <Header t={t} />
+        {/* <Header t={t} /> */}
         <div className="Profile-ads" />
         <div className="wrap Profile-wrap">
 

@@ -7,14 +7,60 @@ import {Link} from "react-router-dom";
 
 import Utils from "../../../utils";
 
-import { SkeletonContainer } from "../../common/Skeleton";
+import { Skeleton, SkeletonContainer } from "../../common/Skeleton";
 import TimeAgo from "../../../i18n/timeAgo.js";
 
 import "./Match.css";
 
 const Loading = () => {
   return (
-    <p>Loading</p>
+     <Box.wrap className={`PlayerMatch PlayerMatch-win`}>
+        <Box.body className="PlayerMatch-body">
+          <div className="PlayerMatch-Avatar" />
+          <div className="PlayerMatch-Info">
+            <h2><Skeleton width="50px" /></h2>
+            <div className="MatchTime"><Skeleton width="60px" /></div>
+            <div className="PlayerMatch-Info-KDA">
+              <Skeleton width="70px" />
+            </div>
+            <div className="PlayerMatch-Info-KDA-text"><Skeleton width="80px" /></div>
+          </div>
+          <div className="PlayerMatch-Stats-Items">
+            <div className="PlayerMatch-Stats">
+              <div>
+                <Skeleton width="120px" />
+              </div>
+              <div>
+                <Skeleton width="80px" />
+              </div>
+            </div>
+
+            <div className="PlayerMatch-Items">
+                <div className="PlayerMatch-Item"/>
+                <div className="PlayerMatch-Item"/>
+                <div className="PlayerMatch-Item"/>
+                <div className="PlayerMatch-Item"/>
+                <div className="PlayerMatch-Item"/>
+                <div className="PlayerMatch-Item"/>
+            </div>
+          </div>
+
+          <div className="PlayerMatch-Players">
+            <div className="PlayerMatch-Players-Team">
+              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
+              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
+              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
+            </div>
+            <div className="PlayerMatch-Players-Team">
+              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
+              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
+              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
+            </div>
+          
+
+          </div>
+        </Box.body>
+      </Box.wrap>
   )
 }
 
@@ -62,6 +108,7 @@ class Loaded extends React.Component {
     return (
       <Box.wrap className={`PlayerMatch ${(me.winner && "PlayerMatch-win")}`}>
         <Box.body className="PlayerMatch-body">
+          {winBadge}
           <div className="PlayerMatch-Avatar" style={{
               backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${me.hero.toLowerCase()}.gif)`
           }}>
@@ -69,8 +116,9 @@ class Loaded extends React.Component {
           </div>
           
           <div className="PlayerMatch-Info">
+            <div className="MatchTime">◴ {minutes}</div>
             <h2>{gM}</h2>
-            <div className="MatchTime"><TimeAgo date={ended} /> - {minutes}</div>
+            <div className="MatchTime"><TimeAgo date={ended} /></div>
             <div className="PlayerMatch-Info-KDA">
               <span className="k">{me.kills}</span> / <span className="death">{me.deaths}</span> / <span className="k">{me.assists}</span>
             </div>
@@ -104,7 +152,6 @@ class Loaded extends React.Component {
               {redSide.map(player => <PlayerTeam key={player.id} player={player} />)}
             </div>
           </div>
-            {winBadge}
         </Box.body>
       </Box.wrap>
     )

@@ -43,7 +43,7 @@ export const BoxTitle = (props) => {
 
 export const BoxBody = (props) => {
   let style = {};
-  const classNames = ["box__card-Body"];
+  const classNames = ["box__card-Body",];
 
   if (props.style) {
     style = props.style;

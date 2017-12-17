@@ -4,10 +4,18 @@ export const fetchPlayerStats = (name) => {
     payload: name
   }
 }
-export const fetchPlayerMatches = (name, filters) => {
+export const fetchPlayerMatches = (name, page) => {
   return {
     type: 'PLAYER/MATCHES_FETCH_REQUEST',
     payload: name,
-    filters: filters,
+    page:    page,
+  }
+}
+
+export const removePlayersMatches = (name, qnty) => {
+  return {
+    type:    'PLAYER/MATCHES_REMOVE_PAGE',
+    payload: name,
+    qnty:    qnty,
   }
 }

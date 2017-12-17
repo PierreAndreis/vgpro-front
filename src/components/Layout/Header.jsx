@@ -4,9 +4,10 @@ import { translate } from 'react-i18next';
 import Alert            from './Header/Alert';
 import LanguageSelector from './Header/LanguageSelector';
 import SearchBar        from './Header/SearchBar';
-import MenuHeader       from "./Header/Menu";
+// import MenuHeader       from "./Header/Menu";
 
 import { withRouter } from 'react-router';
+import { Link }   from 'react-router-dom';
 
 import {lookupPlayer} from "../../actions/api";
 import Utils from "../../utils"
@@ -91,13 +92,13 @@ class Header extends React.Component {
 
         <div className="Header">
           <div className="wrap Header-wrap">
-            <div className="Header-Logo" />
-            <MenuHeader t={t} />
+            <Link to="/"><div className="Header-Logo" /></Link>
+            {/* <MenuHeader t={t} />
             <SearchBar mode="compact"
                       placeholder={t('search-placeholder')} 
                       status={status}
                       onSearch={this.search}
-            />
+            /> */ }
             <LanguageSelector />
             </div>
         </div>

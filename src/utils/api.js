@@ -9,6 +9,7 @@
 import axios from "axios";
 const http = require('http');
 const https = require('https');
+const queryString = require('query-string');
 
 //HARDCODED. CHANGE TO PROCESS FILE
 // const hostname = "https://lyra.vgpro.gg";
@@ -95,8 +96,16 @@ API.fetchPlayerStats = (playerName) => {
   return sendRequest(`/player/${playerName}/stats`);
 }
 
-API.fetchPlayerMatches = (playerName, filters) => {
-  return sendRequest(`/matches/${playerName}?limit=5`);
+API.fetchPlayerMatches = (playerName, filtersArgs) => {
+
+  let f = {
+    limit: 5,
+    ...filtersArgs
+  }
+
+  const filters = queryString.stringify(f);
+
+  return sendRequest(`/matches/${playerName}?${filters}`);
 }
 
 export default API;

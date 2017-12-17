@@ -1,8 +1,15 @@
+.Matches_Buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
 .PlayerMatch {
   width: 100%;
-  height: 120px;
+  height: 130px;
   margin: 10px 0;
   border-left: 6px solid #F1685D;
+  
 }
 
 .PlayerMatch-win {
@@ -15,7 +22,7 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-  padding: 10px 20px;
+  padding: 15px 20px;
   box-sizing: border-box;
 }
 
@@ -57,6 +64,20 @@
   }
 }
 
+@media screen and (max-width: 460px) {
+  .PlayerMatch-Avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .PlayerMatch-Avatar-Role {
+    width: 20px;
+    height: 20px;
+    top: -4px;
+    right: -4px;
+  }
+}
+
 .PlayerMatch-Avatar-Role#captain {
   background-color: rgb(191, 150, 1);
   background-image: url("/roles/captain.png");
@@ -76,7 +97,6 @@
 .PlayerMatch-Info {
   width: 160px;
   flex-grow: 1;
-  /* white-space: nowrap; */
   box-sizing: border-box;
   padding-left: 20px;
 }
@@ -98,7 +118,7 @@
 
 @media screen and (max-width: 590px) {
   .PlayerMatch-Info  {
-    /* flex-gr */
+    width: 90px;
   }
 }
 
@@ -147,6 +167,15 @@
   /* color: #FF6262; */
 }
 
+@media screen and (max-width: 450px) {
+  .PlayerMatch-Info .MatchTime { 
+    white-space: nowrap
+  }
+  .PlayerMatch-Info-KDA-text {
+    font-size: 14px;
+  }
+}
+
 .PlayerMatch-Stats-Items {
   display: flex;
   flex-direction: row;
@@ -178,7 +207,7 @@
 }
 
 .PlayerMatch-Stats-Gold div {
-  font-size: 14px;
+  font-size: 110%;
   white-space: nowrap;
   color: #4A4A4A;
   font-weight: 500;
@@ -195,7 +224,7 @@
   background-size: 15px 15px;
 }
 .PlayerMatch-Stats-CS div {
-  font-size: 14px;
+  font-size: 110%;
   color: #4A4A4A;
   font-weight: 500;
 }
@@ -243,6 +272,20 @@
   .PlayerMatch-Item {
     width: 25px;
     height: 25px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .PlayerMatch-Item {
+    width: 20px;
+    height: 20px;
+  }
+  .PlayerMatch-Items { 
+    width: 90px;
+  }
+  .PlayerMatch-Stats {
+    width: 75px;
+    font-size: 10px;
   }
 }
 

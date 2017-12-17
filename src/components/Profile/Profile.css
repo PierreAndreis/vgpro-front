@@ -14,17 +14,26 @@
   height: 100%;
   padding: 0 5px;
   box-sizing: border-box;
+  animation-name: fadeInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: both;
   /* background: red; */
 }
 
-.ProfileSidebar-box {
+
+
+.ProfileSidebar-box .box__card-Body{
   /* margin-bottom:25px; */
+  /* padding-bottom:20px */
 }
 
 .Profile__Main {
   width: 100%;
   padding: 0 10px;
-  /* background: blue; */
+  animation-name: fadeInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1088px) {
@@ -46,9 +55,15 @@
 @media screen and (max-width: 400px) {
   .Profile__Sidebar {
     flex-direction: column;
+    justify-content: center;
     /* background: blue; */
   }
   .ProfileSidebar-box { 
     width: 100%;
   }
+
+  .Profile__Main {
+    padding: 0;
+  }
+
 }

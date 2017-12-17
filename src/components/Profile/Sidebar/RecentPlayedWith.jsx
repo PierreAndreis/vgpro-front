@@ -10,6 +10,8 @@ import {Skeleton, SkeletonContainer, SkeletonPayload} from "../../common/Skeleto
 
 import "./RecentPlayedWith.css";
 
+const FRIENDS_PER_PAGE = 7;
+
 function compare (a,b) {
   if (a.games < b.games)
     return 1;
@@ -101,7 +103,7 @@ class RecentPlayedWith extends React.Component {
   }
 
   render() {
-    const {status, data, t} = this.props;
+    const {status, data} = this.props;
     const {page} = this.state;
 
     let payload;
@@ -111,7 +113,7 @@ class RecentPlayedWith extends React.Component {
     if (status === "loaded" && (data && data.stats && data.stats.PlayedWith)) {
 
       let playedWith = data.stats.PlayedWith;
-      let itemPerPage = 5;
+      let itemPerPage = FRIENDS_PER_PAGE;
       playedWith = playedWith.filter(p => p.games > 3);
       playedWith = playedWith.sort(compare);
       lastPage = (playedWith) ? (playedWith.length / itemPerPage) : 1;
@@ -119,7 +121,7 @@ class RecentPlayedWith extends React.Component {
       payload = playedWith;
     }
     else if (status === "loading") {
-      payload = SkeletonPayload(5);
+      payload = SkeletonPayload(FRIENDS_PER_PAGE);
     }
     else {
       return <ErrorScreen />

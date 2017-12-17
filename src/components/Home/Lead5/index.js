@@ -72,7 +72,7 @@ class Lead5 extends React.Component {
 
 
     return (
-      <Box>
+      <Box className="animated fadeInUp">
         <BoxTitle>Leaderboard</BoxTitle>
         <BoxBody> 
           <div className="Lead5">

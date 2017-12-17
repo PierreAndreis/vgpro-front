@@ -3,7 +3,7 @@ import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
 
 
 export default () => (
-  <Box>
+  <Box className="animated fadeInRight">
     <BoxTitle>Meta</BoxTitle>
     <BoxBody>Nothing for now</BoxBody>
     <BoxActions />

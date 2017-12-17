@@ -4,12 +4,16 @@ import Box from "../../common/Box";
 
 import { connect }          from "react-redux";
 
+import PlayerInfo       from "./PlayerInfo";
 import HeroesPlayed     from "./HeroesPlayed";
 import RecentRoles      from "./RecentRoles";
 import RecentPlayedWith from "./RecentPlayedWith";
  
 
 const SideBarItems = [
+  {
+    componentBody: PlayerInfo
+  },
   {
     label: "Recent Roles",
     labelKey: "recent-roles",
@@ -42,7 +46,7 @@ class Sidebar extends React.Component {
 
       return (
         <Box.wrap key={index} className="ProfileSidebar-box">
-          <Box.title>{(item.labelKey) ? t(item.labelKey) : item.label}</Box.title>
+          {(item.label || item.labelKey) && <Box.title>{(item.labelKey) ? t(item.labelKey) : item.label}</Box.title>}
           <Box.body> <ComponentBody {...propsPass} /></Box.body>
         </Box.wrap>
       )

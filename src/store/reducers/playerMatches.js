@@ -13,9 +13,8 @@
 
 const initialState = {
   name: "",
-  playerMatches: [],
-  filters: "",
-  status: "loading"
+  currentPage: 0,
+  playerMatches: {},
 }
 
 const playerMatches = (state = initialState, action) => {
@@ -24,21 +23,45 @@ const playerMatches = (state = initialState, action) => {
     return {
       ...state,
       name: action.payload,
-      filters: action.filters,
-      status: "loading"
+      currentPage: action.page,
+      playerMatches: {
+        ...state.playerMatches,
+        [action.page]: {
+          status: "loading"
+        }
+      }
     }
   case "PLAYER/MATCHES_FETCH_SUCCEEDED":
     return {
       ...state,
-      status: "loaded",
-      playerMatches: action.payload,
+      playerMatches: {
+        ...state.playerMatches,
+        [action.page]: {
+          status: "loaded",
+          payload: action.payload
+        }
+      }
     }
   case "PLAYER/MATCHES_FETCH_FAILED":
     return {
       ...state,
-      status: "error",
-      playerMatches: action.payload,
+      playerMatches: {
+        ...state.playerMatches,
+        [action.page]: {
+          status: "loaded",
+          payload: action.payload
+        }
+      }
     }
+
+  case "PLAYER/MATCHES_REMOVE_PAGE":
+    
+    return {
+      ...state,
+      currentPage: state.currentPage - action.qnty,
+    }
+
+
   default:
     return state
   }

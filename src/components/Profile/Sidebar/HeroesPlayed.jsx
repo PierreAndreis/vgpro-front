@@ -10,6 +10,8 @@ import {Skeleton, SkeletonContainer, SkeletonPayload} from "../../common/Skeleto
 
 import "./HeroesPlayed.css";
 
+const HEROES_PER_PAGE = 4;
+
 function compare(a,b) {
   if (a.games < b.games)
     return 1;
@@ -97,7 +99,7 @@ const Loading = () => (
     </div>
     <div className="PlayerHero-WR">
       <div className="PlayerHero-WR-value"><Skeleton width="60px" height="20px"/></div>
-      <div className="PlayerHero-WR-desc"><Skeleton width="90px" height="15px"/></div>
+      <div className="PlayerHero-WR-desc"><Skeleton width="30px" height="15px"/></div>
     </div>
   </div>
 )
@@ -130,7 +132,7 @@ class HeroesPlayed extends React.PureComponent {
   }
 
   render() {
-    const {status, data, t} = this.props;
+    const {status, data} = this.props;
     const {page} = this.state;
 
     let payload;
@@ -142,13 +144,13 @@ class HeroesPlayed extends React.PureComponent {
       let heroes = data.stats.Heroes;
       heroes = heroes.sort(compare);
 
-      const itemPerPage = 5;
+      const itemPerPage = HEROES_PER_PAGE;
       lastPage = (heroes) ? (heroes.length / itemPerPage) : 1;
 
       payload = Utils.paginateArray(heroes, 5, page);
     }
     else if (status === "loading") {
-      payload = SkeletonPayload(5);
+      payload = SkeletonPayload(HEROES_PER_PAGE);
     }
     else {
       return <ErrorScreen />;

@@ -38,7 +38,7 @@ export default ({data, label, children}) => {
 
   return (
     <div className="FullPie-Container" style={{width}}>
-      <PieChart width={width} stroke height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
+      <PieChart width={width} height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
         <Pie data={composedData}
             dataKey="value" 
             startAngle={startAngle} 

@@ -2,7 +2,7 @@ import {compose, createStore, applyMiddleware } from 'redux'
 
 import createSagaMiddleware from 'redux-saga';
 
-import {persistStore, autoRehydrate} from 'redux-persist';
+import { persistStore } from 'redux-persist';
 
 import reducers from "./reducers";
 import Sagas from './sagas'
@@ -19,26 +19,14 @@ let store = createStore(
   undefined,
   composeEnhancers(
     applyMiddleware(sagaMiddleware),
-    autoRehydrate()
   )
 )
 
 // We are storing some of the states in the localstorage.
-// It's okay to store regions, since we will be fetching everytime anyways.
-// We will be fetching because Searchbar.jsx will mount before the persist is back, and it will try to fetch the request from API
 // Then the persist will replace the defaults, and after that, the request will be succeed and replace the persisted.
-persistStore(store, {
-  whitelist: ["i18n", "regions"]
-});
+persistStore(store);
+
 // then run the saga
-sagaMiddleware.run(Sagas)
-
-// You can use subscribe() to update the UI in response to state changes.
-// Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
-// However it can also be handy to persist the current state in the localStorage.
-
-store.subscribe(() => {
-  // console.log(store.getState());
-})
+sagaMiddleware.run(Sagas);
 
 export default store;

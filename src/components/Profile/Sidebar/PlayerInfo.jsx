@@ -3,6 +3,8 @@ import React from "react";
 import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
 
 import TimeAgo from "../../../i18n/timeAgo.js";
+import Utils from "../../../utils";
+
 
 import "./PlayerInfo.css";
 
@@ -35,7 +37,7 @@ const Loaded = ({data}) => {
             {data.name}
           </div>
           <div className="PlayerInfo-desc">
-            Lorem impson
+            {Utils.getSkillTier(data.tier)}
           </div>
           <div className="PlayerInfo-update">
             Last updated: <br />

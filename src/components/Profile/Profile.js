@@ -56,7 +56,7 @@ class Profile extends React.Component {
             <MatchesManager t={t} />
           </div>
         </div>
-        </div>
+      </div>
     );
   }
 }

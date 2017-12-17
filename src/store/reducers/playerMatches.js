@@ -54,11 +54,12 @@ const playerMatches = (state = initialState, action) => {
       }
     }
 
-  case "PLAYER/MATCHES_REMOVE_PAGE":
+  case "PLAYER/MATCHES_SET_PAGE":
     
     return {
       ...state,
-      currentPage: state.currentPage - action.qnty,
+      currentPage: action.page,
+      playerMatches: action.playerMatches
     }
 
 

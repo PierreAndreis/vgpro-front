@@ -12,10 +12,12 @@ export const fetchPlayerMatches = (name, page) => {
   }
 }
 
-export const removePlayersMatches = (name, qnty) => {
+export const setPlayerMatches = (page, playerMatches) => {
+
+  console.log(page, playerMatches);
   return {
-    type:    'PLAYER/MATCHES_REMOVE_PAGE',
-    payload: name,
-    qnty:    qnty,
+    type:             'PLAYER/MATCHES_SET_PAGE',
+    page:              page,
+    playerMatches:     playerMatches,
   }
 }

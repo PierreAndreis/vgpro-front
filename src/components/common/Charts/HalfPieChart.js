@@ -38,7 +38,7 @@ export default ({data, label, width}) => {
 
   return (
     <div className="HalfPie-Container" style={{width}}>
-      <PieChart width={width} stroke height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
+      <PieChart width={width} height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
 
         <defs>
           <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="50%" gradientUnits="userSpaceOnUse">
@@ -88,6 +88,7 @@ export default ({data, label, width}) => {
             outerRadius={outerRadius}
             innerRadius={innerRadius} 
             stroke={"none"}
+            filter={"url(#blur)"}
             />
       </PieChart>
       <div className="HalfPie-Label" style={{fontSize}} >{label}</div>

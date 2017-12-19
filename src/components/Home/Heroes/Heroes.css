@@ -1,0 +1,19 @@
+.HeroesMeta {
+  padding: 10px 5px;
+}
+.HeroesMeta_RegionSelect {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 5%;
+}
+
+.HeroesMeta_RegionSelect div {
+  font-size: 14px;
+  color: grey;
+  font-weight: 700;
+  padding: 0 5px 5px;
+}
+.HeroesMeta_RegionSelect div.active {
+  color: #DCAF5A;
+  
+}

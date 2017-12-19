@@ -147,7 +147,7 @@ class HeroesPlayed extends React.PureComponent {
       const itemPerPage = HEROES_PER_PAGE;
       lastPage = (heroes) ? (heroes.length / itemPerPage) : 1;
 
-      payload = Utils.paginateArray(heroes, 5, page);
+      payload = Utils.paginateArray(heroes, HEROES_PER_PAGE, page);
     }
     else if (status === "loading") {
       payload = SkeletonPayload(HEROES_PER_PAGE);
@@ -161,8 +161,10 @@ class HeroesPlayed extends React.PureComponent {
     });
 
     return (
-    <div className="PlayerHeroes">
-      {content}
+    <React.Fragment>
+      <div className="PlayerHeroes">
+        {content}
+      </div>
       <Box.action>
         <div className="button" 
              id={(page > 1       ) ? "" : "disabled"}  
@@ -173,7 +175,7 @@ class HeroesPlayed extends React.PureComponent {
             onClick={this.paginateUp.bind(this) } 
             >Next</div>
       </Box.action>
-    </div>
+    </React.Fragment>
     )
   }
 }

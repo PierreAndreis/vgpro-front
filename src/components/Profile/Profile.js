@@ -2,6 +2,9 @@ import React from "react";
 import {Helmet} from "react-helmet";
 import { withRouter } from 'react-router';
 
+import ErrorScreen from "../common/ErrorScreen";
+
+import TimeAgo from "../../i18n/timeAgo";
 // import Header    from "./Header/ProfileHeader";
 import MatchStats from "./MatchStats/MatchStats";
 
@@ -40,16 +43,33 @@ class Profile extends React.Component {
 
   render() {
     const {t} = this.props;
-    const {match} = this.props;
+    const {match, playerStats, status} = this.props;
     const {player} = match.params;
+
+    let title = (
+      <Helmet>
+        <title>{player}</title>
+      </Helmet>
+    )
+
+    let FoundButNoMatch = (status !== "loading" && playerStats.stats && playerStats.id && playerStats.stats.errors)
+
+    if (FoundButNoMatch) {
+      return (
+      <div>
+      {title}
+      <ErrorScreen message={
+        <p>{player} was found but hasn't played a match in a while 
+        <br /> Please try again later.
+        <br /> Last update: <TimeAgo date={playerStats.lastCache} />
+        </p>} boxed/>
+      </div>
+      )
+    }
 
     return (
       <div>
-        {/* <Header t={t} /> */}
-        <Helmet>
-          <title>{player}</title>
-        </Helmet>
-        <div className="Profile-ads" />
+        {title}
         <div className="wrap Profile-wrap">
 
           <div className="Profile__Sidebar">

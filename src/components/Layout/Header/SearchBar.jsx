@@ -6,27 +6,63 @@ import {withRouter} from "react-router-dom";
 
 import "./SearchBar.css"
 
-const SearchCompact = ({status, onSearch, placeholder, onChange, value}) => {
+class SearchCompact extends React.Component {
   
-  return (
-  <form action="" onSubmit={onSearch(value)} className="Header-Search">
-    <input type="text" 
-           className="Header-Search_input"
-           placeholder={placeholder} 
-           onChange={onChange} 
-           value={value}
-           />
-    <button type="submit">
-      <div className="fa fa-search" />
-    </button>
-  </form>
-  )
+  state = {open: false}
+
+  timeout = null;
+
+  handleMenu = () => {
+    this.setState({
+      open: !this.state.open
+    })
+  }
+
+  handleClick = (value) => (e) => {
+    e.preventDefault();
+    const {open} = this.state;
+    const {onSearch} = this.props;
+
+    if (open) {
+      return onSearch(value, this.handleMenu);
+    }
+    
+    return this.handleMenu();
+
+  }
+
+  render() {
+    const {status, onSearch, placeholder, onChange, value} = this.props;
+
+    let icon = "fa fa-search";
+
+    if (status === "loading") {
+      icon = "fa fa-refresh fa-spin fa-3x fa-fw";
+    }
+    else if (status === "error"){
+      icon = "fa fa fa-exclamation-triangle";
+    }
+
+    return (
+      <div className="Header-Search">
+        <form action="" onSubmit={onSearch(value)}>
+          <input type="text" 
+                className="Header-Search_input open"
+                placeholder={placeholder} 
+                onChange={onChange} 
+                value={value}
+            />
+            <div className={`Search-Icon ${icon}`} onClick={onSearch(value)} />
+        </form>
+      </div>
+    )
+  }
 }
 
 const SearchMain = ({status, onSearch, onChange, placeholder, value}) =>  {
 
     let icon = "fa fa-search";
-    let formClasses = ["searchwrap"];
+    let formClasses = [];
 
     if (status === "loading") {
       formClasses.push("loading");
@@ -38,23 +74,22 @@ const SearchMain = ({status, onSearch, onChange, placeholder, value}) =>  {
     }
 
     return (
-    <div className="searchbar">
-      <div className="wrap">
-        <form action="" onSubmit={onSearch(value)} className={formClasses.join(" ")}>
-          <input
-            type="text"
-            className="search"
-            disabled={status === "loading"}
-            placeholder={placeholder}
-            value={value}
-            onChange={onChange}
-            required
-          />
-          <button type="submit" disabled={status === "loading"}> 
-            <i className={icon} />
-          </button>
-        </form>
-      </div>
+    <div className="SearchBar">
+      <form action="" onSubmit={onSearch(value)} className={formClasses.join(" ")}>
+
+        <button type="submit" disabled={status === "loading"}> 
+          <i className={icon} />
+        </button>
+        <input
+          type="text"
+          className="SearchBar-Input"
+          disabled={status === "loading"}
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+          required
+        />
+      </form>
     </div>
     )
   }

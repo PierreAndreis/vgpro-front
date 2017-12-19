@@ -15,7 +15,7 @@ class HomePage extends React.Component {
     return (
       <div className="content">
         <Helmet titleTemplate="">
-          <title>VGPRO.gg - Stats, Leaderboard</title>
+          <title>VGPRO.gg</title>
         </Helmet>
         <div className="wrap">
         <ProFeed t={t} />

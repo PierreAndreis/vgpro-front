@@ -38,7 +38,7 @@ class Sidebar extends React.Component {
     let propsPass = {
       t,
       status,
-      data: playerStats
+      data: playerStats,
     }
 
     const components = SideBarItems.map((item, index) => {

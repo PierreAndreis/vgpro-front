@@ -100,7 +100,7 @@ const Loaded = ({t, data, style}) => {
   }
 
   return (
-  <Link to={Utils.goToPlayer(name)} className="ProFeed-each" style={style}>
+  <Link to={Utils.goToPlayer(name)} className="ProFeed-each animated fadeIn" style={style}>
     <div className="ProFeed-each-status" id={win}/>
     <div className="ProFeed-each-info">
       <div className="ProFeed-each-info-picture" style={{

@@ -86,7 +86,10 @@ class ProFeed extends React.Component {
       const itemPerPage = PRO_FEED_ITEM_PER_PAGE;
       lastPage = (payload) ? (payload.length / itemPerPage) : 1;
       const matches = Utils.paginateArray(payload, PRO_FEED_ITEM_PER_PAGE, page);
-      content = matches.map((match, i) => <FeedMatch key={i} t={t} status={status} data={match} />);
+      content = matches.map((match, i) => {
+        let key = (match.matchId) ? `${match.matchId}${match.actor}` : i;
+        return <FeedMatch key={key} t={t} status={status} data={match} />
+      });
     }
 
     return (

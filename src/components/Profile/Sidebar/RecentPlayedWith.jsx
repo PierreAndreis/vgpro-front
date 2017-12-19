@@ -132,8 +132,10 @@ class RecentPlayedWith extends React.Component {
     });
 
     return (
-    <div className="PlayerFriends">
-      {content}
+    <React.Fragment>
+      <div className="PlayerFriends">
+        {content}
+      </div>
       <Box.action>
         <div className="button" 
         id={(page > 1       ) ? "" : "disabled"}  
@@ -144,7 +146,7 @@ class RecentPlayedWith extends React.Component {
             onClick={this.paginateUp.bind(this) } 
             >Next</div>
       </Box.action>
-    </div>
+    </React.Fragment>
     )
   }
 }

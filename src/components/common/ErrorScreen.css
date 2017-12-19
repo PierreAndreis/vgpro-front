@@ -1,3 +1,7 @@
+.Box-ErrorScreen {
+  margin: 5% auto;
+}
+
 .ErrorScreen {
   width: 100%;
   min-height: 150px;

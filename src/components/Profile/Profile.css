@@ -25,6 +25,9 @@
 .ProfileSidebar-box .box__card-Body{
   /* margin-bottom:25px; */
   /* padding-bottom:20px */
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .Profile__Main {

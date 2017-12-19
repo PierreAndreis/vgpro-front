@@ -35,12 +35,14 @@ class MatchManager extends React.Component {
     this.props.fetchPlayerMatches(player, 0);
   }
 
-  viewMore = () => {
+  viewMore = (e) => {
+    if (e.target.id === "disabled") return;
     const {currentPage, name} = this.props;
     return this.props.fetchPlayerMatches(name, currentPage + 1);
   }
 
-  viewLess = () => {
+  viewLess = (e) => {
+    if (e.target.id === "disabled") return;
     const {currentPage, playerMatches} = this.props;
     let newPage = currentPage - 1;
     let newPlayerMatches = {...playerMatches};

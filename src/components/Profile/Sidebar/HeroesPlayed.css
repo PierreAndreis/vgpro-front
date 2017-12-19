@@ -43,6 +43,7 @@
 
 .PlayerHero-Stats {
   flex-grow: 1;
+  width: 80px;
   text-align: center;
 }
 .PlayerHero-KDA {
@@ -62,7 +63,8 @@
 
 
 .PlayerHero-WR {
-  flex-grow: 1;
+  width: 90px;
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   justify-content: center;

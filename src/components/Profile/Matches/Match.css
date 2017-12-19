@@ -129,6 +129,16 @@
   font-size: 16px;
 }
 
+.PlayerMatch-Info .MatchDuration:after {
+  content: "";
+  display: inline-block;
+  vertical-align: bottom;
+  width: 15px;
+  height: 15px;
+  
+  background: url("/icons/time.svg") no-repeat bottom;
+  background-size: 13px 13px;
+}
 
 .PlayerMatch-Info .MatchTime {
   color: #B1B1B1;
@@ -378,4 +388,22 @@
 
 .PlayerMatch-win .PlayerMatch-Status {
   background-color: #5DB4F1;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 800ms ease-in;
 }

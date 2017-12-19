@@ -12,6 +12,8 @@ import TimeAgo from "../../../i18n/timeAgo.js";
 
 import "./Match.css";
 
+import { CSSTransition } from 'react-transition-group';
+
 const Loading = () => {
   return (
      <Box.wrap className={`PlayerMatch PlayerMatch-win`}>
@@ -116,7 +118,7 @@ class Loaded extends React.Component {
           </div>
           
           <div className="PlayerMatch-Info">
-            <div className="MatchTime">◴ {minutes}</div>
+            <div className="MatchTime MatchDuration">{minutes}</div>
             <h2>{gM}</h2>
             <div className="MatchTime"><TimeAgo date={ended} /></div>
             <div className="PlayerMatch-Info-KDA">

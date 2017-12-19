@@ -88,11 +88,16 @@
   line-height: 12px;
   border: 0;
   display: block;
-  background: #dbab27;
+  background: #F3DD5C;
+  /* background: linear-gradient(to right, rgba(242,219,101,1) 1%,rgba(231,177,62,1) 100%); */
+  background-image: linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%);
+  border-radius: 100px;
   color: #faf3d9;
   padding: 10px 15px;
-  border-radius: 20px;
-  font-size: 11px;
+  /* border-radius: 20px; */
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
   height: 12px;
   box-shadow: 0 0 20px #e4b727;
   margin: 5px;
@@ -105,6 +110,7 @@
 }
 
 .button:hover {
+  /* background: linear-gradient(to right, #f7d05b 1%,#f7d05b 100%); */
   background: #f7d05b;
   box-shadow: 0 0 20px #e4b727;
 }
@@ -112,6 +118,7 @@
 .button#disabled{
   background: #d3d2d3;
   color: #565656;
+  cursor: no-drop;
   opacity: .9;
   box-shadow: 0 0 0 #d3d2d3;
 }

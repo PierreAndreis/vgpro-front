@@ -4,22 +4,17 @@ import { translate } from 'react-i18next';
 import Alert            from './Header/Alert';
 import LanguageSelector from './Header/LanguageSelector';
 import SearchBar        from './Header/SearchBar';
-// import MenuHeader       from "./Header/Menu";
+import MenuHeader       from "./Header/Menu";
 
 import { withRouter } from 'react-router';
 import { Link }   from 'react-router-dom';
 
 import {lookupPlayer} from "../../actions/api";
-import Utils from "../../utils"
-
+import Utils from "../../utils";
 import "./Header.css"
 
 const changeStatus = (instance, status) => {
   clearTimeout(instance.timeout);
-
-  if (status === "loading") {
-    return instance.setState({status: "loading"});
-  }
 
   if (status === "error") {
      instance.setState({status: "error"});
@@ -27,10 +22,7 @@ const changeStatus = (instance, status) => {
        instance.setState({status: "ready"})
      }, 2000)
   }
-
-  if (status === "ready") {
-    return instance.setState({status: "ready"})
-  }
+   return instance.setState({status: status});
 }
 
 class Header extends React.Component {
@@ -74,8 +66,6 @@ class Header extends React.Component {
     const {
       status
     } = this.state;
-
-
     const message  = (
       <span>
         {t('alert')}
@@ -89,22 +79,19 @@ class Header extends React.Component {
     return (
       <div>
         <Alert message={message} />
-
         <div className="Header">
           <div className="wrap Header-wrap">
             <Link to="/"><div className="Header-Logo" /></Link>
-            {/* <MenuHeader t={t} />
-            <SearchBar mode="compact"
+            {/* <SearchBar mode="compact"
                       placeholder={t('search-placeholder')} 
                       status={status}
                       onSearch={this.search}
-            /> */ }
-            <LanguageSelector />
+            /> */}
+            {/* <MenuHeader t={t} /> */}
             </div>
         </div>
-        {   location.pathname === "/" 
-        || location.pathname === "/home" ? 
-        <header className="header-home">
+        {   location.pathname === "/"  ? 
+        <header className="header-home animated fadeInDown">
           <div className="wrap">
             <div className="logo">
               <div className="img" />

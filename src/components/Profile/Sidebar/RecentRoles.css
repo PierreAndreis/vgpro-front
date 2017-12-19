@@ -5,7 +5,7 @@
 
 .PlayerRole {
   width: 100%;
-  height: 90px;
+  height: 100px;
   padding: 10px 5px;
   box-sizing: border-box;
   /* background: rgba(204, 204, 204, 0.205); */
@@ -57,6 +57,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  width: 150px;
   justify-content: center;
 }
 .PlayerRole-Stats-Value {
@@ -87,7 +88,7 @@
   background-image: url("/icons/kill.svg");
 }
 .PlayerRole-Stats_KDA.Death {
-  background-image: url("/icons/Death.svg");
+  background-image: url("/icons/death.svg");
   background-position: center -3px;
   background-size: 15px;
   color: rgb(199, 0, 0);
@@ -98,7 +99,9 @@
 
 .PlayerRole-WR {
   height: 100%;
+  width: 90px;
   padding: 0 10px;
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   justify-content: center;

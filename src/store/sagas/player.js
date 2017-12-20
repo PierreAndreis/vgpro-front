@@ -7,27 +7,31 @@ export function* fetchPlayerStats(action) {
     const playerStats = yield call(API.fetchPlayerStats, action.payload);
     if (!playerStats) throw new Error("Error while loading stats");
     yield put({type: "PLAYER/STATS_FETCH_SUCCEEDED", payload: playerStats});
- } catch (e) {
+  } catch (e) {
     yield put({type: "PLAYER/STATS_FETCH_FAILED", payload: e.message});
- }
+  }
 }
 
 export function* fetchPlayerMatches(action) {
   try {
-    const playerMatches = yield call(API.fetchPlayerMatches, action.payload, {page: action.page});
-    if (!playerMatches) throw new Error("Error while loading matches");
-    yield put({type: "PLAYER/MATCHES_FETCH_SUCCEEDED", payload: playerMatches, page: action.page});
- } catch (e) {
-    yield put({type: "PLAYER/MATCHES_FETCH_FAILED", payload: e.message, page: action.page});
- }
-}
+    const playerMatches = yield call(
+      API.fetchPlayerMatches, 
+      action.payload, 
+      {page: action.page}
+    );
 
-export function* fetchPlayerMatchesPage(action) {
-  try {
-    const playerMatches = yield call(API.fetchPlayerMatches, action.payload, action.filters);
     if (!playerMatches) throw new Error("Error while loading matches");
-    yield put({type: "PLAYER/MATCHES_ADD_SUCCEEDED", payload: playerMatches});
- } catch (e) {
-    yield put({type: "PLAYER/MATCHES_ADD_FAILED", payload: e.message});
+
+    yield put({
+      type: "PLAYER/MATCHES_FETCH_SUCCEEDED", 
+      payload: playerMatches, 
+      page: action.page
+    });
+  } catch (e) {
+    yield put({
+      type: "PLAYER/MATCHES_FETCH_FAILED", 
+      payload: e.message, 
+      page: action.page
+    });
  }
 }

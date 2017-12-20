@@ -40,6 +40,7 @@ const MenuLanguage = ({onChange, open}) => (
       )
     )
   }
+  <span> todo this </span>
   </div>
   );
 
@@ -64,7 +65,7 @@ const LanguageSelector = ({language, changeLanguage, toggleLanguage, openMenu}) 
 
       <div className="language_selected" onClick={toggleLanguage}>
         <div className="lang_seled">
-          <span className={`flag-icon flag-icon-${flag}`} />
+          <span/>
           {name.toUpperCase()}
         </div>
       </div>

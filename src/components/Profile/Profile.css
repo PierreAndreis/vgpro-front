@@ -33,13 +33,14 @@
 .Profile__Main {
   width: 100%;
   padding: 0 10px;
+  overflow: hidden;
   animation-name: fadeInRight;
   animation-duration: 1s;
   animation-fill-mode: both;
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1088px) {
+@media screen and (max-width: 1220px) {
   .Profile-wrap { 
     flex-wrap: wrap;
   }

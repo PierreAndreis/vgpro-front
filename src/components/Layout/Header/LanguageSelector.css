@@ -14,9 +14,11 @@
   margin-right: 5px;
 }
 .menu_language .language_select {
-  position: relative;
+  position: absolute;
+  left: auto;
+  right: auto;
+  bottom: 35px;
   z-index: 99;
-  margin-top: -27px;
   padding: 5px;
   color: white;
   border-radius: 5px;

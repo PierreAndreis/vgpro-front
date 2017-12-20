@@ -12,12 +12,12 @@ export const fetchPlayerMatches = (name, page) => {
   }
 }
 
-export const setPlayerMatches = (page, playerMatches) => {
+export const setPlayerMatches = (page, playerMatches, filter) => {
 
-  console.log(page, playerMatches);
   return {
     type:             'PLAYER/MATCHES_SET_PAGE',
     page:              page,
+    filter:            filter,
     playerMatches:     playerMatches,
   }
 }

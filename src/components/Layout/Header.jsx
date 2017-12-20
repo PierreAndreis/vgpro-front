@@ -1,65 +1,16 @@
 import React         from 'react';
+import { Link }      from "react-router-dom";
 import { translate } from 'react-i18next';
 
 import Alert            from './Header/Alert';
 import LanguageSelector from './Header/LanguageSelector';
-import SearchBar        from './Header/SearchBar';
 import MenuHeader       from "./Header/Menu";
-
-import { withRouter } from 'react-router';
-import { Link }   from 'react-router-dom';
 
 import {lookupPlayer} from "../../actions/api";
 import Utils from "../../utils";
 import "./Header.css"
 
-const changeStatus = (instance, status) => {
-  clearTimeout(instance.timeout);
-
-  if (status === "error") {
-     instance.setState({status: "error"});
-     return instance.timeout = setTimeout(() => {
-       instance.setState({status: "ready"})
-     }, 2000)
-  }
-   return instance.setState({status: status});
-}
-
 class Header extends React.Component {
-  
-  constructor() {
-    super();
-
-    this.state = {
-      playerField: "",
-      status: "ready",
-    }
-
-    this.timeout = null;
-  }
-
-  changeField = (e) => {
-    this.setState({
-      playerField: e.target.value,
-      status: "ready"
-    })
-  }
-
-  search = (playerName) => (e) => {
-    e.preventDefault();
-    
-    changeStatus(this, "loading");
-
-    lookupPlayer(playerName).then((result) => {
-
-      if (result && result.name) {
-        changeStatus(this, "ready");
-        return this.props.history.push(Utils.goToPlayer(result.name));
-      }
-      changeStatus(this, "error");
-    });
-  }
-
   render() {
     const {t, location} = this.props;
 
@@ -82,34 +33,12 @@ class Header extends React.Component {
         <div className="Header">
           <div className="wrap Header-wrap">
             <Link to="/"><div className="Header-Logo" /></Link>
-            {/* <SearchBar mode="compact"
-                      placeholder={t('search-placeholder')} 
-                      status={status}
-                      onSearch={this.search}
-            /> */}
-            {/* <MenuHeader t={t} /> */}
+            <MenuHeader t={t} />
             </div>
         </div>
-        {   location.pathname === "/"  ? 
-        <header className="header-home animated fadeInDown">
-          <div className="wrap">
-            <div className="logo">
-              <div className="img" />
-            </div>
-          </div>
-          <SearchBar  mode="main"
-                      placeholder={t('search-placeholder')} 
-                      status={status}
-                      onSearch={this.search}
-          />
-        </header>
-        :
-        null
-        }
-        </div>
-        
+      </div>
     );
   };
 }
 
-export default translate()(withRouter(Header));
+export default translate()(Header);

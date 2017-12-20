@@ -142,7 +142,7 @@
   background-image: url("/icons/kill.svg");
 }
 .ProfileStats__KDA.Death {
-  background-image: url("/icons/Death.svg");
+  background-image: url("/icons/death.svg");
   background-position: center -3px;
   background-size: 15px;
   color: rgb(199, 0, 0);

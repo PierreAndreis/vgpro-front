@@ -101,7 +101,7 @@
   padding-left: 20px;
 }
 
-@media screen and (max-width: 1168px) {
+@media screen and (max-width: 1290px) {
   .PlayerMatch-Info  {
     width: 130px;
   }
@@ -271,7 +271,7 @@
   background-size: 100%;
 }
 
-@media screen and (max-width: 790px) and (min-width: 590px) {
+@media screen and (max-width: 880px) and (min-width: 590px) {
   .PlayerMatch-Stats-Items {
     flex-direction: column;
   }
@@ -307,7 +307,7 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 1168px) {
+@media screen and (max-width: 1298px) {
   .PlayerMatch-Players {
     width: 250px;
   }

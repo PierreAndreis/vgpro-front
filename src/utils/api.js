@@ -1,11 +1,3 @@
-/**
- * todo:
- * better way to make request
- * more dynamic
- * look at dashcache
- */
-
-
 import axios from "axios";
 const http = require('http');
 const https = require('https');

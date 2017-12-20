@@ -1,7 +1,8 @@
 .Sidebar {
   width: 100px;
   height: 100%;
-  background-image: linear-gradient(-180deg, rgb(250, 189, 97) 0%, #F76B1C 100%);
+  /* background-image: linear-gradient(-180deg, rgb(250, 189, 97) 0%, #F76B1C 100%); */
+  background-image: linear-gradient(-180deg, #E6BE3E 0%, #DFA436 100%);
   box-shadow: inset -4px 1px 7px 0 rgba(0,0,0,0.11);
   position: fixed;
   z-index: 2;
@@ -77,6 +78,7 @@
 
 
 .Menu-Item-icon.icon-home {
+    background-size: 30px 30px;
   background-image: url("/icons/home.svg");
 }
 .Menu-Item-icon.icon-leaderboard {

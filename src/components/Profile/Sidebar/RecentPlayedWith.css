@@ -24,9 +24,11 @@
 }
 
 .PlayerFriends-each_name {
-  font-size: 14px;
+  font-size: 13px;
   color: rgb(61, 61, 61);
-  width: 120px;
+  width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .PlayerFriends-each_stats {
@@ -35,10 +37,10 @@
 }
 
 .PlayerFriends-each_stats_value {
-  font-size: 13px;
+  font-size: 11px;
 }
 
 .PlayerFriends-each_stats_name {
-  font-size: 11px;
+  font-size: 10px;
   color: rgb(83, 83, 83);
 }

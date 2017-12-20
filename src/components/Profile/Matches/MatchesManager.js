@@ -9,7 +9,7 @@ import {fetchPlayerMatches, setPlayerMatches} from "./../../../actions/player";
 import {bindActionCreators} from "redux";
 import { connect }          from "react-redux";
 
-const MATCHES_PER_PAGE = 5;
+const MATCHES_PER_PAGE = 7;
 
 class MatchManager extends React.Component {
 
@@ -56,7 +56,6 @@ class MatchManager extends React.Component {
     let {playerMatches: pages, currentPage} = this.props;
 
     const content  = [];
-    let buttons;
 
     let viewLessDisabled = (currentPage === 0)
     let buttonsDisabled = false;
@@ -78,6 +77,7 @@ class MatchManager extends React.Component {
       })
     };
 
+    if (done) console.log("done!");
 
     return (
     <div>

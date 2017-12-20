@@ -12,8 +12,6 @@ import TimeAgo from "../../../i18n/timeAgo.js";
 
 import "./Match.css";
 
-import { CSSTransition } from 'react-transition-group';
-
 const Loading = () => {
   return (
      <Box.wrap className={`PlayerMatch PlayerMatch-win`}>

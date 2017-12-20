@@ -41,14 +41,7 @@ const NavLinks = [
     to:   "/",
     soon: true,
   },
-]
-
-const menuItem = () => (
-  <div className="Sidebar-Menu-Item">
-    <div className="Menu-Item-icon" />
-    <span>Home</span>
-  </div>
-)
+];
 
 class Sidebar extends React.Component {
   render() {

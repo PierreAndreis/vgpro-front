@@ -1,20 +1,14 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
-import Header from "./Layout/Header";
+// import Header from "./Layout/Header";
 import Sidebar from "./Layout/Sidebar";
 import Footer from "./Layout/Footer";
 
 import Routers from "./routers";
 
 import "./common/animate.css";
-
 import "./layout.css";
-
-const contentStyle = {
-  flex: 1
-}
-
 
 class Layout extends React.Component {
   render() {
@@ -23,8 +17,6 @@ class Layout extends React.Component {
         <Helmet titleTemplate="%s - VGPRO.gg">
           <title>Loading</title>
         </Helmet>
-
-        {/* <Header/> */}
         <div className="Layout-sidebar">
           <Sidebar />
         </div>

@@ -61,7 +61,11 @@ const Loaded = ({data}) => {
         <span>{Utils.transformRegion(region)}</span>
       </div>
       <div className="Lead5-each-info-skilltier">{Utils.getSkillTier(tier)}</div>
-      <div className="Lead5-each-info-stats">AVG KDA <KDA kda={kda} /></div>
+      <div className="Lead5-each-info-stats">
+        <span style={{paddingRight: "5px"}}>AVG KDA</span> 
+        {/* React dumbessery... need padding right to give space */}
+        <KDA kda={kda} />
+      </div>
     </div>
     <div className="Lead5-each-vpr">
       <div className="Lead5-each-vpr-number"><VPR value={rating} /></div>

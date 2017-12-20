@@ -51,7 +51,7 @@ const LanguageSelector = ({language, changeLanguage, toggleLanguage, openMenu}) 
     return (lang.language === language);
   });
 
-  const flag = (current && current[0] && current[0].flag    ) ? current[0].flag     : "us";
+  // const flag = (current && current[0] && current[0].flag    ) ? current[0].flag     : "us";
   const name = (current && current[0] && current[0].language) ? current[0].language : "en";
 
   let menu = null;

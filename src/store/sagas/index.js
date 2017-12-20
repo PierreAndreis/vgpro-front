@@ -1,6 +1,6 @@
 import {all, takeLatest} from 'redux-saga/effects'
 
-import {fetchPlayerStats, fetchPlayerMatches, fetchPlayerMatchesPage} from "./player";
+import {fetchPlayerStats, fetchPlayerMatches} from "./player";
 
 export default function *watchMany() {
   yield all([

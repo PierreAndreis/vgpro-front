@@ -21,7 +21,7 @@ class Layout extends React.Component {
           <Sidebar />
         </div>
         <div className="Layout-main">
-          <div className="Header-BG" />
+          <div className="Layout-BG" />
           <div className="Layout-content"><Routers/></div>
           <Footer/>
         </div>

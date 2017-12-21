@@ -49,7 +49,8 @@ class Sidebar extends React.Component {
       <div className="Sidebar">
         <div className="Sidebar-VGPRO-logo" />
         <div className="Sidebar-Search">
-          <SearchPlayer mode="compact" />
+          <div className="Sidebar-Search-Icon fa fa-search">
+          </div>
         </div>
 
 

@@ -18,7 +18,7 @@ export default ({status, onSearch, onChange, placeholder, value}) =>  {
 
     return (
     <div className="SearchBar">
-      <form action="" onSubmit={onSearch(value)} className={formClasses.join(" ")}>
+      <form action="" onSubmit={onSearch} className={formClasses.join(" ")}>
 
         <button type="submit" disabled={status === "loading"}> 
           <i className={icon} />

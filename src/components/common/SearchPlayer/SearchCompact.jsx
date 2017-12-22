@@ -11,18 +11,20 @@ class SearchCompact extends React.Component {
   handleMenu = () => {
     this.setState({
       open: !this.state.open
+    }, () => {
+      if (this.state.open) this.input.focus();
     })
   }
 
-  handleClick = (value) => (e) => {
-    e.preventDefault();
+  handleClick = (e) => {
+    console.log("lul");
     const {open} = this.state;
     const {onSearch} = this.props;
 
     if (open) {
-      return onSearch(value, this.handleMenu);
+      onSearch();
+      return;
     }
-    
     return this.handleMenu();
 
   }
@@ -41,14 +43,17 @@ class SearchCompact extends React.Component {
 
     return (
       <div className="Header-Search">
-        <form action="" onSubmit={onSearch(value)}>
+        <form action="" onSubmit={onSearch}>
           <input type="text" 
-                className="Header-Search_input open"
+                ref={input => this.input = input}
+                onBlur={this.handleMenu}
+                className={`Header-Search_input ${!this.state.open && "close"}`}
                 placeholder={placeholder} 
                 onChange={onChange} 
                 value={value}
             />
-            <div className={`Search-Icon ${icon}`} onClick={onSearch(value)} />
+
+            <div className={`Search-Icon ${icon}`} onClick={this.handleClick} />
         </form>
       </div>
     )

@@ -2,6 +2,8 @@ import React from "react";
 import { withRouter } from 'react-router';
 import Match from "./Match";
 
+import ErrorScreen from "../../common/ErrorScreen";
+
 import { SkeletonPayload } from "../../common/Skeleton";
 
 import {fetchPlayerMatches, setPlayerMatches} from "./../../../actions/player";
@@ -72,9 +74,17 @@ class MatchManager extends React.Component {
         done = true;
       }
 
-      matches.forEach((match, index) => {
-        content.push(<Match key={match.id || index} payload={match} status={page.status}/>)
-      })
+      if (page.status === "error" && !done) {
+        content.push(<ErrorScreen key="error" boxed message="An Error occured." />);
+      }
+      else if (done) {
+        content.push(<ErrorScreen key="error" boxed message="No more matches" />);
+      }
+      else {
+        matches.forEach((match, index) => {
+          content.push(<Match key={match.id || index} payload={match} status={page.status}/>)
+        })
+      }
     };
 
     if (done) console.log("done!");

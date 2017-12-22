@@ -8,12 +8,12 @@
   opacity: 0.08;
 }
 
-
 .Layout {
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: row;
+  flex-direction: column;
 }
 
 .Layout-sidebar {
@@ -25,7 +25,8 @@
 
 .Layout-main {
   display: flex;
-  max-width: calc(100% - 100px);
+  /* max-width: calc(100% - 100px); */
+  width: 100%;
   flex-direction: column;
   height: 100%;
   flex: 1;

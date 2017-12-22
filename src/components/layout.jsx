@@ -1,8 +1,8 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
-// import Header from "./Layout/Header";
-import Sidebar from "./Layout/Sidebar";
+import Header from "./Layout/Header";
+// import Sidebar from "./Layout/Sidebar";
 import Footer from "./Layout/Footer";
 
 import Routers from "./routers";
@@ -17,9 +17,10 @@ class Layout extends React.Component {
         <Helmet titleTemplate="%s - VGPRO.gg">
           <title>Loading</title>
         </Helmet>
-        <div className="Layout-sidebar">
+        <Header />
+        {/* <div className="Layout-sidebar">
           <Sidebar />
-        </div>
+        </div> */}
         <div className="Layout-main">
           <div className="Layout-BG" />
           <div className="Layout-content"><Routers/></div>

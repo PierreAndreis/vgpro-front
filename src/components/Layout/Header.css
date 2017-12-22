@@ -8,7 +8,7 @@
   /* background-color: rgb(49, 38, 0); */
   /* background-color: #323232; */
   position: relative;
-  z-index: 3;
+  z-index: 4;
   display: flex;
   box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.12);
 
@@ -18,11 +18,9 @@
 .Header-wrap {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   width: 100%;
   padding: 0 30px;
   box-sizing: border-box;
-  /* background: blue; */
 }
 
 .Header-Logo {
@@ -33,24 +31,6 @@
   width: 125px;
   height: 42px;
 }
-
-
-
-.fade-enter {
-  opacity: 0.01;
+.Header-Logo-space {
+  margin-right: 30px;
 }
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 800ms ease-in;
-}
-

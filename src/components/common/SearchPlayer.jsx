@@ -43,9 +43,11 @@ class SearchPlayer extends React.Component {
     })
   }
 
-  search = (playerName) => (e) => {
-    e.preventDefault();
+  search = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
     
+    const playerName = this.state.playerField;
+
     changeStatus(this, "loading");
 
     lookupPlayer(playerName).then((result) => {

@@ -88,7 +88,7 @@ export default {
   "role-Carry": "Carry",
   "role-Jungler": "Jungler",
   "scout-bought": "Scout Trap Bought",
-  "search-placeholder": "Search Player Name (case sensitive)",
+  "search-placeholder": "Search Player Name",
   "sidebar-played": "Played",
   "skills": "Skills",
   "soon": "Soon",

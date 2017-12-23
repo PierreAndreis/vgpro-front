@@ -1,0 +1,296 @@
+.MatchDetails {
+  width: 98%;
+  min-height: 140px;;
+  margin: 0 auto;
+  margin-top: -10px;
+  padding: 15px 5px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 0 10px rgba(146, 146, 146, 0.445);
+}
+
+.MatchDetails-Overview {
+  width: 100%;
+  display: flex;
+}
+
+.Overview-Team {
+  width: 100%;
+  height: 200px;
+}
+
+.Overview-Team .Overview-Cell {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  /* padding: 0 10px; */
+  box-sizing: border-box;
+}
+
+.Overview-Team:first-of-type {
+  border-right: 2px solid #F3F3F3;
+}
+
+.Overview-Team:last-of-type .Overview-Cell {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+  .MatchDetails-Overview {
+    flex-direction: column;
+  }
+  .Overview-Team .Overview-Cell {
+    flex-direction: row;
+  }
+  .Overview-Team:first-of-type .Overview-Cell .Overview-Player-Info {
+    flex-direction: row !important;
+  }
+}
+
+.Overview-Team .Overview-Header .Overview-Player-Items {
+  justify-content: center;
+}
+
+.Overview-Team .Overview-Cell>div {
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.Overview-Team .Overview-Cell.Overview-Header {
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  background: rgba(214, 214, 214, 0.226);
+}
+
+.Overview-Team .Overview-Cell.Overview-Player {
+  height: 60px;
+}
+
+.Overview-Team .Overview-Cell.Overview-Player:nth-child(odd) {
+  background: rgb(243, 243, 243);
+}
+
+.Overview-Team:first-of-type .Overview-Cell .Overview-Player-Info {
+  flex-direction: row-reverse;
+}
+
+.Overview-Player-Info {
+  width: 130px;
+  display: flex;
+  box-sizing: border-box;
+  padding: 2px;
+
+  /* border: 1px solid blue; */
+}
+
+.Overview-Player-Info-details {
+  width: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  align-self: flex-start;
+}
+
+.Overview-Player-Image {
+  width: 40px;
+  white-space: nowrap;
+  margin-right: 5px;
+}
+
+.Overview-Player-Image .OverView-Player-Image-Hero {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: 100%;
+  position: relative;
+}
+
+.Overview-Player-Image-Role {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
+  background-size: 70%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.Overview-Player-Image-Role#captain {
+  background-color: rgb(191, 150, 1);
+  background-image: url("/roles/captain.png");
+}
+
+.Overview-Player-Image-Role#carry {
+  background-color: rgb(160, 46, 45);
+  background-image: url("/roles/carry.png");
+}
+
+.Overview-Player-Image-Role#jungler {
+  background-color: rgb(106, 183, 11);
+  background-image: url("/roles/jungler.png");
+}
+
+
+.Overview-Player-Info .Overview-Player-Info-Name {
+  font-size: 12px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  color: #3A3A3A;
+}
+
+.Overview-Player-Info .Overview-Player-Info-KDA {
+  font-size: 11px;
+  color: grey;
+}
+
+.Overview-Player-Info .Overview-Player-Info-KDA>span {
+  color: black;
+}
+.Overview-Player-Info .Overview-Player-Info-KDA>span.d {
+  color: rgb(179, 32, 32);
+}
+.Overview-Player-Info .Overview-Player-Info-KDA>div {
+  font-size: 13px;
+  color: black;
+  font-weight: bold;
+}
+
+.Overview-Player-Game {
+  width: 100px;
+}
+
+.Overview-Player-Items {
+  width: 80px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5px;
+}
+
+.Overview-Player-Items .Overview-Player-Item {
+  width: 25px;
+  height: 25px;
+  margin: 1px 1px 0 0;
+  flex-shrink: 0;
+  background-color: grey;
+  background-size: 100%;
+  border-radius: 50%;
+}
+
+/* @media screen and (min-width: 700px) {
+  .Overview-Player-Game {
+    display: flex;
+    background: green;
+  }
+  .Overview-Player-Items { 
+    width: 160px;
+    flex-wrap: wrap;
+    height: 100%;
+    background: red;
+    margin-right: 5px;
+  }
+  .Overview-Player-Items .Overview-Player-Item { 
+    width: 25px;
+    margin: 1px;
+    height: 25px;
+  }
+} */
+
+.Overview-Player-Damage {
+  width: 100%;
+  display: flex;
+  margin-top: 1px;
+  height: 20px;
+  align-items: center;
+}
+
+.Overview-Player-Damage-bar {
+  width: 75%;
+  border-radius: 15px;
+  height: 10px;
+  position: relative;
+  background: rgba(95, 95, 95, 0.356);
+  /* overflow: hidden; */
+}
+.Overview-Player-Damage-fill {
+  height: 100%;
+  border-radius: 15px;
+  background-image: linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%);
+  box-shadow: 0 0 10px #E7AE2A;
+}
+
+.Overview-Player-Damage-label {
+  font-size: 12px;
+  font-weight: bold;
+  color: grey;
+  margin-left: 3px;
+}
+
+.Overview-Player-Stats {
+  width: 100px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.Overview-Player-Stats-Game {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Overview-Player-CS {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: rgb(53, 53, 53);
+  font-weight: 500;
+}
+.Overview-Player-CS:before {
+  content: "";
+  display: inline-block;
+  vertical-align: center;
+  margin-right: 2px;
+  width: 10px;
+  height: 15px;
+  
+  background: url("/icons/cs.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 10px 10px;
+}
+
+.Overview-Player-Gold {
+  font-size: 13px;
+  color: rgb(53, 53, 53);
+  font-weight: 500;
+}
+.Overview-Player-Gold:before {
+  content: "";
+  display: inline-block;
+  vertical-align: center;
+  margin-right: 2px;
+  width: 10px;
+  height: 15px;
+  
+  background: url("/icons/gold.svg") no-repeat bottom;
+  background-size: 10px 10px;
+}
+
+.Overview-Player-Rank {
+  width: 30px;
+  /* border: 1px solid green; */
+}
+.Overview-Player-Tier {
+  width: 30px;
+  height: 40px;
+  background-size: 130%;
+  border-radius: 50%;
+  /* background-color: rgb(236, 236, 236); */
+  background-position: center top;
+}

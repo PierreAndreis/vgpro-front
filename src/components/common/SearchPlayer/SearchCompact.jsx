@@ -41,6 +41,8 @@ class SearchCompact extends React.Component {
       icon = "fa fa fa-exclamation-triangle";
     }
 
+    let ph = (this.state.open) ? placeholder : "";
+
     return (
       <div className="Header-Search">
         <form action="" onSubmit={onSearch}>
@@ -48,7 +50,7 @@ class SearchCompact extends React.Component {
                 ref={input => this.input = input}
                 onBlur={this.handleMenu}
                 className={`Header-Search_input ${!this.state.open && "close"}`}
-                placeholder={placeholder} 
+                placeholder={ph} 
                 onChange={onChange} 
                 value={value}
             />

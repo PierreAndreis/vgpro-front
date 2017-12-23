@@ -10,6 +10,8 @@ import Utils from "../../../utils";
 import { Skeleton, SkeletonContainer } from "../../common/Skeleton";
 import TimeAgo from "../../../i18n/timeAgo.js";
 
+import MatchDetails from "./MatchDetails";
+
 import "./Match.css";
 
 const Loading = () => {
@@ -106,6 +108,7 @@ class Loaded extends React.Component {
     );
 
     return (
+    <React.Fragment>
       <Box.wrap className={`PlayerMatch ${(me.winner && "PlayerMatch-win")}`}>
         <Box.body className="PlayerMatch-body">
           {winBadge}
@@ -154,6 +157,8 @@ class Loaded extends React.Component {
           </div>
         </Box.body>
       </Box.wrap>
+      <MatchDetails />
+    </React.Fragment>
     )
 
   }

@@ -40,7 +40,7 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 1120px) {
   .Profile-wrap { 
     flex-wrap: wrap;
   }
@@ -53,6 +53,9 @@
   }
   .ProfileSidebar-box { 
     flex-grow: 1;
+  }
+  .ProfileSidebar-box:first-of-type {
+    width: 100%;
   }
 }
 

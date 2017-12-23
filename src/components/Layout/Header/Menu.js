@@ -68,7 +68,8 @@ class MobileMenu extends React.Component{
         <div className="Menu-Mobile-Area">
           <div className={
             `Menu-Mobile-Button 
-            fa ${this.state.open ? "fa-close" : "fa-bars"}`} onClick={this.handleMenu}/>
+            fa ${this.state.open ? "fa-close" : "fa-bars"}`} 
+            onClick={this.handleMenu}/>
         </div>
 
         <div className={`Mobile-Menu ${this.state.open && "menu-open"}`} onClick={this.handleMenu}>

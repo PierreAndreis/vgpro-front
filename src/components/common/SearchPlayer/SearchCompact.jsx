@@ -4,29 +4,40 @@ import "./SearchCompact.css"
 
 class SearchCompact extends React.Component {
   
-  state = {open: false}
+  constructor() {
+    super();
 
-  timeout = null;
+    this.state = {
+      open: (document.documentElement.clientWidth > 790) ? true : false
+    }
+  }
 
-  handleMenu = () => {
+  openMenu = () => {
     this.setState({
-      open: !this.state.open
+      open: true
     }, () => {
       if (this.state.open) this.input.focus();
+    });
+  }
+
+  closeMenu = () => {
+
+    if (document.documentElement.clientWidth > 790) return;
+    
+    this.setState({
+      open: false
     })
   }
 
+
   handleClick = (e) => {
-    console.log("lul");
-    const {open} = this.state;
     const {onSearch} = this.props;
 
-    if (open) {
+    if (this.state.open) {
       onSearch();
       return;
     }
-    return this.handleMenu();
-
+    return this.openMenu();
   }
 
   render() {
@@ -48,7 +59,7 @@ class SearchCompact extends React.Component {
         <form action="" onSubmit={onSearch}>
           <input type="text" 
                 ref={input => this.input = input}
-                onBlur={this.handleMenu}
+                onBlur={() => setTimeout(this.closeMenu, 300)}
                 className={`Header-Search_input ${!this.state.open && "close"}`}
                 placeholder={ph} 
                 onChange={onChange} 

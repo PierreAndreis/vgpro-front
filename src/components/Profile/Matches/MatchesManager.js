@@ -87,8 +87,6 @@ class MatchManager extends React.Component {
       }
     };
 
-    if (done) console.log("done!");
-
     return (
     <div>
       {content}

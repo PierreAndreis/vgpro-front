@@ -86,7 +86,6 @@ class Loaded extends React.Component {
 
   render() {
     const {playerStats, status} = this.props;
-    console.log(status);
     if (status === "error") return <ErrorScreen boxed message={playerStats} />
 
     const {

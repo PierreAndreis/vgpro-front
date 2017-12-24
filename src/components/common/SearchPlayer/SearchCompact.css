@@ -26,18 +26,14 @@
   box-sizing: border-box;
 }
 
-.Header-Search_input.close {
-  width: 35px;
-  font-size: 16px;
-  color: transparent;
-  padding: 0;
-  /* background: red; */
-  /* display: none !important; */
-}
-
 @media screen and (max-width: 790px) {
-  .Header-Search_input {
+  .Header-Search_input.close {
+    width: 35px;
     font-size: 16px;
+    color: transparent;
+    padding: 0;
+    /* background: red; */
+    /* display: none !important; */
   }
 }
 

@@ -33,7 +33,6 @@ const OverviewPlayer = ({player, telemetry}) => {
   let healingDonePercent = "0%";
 
   if (telemetry) {
-    console.log(telemetry);
     damage             = Utils.minifyNumber(telemetry.dealt, 0);
     damageTaken        = Utils.minifyNumber(telemetry.taken, 0);
     healingDone        = Utils.minifyNumber(telemetry.healed, 0);

@@ -181,7 +181,7 @@
 }
 
 .Overview-Player-Items {
-  width: 80px;
+  width: 75px;
   flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
@@ -191,7 +191,7 @@
 .Overview-Player-Items .Overview-Player-Item {
   width: 23px;
   height: 23px;
-  margin: 1px 1px 0 0;
+  margin: 2px 0;
   flex-shrink: 0;
   background-color: grey;
   background-size: 100%;
@@ -435,10 +435,13 @@
   width: 10px;
   height: 15px;
   
-  background: url("/icons/gold.svg") no-repeat bottom;
+  background: url("/icons/gold_red.svg") no-repeat bottom;
   background-size: 10px 10px;
 }
 
+.Overview-Team:first-of-type .Overview-Team-Gold:before {
+  background-image: url("/icons/gold_blue.svg");
+}
 
 .Overview-Team-Top {
   border-bottom: 2px solid #FF6262;
@@ -462,8 +465,12 @@
   width: 10px;
   height: 15px;
   
-  background: url("/icons/gold.svg") no-repeat bottom;
+  background: url("/icons/sentry_red.png") no-repeat bottom;
   background-size: 10px 10px;
+}
+
+.Overview-Team:first-of-type .Overview-Team-Turret:before {
+  background-image: url("/icons/sentry_blue.png");
 }
 
 .Overview-Team-Kraken:before {
@@ -474,8 +481,12 @@
   width: 10px;
   height: 15px;
   
-  background: url("/icons/gold.svg") no-repeat bottom;
+  background: url("/icons/kraken_red.svg") no-repeat bottom;
   background-size: 10px 10px;
+}
+
+.Overview-Team:first-of-type .Overview-Team-Kraken:before {
+  background-image: url("/icons/kraken_blue.svg");
 }
 
 .Overview-Team-Score {

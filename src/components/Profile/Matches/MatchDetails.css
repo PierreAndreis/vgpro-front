@@ -374,7 +374,9 @@
   background-position: center;
   border-radius: 50%;
   border: 3px solid #FF6262;
-  
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
   position: relative;
 }
 

@@ -18,7 +18,9 @@ Utils.getPercentageTillNext = (skillNumber, vst) => {
   const delta = result.ends - result.starts;
   const delta_two = vst - result.starts;
 
-  return (delta_two / delta) * 100;
+  const res =  (delta_two / delta) * 100;
+
+  return (res > 100) ? 100 : res;
 
 }
 

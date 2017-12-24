@@ -54,9 +54,9 @@
   .ProfileSidebar-box { 
     flex-grow: 1;
   }
-  .ProfileSidebar-box:first-of-type {
+  /* .ProfileSidebar-box:first-of-type {
     width: 100%;
-  }
+  } */
 }
 
 @media screen and (max-width: 400px) {

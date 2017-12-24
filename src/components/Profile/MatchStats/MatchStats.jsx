@@ -142,7 +142,8 @@ class Loaded extends React.Component {
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Chart">
                 <HalfPieChart {...commonGraphProps} data={winRateGraph}>
-                  <Rate rate={winRate} />
+                  {/* <Rate rate={winRate} /> */}
+                  {winRate}
                 </HalfPieChart>
               </div>
               <div className="ProfileStats__Stats-Label chart">Win Rate</div>
@@ -150,7 +151,8 @@ class Loaded extends React.Component {
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Chart">
                 <HalfPieChart {...commonGraphProps} data={kpGraph}>
-                  <Rate rate={kp} />
+                  {/* <Rate rate={kp} /> */}
+                  {kp}
                 </HalfPieChart>
               </div>
               <div className="ProfileStats__Stats-Label chart">K/P</div>
@@ -178,7 +180,8 @@ class Loaded extends React.Component {
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Chart">
                 <HalfPieChart {...commonGraphProps} data={blueGraph}>
-                  <Rate rate={blueWinRate} />
+                  {/* <Rate rate={blueWinRate} /> */}
+                  {blueWinRate}
                 </HalfPieChart>
               </div>
               <div className="ProfileStats__Stats-Label chart" style={{color: BlueColor}}>Blue</div>
@@ -186,7 +189,8 @@ class Loaded extends React.Component {
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Chart">
                 <HalfPieChart {...commonGraphProps} data={redGraph}>
-                  <Rate rate={redWinRate} />
+                  {/* <Rate rate={redWinRate} /> */}
+                  {redWinRate}
                 </HalfPieChart>
               </div>
               <div className="ProfileStats__Stats-Label chart" style={{color: RedColor}}>Red</div>

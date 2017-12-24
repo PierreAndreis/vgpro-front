@@ -6,7 +6,7 @@ import "./Heroes.css";
 export default () => (
   <Box className="animated fadeInRight">
     <BoxTitle className="HeroesMeta-Title">
-      <span>Heroes Pick Rate</span>
+      <span>Top Pick Rate</span>
       <div className="HeroesMeta-Selector">
         <div className="HeroesMeta-Selector-PickRate" />
         <div className="HeroesMeta-Selector-PickRate" />

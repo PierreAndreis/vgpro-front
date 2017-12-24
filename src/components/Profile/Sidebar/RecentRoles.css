@@ -35,22 +35,22 @@
   border-radius: 50%;
   
   background-size: 25px 25px;
-  background-color: grey;
+  /* background-color: grey; */
   background-position: center;
   background-repeat: no-repeat;
 }
 
 .PlayerRole-Icon.carry {
-  background-color: #9F041B;
-  background-image: url('/icons/carry.png');
+  /* background-color: #9F041B; */
+  background-image: url('/icons/carry_color.png');
 }
 .PlayerRole-Icon.jungler {
-  background-color: #429321;
-  background-image: url('/icons/jungler.png');
+  /* background-color: #429321; */
+  background-image: url('/icons/jungler_color.png');
 }
 .PlayerRole-Icon.captain {
-  background-color: rgb(228, 197, 87);
-  background-image: url('/icons/captain.png');
+  /* background-color: rgb(228, 197, 87); */
+  background-image: url('/icons/captain_color.png');
 }
 
 .PlayerRole-Stats {

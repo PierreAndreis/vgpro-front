@@ -76,9 +76,18 @@ const PlayerTeam = ({player}) => (
 )
 
 class Loaded extends React.Component {
+
+  state = {
+    details: false
+  }
+
+  handleOpen = () => {
+    this.setState((prevState) => ({details: !prevState.details}))
+  }
+
   render() {
     const {payload} = this.props;
-    const {minutes, ended, gameMode, players} = payload;
+    const {id, shardId, minutes, ended, gameMode, players} = payload;
 
     let gM = gameMode.replace("Battle Royale", "BR");
 
@@ -110,54 +119,56 @@ class Loaded extends React.Component {
     return (
     <React.Fragment>
       <Box.wrap className={`PlayerMatch ${(me.winner && "PlayerMatch-win")}`}>
-        <Box.body className="PlayerMatch-body">
-          {winBadge}
-          <div className="PlayerMatch-Avatar" style={{
-              backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${me.hero.toLowerCase()}.gif)`
-          }}>
-            <div className="PlayerMatch-Avatar-Role" id={me.role.toLowerCase()}></div>
-          </div>
-          
-          <div className="PlayerMatch-Info">
-            <div className="MatchTime MatchDuration">{minutes}</div>
-            <h2>{gM}</h2>
-            <div className="MatchTime"><TimeAgo date={ended} /></div>
-            <div className="PlayerMatch-Info-KDA">
-              <span className="k">{me.kills}</span> / <span className="death">{me.deaths}</span> / <span className="k">{me.assists}</span>
+        <Box.body >
+          <div className="PlayerMatch-body" onClick={this.handleOpen}>
+            {winBadge}
+            <div className="PlayerMatch-Avatar" style={{
+                backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${me.hero.toLowerCase()}.gif)`
+            }}>
+              <div className="PlayerMatch-Avatar-Role" id={me.role.toLowerCase()}></div>
             </div>
-            <div className="PlayerMatch-Info-KDA-text"><KDA kda={me.kda} /> KDA</div>
-          </div>
-          <div className="PlayerMatch-Stats-Items">
-            <div className="PlayerMatch-Stats">
-              <div className="PlayerMatch-Stats-Gold">
-                <div>{Utils.minifyNumber(me.gold)}</div>
-                (<Rate rate={me.goldShare} /> share)
-              </div>
-              <div className="PlayerMatch-Stats-CS">
-                <div>{me.cs} cs</div>
-                ({me.csMin} cs/min)
-              </div>
-            </div>
-
-            <div className="PlayerMatch-Items">
-              {
-                items
-              }
-            </div>
-          </div>
-
-          <div className="PlayerMatch-Players">
             
-            <div className="PlayerMatch-Players-Team">
-              {blueSide.map(player => <PlayerTeam key={player.id} player={player} />)}
+            <div className="PlayerMatch-Info">
+              <div className="MatchTime MatchDuration">{minutes}</div>
+              <h2>{gM}</h2>
+              <div className="MatchTime"><TimeAgo date={ended} /></div>
+              <div className="PlayerMatch-Info-KDA">
+                <span className="k">{me.kills}</span> / <span className="death">{me.deaths}</span> / <span className="k">{me.assists}</span>
+              </div>
+              <div className="PlayerMatch-Info-KDA-text"><KDA kda={me.kda} /> KDA</div>
             </div>
-            <div className="PlayerMatch-Players-Team">
-              {redSide.map(player => <PlayerTeam key={player.id} player={player} />)}
+            <div className="PlayerMatch-Stats-Items">
+              <div className="PlayerMatch-Stats">
+                <div className="PlayerMatch-Stats-Gold">
+                  <div>{Utils.minifyNumber(me.gold)}</div>
+                  (<Rate rate={me.goldShare} /> share)
+                </div>
+                <div className="PlayerMatch-Stats-CS">
+                  <div>{me.cs} cs</div>
+                  ({me.csMin} cs/min)
+                </div>
+              </div>
+
+              <div className="PlayerMatch-Items">
+                {
+                  items
+                }
+              </div>
+            </div>
+
+            <div className="PlayerMatch-Players">
+              
+              <div className="PlayerMatch-Players-Team">
+                {blueSide.map(player => <PlayerTeam key={player.id} player={player} />)}
+              </div>
+              <div className="PlayerMatch-Players-Team">
+                {redSide.map(player => <PlayerTeam key={player.id} player={player} />)}
+              </div>
             </div>
           </div>
         </Box.body>
       </Box.wrap>
-      <MatchDetails />
+      {this.state.details && <MatchDetails matchId={id} region={shardId} />}
     </React.Fragment>
     )
 

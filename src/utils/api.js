@@ -100,4 +100,12 @@ API.fetchPlayerMatches = (playerName, filtersArgs) => {
   return sendRequest(`/matches/${playerName}?${filters}`);
 }
 
+/* ===== MATCH ===== */
+API.matchDetails = (matchId, region) => {
+  return sendRequest(`/matches/${matchId}/${region}/details`);
+}
+
+API.matchTelemetry = (matchId, region) => {
+  return sendRequest(`/matches/${matchId}/${region}/telemetry`);
+}
 export default API;

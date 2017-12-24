@@ -31,7 +31,7 @@ const Loaded = ({data}) => {
   // );
 
 
-  const rankVst = (data.rankVst) ? data.rankVst.toFixed(0) : 0;
+  const rankVst = (data.rankVst) ? Number(data.rankVst).toFixed(0) : 0;
   const percentageVst = Utils.getPercentageTillNext(data.tier, rankVst);
 
   return (

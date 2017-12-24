@@ -1,5 +1,10 @@
 
 export default [{
+  "-1": {
+    "title": "Unranked",
+    "starts": -0.9,
+    "ends": 0
+  },
   "0": {
     "title": "Just Beginning Bronze",
     "starts": 0,

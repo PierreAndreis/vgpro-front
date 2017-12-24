@@ -5,7 +5,7 @@ import HalfPieChart from "../../common/Charts/HalfPieChart";
 import {Box, BoxBody} from "./../../common/Box";
 import "./MatchStats.css"
 
-import {KDA, Rate} from "./../../common/ColoredValues";
+import {KDA} from "./../../common/ColoredValues";
 
 import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
 

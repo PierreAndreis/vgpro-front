@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {KDA, Rate} from "../../common/ColoredValues";
+import {KDA} from "../../common/ColoredValues";
 
 import "./MatchDetails.css";
 
@@ -151,7 +151,7 @@ const OverviewTeam = ({team, telemetry}) => {
       <div className="Overview-Player-Stats">Stats & Damage</div>
       <div className="Overview-Player-Rank">Rank</div>
     </div>
-    {team.players.map(p => {
+    {players.map(p => {
       let tm = false;
       if (telemetry && telemetry.facts) {
         tm = telemetry.facts[tName2][p.hero];
@@ -172,7 +172,6 @@ const OverviewTeam = ({team, telemetry}) => {
 class MatchDetails extends React.Component{
 
   state = {
-    telemetryStatus: "loading",
     detailsStatus: "loading",
     telemetry: null,
     details: null,
@@ -209,7 +208,6 @@ class MatchDetails extends React.Component{
   render() {
     
     const {
-      telemetryStatus,
       telemetry,
       detailsStatus,
       details

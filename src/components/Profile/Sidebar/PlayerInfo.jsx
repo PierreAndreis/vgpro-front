@@ -4,32 +4,43 @@ import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
 
 import TimeAgo from "../../../i18n/timeAgo.js";
 import Utils from "../../../utils";
-
-
 import "./PlayerInfo.css";
+
+const regions = {
+  "na": "North America",
+  "eu": "Europe",
+  "sg": "SouthEast Asia",
+  "cn": "China",
+  "sa": "South America",
+}
+
+
 
 const Loaded = ({data}) => {
 
-  const team = (
-      <div className="PlayerInfo-Team">
-        <div className="PlayerInfo-Team-Picture" style={{backgroundImage: `url(https://vgpro.gg/assets/players_pics/StartingAllOver.jpg)`}} />
-        <div className="PlayerInfo-Team-details">
-          <h4>Carry of</h4>
-          <div className="PlayerInfo-Team-name">Tribe Gaming</div>
-        </div>
-        <div className="PlayerInfo-Team-logo" style={{backgroundImage: `url(https://vgpro.gg/assets/teams/TRB.png)`}} />
+  // const team = (
+  //     <div className="PlayerInfo-Team">
+  //       <div className="PlayerInfo-Team-Picture" style={{backgroundImage: `url(https://vgpro.gg/assets/players_pics/StartingAllOver.jpg)`}} />
+  //       <div className="PlayerInfo-Team-details">
+  //         <h4>Carry of</h4>
+  //         <div className="PlayerInfo-Team-name">Tribe Gaming</div>
+  //       </div>
+  //       <div className="PlayerInfo-Team-logo" style={{backgroundImage: `url(https://vgpro.gg/assets/teams/TRB.png)`}} />
       
-      </div>
-  );
+  //     </div>
+  // );
 
+
+  const rankVst = (data.rankVst) ? data.rankVst.toFixed(0) : 0;
+  const percentageVst = Utils.getPercentageTillNext(data.tier, rankVst);
 
   return (
     <div className="PlayerInfo">
       <div className="PlayerInfo-info">
         <div className="PlayerInfo-tier" style={{backgroundImage: `url(http://vgpro.gg/assets/images/skilltier/${parseInt(data.tier, 10) + 2}.png)`}}>
           <div className="PlayerInfo-tier-bar">
-            <div className="PlayerInfo-tier-bar-fill" style={{width: "20%"}}/>
-            <div className="PlayerInfo-tier-bar-label">2323</div>
+            <div className="PlayerInfo-tier-bar-fill" style={{width: `${percentageVst}%`}}/>
+            <div className="PlayerInfo-tier-bar-label">{rankVst}</div>
           </div>
         </div>
         <div className="PlayerInfo-details">
@@ -37,6 +48,7 @@ const Loaded = ({data}) => {
             {data.name}
           </div>
           <div className="PlayerInfo-desc">
+            {regions[data.region]} <br />
             {Utils.getSkillTier(data.tier)}
           </div>
           <div className="PlayerInfo-update">
@@ -46,7 +58,7 @@ const Loaded = ({data}) => {
         </div>
       </div>
 
-      {team}
+      {/* {team} */}
       <div className="PlayerInfo-VPR">
         <div className="PlayerInfo-Stat">
           <div>#3232</div>

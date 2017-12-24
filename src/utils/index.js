@@ -4,13 +4,21 @@ import SkillTiers from "./resources/skilltiers";
 const Utils = {};
 
 Utils.getSkillTier = (skillNumber) => {
-  
+  const skill = (typeof skillNumber !== "number") ? parseInt(skillNumber, 10) : skillNumber;
+  const result = SkillTiers[0][skill];
+  return (result && result.title) ? result.title : "Unknown";
+}
 
+Utils.getPercentageTillNext = (skillNumber, vst) => {
   const skill = (typeof skillNumber !== "number") ? parseInt(skillNumber, 10) : skillNumber;
 
-  const result = SkillTiers.filter(st => (skill === st.name));
+  if (!skill) return 0;
+  
+  const result = SkillTiers[0][skill];
+  const delta = result.ends - result.starts;
+  const delta_two = vst - result.starts;
 
-  return (result[0] && result[0].friendlyName) ? result[0].friendlyName : "Unknown";
+  return (delta_two / delta) * 100;
 
 }
 

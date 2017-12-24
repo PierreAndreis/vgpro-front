@@ -99,7 +99,7 @@ const OverviewPlayer = ({player, telemetry}) => {
         <div className="Overview-Player-Tier" 
           style={{backgroundImage: `url(http://vgpro.gg/assets/images/skilltier/${player.tier + 2}.png`}} 
         />
-        <div className="Overview-Player-RankPoints">2073</div>
+        <div className="Overview-Player-RankPoints">{player.rankvst.toFixed(0)}</div>
       </div>
     </React.Fragment>
   )

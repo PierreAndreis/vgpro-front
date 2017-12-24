@@ -29,13 +29,18 @@ const OverviewPlayer = ({player, telemetry}) => {
   let damagePercent = "0%"
   let damageTaken = "...";
   let damageTakenPercent = "0%"
+  let healingDone = "...";
+  let healingDonePercent = "0%";
 
   if (telemetry) {
+    console.log(telemetry);
     damage             = Utils.minifyNumber(telemetry.dealt, 0);
     damageTaken        = Utils.minifyNumber(telemetry.taken, 0);
+    healingDone        = Utils.minifyNumber(telemetry.healed, 0);
 
     damagePercent      = telemetry.damageShare;
     damageTakenPercent = telemetry.takenShare;
+    healingDonePercent = telemetry.healingShare;
   }
 
   return (
@@ -77,6 +82,13 @@ const OverviewPlayer = ({player, telemetry}) => {
         
         <div className="Overview-Player-Damage">
           <div className="Overview-Player-Damage-bar">
+            <div className="Overview-Player-Damage-fill Healing" style={{width: healingDonePercent}} />
+          </div>
+          <div className="Overview-Player-Damage-label"> {healingDone} </div>
+        </div>
+        
+        <div className="Overview-Player-Damage">
+          <div className="Overview-Player-Damage-bar">
             <div className="Overview-Player-Damage-fill DamageTaken" style={{width: damageTakenPercent}} />
           </div>
           <div className="Overview-Player-Damage-label"> {damageTaken} </div>
@@ -97,6 +109,7 @@ const TeamStats = ({team, bans}) => (
   <div className="Overview-Cell Overview-Team-Info">
     <div className="Overview-Legends">
       <div className="Overview-Legends-DamageDone">Damage Done</div>
+      <div className="Overview-Legends-HealingDone">Healing Done</div>
       <div className="Overview-Legends-DamageTaken">Damage Taken</div>
     </div>
     <div className="Overview-Team-Stats">
@@ -127,8 +140,8 @@ const OverviewTeam = ({team, telemetry}) => {
 
   // Sort by role
   const players = team.players.sort((a, b) => {
-    /**/ if (a.role > b.role) return 1;
-    else if (a.role < b.role) return -1;
+    /**/ if (a.role > b.role) return -1;
+    else if (a.role < b.role) return 1;
     else return 0;
   });
 
@@ -146,9 +159,12 @@ const OverviewTeam = ({team, telemetry}) => {
   return (
     <div className="Overview-Team">
     <div className="Overview-Cell Overview-Header">
-      <div className="Overview-Player-Info"> {team.side === "right/red" ? "Red Team" : "Blue Team"} </div>
+      <div className="Overview-Player-Info"> 
+        {team.players[0].winner ? <span className="win">Win</span> : <span className="loss">Loss</span>}
+        <span style={{padding: "0 2px"}}>{team.side === "right/red" ? "Red Team" : "Blue Team"}</span>
+      </div>
       <div className="Overview-Player-Items">Items</div>
-      <div className="Overview-Player-Stats">Stats & Damage</div>
+      <div className="Overview-Player-Stats">Stats</div>
       <div className="Overview-Player-Rank">Rank</div>
     </div>
     {players.map(p => {

@@ -226,6 +226,11 @@
   background-image: linear-gradient(-90deg, rgb(243, 165, 92) 0%, rgb(231, 118, 42) 100%);
     box-shadow: 0 0 10px rgb(231, 143, 42);
 }
+.Overview-Player-Damage-fill.Healing {
+
+  background-image: linear-gradient(-90deg, rgb(110, 243, 92) 0%, rgb(11, 201, 21) 100%);
+  box-shadow: 0 0 10px rgb(11, 201, 21);
+}
 
 .Overview-Player-Damage-label {
   font-size: 10px;
@@ -247,7 +252,7 @@
 }
 
 .Overview-Player-CS {
-  font-size: 13px;
+  font-size: 11px;
   margin-bottom: 5px;
   color: rgb(53, 53, 53);
   font-weight: 500;
@@ -267,7 +272,7 @@
 }
 
 .Overview-Player-Gold {
-  font-size: 13px;
+  font-size: 11px;
   color: rgb(53, 53, 53);
   font-weight: 500;
 }
@@ -333,11 +338,10 @@
 
 .Overview-Legends>div {
   position: relative;
-  margin: 2px 0;
+  margin: 1px 0;
   padding-left: 18px;
   height: 15px;
   line-height: 17px;
-
 
   font-size: 10px;
   font-weight: 500;
@@ -358,6 +362,10 @@
 }
 .Overview-Legends-DamageTaken:before {
   background-image: linear-gradient(-90deg, #FAD961 0%, #F76B1C 100%) !important;
+}
+
+.Overview-Legends-HealingDone:before {
+  background-image: linear-gradient(-90deg, rgb(110, 243, 92) 0%, rgb(11, 201, 21) 100%) !important;
 }
 
 .Overview-Team-Stats {
@@ -491,6 +499,14 @@
   text-transform: uppercase;
   font-weight: 700;
   font-size: 11px;
+}
+
+.win {
+  color: #5DB4F1;
+}
+
+.loss {
+  color: #F1685D;
 }
 
   /* background-position: center center;

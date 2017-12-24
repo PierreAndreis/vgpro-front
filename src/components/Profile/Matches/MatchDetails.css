@@ -10,7 +10,7 @@
   box-shadow: 0 0 10px rgba(146, 146, 146, 0.445);
 
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
 
 .MatchDetails-Overview {
@@ -374,9 +374,9 @@
   background-position: center;
   border-radius: 50%;
   border: 3px solid #FF6262;
-  animation-name: fadeIn;
+  /* animation-name: fadeIn;
   animation-duration: 1s;
-  animation-fill-mode: both;
+  animation-fill-mode: both; */
   position: relative;
 }
 

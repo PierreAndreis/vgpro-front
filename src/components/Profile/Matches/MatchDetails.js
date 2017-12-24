@@ -146,7 +146,7 @@ const OverviewTeam = ({team, telemetry}) => {
   return (
     <div className="Overview-Team">
     <div className="Overview-Cell Overview-Header">
-      <div className="Overview-Player-Info"> Blue Team </div>
+      <div className="Overview-Player-Info"> {team.side === "right/red" ? "Red Team" : "Blue Team"} </div>
       <div className="Overview-Player-Items">Items</div>
       <div className="Overview-Player-Stats">Stats & Damage</div>
       <div className="Overview-Player-Rank">Rank</div>
@@ -232,7 +232,6 @@ class MatchDetails extends React.Component{
         <div className="MatchDetails-Overview">
           {
             teamsWithPlayers.map(team => {
-              console.log(team.side);
               return <OverviewTeam key={team.gold} team={team} telemetry={telemetry}/>
             })
           }

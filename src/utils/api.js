@@ -21,7 +21,7 @@ const errorRequest = (e) => {
   // console.warn(e);
   // throw new Error(e);
   // // return [];
-  return new Error(e);
+  return Error(e);
 }
 
 const handleRequest = ({data, status}) => {
@@ -37,14 +37,8 @@ const sendRequest = async (url, data, method = "get") => {
     url,
     method,
   }
-
-  try {
     const req = await request(options);
     return handleRequest(req);
-  }
-  catch(e) {
-    errorRequest(e);
-  }
 }
 
 const sendRequest_Old = async (url, data, method = "get") => {
@@ -54,14 +48,8 @@ const sendRequest_Old = async (url, data, method = "get") => {
     url,
     method,
   }
-
-  try {
-    const req = await request(options);
-    return handleRequest(req);
-  }
-  catch(e) {
-    errorRequest(e);
-  }
+  const req = await request(options);
+  return handleRequest(req);
 }
 
 const API = {};

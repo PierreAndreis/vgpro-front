@@ -48,7 +48,7 @@ const playerMatches = (state = initialState, action) => {
       playerMatches: {
         ...state.playerMatches,
         [action.page]: {
-          status: "loaded",
+          status: "error",
           payload: action.payload
         }
       }

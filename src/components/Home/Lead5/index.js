@@ -53,8 +53,8 @@ class Lead5 extends React.Component {
     const {payload, status} = this.state;
     let content = [];
 
-    if (status === "error"  ) content = <ErrorScreen err={payload} />
-    else {
+    if (status === "error" || !payload) content = <ErrorScreen err={payload} />
+    else {  
 
       const {all} = payload;
       let index = 1;

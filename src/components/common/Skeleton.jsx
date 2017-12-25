@@ -30,12 +30,18 @@ const SkeletonContainer = (Loading, Loaded) => {
   }
 }
 
+const SkeletonWrapper = ({children, status, ...props}) => {
+  if (status === "loading") return <Skeleton {...props} />
+  else return (children())
+}
+
 const SkeletonPayload = (number) => {
   return Array(number).fill({});
 }
 
 export {
   Skeleton,
+  SkeletonWrapper,
   SkeletonContainer,
   SkeletonPayload
 }

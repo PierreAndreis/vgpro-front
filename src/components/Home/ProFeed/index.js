@@ -80,7 +80,7 @@ class ProFeed extends React.Component {
 
     let lastPage;
     let content = null;
-    if (status === "error"  ) content = <ErrorScreen err={payload} />
+    if (status === "error" || !payload) content = <ErrorScreen err={payload} />
     else {
 
       const itemPerPage = PRO_FEED_ITEM_PER_PAGE;

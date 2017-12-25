@@ -25,7 +25,7 @@ class MatchManager extends React.Component {
 
     if (player === nextPlayer) return;
     else {
-      this.props.setPlayerMatches(0, {})
+      this.props.setPlayerMatches(0, {});
       this.props.fetchPlayerMatches(nextPlayer, 0);
     }
   }
@@ -33,7 +33,7 @@ class MatchManager extends React.Component {
   componentDidMount() {
     const {match} = this.props;
     const {player} = match.params;
-    this.props.setPlayerMatches(0, {})
+    this.props.setPlayerMatches(0, {});
     this.props.fetchPlayerMatches(player, 0);
   }
 
@@ -71,14 +71,14 @@ class MatchManager extends React.Component {
       if (page.status !== "loaded") buttonsDisabled = true;
       if (matches.length === 0) {
         buttonsDisabled = true;
-        done = true;
+        done = (pages.length > 1);
       }
 
-      if (page.status === "error" && !done) {
-        content.push(<ErrorScreen key="error" boxed message="An Error occured." />);
+      if ((page.status === "error" && !done)) {
+        content.push(<ErrorScreen key="error" width="100%" boxed message="There was an error while loading the matches." />);
       }
       else if (done) {
-        content.push(<ErrorScreen key="error" boxed message="No more matches" />);
+        content.push(<ErrorScreen key="error" width="100%" boxed message="No matches found" />);
       }
       else {
         matches.forEach((match, index) => {

@@ -10,7 +10,7 @@ import Utils from "../../../utils";
 import { Skeleton, SkeletonContainer } from "../../common/Skeleton";
 import TimeAgo from "../../../i18n/timeAgo.js";
 
-import MatchDetails from "./MatchDetails";
+import MatchDetails from "./Details";
 
 import "./Match.css";
 

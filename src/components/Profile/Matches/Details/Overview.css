@@ -1,18 +1,3 @@
-.MatchDetails {
-  width: 98%;
-  min-height: 140px;;
-  margin: 0 auto;
-  margin-top: -10px;
-  padding: 15px 5px 5px;
-  box-sizing: border-box;
-  background: white;
-  border-radius: 0 0 5px 5px;
-  box-shadow: 0 0 10px rgba(146, 146, 146, 0.445);
-
-  position: relative;
-  z-index: 1;
-}
-
 .MatchDetails-Overview {
   width: 100%;
   display: flex;
@@ -114,6 +99,7 @@
   border-radius: 50%;
   background-size: 140%;
   background-position: center center;
+  background-color: rgb(201, 201, 201);
   border: 3px solid #4A90E2;
   position: relative;
 }
@@ -193,7 +179,7 @@
   height: 23px;
   margin: 2px 0;
   flex-shrink: 0;
-  background-color: grey;
+  background-color: rgb(201, 201, 201);
   background-size: 100%;
   border-radius: 50%;
 }
@@ -217,14 +203,13 @@
 .Overview-Player-Damage-fill {
   height: 100%;
   border-radius: 15px;
-  background-image: linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%);
-  box-shadow: 0 0 10px #E7AE2A;
+  background-image: linear-gradient(-90deg, rgb(243, 165, 92) 0%, rgb(231, 118, 42) 100%);
+    box-shadow: 0 0 10px rgb(231, 143, 42);
   transition: all 300ms;
 }
 .Overview-Player-Damage-fill.DamageTaken {
-
-  background-image: linear-gradient(-90deg, rgb(243, 165, 92) 0%, rgb(231, 118, 42) 100%);
-    box-shadow: 0 0 10px rgb(231, 143, 42);
+  background-image: linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%);
+  box-shadow: 0 0 10px #E7AE2A;
 }
 .Overview-Player-Damage-fill.Healing {
 
@@ -358,10 +343,10 @@
   height: 15px;
   border-radius: 50%;
   background-size: 100%;
-  background-image: linear-gradient(-114deg, #FAD961 0%, #E9BC1A 96%);
+  background-image: linear-gradient(-90deg, #FAD961 0%, #F76B1C 100%);
 }
 .Overview-Legends-DamageTaken:before {
-  background-image: linear-gradient(-90deg, #FAD961 0%, #F76B1C 100%) !important;
+  background-image: linear-gradient(-114deg, #FAD961 0%, #E9BC1A 96%) !important;;
 }
 
 .Overview-Legends-HealingDone:before {

@@ -52,7 +52,6 @@ class MenuSelector extends React.Component {
       )
     };
 
-    console.log("Active==", active, activeName);
     return (
         <div className="Menu-Selected" ref={(ref) => this.menu = ref}>
           <span onClick={this.changeMenu}>{(activeName && activeName.label) || "Unknown"}</span>
@@ -126,7 +125,6 @@ class ProfileFilters extends React.Component {
     )
   }
 }
-
 
 const mapStateToProps = state => {
   return {

@@ -30,7 +30,7 @@
   text-align: left;
 }
 .Lead5-each-vpr {
-  width: 100px;
+  padding: 0 30px;
 }
 
 .Lead5-each-info-name {
@@ -104,5 +104,6 @@
 .Lead5-each#featured .Lead5-each-vpr-name {
   font-size: 17px;
   display: block;
+  text-align: center;
   color: rgba(130, 130, 130, 1);
 }

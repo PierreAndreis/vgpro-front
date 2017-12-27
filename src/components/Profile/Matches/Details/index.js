@@ -3,6 +3,8 @@ import React from "react";
 import "./Details.css";
 import {fetchMatchDetails, fetchMatchTelemetry} from "./../../../../actions/api";
 
+import Utils from "../../../../utils";
+
 import MatchOverview from "./Overview";
 
 class MatchDetails extends React.Component {
@@ -22,23 +24,24 @@ class MatchDetails extends React.Component {
 
     this.setState({
       status: "loading",
+      details: null,
       telemetry: null,
     });
 
-    fetchMatchDetails(matchId, region)
-      .then(res => {
-        this.setState({
-          status: "loaded",
-          details: res,
-        })
-      })
+    this.cancelDetails = Utils.makeCancelable(
+      fetchMatchDetails(matchId, region),
+      (res) => this.setState({status: "loaded", details: res})
+    )
 
-    fetchMatchTelemetry(matchId, region)
-      .then(res => {
-        this.setState({
-          telemetry: res,
-        })
-      });
+    this.cancelTelemetry = Utils.makeCancelable(
+      fetchMatchTelemetry(matchId, region),
+      (res) => this.setState({telemetry: res})
+    )
+  }
+
+  componentWillUnmount() {
+    this.cancelDetails();
+    this.cancelTelemetry();
   }
 
   render() {

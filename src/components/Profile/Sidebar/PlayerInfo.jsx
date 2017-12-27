@@ -43,6 +43,7 @@ const Loaded = ({data}) => {
             <div className="PlayerInfo-tier-bar-label">{rankVst}</div>
           </div>
         </div>
+        
         <div className="PlayerInfo-details">
           <div className="PlayerInfo-name">
             {data.name}

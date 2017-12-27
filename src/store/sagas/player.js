@@ -4,11 +4,11 @@ import API from "./../../utils/api";
 
 export function* fetchPlayerStats(action) {
   try {
-    const playerStats = yield call(API.fetchPlayerStats, action.payload);
+    const playerStats = yield call(API.fetchPlayerStats, action.payload, action.filters);
     if (!playerStats) throw new Error("Error while loading stats");
-    yield put({type: "PLAYER/STATS_FETCH_SUCCEEDED", payload: playerStats});
+    yield put({type: "PLAYER/STATS_FETCH_SUCCEEDED", payload: playerStats, filters: action.filters});
   } catch (e) {
-    yield put({type: "PLAYER/STATS_FETCH_FAILED", payload: e.message});
+    yield put({type: "PLAYER/STATS_FETCH_FAILED", payload: e.message, filters: action.filters});
   }
 }
 
@@ -17,7 +17,7 @@ export function* fetchPlayerMatches(action) {
     const playerMatches = yield call(
       API.fetchPlayerMatches, 
       action.payload, 
-      {page: action.page}
+      {page: action.page, ...action.filters}
     );
 
     if (!playerMatches) throw new Error("Error while loading matches");

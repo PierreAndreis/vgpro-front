@@ -72,8 +72,13 @@ API.lookupPlayer = (playerName) => {
   return sendRequest(`/player/${playerName}/find`);
 }
 
-API.fetchPlayerStats = (playerName) => {
-  return sendRequest(`/player/${playerName}/stats`);
+API.fetchPlayerStats = (playerName, filtersArgs) => {
+
+  let f = filtersArgs;
+
+  const filters = queryString.stringify(f);
+
+  return sendRequest(`/player/${playerName}/stats?${filters}`);
 }
 
 API.fetchPlayerMatches = (playerName, filtersArgs) => {

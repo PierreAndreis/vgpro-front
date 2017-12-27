@@ -1,0 +1,71 @@
+.ProfileFilters {
+	width: 100%;
+	height: 35px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.ProfileFilters-label {
+  /* padding: 5px; */
+  margin: 0 5px;
+  text-transform: uppercase;
+}
+
+.Menu-Selected {
+  width: auto;
+  position: relative;
+}
+
+.Menu-Selected>span {
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 5px 25px 5px 10px;
+  cursor: pointer;
+  color: #F3C249;
+  font-weight: 700;
+  background: white;
+  border-radius: 5px;
+}
+
+.Menu-Selected>span:after {
+  content: "";
+  position: absolute;
+  background-image: url("/icons/down.svg");
+  background-size: 100%;
+  width: 13px;
+  height: 13px;
+  margin-left: 3px;
+  margin-top: 2px;
+
+}
+.Menu-Choices {
+  position: absolute;
+  width: 140px;
+  margin-top: 10px;
+  text-align: center;
+  left: 0;
+  right: 0;
+  height: auto;
+  padding: 5px;
+  background: white;
+  z-index: 99;
+  border-radius: 5px;
+  box-shadow: rgba(54, 54, 54, 0.315) 0 10px 30px 0;
+}
+.Menu-Choices>div {
+  padding: 7px 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 300ms;
+  font-size: 12px;
+}
+
+.Menu-Choices>div:hover {
+  background: whitesmoke;
+}
+
+.Menu-Choices>div.active {
+  background: rgb(230, 230, 230);
+}

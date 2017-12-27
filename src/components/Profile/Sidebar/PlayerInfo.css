@@ -26,7 +26,7 @@
 
 .PlayerInfo-tier-bar {
   width: 110px;
-  margin: 70% auto;
+  margin: 85% auto;
   height: 10px;
   background: #D8D8D8;
   border-radius: 10px;
@@ -40,7 +40,7 @@
 
 .PlayerInfo-tier-bar-label {
   position: absolute;
-  bottom: -15px;
+  bottom: -23px;
   left: 50%;
   transform: translate(-50%,0);
   font-size: 13px;

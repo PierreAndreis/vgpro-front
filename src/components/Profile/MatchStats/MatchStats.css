@@ -9,6 +9,7 @@
   padding: 10px;
   box-sizing: border-box;
   flex-grow: 1;
+  margin-bottom: 10px;
 }
 
 /** Profile Stats **/

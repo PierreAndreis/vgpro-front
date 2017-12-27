@@ -9,7 +9,7 @@ import TimeAgo from "../../i18n/timeAgo";
 import MatchStats from "./MatchStats/MatchStats";
 
 import Sidebar from "./Sidebar";
-import MatchFilter from "./MatchFilter";
+import ProfileFilters from "./ProfileFilters";
 
 import MatchesManager from "./Matches/MatchesManager";
 
@@ -22,7 +22,6 @@ import "./Profile.css";
 
 class Profile extends React.Component {
 
-
   componentWillReceiveProps(nextProps) {
 
     const nextMatch = nextProps.match;
@@ -32,27 +31,45 @@ class Profile extends React.Component {
     const {player} = match.params;
 
     if (player === nextPlayer) return;
-    else  this.props.fetchPlayerStats(nextPlayer);
+    else this.props.fetchPlayerStats(nextPlayer, {
+      gameMode: "",
+      season: ""
+    });
   }
 
   componentDidMount() {
     const {match} = this.props;
     const {player} = match.params;
-    this.props.fetchPlayerStats(player);
+    this.props.fetchPlayerStats(player, {
+      gameMode: "",
+      season: ""
+    });
+  }
+
+  changeFilters = (filter) => {
+    const {match} = this.props;
+    const {player} = match.params;
+    this.props.fetchPlayerStats(player, filter);
   }
 
   render() {
     const {t} = this.props;
-    const {match, playerStats, status} = this.props;
+    const {match, playerStats, status, filters} = this.props;
     const {player} = match.params;
 
     let title = (
       <Helmet>
         <title>{player}</title>
       </Helmet>
-    )
+    );
 
-    let FoundButNoMatch = (status !== "loading" && playerStats.stats && playerStats.id && playerStats.stats.errors)
+    let FoundButNoMatch = (
+      status !== "loading" 
+    && playerStats.stats 
+    && playerStats.id 
+    && !playerStats.name
+    && playerStats.stats.errors
+    )
 
     if (FoundButNoMatch) {
       return (
@@ -73,13 +90,13 @@ class Profile extends React.Component {
         <div className="wrap Profile-wrap">
 
           <div className="Profile__Sidebar">
-          <Sidebar t={t} />
+            <Sidebar t={t} />
           </div>
           <div className="Profile__Main">
-            <MatchStats t={t} />
-            <MatchFilter t={t} />
+            <ProfileFilters onChange={this.changeFilters} />
+            <MatchStats  t={t} />
 
-            <MatchesManager t={t} />
+            <MatchesManager t={t} filters={filters} />
           </div>
         </div>
       </div>

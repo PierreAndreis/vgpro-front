@@ -196,12 +196,23 @@ const OverviewTeam = ({team, telemetry, status}) => {
       <div className="Overview-Cell Overview-Header">
         <div className="Overview-Player-Info"> 
           <SkeletonWrapper status={status} width="30px">
-            {() => (
-              <React.Fragment>
-                {team.players[0].winner ? <span className="win">Win</span> : <span className="loss">Loss</span>}
-                <span style={{padding: "0 2px"}}>{team.side === "right/red" ? "Red Team" : "Blue Team"}</span>
-              </React.Fragment>
-            )}
+            {() => {
+              if (team && team.players && team.players[0]) {
+                return (
+                  <React.Fragment>
+                    {team.players[0].winner ? 
+                      <span className="win">Win</span> 
+                    : <span className="loss">Loss</span>
+                    }
+                    <span style={{padding: "0 2px"}}>
+                      {team.side === "right/red" ? 
+                      "Red Team" : "Blue Team"}
+                    </span>
+                  </React.Fragment>
+                )
+              }
+              return null;
+            }}
           </SkeletonWrapper>
         </div>
         <div className="Overview-Player-Items">Items</div>

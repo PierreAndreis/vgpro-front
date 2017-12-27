@@ -13,6 +13,7 @@
 
 const initialState = {
   name: "",
+  filters: {},
   playerStats: [],
   status: "loading"
 }
@@ -23,18 +24,21 @@ const playerStats = (state = initialState, action) => {
     return {
       ...state,
       name: action.payload,
+      filters: action.filters,
       status: "loading"
     }
   case "PLAYER/STATS_FETCH_SUCCEEDED":
     return {
       ...state,
       status: "loaded",
+      filters: action.filters,
       playerStats: action.payload,
     }
   case "PLAYER/STATS_FETCH_FAILED":
     return {
       ...state,
       status: "error",
+      filters: action.filters,
       playerStats: action.payload,
     }
   default:

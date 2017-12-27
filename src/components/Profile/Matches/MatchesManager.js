@@ -2,6 +2,8 @@ import React from "react";
 import { withRouter } from 'react-router';
 import Match from "./Match";
 
+import _isEqual from "lodash/isEqual";
+
 import ErrorScreen from "../../common/ErrorScreen";
 
 import { SkeletonPayload } from "../../common/Skeleton";
@@ -19,28 +21,36 @@ class MatchManager extends React.Component {
   componentWillReceiveProps(nextProps) {
     const nextMatch = nextProps.match;
     const nextPlayer = nextMatch.params.player;
+    const nextFilters = nextProps.filters;
 
-    const {match} = this.props;
+    const {match, filters} = this.props;
     const {player} = match.params;
 
-    if (player === nextPlayer) return;
+    if (player === nextPlayer
+    && _isEqual(filters, nextFilters)) return;
     else {
+      // if (player !== nextPlayer) {
+      //   console.log("PLAYER CHANGED===", player, nextPlayer);
+      // }
+      // if (!_isEqual(filters, nextFilters)) {
+      //   console.log("FILTERS CHANGED===", filters, nextFilters)
+      // }
       this.props.setPlayerMatches(0, {});
-      this.props.fetchPlayerMatches(nextPlayer, 0);
+      this.props.fetchPlayerMatches(nextPlayer, 0, nextFilters);
     }
   }
 
   componentDidMount() {
-    const {match} = this.props;
+    const {match, filters} = this.props;
     const {player} = match.params;
     this.props.setPlayerMatches(0, {});
-    this.props.fetchPlayerMatches(player, 0);
+    this.props.fetchPlayerMatches(player, 0, filters);
   }
 
   viewMore = (e) => {
     if (e.target.id === "disabled") return;
-    const {currentPage, name} = this.props;
-    return this.props.fetchPlayerMatches(name, currentPage + 1);
+    const {currentPage, name, filters} = this.props;
+    return this.props.fetchPlayerMatches(name, currentPage + 1, filters);
   }
 
   viewLess = (e) => {
@@ -74,7 +84,7 @@ class MatchManager extends React.Component {
         done = (pages.length > 1);
       }
 
-      if ((page.status === "error" && !done)) {
+      if (page.status === "error" && !done) {
         content.push(<ErrorScreen key="error" width="100%" boxed message="There was an error while loading the matches." />);
       }
       else if (done) {

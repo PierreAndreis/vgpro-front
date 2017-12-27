@@ -25,7 +25,8 @@
   background: white;
   /* background: red; */
   border-radius: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  box-shadow: #EAEDF3 0 10px 30px 0;
   box-sizing: border-box;
 }
 
@@ -33,6 +34,7 @@
   cursor: pointer;
   position: absolute;
   width: 70px;
+  text-align: center;
   height: 70px;
   transform: all 300ms;
   border-radius: 50px 0 0 50px;
@@ -43,16 +45,18 @@
 }
 
 .SearchBar .error button { 
-  background-color: rgb(209, 80, 80) !important;
+  background-color: rgba(243, 156, 156, 0.747) !important;
 }
 
 .SearchBar  button:hover {
   /* background: rgb(235, 215, 153); */
 }
+
 .SearchBar  i {
   font-size: 25px;
+  text-align: center;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  color: black;
+  color: rgb(110, 112, 117);
 }
 

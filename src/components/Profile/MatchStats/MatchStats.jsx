@@ -159,7 +159,7 @@ class Loaded extends React.Component {
           </div>
           <div className="ProfileStats__Category ProfileStats__Category-KDA">
             <div className="ProfileStats__Stats">
-              <div className="ProfileStats__Stats-Value"><KDA kda={kda} /></div>
+              <div className="ProfileStats__Stats-Value"><KDA kda={kda || 0} /></div>
               <div className="ProfileStats__Stats-Label">KDA</div>
               {/* <div className="ProfileStats__Stats-Bar">
                 <div className="fill" style={{width: `${killsPercent}%`, backgroundColor: "#9E2F31"}} />

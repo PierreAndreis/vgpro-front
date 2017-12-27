@@ -81,7 +81,8 @@ class Loaded extends React.Component {
     details: false
   }
 
-  handleOpen = () => {
+  handleOpen = (e) => {
+    if (this.avoid.contains(e.target)) return;
     this.setState((prevState) => ({details: !prevState.details}))
   }
 
@@ -156,7 +157,7 @@ class Loaded extends React.Component {
               </div>
             </div>
 
-            <div className="PlayerMatch-Players">
+            <div className="PlayerMatch-Players" ref={ref => this.avoid = ref}>
               
               <div className="PlayerMatch-Players-Team">
                 {blueSide.map(player => <PlayerTeam key={player.id} player={player} />)}

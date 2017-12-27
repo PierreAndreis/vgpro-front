@@ -54,7 +54,7 @@ class MenuSelector extends React.Component {
 
     return (
         <div className="Menu-Selected" ref={(ref) => this.menu = ref}>
-          <span onClick={this.changeMenu}>{(activeName && activeName.label) || "Unknown"}</span>
+          <span onClick={this.changeMenu}>{(activeName && activeName.label) || "..."}</span>
           {optionsMenu}
         </div>
     )
@@ -102,7 +102,7 @@ class ProfileFilters extends React.Component {
       seasonActive = filters.season;
       
       seasonOptions = [
-        { value: "", label: "All Time" },
+        { value: "", label: "Lifetime" },
         ...playerStats.seasonsAvailable.map(season => {
           return { value: season, label: season };
         })

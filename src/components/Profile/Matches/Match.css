@@ -139,12 +139,13 @@
   font-size: 16px;
 }
 
-.PlayerMatch-Info .MatchDuration:after {
+.PlayerMatch-Info .MatchDuration:before {
   content: "";
   display: inline-block;
   vertical-align: bottom;
   width: 15px;
   height: 15px;
+  margin-right: 2px;
   
   background: url("/icons/time.svg") no-repeat bottom;
   background-size: 13px 13px;

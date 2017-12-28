@@ -1,5 +1,5 @@
 /* eslint-disable import/first */
-import * as lodash from "lodash";
+import _forEach from "lodash/forEach";
 
 let langs = {};
 
@@ -70,7 +70,7 @@ langs['my'] = my;
 let res = {};
 
 // Due to i18next needing a namespace, we will insert all translations into a ghost namespace
-lodash.forEach(langs, (lang, i) => {
+_forEach(langs, (lang, i) => {
   res[i] = {
     translations: lang,
   }

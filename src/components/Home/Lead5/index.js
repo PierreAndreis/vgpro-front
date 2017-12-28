@@ -1,5 +1,5 @@
 import React from "react";
-import * as lodash from "lodash";
+import _forEach from "lodash/forEach";
 
 import {fetchLead5}                         from "./../../../actions/api";
 
@@ -58,7 +58,7 @@ class Lead5 extends React.Component {
 
       const {all} = payload;
       let index = 1;
-      lodash.forEach(all, (each) => {
+      _forEach(all, (each) => {
         let data = {
           ...each,
           position: index

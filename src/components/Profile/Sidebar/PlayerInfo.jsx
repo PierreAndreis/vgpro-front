@@ -34,7 +34,7 @@ const Loaded = ({data}) => {
   const rankVst = (data.rankVst) ? Number(data.rankVst).toFixed(0) : 0;
   const percentageVst = Utils.getPercentageTillNext(data.tier, rankVst);
 
-  const AKAs = data.aka.filter(k => k !== data.name);
+  const AKAs = data.aka && data.aka.filter(k => k !== data.name);
 
   return (
     <div className="PlayerInfo">
@@ -78,7 +78,7 @@ const Loaded = ({data}) => {
           <span>VGPRO RATING</span>
         </div>
       </div>
-      {AKAs.length > 0 &&
+      {AKAs && AKAs.length > 0 &&
         <div className="PlayerInfo-AKA">
           <h2> Also known as </h2>
             {AKAs.map(name => <span key={name}>{name}</span>)}

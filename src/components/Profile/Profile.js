@@ -87,13 +87,12 @@ class Profile extends React.Component {
     return (
       <div>
         {title}
+        <ProfileFilters onChange={this.changeFilters} />
         <div className="wrap Profile-wrap">
-
           <div className="Profile__Sidebar">
             <Sidebar t={t} />
           </div>
           <div className="Profile__Main">
-            <ProfileFilters onChange={this.changeFilters} />
             <MatchStats  t={t} />
 
             <MatchesManager t={t} filters={filters} />

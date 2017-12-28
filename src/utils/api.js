@@ -63,8 +63,8 @@ API.getLead5 = () => {
   return sendRequest_Old("/topfive/")
 }
 
-API.getTopHeroes = () => {
-  return sendRequest("/topheroes");
+API.getTopHeroes = (type = "pickrate", region = "all") => {
+  return sendRequest(`/heroes/${type}/${region}`);
 }
 
 /* ==== PLAYER LOOKUP ===== */

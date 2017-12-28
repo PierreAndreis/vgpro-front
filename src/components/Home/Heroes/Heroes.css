@@ -2,6 +2,7 @@
   padding: 10px 0px 0;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .HeroesMeta-Title {
@@ -19,17 +20,54 @@
 
 }
 
-.HeroesMeta-Selector-PickRate {
-  background: red;
+.HeroesMeta-Selector-Icon {
+  cursor: pointer;
   margin: 0 5px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 300ms;
+}
+.HeroesMeta-Selector-Icon:hover {
+  background-color: rgba(0, 0, 0, 0.055);
+}
+
+.HeroesMeta-Selector-Icon.active {
+  background-color: #E3B63B; 
+}
+
+.Selector-WinRate {
+  background-image: url("/icons/winrate_.svg");
+}
+
+.Selector-WinRate.active {
+  background-image: url("/icons/winrate.svg");
+}
+
+.Selector-PickRate {
+  background-image: url("/icons/pickrate_.svg");
+  background-size: 90%;
+}
+
+.Selector-PickRate.active {
+  background-image: url("/icons/pickrate.svg");
+}
+
+.Selector-BanRate {
+  background-image: url("/icons/banrate_.svg");
+}
+
+.Selector-BanRate.active {
+  background-image: url("/icons/banrate.svg");
 }
 
 .HeroesMeta_RegionSelect {
   display: flex;
   justify-content: space-around;
+  text-transform: uppercase;
   padding: 0 50px;
 }
 
@@ -38,7 +76,14 @@
   color: grey;
   font-weight: 500;
   padding: 0 5px 5px;
+  cursor: pointer;
 }
+
+.HeroesMeta_RegionSelect div:hover {
+  color: rgb(75, 75, 75);
+  cursor: pointer;
+}
+
 .HeroesMeta_RegionSelect div.active {
   color: #DCAF5A;
   
@@ -59,6 +104,15 @@
   align-items: center;
   flex-direction: column;
 }
+.HeroesMeta-Top.Rank-1 {
+  order: 2;
+}
+.HeroesMeta-Top.Rank-2 {
+  order: 1;
+}
+.HeroesMeta-Top.Rank-3 {
+  order: 3;
+}
 
 .Heroes-Meta-Top-Image {
   width: 50px;
@@ -66,6 +120,8 @@
   position: relative;
   height: 50px;
   background-size: 100%;
+  background-color: rgb(190, 190, 190);
+  border: 2px solid #9C9C9C;
   border-radius: 50%;
 }
 
@@ -84,22 +140,22 @@
   background: rgb(73, 73, 73);
 }
 
-.Heroes-Meta-Top-Image-Tag.Tag-1 {
+.HeroesMeta-Top.Rank-1 .Heroes-Meta-Top-Image-Tag {
   width: 25px;
   height: 25px;
   font-size: 14px;
   background: #E8A827;
 }
 
-.Heroes-Meta-Top-Image-Tag.Tag-2 {
+.HeroesMeta-Top.Rank-2 .Heroes-Meta-Top-Image-Tag {
   background: #9B9B9B;
 }
-.Heroes-Meta-Top-Image-Tag.Tag-3 {
+.HeroesMeta-Top.Rank-3 .Heroes-Meta-Top-Image-Tag{
   background: #A54916;
 }
 
 
-.HeroesMeta-Top3 .HeroesMeta-Top:nth-child(2) .Heroes-Meta-Top-Image{
+.HeroesMeta-Top3 .HeroesMeta-Top.Rank-1 .Heroes-Meta-Top-Image{
   width: 70px;
   height: 70px;
 }
@@ -116,6 +172,7 @@
 .HeroesMeta-Top span {
   margin: 5px;
   font-size: 13px;
+  font-weight: bold;
 }
 
 .Heroes-Meta-Divider {

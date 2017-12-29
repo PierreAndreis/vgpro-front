@@ -2,6 +2,7 @@ import React from "react";
 import Box from "../../common/Box";
 
 import {KDA, Rate} from "../../common/ColoredValues";
+import AssetLoader from "../../common/AssetLoader";
 
 import {Link} from "react-router-dom";
 
@@ -68,9 +69,7 @@ const Loading = () => {
 
 const PlayerTeam = ({player}) => (
   <div className="PlayerMatch-Players-Player">
-    <div className="PlayerMatch-Players-Player-Hero" style={{
-      backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${player.hero.toLowerCase()}.gif)`
-  }} />
+    <AssetLoader type="heroes" name={player.hero} className="PlayerMatch-Players-Player-Hero" />
     <Link to={Utils.goToPlayer(player.name)}>{ (player.me) ? <b>{player.name}</b> : player.name }</Link>
   </div>
 )
@@ -97,15 +96,12 @@ class Loaded extends React.Component {
     let items = [];
 
     for (let i = 0; i < 6; i++) {
-      let style;
+      let itemName;
       if (me.items[i]) {
-        const name = me.items[i].replace(/([ ])+/g, "-").replace("'", "").toLowerCase();
-        style = {
-          backgroundImage: `url(http://vgpro.gg/assets/images/items/${name}.png)`
-        }
+        itemName = me.items[i];
       }
 
-      items.push(<div key={i} className="PlayerMatch-Item" style={style}/>);
+      items.push(<AssetLoader key={i} type="items" name={itemName} className="PlayerMatch-Item" />);
     }
 
     let blueSide = players.filter(p => p.side === "left/blue");
@@ -123,11 +119,9 @@ class Loaded extends React.Component {
         <Box.body >
           <div className="PlayerMatch-body" onClick={this.handleOpen}>
             {winBadge}
-            <div className="PlayerMatch-Avatar" style={{
-                backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${me.hero.toLowerCase()}.gif)`
-            }}>
+            <AssetLoader type="heroes" name={me.hero} className="PlayerMatch-Avatar" >
               <div className="PlayerMatch-Avatar-Role" id={me.role.toLowerCase()}></div>
-            </div>
+            </AssetLoader>
             
             <div className="PlayerMatch-Info">
               <div className="MatchTime MatchDuration">{minutes}</div>

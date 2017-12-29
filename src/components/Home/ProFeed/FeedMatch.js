@@ -1,6 +1,7 @@
 import React from "react";
 
 import {translate} from "react-i18next";
+import AssetLoader from "../../common/AssetLoader";
 
 import Utils from "utils";
 import { Link }   from 'react-router-dom';
@@ -85,19 +86,19 @@ const Loaded = ({t, data, style}) => {
 
   for (let i = 0; i < 6; i++) {
     
-    let style;
+    let name
     if (items[i]) {
-      const name = items[i].replace(/([ ])+/g, "-").toLowerCase();
-      style = {
-        backgroundImage: `url(http://vgpro.gg/assets/images/items/${name}.png)`
-      }
+      name = items[i];
     }
 
     itemsImage.push(
-      <div
+      <AssetLoader key={i} type="items" name={name} className="ProFeed-each-items-each"/>
+    )
+      /* <div
         key={i}
         className="ProFeed-each-items-each"
-        style={style}/>);
+        name={name}
+        style={style}/>); */
   }
 
   return (
@@ -113,9 +114,9 @@ const Loaded = ({t, data, style}) => {
       </div>
     </div>
     <div className="ProFeed-each-game">
-      <div className="ProFeed-each-game-hero" style={{
-      backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${actor.toLowerCase()}.gif)`
-    }} ><div className="ProFeed-each-game-role" id={role && role.toLowerCase()} /></div>
+      <AssetLoader type="heroes" className="ProFeed-each-game-hero" name={actor}>
+        <div className="ProFeed-each-game-role" id={role && role.toLowerCase()} />
+      </AssetLoader>
       <div className="ProFeed-each-game-kda">{kills}/{deaths}/{assists}</div>
       
     </div>

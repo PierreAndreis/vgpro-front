@@ -105,6 +105,7 @@
 .ProFeed-each-game-hero {
   width: 25px;
   height: 25px;
+  background-color: grey;
   background-size: 130%;
   background-position: center;
   border-radius: 50%;

@@ -1,9 +1,10 @@
 import React from "react";
 
 import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
+import AssetLoader                   from "./../../common/AssetLoader";
 
 import TimeAgo from "../../../i18n/timeAgo.js";
-import Utils from "../../../utils";
+import Utils   from "../../../utils";
 import "./PlayerInfo.css";
 
 const regions = {
@@ -39,12 +40,12 @@ const Loaded = ({data}) => {
   return (
     <div className="PlayerInfo">
       <div className="PlayerInfo-info">
-        <div className="PlayerInfo-tier" style={{backgroundImage: `url(http://vgpro.gg/assets/images/skilltier/${parseInt(data.tier, 10) + 2}.png)`}}>
+        <AssetLoader type="tiers" className="PlayerInfo-tier" name={data.tier}>
           <div className="PlayerInfo-tier-bar">
             <div className="PlayerInfo-tier-bar-fill" style={{width: `${percentageVst}%`}}/>
             <div className="PlayerInfo-tier-bar-label">{rankVst}</div>
           </div>
-        </div>
+        </AssetLoader>
         
         <div className="PlayerInfo-details">
           <div className="PlayerInfo-name">

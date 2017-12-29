@@ -1,13 +1,9 @@
-
-* {
-  text-rendering: optimizeLegibility!important;
-  -webkit-font-smoothing: antialiased!important;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 html {
   touch-action: manipulation;
 	height:100%;
+  text-rendering: optimizeLegibility!important;
+  -webkit-font-smoothing: antialiased!important;
+  -moz-osx-font-smoothing: grayscale;
 }
 body {
   font-family: 'Roboto', sans-serif;

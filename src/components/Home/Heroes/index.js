@@ -1,28 +1,27 @@
 import React from "react";
 
 import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
-import { Rate } from "./../../common/ColoredValues";
-import { SkeletonPayload, SkeletonWrapper } from "../../common/Skeleton";
+import { Rate }                             from "./../../common/ColoredValues";
+import AssetLoader                          from "./../../common/AssetLoader";
+import { SkeletonPayload, SkeletonWrapper } from "./../../common/Skeleton";
 
-import {fetchTopHeroes} from "../../../actions/api";
-import Utils from "../../../utils";
+import {fetchTopHeroes} from "./../../../actions/api";
+import Utils            from "./../../../utils";
 
 import "./Heroes.css";
 
 const Hero = ({status, name, value, rank}) => {
-  let heroImage = {};
+  let heroName;
 
   if (status === "loaded") { 
-    heroImage = {
-      backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${name.toLowerCase()}.gif)`
-    }
+    heroName = name;
   };
 
   return (
     <div className={`HeroesMeta-Top Rank-${rank}`}>
-      <div className="Heroes-Meta-Top-Image" style={heroImage}>
+      <AssetLoader type="heroes" className="Heroes-Meta-Top-Image" name={heroName}>
         <div className="Heroes-Meta-Top-Image-Tag">{rank}</div>
-      </div>
+      </AssetLoader>
       <div className="Heroes-Meta-Top-Name">
         <SkeletonWrapper status={status} width="70px" height="10px">
           {() => name}

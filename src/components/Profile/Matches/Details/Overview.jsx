@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {KDA} from "../../../common/ColoredValues";
 
 import Utils from "../../../../utils";
+import AssetLoader from "../../../common/AssetLoader";
 
 import { SkeletonWrapper, SkeletonPayload } from "./../../../common/Skeleton";
 
@@ -14,15 +15,12 @@ const OverviewPlayer = ({player, telemetry, status}) => {
   const items = [];
 
   for (let i = 0; i < 6; i++) {
-    let style;
+    let name;
     if (player.items && player.items[i]) {
-      const name = player.items[i].replace(/([ ])+/g, "-").replace("'", "").toLowerCase();
-      style = {
-        backgroundImage: `url(http://vgpro.gg/assets/images/items/${name}.png)`
-      }
+      name = player.items[i];
     }
 
-    items.push(<div key={i} className="Overview-Player-Item" style={style}/>);
+    items.push(<AssetLoader key={i} type="items" className="Overview-Player-Item" name={name} />);
   };
 
   let damage = "...";
@@ -41,25 +39,21 @@ const OverviewPlayer = ({player, telemetry, status}) => {
     damageTakenPercent = telemetry.takenShare;
     healingDonePercent = telemetry.healingShare;
   }
-  let heroStyle = {};
+  let heroName;
+
   if (status === "loaded") {
-    heroStyle = {
-      backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${player.hero.toLowerCase()}.gif)`
-    };
+    heroName = player.hero;
   }
 
   return (
     <React.Fragment>
       <div className="Overview-Player-Info">
         <div className="Overview-Player-Image">
-          {/* <div className="Overview-Player-Image-Hero" style={{
-                  backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${player.hero.toLowerCase()}.gif)`
-              }}> */}
-              <div className="Overview-Player-Image-Hero" style={heroStyle}>
-              <SkeletonWrapper status={status} width="0" height="0">
-                {() => <div className="Overview-Player-Image-Role" id={player.role.toLowerCase()} />}
-              </SkeletonWrapper>
-          </div>
+          <AssetLoader type="heroes" className="Overview-Player-Image-Hero" name={heroName}>
+            <SkeletonWrapper status={status} width="0" height="0">
+              {() => <div className="Overview-Player-Image-Role" id={player.role.toLowerCase()} />}
+            </SkeletonWrapper>
+          </AssetLoader>
         </div>
         <div className="Overview-Player-Info-details">
           <SkeletonWrapper status={status} width="45px" height="9px">
@@ -121,9 +115,7 @@ const OverviewPlayer = ({player, telemetry, status}) => {
         <SkeletonWrapper status={status} width="30px" height="40px">
           {() => (
             <React.Fragment>
-              <div className="Overview-Player-Tier" 
-                  style={{backgroundImage: `url(http://vgpro.gg/assets/images/skilltier/${player.tier + 2}.png`}} 
-                />
+              <AssetLoader className="Overview-Player-Tier" type="tiers" name={player.tier} />
               <div className="Overview-Player-RankPoints">{player.rankvst.toFixed(0)}</div>
             </React.Fragment>
           )}
@@ -142,14 +134,15 @@ const TeamStats = ({team, bans, status}) => (
     </div>
     <div className="Overview-Team-Stats">
     { bans &&
-      <div className="Overview-Team-Ban" style={{
-        backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${bans.Hero.toLowerCase()}.gif)`
-      }}/>
+      <AssetLoader className="Overview-Team-Ban" type="heroes" name={bans.Hero} />
     }
       <div className="Overview-Team-Values">
         <div className="Overview-Team-Top">
           <div className="Overview-Team-Gold">
-            <SkeletonWrapper status={status} width="30px" height="13px">{() => Utils.minifyNumber(team.gold)}</SkeletonWrapper></div>
+            <SkeletonWrapper status={status} width="30px" height="13px">
+              {() => Utils.minifyNumber(team.gold)}
+            </SkeletonWrapper>
+          </div>
         </div>
         <div className="Overview-Team-Others">
           <div className="Overview-Team-Turret">

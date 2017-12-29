@@ -24,7 +24,8 @@
 .ProfileSidebar-box .box__card-Body{
   /* margin-bottom:25px; */
   /* padding-bottom:20px */
-  min-height: 300px;
+  /* height: 300px; */
+  background: blue;
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +52,7 @@
     
   }
   .ProfileSidebar-box { 
-    flex-grow: 1;
+    /* width: 80%; */
   }
   /* .ProfileSidebar-box:first-of-type {
     width: 100%;

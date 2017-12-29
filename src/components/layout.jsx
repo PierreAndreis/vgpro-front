@@ -1,5 +1,7 @@
-import React from "react";
+import React    from "react";
 import {Helmet} from "react-helmet";
+import ReactGA  from "react-ga";
+
 
 import Header from "./Layout/Header";
 // import Sidebar from "./Layout/Sidebar";
@@ -12,7 +14,12 @@ import ErrorBoundary from "./common/ErrorBoundary";
 import "./common/animate.css";
 import "./layout.css";
 
+ReactGA.initialize('UA-93754104-1', {
+  debug: true,
+});
+
 class Layout extends React.Component {
+
   render() {
     return (
       <div className="Layout">

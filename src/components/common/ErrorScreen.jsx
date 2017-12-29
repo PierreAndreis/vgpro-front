@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 
 import Box from "./Box";
 
@@ -12,6 +13,11 @@ const ErrorScreen = ({err, height, message, boxed, width}) => {
     // text = err.message;
     // todo: analystics
   }
+
+  ReactGA.exception({
+    description: `ErrorBox: ${err}`,
+    fatal: false
+  });
 
   let style = {};
 

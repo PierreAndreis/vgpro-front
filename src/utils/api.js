@@ -1,4 +1,5 @@
 import axios from "axios";
+import ReactGA from "react-ga";
 const http = require('http');
 const https = require('https');
 const queryString = require('query-string');
@@ -21,10 +22,22 @@ const errorRequest = (e) => {
   // console.warn(e);
   // throw new Error(e);
   // // return [];
+  ReactGA.exception({
+    description: `API CALL: ${e}`,
+    fatal: true
+  });
   return Error(e);
 }
 
-const handleRequest = ({data, status}) => {
+const handleRequest = ({data, status, ...rest}, timing) => {
+
+  ReactGA.timing({
+    category: 'API',
+    variable: 'load',
+    value: timing, // in milliseconds
+    label: rest.request.responseURL
+  });
+
   if (status === 200) return data;
 
   return errorRequest({status, message: "Failed silently..."});
@@ -33,12 +46,22 @@ const handleRequest = ({data, status}) => {
 
 const sendRequest = async (url, data, method = "get") => {
 
-  const options = {
-    url,
-    method,
-  }
+    const options = {
+      url,
+      method,
+    };
+
+    const startTime = new Date();
     const req = await request(options);
-    return handleRequest(req);
+    const endTime = new Date();
+
+    if (endTime < startTime) {
+      endTime.setDate(endTime.getDate() + 1);
+    }
+
+    const diff = endTime - startTime;
+
+    return handleRequest(req, diff);
 }
 
 const sendRequest_Old = async (url, data, method = "get") => {
@@ -48,8 +71,16 @@ const sendRequest_Old = async (url, data, method = "get") => {
     url,
     method,
   }
+  const startTime = new Date();
   const req = await request(options);
-  return handleRequest(req);
+  const endTime = new Date();
+
+  if (endTime < startTime) {
+    endTime.setDate(endTime.getDate() + 1);
+  }
+
+  const diff = endTime - startTime;
+  return handleRequest(req, diff);
 }
 
 const API = {};

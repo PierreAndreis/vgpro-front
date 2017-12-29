@@ -12,6 +12,8 @@ class ErrorBoundary extends React.Component {
       error: error,
       errorInfo: errorInfo
     })
+    global.Raven.captureException(error);
+    global.Raven.showReportDialog();
   }
 
   render() {
@@ -19,7 +21,6 @@ class ErrorBoundary extends React.Component {
       return (
         <React.Fragment>
           <div>Something went wrong!</div>
-          <p>{JSON.stringify(this.state.errorInfo)}</p>
         </React.Fragment>
       );
     }

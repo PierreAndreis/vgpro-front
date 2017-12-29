@@ -1,3 +1,7 @@
+.HeroesMeta-Box {
+  height: 340px;
+}
+
 .HeroesMeta {
   padding: 10px 0px 0;
   display: flex;
@@ -91,7 +95,6 @@
 
 .HeroesMeta-Top3 {
   width: 100%;
-  margin-top: 10px;
   display: flex;
   justify-content: space-around;
 }
@@ -177,18 +180,15 @@
 
 .Heroes-Meta-Divider {
   width: 100%;
-  margin: 10px 0 0;
+  margin: 0 0 10px;
   height: 10px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
 }
 
 .Heroes-Meta-Others {
   width: 100%;
-  /* background: red; */
   /* padding: 0 15px; */
   box-sizing: border-box;
-  height: 103px;
-  overflow-y: scroll;
 }
 
 .Heroes-Meta-Others .HeroesMeta-Top {
@@ -197,12 +197,12 @@
   justify-content: flex-start;
   align-items: center;
   /* background: green; */
-  padding: 5px 30px;
+  padding:7px 30px;
   box-sizing: border-box;
   /* border-bottom: 1px solid rgb(224, 224, 224); */
 }
 
-.Heroes-Meta-Others .HeroesMeta-Top:nth-child(even) {
+.Heroes-Meta-Others .HeroesMeta-Top:nth-child(odd) {
   background: rgb(240, 240, 240);
 }
 

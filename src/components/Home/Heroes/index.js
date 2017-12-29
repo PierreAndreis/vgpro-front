@@ -58,6 +58,7 @@ export default class extends React.Component {
     active: TYPES[0],
     region: "all",
     status: "loading",
+    page: 0,
     payload: SkeletonPayload(6),
   }
 
@@ -88,7 +89,8 @@ export default class extends React.Component {
 
     this.setState({
       status: "loading",
-      payload: SkeletonPayload(6)
+      page: 0,
+      payload: SkeletonPayload(5)
     })
 
     const server_region = (region === "sea") ? "sg" : region;
@@ -100,18 +102,44 @@ export default class extends React.Component {
     );
   }
 
+  nextPage = (e) => {
+    e.preventDefault();
+    if (e.target.id === "disabled") return;
+    this.setState((prevState) => ({
+      page: prevState.page + 1,
+    }));
+  }
+
+  prevPage = (e) => {
+    e.preventDefault();
+    if (e.target.id === "disabled") return;
+    this.setState((prevState) => ({
+      page: prevState.page - 1,
+    }));
+  }
 
   render() {
 
-    const {status, payload, active} = this.state;
+    const {status, payload, active, page} = this.state;
+
+    let firstPage = 2;
+    let perPage = 4;
+    let rank = 1 + (perPage * page);
+    const totalHeroes = payload.length;
 
     const top3 = [...payload].splice(0, 3);
-    const rest = [...payload].slice(3, -1);
 
-    let rank = 1;
+    let rest = [...payload].slice(rank, rank + perPage);
+
+    if (page === 0) {
+      rest = [...payload].slice(3, 3 + firstPage);
+    }
+
+    const nextBlocked = rank + perPage >= (totalHeroes);
+    const prevBlocked = page === 0;
 
     return (
-      <Box className="animated fadeInRight">
+      <Box className="animated fadeInRight HeroesMeta-Box">
         <BoxTitle className="HeroesMeta-Title">
           <span>Top {active.label}</span>
           <div className="HeroesMeta-Selector">
@@ -138,16 +166,16 @@ export default class extends React.Component {
               ))
             }
           </div>
-
-          <div className="HeroesMeta-Top3 animated fadeInLeft">
-            {
-              top3.map(({name, ...value}) => (
-                <Hero key={rank} status={status} name={name} value={value} rank={rank++} />
-              ))
-            }
-          </div>
-
           <div className="Heroes-Meta-Divider" />
+          { page === 0 && 
+            <div className="HeroesMeta-Top3">
+              {
+                top3.map(({name, ...value}) => (
+                  <Hero key={rank} status={status} name={name} value={value} rank={rank++} />
+                ))
+              }
+            </div>
+          }
           <div className="Heroes-Meta-Others animated slideInUp">
             {
               rest.map(({name, ...value}) => (
@@ -157,7 +185,10 @@ export default class extends React.Component {
           </div>
         
         </BoxBody>
-        <BoxActions />
+        <BoxActions>
+          <div className="button" id={prevBlocked ? "disabled" : ""} onClick={this.prevPage}>View Less</div>
+          <div className="button" id={nextBlocked ? "disabled" : ""} onClick={this.nextPage}>View more</div>
+        </BoxActions>
       </Box> 
     )
   }

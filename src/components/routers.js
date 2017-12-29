@@ -3,6 +3,8 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import ReactGA  from "react-ga";
+
 
 import { translate } from 'react-i18next';
 
@@ -47,10 +49,11 @@ const routes = [
 // wrap <Route> and use this everywhere instead, then when
 // sub routes are added to any route it'll work
 const RouteWithSubRoutes = (route) => (
-  <Route path={route.path} exact={route.exact} render={props => (
+  <Route path={route.path} exact={route.exact} render={props => {
     // pass the sub-routes down to keep nesting
-    <route.component {...props} routes={route.routes}/>
-  )}/>
+    ReactGA.pageview(props.location.pathname);
+    return (<route.component {...props} routes={route.routes}/>);
+  }}/>
 )
 
 const Routers = () => (

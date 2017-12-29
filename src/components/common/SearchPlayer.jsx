@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import { translate } from 'react-i18next';
 
 import { withRouter } from 'react-router';
@@ -53,9 +54,19 @@ class SearchPlayer extends React.Component {
     lookupPlayer(playerName).then((result) => {
 
       if (result && result.name) {
+        ReactGA.event({
+          category: 'Search',
+          action: `Player Found`,
+          label: result.name,
+        });
         changeStatus(this, "ready");
         return this.props.history.push(Utils.goToPlayer(result.name));
       }
+      ReactGA.event({
+        category: 'Search',
+        action: `Player Not Found`,
+        label: playerName,
+      });
       changeStatus(this, "error");
     });
   }

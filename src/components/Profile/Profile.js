@@ -1,11 +1,11 @@
-import React from "react";
-import {Helmet} from "react-helmet";
+import React          from "react";
+import {Helmet}       from "react-helmet";
+import ReactGA        from "react-ga";
 import { withRouter } from 'react-router';
 
 import ErrorScreen from "../common/ErrorScreen";
 
 import TimeAgo from "../../i18n/timeAgo";
-// import Header    from "./Header/ProfileHeader";
 import MatchStats from "./MatchStats/MatchStats";
 
 import Sidebar from "./Sidebar";
@@ -40,6 +40,7 @@ class Profile extends React.Component {
   componentDidMount() {
     const {match} = this.props;
     const {player} = match.params;
+
     this.props.fetchPlayerStats(player, {
       gameMode: "",
       season: ""
@@ -47,6 +48,12 @@ class Profile extends React.Component {
   }
 
   changeFilters = (filter) => {
+    ReactGA.event({
+      category: 'Players',
+      action: 'Change Filters',
+      label: `${filter.gameMode}/${filter.season}`,
+    });
+
     const {match} = this.props;
     const {player} = match.params;
     this.props.fetchPlayerStats(player, filter);

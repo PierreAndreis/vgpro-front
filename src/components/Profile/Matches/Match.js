@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import Box from "../../common/Box";
 
 import {KDA, Rate} from "../../common/ColoredValues";
@@ -82,6 +83,15 @@ class Loaded extends React.Component {
 
   handleOpen = (e) => {
     if (this.avoid.contains(e.target)) return;
+
+    const {payload} = this.props;
+
+    ReactGA.event({
+      category: 'Players',
+      action:   'Open Match Details',
+      label:    payload.id,
+    });
+
     this.setState((prevState) => ({details: !prevState.details}))
   }
 

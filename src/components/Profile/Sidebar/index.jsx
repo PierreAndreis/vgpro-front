@@ -55,9 +55,9 @@ class Sidebar extends React.Component {
 
 
     return (
-      <div className="Profile__Sidebar">
+      <React.Fragment>
         {components}
-      </div>
+      </React.Fragment>
     )
   }
 }

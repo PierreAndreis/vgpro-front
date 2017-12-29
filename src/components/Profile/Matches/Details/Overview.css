@@ -141,6 +141,7 @@
   width: 80px;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: block;
   font-size: 12px;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
@@ -222,6 +223,7 @@
 .Overview-Player-Damage-label {
   font-size: 10px;
   font-weight: bold;
+  white-space: nowrap;
   color: grey;
   margin-left: 3px;
 }

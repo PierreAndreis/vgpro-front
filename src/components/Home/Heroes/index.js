@@ -59,7 +59,7 @@ export default class extends React.Component {
     active: TYPES[0],
     region: "all",
     status: "loading",
-    payload: SkeletonPayload(5),
+    payload: SkeletonPayload(6),
   }
 
   componentDidMount() {
@@ -89,7 +89,7 @@ export default class extends React.Component {
 
     this.setState({
       status: "loading",
-      payload: SkeletonPayload(5)
+      payload: SkeletonPayload(6)
     })
 
     const server_region = (region === "sea") ? "sg" : region;
@@ -106,8 +106,8 @@ export default class extends React.Component {
 
     const {status, payload, active} = this.state;
 
-    const top3 = payload.splice(0, 3);
-    const rest = payload;
+    const top3 = [...payload].splice(0, 3);
+    const rest = [...payload].slice(3, -1);
 
     let rank = 1;
 

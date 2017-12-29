@@ -71,12 +71,13 @@ const Loaded = ({t, data, style}) => {
     actor, 
     winner, 
     kills,
+    role,
     deaths,
     assists,
     items,
   } = data;
   
-  const {name, position, region, team} = proInfo;
+  const {name, region, team} = proInfo;
 
   const win = (winner) ? "Win" : "Loss";
 
@@ -114,7 +115,7 @@ const Loaded = ({t, data, style}) => {
     <div className="ProFeed-each-game">
       <div className="ProFeed-each-game-hero" style={{
       backgroundImage: `url(http://vgpro.gg/assets/images/heroes/${actor.toLowerCase()}.gif)`
-    }} ><div className="ProFeed-each-game-role" id={position} /></div>
+    }} ><div className="ProFeed-each-game-role" id={role && role.toLowerCase()} /></div>
       <div className="ProFeed-each-game-kda">{kills}/{deaths}/{assists}</div>
       
     </div>

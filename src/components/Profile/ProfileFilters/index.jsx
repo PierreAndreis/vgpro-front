@@ -110,7 +110,7 @@ class ProfileFilters extends React.Component {
     }
 
     return (
-      <div className="ProfileFilters">
+      <div className="ProfileFilters animated fadeInUp">
         <div className="ProfileFilters-label">Stats for</div>
         <MenuSelector options={gameModeOptions} 
                       active={gameModeActive} 

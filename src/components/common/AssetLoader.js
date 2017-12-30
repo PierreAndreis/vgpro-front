@@ -22,7 +22,7 @@ class AssetLoader extends React.Component {
     this.cancel = Utils.makeCancelable(
       import(`./../../assets/${cleanImage}`),
       (image) => this.setState({image}),
-      () => this.getImage()
+      () => {console.log(name); this.getImage()}
     );
   }
 

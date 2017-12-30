@@ -234,11 +234,11 @@ const OverviewTeam = ({team, telemetry, status}) => {
 export default class extends React.Component {
 
   render() {
-    const {players, telemetry, status} = this.props
+    const {teams, telemetry, status} = this.props
     return (
       <div className="MatchDetails-Overview">
           {
-            players.map((team, i) => {
+            teams.map((team, i) => {
               return <OverviewTeam key={i} status={status} team={team} telemetry={telemetry}/>
             })
           }

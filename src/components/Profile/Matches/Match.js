@@ -89,7 +89,7 @@ class Loaded extends React.Component {
     ReactGA.event({
       category: 'Players',
       action:   'Open Match Details',
-      label:    payload.id,
+      label:     payload.id,
     });
 
     this.setState((prevState) => ({details: !prevState.details}))
@@ -173,7 +173,7 @@ class Loaded extends React.Component {
           </div>
         </Box.body>
       </Box.wrap>
-      {this.state.details && <MatchDetails matchId={id} region={shardId} />}
+      {this.state.details && <MatchDetails matchId={id} region={shardId} playerName={me.name}/>}
     </React.Fragment>
     )
 

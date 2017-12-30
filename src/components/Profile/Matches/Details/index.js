@@ -1,11 +1,22 @@
 import React from "react";
 
 import "./Details.css";
+import AsyncContainer from "./../../../common/AsyncContainer";
 import {fetchMatchDetails, fetchMatchTelemetry} from "./../../../../actions/api";
 
 import Utils from "../../../../utils";
 
-import MatchOverview from "./Overview";
+const Tabs = [
+  {
+    name: "Overview",
+    component: AsyncContainer(() => import("./Overview"))
+  },
+  {
+    name: "Builds",
+    component: AsyncContainer(() => import("./Builds"))
+  }
+]
+
 
 class MatchDetails extends React.Component {
 
@@ -13,6 +24,7 @@ class MatchDetails extends React.Component {
     status: "loading",
     telemetry: null,
     details: null,
+    tab: Tabs[0],
   }
 
   componentDidMount() {
@@ -44,21 +56,29 @@ class MatchDetails extends React.Component {
     this.cancelTelemetry();
   }
 
+  changeTab = (tab) => (e) => {
+    this.setState({
+      tab: tab
+    })
+  }
+
   render() {
     
     const {
       telemetry,
       status,
-      details
+      details,
+      tab
     } = this.state;
+
+    let { playerName } = this.props;
 
     let content = null;
     let payload = [];
 
     if (status === "loading") payload = [{}, {}]
     else {
-
-      // TODO: More tabs (?)
+      
       const {players, rosters} = details;
 
       payload = rosters.map(r => {
@@ -70,11 +90,26 @@ class MatchDetails extends React.Component {
       });
     }
 
-    content = (<MatchOverview status={status} players={payload} telemetry={telemetry} />)
+    content = React.createElement(
+      tab.component,
+      {
+        status,
+        telemetry,
+        me: playerName,
+        teams: payload
+      }
+    );
    
 
     return (
       <div className="MatchDetails animated slideInDown">
+        <div className="MatchDetails-Tab">
+          {Tabs.map(t => (
+            <div key={t.name} 
+                 className={(tab.name === t.name && "active") || ""} 
+                 onClick={this.changeTab(t)}>{t.name}</div>
+          ))}
+        </div>
         {content}
       </div>
     )

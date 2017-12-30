@@ -1,0 +1,204 @@
+.MatchDetails-Builds {
+  width: 100%;
+  display: flex;
+}
+
+.MatchBuilds-Players {
+  display: flex;
+  flex-direction: column;
+}
+
+.MatchBuilds-Players .Builds-Player {
+  padding: 3px 10px;
+  margin: 1px 0;
+  display: flex;
+  width: 200px;
+  cursor: pointer;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 300ms;
+}
+
+.Builds-Player:hover {
+  background: rgba(230, 230, 230, 0.514);
+  font-weight: bold;
+}
+
+.Builds-Player.active .Builds-Player-Name {
+  font-weight: 700;
+  color: #E5C05E;
+}
+
+.Builds-Player-Image {
+  width: 30px;
+  height: 30px;
+  border-radius: 90%;
+  background-size: 100%;
+  border: 3px solid #4A90E2;
+}
+
+.MatchBuilds-Team:last-of-type .Builds-Player-Image {
+  border-color: #FF6262;
+}
+
+.Builds-Player-Name {
+  overflow: hidden;
+  margin: 0 5px;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 12px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 500;
+  color: rgb(109, 109, 109);
+}
+
+.MatchBuilds-Content {
+  border-left: 1px solid rgba(128, 128, 128, 0.212);
+  padding-left: 20px;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.MatchBuilds-Content h2 {
+  font-size: 15px;
+  padding-bottom: 5px;
+  color: #DCAF5A;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  border-bottom: 1px solid #DCAF5A;
+}
+
+.MatchBuilds-Abilities {
+  text-align: center;
+}
+
+.Abilities-Grid {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.Ability-Row {
+  display: flex;
+  align-items: stretch;
+  flex-grow: 0;
+  height: 25px;
+  margin: 2px 0;
+}
+
+.Ability-Row>div
+ {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  box-sizing: border-box;
+  font-size: 13px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0;
+  background-color: #D8D8D8;
+  border: 1px solid #BDBDBD;
+  background-size: 100%;
+  margin: 0 2px;
+}
+.Ability-Row>div.active {
+  font-size: 13px;
+  color: white;
+  background-color: #E8A827;
+}
+
+.Ability-Row>div.Ability-Label {
+  border-radius: 5px;
+  border: 0;
+}
+
+.Ability-Row>span {
+  font-size: 11px;
+  color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  padding: 0 5px;
+  box-sizing: border-box;
+  text-align: right;
+  width: 90px;
+  text-transform: uppercase;
+}
+
+.MatchBuilds-Build {
+  display: flex;
+  padding: 5px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+.Build-Group {
+  margin: 0 5px 5px;
+  box-sizing: border-box;
+  background: #D8D8D8;
+  border: 1px solid #A7A7A7;
+}
+
+.Build-Items {
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Build-Item {
+  width: 30px;
+  height: 30px;
+  background-size: 100%;
+  position: relative;
+}
+
+.Build-Label {
+  background: rgb(146, 146, 146);
+  font-size: 12px;
+  font-weight: 400;
+  padding: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+}
+
+.Build-Item-Tag {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  background: rgb(247, 64, 64);
+  color: white;
+}
+
+@media screen and (max-width: 710px) {
+  .MatchDetails-Builds {
+    flex-direction: column;
+  }
+  .MatchBuilds-Players {
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+  }
+  .MatchBuilds-Team:first-of-type .Builds-Player{
+    flex-direction: row-reverse;
+  }
+  .Ability-Row>span {
+    display: none;
+  }
+  .Ability-Row>div {
+    width: 25px;
+    height: 25px;
+    font-size: 11px;
+    border-radius: 50%;
+    margin: 1px;
+  }
+}

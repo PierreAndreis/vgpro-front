@@ -4,30 +4,26 @@ import Box from "../../common/Box";
 
 import { connect }          from "react-redux";
 
-import PlayerInfo       from "./PlayerInfo";
-import HeroesPlayed     from "./HeroesPlayed";
-import RecentRoles      from "./RecentRoles";
-import RecentPlayedWith from "./RecentPlayedWith";
- 
+import AsyncContainer from "./../../common/AsyncContainer";
 
 const SideBarItems = [
   {
-    componentBody: PlayerInfo
+    componentBody: AsyncContainer(() => import("./PlayerInfo"))
   },
   {
     label: "Recent Roles",
     labelKey: "recent-roles",
-    componentBody: RecentRoles
+    componentBody: AsyncContainer(() => import("./RecentRoles"))
   },
   {
     label: "Most Played Heroes",
     labelKey: "most-played-heroes",
-    componentBody: HeroesPlayed
+    componentBody: AsyncContainer(() => import("./HeroesPlayed"))
   },
   {
-    label: "Most Played Heroes",
+    label: "Recently Played With",
     labelKey: "recent-played-with",
-    componentBody: RecentPlayedWith,
+    componentBody: AsyncContainer(() => import("./RecentPlayedWith")),
   }
 ]
 

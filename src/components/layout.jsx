@@ -14,9 +14,7 @@ import ErrorBoundary from "./common/ErrorBoundary";
 import "./common/animate.css";
 import "./layout.css";
 
-ReactGA.initialize('UA-93754104-1', {
-  debug: true,
-});
+ReactGA.initialize('UA-93754104-1');
 
 class Layout extends React.Component {
 

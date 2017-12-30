@@ -4,21 +4,27 @@ export default function asyncComponent(importComponent) {
   class AsyncComponent extends Component {
     constructor(props) {
       super(props);
-      window.scrollTo(0, 0);
       this.state = {
         component: null
       };
     }
 
+    componentWillMount() {
+      if (this.props.location) {
+        window.scrollTo(0, 0);
+      }
+    }
+
     componentDidUpdate(prevProps) {
-      if (this.props.location.pathname !== prevProps.location.pathname) {
+      if (
+        this.props.location && 
+        (this.props.location.pathname !== prevProps.location.pathname)) {
         window.scrollTo(0, 0);
       }
     }
 
     async componentDidMount() {
       const { default: component } = await importComponent();
-
       this.setState({
         component: component
       });

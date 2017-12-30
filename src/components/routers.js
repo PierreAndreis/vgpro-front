@@ -11,23 +11,32 @@ import { translate } from 'react-i18next';
 import AsyncContainer from "./common/AsyncContainer";
 
 const HomePage    = AsyncContainer(() => import("./Home/Home"));
-const Teams       = AsyncContainer(() =>  import('./Teams/Teams'));
 const Profile     = AsyncContainer(() =>  import('./Profile/Profile'));
-const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard'));
+
+// const Teams       = AsyncContainer(() =>  import('./Teams/Teams'));
+// const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard'));
+
+const Teams       = AsyncContainer(() =>  import('./common/Soon'));
+const Leaderboard = AsyncContainer(() =>  import('./common/Soon'));
+const Heroes      = AsyncContainer(() =>  import('./common/Soon'));
 
 // then our route config
 const routes = [
+  {
+    path: '/players/:player',
+    component: Profile,
+  },
   { 
     path: '/teams',
     component: Teams
   },
   {
-    path: '/players/:player',
-    component: Profile,
-  },
-  {
     path: '/leaderboard',
     component: Leaderboard,
+  },
+  {
+    path: '/heroes',
+    component: Heroes,
   },
   {
     path: '/',

@@ -65,17 +65,17 @@ const Loaded = ({data}) => {
       {/* {team} */}
       <div className="PlayerInfo-VPR">
         <div className="PlayerInfo-Stat">
-          <div>#3232</div>
+          <div>SOON</div>
           <span>Global</span>
         </div>
 
-        <div className="PlayerInfo-Stat">
+        {/* <div className="PlayerInfo-Stat">
           <div>#1</div>
           <span>NA</span>
-        </div>
+        </div> */}
 
         <div className="PlayerInfo-Stat VPR">
-          <div>2,381</div>
+          <div>SOON</div>
           <span>VGPRO RATING</span>
         </div>
       </div>

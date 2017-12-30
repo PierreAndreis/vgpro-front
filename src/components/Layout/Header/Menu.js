@@ -27,8 +27,7 @@ const NavLinks = [
   {
     name: "Heroes",
     loc:  "menuheroes",
-    to:   "/",
-    soon: true,
+    to:   "/heroes",
   },
 ]
 

@@ -1,0 +1,13 @@
+.Soon-page {
+
+  margin: 20px auto;
+  text-align: center;
+}
+
+.Soon-page h3 {
+  font-size: 60px;
+  font-style: italic;
+  color: rgba(71, 71, 71, 0.404);
+  font-weight: 500;
+  text-decoration: italic;
+}

@@ -69,7 +69,7 @@ const Loaded = ({data}) => {
     </div>
     <div className="Lead5-each-vpr">
       <div className="Lead5-each-vpr-number"><VPR value={rating} /></div>
-      <div className="Lead5-each-vpr-name">VPR</div>
+      <div className="Lead5-each-vpr-name">VST</div>
     </div>
   </Link>
   );

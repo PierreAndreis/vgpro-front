@@ -99,6 +99,7 @@
   justify-content: center;
   align-items: center;
   font-size: 0;
+  color: #D8D8D8;
   background-color: #D8D8D8;
   border: 1px solid #BDBDBD;
   background-size: 100%;
@@ -106,6 +107,7 @@
 }
 .Ability-Row>div.active {
   font-size: 13px;
+  font-weight: 500;
   color: white;
   background-color: #E8A827;
 }
@@ -195,8 +197,8 @@
     display: none;
   }
   .Ability-Row>div {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     font-size: 11px;
     border-radius: 50%;
     margin: 1px;

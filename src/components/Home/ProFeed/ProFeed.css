@@ -16,6 +16,7 @@
   color: black;
   display: flex;
   background: rgba(241, 241, 241, 1);
+  transition: background-color 0.2s;
   flex-direction: space-between;
   align-items: center;
 }

@@ -64,6 +64,10 @@ class SearchCompact extends React.Component {
                 placeholder={ph} 
                 onChange={onChange} 
                 value={value}
+                autocomplete="off" 
+                autocorrect="off" 
+                autocapitalize="off" 
+                spellcheck="false"
             />
 
             <div className={`Search-Icon ${icon}`} onClick={this.handleClick} />

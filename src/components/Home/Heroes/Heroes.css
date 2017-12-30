@@ -130,13 +130,13 @@
 
 .Heroes-Meta-Top-Image-Tag {
   position: absolute;
-  top: -2px;
-  right: -3px;
+  top: -5px;
+  left: -5px;
   display: block;
-  width: 20px;
-  font-size: 12px;
+  width: 23px;
+  font-size: 14px;
   color: white;
-  height: 20px;
+  height: 23px;
   box-sizing: border-box;
   padding: 4px;
   border-radius: 50%;

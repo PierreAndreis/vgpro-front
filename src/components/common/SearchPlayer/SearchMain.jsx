@@ -31,6 +31,10 @@ export default ({status, onSearch, onChange, placeholder, value}) =>  {
           value={value}
           onChange={onChange}
           required
+          autocomplete="off" 
+          autocorrect="off" 
+          autocapitalize="off" 
+          spellcheck="false"
         />
       </form>
     </div>

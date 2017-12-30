@@ -1,6 +1,7 @@
 import React          from "react";
 import {Helmet}       from "react-helmet";
 import ReactGA        from "react-ga";
+import AD             from "react-google-publisher-tag";
 import { withRouter } from 'react-router';
 
 import ErrorScreen from "../common/ErrorScreen";
@@ -101,7 +102,7 @@ class Profile extends React.Component {
           </div>
           <div className="Profile__Main">
             <MatchStats  t={t} />
-
+            <AD path="/21676119576/vgpro-react" />
             <MatchesManager t={t} filters={filters} />
           </div>
         </div>

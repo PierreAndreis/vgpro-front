@@ -114,10 +114,10 @@ const Loading = () => {
           <span>Global</span>
         </div>
 
-        <div className="PlayerInfo-Stat">
+        {/* <div className="PlayerInfo-Stat">
           <div><Skeleton width="50px"/></div>
           <span><Skeleton width="10px" height="10px" /></span>
-        </div>
+        </div> */}
 
         <div className="PlayerInfo-Stat VPR">
           <div><Skeleton width="50px"/></div>

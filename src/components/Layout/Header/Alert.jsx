@@ -8,7 +8,7 @@ import "./Alert.css";
 const Alert = ({message}) => (
   <div className="Alert">
     <span>{message}</span>
-    <div className="Alert__close"><i className="fa fa-close"/></div>
+    {/* <div className="Alert__close"><i className="fa fa-close"/></div> */}
   </div>
 );
 

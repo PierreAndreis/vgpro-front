@@ -94,6 +94,53 @@ API.getLead5 = () => {
   return sendRequest_Old("/topfive/")
 }
 
+API.getLeaders = (region) => {
+  // return sendRequest_Old(`/leaderboard/${region}`)
+  const testData = [
+    {
+      ign: "Skillz4Killz",
+      vst: 26,
+      kills: 200,
+      deaths: 900,
+      assists: 1000,
+      vpr: 2745,
+      wins: 789,
+      losses: 699,
+    },
+    {
+      ign: "4ever",
+      vst: 29,
+      kills: 2000,
+      deaths: 500,
+      assists: 100,
+      vpr: 2990,
+      wins: 2142,
+      losses: 3235,
+    },
+    {
+      ign: "L3oN",
+      vst: 26,
+      kills: 200,
+      deaths: 900,
+      assists: 1000,
+      vpr: 2745,
+      wins: 789,
+      losses: 699,
+    },
+    {
+      ign: "EZLinEU",
+      vst: 29,
+      kills: 2000,
+      deaths: 500,
+      assists: 100,
+      vpr: 2990,
+      wins: 2142,
+      losses: 3235,
+    },
+  ];
+  return region ? testData[region] : testData
+}
+
 API.getTopHeroes = (type = "pickrate", region = "all") => {
   return sendRequest(`/heroes/${type}/${region}`);
 }

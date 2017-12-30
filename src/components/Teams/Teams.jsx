@@ -1,3 +1,9 @@
 import React from "react";
 
-export default () => (<p>Soon</p>)
+const teams = (props) => {
+    return (
+        <p>Soonish</p>
+    )
+}
+
+export default teams;

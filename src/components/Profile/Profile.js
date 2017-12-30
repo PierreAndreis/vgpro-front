@@ -1,7 +1,7 @@
 import React          from "react";
 import {Helmet}       from "react-helmet";
 import ReactGA        from "react-ga";
-import Ads           from "./../common/Ads";
+import {Adsense}           from "./../common/Ads";
 import { withRouter } from 'react-router';
 
 import ErrorScreen from "../common/ErrorScreen";
@@ -102,7 +102,7 @@ class Profile extends React.Component {
           </div>
           <div className="Profile__Main">
             <MatchStats  t={t} />
-            <Ads />
+            <Adsense />
             <MatchesManager t={t} filters={filters} />
           </div>
         </div>

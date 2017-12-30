@@ -13,6 +13,7 @@
     "query-string": "^5.0.1",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
+    "react-adsense": "0.0.3",
     "react-dom": "^16.2.0",
     "react-ga": "^2.4.0",
     "react-google-publisher-tag": "^1.0.4",

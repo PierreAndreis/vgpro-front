@@ -10,14 +10,19 @@ class Ads_2 extends React.Component {
     active: true
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-      active: false
-    }, () => {
+  componentWillReceiveProps(nextProps) {
+    if (
+        this.props.location && 
+        (this.props.location.pathname !== nextProps.location.pathname)) {
       this.setState({
-        active: true
-      })
-    });
+        active: false
+      }, () => {
+        this.setState({
+          active: true
+        })
+      });
+
+    }
   }
 
   render() {
@@ -37,14 +42,19 @@ class Ads extends React.Component {
     active: true
   }
 
-  componentWillReceiveProps() {
-    this.setState({
-      active: false
-    }, () => {
+  componentWillReceiveProps(nextProps) {
+    if (
+        this.props.location && 
+        (this.props.location.pathname !== nextProps.location.pathname)) {
       this.setState({
-        active: true
-      })
-    });
+        active: false
+      }, () => {
+        this.setState({
+          active: true
+        })
+      });
+
+    }
   }
 
   render() {

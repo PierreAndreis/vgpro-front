@@ -1,8 +1,6 @@
 import React    from "react";
 import {Helmet} from "react-helmet";
 import ReactGA  from "react-ga";
-import AD from 'react-google-publisher-tag';
-
 
 import Header from "./Layout/Header";
 // import Sidebar from "./Layout/Sidebar";
@@ -10,6 +8,7 @@ import Footer from "./Layout/Footer";
 
 import Routers from "./routers";
 
+import Ads           from "./common/Ads";
 import ErrorBoundary from "./common/ErrorBoundary";
 
 import "./common/animate.css";
@@ -33,7 +32,7 @@ class Layout extends React.Component {
           <div className="Layout-main">
             <div className="Layout-BG" />
             <div className="Layout-content"><Routers/></div>
-            <AD path="/21676119576/vgpro-react" />
+            <Ads />
             <Footer/>
           </div>
         </ErrorBoundary>

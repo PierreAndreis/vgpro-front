@@ -1,6 +1,6 @@
 import React from "react";
 import {Helmet} from "react-helmet";
-import AD from "react-google-publisher-tag";
+import Ads from "./../common/Ads";
 
 import ProFeed from "./ProFeed";
 import Lead5   from "./Lead5";
@@ -24,7 +24,7 @@ class HomePage extends React.Component {
           </div>
           <SearchPlayer mode="main" />
         </div>
-        <AD path="/21676119576/vgpro-react" />
+        <Ads />
         <div className="Home-box">
           <ProFeed t={t} />
           <Lead5   t={t} />

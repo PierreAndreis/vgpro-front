@@ -124,18 +124,24 @@ export default class extends React.Component {
 
     let firstPage = 2;
     let perPage = 4;
-    let rank = 1 + (perPage * page);
+    
+    let toShow = 1 + (perPage * page) + perPage;
+
     const totalHeroes = payload.length;
+    const heroes = payload.map((hero, i) => ({
+      ...hero,
+      rank: i + 1
+    }))
 
-    const top3 = [...payload].splice(0, 3);
+    const top3 = [...heroes].splice(0, 3);
 
-    let rest = [...payload].slice(rank, rank + perPage);
+    let rest = [...heroes].slice(toShow - perPage, toShow);
 
     if (page === 0) {
-      rest = [...payload].slice(3, 3 + firstPage);
+      rest = [...heroes].slice(3, 3 + firstPage);
     }
 
-    const nextBlocked = rank + perPage >= (totalHeroes);
+    const nextBlocked = toShow >= (totalHeroes);
     const prevBlocked = page === 0;
 
     return (
@@ -170,16 +176,16 @@ export default class extends React.Component {
           { page === 0 && 
             <div className="HeroesMeta-Top3">
               {
-                top3.map(({name, ...value}) => (
-                  <Hero key={rank} status={status} name={name} value={value} rank={rank++} />
+                top3.map(({name, rank, ...value}) => (
+                  <Hero key={rank} status={status} name={name} value={value} rank={rank} />
                 ))
               }
             </div>
           }
           <div className="Heroes-Meta-Others animated slideInUp">
             {
-              rest.map(({name, ...value}) => (
-                <Hero key={rank} status={status} name={name} value={value} rank={rank++} />
+              rest.map(({name, rank, ...value}) => (
+                <Hero key={rank} status={status} name={name} value={value} rank={rank} />
               ))
             }
           </div>

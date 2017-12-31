@@ -92,6 +92,19 @@ class Profile extends React.Component {
       )
     }
 
+    if (playerStats === {} && status !== "loading") {
+      return (
+        <div>
+        {title}
+        <ErrorScreen message={
+          <p>{player} was not found.
+          <br /> Please try again later.
+          <br /> Last update: <TimeAgo date={playerStats.lastCache} />
+          </p>} boxed/>
+        </div>
+      )
+    }
+
     return (
       <div>
         {title}

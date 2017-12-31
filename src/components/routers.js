@@ -23,6 +23,10 @@ const Heroes      = AsyncContainer(() =>  import('./common/Soon'));
 // then our route config
 const routes = [
   {
+    path: '/players/:region/:player',
+    component: Profile,
+  },
+  {
     path: '/players/:player',
     component: Profile,
   },

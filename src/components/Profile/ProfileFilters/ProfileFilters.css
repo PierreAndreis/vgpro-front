@@ -28,7 +28,8 @@
   cursor: pointer;
   color: #F3C249;
   font-weight: 700;
-  background: white;
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   border-radius: 5px;
 }
 
@@ -52,7 +53,8 @@
   right: 0;
   height: auto;
   padding: 5px;
-  background: white;
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   z-index: 99;
   border-radius: 5px;
   box-shadow: rgba(54, 54, 54, 0.315) 0 10px 30px 0;
@@ -66,7 +68,8 @@
 }
 
 .Menu-Choices>div:hover {
-  background: whitesmoke;
+  background-color: whitesmoke;
+  background-color: var(--backgroundSecondary);
 }
 
 .Menu-Choices>div.active {

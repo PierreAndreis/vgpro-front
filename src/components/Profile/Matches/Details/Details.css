@@ -5,7 +5,8 @@
   margin-top: -10px;
   padding: 15px 5px 5px;
   box-sizing: border-box;
-  background: white;
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   border-radius: 0 0 5px 5px;
   /* box-shadow: 0 0 10px rgba(146, 146, 146, 0.445); */
   box-shadow: #EAEDF3 0 0px 30px 0;

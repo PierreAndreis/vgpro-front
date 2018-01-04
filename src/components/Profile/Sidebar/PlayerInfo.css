@@ -45,7 +45,8 @@
   font-size: 13px;
   color: #F4C338;
   border: 2px solid #D8D8D8;
-  background: white;
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   font-weight: bolder;
   padding: 2px 5px;
   text-align: center;
@@ -64,21 +65,6 @@
   font-weight: bold;
   margin-bottom: 5px;
 }
-
-/* 
-@media screen and (max-width: 1120px) and (min-width: 700px) {
-  .PlayerInfo-info {
-    flex-direction: column;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-  }
-  .PlayerInfo-info .PlayerInfo-details {
-    padding: 0;
-    text-align: center;
-    margin-bottom: 10px;
-  }
-} */
 
 .PlayerInfo-details .PlayerInfo-desc {
   font-size: 15px;

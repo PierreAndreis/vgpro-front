@@ -7,7 +7,9 @@
 .Soon-page h3 {
   font-size: 60px;
   font-style: italic;
-  color: rgba(71, 71, 71, 0.404);
+  color: #6F7175;
+  color: var(--textPrimary);
+  opacity: 0.404;
   font-weight: 500;
   text-decoration: italic;
 }

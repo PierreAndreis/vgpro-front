@@ -9,6 +9,7 @@
   height: 130px;
   margin: 10px 0;
   border-left: 6px solid #F1685D;
+  border-left-color: var(--lossColor);
 
   position: relative;
   z-index: 2;
@@ -19,11 +20,13 @@
 }
 .PlayerMatch:hover {
   transform: scale3d(1.005, 1.005, 1.005);
-  background: rgb(247, 247, 247);
+  background-color: rgb(247, 247, 247);
+  background-color: var(--backgroundHover);
 }
 
 .PlayerMatch-win {
   border-left-color: #5DB4F1;
+  border-left-color: var(--winColor);
 }
 
 .PlayerMatch-body {
@@ -41,14 +44,17 @@
   height: 90px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgb(190, 190, 190);
+  background-color: rgb(190, 190, 190);
+  background-color: var(--placeholderColor);
   border: 2px solid #9C9C9C;
+  border-color: var(--placeholderBorder);
   background-size: 100%;
   position: relative;
 }
 
 .PlayerMatch-Avatar-Role {
-  background: grey;
+  background-color: rgb(190, 190, 190);
+  background-color: var(--placeholderColor);
   width: 35px;
   height: 35px;
   top: -8px;
@@ -90,16 +96,19 @@
 
 .PlayerMatch-Avatar-Role#captain {
   background-color: rgb(191, 150, 1);
+  background-color: var(--captainColor);
   background-image: url("/roles/captain.png");
 }
 
 .PlayerMatch-Avatar-Role#carry {
   background-color: rgb(160, 46, 45);
+  background-color: var(--carryColor);
   background-image: url("/roles/carry.png");
 }
 
 .PlayerMatch-Avatar-Role#jungler {
   background-color: rgb(106, 183, 11);
+  background-color: var(--junglerColor);
   background-image: url("/roles/jungler.png");
 }
 
@@ -134,7 +143,8 @@
 
 .PlayerMatch-Info h2 {
   margin: 0;
-  color: #4A4A4A;
+  color: rgb(75, 75, 75);
+  color: var(--textPrimaryHighlight);
   text-transform: uppercase;
   font-size: 16px;
 }
@@ -153,12 +163,14 @@
 
 .PlayerMatch-Info .MatchTime {
   color: #B1B1B1;
+  color: var(--placeholderBackground);
   font-size: 13px;
   white-space: nowrap;
   margin-bottom: 5px;
 }
 .PlayerMatch-Info-KDA {
   color: #B1B1B1;
+  color: var(--placeholderBackground);
   font-size: 14px;
 }
 
@@ -176,7 +188,8 @@
 }
 
 .PlayerMatch-Info-KDA span.k {
-  color: black;
+  color: #6F7175;
+  color: var(--textPrimaryHighlight);
 }
 .PlayerMatch-Info-KDA span.death {
   color: rgb(192, 61, 61);
@@ -213,7 +226,9 @@
   justify-content: center;
   flex-wrap: wrap;
   font-size: 13px;
-  color: #B1B1B1;
+  color: #4A4A4A;
+  color: grey;
+  /* color: var(--textPrimaryOpaque); */
 }
 
 @media screen and (max-width: 500px) {
@@ -231,6 +246,7 @@
   font-size: 110%;
   white-space: nowrap;
   color: #4A4A4A;
+  color: var(--textColorStats);
   font-weight: 500;
 }
 .PlayerMatch-Stats-Gold div:after {
@@ -247,6 +263,7 @@
 .PlayerMatch-Stats-CS div {
   font-size: 110%;
   color: #4A4A4A;
+  color: var(--textColorStats);
   font-weight: 500;
 }
 .PlayerMatch-Stats-CS div:after {
@@ -278,7 +295,9 @@
   margin: 3px;
   border-radius: 50%;
   background: #D8D8D8;
+  background-color: var(--placeholderBackground);
   border: 1px solid #9C9C9C;
+  border-color: var(--placeholderBorder);
   background-size: 100%;
 }
 

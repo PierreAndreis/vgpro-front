@@ -1,0 +1,56 @@
+:root {
+  --primaryColor: #E6BE3D;
+  /* --primaryColor: red; */
+  --secondaryColor: #F2C154;
+
+  --textPrimary: #6F7175;
+  --textPrimaryHighlight: rgb(75, 75, 75);
+  --textPrimaryOpaque: rgba(185, 185, 185, 0.144);
+  --textColorStats: #4A4A4A;
+  --textSecondary: #000000;
+
+  --textColorStats: #4A4A4A;
+
+  --backgroundPrimary: #ffffff;
+  --backgroundSecondary: #D8D8D8;
+  --backgroundHover: rgb(236, 236, 236);
+  --backgroundPrimary-Odd: rgb(240, 240, 240);
+
+  --buttonGradient: linear-gradient(-90deg, rgb(236, 211, 67) 0%, #E7AE2A 100%);
+  --buttonColor: #faf3d9;
+  --buttonHover: #f7d05b;
+  --buttonDisabled: #d3d2d3;
+  
+  --background: #ECEEF1;
+
+  --placeholderBackground: rgb(190, 190, 190);
+  --placeholderBorder: #9C9C9C;
+
+  --proPlayersBackground: #676B6A;
+
+  --boxShadowPrimary: #EAEDF3;
+  --boxShadowSecondary: rgba(0, 14, 77, 0.07);
+
+  --winColor: hsl(205, 86%, 65%);
+  --lossColor: hsl(6, 86%, 65%);
+
+  --carryColor: rgb(160, 46, 45);
+  --captainColor: rgb(191, 150, 1);
+  --junglerColor: rgb(106, 183, 11);
+  --subColor: rgb(49, 49, 49);
+}
+
+.theme-dark {
+  --textPrimary: rgb(228, 228, 228);
+  --textPrimaryHighlight: rgb(201, 201, 201);
+  --textSecondary: #ffffff;
+
+  --backgroundPrimary: #222224;
+  --backgroundSecondary: #323234;
+  --backgroundPrimary-Odd: rgb(38, 38, 43);
+  --backgroundHover: rgb(51, 51, 51);
+  
+  --background: #2B2B2D;
+  --boxShadowPrimary: rgba(63, 63, 63, 0.445);
+  --boxShadowSecondary: rgba(0, 14, 77, 0.07);
+}

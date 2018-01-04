@@ -27,5 +27,8 @@
   font-size: 13px;
   text-align: center;
 
+  color: black;
+  color: var(--textPrimary);
+
   opacity: 0.4;
 }

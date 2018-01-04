@@ -5,9 +5,8 @@ html {
   -webkit-font-smoothing: antialiased!important;
   -moz-osx-font-smoothing: grayscale;
 }
+
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #ECEEF1;
   background-attachment: fixed;
   overflow-x: none;
 	height:100%;

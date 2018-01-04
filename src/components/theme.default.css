@@ -1,5 +1,5 @@
 :root {
-  --primaryColor: #E6BE3D; /* yellow color for logo only */
+  --primaryColor: #E6BE3D;
   /* --primaryColor: red; */
   --secondaryColor: #F2C154;
 
@@ -126,4 +126,13 @@
   --background: #2B2B2D;
   --boxShadowPrimary: rgba(63, 63, 63, 0.445);
   --boxShadowSecondary: rgba(0, 14, 77, 0.07);
+
+  --overviewPlayerInfoNameColor: white;
+  --overviewPlayerInfoKDASpanColor: white;
+  --overviewPlayerCS: white;
+  --overviewPlayerRankPointBorder: #E6BE3D;
+  --overviewLegendsDivColor: white;
+  --overviewWinColor: blue;
+  --overviewLossColor: red;
+
 }

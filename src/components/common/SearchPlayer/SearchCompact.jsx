@@ -38,7 +38,7 @@ class SearchCompact extends React.Component {
           menuOpen: false
         }
       })
-    }, 300)
+    }, 200)
   }
 
   openMenu = () => {

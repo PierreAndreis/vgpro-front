@@ -10,7 +10,7 @@ class SearchMain extends React.Component {
   onBlur = (e) => {
     this.closingMenu = setTimeout(
       () => this.setState({menuOpen: false}),
-      300);
+      200);
   }
 
   onFocus = (e) => {

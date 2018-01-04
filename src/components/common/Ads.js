@@ -10,6 +10,12 @@ class Ads_2 extends React.Component {
     active: true
   }
 
+  componentDidCatch(e) {
+    this.setState({
+      active: false
+    })
+  } 
+
   componentWillReceiveProps(nextProps) {
     if (
         this.props.location && 
@@ -41,6 +47,12 @@ class Ads extends React.Component {
   state = {
     active: true
   }
+  
+  componentDidCatch(e) {
+    this.setState({
+      active: false
+    })
+  } 
 
   componentWillReceiveProps(nextProps) {
     if (

@@ -8,7 +8,6 @@ import {fetchProFeed}                       from "./../../../actions/api";
 
 import Utils from "../../../utils";
 
-
 import "./ProFeed.css";
 
 const PRO_FEED_ITEM_PER_PAGE = 6;
@@ -46,30 +45,22 @@ class ProFeed extends React.Component {
     })
   }
   
-  async fetch() {
-    try {
-      this.setState({
-        status: "loading"
-      })
-  
-      const res = await fetchProFeed();
-  
-      this.setState({
-        status: "loaded",
-        payload: res
-      })
-    }
-    catch(e) {
-      this.setState({
-        status: "error",
-        payload: e
-      })
-    }
-    
+  fetch() {
+    this.setState({
+      status: "loading"
+    });
+    this.cancel = Utils.makeCancelable(
+      fetchProFeed(),
+      (res) => this.setState({status: "loaded", payload: res}),
+      (e) =>   this.setState({status: "error", payload: e})
+    );
   }
 
   componentWillMount() {
     this.fetch();
+  }
+  componentWillUnmount() {
+    if (typeof this.cancel === "function") this.cancel();
   }
 
   render() {

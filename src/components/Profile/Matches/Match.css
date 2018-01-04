@@ -45,7 +45,7 @@
   flex-shrink: 0;
   border-radius: 50%;
   background-color: rgb(190, 190, 190);
-  background-color: var(--placeholderColor);
+  background-color: var(--placeholderBackground);
   border: 2px solid #9C9C9C;
   border-color: var(--placeholderBorder);
   background-size: 100%;
@@ -54,7 +54,7 @@
 
 .PlayerMatch-Avatar-Role {
   background-color: rgb(190, 190, 190);
-  background-color: var(--placeholderColor);
+  background-color: var(--placeholderBackground);
   width: 35px;
   height: 35px;
   top: -8px;
@@ -228,6 +228,7 @@
   font-size: 13px;
   color: #4A4A4A;
   color: grey;
+  color: var(--buildsAbilityRowSpan);
   /* color: var(--textPrimaryOpaque); */
 }
 
@@ -374,10 +375,12 @@
 }
 .PlayerMatch-Players-Player a b {
   color: #E6C156;
+  color: var(--matchPlayersPlayerabColor);
 }
 
 .PlayerMatch-Players-Player a:hover {
   color: black;
+  color: var(--overviewPlayerInfoKDASpanColor);
 }
 
 .PlayerMatch-Players-Player-Hero {
@@ -385,8 +388,10 @@
   height: 23px;
   border-radius: 50%;
   background: #D8D8D8;
+  background: var(--backgroundSecondary);
   margin: 0 3px;
   border: 2px solid #499BD2;
+  border: var(--matchPlayerHeroBorder);
   background-size: 120%;
   background-position: center center;
 }
@@ -397,6 +402,7 @@
 }
 .PlayerMatch-Players-Team:last-of-type .PlayerMatch-Players-Player-Hero {
   border: 2px solid #E64659;
+  border: 2px solid var(--matchPlayersTeamLastBorder);
 }
 
 .PlayerMatch-Status {
@@ -406,8 +412,10 @@
   width: 40px;
   height: 20px;
   background: #F1685D;
+  background: var(--overviewLossColor);
   font-size: 12px;
   color: white;
+  color: var(--matchStatus);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -418,6 +426,7 @@
 
 .PlayerMatch-win .PlayerMatch-Status {
   background-color: #5DB4F1;
+  background-color: var(--overviewWinColor);
 }
 
 .fade-enter {

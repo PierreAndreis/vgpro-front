@@ -147,6 +147,7 @@
   padding: 4px;
   border-radius: 50%;
   background: rgb(73, 73, 73);
+  background: var(--heroesMetaTopImageBackground);
 }
 
 .HeroesMeta-Top.Rank-1 .Heroes-Meta-Top-Image-Tag {
@@ -154,13 +155,16 @@
   height: 25px;
   font-size: 14px;
   background: #E8A827;
+  background: var(--heroesMetaTopRank1Background);
 }
 
 .HeroesMeta-Top.Rank-2 .Heroes-Meta-Top-Image-Tag {
   background: #9B9B9B;
+  background: var(--heroesMetaTopRank2Background);
 }
 .HeroesMeta-Top.Rank-3 .Heroes-Meta-Top-Image-Tag{
   background: #A54916;
+  background: var(--heroesMetaTopRank3Background);
 }
 
 

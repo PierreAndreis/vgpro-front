@@ -1,11 +1,12 @@
 .ProfileFilters {
-	width: 100%;
+  width: 100%;
   align-items: center;
   display: flex;
   height: 45px;
   justify-content: center;
   font-size: 12px;
   color: rgb(65, 65, 65);
+  color: var(--profileFiltersColor);
   font-weight: 500;
   margin: 20px 0 5px;
 }
@@ -58,6 +59,7 @@
   z-index: 99;
   border-radius: 5px;
   box-shadow: rgba(54, 54, 54, 0.315) 0 10px 30px 0;
+  box-shadow: var(--profileMenuChoicesBoxShadow) 0 10px 30px 0;
 }
 .Menu-Choices>div {
   padding: 7px 15px;
@@ -74,4 +76,5 @@
 
 .Menu-Choices>div.active {
   background: rgb(230, 230, 230);
+  background: var(--profileMenuChoicesDivActiveBackground);
 }

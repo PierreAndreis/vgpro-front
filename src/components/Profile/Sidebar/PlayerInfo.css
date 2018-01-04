@@ -10,6 +10,7 @@
   display: flex;
   justify-content: space-around;
   border-bottom: 2px solid #F8F8F8;
+  border-bottom: 2px solid var(--playerInfoInfoBorderBottom);
 }
 
 .PlayerInfo-info .PlayerInfo-tier {
@@ -28,11 +29,13 @@
   margin: 85% auto;
   height: 10px;
   background: #D8D8D8;
+  background: var(--backgroundSecondary);
   border-radius: 10px;
   position: relative;
 }
 .PlayerInfo-tier-bar-fill {
   background: #F4C338;
+  background: var(--playerInfoTierBarFillBackground);
   border-radius: 10px;
   height: 100%;
 }
@@ -44,7 +47,9 @@
   transform: translate(-50%,0);
   font-size: 13px;
   color: #F4C338;
+  color: var(--playerInfoTierBarFillBackground);
   border: 2px solid #D8D8D8;
+  border: 2px solid var(--backgroundPrimary);
   background-color: white;
   background-color: var(--backgroundPrimary);
   font-weight: bolder;
@@ -62,6 +67,7 @@
 .PlayerInfo-details .PlayerInfo-name {
   font-size: 21px;
   color: #EFC317;
+  color: var(--playerInfoDetailsNameColor);
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -70,12 +76,16 @@
   font-size: 15px;
   font-weight: 300;
   color: #4B4B4B;
+  color: var(--playerInfoDetailsDescColor);
+
 }
 
 .PlayerInfo-details .PlayerInfo-update {
   margin-top: 20px;
   font-size: 13px;
   color: #4B4B4B;
+  color: var(--playerInfoDetailsDescColor);
+
 
 }
 
@@ -84,6 +94,7 @@
   height: 80px;
   display: flex;
   border-bottom: 2px solid #F8F8F8;
+  border-bottom: 2px solid var(--playerInfoInfoBorderBottom);
   align-items: center;
   justify-content: center;
 }
@@ -111,6 +122,7 @@
   margin: 0;
   font-size: 13px;
   color: #4B4B4B;
+  color: var(--playerInfoDetailsDescColor);
   font-weight: 400;
 }
 
@@ -123,6 +135,7 @@
 .PlayerInfo-Team-name {
 
   color: rgb(66, 66, 66);
+  color: var(--playerInfoTeamNameColor);
   font-weight: bold;
   font-size: 15px;
 
@@ -146,12 +159,14 @@
 .PlayerInfo-Stat div {
   font-size: 16px;
   color: #3a3a3a;
+  color: var(--overviewPlayerInfoNameColor);
   font-weight: 500;
 }
 
 .PlayerInfo-Stat span {
   font-size: 13px;
   color: #EFC317;
+  color: var(--playerInfoDetailsNameColor);
   font-weight: bold;
 }
 
@@ -175,6 +190,7 @@
 .PlayerInfo-AKA {
   width: 100%;
   border-top: 2px solid #F8F8F8;
+  border-top: 2px solid var(--playerInfoInfoBorderBottom);
   padding: 5px;
   box-sizing: border-box;
 }
@@ -184,13 +200,16 @@
   text-transform: uppercase;
   font-weight: 500;
   color: #4B4B4B;
+  color: var(--playerInfoDetailsDescColor);
   margin: 2px 5px 10px;
 }
 
 .PlayerInfo-AKA>span {
   padding: 2px 5px;
   background: #F4C338;
+  background: var(--playerInfoTierBarFillBackground);
   color: white;
+  color: var(--matchStatus);
   margin-left: 5px;
   border-radius: 5px;
   font-size: 13px;

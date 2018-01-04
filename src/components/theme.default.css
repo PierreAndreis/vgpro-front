@@ -1,5 +1,5 @@
 :root {
-  --primaryColor: #E6BE3D;
+  --primaryColor: #E6BE3D; /* yellow color for logo only */
   /* --primaryColor: red; */
   --secondaryColor: #F2C154;
 
@@ -8,8 +8,6 @@
   --textPrimaryOpaque: rgba(185, 185, 185, 0.144);
   --textColorStats: #4A4A4A;
   --textSecondary: #000000;
-
-  --textColorStats: #4A4A4A;
 
   --backgroundPrimary: #ffffff;
   --backgroundSecondary: #D8D8D8;
@@ -20,7 +18,82 @@
   --buttonColor: #faf3d9;
   --buttonHover: #f7d05b;
   --buttonDisabled: #d3d2d3;
-  
+
+
+  --heroesMetaTopImageBackground: rgb(73, 73, 73);
+  --heroesMetaTopRank1Background: #E8A827;
+  --heroesMetaTopRank2Background: #9B9B9B;
+  --heroesMetaTopRank3Background: #A54916;
+
+  --footerBackground: rgb(56, 56, 56);
+  --footerColor: rgb(136, 136, 136);
+  --footerBoxShadow: rgba(63, 63, 63, 0.12);
+
+  --sidebarBoxShadow: rgba(0,0,0,0.11);
+  --sidebarSearchBoxShadow: rgba(0, 14, 77, 0.3);
+
+  --buildsPlayerHoverBackground: rgba(230, 230, 230, 0.514);
+  --buildsPlayerActive: #E5C05E;
+  --buildsPlayerImageBorder: #4A90E2;
+  --buildsMatchBuildsTeamBorderColor: #FF6262;
+  --buildsPlayerNameColor: rgb(109, 109, 109);
+  --buildsMatchBuildsContentBorderLeft: rgba(128, 128, 128, 0.212);
+  --buildsMatchBuildsContentColor: #DCAF5A;
+  --buildsAbilityRowDivBorder: #BDBDBD;
+  --buildsAbilityRowSpan: grey;
+  --buildsGroupBorder: #A7A7A7;
+  --buildsLabelBackground: rgb(146, 146, 146);
+  --buildsItemTagBackground: rgb(247, 64, 64);
+
+  --detailsTabDivBackground: rgba(207, 207, 207, 0.24);
+
+  --overviewTeamBackground: #D5EDFE;
+  --overviewTeamBorderRight: rgb(233, 233, 233);
+  --overviewTeamBackground2: #EAEAEA;
+  --overviewTeamBorderBottom: #97979731;
+  --overviewPlayerImageBackgroundColor: rgb(201, 201, 201);
+  --overviewPlayerInfoNameColor: #3A3A3A;
+  --overviewPlayerInfoKDASpanColor: black;
+  --overviewPlayerInfoKDASpandColor: rgb(179, 32, 32);
+  --overviewPlayerDamageBar: rgba(95, 95, 95, 0.356);
+  --overviewPlayerDamageFillBoxShadow: rgb(231, 143, 42);
+  --overviewPlayerDamageFillDamageTakenBoxShadow: #E7AE2A;
+  --overviewPlayerDamageFillHealingBoxShadow: rgb(11, 201, 21);
+  --overviewPlayerCS: rgb(53, 53, 53);
+  --overviewPlayerRankPointBorder: rgb(218, 218, 218);
+  --overviewLegendsDivColor: rgba(68, 68, 68, 0.473);
+  --overviewWinColor: #5DB4F1;
+  --overviewLossColor: #F1685D;
+
+  --matchPlayersPlayerabColor: #E6C156;
+  --matchPlayerHeroBorder: #499BD2;
+  --matchPlayersTeamLastBorder: #E64659;
+  --matchStatus: white;
+
+  --matchstatsProfileStatsBarBorder: rgb(0, 0, 0, 0.3);
+  --matchstatsProfileStatsBarBackground: rgb(0, 0, 0, 0.1);
+
+  --profileFiltersColor: rgb(65, 65, 65);
+  --profileMenuChoicesBoxShadow: rgba(54, 54, 54, 0.315);
+  --profileMenuChoicesDivActiveBackground: rgb(230, 230, 230);
+
+  --heroesPlayedPlayerKDADetailsSpanDeathsColor: red;
+
+  --playerInfoInfoBorderBottom: #F8F8F8;
+  --playerInfoTierBarFillBackground: #F4C338;
+  --playerInfoDetailsNameColor: #EFC317;
+  --playerInfoDetailsDescColor: #4B4B4B;
+  --playerInfoTeamNameColor: rgb(66, 66, 66);
+
+  --recentPlayedFriendsEachChildBackground: rgba(204, 204, 204, 0.205);
+  --recentPlayedFriendsEachHoverBackground: rgba(128, 128, 128, 0.205);
+  --recentPlayedFriendsEachNameColor: rgb(61, 61, 61);
+  --recentPlayedFriendsEachStatsNameColor: rgb(83, 83, 83);
+
+  --recentRolesPlayerRoleBorderBottom: rgba(0, 0, 0, 0.11);
+  --recentRolesPlayerRoleStatsKDADeathColor: rgb(199, 0, 0);
+  --recentRolesPlayerRoleWRDescColor: #808080;
+
   --background: #ECEEF1;
 
   --placeholderBackground: rgb(190, 190, 190);

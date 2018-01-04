@@ -5,6 +5,7 @@
 
 .PlayerFriends-each {
   color: black;
+  color: var(--overviewPlayerInfoKDASpanColor);
   width: 100%;
   height: 40px;
   padding: 5px 15px;
@@ -17,15 +18,19 @@
 
 .PlayerFriends-each:nth-child(2n + 1) {
   background: rgba(204, 204, 204, 0.205);
+  background: var(--recentPlayedFriendsEachChildBackground);
 }
 
 .PlayerFriends-each:hover {
   background: rgba(128, 128, 128, 0.205);
+  background: var(--recentPlayedFriendsEachHoverBackground);
+
 }
 
 .PlayerFriends-each_name {
   font-size: 13px;
   color: rgb(61, 61, 61);
+  color: var(--recentPlayedFriendsEachNameColor);
   width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -43,4 +48,5 @@
 .PlayerFriends-each_stats_name {
   font-size: 10px;
   color: rgb(83, 83, 83);
+  color: var(--recentPlayedFriendsEachStatsNameColor);
 }

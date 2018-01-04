@@ -27,6 +27,7 @@
   width: 100%;
   box-sizing: border-box;
   text-align: left;
+  background-color: #ffffff;
   background-color: var(--backgroundPrimary);
   
   color: #E6BE3D;
@@ -34,6 +35,7 @@
 
   /* color: #FAFAFA;
   background: #E6BE3D; */
+  border-bottom: 2px solid #E6BE3D;
   border-bottom: 2px solid var(--primaryColor);
 
   padding: 15px;
@@ -59,6 +61,7 @@
   display: flex;
   border-radius: 0 0 5px 5px;
   justify-content: space-around;
+  background-color: rgba(185, 185, 185, 0.144);
   background-color: var(--textPrimaryOpaque);
   /* border: 1px solid blue; */
 }
@@ -76,6 +79,7 @@
   border: 0;
   display: block;
   background: #F3DD5C;
+  background-image: linear-gradient(-90deg, rgb(236, 211, 67) 0%, #E7AE2A 100%);;
   background-image: var(--buttonGradient);
   border-radius: 100px;
   color: var(--buttonColor);
@@ -86,6 +90,7 @@
   text-transform: uppercase;
   font-size: 12px;
   height: 12px;
+  box-shadow: 0 0 10px #E6BE3D;
   box-shadow: 0 0 10px var(--primaryColor);
   margin: 5px;
   transition: all 300ms;
@@ -98,11 +103,14 @@
 
 .button:hover {
   /* background: linear-gradient(to right, #f7d05b 1%,#f7d05b 100%); */
+  background: #f7d05b;
   background: var(--buttonHover);
+  box-shadow: 0 0 10px #F2C154;
   box-shadow: 0 0 10px var(--secondaryColor);
 }
 
 .button#disabled{
+  background: #D8D8D8;
   background: var(--backgroundSecondary);
   color: #565656;
   color: var(--textPrimary);

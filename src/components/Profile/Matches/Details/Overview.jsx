@@ -173,7 +173,7 @@ const OverviewTeam = ({team, telemetry, status}) => {
     });
   }
 
-  const tName = (t) => t === "1" ? "right/red" : "left/blue";
+  const tName = (t) => t !== "1" ? "right/red" : "left/blue";
   const tName2 = (team.side === "right/red") ? "red" : "blue";
 
   let bans = null;

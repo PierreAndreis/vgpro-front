@@ -27,6 +27,16 @@ class SearchMenu extends React.Component {
     this.props.setFavorite(favorites);
   }
 
+  componentWillMount() {
+    if (this.props.favorites.length > 8) {
+      this.props.setFavorite(this.props.favorites.slice(0, 8));
+    }
+
+    if (this.props.recents.length > 8) {
+      this.props.setRecent(this.props.recents.slice(0, 8));
+    }
+  }
+
   removeRecent = (name) => (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -49,7 +59,7 @@ class SearchMenu extends React.Component {
     if (favorites.length < 1 && recents.length < 1) return null;
 
     return (
-      <Box.wrap className="SearchMenu animated fadeInDown" style={style}>
+      <Box.wrap className="SearchMenu" style={style}>
         {favorites.length > 0 &&
           (<div className="SearchMenu-Category">
               <h1>Favorites</h1>

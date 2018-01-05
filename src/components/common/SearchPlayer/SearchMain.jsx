@@ -39,7 +39,7 @@ class SearchMain extends React.Component {
     }
 
     return (
-    <div className="SearchBar SearchBar-OpenMenu">
+    <div className="SearchBar" onFocus={this.onFocus} onBlur={this.onBlur}>
       <form action="" onSubmit={onSearch} className={formClasses.join(" ")}>
 
         <button type="submit" disabled={status === "loading"}> 
@@ -52,8 +52,6 @@ class SearchMain extends React.Component {
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          onFocus={this.onFocus}
-          onBlur={this.onBlur}
           required
           autoComplete="off" 
           autoCorrect="off" 

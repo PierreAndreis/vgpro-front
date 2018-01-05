@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.1",
+    "core-js": "^2.5.3",
     "cross-env": "^5.1.1",
     "fade-props": "^2.1.0",
     "history": "^4.7.2",

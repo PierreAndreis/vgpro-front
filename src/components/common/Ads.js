@@ -10,6 +10,12 @@ class Ads_2 extends React.Component {
     active: true
   }
 
+  componentDidCatch(e) {
+    this.setState({
+      active: false
+    })
+  } 
+
   componentWillReceiveProps(nextProps) {
     if (
         this.props.location && 
@@ -23,6 +29,11 @@ class Ads_2 extends React.Component {
       });
 
     }
+  }
+  componentWillUnmount() {
+    // IMPORTANT! Allow us to push new slot on other pages
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.length = 0;
   }
 
   render() {
@@ -41,6 +52,12 @@ class Ads extends React.Component {
   state = {
     active: true
   }
+  
+  componentDidCatch(e) {
+    this.setState({
+      active: false
+    })
+  } 
 
   componentWillReceiveProps(nextProps) {
     if (

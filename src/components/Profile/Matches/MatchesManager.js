@@ -12,8 +12,10 @@ import {fetchPlayerMatches, setPlayerMatches} from "./../../../actions/player";
 
 import {bindActionCreators} from "redux";
 import { connect }          from "react-redux";
+import { Adsense }          from "../../common/Ads";
 
 const MATCHES_PER_PAGE = 7;
+const AD_EVERY = 9;
 
 class MatchManager extends React.Component {
 
@@ -72,6 +74,7 @@ class MatchManager extends React.Component {
     let viewLessDisabled = (currentPage === 0)
     let buttonsDisabled = false;
     let done = false;
+    let adCount = 0;
 
     for (const i in pages) {
 
@@ -91,9 +94,14 @@ class MatchManager extends React.Component {
         content.push(<ErrorScreen key="error" width="100%" boxed message="No matches found" />);
       }
       else {
-        matches.forEach((match, index) => {
-          content.push(<Match key={match.id || index} payload={match} status={page.status}/>)
-        })
+        for (const index in matches) {
+          let match = matches[index];
+          content.push(<Match key={match.id || index} payload={match} status={page.status}/>);
+          if (++adCount % AD_EVERY === 0) {
+            content.push(<Adsense key={`Adsense-Key-${adCount}`} />)
+          };
+        }
+
       }
     };
 

@@ -4,12 +4,13 @@ import { translate } from 'react-i18next';
 
 import { withRouter } from 'react-router';
 
-import {bindActionCreators} from "redux";
-import { connect }          from "react-redux";
-import {lookupPlayer} from "./../../actions/api";
+import { bindActionCreators }     from "redux";
+import { connect }                from "react-redux";
+import { lookupPlayer }           from "./../../actions/api";
+import { addRecent }              from "./../../actions/user";
 
 import SearchCompact from "./SearchPlayer/SearchCompact";
-import SearchMain from "./SearchPlayer/SearchMain";
+import SearchMain    from "./SearchPlayer/SearchMain";
 
 import Utils from "../../utils";
 
@@ -43,7 +44,7 @@ class SearchPlayer extends React.Component {
       status: "ready"
     })
   }
-
+  
   search = (e) => {
     if (e && e.preventDefault) e.preventDefault();
     
@@ -59,6 +60,12 @@ class SearchPlayer extends React.Component {
           action: `Player Found`,
           label: result.name,
         });
+
+        if ( !this.props.recents.includes(result.name) 
+          && !this.props.favorites.includes(result.name) ) {
+          this.props.addRecent(result.name);
+        }
+
         changeStatus(this, "ready");
         return this.props.history.push(Utils.goToPlayer(result.name));
       }
@@ -76,11 +83,11 @@ class SearchPlayer extends React.Component {
 
 
     const props = {
-      onChange: this.changeField,
-      value: this.state.playerField,
-      onSearch: this.search,
-      status: this.state.status,
-      placeholder: t('search-placeholder')
+      onChange:       this.changeField,
+      value:          this.state.playerField,
+      onSearch:       this.search,
+      status:         this.state.status,
+      placeholder:    t('search-placeholder')
     }
 
     if (mode === "compact") return (<SearchCompact {...props} />);
@@ -90,13 +97,15 @@ class SearchPlayer extends React.Component {
 
 const mapStateToProps = state => {
 
-  return {}
+  return {
+    ...state.user
+  }
 }
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      // props
+      addRecent,
     },
     dispatch
   )

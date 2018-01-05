@@ -1,6 +1,6 @@
 import React from "react";
 import {Helmet} from "react-helmet";
-import Ads from "./../common/Ads";
+import {Adsense} from "./../common/Ads";
 
 import ProFeed from "./ProFeed";
 import Lead5   from "./Lead5";
@@ -18,13 +18,13 @@ class HomePage extends React.Component {
         <Helmet titleTemplate="">
           <title>VGPRO.gg</title>
         </Helmet>
-        <div className="Home-logo animated fadeInDown">
+        <div className="Home-logo">
           <div className="logo">
             <div className="img" />
           </div>
           <SearchPlayer mode="main" />
         </div>
-        <Ads />
+        <Adsense />
         <div className="Home-box">
           <ProFeed t={t} />
           <Lead5   t={t} />

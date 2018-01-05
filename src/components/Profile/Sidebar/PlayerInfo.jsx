@@ -1,6 +1,10 @@
 import React from "react";
+import { bindActionCreators }  from "redux";
+import { connect }             from "react-redux";
 
-import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
+import { addFavorite, setFavorite } from "./../../../actions/user";
+
+import { SkeletonWrapper } from "../../common/Skeleton";
 import AssetLoader                   from "./../../common/AssetLoader";
 
 import TimeAgo from "../../../i18n/timeAgo.js";
@@ -13,11 +17,27 @@ const regions = {
   "sg": "SouthEast Asia",
   "cn": "China",
   "sa": "South America",
+};
+
+let removeFromList = (fn, name, list) => (e) => {
+  e.preventDefault();
+  const l = list.filter(n => (name !== n));
+  fn(l);
 }
 
+let addToList = (fn, name, list) => (e) => {
+  e.preventDefault();
 
+  if (list.length >= 8) {
+    alert("You can't have more than 8 favorites!");
+    return;
+  }
+  if (!list.includes(name)) {
+    fn(name);
+  }
+}
 
-const Loaded = ({data}) => {
+const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
 
   // const team = (
   //     <div className="PlayerInfo-Team">
@@ -30,34 +50,71 @@ const Loaded = ({data}) => {
       
   //     </div>
   // );
+  let AKAs = [];
+  let rankVst;
+  let percentageVst;
+  let favoriteClass;
+  let favoriteClick;
 
+  if (status === "loaded") {
+    rankVst = (data.rankVst) ? Number(data.rankVst).toFixed(0) : 0;
+    percentageVst = Utils.getPercentageTillNext(data.tier, rankVst);
 
-  const rankVst = (data.rankVst) ? Number(data.rankVst).toFixed(0) : 0;
-  const percentageVst = Utils.getPercentageTillNext(data.tier, rankVst);
+    AKAs = data.aka && data.aka.filter(k => k !== data.name);
 
-  const AKAs = data.aka && data.aka.filter(k => k !== data.name);
+    favoriteClass = "PlayerInfo-favorite fa fa-star-o";
+    favoriteClick = addToList(addFavorite, data.name, favorites);
+
+    if (favorites.includes(data.name)) {
+      favoriteClass = "PlayerInfo-favorite fa fa-star"; 
+      favoriteClick = removeFromList(setFavorite, data.name, favorites);
+    }
+
+  }
 
   return (
     <div className="PlayerInfo">
       <div className="PlayerInfo-info">
-        <AssetLoader type="tiers" className="PlayerInfo-tier" name={data.tier}>
-          <div className="PlayerInfo-tier-bar">
-            <div className="PlayerInfo-tier-bar-fill" style={{width: `${percentageVst}%`}}/>
-            <div className="PlayerInfo-tier-bar-label">{rankVst}</div>
-          </div>
-        </AssetLoader>
+      <SkeletonWrapper status={status} height="0">
+        { () => (
+            <AssetLoader type="tiers" className="PlayerInfo-tier" name={data.tier}>
+              <div className="PlayerInfo-tier-bar">
+                <div className="PlayerInfo-tier-bar-fill" style={{width: `${percentageVst}%`}}/>
+                <div className="PlayerInfo-tier-bar-label">{rankVst}</div>
+              </div>
+            </AssetLoader>
+          )}
+      </SkeletonWrapper>
+        
         
         <div className="PlayerInfo-details">
+          <div className="PlayerInfo-icons">
+            <SkeletonWrapper status={status} width="60px" height="30px">
+              {() => <i className={favoriteClass} onClick={favoriteClick}/>}
+            </SkeletonWrapper>
+          </div>
+
           <div className="PlayerInfo-name">
-            {data.name}
+            <SkeletonWrapper status={status} width="100px" height="20px">
+              {() => <span>{data.name}</span>}
+            </SkeletonWrapper>
           </div>
           <div className="PlayerInfo-desc">
-            {regions[data.region]} <br />
-            {Utils.getSkillTier(data.tier)}
+          <SkeletonWrapper status={status} width="100px">
+            {() => (
+              [
+                <span key="region">{regions[data.region]}</span>,
+                <br key="br"/>,
+                <span key="skillTier">{Utils.getSkillTier(data.tier)}</span>
+              ]
+            )}
+          </SkeletonWrapper>
           </div>
           <div className="PlayerInfo-update">
             Last updated: <br />
-            <TimeAgo date={data.lastCache} />
+            <SkeletonWrapper status={status} width="80px" height="20px">
+              { () => <TimeAgo date={data.lastCache} />}
+            </SkeletonWrapper>
           </div>
         </div>
       </div>
@@ -89,45 +146,24 @@ const Loaded = ({data}) => {
   )
 }
 
-const Loading = () => {
-  return (
-    <div className="PlayerInfo">
-      <div className="PlayerInfo-info">
-        <div className="PlayerInfo-tier">
-        </div>
+const mapStateToProps = state => {
 
-        <div className="PlayerInfo-details">
-          <div className="PlayerInfo-name">
-            <Skeleton width="100px" height="20px"/>
-          </div>
-          <div className="PlayerInfo-desc">
-            <Skeleton width="100px" />
-          </div>
-          <div className="PlayerInfo-update">
-            Last updated: <Skeleton width="80px" height="20px" />
-          </div>
-        </div>
-      </div>
-      <div className="PlayerInfo-VPR">
-        <div className="PlayerInfo-Stat">
-          <div><Skeleton width="50px"/></div>
-          <span>Global</span>
-        </div>
+  return {
+    ...state.user
+  }
+}
 
-        {/* <div className="PlayerInfo-Stat">
-          <div><Skeleton width="50px"/></div>
-          <span><Skeleton width="10px" height="10px" /></span>
-        </div> */}
-
-        <div className="PlayerInfo-Stat VPR">
-          <div><Skeleton width="50px"/></div>
-          <span>VGPRO RATING</span>
-        </div>
-      </div>
-    </div>
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      addFavorite,
+      setFavorite
+    },
+    dispatch
   )
 }
 
-const PlayerInfo = SkeletonContainer(Loading, Loaded);
-
-export default PlayerInfo;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PlayerInfo);

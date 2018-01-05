@@ -1,11 +1,9 @@
 import {compose, createStore, applyMiddleware } from 'redux'
-
 import createSagaMiddleware from 'redux-saga';
-
-import { persistStore } from 'redux-persist';
+import { persistStore }     from 'redux-persist';
 
 import reducers from "./reducers";
-import Sagas from './sagas'
+import Sagas    from "./sagas";
 
 // create the saga middleware
 const sagaMiddleware = createSagaMiddleware()

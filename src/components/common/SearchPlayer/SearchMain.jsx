@@ -1,8 +1,30 @@
 import React from "react";
+import SearchMenu from "./SearchMenu";
 
 import "./SearchMain.css";
 
-export default ({status, onSearch, onChange, placeholder, value}) =>  {
+class SearchMain extends React.Component {
+
+  state = {menuOpen: false};
+
+  onBlur = (e) => {
+    this.closingMenu = setTimeout(
+      () => this.setState({menuOpen: false}),
+      200);
+  }
+
+  onFocus = (e) => {
+    this.setState({
+      menuOpen: true
+    })
+  }
+
+  componentWillUnmount() {
+    if (this.closingMenu) clearTimeout(this.closingMenu);
+  }
+  
+  render() {
+    const {status, onSearch, onChange, placeholder, value} = this.props;
 
     let icon = "fa fa-search";
     let formClasses = [];
@@ -17,7 +39,7 @@ export default ({status, onSearch, onChange, placeholder, value}) =>  {
     }
 
     return (
-    <div className="SearchBar">
+    <div className="SearchBar" onFocus={this.onFocus} onBlur={this.onBlur}>
       <form action="" onSubmit={onSearch} className={formClasses.join(" ")}>
 
         <button type="submit" disabled={status === "loading"}> 
@@ -25,7 +47,7 @@ export default ({status, onSearch, onChange, placeholder, value}) =>  {
         </button>
         <input
           type="text"
-          className="SearchBar-Input"
+          className="SearchBar-Input Input-Open"
           disabled={status === "loading"}
           placeholder={placeholder}
           value={value}
@@ -37,6 +59,11 @@ export default ({status, onSearch, onChange, placeholder, value}) =>  {
           spellCheck="false"
         />
       </form>
+
+        {this.state.menuOpen && <SearchMenu style={{left: 0, right: 0}} />}
     </div>
     )
+  }
 }
+
+export default SearchMain;

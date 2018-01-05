@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+.PlayerInfo-icons {
+  text-align: right;
+}
+.PlayerInfo-icons i {
+  font-size: 20px;
+  color: #F4C338;
+  cursor: pointer;
+}
+
 .PlayerInfo-info {
   width: 100%;
   display: flex;

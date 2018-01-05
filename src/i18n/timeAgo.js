@@ -3,6 +3,7 @@ import TimeAgo        from "react-timeago";
 import buildFormatter from "react-timeago/lib/formatters/buildFormatter";
 
 import { connect }    from "react-redux";
+import Utils          from "./../utils";
 
 
 class timeAgoi18n extends React.Component {
@@ -15,23 +16,13 @@ class timeAgoi18n extends React.Component {
     }
   }
 
-  async getLocale(language) {
+  getLocale(language) {
 
-    let locale;
-    try {
-      locale = await import(`./timeAgo/${language}.js`);
-    }
-    catch(e) {
-      console.warn(language, "falling back to english");
-      locale = await import(`./timeAgo/en.js`);
-    }
-    
-    
-    this.setState({
-      language,
-      strings: locale.default
-    })
-    
+    this.cancelImport = Utils.makeCancelable(
+      import(`./timeAgo/${language}.js`),
+      (locale) => this.setState({language, strings: locale.default}),
+      ()       => this.getLocale("en")
+    );
   }
 
   componentWillMount() {
@@ -40,13 +31,16 @@ class timeAgoi18n extends React.Component {
     
     return this.getLocale(language);
   }
+  
+  componentWillUnmount() {
+    if (typeof this.cancelImport === "function") this.cancelImport();
+  }
 
   componentWillReceiveProps(nextProps) {
     
     if (this.props.language !== nextProps.language) {
       this.getLocale(nextProps.language);
     }
-
   }
 
   render() {

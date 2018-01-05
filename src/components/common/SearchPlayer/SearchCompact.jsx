@@ -1,5 +1,7 @@
 import React from "react";
 
+import SearchMenu from "./SearchMenu";
+
 import "./SearchCompact.css"
 
 class SearchCompact extends React.Component {
@@ -7,9 +9,36 @@ class SearchCompact extends React.Component {
   constructor() {
     super();
 
+    this.timeout = null;
+
     this.state = {
-      open: (document.documentElement.clientWidth > 790) ? true : false
+      open: (document.documentElement.clientWidth > 790) ? true : false,
+      menuOpen: false,
     }
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
+  }
+
+  onFocus = (e) => {
+    this.setState({
+      menuOpen: true
+    })
+  }
+
+  onBlur = (e) => {
+    this.timeout = setTimeout(() => {
+      this.setState((prevState) => {
+        let open = false;
+        if (document.documentElement.clientWidth > 790) open = true;
+
+        return {
+          open,
+          menuOpen: false
+        }
+      })
+    }, 200)
   }
 
   openMenu = () => {
@@ -19,16 +48,6 @@ class SearchCompact extends React.Component {
       if (this.state.open) this.input.focus();
     });
   }
-
-  closeMenu = () => {
-
-    if (document.documentElement.clientWidth > 790) return;
-    
-    this.setState({
-      open: false
-    })
-  }
-
 
   handleClick = (e) => {
     const {onSearch} = this.props;
@@ -59,7 +78,8 @@ class SearchCompact extends React.Component {
         <form action="" onSubmit={onSearch}>
           <input type="text" 
                 ref={input => this.input = input}
-                onBlur={() => setTimeout(this.closeMenu, 300)}
+                onFocus={this.onFocus}
+                onBlur={this.onBlur}
                 className={`Header-Search_input ${!this.state.open && "close"}`}
                 placeholder={ph} 
                 onChange={onChange} 
@@ -71,6 +91,10 @@ class SearchCompact extends React.Component {
             />
 
             <div className={`Search-Icon ${icon}`} onClick={this.handleClick} />
+          {
+            this.state.menuOpen && 
+            <SearchMenu style={{width: "250px", right: -5, marginTop: "45px", textAlign: "left"}} />
+          }
         </form>
       </div>
     )

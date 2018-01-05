@@ -30,6 +30,11 @@ class Ads_2 extends React.Component {
 
     }
   }
+  componentWillUnmount() {
+    // IMPORTANT! Allow us to push new slot on other pages
+    window.adsbygoogle = window.adsbygoogle || [];
+    window.adsbygoogle.length = 0;
+  }
 
   render() {
     return (

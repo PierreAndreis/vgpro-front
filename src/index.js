@@ -3,6 +3,8 @@ import ReactDOM            from 'react-dom';
 import { Provider }        from 'react-redux';
 import { I18nextProvider } from 'react-i18next';
 
+import "./polyfills.js";
+
 import App from './App';
 
 // import registerServiceWorker from './registerServiceWorker';

@@ -24,7 +24,7 @@ const Hero = ({status, name, value, rank}) => {
       </AssetLoader>
       <div className="Heroes-Meta-Top-Name">
         <SkeletonWrapper status={status} width="70px" height="10px">
-          {() => name}
+          {() => name || "Unknown"}
         </SkeletonWrapper>
       </div>
       <span>

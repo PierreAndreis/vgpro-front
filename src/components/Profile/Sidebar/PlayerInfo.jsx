@@ -72,6 +72,8 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
 
   }
 
+  let path = (window) ? window.location.pathname : "";
+
   return (
     <div className="PlayerInfo">
       <div className="PlayerInfo-info">
@@ -100,15 +102,15 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
             </SkeletonWrapper>
           </div>
           <div className="PlayerInfo-desc">
-          <SkeletonWrapper status={status} width="100px">
-            {() => (
-              [
-                <span key="region">{regions[data.region]}</span>,
-                <br key="br"/>,
-                <span key="skillTier">{Utils.getSkillTier(data.tier)}</span>
-              ]
-            )}
-          </SkeletonWrapper>
+            <SkeletonWrapper status={status} width="100px">
+              {() => (
+                [
+                  <span key="region">{regions[data.region]}</span>,
+                  <br key="br"/>,
+                  <span key="skillTier">{Utils.getSkillTier(data.tier)}</span>
+                ]
+              )}
+            </SkeletonWrapper>
           </div>
           <div className="PlayerInfo-update">
             Last updated: <br />
@@ -119,7 +121,24 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
         </div>
       </div>
 
+      <div style={{textAlign: "center", margin: "10px"}}>
+        <SkeletonWrapper status={status} width="130px" height="35px">
+          {() => (
+            <iframe src={`https://emojireact.com/embed?emojis=fire,whale&url=${path}`}
+                    scrolling="no" 
+                    frameBorder="0" 
+                    style={{border:"none", 
+                            overflow:"hidden", 
+                            width:"130px", 
+                            height:"35px",
+                            }}
+                    title="iFrame Emoji"
+                    allowtransparency="true" />
+          )}
+        </SkeletonWrapper>
+      </div>
       {/* {team} */}
+     
       <div className="PlayerInfo-VPR">
         <div className="PlayerInfo-Stat">
           <div>SOON</div>

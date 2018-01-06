@@ -137,22 +137,17 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
       </div>
       {/* {team} */}
      
-      <div className="PlayerInfo-VPR">
+      {/* <div className="PlayerInfo-VPR">
         <div className="PlayerInfo-Stat">
           <div>SOON</div>
           <span>Global</span>
         </div>
 
-        {/* <div className="PlayerInfo-Stat">
-          <div>#1</div>
-          <span>NA</span>
-        </div> */}
-
         <div className="PlayerInfo-Stat VPR">
           <div>SOON</div>
           <span>VGPRO RATING</span>
         </div>
-      </div>
+      </div> */}
       {AKAs && AKAs.length > 0 &&
         <div className="PlayerInfo-AKA">
           <h2> Also known as </h2>

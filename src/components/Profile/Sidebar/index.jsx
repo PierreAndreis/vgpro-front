@@ -8,7 +8,8 @@ import AsyncContainer from "./../../common/AsyncContainer";
 
 const SideBarItems = [
   {
-    componentBody: AsyncContainer(() => import("./PlayerInfo"))
+    componentBody: AsyncContainer(() => import("./PlayerInfo")),
+    className: "PlayerInfo-Box"
   },
   {
     label: "Recent Roles",
@@ -21,8 +22,7 @@ const SideBarItems = [
     componentBody: AsyncContainer(() => import("./HeroesPlayed"))
   },
   {
-    label: "Recently Played With",
-    labelKey: "recent-played-with",
+    label: "Played with",
     componentBody: AsyncContainer(() => import("./RecentPlayedWith")),
   }
 ]
@@ -41,7 +41,7 @@ class Sidebar extends React.Component {
       const ComponentBody = item.componentBody;
 
       return (
-        <Box.wrap key={index} className="ProfileSidebar-box">
+        <Box.wrap key={index} className={`ProfileSidebar-box ${item.className ? item.className : ""}`}>
           {(item.label || item.labelKey) && <Box.title>{(item.labelKey) ? t(item.labelKey) : item.label}</Box.title>}
           <Box.body> <ComponentBody {...propsPass} /></Box.body>
         </Box.wrap>

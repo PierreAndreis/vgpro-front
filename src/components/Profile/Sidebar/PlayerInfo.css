@@ -1,7 +1,11 @@
+.PlayerInfo-Box {
+  height: auto;
+}
 
 .PlayerInfo {
   width: 100%;
   padding: 10px;
+  flex-grow: 1;
   box-sizing: border-box;
 }
 

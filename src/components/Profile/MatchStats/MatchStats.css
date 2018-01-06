@@ -45,7 +45,6 @@
   text-transform: uppercase;
 }
 
-
 @media screen and (max-width: 660px) {
   .ProfileStats__Category h4 {
     font-size: 12px;
@@ -81,10 +80,19 @@
   font-weight: 500;
   bottom: 10%;
 }
+.ProfileStats_Chart-UnderLabel {
+  font-size: 11px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
 
 @media screen and (max-width: 660px) {
   .ProfileStats__Stats-Label {
     font-size: 12px;
+  }
+  .ProfileStats_Chart-UnderLabel {
+    font-size: 9px;
   }
 }
 

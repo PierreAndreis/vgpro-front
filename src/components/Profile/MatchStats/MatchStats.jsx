@@ -91,6 +91,8 @@ class Loaded extends React.Component {
     const {
       winRate,
       kda,
+      wins,
+      games,
       // totalKills,
       // totalDeaths,
       // totalAssists,
@@ -142,7 +144,12 @@ class Loaded extends React.Component {
               <div className="ProfileStats__Stats-Chart">
                 <HalfPieChart {...commonGraphProps} data={winRateGraph}>
                   {/* <Rate rate={winRate} /> */}
-                  {winRate}
+                  {winRate} <br />
+                  <div className="ProfileStats_Chart-UnderLabel">
+                    {wins} W / {games - wins} L <br />
+                    {games} total
+                  </div>
+                  
                 </HalfPieChart>
               </div>
               <div className="ProfileStats__Stats-Label chart">Win Rate</div>

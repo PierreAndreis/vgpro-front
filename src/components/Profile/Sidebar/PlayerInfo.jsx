@@ -72,8 +72,6 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
 
   }
 
-  let path = (window) ? window.location.pathname : "";
-
   return (
     <div className="PlayerInfo">
       <div className="PlayerInfo-info">
@@ -124,7 +122,7 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
       <div style={{textAlign: "center", margin: "10px"}}>
         <SkeletonWrapper status={status} width="130px" height="35px">
           {() => (
-            <iframe src={`https://emojireact.com/embed?emojis=fire,whale&url=${path}`}
+            <iframe src={`https://emojireact.com/embed?emojis=fire,whale&url=vgpro.gg/players/${data.region}/${data.name}`}
                     scrolling="no" 
                     frameBorder="0" 
                     style={{border:"none", 

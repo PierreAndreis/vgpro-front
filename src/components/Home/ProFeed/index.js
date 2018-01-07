@@ -93,8 +93,12 @@ class ProFeed extends React.Component {
         </div>
       </BoxBody>
       <BoxActions>
-        <div className="button" id={(page > 1       ) ? "" : "disabled"}  onClick={this.paginateDown.bind(this)}> {t("view-less")} </div>
-        <div className="button" id={(page < lastPage) ? "" : "disabled"}  onClick={this.paginateUp.bind(this)  } >{t("view-more")}</div>
+        <div className="button" id={(page > 1       ) ? "" : "disabled"}  onClick={this.paginateDown.bind(this)}>
+          Back
+        </div>
+        <div className="button" id={(page < lastPage) ? "" : "disabled"}  onClick={this.paginateUp.bind(this)  } >
+          Next
+        </div>
       </BoxActions>
     </Box>
     )

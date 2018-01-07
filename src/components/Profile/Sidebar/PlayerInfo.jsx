@@ -55,6 +55,9 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
   let percentageVst;
   let favoriteClass;
   let favoriteClick;
+  let rankingGlobal = 0;
+  let rankingRegion = 0;
+  let rankingRegionName = "...";
 
   if (status === "loaded") {
     rankVst = (data.rankVst) ? Number(data.rankVst).toFixed(0) : 0;
@@ -70,12 +73,18 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
       favoriteClick = removeFromList(setFavorite, data.name, favorites);
     }
 
+    if (data.rankedRanking) {
+      rankingGlobal = data.rankedRanking.global   === -1 ? "--" : data.rankedRanking.global;
+      rankingRegion = data.rankedRanking.regional === -1 ? "--" : data.rankedRanking.regional;
+      rankingRegionName = data.region === "sg" ? "SEA" : data.region.toUpperCase();
+    }
+
   }
 
   return (
     <div className="PlayerInfo">
       <div className="PlayerInfo-info">
-      <SkeletonWrapper status={status} height="0">
+      <SkeletonWrapper status={status} width="140px" height="0">
         { () => (
             <AssetLoader type="tiers" className="PlayerInfo-tier" name={data.tier}>
               <div className="PlayerInfo-tier-bar">
@@ -89,18 +98,18 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
         
         <div className="PlayerInfo-details">
           <div className="PlayerInfo-icons">
-            <SkeletonWrapper status={status} width="60px" height="30px">
+            <SkeletonWrapper status={status} width="60px" height="20px">
               {() => <i className={favoriteClass} onClick={favoriteClick}/>}
             </SkeletonWrapper>
           </div>
 
           <div className="PlayerInfo-name">
-            <SkeletonWrapper status={status} width="100px" height="20px">
+            <SkeletonWrapper status={status} width="100px" height="25px">
               {() => <span>{data.name}</span>}
             </SkeletonWrapper>
           </div>
           <div className="PlayerInfo-desc">
-            <SkeletonWrapper status={status} width="100px">
+            <SkeletonWrapper status={status} width="150px">
               {() => (
                 [
                   <span key="region">{regions[data.region]}</span>,
@@ -112,13 +121,13 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
           </div>
           <div className="PlayerInfo-update">
             Last updated: <br />
-            <SkeletonWrapper status={status} width="80px" height="20px">
+            <SkeletonWrapper status={status} width="80px" height="15px">
               { () => <TimeAgo date={data.lastCache} />}
             </SkeletonWrapper>
           </div>
         </div>
       </div>
-
+      <div className="PlayerInfo-divider" />
       <div style={{textAlign: "center", margin: "10px"}}>
         <SkeletonWrapper status={status} width="130px" height="35px">
           {() => (
@@ -136,18 +145,36 @@ const PlayerInfo = ({status, data, favorites, addFavorite, setFavorite}) => {
         </SkeletonWrapper>
       </div>
       {/* {team} */}
-     
-      {/* <div className="PlayerInfo-VPR">
+      <div className="PlayerInfo-divider" />
+      <div className="PlayerInfo-Stats">
+
+        <h3>Ranked Ranking</h3>
         <div className="PlayerInfo-Stat">
-          <div>SOON</div>
+          <div>
+            #
+            <SkeletonWrapper status={status} width="25px" height="15px">
+              {() => rankingGlobal}
+            </SkeletonWrapper>
+          </div>
           <span>Global</span>
         </div>
 
-        <div className="PlayerInfo-Stat VPR">
-          <div>SOON</div>
-          <span>VGPRO RATING</span>
+        <div className="PlayerInfo-Stat">
+          <div>
+            #
+            <SkeletonWrapper status={status} width="25px" height="15px">
+              {() => rankingRegion}
+            </SkeletonWrapper>
+          </div>
+          <span>
+            <SkeletonWrapper status={status} 
+                             width="25px" 
+                             height="15px" 
+                             children={() => rankingRegionName} />
+          </span>
         </div>
-      </div> */}
+      </div>
+
       {AKAs && AKAs.length > 0 &&
         <div className="PlayerInfo-AKA">
           <h2> Also known as </h2>

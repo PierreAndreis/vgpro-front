@@ -14,10 +14,11 @@
   border: 0;
   z-index: 1;
   border-radius: 5px;
-  /* color: black; */
-  background: rgb(230, 230, 230);
-  /* background: white; */
-  /* background: transparent; */
+  color: black;
+  color: var(--textPrimary);
+
+  background-color: rgb(230, 230, 230);
+  background-color: var(--backgroundSecondary);
   padding: 10px 30px 10px 10px;
   height: 35px;
   font-size: 16px;
@@ -32,15 +33,16 @@
     font-size: 16px;
     color: transparent;
     padding: 0;
-    /* background: red; */
-    /* display: none !important; */
   }
 }
 
 .Header-Search .Search-Icon{
   position: absolute;
   z-index: 2;
-  color: rgba(0, 0, 0, 0.459);
+  /* color: rgba(0, 0, 0, 0.5); */
+  opacity: 0.5;
+  color: black;
+  color: var(--textColor);
   height: 100%;
   line-height: 35px;
   margin-left: -35px;

@@ -5,7 +5,8 @@
   margin-top: -10px;
   padding: 15px 5px 5px;
   box-sizing: border-box;
-  background: white;
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   border-radius: 0 0 5px 5px;
   /* box-shadow: 0 0 10px rgba(146, 146, 146, 0.445); */
   box-shadow: #EAEDF3 0 0px 30px 0;
@@ -28,6 +29,7 @@
   text-transform: uppercase;
   font-size: 12px;
   color: rgb(75, 75, 75);
+  color: var(--textPrimaryHighlight);
   font-weight: 700;
   cursor: pointer;
 
@@ -38,10 +40,12 @@
 
 .MatchDetails-Tab>div:hover {
   background: rgba(207, 207, 207, 0.24);
+  background: var(--detailsTabDivBackground);
 }
 
 .MatchDetails-Tab>div.active {
   color: #DCAF5A;
+  color: var(--buildsMatchBuildsContentColor);
 }
 
 .MatchDetails-Tab>div:last-of-type {

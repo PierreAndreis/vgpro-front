@@ -41,6 +41,7 @@
 
 .HeroesMeta-Selector-Icon.active {
   background-color: #E3B63B; 
+  background-color: var(--primaryColor);
 }
 
 .Selector-WinRate {
@@ -78,6 +79,7 @@
 .HeroesMeta_RegionSelect div {
   font-size: 14px;
   color: grey;
+  color: var(--textPrimary);
   font-weight: 500;
   padding: 0 5px 5px;
   cursor: pointer;
@@ -85,11 +87,13 @@
 
 .HeroesMeta_RegionSelect div:hover {
   color: rgb(75, 75, 75);
+  color: var(--textPrimaryHighlight);
   cursor: pointer;
 }
 
 .HeroesMeta_RegionSelect div.active {
   color: #DCAF5A;
+  color: var(--primaryColor);
   
 }
 
@@ -124,7 +128,9 @@
   height: 50px;
   background-size: 100%;
   background-color: rgb(190, 190, 190);
+  background-color: var(--placeholderBackground);
   border: 2px solid #9C9C9C;
+  border-color: var(--placeholderBorder);
   border-radius: 50%;
 }
 
@@ -135,12 +141,13 @@
   display: block;
   width: 23px;
   font-size: 14px;
-  color: white;
+  color: white; /* this is not a theme specific. it needs to be white */
   height: 23px;
   box-sizing: border-box;
   padding: 4px;
   border-radius: 50%;
   background: rgb(73, 73, 73);
+  background: var(--heroesMetaTopImageBackground);
 }
 
 .HeroesMeta-Top.Rank-1 .Heroes-Meta-Top-Image-Tag {
@@ -148,13 +155,16 @@
   height: 25px;
   font-size: 14px;
   background: #E8A827;
+  background: var(--heroesMetaTopRank1Background);
 }
 
 .HeroesMeta-Top.Rank-2 .Heroes-Meta-Top-Image-Tag {
   background: #9B9B9B;
+  background: var(--heroesMetaTopRank2Background);
 }
 .HeroesMeta-Top.Rank-3 .Heroes-Meta-Top-Image-Tag{
   background: #A54916;
+  background: var(--heroesMetaTopRank3Background);
 }
 
 
@@ -170,6 +180,7 @@
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
   color: #3A3A3A;
+  color: var(--textPrimaryHighlight);
 }
 
 .HeroesMeta-Top span {
@@ -204,6 +215,7 @@
 
 .Heroes-Meta-Others .HeroesMeta-Top:nth-child(odd) {
   background: rgb(240, 240, 240);
+  background: var(--backgroundPrimary-Odd);
 }
 
 .Heroes-Meta-Others .HeroesMeta-Top .Heroes-Meta-Top-Image {

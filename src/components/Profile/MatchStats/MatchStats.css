@@ -5,7 +5,6 @@
   height: auto;
   min-height: 200px;
   position: relative;
-  background: rgb(255, 255, 255);
   padding: 10px;
   box-sizing: border-box;
   flex-grow: 1;
@@ -39,6 +38,7 @@
 .ProfileStats__Category h4 {
   position: absolute;
   color: grey;
+  color: var(--buildsAbilityRowSpan);
   width: 100%;
   text-align: center;
   font-weight: normal;
@@ -77,6 +77,7 @@
   position: absolute;
   width: 100%;
   color: grey;
+  color: var(--buildsAbilityRowSpan);
   font-weight: 500;
   bottom: 10%;
 }
@@ -103,7 +104,8 @@
 .ProfileStats__Stats-Value {
   font-size: 32px;
   text-align: center;
-  color: #FF6262
+  color: #FF6262;
+  color: var(--buildsMatchBuildsTeamBorderColor);
 }
 @media screen and (max-width: 660px) {
   .ProfileStats__Stats-Value {
@@ -124,7 +126,9 @@
   height: 5px;
   border-radius: 10px;
   border: 1px solid rgb(0, 0, 0, 0.3);
+  border: 1px solid var(--matchstatsProfileStatsBarBorder);
   background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--matchstatsProfileStatsBarBackground);
   position: relative;
   overflow: hidden;
   display: flex;

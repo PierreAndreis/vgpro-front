@@ -4,13 +4,15 @@
   width: 100%;
   height: 55px;
   text-align: center;
-  background: white;
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   /* background-color: rgb(49, 38, 0); */
   /* background-color: #323232; */
   position: relative;
   z-index: 4;
   display: flex;
   box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.12);
+  box-shadow: 0 4px 2px -2px var(--boxShadowSecondary);
 
   /* box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.37); */
 }

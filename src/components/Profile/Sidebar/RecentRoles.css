@@ -10,6 +10,7 @@
   box-sizing: border-box;
   /* background: rgba(204, 204, 204, 0.205); */
   border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  border-bottom: 1px solid var(--recentRolesPlayerRoleBorderBottom);
   display: flex;
   justify-content: space-around;
 }
@@ -65,8 +66,9 @@
   text-align: center;
   font-weight: 500;
   color: rgb(66, 66, 66);
-  
+  color: var(--playerInfoTeamNameColor);
 }
+
 .PlayerRole-Stats-Desc {
   display: flex;
   width: 100%;
@@ -92,6 +94,7 @@
   background-position: center -3px;
   background-size: 15px;
   color: rgb(199, 0, 0);
+  color: var(--recentRolesPlayerRoleStatsKDADeathColor);
 }
 .PlayerRole-Stats_KDA.Assist {
   background-image: url("/icons/assist.svg");
@@ -116,4 +119,5 @@
   text-align: center;
   font-size: 13px;
   color: #808080;
+  color: var(--recentRolesPlayerRoleWRDescColor);
 }

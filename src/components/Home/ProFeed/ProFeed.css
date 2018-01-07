@@ -14,19 +14,23 @@
   width: 100%;
   height: 45px;
   color: black;
+  color: var(--textPrimary);
   display: flex;
-  background: rgba(241, 241, 241, 1);
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   transition: background-color 0.2s;
   flex-direction: space-between;
   align-items: center;
 }
 
-.ProFeed-each:nth-child(even) {
-  background: white;
+.ProFeed-each:nth-child(odd) {
+  background-color: white;
+  background-color: var(--backgroundPrimary-Odd);
 }
 
 .ProFeed-each:hover {
   background-color: #E7E7E7;
+  background-color: var(--backgroundHover);
 }
 
 /** ========= EACH STATUS ========= */
@@ -37,11 +41,13 @@
 }
 
 .ProFeed-each-status#Win {
-  background: hsl(205, 86%, 65%);
+  background-color: hsl(205, 86%, 65%);
+  background-color: var(--winColor);
 }
 
 .ProFeed-each-status#Loss {
-  background: hsl(6, 86%, 65%);
+  background-color: hsl(6, 86%, 65%);
+  background-color: var(--lossColor);
 }
 
 /** ========= EACH INFO ========= */
@@ -57,7 +63,9 @@
 .ProFeed-each-info-picture {
   width: 30px;
   height: 30px;
-  background: rgb(80, 80, 80);
+  background: #676B6A;
+  background: var(--proPlayersBackground);
+  box-sizing: border-box;
   background-size: 180%;
   background-position: center 4%;
 
@@ -74,7 +82,8 @@
 
 .ProFeed-each-info-personal div {
   font-family: "Roboto Condensed", sans-serif;
-  color: rgba(57, 57, 57, 1);
+  color: rgb(75, 75, 75);
+  color: var(--textPrimaryHighlight);
   font-weight: 100;
   font-size: 13px;
   font-weight: bold;
@@ -87,14 +96,16 @@
   font-weight: 100;
   margin-top: 1px;
   font-size: 10px;
-  color: #2E2E2E
+	color: #6F7175;
+  color: var(--textPrimaryHighlight);
 }
 
 .ProFeed-each-info-personal div>span {
   text-transform: uppercase;
   font-size: 12px;
   font-weight: 100;
-	color: rgba(161, 161, 161, 1);
+	color: #6F7175;
+  color: var(--textPrimary);
 }
 
 /** ========= EACH GAME ========= */
@@ -110,7 +121,8 @@
 .ProFeed-each-game-hero {
   width: 25px;
   height: 25px;
-  background-color: grey;
+  background-color: rgb(190, 190, 190);
+  background-color: var(--placeholderBackground);
   background-size: 130%;
   background-position: center;
   border-radius: 50%;
@@ -139,21 +151,25 @@
 
 .ProFeed-each-game-role#captain {
   background-color: rgb(191, 150, 1);
+  background-color: var(--captainColor);
   background-image: url("/roles/captain.png");
 }
 
 .ProFeed-each-game-role#carry {
   background-color: rgb(160, 46, 45);
+  background-color: var(--carryColor);
   background-image: url("/roles/carry.png");
 }
 
 .ProFeed-each-game-role#jungler {
   background-color: rgb(106, 183, 11);
+  background-color: var(--junglerColor);
   background-image: url("/roles/jungler.png");
 }
 
 .ProFeed-each-game-role#sub {
   background-color: rgb(49, 49, 49);
+  background-color: var(--subColor);
   background-image: url("/roles/sub.png");
 }
 
@@ -172,6 +188,7 @@
   width: 19px;
   height: 19px;
   background: rgba(195, 195, 195, 1);
+  background-color: var(--placeholderBackground);
   border-radius: 50%;
   margin: 0 1px;
   background-size: 100%;
@@ -183,7 +200,8 @@
 .ProFeed-each-arrow {
   width: 15px;
   height: 100%;
-  color: rgba(195, 195, 195, 0.6);
+  color: rgba(195, 195, 195, 0.3);
+  color: var(--textPrimaryOpaque);
   font-size: 35px;
   padding-right: 2px;
   display: flex;

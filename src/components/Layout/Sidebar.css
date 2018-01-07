@@ -4,6 +4,7 @@
   /* background-image: linear-gradient(-180deg, rgb(250, 189, 97) 0%, #F76B1C 100%); */
   background-image: linear-gradient(-180deg, #DFA436 0%, #E6BE3E 100%);
   box-shadow: inset -4px 1px 7px 0 rgba(0,0,0,0.11);
+  box-shadow: inset -4px 1px 7px 0 var(--sidebarBoxShadow);
   position: fixed;
   z-index: 2;
 
@@ -37,7 +38,9 @@
   height: 45px;
   cursor: pointer;
   background: #ECEEF1;
+  background: var(--background);
   box-shadow: 0 0 15px rgba(0, 14, 77, 0.3);
+  box-shadow: 0 0 15px var(--sidebarSearchBoxShadow);
   border-radius: 100%;
 
   font-size: 18px;
@@ -78,6 +81,7 @@
 
 .Sidebar-Menu-Item.active {
   border-left: 3px solid white;
+  border-left: 3px solid var(--backgroundPrimary);
   opacity: 1;
 }
 
@@ -95,6 +99,7 @@
   text-transform: uppercase;
   font-weight: 700;
   color: white;
+  color: var(--backgroundPrimary);
 }
 
 .Menu-Item-icon.icon-home {

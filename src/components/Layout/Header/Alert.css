@@ -3,7 +3,8 @@
 
   width: 100%;
   height: 45px;
-  background: #EED477;
+  background-color: #E6BE3D;
+  background-color: var(--secondaryColor);
   text-align: center;
 
   display: flex;

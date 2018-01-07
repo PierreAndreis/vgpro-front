@@ -47,10 +47,10 @@
   font-weight: 700;
   color: grey;
   text-transform: uppercase;
-  
-  background: #D5EDFE;
   border-right: 1px solid rgb(233, 233, 233);
+  border-right: 1px solid var(--overviewTeamBorderRight);
   background: #EAEAEA;
+  background: var(--overviewTeamBackground2);
   /* background: rgba(214, 214, 214, 0.226); */
 }
 
@@ -61,6 +61,7 @@
 .Overview-Team .Overview-Cell.Overview-Player {
   height: 65px;
   border-bottom: 1px solid #97979731;
+  border-bottom: 1px solid var(--overviewTeamBorderBottom);
 }
 
 .Overview-Team .Overview-Cell.Overview-Player:nth-child(odd) {
@@ -102,12 +103,15 @@
   background-size: 140%;
   background-position: center center;
   background-color: rgb(201, 201, 201);
+  background-color: var(--overviewPlayerImageBackgroundColor);
   border: 3px solid #4A90E2;
+  border: 3px solid var(--buildsPlayerImageBorder);
   position: relative;
 }
 
 .Overview-Team:last-of-type .Overview-Player-Image-Hero {
   border-color: #FF6262;
+  border-color: var(--buildsMatchBuildsTeamBorderColor);
 }
 
 .Overview-Player-Image-Role {
@@ -124,16 +128,19 @@
 
 .Overview-Player-Image-Role#captain {
   background-color: rgb(191, 150, 1);
+  background-color: var(--captainColor);
   background-image: url("/roles/captain.png");
 }
 
 .Overview-Player-Image-Role#carry {
   background-color: rgb(160, 46, 45);
+  background-color: var(--carryColor);
   background-image: url("/roles/carry.png");
 }
 
 .Overview-Player-Image-Role#jungler {
   background-color: rgb(106, 183, 11);
+  background-color: var(--junglerColor);
   background-image: url("/roles/jungler.png");
 }
 
@@ -146,22 +153,27 @@
   font-family: "Roboto Condensed", sans-serif;
   font-weight: bold;
   color: #3A3A3A;
+  color: var(--overviewPlayerInfoNameColor);
 }
 
 .Overview-Player-Info .Overview-Player-Info-KDA {
   font-size: 11px;
   color: grey;
+  color: var(--buildsAbilityRowSpan);
 }
 
 .Overview-Player-Info .Overview-Player-Info-KDA>span {
   color: black;
+  color: var(--overviewPlayerInfoKDASpanColor);
 }
 .Overview-Player-Info .Overview-Player-Info-KDA>span.d {
   color: rgb(179, 32, 32);
+  color: var(--overviewPlayerInfoKDASpandColor)
 }
 .Overview-Player-Info .Overview-Player-Info-KDA>div {
   font-size: 13px;
   color: black;
+  color: var(--overviewPlayerInfoKDASpanColor);
   font-weight: bold;
 }
 
@@ -183,6 +195,7 @@
   margin: 2px 0;
   flex-shrink: 0;
   background-color: rgb(201, 201, 201);
+  background-color: var(--overviewPlayerImageBackgroundColor);
   background-size: 100%;
   border-radius: 50%;
 }
@@ -201,6 +214,7 @@
   height: 7px;
   position: relative;
   background: rgba(95, 95, 95, 0.356);
+  background: var(--overviewPlayerDamageBar);
   /* overflow: hidden; */
 }
 .Overview-Player-Damage-fill {
@@ -208,16 +222,19 @@
   border-radius: 15px;
   background-image: linear-gradient(-90deg, rgb(243, 165, 92) 0%, rgb(231, 118, 42) 100%);
   box-shadow: 0 0 2px rgb(231, 143, 42);
+  box-shadow: 0 0 2px var(--overviewPlayerDamageFillBoxShadow);
   transition: all 300ms;
 }
 .Overview-Player-Damage-fill.DamageTaken {
   background-image: linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%);
   box-shadow: 0 0 2px #E7AE2A;
+  box-shadow: 0 0 2px var(--overviewPlayerDamageFillDamageTakenBoxShadow)
 }
 .Overview-Player-Damage-fill.Healing {
 
   background-image: linear-gradient(-90deg, rgb(110, 243, 92) 0%, rgb(11, 201, 21) 100%);
   box-shadow: 0 0 2px rgb(11, 201, 21);
+  box-shadow: 0 0 2px var(--overviewPlayerDamageFillHealingBoxShadow);
 }
 
 .Overview-Player-Damage-label {
@@ -225,6 +242,7 @@
   font-weight: bold;
   white-space: nowrap;
   color: grey;
+  color: var(--buildsAbilityRowSpan);
   margin-left: 3px;
 }
 
@@ -245,6 +263,7 @@
   margin-right: 10px;
   margin-bottom: 5px;
   color: rgb(53, 53, 53);
+  color: var(--overviewPlayerCS);
   font-weight: 500;
 }
 .Overview-Player-CS:before {
@@ -264,6 +283,7 @@
 .Overview-Player-Gold {
   font-size: 11px;
   color: rgb(53, 53, 53);
+  color: var(--overviewPlayerCS);
   font-weight: 500;
 }
 .Overview-Player-Gold:before {
@@ -295,10 +315,13 @@
 .Overview-Player-RankPoints {
   width: 30px;
   margin-top: -2px;
-  background: white;
+  background-color: white;
+  background-color: var(--backgroundPrimary);
   font-size: 10px;
   color: grey;
+  color: var(--buildsAbilityRowSpan);
   border: 1px solid rgb(218, 218, 218);
+  border: 1px solid var(--overviewPlayerRankPointBorder);
   border-radius: 5px;
   text-align: center;
   padding: 1px;
@@ -335,6 +358,7 @@
   font-size: 10px;
   font-weight: 500;
   color: rgba(68, 68, 68, 0.473);
+  color: var(--overviewLegendsDivColor);
   text-transform: uppercase;
 }
 
@@ -371,6 +395,7 @@
   background-position: center;
   border-radius: 50%;
   border: 3px solid #FF6262;
+  border: 3px solid var(--buildsMatchBuildsTeamBorderColor);
   /* animation-name: fadeIn;
   animation-duration: 1s;
   animation-fill-mode: both; */
@@ -379,6 +404,7 @@
 
 .Overview-Team:first-of-type .Overview-Team-Ban  {
   border-color: #4A90E2;
+  border-color: var(--buildsPlayerImageBorder);
 }
 
 .Overview-Team-Ban:after {
@@ -391,10 +417,12 @@
   width: 50px;
   height: 3px;
   background: #FF6262;
+  background: var(--buildsMatchBuildsTeamBorderColor);
 }
 
 .Overview-Team:first-of-type .Overview-Team-Ban:after {
   background: #4A90E2;
+  background: var(--buildsPlayerImageBorder);
 }
 
 .Overview-Team-Values {
@@ -410,6 +438,7 @@
 
   font-size: 13px;
   color: grey;
+  color: var(--buildsAbilityRowSpan);
 }
 
 .Overview-Team-Values .Overview-Team-Gold {
@@ -434,11 +463,13 @@
 
 .Overview-Team-Top {
   border-bottom: 2px solid #FF6262;
+  border-bottom: 2px solid var(--buildsMatchBuildsTeamBorderColor);
   height: 20px;
 }
 
 .Overview-Team:first-of-type .Overview-Team-Top {
   border-bottom-color: #4A90E2;
+  border-bottom-color: var(--buildsPlayerImageBorder);
 }
 
 .Overview-Team-Others {
@@ -481,10 +512,12 @@
 .Overview-Team-Score {
   width: 40px;
   color:#FF6262;
+  color: var(--buildsMatchBuildsTeamBorderColor);
 }
 
 .Overview-Team:first-of-type .Overview-Team-Score {
   color: #4A90E2;
+  color: var(--buildsPlayerImageBorder);
 }
 
 .Overview-Team-Score>div {
@@ -503,10 +536,12 @@
 
 .win {
   color: #5DB4F1;
+  color: var(--overviewWinColor);
 }
 
 .loss {
   color: #F1685D;
+  color: var(--overviewLossColor);
 }
 
   /* background-position: center center;

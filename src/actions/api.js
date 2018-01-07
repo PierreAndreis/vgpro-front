@@ -7,10 +7,10 @@ export const fetchProFeed = async () => {
   return await API.getProFeed();
 }
 
-export const fetchLead5 = async () => {
+export const fetchLead5 = async (mode, region, filterArgs) => {
   /** This is not a redux action */
   
-  return await API.getLead5();
+  return await API.getLead5(mode, region, filterArgs);
 }
 
 export const fetchTopHeroes = async (type, region) => {

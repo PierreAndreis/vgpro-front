@@ -4,11 +4,22 @@ import _forEach from "lodash/forEach";
 import {fetchLead5}                         from "./../../../actions/api";
 
 import {SkeletonPayload} from "../../common/Skeleton";
+import Utils from "./../../../utils";
 
 import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
 import ErrorScreen                          from "./../../common/ErrorScreen";
 import LeadMember from "./LeadMember";
 import "./Lead5.css";
+
+const REGIONS = [
+  "all",
+  "na",
+  "eu",
+  "ea",
+  "sea",
+  "sa",
+  "cn"
+]
 
 class Lead5 extends React.Component {
   constructor() {
@@ -16,10 +27,18 @@ class Lead5 extends React.Component {
 
     this.state = {
       status: "loading",
+      mode: "ranked",
       region: "all", /* all, eu, na, sg, ea, cn */
-      payload: {all: SkeletonPayload(5)}
+      payload: SkeletonPayload(4)
     }
 
+  }
+
+  changeRegion = (region) => (e) => {
+    if (this.state.region === region) return;
+    this.setState({
+      region: region,
+    }, this.fetch)
   }
 
   componentDidMount() {
@@ -28,25 +47,23 @@ class Lead5 extends React.Component {
 
   async fetch() {
     
-    try {
-      this.setState({
-        status: "loading"
-      })
-  
-      const res = await fetchLead5();
-  
-      this.setState({
-        status: "loaded",
-        payload: res
-      })
-    }
-    catch(e) {
-      this.setState({
-        status: "error",
-        payload: e
-      })
-    }
-    
+    let {mode, region} = this.state;
+
+    const server_region = (region === "sea") ? "sg" : region;
+
+    this.setState({
+      status: "loading"
+    });
+
+    this.cancel = Utils.makeCancelable(
+      fetchLead5(mode, server_region, {limit: 4}),
+      (res) => this.setState({ status: "loaded", payload: res }),
+      (e) => this.setState({ status: "error", payload: e })
+    );
+  }
+
+  componentWillUnmount() {
+    this.cancel();
   }
   
   render() {
@@ -55,26 +72,29 @@ class Lead5 extends React.Component {
 
     if (status === "error" || !payload) content = <ErrorScreen err={payload} />
     else {  
-
-      const {all} = payload;
-      let index = 1;
-      _forEach(all, (each) => {
-        let data = {
-          ...each,
-          position: index
-        }
-        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={data} />);
+      _forEach(payload, (each, index) => {
+        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={each} />);
         index++;
-      })
-
-
+      });
     }
 
 
     return (
       <Box className="Lead5-box animated fadeInUp">
         <BoxTitle>Leaderboard</BoxTitle>
-        <BoxBody> 
+        <BoxBody className="Lead5-body"> 
+        <div className="Box_RegionSelect">
+            {
+              REGIONS.map(region => (
+                <div key={region} 
+                     className={region === this.state.region ? "active" : ""}
+                     onClick={this.changeRegion(region)}>
+                  {region}
+                </div>
+              ))
+            }
+          </div>
+          <div className="Box_Divider" />
           <div className="Lead5">
             {content}
          </div>

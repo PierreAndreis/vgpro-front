@@ -32,7 +32,7 @@ const Loading = () => {
           <div className="PlayerMatch-Stats-Items">
             <div className="PlayerMatch-Stats">
               <div>
-                <Skeleton width="120px" />
+                <Skeleton width="85px" />
               </div>
               <div>
                 <Skeleton width="80px" />

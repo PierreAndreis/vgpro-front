@@ -161,7 +161,7 @@ export default class extends React.Component {
           </div>
         </BoxTitle>
         <BoxBody className="HeroesMeta">
-          <div className="HeroesMeta_RegionSelect">
+          <div className="Box_RegionSelect">
             {
               REGIONS.map(region => (
                 <div key={region} 
@@ -172,7 +172,7 @@ export default class extends React.Component {
               ))
             }
           </div>
-          <div className="Heroes-Meta-Divider" />
+          <div className="Box_Divider" />
           { page === 0 && 
             <div className="HeroesMeta-Top3">
               {

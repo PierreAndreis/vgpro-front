@@ -18,7 +18,7 @@ const Skeleton = ({width, height, borderRadius}) => {
 Skeleton.defaultProps = {
   width: 100,
   height: 20,
-  borderRadius: 0
+  borderRadius: "5px"
 }
 
 const SkeletonContainer = (Loading, Loaded) => {

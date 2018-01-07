@@ -56,6 +56,6 @@ export const VPR = ({value, defaultColor, className}) => {
     }
   }
 
-  return <span style={{color: color}} className={classes}>{vpr}</span>
+  return <span style={{color: color}} className={classes}>{parseInt(vpr, 10)}</span>
 
 }

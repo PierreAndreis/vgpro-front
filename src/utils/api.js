@@ -64,34 +64,18 @@ const sendRequest = async (url, data, method = "get") => {
     return handleRequest(req, diff);
 }
 
-const sendRequest_Old = async (url, data, method = "get") => {
-
-  const options = {
-    baseURL: "https://lyra.vgpro.gg/",
-    url,
-    method,
-  }
-  const startTime = new Date();
-  const req = await request(options);
-  const endTime = new Date();
-
-  if (endTime < startTime) {
-    endTime.setDate(endTime.getDate() + 1);
-  }
-
-  const diff = endTime - startTime;
-  return handleRequest(req, diff);
-}
-
 const API = {};
 
 API.getProFeed = () => {
   return sendRequest("/pro/history/");
 }
 
-API.getLead5 = () => {
-  // return sendRequest("/leaderboard/?limit=5");
-  return sendRequest_Old("/topfive/")
+API.getLead5 = (mode, region, filtersArgs) => {
+
+  let f = filtersArgs;
+  const filters = queryString.stringify(f);
+
+  return sendRequest(`/leaderboard/${mode}/${region}?${filters}`);
 }
 
 API.getTopHeroes = (type = "pickrate", region = "all") => {

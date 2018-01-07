@@ -3,7 +3,6 @@
 }
 
 .HeroesMeta {
-  padding: 10px 0px 0;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -11,6 +10,7 @@
 
 .HeroesMeta-Title {
   display: flex;
+  height: 56px;
   position: relative;
 }
 
@@ -68,33 +68,9 @@
   background-image: url("/icons/banrate.svg");
 }
 
-.HeroesMeta_RegionSelect {
-  display: flex;
-  justify-content: space-around;
-  text-transform: uppercase;
-  padding: 0 50px;
-}
-
-.HeroesMeta_RegionSelect div {
-  font-size: 14px;
-  color: grey;
-  font-weight: 500;
-  padding: 0 5px 5px;
-  cursor: pointer;
-}
-
-.HeroesMeta_RegionSelect div:hover {
-  color: rgb(75, 75, 75);
-  cursor: pointer;
-}
-
-.HeroesMeta_RegionSelect div.active {
-  color: #DCAF5A;
-  
-}
-
 .HeroesMeta-Top3 {
   width: 100%;
+  padding-top: 10px;
   display: flex;
   justify-content: space-around;
 }
@@ -124,6 +100,8 @@
   height: 50px;
   background-size: 100%;
   background-color: rgb(190, 190, 190);
+  flex-shrink: 0;
+  flex-grow: 0;
   border: 2px solid #9C9C9C;
   border-radius: 50%;
 }
@@ -159,8 +137,8 @@
 
 
 .HeroesMeta-Top3 .HeroesMeta-Top.Rank-1 .Heroes-Meta-Top-Image{
-  width: 70px;
-  height: 70px;
+  width: 65px;
+  height: 65px;
 }
 
 .Heroes-Meta-Top-Name {
@@ -176,13 +154,6 @@
   margin: 5px;
   font-size: 13px;
   font-weight: bold;
-}
-
-.Heroes-Meta-Divider {
-  width: 100%;
-  margin: 0 0 10px;
-  height: 10px;
-  background: linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
 }
 
 .Heroes-Meta-Others {

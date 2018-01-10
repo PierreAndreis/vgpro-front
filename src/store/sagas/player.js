@@ -39,8 +39,6 @@ export function* fetchPlayerStats(action) {
 export function* fetchPlayerMatches(action) {
   try {
 
-    console.warn(action.filters);
-
     const playerMatches = yield call(
       API.fetchPlayerMatches, 
       action.payload, 

@@ -82,12 +82,11 @@ class Lead5 extends React.Component {
     const {payload, status} = this.state;
     let content = [];
 
-    payload.mode = this.state.mode;
-
     if (status === "error" || !payload) content = <ErrorScreen err={payload} />
     else {  
       _forEach(payload, (each, index) => {
-        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={each} />);
+        console.log(each)
+        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={each} mode={this.state.mode.value} />);
         index++;
       });
     }

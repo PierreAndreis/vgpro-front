@@ -36,7 +36,7 @@ const Loading = ({data}) => {
   );
 }
 
-const Loaded = ({data}) => {
+const Loaded = ({data, mode}) => {
 
   let id = "";
 
@@ -47,7 +47,6 @@ const Loaded = ({data}) => {
     tier,
     kda,
     points,
-    mode,
   } = data
 
   if (position === 1 || position === "1") {
@@ -70,7 +69,7 @@ const Loaded = ({data}) => {
     </div>
     <div className="Lead5-each-vpr">
       <div className="Lead5-each-vpr-number"><VPR value={points} /></div>
-      <div className="Lead5-each-vpr-name">{mode === 'ranked' ? "Rank" : "Blitz"} <br />Points</div>
+      <div className="Lead5-each-vpr-name">{mode === "ranked" ? "Rank" : "Blitz"} <br />Points</div>
     </div>
   </Link>
   );

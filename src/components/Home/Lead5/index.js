@@ -94,7 +94,8 @@ class Lead5 extends React.Component {
 
     return (
       <Box className="Lead5-box animated fadeInUp">
-        <BoxTitle>{this.state.mode.label} Leaderboard
+        <BoxTitle className="Lead5-Title">
+          {this.state.mode.label} TOP4
           <div className="Lead5-Selector">
               {TYPES.map(type => (
                   <div key={type.value}

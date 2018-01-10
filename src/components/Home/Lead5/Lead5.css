@@ -6,6 +6,9 @@
   width: 100%;
   font-size: 13px;
 }
+.Lead5-Title {
+  display: flex;
+}
 
 .Lead5-each {
   height: 45px;
@@ -142,18 +145,18 @@
 }
 
 .Selector-Ranked {
-  background-image: url("/icons/winrate_.svg");
+  background-image: url("/icons/ranked_.svg");
 }
 
 .Selector-Ranked.active {
-  background-image: url("/icons/winrate.svg");
+  background-image: url("/icons/ranked.svg");
 }
 
 .Selector-Blitz {
-  background-image: url("/icons/pickrate_.svg");
+  background-image: url("/icons/blitz_.svg");
   background-size: 90%;
 }
 
 .Selector-Blitz.active {
-  background-image: url("/icons/pickrate.svg");
+  background-image: url("/icons/blitz.svg");
 }

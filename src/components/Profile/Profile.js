@@ -14,7 +14,7 @@ import ProfileFilters from "./ProfileFilters";
 
 import MatchesManager from "./Matches/MatchesManager";
 
-import {fetchPlayerStats} from "./../../actions/player";
+import {setPlayer, changeFilters} from "./../../actions/player";
 
 import {bindActionCreators} from "redux";
 import { connect }          from "react-redux";
@@ -32,23 +32,18 @@ class Profile extends React.Component {
     const {player} = match.params;
 
     if (player === nextPlayer) return;
-    else this.props.fetchPlayerStats(nextPlayer, {
-      gameMode: "",
-      season: ""
-    });
+    else this.props.setPlayer(nextPlayer);
   }
 
   componentDidMount() {
     const {match} = this.props;
     const {player} = match.params;
 
-    this.props.fetchPlayerStats(player, {
-      gameMode: "",
-      season: ""
-    });
+    this.props.setPlayer(player);
   }
 
   changeFilters = (filter) => {
+    
     ReactGA.event({
       category: 'Players',
       action: 'Change Filters',
@@ -57,7 +52,7 @@ class Profile extends React.Component {
 
     const {match} = this.props;
     const {player} = match.params;
-    this.props.fetchPlayerStats(player, filter);
+    this.props.changeFilters(player, filter);
   }
 
   render() {
@@ -133,7 +128,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
-      fetchPlayerStats
+      changeFilters,
+      setPlayer
     },
     dispatch
   )

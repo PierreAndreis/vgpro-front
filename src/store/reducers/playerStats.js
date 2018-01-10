@@ -20,6 +20,21 @@ const initialState = {
 
 const playerStats = (state = initialState, action) => {
   switch (action.type) {
+  
+  case "PLAYER/SET_PLAYER_REQUEST": 
+    return {
+      ...state,
+      name: "",
+      status: "loading"
+    }
+
+  case "PLAYER/SET_PLAYER": 
+    return {
+      ...state,
+      name: action.payload,
+      status: "loading"
+    }
+
   case "PLAYER/STATS_FETCH_REQUEST":
     return {
       ...state,

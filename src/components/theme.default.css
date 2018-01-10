@@ -64,6 +64,12 @@
   --overviewLegendsDivColor: rgba(68, 68, 68, 0.473);
   --overviewWinColor: #5DB4F1;
   --overviewLossColor: #F1685D;
+  --overviewPlayerDamageFillBackgroundImage: linear-gradient(-90deg, rgb(243, 165, 92) 0%, rgb(231, 118, 42) 100%);
+  --overviewPlayerDamageFillDamageTakenBackgroundImage: linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%);
+  --overviewPlayerDamageFillHealingBackgroundImage: linear-gradient(-90deg, rgb(110, 243, 92) 0%, rgb(11, 201, 21) 100%);
+  --overviewLegendsDivBeforeBackgroundImage: linear-gradient(-90deg, #FAD961 0%, #F76B1C 100%);
+  --overviewLegendsDamageTakenBeforeBackgroundImage: linear-gradient(-114deg, #FAD961 0%, #E9BC1A 96%) !important;
+  --overviewLegendsHealingDoneBeforeBackgroundImage: linear-gradient(-90deg, rgb(110, 243, 92) 0%, rgb(11, 201, 21) 100%) !important;
 
   --matchPlayersPlayerabColor: #E6C156;
   --matchPlayerHeroBorder: #499BD2;
@@ -78,6 +84,7 @@
   --profileMenuChoicesDivActiveBackground: rgb(230, 230, 230);
 
   --heroesPlayedPlayerKDADetailsSpanDeathsColor: red;
+  --heroesMetaDividerBackground: linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
 
   --playerInfoInfoBorderBottom: #F8F8F8;
   --playerInfoTierBarFillBackground: #F4C338;
@@ -93,6 +100,12 @@
   --recentRolesPlayerRoleBorderBottom: rgba(0, 0, 0, 0.11);
   --recentRolesPlayerRoleStatsKDADeathColor: rgb(199, 0, 0);
   --recentRolesPlayerRoleWRDescColor: #808080;
+
+  --menuHeaderMenuHoverColor: #39393F;
+  --menuMobileButtonColor: #7c7c7c;
+  --menuMobileMenuBackgroundImage: linear-gradient(-180deg, #E6BE3E 0%, #DFA436 100%);
+
+  --skeletonLoadingBackground: linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2));
 
   --background: #ECEEF1;
 
@@ -135,4 +148,32 @@
   --overviewWinColor: blue;
   --overviewLossColor: red;
 
+  --buildsAbilityRowSpan: white;
+  --buildsPlayerNameColor: white;
+  --buildsGroupBorder: #A7A7A7;
+  --buildsLabelBackground: white;
+
+  --profileFiltersColor: white;
+  --profileMenuChoicesDivActiveBackground: black;
+
+  --heroesPlayedPlayerKDADetailsSpanDeathsColor: white;
+  --heroesMetaDividerBackground: linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+
+
+  --playerInfoDetailsNameColor: #EFC317;
+  --playerInfoDetailsDescColor: white;
+  --playerInfoTeamNameColor: white;
+
+  --recentPlayedFriendsEachNameColor: white;
+  --recentPlayedFriendsEachStatsNameColor: white;
+
+  --recentRolesPlayerRoleBorderBottom: rgba(0, 0, 0, 0.11);
+  --recentRolesPlayerRoleStatsKDADeathColor: white;
+  --recentRolesPlayerRoleWRDescColor: white;
+
+  --menuHeaderMenuHoverColor: #39393F;
+  --menuMobileButtonColor: #7c7c7c;
+  --menuMobileMenuBackgroundImage: linear-gradient(-180deg, #E6BE3E 0%, #DFA436 100%);
+
+  --skeletonLoadingBackground: linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2));
 }

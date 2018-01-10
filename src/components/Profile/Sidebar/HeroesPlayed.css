@@ -38,11 +38,11 @@
   font-size: 12px;
   padding-bottom: 2px;
   color: #4A4A4A;
-  color: var(--textColorStats);
+  color: var(--matchStatus);
 }
 .PlayerHero-cs {
   color: grey;
-  color: var(--buildsAbilityRowSpan);
+  color: var(--matchStatus);
   font-size: 14px;
 }
 
@@ -57,11 +57,11 @@
 }
 .PlayerHero-KDA-details {
   color: grey;
-  color: var(--buildsAbilityRowSpan);
+  color: var(--matchStatus);
 }
 .PlayerHero-KDA-details span {
   color: #4A4A4A;;
-  color: var(--textColorStats);
+  color: var(--matchStatus);
   margin:0  5px;
 }
 .PlayerHero-KDA-details span#deaths {

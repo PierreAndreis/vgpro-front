@@ -2,6 +2,7 @@
   display: inline-block;
   border-radius: 2px;
   background: linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2));
+  background: var(--skeletonLoadingBackground);
   animation: card-loading 2s ease infinite;
   background-size: 600% 600%;
   margin-bottom: 1px;

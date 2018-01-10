@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from 'react-router';
 import Match from "./Match";
 
 import _isEqual from "lodash/isEqual";
@@ -19,34 +18,19 @@ const AD_EVERY = 9;
 
 class MatchManager extends React.Component {
 
-
   componentWillReceiveProps(nextProps) {
-    const nextMatch = nextProps.match;
-    const nextPlayer = nextMatch.params.player;
+    const nextPlayer = nextProps.player;
     const nextFilters = nextProps.filters;
 
-    const {match, filters} = this.props;
-    const {player} = match.params;
+    const {player, filters} = this.props;
+    if (nextPlayer === "") return;
 
     if (player === nextPlayer
     && _isEqual(filters, nextFilters)) return;
     else {
-      // if (player !== nextPlayer) {
-      //   console.log("PLAYER CHANGED===", player, nextPlayer);
-      // }
-      // if (!_isEqual(filters, nextFilters)) {
-      //   console.log("FILTERS CHANGED===", filters, nextFilters)
-      // }
       this.props.setPlayerMatches(0, {});
       this.props.fetchPlayerMatches(nextPlayer, 0, nextFilters);
     }
-  }
-
-  componentDidMount() {
-    const {match, filters} = this.props;
-    const {player} = match.params;
-    this.props.setPlayerMatches(0, {});
-    this.props.fetchPlayerMatches(player, 0, filters);
   }
 
   viewMore = (e) => {
@@ -124,7 +108,8 @@ class MatchManager extends React.Component {
 const mapStateToProps = state => {
 
   return {
-    ...state.playerMatches
+    ...state.playerMatches,
+    player: state.playerStats.name
   }
 }
 
@@ -138,7 +123,7 @@ const mapDispatchToProps = dispatch => {
   )
 }
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MatchManager));
+)(MatchManager);

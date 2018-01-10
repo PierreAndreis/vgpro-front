@@ -1,10 +1,18 @@
-export const fetchPlayerStats = (name, filters) => {
+export const setPlayer = (name) => {
   return {
-    type: 'PLAYER/STATS_FETCH_REQUEST',
+    type: 'PLAYER/SET_PLAYER_REQUEST',
+    payload: name,
+  }
+}
+
+export const changeFilters = (name, filters) => {
+  return {
+    type:    'PLAYER/STATS_FETCH_REQUEST',
     payload: name,
     filters: filters
   }
 }
+
 export const fetchPlayerMatches = (name, page, filters = {}) => {
   return {
     type: 'PLAYER/MATCHES_FETCH_REQUEST',

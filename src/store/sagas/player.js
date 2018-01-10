@@ -17,11 +17,11 @@ const defaultFilter = {
 
 export function* setPlayer(action) {
   try {
-    const result = yield call(API.lookupPlayer, action.payload);
-    yield put({type: "PLAYER/SET_PLAYER"         , payload: action.payload});
+    yield call(API.lookupPlayer, action.payload);
+    yield put({type: "PLAYER/SET_PLAYER"         , payload: action.payload, filters: defaultFilter});
     yield put({type: "PLAYER/STATS_FETCH_REQUEST", payload: action.payload, filters: defaultFilter});
  } catch (e) {
-    yield put({type: "PLAYER/STATS_FETCH_FAILED", payload: e.message, filters: action.filters});
+    yield put({type: "PLAYER/STATS_FETCH_FAILED", payload: e.message, filters: defaultFilter});
  }
 }
 
@@ -38,6 +38,7 @@ export function* fetchPlayerStats(action) {
 
 export function* fetchPlayerMatches(action) {
   try {
+
     const playerMatches = yield call(
       API.fetchPlayerMatches, 
       action.payload, 

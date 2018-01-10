@@ -38,7 +38,6 @@ class Profile extends React.Component {
   componentDidMount() {
     const {match} = this.props;
     const {player} = match.params;
-
     this.props.setPlayer(player);
   }
 
@@ -63,6 +62,8 @@ class Profile extends React.Component {
     let title = (
       <Helmet>
         <title>{player}</title>
+        <meta name="ROBOTS" content="INDEX, NOFOLLOW" />
+        <meta name="description" content={`${player} Stats on Vainglory.`} />
       </Helmet>
     );
 

@@ -23,7 +23,15 @@ class MatchManager extends React.Component {
     const nextFilters = nextProps.filters;
 
     const {player, filters} = this.props;
-    if (nextPlayer === "") return;
+    if (nextPlayer === "") {
+      // small hack to turn status to loading whenever changing player
+      // the reason is that nextPlayer turns into "" before turning into the player name
+      // that's because we are doing a /player/:name/find
+      if (this.props.playerMatches[0] && this.props.playerMatches[0].status !== "loading") {
+        this.props.setPlayerMatches(0, {0: {status: "loading"}});
+      }
+      return;
+    }
 
     if (player === nextPlayer
     && _isEqual(filters, nextFilters)) return;

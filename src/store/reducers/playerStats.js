@@ -32,6 +32,7 @@ const playerStats = (state = initialState, action) => {
     return {
       ...state,
       name: action.payload,
+      filters: action.filters,
       status: "loading"
     }
 

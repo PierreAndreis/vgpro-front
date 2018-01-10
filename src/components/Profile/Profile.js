@@ -38,7 +38,6 @@ class Profile extends React.Component {
   componentDidMount() {
     const {match} = this.props;
     const {player} = match.params;
-
     this.props.setPlayer(player);
   }
 

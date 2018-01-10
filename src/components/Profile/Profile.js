@@ -63,6 +63,8 @@ class Profile extends React.Component {
     let title = (
       <Helmet>
         <title>{player}</title>
+        <meta name="ROBOTS" content="INDEX, NOFOLLOW" />
+        <meta name="description" content={`${player} Stats on Vainglory.`} />
       </Helmet>
     );
 

@@ -112,3 +112,48 @@
   text-align: center;
   color: rgba(130, 130, 130, 1);
 }
+
+.Lead5-Selector {
+  margin-left: auto;
+  width: 150px;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Lead5-Selector-Icon {
+  cursor: pointer;
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 300ms;
+}
+
+.Lead5-Selector-Icon:hover {
+  background-color: rgba(0, 0, 0, 0.055);
+}
+
+.Lead5-Selector-Icon.active {
+  background-color: #E3B63B;
+}
+
+.Selector-Ranked {
+  background-image: url("/icons/winrate_.svg");
+}
+
+.Selector-Ranked.active {
+  background-image: url("/icons/winrate.svg");
+}
+
+.Selector-Blitz {
+  background-image: url("/icons/pickrate_.svg");
+  background-size: 90%;
+}
+
+.Selector-Blitz.active {
+  background-image: url("/icons/pickrate.svg");
+}

@@ -11,6 +11,11 @@ import ErrorScreen                          from "./../../common/ErrorScreen";
 import LeadMember from "./LeadMember";
 import "./Lead5.css";
 
+const TYPES = [
+    { value: "ranked", label: "Ranked", selector: "Selector-Ranked" },
+    { value: "blitz" , label: "Blitz" , selector: "Selector-Blitz"  },
+];
+
 const REGIONS = [
   "all",
   "na",
@@ -27,7 +32,7 @@ class Lead5 extends React.Component {
 
     this.state = {
       status: "loading",
-      mode: "ranked",
+      mode: TYPES[0],
       region: "all", /* all, eu, na, sg, ea, cn */
       payload: SkeletonPayload(4)
     }
@@ -38,6 +43,13 @@ class Lead5 extends React.Component {
     if (this.state.region === region) return;
     this.setState({
       region: region,
+    }, this.fetch)
+  }
+
+  changeMode = (mode) => (e) => {
+    if (this.state.mode === mode) return;
+    this.setState({
+        mode,
     }, this.fetch)
   }
 
@@ -56,7 +68,7 @@ class Lead5 extends React.Component {
     });
 
     this.cancel = Utils.makeCancelable(
-      fetchLead5(mode, server_region, {limit: 4}),
+      fetchLead5(mode.value, server_region, {limit: 4}),
       (res) => this.setState({ status: "loaded", payload: res }),
       (e) => this.setState({ status: "error", payload: e })
     );
@@ -70,6 +82,8 @@ class Lead5 extends React.Component {
     const {payload, status} = this.state;
     let content = [];
 
+    payload.mode = this.state.mode;
+
     if (status === "error" || !payload) content = <ErrorScreen err={payload} />
     else {  
       _forEach(payload, (each, index) => {
@@ -81,7 +95,19 @@ class Lead5 extends React.Component {
 
     return (
       <Box className="Lead5-box animated fadeInUp">
-        <BoxTitle>Leaderboard</BoxTitle>
+        <BoxTitle>{this.state.mode.label} Leaderboard
+          <div className="Lead5-Selector">
+              {TYPES.map(type => (
+                  <div key={type.value}
+                       className={`
+                  Lead5-Selector-Icon
+                  ${type.selector}
+                  ${type.selector === this.state.mode.selector ? "active" : ""}`}
+                       onClick={this.changeMode(type)}
+                  />
+              ))}
+          </div>
+        </BoxTitle>
         <BoxBody className="Lead5-body"> 
         <div className="Box_RegionSelect">
             {

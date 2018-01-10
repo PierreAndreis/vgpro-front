@@ -19,7 +19,6 @@
   --buttonHover: #f7d05b;
   --buttonDisabled: #d3d2d3;
 
-
   --heroesMetaTopImageBackground: rgb(73, 73, 73);
   --heroesMetaTopRank1Background: #E8A827;
   --heroesMetaTopRank2Background: #9B9B9B;
@@ -131,12 +130,12 @@
   --textPrimaryHighlight: rgb(201, 201, 201);
   --textSecondary: #ffffff;
 
-  --backgroundPrimary: #222224;
-  --backgroundSecondary: #323234;
-  --backgroundPrimary-Odd: rgb(38, 38, 43);
+  --backgroundPrimary: #1B2937;
+  --backgroundSecondary: #1C2936;
+  --backgroundPrimary-Odd: #333E54;
   --backgroundHover: rgb(51, 51, 51);
   
-  --background: #2B2B2D;
+  --background: #141E26;
   --boxShadowPrimary: rgba(63, 63, 63, 0.445);
   --boxShadowSecondary: rgba(0, 14, 77, 0.07);
 
@@ -145,8 +144,6 @@
   --overviewPlayerCS: white;
   --overviewPlayerRankPointBorder: #E6BE3D;
   --overviewLegendsDivColor: white;
-  --overviewWinColor: blue;
-  --overviewLossColor: red;
 
   --buildsAbilityRowSpan: white;
   --buildsPlayerNameColor: white;

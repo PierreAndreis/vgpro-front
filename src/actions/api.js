@@ -35,3 +35,7 @@ export const fetchMatchTelemetry = async (matchId, region) => {
   
   return await API.matchTelemetry(matchId, region);
 }
+
+export const fetchLeaderboards = async (region) => {
+  return await API.getLeaders(region);
+}

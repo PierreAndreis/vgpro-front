@@ -80,7 +80,7 @@ const Loaded = ({data}) => {
   return (
      <div className="PlayerRole">
       <div className="PlayerRole-Image">
-        <PieChart data={chartData}>
+        <PieChart data={chartData} width={80}>
           <div className={`PlayerRole-Icon ${lowerName}`}/>
         </PieChart>
       </div>

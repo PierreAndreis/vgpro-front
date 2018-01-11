@@ -14,5 +14,7 @@
     ],
     "theme_color": "#ffffff",
     "background_color": "#ffffff",
-    "display": "standalone"
+    "start_url": "./?utm_source=web_app",
+    "display": "fullscreen",
+    "orientation": "portrait"
 }

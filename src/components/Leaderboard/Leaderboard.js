@@ -10,6 +10,7 @@ import AssetLoader from "./../common/AssetLoader";
 import ErrorScreen from "./../common/ErrorScreen";
 import Box         from "./../common/Box";
 import {KDA}       from "./../common/ColoredValues";
+import {VPR}      from "./../common/Ratings";
 
 import {LEADERBOARD_TYPES, REGIONS} from "./../../config/constants";
 
@@ -17,77 +18,125 @@ import Utils from "./../../utils";
 
 import "./Leaderboard.css";
 
-const kpGraph = [
-  { value: 90, fill: 'url(#orange)' }
-];
+const PER_PAGE = 10;
 
-const LeadMember = ({status, data}) => (
-  <div className="Leaderboard-Member">
+// Small helper to modify a certain page easily
+const modifyPage = (page, newState) => (prevState) => {
+  const newPage = [...prevState.pages];
+  newPage[page] = newState;
 
-    <div className="Leaderboard-Member-Position">
-      <SkeletonWrapper status={status} width="20px" height="35px">
-        { () => data.position}
+  return {
+    pages: newPage
+  }
+}
+
+
+const LeadMember = ({status, data}) => {
+
+  // const winRate = (data.winRate) ? parseFloat(data.winRate) : 0;
+
+  let graph;
+
+  if (data && data.games && data.wins) {
+    graph = [
+      { value: data.wins, fill: 'url(#blue)'},
+      { value: data.games - data.wins, fill: 'url(#red)'}
+    ]
+  }
+
+  let heroes = [];
+
+  for (let i = 0; i < 5; i++) {
+    const hero = data && data.topHeroes && data.topHeroes[i];
+    heroes.push(<AssetLoader key={i} type="heroes" name={hero} className="Leaderboard-Member-Hero" />)
+  }
+
+  return (
+    <div className="Leaderboard-Member">
+
+      <div className="Leaderboard-Member-Position">
+        <SkeletonWrapper status={status} width="20px" height="35px">
+          { () => data.position}
+        </SkeletonWrapper>
+      </div>
+
+      <SkeletonWrapper status={status} width="35px" height="45px">
+        {() => <AssetLoader type="tiers" name={data.tier} className="Leaderboard-Member-Tier" />}
       </SkeletonWrapper>
-    </div>
 
-    <SkeletonWrapper status={status} width="35px" height="45px">
-      {() => <AssetLoader type="tiers" name={data.tier} className="Leaderboard-Member-Tier" />}
-    </SkeletonWrapper>
+      <div className="Leaderboard-Member-Info">
+        <div className="Leaderboard-Member-Name">
+          <SkeletonWrapper status={status} >
+            {() => data.name}
+          </SkeletonWrapper>
+        </div>
+        <span>
+          <SkeletonWrapper status={status} width="35px">
+            {() => <span>KDA <KDA kda={data.kda}/></span>}
+          </SkeletonWrapper>
+        </span>
+      </div>
 
-    <div className="Leaderboard-Member-Info">
-      <div className="Leaderboard-Member-Name">
-        <SkeletonWrapper status={status} >
-          {() => data.name}
+      <div className="Leaderboard-Member-Score">
+        <SkeletonWrapper status={status} width="45px">
+          {() => <div><VPR value={data.points} /></div>}
         </SkeletonWrapper>
+        <span>Points</span>
       </div>
-      <span>
-        <SkeletonWrapper status={status} width="35px">
-          {() => <span>KDA <KDA kda={data.kda}/></span>}
+
+      <div className="Leaderboard-Member-Stats">
+        <div className="Leaderboard-Member-Chart">
+        <SkeletonWrapper status={status} width="55px" height="55px" borderRadius="50%">
+          {() => (
+            <HalfPieChart width={55} data={graph}>
+              <span>{data.winRate}</span>
+            </HalfPieChart>
+          )}
         </SkeletonWrapper>
-      </span>
-    </div>
+        </div>
+        <div className="Leaderboard-Member-Rates">
 
-    <div className="Leaderboard-Member-Score">
-      <div>1323</div>
-      <span>Points</span>
-    </div>
+          <div>
+            <span className="Rate-Win">W</span>
+            <SkeletonWrapper status={status} width="25px" height="10px">
+              {() => data.wins}
+            </SkeletonWrapper>
+          </div>
 
-    <div className="Leaderboard-Member-Stats">
-      <div className="Leaderboard-Member-Chart">
-        <HalfPieChart width={55} data={kpGraph}>
-          <span>32%</span>
-        </HalfPieChart>
+          <div>
+            <span className="Rate-Loss">L</span>
+            <SkeletonWrapper status={status} width="25px" height="10px">
+              {() => data.games - data.wins}
+            </SkeletonWrapper>
+          </div>
+        </div>
+
       </div>
-      <div className="Leaderboard-Member-Rates">
-        <div><span className="Rate-Win">W</span>1500</div>
-        <div><span className="Rate-Loss">L</span>250</div>
+
+      <div className="Leaderboard-Member-Heroes">
+        {heroes}
       </div>
-    </div>
 
-    <div className="Leaderboard-Member-Heroes">
-      <AssetLoader type="heroes" name="Catherine" className="Leaderboard-Member-Hero" />
-      <AssetLoader type="heroes" name="Catherine" className="Leaderboard-Member-Hero" />
-      <AssetLoader type="heroes" name="Catherine" className="Leaderboard-Member-Hero" />
-      <AssetLoader type="heroes" name="" className="Leaderboard-Member-Hero" />
-      <AssetLoader type="heroes" name="" className="Leaderboard-Member-Hero" />
     </div>
-
-  </div>
-)
+  );
+}
 
 class Leaderboard extends React.Component {
 
-  constructor() {
-    super();
-
-    this.state = {
-      status: "loading",
+  initialState = () => {
+    return {
       mode: LEADERBOARD_TYPES[0],
-      region: "all", 
-      payload: SkeletonPayload(10)
+      region: "all",
+      pages: [
+        {
+          status: "loading",
+          payload: SkeletonPayload(PER_PAGE)
+        }
+      ]
     }
-
   }
+
+  state = this.initialState();
 
   changeRegion = (region) => (e) => {
     if (this.state.region === region) return;
@@ -104,24 +153,43 @@ class Leaderboard extends React.Component {
   }
 
   componentDidMount() {
-    this.fetch();
+    this.setState(this.initialState());
+    this.fetch(0);
   }
 
-  async fetch() {
-    
+  async fetch(page) {
     let {mode, region} = this.state;
-
     const server_region = (region === "sea") ? "sg" : region;
+    const offset = page * PER_PAGE;
+    const limit = PER_PAGE;
 
-    this.setState({
-      status: "loading"
-    });
+    this.setState(modifyPage(page, {
+        status: "loading",
+        payload: SkeletonPayload(PER_PAGE)
+      })
+    );
+    
 
     this.cancel = Utils.makeCancelable(
-      fetchLeaderboard(mode.value, server_region, {limit: 10, offset: 1000}),
-      (res) => this.setState({ status: "loaded", payload: res }),
-      (e) => this.setState({ status: "error", payload: e })
+      fetchLeaderboard(mode.value, server_region, {limit, offset}),
+      (res) => this.setState(modifyPage(page, {status: "ready", payload: res})),
+      (e) => this.setState(modifyPage(page, {status: "error", payload: e}))
     );
+  }
+
+  nextPage = (e) => {
+    if (e.target.id === "disabled") return;
+    const {pages} = this.state;
+    const nextPage = pages.length;
+    this.fetch(nextPage);
+  }
+
+  prevPage = (e) => {
+    if (e.target.id === "disabled") return;
+    this.setState((prevState) => {
+      prevState.pages.pop();
+      return prevState;
+    })
   }
 
   componentWillUnmount() {
@@ -130,14 +198,29 @@ class Leaderboard extends React.Component {
 
   render() {
 
-    const {payload, status} = this.state;
+    const {pages} = this.state;
     let content = [];
 
-    if (status === "error" || !payload) content = <ErrorScreen err={payload} />
+    let anyError   = pages.find((s) => s.status === "error");
+    let anyLoading = pages.find(s => s.status === "loading");
+    let anyEmpty   = pages.find(s => s.payload.length < 1);
+    let onePage    = pages.length === 1;
+
+    let nextDisabled = anyError || anyLoading || anyEmpty;
+    let prevDisabled = anyError || anyLoading || onePage;
+
+
+    if (anyError) content = <ErrorScreen err={anyError.payload} />
     else {  
-      _forEach(payload, (each, index) => {
-        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={each} mode={this.state.mode.value} />);
-        index++;
+      _forEach(pages, (page) => {
+        page.payload.forEach((each, index) => {
+          content.push(
+            <LeadMember key={`${index} - ${each.name}`} 
+                        status={page.status} 
+                        data={each} 
+                        mode={this.state.mode.value} 
+                        />);
+        });
       });
     }
 
@@ -148,13 +231,16 @@ class Leaderboard extends React.Component {
         </Helmet>
         <div className="wrap Leaderboard-wrap">
           <Box.wrap className="Leaderboard-box">
-            <div className="Leaderboard-filters" />
-            <Box.body>
+            <Box.title>Lul</Box.title>
+            <Box.body className="Leaderboard-body">
               <div className="Leaderboard-Members">
                 {content}
-              
               </div>
             </Box.body>
+            <Box.action>
+              <div className="button" onClick={this.prevPage} id={prevDisabled ? "disabled" : ""}>View Less</div>
+              <div className="button" onClick={this.nextPage} id={nextDisabled ? "disabled" : ""}>View More</div>
+            </Box.action>
           </Box.wrap>
         </div>
       

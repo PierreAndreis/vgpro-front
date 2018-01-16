@@ -1,5 +1,6 @@
 import React    from "react";
 import Helmet   from "react-helmet";
+import {Link}   from "react-router-dom";
 import _forEach from "lodash/forEach";
 
 import {fetchLeaderboard} from "./../../actions/api";
@@ -10,7 +11,7 @@ import AssetLoader from "./../common/AssetLoader";
 import ErrorScreen from "./../common/ErrorScreen";
 import Box         from "./../common/Box";
 import {KDA}       from "./../common/ColoredValues";
-import {VPR}      from "./../common/Ratings";
+import {VPR}       from "./../common/Ratings";
 
 import {LEADERBOARD_TYPES, REGIONS} from "./../../config/constants";
 
@@ -33,16 +34,13 @@ const modifyPage = (page, newState) => (prevState) => {
 
 const LeadMember = ({status, data}) => {
 
-  // const winRate = (data.winRate) ? parseFloat(data.winRate) : 0;
+  const winRate = (data.winRate) ? parseFloat(data.winRate) : 0;
 
-  let graph;
+  const link = (!data.name) ? window.location : Utils.goToPlayer(data.name);
 
-  if (data && data.games && data.wins) {
-    graph = [
-      { value: data.wins, fill: 'url(#blue)'},
-      { value: data.games - data.wins, fill: 'url(#red)'}
-    ]
-  }
+  let graph = [
+      { value: winRate, fill: 'url(#orange)'}
+  ]
 
   let heroes = [];
 
@@ -52,7 +50,7 @@ const LeadMember = ({status, data}) => {
   }
 
   return (
-    <div className="Leaderboard-Member">
+    <Link className="Leaderboard-Member" to={link}>
 
       <div className="Leaderboard-Member-Position">
         <SkeletonWrapper status={status} width="20px" height="35px">
@@ -89,7 +87,7 @@ const LeadMember = ({status, data}) => {
         <SkeletonWrapper status={status} width="55px" height="55px" borderRadius="50%">
           {() => (
             <HalfPieChart width={55} data={graph}>
-              <span>{data.winRate}</span>
+              <span>{winRate}</span>
             </HalfPieChart>
           )}
         </SkeletonWrapper>
@@ -117,22 +115,24 @@ const LeadMember = ({status, data}) => {
         {heroes}
       </div>
 
-    </div>
+    </Link>
   );
 }
 
 class Leaderboard extends React.Component {
 
+  initialPage = () => (
+    {
+          status: "loading",
+          payload: SkeletonPayload(PER_PAGE)
+    }
+  )
+
   initialState = () => {
     return {
       mode: LEADERBOARD_TYPES[0],
       region: "all",
-      pages: [
-        {
-          status: "loading",
-          payload: SkeletonPayload(PER_PAGE)
-        }
-      ]
+      pages: [this.initialPage()]
     }
   }
 
@@ -140,21 +140,28 @@ class Leaderboard extends React.Component {
 
   changeRegion = (region) => (e) => {
     if (this.state.region === region) return;
+    // We have to reset all the pages
     this.setState({
-      region: region,
-    }, this.fetch)
+      region,
+      pages: [this.initialPage()]
+    }, () => this.fetch(0))
   }
 
   changeMode = (mode) => (e) => {
     if (this.state.mode === mode) return;
+    // We have to reset all the pages
     this.setState({
-        mode,
-    }, this.fetch)
+      mode,
+      pages: [this.initialPage()]
+    }, () => this.fetch(0))
   }
 
   componentDidMount() {
-    this.setState(this.initialState());
     this.fetch(0);
+  }
+
+  componentWillUnmount() {
+    this.cancel();
   }
 
   async fetch(page) {
@@ -163,12 +170,8 @@ class Leaderboard extends React.Component {
     const offset = page * PER_PAGE;
     const limit = PER_PAGE;
 
-    this.setState(modifyPage(page, {
-        status: "loading",
-        payload: SkeletonPayload(PER_PAGE)
-      })
-    );
-    
+    // Create a loading page
+    this.setState(modifyPage(page, this.initialPage()));
 
     this.cancel = Utils.makeCancelable(
       fetchLeaderboard(mode.value, server_region, {limit, offset}),
@@ -190,10 +193,6 @@ class Leaderboard extends React.Component {
       prevState.pages.pop();
       return prevState;
     })
-  }
-
-  componentWillUnmount() {
-    this.cancel();
   }
 
   render() {
@@ -231,7 +230,7 @@ class Leaderboard extends React.Component {
         </Helmet>
         <div className="wrap Leaderboard-wrap">
           <Box.wrap className="Leaderboard-box">
-            <Box.title>Lul</Box.title>
+            <Box.title><div onClick={this.changeRegion('na')}>Lul</div></Box.title>
             <Box.body className="Leaderboard-body">
               <div className="Leaderboard-Members">
                 {content}

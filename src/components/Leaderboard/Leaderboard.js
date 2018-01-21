@@ -1,17 +1,13 @@
 import React    from "react";
 import Helmet   from "react-helmet";
-import {Link}   from "react-router-dom";
 import _forEach from "lodash/forEach";
 
 import {fetchLeaderboard} from "./../../actions/api";
-
-import HalfPieChart from "./../common/Charts/PieChart";
-import {SkeletonPayload, SkeletonWrapper} from "./../common/Skeleton";
-import AssetLoader from "./../common/AssetLoader";
+import {SkeletonPayload} from "./../common/Skeleton";
 import ErrorScreen from "./../common/ErrorScreen";
 import Box         from "./../common/Box";
-import {KDA}       from "./../common/ColoredValues";
-import {VPR}       from "./../common/Ratings";
+
+import LeadMember, { LeaderHeader } from "./LeadMember";
 
 import {LEADERBOARD_TYPES, REGIONS} from "./../../config/constants";
 
@@ -29,95 +25,7 @@ const modifyPage = (page, newState) => (prevState) => {
   return {
     pages: newPage
   }
-}
-
-
-const LeadMember = ({status, data}) => {
-
-  const winRate = (data.winRate) ? parseFloat(data.winRate) : 0;
-
-  const link = (!data.name) ? window.location : Utils.goToPlayer(data.name);
-
-  let graph = [
-      { value: winRate, fill: 'url(#orange)'}
-  ]
-
-  let heroes = [];
-
-  for (let i = 0; i < 5; i++) {
-    const hero = data && data.topHeroes && data.topHeroes[i];
-    heroes.push(<AssetLoader key={i} type="heroes" name={hero} className="Leaderboard-Member-Hero" />)
-  }
-
-  return (
-    <Link className="Leaderboard-Member" to={link}>
-
-      <div className="Leaderboard-Member-Position">
-        <SkeletonWrapper status={status} width="20px" height="35px">
-          { () => data.position}
-        </SkeletonWrapper>
-      </div>
-
-      <SkeletonWrapper status={status} width="35px" height="45px">
-        {() => <AssetLoader type="tiers" name={data.tier} className="Leaderboard-Member-Tier" />}
-      </SkeletonWrapper>
-
-      <div className="Leaderboard-Member-Info">
-        <div className="Leaderboard-Member-Name">
-          <SkeletonWrapper status={status} >
-            {() => data.name}
-          </SkeletonWrapper>
-        </div>
-        <span>
-          <SkeletonWrapper status={status} width="35px">
-            {() => <span>KDA <KDA kda={data.kda}/></span>}
-          </SkeletonWrapper>
-        </span>
-      </div>
-
-      <div className="Leaderboard-Member-Score">
-        <SkeletonWrapper status={status} width="45px">
-          {() => <div><VPR value={data.points} /></div>}
-        </SkeletonWrapper>
-        <span>Points</span>
-      </div>
-
-      <div className="Leaderboard-Member-Stats">
-        <div className="Leaderboard-Member-Chart">
-        <SkeletonWrapper status={status} width="55px" height="55px" borderRadius="50%">
-          {() => (
-            <HalfPieChart width={55} data={graph}>
-              <span>{winRate}</span>
-            </HalfPieChart>
-          )}
-        </SkeletonWrapper>
-        </div>
-        <div className="Leaderboard-Member-Rates">
-
-          <div>
-            <span className="Rate-Win">W</span>
-            <SkeletonWrapper status={status} width="25px" height="10px">
-              {() => data.wins}
-            </SkeletonWrapper>
-          </div>
-
-          <div>
-            <span className="Rate-Loss">L</span>
-            <SkeletonWrapper status={status} width="25px" height="10px">
-              {() => data.games - data.wins}
-            </SkeletonWrapper>
-          </div>
-        </div>
-
-      </div>
-
-      <div className="Leaderboard-Member-Heroes">
-        {heroes}
-      </div>
-
-    </Link>
-  );
-}
+};
 
 class Leaderboard extends React.Component {
 
@@ -200,9 +108,9 @@ class Leaderboard extends React.Component {
     const {pages} = this.state;
     let content = [];
 
-    let anyError   = pages.find((s) => s.status === "error");
+    let anyError   = pages.find(s => s.status === "error"  );
     let anyLoading = pages.find(s => s.status === "loading");
-    let anyEmpty   = pages.find(s => s.payload.length < 1);
+    let anyEmpty   = pages.find(s => s.payload.length < 1  );
     let onePage    = pages.length === 1;
 
     let nextDisabled = anyError || anyLoading || anyEmpty;
@@ -221,7 +129,7 @@ class Leaderboard extends React.Component {
                         />);
         });
       });
-    }
+    };
 
     return (
       <React.Fragment>
@@ -230,9 +138,31 @@ class Leaderboard extends React.Component {
         </Helmet>
         <div className="wrap Leaderboard-wrap">
           <Box.wrap className="Leaderboard-box">
-            <Box.title><div onClick={this.changeRegion('na')}>Lul</div></Box.title>
+            <Box.title>Leaderboard</Box.title>
             <Box.body className="Leaderboard-body">
+              <div className="Leaderboard-Filters">
+                <div className="Leaderboard-Filters-category">
+                  <h2>Region</h2>
+                  {
+                    REGIONS.map(region => <div key={region} 
+                      onClick={this.changeRegion(region)} 
+                      className={this.state.region === region ? "active" : ""}>
+                      {region}</div>)
+                  }
+                </div>
+
+                <div className="Leaderboard-Filters-category">
+                  <h2>Game Mode</h2>
+                  {
+                    LEADERBOARD_TYPES.map(type => <div key={type.label} 
+                      onClick={this.changeMode(type)}
+                      className={this.state.mode.label === type.label ? "active" : ""}>
+                      {type.label}</div>)
+                  }
+                </div>
+              </div>
               <div className="Leaderboard-Members">
+                  <LeaderHeader />
                 {content}
               </div>
             </Box.body>

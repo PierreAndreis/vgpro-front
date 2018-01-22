@@ -1,7 +1,8 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import _forEach from "lodash/forEach";
 
-import {fetchLead5}                         from "./../../../actions/api";
+import {fetchLeaderboard} from "./../../../actions/api";
 
 import {SkeletonPayload} from "../../common/Skeleton";
 import Utils from "./../../../utils";
@@ -24,7 +25,7 @@ const REGIONS = [
   "sea",
   "sa",
   "cn"
-]
+];
 
 class Lead5 extends React.Component {
   constructor() {
@@ -68,7 +69,7 @@ class Lead5 extends React.Component {
     });
 
     this.cancel = Utils.makeCancelable(
-      fetchLead5(mode.value, server_region, {limit: 4}),
+      fetchLeaderboard(mode.value, server_region, {limit: 4}),
       (res) => this.setState({ status: "loaded", payload: res }),
       (e) => this.setState({ status: "error", payload: e })
     );
@@ -124,7 +125,11 @@ class Lead5 extends React.Component {
             {content}
          </div>
         </BoxBody>
-        <BoxActions/>
+        <BoxActions>
+            <Link to={"/leaderboard"}>
+              <div className="button">More</div>
+            </Link>
+        </BoxActions>
       </Box>
      
     )

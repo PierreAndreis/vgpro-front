@@ -7,7 +7,7 @@ export const fetchProFeed = async () => {
   return await API.getProFeed();
 }
 
-export const fetchLead5 = async (mode, region, filterArgs) => {
+export const fetchLeaderboard = async (mode, region, filterArgs) => {
   /** This is not a redux action */
   
   return await API.getLead5(mode, region, filterArgs);

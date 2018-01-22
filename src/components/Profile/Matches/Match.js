@@ -75,12 +75,12 @@ const PlayerTeam = ({player}) => (
   </div>
 )
 
-class Loaded extends React.Component {
+class Loaded extends React.PureComponent {
 
   state = {
     details: false
-  }
-
+  } 
+  
   handleOpen = (e) => {
     if (this.avoid.contains(e.target)) return;
 

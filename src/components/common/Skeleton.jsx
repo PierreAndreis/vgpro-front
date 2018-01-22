@@ -21,8 +21,9 @@ Skeleton.defaultProps = {
   borderRadius: "5px"
 }
 
+
 const SkeletonContainer = (Loading, Loaded) => {
-  return class extends React.Component {
+  return class extends React.PureComponent {
     render() {
       if (this.props.status === "loading") return <Loading {...this.props} />;
       else return <Loaded {...this.props}/>
@@ -30,9 +31,12 @@ const SkeletonContainer = (Loading, Loaded) => {
   }
 }
 
-const SkeletonWrapper = ({children, status, ...props}) => {
-  if (status === "loading") return <Skeleton {...props} />
-  else return (children())
+class SkeletonWrapper extends React.PureComponent {
+  render() {
+    const {children, status, ...props} = this.props;
+    if (status === "loading") return <Skeleton {...props} />
+    else return (children())
+  }
 }
 
 const SkeletonPayload = (number) => {

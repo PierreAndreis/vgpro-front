@@ -17,7 +17,7 @@ const Profile     = AsyncContainer(() =>  import('./Profile/Profile'));
 // const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard'));
 
 const Teams       = AsyncContainer(() =>  import('./common/Soon'));
-const Leaderboard = AsyncContainer(() =>  import('./common/Soon'));
+const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard.js'));
 const Heroes      = AsyncContainer(() =>  import('./common/Soon'));
 
 // then our route config

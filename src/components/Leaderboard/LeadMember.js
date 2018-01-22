@@ -49,7 +49,7 @@ class LeadMember extends React.PureComponent {
               <div className="Leaderboard-Member-Info">
                 <div className="Leaderboard-Member-Name">
                   <SkeletonWrapper status={status} width={`${Math.floor(Math.random() * 60) + 40}px`} height="15px">
-                    {() => data.name}
+                    {() => <div>{data.name} <span>{data.region}</span></div>}
                   </SkeletonWrapper>
                 </div>
                 <span>

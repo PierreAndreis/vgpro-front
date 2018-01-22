@@ -52,7 +52,7 @@ const Abilities = ({name, levels}) => (
   </div>
 )
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
 
   state = {
     playerLoaded: "",

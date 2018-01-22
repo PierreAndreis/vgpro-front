@@ -57,6 +57,7 @@ class MatchDetails extends React.Component {
   }
 
   changeTab = (tab) => (e) => {
+    if (this.state.tab === tab) return;
     this.setState({
       tab: tab
     })

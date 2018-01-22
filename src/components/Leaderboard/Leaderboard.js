@@ -5,9 +5,8 @@ import _forEach from "lodash/forEach";
 import {fetchLeaderboard} from "./../../actions/api";
 import {SkeletonPayload} from "./../common/Skeleton";
 import ErrorScreen from "./../common/ErrorScreen";
-import Box         from "./../common/Box";
 
-import LeadMember, { LeaderHeader } from "./LeadMember";
+import LeadMember from "./LeadMember";
 
 import {LEADERBOARD_TYPES, REGIONS} from "./../../config/constants";
 
@@ -137,42 +136,38 @@ class Leaderboard extends React.Component {
           <title>Leaderboards</title>
         </Helmet>
         <div className="wrap Leaderboard-wrap">
-          <Box.wrap className="Leaderboard-box">
-            <Box.title>Leaderboard</Box.title>
-            <Box.body className="Leaderboard-body">
-              <div className="Leaderboard-Filters">
-                <div className="Leaderboard-Filters-category">
-                  <h2>Region</h2>
-                  {
-                    REGIONS.map(region => <div key={region} 
-                      onClick={this.changeRegion(region)} 
-                      className={this.state.region === region ? "active" : ""}>
-                      {region}</div>)
-                  }
-                </div>
+          <div className="Leaderboard-box">
+            <div className="Leaderboard-Filters">
+              <div className="Leaderboard-Filters-category">
+                <h2>Region</h2>
+                {
+                  REGIONS.map(region => <div key={region} 
+                    onClick={this.changeRegion(region)} 
+                    className={this.state.region === region ? "active" : ""}>
+                    {region}</div>)
+                }
+              </div>
 
-                <div className="Leaderboard-Filters-category">
-                  <h2>Game Mode</h2>
-                  {
-                    LEADERBOARD_TYPES.map(type => <div key={type.label} 
-                      onClick={this.changeMode(type)}
-                      className={this.state.mode.label === type.label ? "active" : ""}>
-                      {type.label}</div>)
-                  }
-                </div>
+              <div className="Leaderboard-Filters-category">
+                <h2>Game Mode</h2>
+                {
+                  LEADERBOARD_TYPES.map(type => <div key={type.label} 
+                    onClick={this.changeMode(type)}
+                    className={this.state.mode.label === type.label ? "active" : ""}>
+                    {type.label}</div>)
+                }
               </div>
-              <div className="Leaderboard-Members">
-                  <LeaderHeader />
-                {content}
-              </div>
-            </Box.body>
-            <Box.action>
+            </div>
+            
+            <div className="Leaderboard-Members">
+              {content}
+            </div>
+            <div className="Leaderboard-buttons">
               <div className="button" onClick={this.prevPage} id={prevDisabled ? "disabled" : ""}>View Less</div>
               <div className="button" onClick={this.nextPage} id={nextDisabled ? "disabled" : ""}>View More</div>
-            </Box.action>
-          </Box.wrap>
+            </div>
+          </div>
         </div>
-      
       </React.Fragment>
     )
   }

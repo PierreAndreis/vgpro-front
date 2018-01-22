@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import _forEach from "lodash/forEach";
 
 import {fetchLeaderboard} from "./../../../actions/api";
@@ -124,7 +125,11 @@ class Lead5 extends React.Component {
             {content}
          </div>
         </BoxBody>
-        <BoxActions/>
+        <BoxActions>
+            <Link to={"/leaderboard"}>
+              <div className="button">More</div>
+            </Link>
+        </BoxActions>
       </Box>
      
     )

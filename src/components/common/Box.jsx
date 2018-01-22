@@ -2,62 +2,70 @@ import React from "react";
 
 import "./Box.css"
 
-export const Box = (props) => {
+export class Box extends React.PureComponent {
+  render () {
+    const props = this.props;
+    let style = {};
+    const classNames = ["box__card"]
 
-  let style = {};
-  const classNames = ["box__card"]
+    if (props.style) {
+      style = props.style;
+    }
 
-  if (props.style) {
-    style = props.style;
-  }
+    if (props.className) {
+      classNames.push(props.className);
+    }
 
-  if (props.className) {
-    classNames.push(props.className);
-  }
+    return (
+        <div className={classNames.join(" ")} style={style} >
+          {props.children}
+        </div>
+      )
+    }
+}
 
-  return (
-      <div className={classNames.join(" ")} style={style} >
+export class BoxTitle extends React.PureComponent {
+  render () {
+    const props = this.props;
+    let style = {};
+    const classNames = ["box__card-Title"];
+
+    if (props.style) {
+      style = props.style;
+    }
+
+    if (props.className) {
+      classNames.push(props.className);
+    }
+
+    return (
+      <div className={classNames.join(" ")} style={style}>
         {props.children}
       </div>
     )
+  }
 }
 
-export const BoxTitle = (props) => {
-  let style = {};
-  const classNames = ["box__card-Title"];
+export class BoxBody extends React.PureComponent {
+  render () {
+    const props = this.props;
+    let style = {};
+    const classNames = ["box__card-Body",];
 
-  if (props.style) {
-    style = props.style;
+    if (props.style) {
+      style = props.style;
+    }
+
+    if (props.className) {
+      classNames.push(props.className);
+    }
+
+    return (
+      <div className={classNames.join(" ")} style={style}>
+        {props.children}
+      </div>
+    )
   }
-
-  if (props.className) {
-    classNames.push(props.className);
-  }
-
-  return (
-    <div className={classNames.join(" ")} style={style}>
-      {props.children}
-    </div>
-  )
-}
-
-export const BoxBody = (props) => {
-  let style = {};
-  const classNames = ["box__card-Body",];
-
-  if (props.style) {
-    style = props.style;
-  }
-
-  if (props.className) {
-    classNames.push(props.className);
-  }
-
-  return (
-    <div className={classNames.join(" ")} style={style}>
-      {props.children}
-    </div>
-  )
 }
 
 export const BoxActions = (props) => {

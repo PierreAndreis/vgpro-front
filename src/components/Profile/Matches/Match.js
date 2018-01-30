@@ -54,8 +54,12 @@ const Loading = () => {
               <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
               <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
               <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
+              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
+              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
             </div>
             <div className="PlayerMatch-Players-Team">
+              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
+              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
               <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
               <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
               <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
@@ -105,10 +109,16 @@ class Loaded extends React.PureComponent {
 
     let items = [];
 
+    // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
+    let itemsWithout5v5Default = me.items;
+    if (gameMode.includes("5v5")) {
+      itemsWithout5v5Default = me.items.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
+    }
+
     for (let i = 0; i < 6; i++) {
       let itemName;
-      if (me.items[i]) {
-        itemName = me.items[i];
+      if (itemsWithout5v5Default[i]) {
+        itemName = itemsWithout5v5Default[i];
       }
 
       items.push(<AssetLoader key={i} type="items" name={itemName} className="PlayerMatch-Item" />);
@@ -173,7 +183,7 @@ class Loaded extends React.PureComponent {
           </div>
         </Box.body>
       </Box.wrap>
-      {this.state.details && <MatchDetails matchId={id} region={shardId} playerName={me.name}/>}
+      {this.state.details && <MatchDetails matchId={id} region={shardId} playerName={me.name} gameMode={gameMode}/>}
     </React.Fragment>
     )
 

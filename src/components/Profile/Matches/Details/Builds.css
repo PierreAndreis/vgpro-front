@@ -155,6 +155,7 @@
   width: 30px;
   height: 30px;
   background-size: 100%;
+  border-radius: 50%;
   position: relative;
 }
 

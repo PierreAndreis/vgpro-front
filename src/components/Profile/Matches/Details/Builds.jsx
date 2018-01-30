@@ -74,7 +74,7 @@ export default class extends React.PureComponent {
     const {teams, telemetry, status} = this.props;
     const { playerLoaded } = this.state;
     
-    if (status === "loading" || !telemetry) return "loading...";
+    if (status === "loading" || !telemetry) return "Loading.";
 
     const detailsTeam = teams.find((team) => (
       team.players.find(player => player.name === playerLoaded)

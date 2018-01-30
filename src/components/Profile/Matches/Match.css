@@ -6,7 +6,7 @@
 
 .PlayerMatch {
   width: 100%;
-  height: 130px;
+  height: 140px;
   margin: 10px 0;
   border-left: 6px solid #F1685D;
 
@@ -273,8 +273,8 @@
 }
 
 .PlayerMatch-Item {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   margin: 3px;
   border-radius: 50%;
   background: #D8D8D8;
@@ -337,12 +337,12 @@
 }
 
 .PlayerMatch-Players-Player {
-  margin: 2px 0;
+  margin: 0.5px 0;
   width: 100%;
   text-align: right;
   display: flex;
   flex-direction: row-reverse;
-  font-size: 13px;
+  font-size: 12px;
   align-items: center;
 }
 .PlayerMatch-Players-Player a {
@@ -362,8 +362,8 @@
 }
 
 .PlayerMatch-Players-Player-Hero {
-  width: 23px;
-  height: 23px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   background: #D8D8D8;
   margin: 0 3px;
@@ -377,7 +377,7 @@
   flex-direction: row;
 }
 .PlayerMatch-Players-Team:last-of-type .PlayerMatch-Players-Player-Hero {
-  border: 2px solid #E64659;
+  border-color: #E64659;
 }
 
 .PlayerMatch-Status {

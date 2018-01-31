@@ -12,6 +12,7 @@ import AsyncContainer from "./common/AsyncContainer";
 
 const HomePage    = AsyncContainer(() => import("./Home/Home"));
 const Profile     = AsyncContainer(() =>  import('./Profile/Profile'));
+const MatchPage   = AsyncContainer(() => import("./Profile/Matches/MatchPage"));
 
 // const Teams       = AsyncContainer(() =>  import('./Teams/Teams'));
 // const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard'));
@@ -25,6 +26,10 @@ const routes = [
   {
     path: '/players/:region/:player',
     component: Profile,
+  },
+  {
+    path: '/match/:region/:matchId/:player?',
+    component: MatchPage,
   },
   {
     path: '/players/:player',

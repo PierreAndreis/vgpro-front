@@ -1,8 +1,8 @@
 import React from "react";
 
-import FeedMatch        from "./FeedMatch";
+import FeedMatch                            from "./FeedMatch";
 import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
-import {SkeletonPayload}                    from "../../common/Skeleton";
+import {SkeletonPayload}                    from "./../../common/Skeleton";
 import ErrorScreen                          from "./../../common/ErrorScreen";
 import {fetchProFeed}                       from "./../../../actions/api";
 
@@ -78,7 +78,7 @@ class ProFeed extends React.Component {
       lastPage = (payload) ? (payload.length / itemPerPage) : 1;
       const matches = Utils.paginateArray(payload, PRO_FEED_ITEM_PER_PAGE, page);
       content = matches.map((match, i) => {
-        let key = (match.matchId) ? `${match.matchId}${match.actor}` : i;
+        let key = page + i;
         return <FeedMatch key={key} t={t} status={status} data={match} />
       });
     }

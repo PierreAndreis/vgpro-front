@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {KDA} from "../../../common/ColoredValues";
+import {KDA} from "../../ColoredValues";
 
 import Utils from "../../../../utils";
-import AssetLoader from "../../../common/AssetLoader";
+import AssetLoader from "../../AssetLoader";
 
-import { SkeletonWrapper, SkeletonPayload } from "./../../../common/Skeleton";
+import { SkeletonWrapper, SkeletonPayload } from "./../../Skeleton";
 
 import "./Overview.css";
 
@@ -229,7 +229,7 @@ const OverviewTeam = ({team, telemetry, status, gameMode}) => {
         const key = (p.id) ? p.id : i;
 
         return (
-          <div key={key} className="Overview-Cell Overview-Player">
+          <div key={key} className={`Overview-Cell Overview-Player ${p.me ? "Overview-Player-me" : ""}`}>
             <OverviewPlayer status={status} player={p} telemetry={tm} gameMode={gameMode}/>
           </div>
         )

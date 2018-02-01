@@ -1,20 +1,24 @@
 import React from "react";
 import ReactGA from "react-ga";
-import Box from "../../common/Box";
 
-import {KDA, Rate} from "../../common/ColoredValues";
-import AssetLoader from "../../common/AssetLoader";
+import Box from "./../Box";
+import {KDA, Rate} from "./../ColoredValues";
+import AssetLoader from "./../AssetLoader";
+import { Skeleton, SkeletonContainer } from "./../Skeleton";
 
 import {Link} from "react-router-dom";
 
-import Utils from "../../../utils";
-
-import { Skeleton, SkeletonContainer } from "../../common/Skeleton";
-import TimeAgo from "../../../i18n/timeAgo.js";
+import Utils   from "./../../../utils";
+import TimeAgo from "./../../../i18n/timeAgo.js";
 
 import MatchDetails from "./Details";
 
 import "./Match.css";
+
+// Polyfill Contains
+function contains (node, other) {
+  return node === other || !!(node.compareDocumentPosition(other) & 16);
+}
 
 const Loading = () => {
   return (
@@ -86,7 +90,7 @@ class Loaded extends React.PureComponent {
   } 
   
   handleOpen = (e) => {
-    if (this.avoid.contains(e.target)) return;
+    if (contains(this.avoid, e.target)) return;
 
     const {payload} = this.props;
 
@@ -183,7 +187,15 @@ class Loaded extends React.PureComponent {
           </div>
         </Box.body>
       </Box.wrap>
-      {this.state.details && <MatchDetails matchId={id} region={shardId} playerName={me.name} gameMode={gameMode}/>}
+      {(this.state.details || this.props.forceOpen) && 
+       <MatchDetails matchId={id} 
+                     region={shardId} 
+                     playerName={me.name} 
+                     details={payload} 
+                     status={this.props.status}
+                     gameMode={gameMode}
+                     />
+      }
     </React.Fragment>
     )
 

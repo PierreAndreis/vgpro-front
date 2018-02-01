@@ -1,7 +1,7 @@
 import React    from "react";
 
-import AssetLoader         from "./../../../common/AssetLoader";
-import { SkeletonPayload } from "./../../../common/Skeleton";
+import AssetLoader         from "./../../AssetLoader";
+import { SkeletonPayload } from "./../../Skeleton";
 
 import "./Builds.css";
 

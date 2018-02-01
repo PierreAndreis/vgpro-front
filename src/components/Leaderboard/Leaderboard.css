@@ -44,7 +44,7 @@
   font-size: 12px;
   transition: all 300ms;
 }
-.Leaderboard-Filters-category>div:hover {
+.Leaderboard-Filters-category>div:not(.active):hover {
   background: rgba(0,0,0,0.1);
 }
 

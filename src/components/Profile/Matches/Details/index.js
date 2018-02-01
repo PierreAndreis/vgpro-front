@@ -68,7 +68,8 @@ class MatchDetails extends React.Component {
     let { 
       playerName, 
       status, 
-      details 
+      details,
+      gameMode
     } = this.props;
 
     let content = null;
@@ -93,6 +94,7 @@ class MatchDetails extends React.Component {
       {
         status,
         telemetry,
+        gameMode,
         me: playerName,
         teams: payload
       }

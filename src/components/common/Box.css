@@ -63,8 +63,8 @@
 
 .box__card-Body {
   /* font-size: 0; */
-  height: 100%;
   position: relative;
+  flex-grow: 1;
 }
 
 .box__card-Actions {

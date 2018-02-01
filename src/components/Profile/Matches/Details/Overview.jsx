@@ -10,14 +10,23 @@ import { SkeletonWrapper, SkeletonPayload } from "./../../../common/Skeleton";
 
 import "./Overview.css";
 
-const OverviewPlayer = ({player, telemetry, status}) => {
+const OverviewPlayer = ({player, telemetry, gameMode, status}) => {
   
   const items = [];
 
+  let playerItems = (status === "loaded") ? player.items : [];
+
+  // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
+  let itemsWithout5v5Default = playerItems;
+  if (gameMode.includes("5v5")) {
+    itemsWithout5v5Default = playerItems.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
+  }
+  
+  
   for (let i = 0; i < 6; i++) {
     let name;
-    if (player.items && player.items[i]) {
-      name = player.items[i];
+    if (itemsWithout5v5Default && itemsWithout5v5Default[i]) {
+      name = itemsWithout5v5Default[i];
     }
 
     items.push(<AssetLoader key={i} type="items" className="Overview-Player-Item" name={name} />);
@@ -161,9 +170,9 @@ const TeamStats = ({team, bans, status}) => (
   </div>
 )
 
-const OverviewTeam = ({team, telemetry, status}) => {
+const OverviewTeam = ({team, telemetry, status, gameMode}) => {
 
-  let players = SkeletonPayload(3);
+  let players = SkeletonPayload(gameMode.includes("5v5") ? 5 : 3);
   // Sort by role
   if (status === "loaded") {
     players = team.players.sort((a, b) => {
@@ -221,7 +230,7 @@ const OverviewTeam = ({team, telemetry, status}) => {
 
         return (
           <div key={key} className={`Overview-Cell Overview-Player ${p.me ? "Overview-Player-me" : ""}`}>
-            <OverviewPlayer status={status} player={p} telemetry={tm}/>
+            <OverviewPlayer status={status} player={p} telemetry={tm} gameMode={gameMode}/>
           </div>
         )
       })}
@@ -234,12 +243,12 @@ const OverviewTeam = ({team, telemetry, status}) => {
 export default class extends React.Component {
 
   render() {
-    const {teams, telemetry, status} = this.props
+    const {teams, telemetry, status, gameMode} = this.props
     return (
       <div className="MatchDetails-Overview">
           {
             teams.map((team, i) => {
-              return <OverviewTeam key={i} status={status} team={team} telemetry={telemetry}/>
+              return <OverviewTeam key={i} status={status} team={team} telemetry={telemetry} gameMode={gameMode}/>
             })
           }
       </div>

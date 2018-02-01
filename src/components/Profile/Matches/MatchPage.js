@@ -22,18 +22,18 @@ class MatchPage extends React.Component {
 
   fetch() {
     const { match } = this.props;
-    const { player } = match.params;
     /* Sense we don't want ALL of the user's matches we fetch for this one id */
     this.cancel = Utils.makeCancelable(
       fetchMatchDetails(match.params.matchId, match.params.region),
-      res => {
+      (res) => {
         // Since we are not sending a playerId when making the API request, (as we do when we get match history)
         // we will manually set the correct player as me only if there is a params for the player set
         // otherwise, show any (technically the first in the list)
         let payload = this.findCurrentPlayer(res);
         this.setState({payload, status: "loaded"})
-      }),
-      err => this.setState({payload: err, status: "error"})
+      },
+      (err) => this.setState({payload: err, status: "error"})
+    )
   }
 
   findCurrentPlayer = (payload) => {

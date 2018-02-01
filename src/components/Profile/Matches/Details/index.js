@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Details.css";
 import AsyncContainer from "./../../../common/AsyncContainer";
-import {fetchMatchDetails, fetchMatchTelemetry} from "./../../../../actions/api";
+import { fetchMatchTelemetry } from "./../../../../actions/api";
 
 import Utils from "../../../../utils";
 

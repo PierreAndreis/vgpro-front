@@ -2,7 +2,7 @@ import React from "react";
 
 import "./Details.css";
 import AsyncContainer from "./../../../common/AsyncContainer";
-import {fetchMatchDetails, fetchMatchTelemetry} from "./../../../../actions/api";
+import { fetchMatchTelemetry } from "./../../../../actions/api";
 
 import Utils from "../../../../utils";
 
@@ -19,12 +19,13 @@ const Tabs = [
 
 
 class MatchDetails extends React.Component {
+  constructor(props) {
+    super(props);
 
-  state = {
-    status: "loading",
-    telemetry: null,
-    details: null,
-    tab: Tabs[0],
+    this.state = {
+      telemetry: null,
+      tab: Tabs[0],
+    }
   }
 
   componentDidMount() {
@@ -35,24 +36,18 @@ class MatchDetails extends React.Component {
     const {matchId, region} = this.props;
 
     this.setState({
-      status: "loading",
-      details: null,
-      telemetry: null,
+      telemetry: null
     });
-
-    this.cancelDetails = Utils.makeCancelable(
-      fetchMatchDetails(matchId, region),
-      (res) => this.setState({status: "loaded", details: res})
-    )
 
     this.cancelTelemetry = Utils.makeCancelable(
       fetchMatchTelemetry(matchId, region),
-      (res) => this.setState({telemetry: res})
+      (res) => this.setState({
+        telemetry: res
+      })
     )
   }
 
   componentWillUnmount() {
-    this.cancelDetails();
     this.cancelTelemetry();
   }
 
@@ -67,12 +62,15 @@ class MatchDetails extends React.Component {
     
     const {
       telemetry,
-      status,
-      details,
       tab
     } = this.state;
 
-    let { playerName, gameMode } = this.props;
+    let { 
+      playerName, 
+      status, 
+      details,
+      gameMode
+    } = this.props;
 
     let content = null;
     let payload = [];

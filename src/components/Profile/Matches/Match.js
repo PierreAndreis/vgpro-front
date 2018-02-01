@@ -188,7 +188,15 @@ class Loaded extends React.PureComponent {
           </div>
         </Box.body>
       </Box.wrap>
-      {this.state.details && <MatchDetails matchId={id} region={shardId} playerName={me.name} gameMode={gameMode}/>}
+      {(this.state.details || this.props.forceOpen) && 
+       <MatchDetails matchId={id} 
+                     region={shardId} 
+                     playerName={me.name} 
+                     details={payload} 
+                     status={this.props.status}
+                     gameMode={gameMode}
+                     />
+      }
     </React.Fragment>
     )
 

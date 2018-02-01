@@ -12,7 +12,7 @@ import MatchStats from "./MatchStats/MatchStats";
 import Sidebar from "./Sidebar";
 import ProfileFilters from "./ProfileFilters";
 
-import MatchesManager from "./Matches/MatchesManager";
+import MatchesManager from "./MatchesManager";
 
 import {setPlayer, changeFilters} from "./../../actions/player";
 

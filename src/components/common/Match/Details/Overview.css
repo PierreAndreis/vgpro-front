@@ -109,12 +109,9 @@
 .Overview-Team:last-of-type .Overview-Player-Image-Hero {
   border-color: #FF6262;
 }
-
-
 .Overview-Player-me {
-  background: rgba(230, 194, 86, 0.151);
+  background: rgba(230, 194, 86, 0.151) !important;
 }
-
 
 .Overview-Player-Image-Role {
   width: 20px;

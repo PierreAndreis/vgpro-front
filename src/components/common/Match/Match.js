@@ -1,16 +1,15 @@
 import React from "react";
 import ReactGA from "react-ga";
-import Box from "../../common/Box";
 
-import {KDA, Rate} from "../../common/ColoredValues";
-import AssetLoader from "../../common/AssetLoader";
+import Box from "./../Box";
+import {KDA, Rate} from "./../ColoredValues";
+import AssetLoader from "./../AssetLoader";
+import { Skeleton, SkeletonContainer } from "./../Skeleton";
 
 import {Link} from "react-router-dom";
 
-import Utils from "../../../utils";
-
-import { Skeleton, SkeletonContainer } from "../../common/Skeleton";
-import TimeAgo from "../../../i18n/timeAgo.js";
+import Utils   from "./../../../utils";
+import TimeAgo from "./../../../i18n/timeAgo.js";
 
 import MatchDetails from "./Details";
 

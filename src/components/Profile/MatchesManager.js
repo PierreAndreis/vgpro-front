@@ -1,17 +1,14 @@
-import React from "react";
-import Match from "./Match";
-
-import _isEqual from "lodash/isEqual";
-
-import ErrorScreen from "../../common/ErrorScreen";
-
-import { SkeletonPayload } from "../../common/Skeleton";
-
-import {fetchPlayerMatches, setPlayerMatches} from "./../../../actions/player";
-
+import React                from "react";
 import {bindActionCreators} from "redux";
 import { connect }          from "react-redux";
-import { Adsense }          from "../../common/Ads";
+import _isEqual             from "lodash/isEqual";
+
+import Match                from "./../common/Match/Match";
+import ErrorScreen          from "./../common/ErrorScreen";
+import { SkeletonPayload }  from "./../common/Skeleton";
+import { Adsense }          from "./../common/Ads";
+
+import {fetchPlayerMatches, setPlayerMatches} from "./../../actions/player";
 
 const MATCHES_PER_PAGE = 7;
 const AD_EVERY = 9;

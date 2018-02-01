@@ -1,10 +1,11 @@
 import React from "react";
 
-import "./Details.css";
-import AsyncContainer from "./../../../common/AsyncContainer";
+import AsyncContainer from "./../../AsyncContainer";
 import { fetchMatchTelemetry } from "./../../../../actions/api";
 
 import Utils from "../../../../utils";
+
+import "./Details.css";
 
 const Tabs = [
   {
@@ -15,8 +16,7 @@ const Tabs = [
     name: "Builds",
     component: AsyncContainer(() => import("./Builds"))
   }
-]
-
+];
 
 class MatchDetails extends React.Component {
   constructor(props) {

@@ -1,9 +1,9 @@
 import React from "react";
 import Match from "./Match"
 
-import Utils from "./../../../utils";
+import Utils from "./../../utils";
 
-import { fetchMatchDetails } from "./../../../actions/api";
+import { fetchMatchDetails } from "./../../actions/api";
 
 class MatchPage extends React.Component {
 

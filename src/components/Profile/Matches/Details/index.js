@@ -23,22 +23,9 @@ class MatchDetails extends React.Component {
     super(props);
 
     this.state = {
-      status: "loading",
       telemetry: null,
-      details: this.props.matchDetails,
       tab: Tabs[0],
     }
-  }
-
-  /* dev note -- remove before merge
-  added this method to MatchDetails class because props can be
-  unreliable with state changes. 
-  I'm not too sure, would appreciate clarification
-  whether we need this or not */
-  componentWillReceiveProps(nextProps) {
-    this.setState({
-      details: this.nextProps.matchDetails
-    });
   }
 
   componentDidMount() {
@@ -49,7 +36,6 @@ class MatchDetails extends React.Component {
     const {matchId, region} = this.props;
 
     this.setState({
-      status: "loaded",
       telemetry: null
     });
 
@@ -76,12 +62,14 @@ class MatchDetails extends React.Component {
     
     const {
       telemetry,
-      status,
-      details,
       tab
     } = this.state;
 
-    let { playerName } = this.props;
+    let { 
+      playerName, 
+      status, 
+      details 
+    } = this.props;
 
     let content = null;
     let payload = [];

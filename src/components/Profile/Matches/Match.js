@@ -173,7 +173,7 @@ class Loaded extends React.PureComponent {
           </div>
         </Box.body>
       </Box.wrap>
-      {this.state.details && <MatchDetails matchId={id} region={shardId} playerName={me.name}/>}
+      {this.state.details && <MatchDetails matchId={id} region={shardId} playerName={me.name} matchDetails={payload}/>}
     </React.Fragment>
     )
 

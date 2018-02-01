@@ -19,12 +19,26 @@ const Tabs = [
 
 
 class MatchDetails extends React.Component {
+  constructor(props) {
+    super(props);
 
-  state = {
-    status: "loading",
-    telemetry: null,
-    details: null,
-    tab: Tabs[0],
+    this.state = {
+      status: "loading",
+      telemetry: null,
+      details: this.props.matchDetails,
+      tab: Tabs[0],
+    }
+  }
+
+  /* dev note -- remove before merge
+  added this method to MatchDetails class because props can be
+  unreliable with state changes. 
+  I'm not too sure, would appreciate clarification
+  whether we need this or not */
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      details: this.nextProps.matchDetails
+    });
   }
 
   componentDidMount() {
@@ -35,24 +49,19 @@ class MatchDetails extends React.Component {
     const {matchId, region} = this.props;
 
     this.setState({
-      status: "loading",
-      details: null,
-      telemetry: null,
+      status: "loaded",
+      telemetry: null
     });
-
-    this.cancelDetails = Utils.makeCancelable(
-      fetchMatchDetails(matchId, region),
-      (res) => this.setState({status: "loaded", details: res})
-    )
 
     this.cancelTelemetry = Utils.makeCancelable(
       fetchMatchTelemetry(matchId, region),
-      (res) => this.setState({telemetry: res})
+      (res) => this.setState({
+        telemetry: res
+      })
     )
   }
 
   componentWillUnmount() {
-    this.cancelDetails();
     this.cancelTelemetry();
   }
 

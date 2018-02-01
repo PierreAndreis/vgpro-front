@@ -16,6 +16,11 @@ import MatchDetails from "./Details";
 
 import "./Match.css";
 
+// Polyfill Contains
+function contains (node, other) {
+  return node === other || !!(node.compareDocumentPosition(other) & 16);
+}
+
 const Loading = () => {
   return (
      <Box.wrap className={`PlayerMatch PlayerMatch-win`}>
@@ -86,7 +91,7 @@ class Loaded extends React.PureComponent {
   } 
   
   handleOpen = (e) => {
-    if (this.avoid.contains(e.target)) return;
+    if (contains(this.avoid, e.target)) return;
 
     const {payload} = this.props;
 

@@ -5,6 +5,11 @@ import "./ProfileFilters.css";
 
 import { connect }          from "react-redux";
 
+// Polyfill Node.Contains
+function contains (node, other) {
+  return node === other || !!(node.compareDocumentPosition(other) & 16);
+}
+
 class MenuSelector extends React.Component {
 
   state = {open: false}
@@ -26,7 +31,7 @@ class MenuSelector extends React.Component {
   }
 
   checkClickOutside = (e) => {
-    if (!this.menu.contains(e.target)) {
+    if (!contains(this.menu, e.target)) {
       this.changeMenu();
     }
   }

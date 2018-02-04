@@ -1,7 +1,19 @@
 import React from "react";
+import styled from "styled-components";
 import {PieChart, Pie} from "recharts";
 
-import "./HalfPieChart.css";
+const HalfPieContainer = styled.div`
+  position: relative;
+  overflow: visible;
+  width: ${props => `${props.width}px` || "100px"};
+  .HalfPie-Label {
+    position: absolute;
+    bottom: 37%;
+    width: 100%;
+    text-align: center;
+  }
+`
+
 
 export default ({data, label, width, children}) => {
 
@@ -37,7 +49,7 @@ export default ({data, label, width, children}) => {
 
 
   return (
-    <div className="HalfPie-Container" style={{width}}>
+    <HalfPieContainer width={width}>
       <PieChart width={width} height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
 
         <defs>
@@ -92,6 +104,6 @@ export default ({data, label, width, children}) => {
             />
       </PieChart>
       <div className="HalfPie-Label" style={{fontSize}}>{children || null}</div>
-    </div>
+    </HalfPieContainer>
   )
 }

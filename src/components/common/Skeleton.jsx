@@ -33,9 +33,14 @@ const SkeletonContainer = (Loading, Loaded) => {
 
 class SkeletonWrapper extends React.PureComponent {
   render() {
-    const {children, status, ...props} = this.props;
+    const {children, status, render, ...props} = this.props;
+
+    if (typeof render === "function") {
+      return (render(status, Skeleton));
+    }
+
     if (status === "loading") return <Skeleton {...props} />
-    else return (children())
+    else return (children());
   }
 }
 

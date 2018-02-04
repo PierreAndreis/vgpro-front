@@ -1,7 +1,7 @@
 import React from "react";
 import SearchMenu from "./SearchMenu";
 
-import "./SearchMain.css";
+import * as Style from "./SearchMain.style.js";
 
 class SearchMain extends React.Component {
 
@@ -39,15 +39,14 @@ class SearchMain extends React.Component {
     }
 
     return (
-    <div className="SearchBar" onFocus={this.onFocus} onBlur={this.onBlur}>
+    <Style.SearchBar onFocus={this.onFocus} onBlur={this.onBlur}>
       <form action="" onSubmit={onSearch} className={formClasses.join(" ")}>
 
-        <button type="submit" disabled={status === "loading"}> 
+        <Style.SearchBarButton isError={status === "error"} type="submit" disabled={status === "loading"}> 
           <i className={icon} />
-        </button>
-        <input
+        </Style.SearchBarButton>
+        <Style.SearchBarInput
           type="text"
-          className="SearchBar-Input Input-Open"
           disabled={status === "loading"}
           placeholder={placeholder}
           value={value}
@@ -61,7 +60,7 @@ class SearchMain extends React.Component {
       </form>
 
         {this.state.menuOpen && <SearchMenu style={{left: 0, right: 0}} />}
-    </div>
+    </Style.SearchBar>
     )
   }
 }

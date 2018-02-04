@@ -1,3 +1,6 @@
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
 html {
   touch-action: manipulation;
 	height:100%;
@@ -30,6 +33,9 @@ a:hover {
   position: relative;
   max-width: 1300px;
   margin: 0 auto;
+  @media only screen and (max-width: 700px) {
+    width: 100%;
+  }
 }
 
 .Loading-Page {
@@ -117,4 +123,4 @@ a:hover {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
-}
+}`;

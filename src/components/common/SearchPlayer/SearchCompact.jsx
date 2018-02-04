@@ -1,8 +1,55 @@
 import React from "react";
+import styled, {css} from "styled-components";
 
 import SearchMenu from "./SearchMenu";
 
-import "./SearchCompact.css"
+// import "./SearchCompact.css"
+
+const Search = styled.div`
+  width: 35px;
+  height: 35px;
+  text-align: right;
+  position: relative;
+  margin-left: auto;
+  /* background: red; */
+  .Search-Icon {
+    position: absolute;
+    z-index: 2;
+    color: rgba(0, 0, 0, 0.459);
+    height: 100%;
+    line-height: 35px;
+    margin-left: -35px;
+    font-size: 21px;
+    text-align: center;
+    width: 35px;
+    cursor: pointer;
+    height: 35px;
+  }
+`;
+
+const SearchInput = styled.input`
+  position: absolute;
+  right: 0;
+  outline: 0;
+  border: 0;
+  z-index: 1;
+  border-radius: 5px;
+  background: rgb(230, 230, 230);
+  padding: 10px 30px 10px 10px;
+  height: 35px;
+  font-size: 16px;
+  width: 250px;
+  transition: all 300ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-sizing: border-box;
+  @media screen and (max-width: 790px) {
+    ${props => !props.isOpen && css`
+      width: 35px;
+      font-size: 16px;
+      color: transparent;
+      padding: 0;
+    `}
+  }
+`;
 
 class SearchCompact extends React.Component {
   
@@ -74,13 +121,14 @@ class SearchCompact extends React.Component {
     let ph = (this.state.open) ? placeholder : "";
 
     return (
-      <div className="Header-Search">
+      <Search>
         <form action="" onSubmit={onSearch}>
-          <input type="text" 
-                ref={input => this.input = input}
+          <SearchInput 
+                type="text" 
+                innerRef={input => this.input = input}
                 onFocus={this.onFocus}
                 onBlur={this.onBlur}
-                className={`Header-Search_input ${!this.state.open && "close"}`}
+                isOpen={this.state.open}
                 placeholder={ph} 
                 onChange={onChange} 
                 value={value}
@@ -96,7 +144,7 @@ class SearchCompact extends React.Component {
             <SearchMenu style={{width: "250px", right: -5, marginTop: "45px", textAlign: "left"}} />
           }
         </form>
-      </div>
+      </Search>
     )
   }
 }

@@ -9,7 +9,7 @@ import { addRecent, addFavorite,
 import Utils from "./../../../utils";
 import Box from "../Box";
 
-import "./SearchMenu.css";
+import * as Style from "./SearchMenu.style.js";
 
 const Player = ({name, onRemove}) => (
   <NavLink to={Utils.goToPlayer(name)} activeClassName="active" >
@@ -59,28 +59,28 @@ class SearchMenu extends React.Component {
     if (favorites.length < 1 && recents.length < 1) return null;
 
     return (
-      <Box.wrap className="SearchMenu" style={style}>
+      <Style.SearchMenu style={style}>
         {favorites.length > 0 &&
-          (<div className="SearchMenu-Category">
+          (<Style.Category>
               <h1>Favorites</h1>
-              <div className="SearchMenu-Content">
+              <Style.Content>
                 {favorites.map(fav => (
                   <Player key={fav} name={fav} onRemove={this.removeFavorite(fav)}/>
                 ))}
-              </div>
-            </div>)
+              </Style.Content>
+            </Style.Category>)
         }
         {recents.length > 0 &&
-          (<div className="SearchMenu-Category">
+          (<Style.Category>
               <h1>Recent Searches</h1>
-              <div className="SearchMenu-Content">
+              <Style.Content>
                 {recents.map(recent => (
                   <Player key={recent} name={recent} onRemove={this.removeRecent(recent)} />
                 ))}
-              </div>
-            </div>)
+              </Style.Content>
+            </Style.Category>)
         }
-      </Box.wrap>
+      </Style.SearchMenu>
     )
   }
 }

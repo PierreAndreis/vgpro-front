@@ -4,7 +4,7 @@ import ReactGA from "react-ga";
 import Box from "./../Box";
 import {KDA, Rate} from "./../ColoredValues";
 import AssetLoader from "./../AssetLoader";
-import { Skeleton, SkeletonContainer } from "./../Skeleton";
+import { SkeletonWrapper, SkeletonPayload } from "./../Skeleton";
 
 import {Link} from "react-router-dom";
 
@@ -13,84 +13,175 @@ import TimeAgo from "./../../../i18n/timeAgo.js";
 
 import MatchDetails from "./Details";
 
-import "./Match.css";
+import * as Styled from "./Match.style.js";
 
 // Polyfill Contains
 function contains (node, other) {
   return node === other || !!(node.compareDocumentPosition(other) & 16);
 }
 
-const Loading = () => {
-  return (
-     <Box.wrap className={`PlayerMatch PlayerMatch-win`}>
-        <Box.body className="PlayerMatch-body">
-          <div className="PlayerMatch-Avatar" />
-          <div className="PlayerMatch-Info">
-            <h2><Skeleton width="50px" /></h2>
-            <div className="MatchTime"><Skeleton width="60px" /></div>
-            <div className="PlayerMatch-Info-KDA">
-              <Skeleton width="70px" />
-            </div>
-            <div className="PlayerMatch-Info-KDA-text"><Skeleton width="80px" /></div>
-          </div>
-          <div className="PlayerMatch-Stats-Items">
-            <div className="PlayerMatch-Stats">
-              <div>
-                <Skeleton width="85px" />
-              </div>
-              <div>
-                <Skeleton width="80px" />
-              </div>
-            </div>
-
-            <div className="PlayerMatch-Items">
-                <div className="PlayerMatch-Item"/>
-                <div className="PlayerMatch-Item"/>
-                <div className="PlayerMatch-Item"/>
-                <div className="PlayerMatch-Item"/>
-                <div className="PlayerMatch-Item"/>
-                <div className="PlayerMatch-Item"/>
-            </div>
-          </div>
-
-          <div className="PlayerMatch-Players">
-            <div className="PlayerMatch-Players-Team">
-              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
-              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
-              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
-              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
-              <div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>
-            </div>
-            <div className="PlayerMatch-Players-Team">
-              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
-              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
-              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
-              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
-              <div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>
-            </div>
-          
-
-          </div>
-        </Box.body>
-      </Box.wrap>
-  )
-}
-
 const PlayerTeam = ({player}) => (
-  <div className="PlayerMatch-Players-Player">
-    <AssetLoader type="heroes" name={player.hero} className="PlayerMatch-Players-Player-Hero" />
+  <Styled.Player>
+    <Styled.PlayerHero type="heroes" name={player.hero}/>
     <Link to={Utils.goToPlayer(player.name)}>{ (player.me) ? <b>{player.name}</b> : player.name }</Link>
-  </div>
+  </Styled.Player>
 )
 
-class Loaded extends React.PureComponent {
+const MatchTeams = ({payload, status}) => {
+      
+    let blueSide;
+    let redSide;
+
+    if (status === "loading") {
+      blueSide = SkeletonPayload(5);
+      redSide = SkeletonPayload(5);
+    } 
+    else {
+      blueSide = payload.players.filter(p => p.side === "left/blue");
+      redSide = payload.players.filter(p => p.side === "right/red");
+    }
+
+    return (
+      <React.Fragment>
+        <Styled.PlayersTeam>
+          {blueSide.map((player, index) => (
+          <SkeletonWrapper key={index} status={status} render={(status, Skeleton) => {
+              if (status === "loading") {
+                return (<div><Skeleton width="80px" /> <Skeleton width="20px" height="20px" borderRadius="50%"/></div>);
+              }
+              else return <PlayerTeam key={player.id} player={player} />
+            }} />
+            ))}
+        </Styled.PlayersTeam>
+        <Styled.PlayersTeam>
+          {redSide.map((player, index) => (
+            <SkeletonWrapper key={index} status={status} render={(status, Skeleton) => {
+                if (status === "loading") {
+                  return (<div><Skeleton width="20px" height="20px" borderRadius="50%"/> <Skeleton width="80px" /></div>);
+                }
+                else return <PlayerTeam key={player.id} player={player} />
+              }} />
+          ))}
+        </Styled.PlayersTeam>
+      </React.Fragment>
+    )
+}
+
+const MatchInfo = ({payload, me, status}) => {
+
+  let gM;
+  if (status === "loaded") {
+    gM = payload.gameMode.replace("Battle Royale", "BR");
+  }
+
+  return (
+    <Styled.MatchInfo>
+
+      <SkeletonWrapper status={status} width="0">
+        {() => <Styled.MatchDuration>{payload.minutes}</Styled.MatchDuration>}
+      </SkeletonWrapper>
+
+      <h2>
+        <SkeletonWrapper status={status} width="50px">
+          {() => gM}
+        </SkeletonWrapper>
+      </h2>
+
+      <Styled.MatchTime>
+        <SkeletonWrapper status={status} width="60px">
+          {() => <TimeAgo date={payload.ended} />}
+        </SkeletonWrapper>
+      </Styled.MatchTime>
+
+      <Styled.MatchKDA>
+        <SkeletonWrapper status ={status} width="70px">
+          {() => (
+            <React.Fragment>
+            <span className="k">{me.kills}</span> 
+            / <span className="death">{me.deaths}</span> 
+            / <span className="k">{me.assists}</span>
+            </React.Fragment>
+          )}
+        </SkeletonWrapper>
+      </Styled.MatchKDA>
+
+      <Styled.MatchKDAText>
+        <SkeletonWrapper status={status} width="80px" >
+          {() => (
+            <React.Fragment><KDA kda={me.kda} /> KDA</React.Fragment>
+          )}
+        </SkeletonWrapper>
+      </Styled.MatchKDAText>
+    </Styled.MatchInfo>
+  );
+}
+
+const MatchStats = ({payload, status, me}) => {
+
+  let itemsWithout5v5Default = [];
+
+  if (status === "loaded") {
+   // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
+    itemsWithout5v5Default = me.items;
+    if (payload.gameMode.includes("5v5")) {
+      itemsWithout5v5Default = me.items.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
+    }
+  }
+
+  let items = [];
+
+  for (let i = 0; i < 6; i++) {
+    let itemName;
+    if (itemsWithout5v5Default[i]) {
+      itemName = itemsWithout5v5Default[i];
+    }
+
+    items.push(<Styled.Item key={i} type="items" name={itemName} className="PlayerMatch-Item" />);
+  }
+
+  return (
+    <Styled.MatchStats>
+      <Styled.MatchVariables>
+        <SkeletonWrapper status={status} render={(status, Skeleton) => {
+          if (status === "loading") {
+            return (<div><Skeleton width="85px"/></div>);
+          }
+          return (
+            <Styled.Gold>
+              <div>{Utils.minifyNumber(me.gold)}</div>
+              (<Rate rate={me.goldShare} /> share)
+            </Styled.Gold>)
+          }} />
+
+        <SkeletonWrapper status={status} render={(status, Skeleton) => {
+          if (status === "loading") {
+            return (<div><Skeleton width="85px"/></div>);
+          }
+          return (
+            <Styled.CS>
+              <div>{me.cs} cs</div>
+              ({me.csMin} cs/min)
+            </Styled.CS>)
+          }} />
+      </Styled.MatchVariables>
+
+      <Styled.Items>
+        {
+          items
+        }
+      </Styled.Items>
+    </Styled.MatchStats>
+  );
+}
+
+class Match extends React.PureComponent {
 
   state = {
     details: false
   } 
   
   handleOpen = (e) => {
-    if (contains(this.avoid, e.target)) return;
+    if (contains(this.avoid, e.target) || this.props.status === "loading") return;
 
     const {payload} = this.props;
 
@@ -104,104 +195,58 @@ class Loaded extends React.PureComponent {
   }
 
   render() {
-    const {payload} = this.props;
-    const {id, shardId, minutes, ended, gameMode, players} = payload;
 
-    let gM = gameMode.replace("Battle Royale", "BR");
+    const {payload, status} = this.props;
 
-    const me = players.find(p => p.me);
+    let winBadge = null;
+    let me;
+    let winner = 1;
 
-    let items = [];
+    if (status === "loaded") {
+      me = payload.players.find(p => p.me);
+      winner = me.winner;
 
-    // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
-    let itemsWithout5v5Default = me.items;
-    if (gameMode.includes("5v5")) {
-      itemsWithout5v5Default = me.items.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
+      winBadge = (
+      <Styled.MatchBadge win={winner}>
+        {(me.winner && "Win") || "Loss"}
+      </Styled.MatchBadge>
+      );
     }
 
-    for (let i = 0; i < 6; i++) {
-      let itemName;
-      if (itemsWithout5v5Default[i]) {
-        itemName = itemsWithout5v5Default[i];
-      }
-
-      items.push(<AssetLoader key={i} type="items" name={itemName} className="PlayerMatch-Item" />);
-    }
-
-    let blueSide = players.filter(p => p.side === "left/blue");
-    let redSide = players.filter(p => p.side === "right/red");
-
-    let winBadge = (
-    <div className={`PlayerMatch-Status`}>
-      {(me.winner && "Win") || "Loss"}
-    </div>
-    );
 
     return (
     <React.Fragment>
-      <Box.wrap className={`PlayerMatch ${(me.winner && "PlayerMatch-win")}`}>
-        <Box.body >
-          <div className="PlayerMatch-body" onClick={this.handleOpen}>
+      <Styled.Match winner={winner}>
+        <Styled.MatchBody onClick={this.handleOpen}>
             {winBadge}
-            <AssetLoader type="heroes" name={me.hero} className="PlayerMatch-Avatar" >
-              <div className="PlayerMatch-Avatar-Role" id={me.role.toLowerCase()}></div>
-            </AssetLoader>
+
+            <Styled.Avatar type="heroes" name={me && me.hero}>
+              <SkeletonWrapper status={status} width="0"> 
+                {() => <div className="PlayerMatch-Avatar-Role" id={me.role.toLowerCase()}></div>}
+              </SkeletonWrapper>
+            </Styled.Avatar>
             
-            <div className="PlayerMatch-Info">
-              <div className="MatchTime MatchDuration">{minutes}</div>
-              <h2>{gM}</h2>
-              <div className="MatchTime"><TimeAgo date={ended} /></div>
-              <div className="PlayerMatch-Info-KDA">
-                <span className="k">{me.kills}</span> / <span className="death">{me.deaths}</span> / <span className="k">{me.assists}</span>
-              </div>
-              <div className="PlayerMatch-Info-KDA-text"><KDA kda={me.kda} /> KDA</div>
-            </div>
-            <div className="PlayerMatch-Stats-Items">
-              <div className="PlayerMatch-Stats">
-                <div className="PlayerMatch-Stats-Gold">
-                  <div>{Utils.minifyNumber(me.gold)}</div>
-                  (<Rate rate={me.goldShare} /> share)
-                </div>
-                <div className="PlayerMatch-Stats-CS">
-                  <div>{me.cs} cs</div>
-                  ({me.csMin} cs/min)
-                </div>
-              </div>
+            <MatchInfo  payload={payload} me={me} status={status}/>
+            <MatchStats payload={payload} me={me} status={status} />
 
-              <div className="PlayerMatch-Items">
-                {
-                  items
-                }
-              </div>
-            </div>
-
-            <div className="PlayerMatch-Players" ref={ref => this.avoid = ref}>
-              
-              <div className="PlayerMatch-Players-Team">
-                {blueSide.map(player => <PlayerTeam key={player.id} player={player} />)}
-              </div>
-              <div className="PlayerMatch-Players-Team">
-                {redSide.map(player => <PlayerTeam key={player.id} player={player} />)}
-              </div>
-            </div>
-          </div>
-        </Box.body>
-      </Box.wrap>
+            <Styled.Players innerRef={ref => this.avoid = ref}>
+              <MatchTeams payload={payload} status={status} />
+            </Styled.Players>
+        </Styled.MatchBody>
+      </Styled.Match>
       {(this.state.details || this.props.forceOpen) && 
-       <MatchDetails matchId={id} 
-                     region={shardId} 
+       <MatchDetails matchId={payload.id} 
+                     region={payload.shardId} 
                      playerName={me.name} 
                      details={payload} 
                      status={this.props.status}
-                     gameMode={gameMode}
+                     gameMode={payload.gameMode}
                      />
       }
     </React.Fragment>
     )
 
   }
-}
-
-const Match = SkeletonContainer(Loading, Loaded);
+};
 
 export default Match;

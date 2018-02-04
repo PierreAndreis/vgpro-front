@@ -1,3 +1,6 @@
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -40,8 +43,8 @@ section {
 }
 
 /**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
+ * Correct the font size and margin on h1 elements within section and
+ * article contexts in Chrome, Firefox, and Safari.
  */
 
 h1 {
@@ -84,7 +87,7 @@ hr {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 2. Correct the odd em font sizing in all browsers.
  */
 
 pre {
@@ -117,7 +120,7 @@ abbr[title] {
 }
 
 /**
- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ * Prevent the duplicate application of bolder by the next rule in Safari 6.
  */
 
 b,
@@ -136,7 +139,7 @@ strong {
 
 /**
  * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
+ * 2. Correct the odd em font sizing in all browsers.
  */
 
 code,
@@ -172,7 +175,7 @@ small {
 }
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
+ * Prevent sub and sup elements from affecting the line height in
  * all browsers.
  */
 
@@ -269,7 +272,7 @@ select { /* 1 */
 }
 
 /**
- * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ * 1. Prevent a WebKit bug where (2) destroys native audio and video
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
@@ -314,9 +317,9 @@ fieldset {
 
 /**
  * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 2. Correct the color inheritance from fieldset elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
+ *    fieldset elements in all browsers.
  */
 
 legend {
@@ -387,7 +390,7 @@ textarea {
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
+ * 2. Change font properties to inherit in Safari.
  */
 
 ::-webkit-file-upload-button {
@@ -445,3 +448,4 @@ template {
 [hidden] {
   display: none;
 }
+`;

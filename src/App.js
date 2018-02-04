@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import './styles/normalize.css';
-import './styles/base.css';
-import './styles/base.resp.css';
+import './styles/normalize.style.js';
+import './styles/App.style.js';
 
 import Layout from "./components/layout";
 

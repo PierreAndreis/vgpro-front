@@ -1,7 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-import "./Soon.css";
 import styled from "styled-components";
 
 const Soon = styled.div`

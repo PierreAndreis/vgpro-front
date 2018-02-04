@@ -5,7 +5,7 @@ import {Adsense} from "./../common/Ads";
 import ProFeed from "./ProFeed";
 import Lead5   from "./Lead5";
 import Heroes   from "./Heroes";
-import SearchPlayer from "./../common/SearchPlayer.jsx";
+import SearchPlayer from "./../common/SearchPlayer";
 import "./Home.css";
 
 

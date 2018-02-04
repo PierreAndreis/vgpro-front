@@ -1,6 +1,4 @@
 import React from "react";
-
-import "./Skeleton.css";
 import styled, { keyframes } from "styled-components";
 
 const cardLoading = keyframes`

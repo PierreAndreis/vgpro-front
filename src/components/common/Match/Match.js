@@ -213,6 +213,9 @@ class Match extends React.PureComponent {
       );
     }
 
+    const shouldOpen = (this.props.forceOpen || this.state.details) && this.props.status === "loaded";
+
+    console.log(shouldOpen, this.props.forceOpen, this.state.details, this.props.status);
 
     return (
     <React.Fragment>
@@ -234,7 +237,7 @@ class Match extends React.PureComponent {
             </Styled.Players>
         </Styled.MatchBody>
       </Styled.Match>
-      {(this.state.details || this.props.forceOpen) && 
+      {(shouldOpen) && 
        <MatchDetails matchId={payload.id} 
                      region={payload.shardId} 
                      playerName={me.name} 

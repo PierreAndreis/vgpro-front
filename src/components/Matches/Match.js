@@ -1,5 +1,5 @@
 import React from "react";
-import Match from "./Match"
+import Match from "./../common/Match/Match"
 
 import Utils from "./../../utils";
 
@@ -26,6 +26,7 @@ class MatchPage extends React.Component {
     this.cancel = Utils.makeCancelable(
       fetchMatchDetails(match.params.matchId, match.params.region),
       (res) => {
+        console.log(res);
         // Since we are not sending a playerId when making the API request, (as we do when we get match history)
         // we will manually set the correct player as me only if there is a params for the player set
         // otherwise, show any (technically the first in the list)

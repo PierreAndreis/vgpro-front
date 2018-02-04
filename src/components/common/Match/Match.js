@@ -215,8 +215,6 @@ class Match extends React.PureComponent {
 
     const shouldOpen = (this.props.forceOpen || this.state.details) && this.props.status === "loaded";
 
-    console.log(shouldOpen, this.props.forceOpen, this.state.details, this.props.status);
-
     return (
     <React.Fragment>
       <Styled.Match winner={winner}>

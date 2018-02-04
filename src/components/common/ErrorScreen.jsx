@@ -1,9 +1,41 @@
 import React from "react";
+import styled from "styled-components";
 import ReactGA from "react-ga";
 
 import Box from "./Box";
 
-import "./ErrorScreen.css";
+const ErrorScreenBox = styled(Box.wrap)`
+  margin: 5% auto;
+`;
+
+const ErrorScreenContent = styled.div`
+  width: 100%;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`
+
+const BadImage = styled.div`
+  width: 50px;
+  height: 96px;
+  background: url("/images/error.png") no-repeat;
+  background-size: 100%;
+  filter: grayscale(100%);
+  margin: 0 auto;
+  opacity: 0.6;
+`;
+
+const Message = styled.div`
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 13px;
+  text-align: center;
+
+  opacity: 0.4;
+`;
+
 
 const ErrorScreen = ({err, height, message, boxed, width}) => {
 
@@ -14,11 +46,6 @@ const ErrorScreen = ({err, height, message, boxed, width}) => {
     // todo: analystics
   }
 
-  ReactGA.exception({
-    description: `ErrorBox: ${err}`,
-    fatal: false
-  });
-
   let style = {};
 
   if (width) {
@@ -28,18 +55,18 @@ const ErrorScreen = ({err, height, message, boxed, width}) => {
   }
 
   let content = (
-    <div className="ErrorScreen">
-      <div className="ErrorScreen-Bad"/>
-      <div className="ErrorScreen-Message">{text}</div>
-    </div>
+    <ErrorScreenContent>
+      <BadImage/>
+      <Message>{text}</Message>
+    </ErrorScreenContent>
   )
 
   if (boxed) {
     return (
-      <Box.wrap className="Box-ErrorScreen" style={style}>
+      <ErrorScreenBox style={style}>
         <Box.title>Error!</Box.title>
         <Box.body>{content}</Box.body>
-      </Box.wrap>
+      </ErrorScreenBox>
     )
   }
 

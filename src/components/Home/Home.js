@@ -16,7 +16,7 @@ class HomePage extends React.Component {
   state = {country: null}
 
   componentWillMount() {
-    axios.get('http://freegeoip.net/json/').then(response => {
+    axios.get('https://freegeoip.net/json/').then(response => {
       this.setState({country: response.data.country_code});
     });
   }
@@ -39,11 +39,10 @@ class HomePage extends React.Component {
           {
             (this.state.country === "US") &&
               (
-                <div style={{textAlign: "center"}}>
-                  <a href="http://bit.ly/2Ec3kRF" target="_blank" rel="noopener noreferrer">
-                    <img src="https://vgy.me/ytc2rj.jpg" alt="ytc2rj.jpg" />
-                  </a>
-                </div>
+
+                <a href="http://bit.ly/2Ec3kRF" target="_blank" rel="noopener noreferrer">
+                  <div className="Jonale-Ads" />
+                </a>
               )
           }
         <div className="Home-box">

@@ -7,7 +7,6 @@ import { addRecent, addFavorite,
          setRecent, setFavorite } from "./../../../actions/user";
 
 import Utils from "./../../../utils";
-import Box from "../Box";
 
 import * as Style from "./SearchMenu.style.js";
 

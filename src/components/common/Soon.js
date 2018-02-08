@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 
 import styled from "styled-components";
 
-const Soon = styled.div`
+const SoonWrapper = styled.div`
   margin: 20px auto;
   text-align: center;
 
@@ -22,9 +22,9 @@ const Soon = () => {
       <Helmet>
         <title>Soon</title>
       </Helmet>
-        <Soon>
+        <SoonWrapper>
           <h3>SOON.</h3>
-        </Soon>
+        </SoonWrapper>
     </React.Fragment>
   )
 }

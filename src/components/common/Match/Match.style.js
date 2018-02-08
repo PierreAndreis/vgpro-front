@@ -1,4 +1,4 @@
-import styled, {css, injectGlobal} from "styled-components";
+import styled, { injectGlobal } from "styled-components";
 import Box from "./../Box";
 import AssetLoader from "./../AssetLoader";
 

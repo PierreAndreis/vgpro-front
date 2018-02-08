@@ -41,32 +41,6 @@ const Loading = () => {
 
 const Loaded = ({t, data, style}) => {
 
-
-  //   "createdAt": "2017-11-04T20:28:56Z",
-  //   "matchId": "c0b9d250-c19e-11e7-8607-0671096b3e30",
-  //   "proInfo": {
-  //     "name": "iLoveJoseph",
-  //     "position": "jungler",
-  //     "region": "na",
-  //     "team": "Cloud9"
-  //   },
-  //   "actor": "Reza",
-  //   "tier": 28,
-  //   "winner": true,
-  //   "kills": 6,
-  //   "deaths": 5,
-  //   "assists": 5,
-  //   "items": Array[6][
-  //     "Broken Myth",
-  //     "Aftershock",
-  //     "Metal Jacket",
-  //     "Heavy Prism",
-  //     "Reflex Block",
-  //     "Travel Boots"
-  //   ]
-  // },
-
-
   const {
     proInfo, 
     actor, 
@@ -83,12 +57,15 @@ const Loaded = ({t, data, style}) => {
   const win = (winner) ? "Win" : "Loss";
 
   const itemsImage = [];
+  
+    // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
+  let itemsWithout5v5Default = items.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
 
   for (let i = 0; i < 6; i++) {
     
     let name
     if (items[i]) {
-      name = items[i];
+      name = itemsWithout5v5Default[i];
     }
 
     itemsImage.push(

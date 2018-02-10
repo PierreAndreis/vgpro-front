@@ -12,7 +12,7 @@ class ErrorBoundary extends React.Component {
       error: error,
       errorInfo: errorInfo
     })
-    global.Raven.captureException(error);
+    global.Raven.captureException(error, { extra: errorInfo });
     global.Raven.showReportDialog();
   }
 

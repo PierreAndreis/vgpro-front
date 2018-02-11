@@ -16,6 +16,7 @@
 
 .ProfileStats {
   display: flex;
+  flex-direction: row;
   height: 100%;
   min-height: 200px;
   justify-content: space-around;

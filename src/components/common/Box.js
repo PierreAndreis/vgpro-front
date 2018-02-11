@@ -24,11 +24,6 @@ export const Box = styled.div`
   }
 `;
 
-export const BoxBody = styled.div`
-  position: relative;
-  flex-grow: 1;
-`;
-
 export const BoxTitle = styled.div`
   width: 100%;
   box-sizing: border-box;
@@ -47,16 +42,25 @@ export const BoxTitle = styled.div`
   font-size: 18px;
   text-transform: uppercase;
   border-radius: 5px 5px 0 0;
-`
+`;
+
+export const BoxBody = styled.div`
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+`;
 
 export const BoxActions = styled.div`
   /* Martin-top so it is on bottom :p */
   margin-top: auto;
+  background: hsla(0,0%,76%,.3);
   height: 20px;
   display: flex;
   justify-content: space-around;
-  background: rgba(195, 195, 195, 0.3);
-  /* border: 1px solid blue; */
+  ${BoxBody} &{
+
+  }
 `;
 
   injectGlobal`

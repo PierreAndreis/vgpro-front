@@ -39,29 +39,75 @@
   text-align: right;
   position: relative;
   z-index: 1;
-
   /* background: red; */
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
   padding-right: 15px;
 }
 
 .Menu-Mobile-Button {
-  font-size: 32px;
-  color: #7C7C7C;
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  /* background: blue; */
+  position: relative;
+  
+  
+
+  text-indent: -9999em;
 }
 
-/* .Mobile-Menu {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  bottom: 0;
+.Menu-Mobile-Button span,
+.Menu-Mobile-Button span:before,
+.Menu-Mobile-Button span:after {
+  transition: all 0.4s;
+  background-color: #7C7C7C;
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 5px;
   left: 0;
-  right: 0;
-  position: fixed;
+}
+
+.Menu-Mobile-Button span:before,
+.Menu-Mobile-Button span:after {
+  content: "";
+}
+
+.Menu-Mobile-Button span {
+  top: 8px;
+}
+
+.Menu-Mobile-Button span:before {
+  transform-origin: 33% 100%;
+  top: -8px;
   z-index: 10;
-  display: none;
-  background: rgb(59, 59, 59);
-} */
+}
+
+.Menu-Mobile-Button span:after {
+  transform-origin: 33% 0;
+  top: 8px;
+}
+
+.Menu-Mobile-Button#open span,
+.Menu-Mobile-Button#open span:before,
+.Menu-Mobile-Button#open span:after {
+  background-color: transparent;
+}
+
+.Menu-Mobile-Button#open span:before {
+  transform: translateY(4px) translateX(0px) rotate(45deg);
+  background-color: #7C7C7C;
+}
+
+.Menu-Mobile-Button#open span:after {
+  transform: translateY(-4px) translateX(0px) rotate(-45deg);
+  background-color: #7C7C7C;
+}
+
 
 .Mobile-Menu {
   width: 100%;

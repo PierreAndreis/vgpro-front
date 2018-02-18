@@ -1,61 +1,22 @@
 import React from "react";
 
 import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
-import { Rate }                             from "./../../common/ColoredValues";
-import AssetLoader                          from "./../../common/AssetLoader";
-import { SkeletonPayload, SkeletonWrapper } from "./../../common/Skeleton";
+import { SkeletonPayload } from "./../../common/Skeleton";
 
 import {fetchTopHeroes} from "./../../../actions/api";
 import Utils            from "./../../../utils";
+import {REGIONS, HEROES_TYPES} from "./../../../config/constants";
+
+import Hero from "./Hero";
 
 import "./Heroes.css";
+import * as Styled from "./HeroBox.style.js";
 
-const Hero = ({status, name, value, rank}) => {
-  let heroName;
-
-  if (status === "loaded") { 
-    heroName = name;
-  };
-
-  return (
-    <div className={`HeroesMeta-Top Rank-${rank}`}>
-      <AssetLoader type="heroes" className="Heroes-Meta-Top-Image" name={heroName}>
-        <div className="Heroes-Meta-Top-Image-Tag">{rank}</div>
-      </AssetLoader>
-      <div className="Heroes-Meta-Top-Name">
-        <SkeletonWrapper status={status} width="70px" height="10px">
-          {() => name || "Unknown"}
-        </SkeletonWrapper>
-      </div>
-      <span>
-        <SkeletonWrapper status={status} width="25px" height="7px">
-          {() => <Rate rate={value[Object.keys(value)[0]]} />}
-        </SkeletonWrapper>
-      </span>
-    </div>
-  );
-}
-
-const TYPES = [
-  { value: "pickrate", label: "Pick Rate", selector: "Selector-PickRate" },
-  { value: "winrate" , label: "Win Rate" , selector: "Selector-WinRate"  },
-  { value: "banrate" , label: "Ban Rate" , selector: "Selector-BanRate"  },
-];
-
-const REGIONS = [
-  "all",
-  "na",
-  "eu",
-  "ea",
-  "sea",
-  "sa",
-  "cn"
-]
 
 export default class extends React.Component {
 
   state = {
-    active: TYPES[0],
+    active: HEROES_TYPES[0],
     region: "all",
     status: "loading",
     page: 0,
@@ -145,11 +106,12 @@ export default class extends React.Component {
     const prevBlocked = page === 0;
 
     return (
-      <Box className="animated fadeInRight HeroesMeta-Box">
-        <BoxTitle className="HeroesMeta-Title">
+      <Styled.Wrapper>
+
+        <Styled.Title>
           <span>Top {active.label}</span>
           <div className="HeroesMeta-Selector">
-            {TYPES.map(type => (
+            {HEROES_TYPES.map(type => (
               <div key={type.value}
                 className={`
                   HeroesMeta-Selector-Icon 
@@ -159,8 +121,9 @@ export default class extends React.Component {
               />
             ))}
           </div>
-        </BoxTitle>
-        <BoxBody className="HeroesMeta">
+        </Styled.Title>
+
+        <Styled.Body>
           <div className="Box_RegionSelect">
             {
               REGIONS.map(region => (
@@ -190,12 +153,12 @@ export default class extends React.Component {
             }
           </div>
         
-        </BoxBody>
+        </Styled.Body>
         <BoxActions>
           <div className="button" id={prevBlocked ? "disabled" : ""} onClick={this.prevPage}>Back</div>
           <div className="button" id={nextBlocked ? "disabled" : ""} onClick={this.nextPage}>Next</div>
         </BoxActions>
-      </Box> 
+      </Styled.Wrapper> 
     )
   }
 }

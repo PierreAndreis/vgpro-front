@@ -1,4 +1,4 @@
-.HeroesMeta-Box {
+/* .HeroesMeta-Box {
   height: 340px;
 }
 
@@ -6,13 +6,13 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
+} */
 
-.HeroesMeta-Title {
+/* .HeroesMeta-Title {
   display: flex;
   height: 56px;
   position: relative;
-}
+} */
 
 .HeroesMeta-Selector {
   margin-left: auto;

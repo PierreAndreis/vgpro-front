@@ -8,18 +8,7 @@ import Heroes   from "./Heroes";
 import SearchPlayer from "./../common/SearchPlayer";
 import "./Home.css";
 
-import axios from "axios";
-
-
 class HomePage extends React.Component {
-
-  state = {country: null}
-
-  componentWillMount() {
-    axios.get('http://freegeoip.net/json/').then(response => {
-      this.setState({country: response.data.country_code});
-    });
-  }
 
   render() {
     const { t } = this.props;
@@ -36,16 +25,6 @@ class HomePage extends React.Component {
           <SearchPlayer mode="main" />
         </div>
         <Adsense />
-          {
-            (this.state.country === "US") &&
-              (
-                <div style={{textAlign: "center"}}>
-                  <a href="http://bit.ly/2Ec3kRF" target="_blank" rel="noopener noreferrer">
-                    <img src="https://vgy.me/ytc2rj.jpg" alt="ytc2rj.jpg" />
-                  </a>
-                </div>
-              )
-          }
         <div className="Home-box">
           <ProFeed t={t} />
           <Lead5   t={t} />

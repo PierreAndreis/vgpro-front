@@ -3,6 +3,12 @@ export const LEADERBOARD_TYPES = [
     { value: "blitz" , label: "Blitz" , selector: "Selector-Blitz"  },
 ];
 
+export const HEROES_TYPES = [
+  { value: "pickrate", label: "Pick Rate", selector: "Selector-PickRate" },
+  { value: "winrate" , label: "Win Rate" , selector: "Selector-WinRate"  },
+  { value: "banrate" , label: "Ban Rate" , selector: "Selector-BanRate"  },
+];
+
 export const REGIONS = [
   "all",
   "na",
@@ -15,5 +21,6 @@ export const REGIONS = [
 
 export default {
   LEADERBOARD_TYPES,
-  REGIONS
+  REGIONS,
+  HEROES_TYPES
 }

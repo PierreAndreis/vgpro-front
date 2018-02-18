@@ -1,4 +1,4 @@
-import styled, {injectGlobal} from "styled-components";
+import styled, {injectGlobal, css} from "styled-components";
 
 export const Box = styled.div`
   width: 320px;
@@ -15,6 +15,14 @@ export const Box = styled.div`
   /* Flex so we can have actions at bottom */
   display: flex;
   flex-direction: column;
+
+  ${(props) => props.animation && css`
+
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: ${props.animation};
+  `}
+
 
   @media screen and (max-width: 400px) {
     .box__card {
@@ -63,6 +71,39 @@ export const BoxActions = styled.div`
   }
 `;
 
+export const BoxSelector = styled.div`
+  margin-left: auto;
+  width: 150px;
+  height: 20px;
+  display: flex;
+  justify-content: flex-end;
+`
+
+export const BoxSelectorOptions = styled.div`
+  cursor: pointer;
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: all 300ms;
+  ${props => 
+    props.icon && css`
+      background-image: url(${props.icon}${props.active ? ".svg" : "_.svg"});
+    `
+  }
+  ${props => 
+    props.active && css`
+    background-color: #E3B63B; 
+    `
+  }
+  &:hover {
+    ${props => !props.active && css`background-color: rgba(0, 0, 0, 0.055)`}
+  }
+`
+
   injectGlobal`
   .button {
     line-height: 12px;
@@ -102,11 +143,49 @@ export const BoxActions = styled.div`
     opacity: .9;
     box-shadow: 0 0 0 #d3d2d3;
   }
+
+
+
+  .Box_RegionSelect {
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    padding: 10px 50px 0px;
+    /* padding: 0 50px; */
+  }
+
+  .Box_RegionSelect div {
+    font-size: 14px;
+    color: grey;
+    font-weight: 500;
+    padding: 0 5px 2px;
+    cursor: pointer;
+  }
+
+  .Box_RegionSelect div:hover {
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+  }
+
+  .Box_RegionSelect div.active {
+    color: #DCAF5A;
+    
+  }
+
+  .Box_Divider {
+    width: 100%;
+    /* margin: 0 0 10px; */
+    height: 10px;
+    background: linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+  }
 `
 
 export default {
-  wrap:   Box,
-  title:  BoxTitle,
-  body:   BoxBody,
-  action: BoxActions,
+  wrap    : Box,
+  title   : BoxTitle,
+  selector: BoxSelector,
+  selectorOptions: BoxSelectorOptions,
+  divider:  BoxDivider,
+  body    : BoxBody,
+  action  : BoxActions,
 }

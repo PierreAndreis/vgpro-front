@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
+import Box from "./../../common/Box";
 import { SkeletonPayload } from "./../../common/Skeleton";
 
 import {fetchTopHeroes} from "./../../../actions/api";
@@ -11,7 +11,6 @@ import Hero from "./Hero";
 
 import "./Heroes.css";
 import * as Styled from "./HeroBox.style.js";
-
 
 export default class extends React.Component {
 
@@ -106,21 +105,20 @@ export default class extends React.Component {
     const prevBlocked = page === 0;
 
     return (
-      <Styled.Wrapper>
+      <Styled.Wrapper animation="fadeInRight">
 
         <Styled.Title>
           <span>Top {active.label}</span>
-          <div className="HeroesMeta-Selector">
+          <Box.selector>
             {HEROES_TYPES.map(type => (
-              <div key={type.value}
-                className={`
-                  HeroesMeta-Selector-Icon 
-                  ${type.selector} 
-                  ${type.selector === active.selector ? "active" : ""}`}
-                onClick={this.changeType(type)}
+              <Box.selectorOptions
+                   key={type.value}
+                   icon={type.icon}
+                   active={type.value === active.value}
+                  onClick={this.changeType(type)}
               />
             ))}
-          </div>
+          </Box.selector>
         </Styled.Title>
 
         <Styled.Body>
@@ -154,10 +152,10 @@ export default class extends React.Component {
           </div>
         
         </Styled.Body>
-        <BoxActions>
+        <Box.action>
           <div className="button" id={prevBlocked ? "disabled" : ""} onClick={this.prevPage}>Back</div>
           <div className="button" id={nextBlocked ? "disabled" : ""} onClick={this.nextPage}>Next</div>
-        </BoxActions>
+        </Box.action>
       </Styled.Wrapper> 
     )
   }

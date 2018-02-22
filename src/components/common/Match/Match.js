@@ -1,9 +1,7 @@
 import React from "react";
 import ReactGA from "react-ga";
 
-import Box from "./../Box";
 import {KDA, Rate} from "./../ColoredValues";
-import AssetLoader from "./../AssetLoader";
 import { SkeletonWrapper, SkeletonPayload } from "./../Skeleton";
 
 import {Link} from "react-router-dom";

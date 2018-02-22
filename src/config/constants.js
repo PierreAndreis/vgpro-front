@@ -1,6 +1,6 @@
 export const LEADERBOARD_TYPES = [
-    { value: "ranked", label: "Ranked", selector: "Selector-Ranked" },
-    { value: "blitz" , label: "Blitz" , selector: "Selector-Blitz"  },
+    { value: "ranked", label: "Ranked",  icon: "/icons/ranked"},
+    { value: "blitz" , label: "Blitz" ,  icon: "/icons/blitz" },
 ];
 
 export const HEROES_TYPES = [

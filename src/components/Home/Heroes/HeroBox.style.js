@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
+import {Box, BoxTitle, BoxBody} from "./../../common/Box";
 
 
 export const Wrapper = styled(Box)`

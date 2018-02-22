@@ -8,8 +8,6 @@ import Utils            from "./../../../utils";
 import {REGIONS, HEROES_TYPES} from "./../../../config/constants";
 
 import Hero from "./Hero";
-
-import "./Heroes.css";
 import * as Styled from "./HeroBox.style.js";
 
 export default class extends React.Component {
@@ -135,21 +133,21 @@ export default class extends React.Component {
           </div>
           <div className="Box_Divider" />
           { page === 0 && 
-            <div className="HeroesMeta-Top3">
+            <Styled.Top3>
               {
                 top3.map(({name, rank, ...value}) => (
                   <Hero key={rank} status={status} name={name} value={value} rank={rank} />
                 ))
               }
-            </div>
+            </Styled.Top3>
           }
-          <div className="Heroes-Meta-Others animated slideInUp">
+          <Styled.Others>
             {
               rest.map(({name, rank, ...value}) => (
                 <Hero key={rank} status={status} name={name} value={value} rank={rank} />
               ))
             }
-          </div>
+          </Styled.Others>
         
         </Styled.Body>
         <Box.action>

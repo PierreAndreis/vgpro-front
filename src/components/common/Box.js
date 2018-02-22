@@ -185,7 +185,6 @@ export default {
   title   : BoxTitle,
   selector: BoxSelector,
   selectorOptions: BoxSelectorOptions,
-  divider:  BoxDivider,
   body    : BoxBody,
   action  : BoxActions,
 }

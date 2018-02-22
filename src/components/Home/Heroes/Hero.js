@@ -2,7 +2,8 @@ import React from "react";
 
 import { SkeletonWrapper } from "./../../common/Skeleton";
 import { Rate }            from "./../../common/ColoredValues";
-import AssetLoader         from "./../../common/AssetLoader";
+
+import * as Styled from "./Hero.style.js";
 
 const Hero = ({status, name, value, rank}) => {
   let heroName;
@@ -12,21 +13,23 @@ const Hero = ({status, name, value, rank}) => {
   };
 
   return (
-    <div className={`HeroesMeta-Top Rank-${rank}`}>
-      <AssetLoader type="heroes" className="Heroes-Meta-Top-Image" name={heroName}>
-        <div className="Heroes-Meta-Top-Image-Tag">{rank}</div>
-      </AssetLoader>
-      <div className="Heroes-Meta-Top-Name">
+    <Styled.Each rank={rank}>
+      <Styled.HeroImage rank={rank} type="heroes" name={heroName}>
+        <Styled.HeroTag rank={rank}>
+          {rank}
+        </Styled.HeroTag>
+      </Styled.HeroImage>
+      <Styled.Name>
         <SkeletonWrapper status={status} width="70px" height="10px">
           {() => name || "Unknown"}
         </SkeletonWrapper>
-      </div>
-      <span>
+      </Styled.Name>
+      <Styled.Percentage>
         <SkeletonWrapper status={status} width="25px" height="7px">
           {() => <Rate rate={value[Object.keys(value)[0]]} />}
         </SkeletonWrapper>
-      </span>
-    </div>
+      </Styled.Percentage>
+    </Styled.Each>
   );
 }
 

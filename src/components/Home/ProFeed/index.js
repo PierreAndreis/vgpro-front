@@ -23,44 +23,47 @@ class ProFeed extends React.Component {
       page: 1,
       payload: SkeletonPayload(PRO_FEED_ITEM_PER_PAGE)
     }
+  }
 
+  componentWillMount() {
+    this.fetch();
+  }
+
+  componentWillUnmount() {
+    if (typeof this.cancel === "function") this.cancel();
   }
 
   paginateUp(e) {
     e.preventDefault();
     if (e.target.id === "disabled") return;
-    
-    this.setState({
-      page: this.state.page + 1
-    })
+    this.setState((prevState) => {
+      return {
+        page: prevState.page + 1
+      }
+    });
   }
-
   paginateDown(e) {
     e.preventDefault();
+    if (e.target.id === "disabled") return;
 
-    if (   e.target.id === "disabled"
-        || this.state.page < 2) return;
-    this.setState({
-      page: this.state.page - 1
-    })
+    this.setState((prevState) => {
+      if (prevState.page < 2) return;
+      return {
+        page: prevState.page - 1
+      }
+    });
   }
   
   fetch() {
     this.setState({
       status: "loading"
     });
+
     this.cancel = Utils.makeCancelable(
       fetchProFeed(),
       (res) => this.setState({status: "loaded", payload: res}),
       (e) =>   this.setState({status: "error", payload: e})
     );
-  }
-
-  componentWillMount() {
-    this.fetch();
-  }
-  componentWillUnmount() {
-    if (typeof this.cancel === "function") this.cancel();
   }
 
   render() {
@@ -84,7 +87,6 @@ class ProFeed extends React.Component {
     }
 
     return (
-
       <Box className="ProFeed-box animated fadeInLeft">
       <BoxTitle>Pro History 5v5</BoxTitle>
       <BoxBody>

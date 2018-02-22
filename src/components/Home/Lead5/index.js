@@ -22,10 +22,9 @@ class Lead5 extends React.Component {
     this.state = {
       status: "loading",
       type: LEADERBOARD_TYPES[0],
-      region: "all", /* all, eu, na, sg, ea, cn */
+      region: "all",
       payload: SkeletonPayload(4)
-    }
-
+    };
   }
 
   changeRegion = (region) => (e) => {
@@ -38,7 +37,7 @@ class Lead5 extends React.Component {
   changeType = (type) => (e) => {
     if (this.state.type === type) return;
     this.setState({
-        type,
+      type,
     }, this.fetch)
   }
 

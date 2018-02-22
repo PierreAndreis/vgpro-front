@@ -1,17 +1,16 @@
 import React from "react";
 
 import FeedMatch                            from "./FeedMatch";
-import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
+import {BoxTitle, BoxActions} from "./../../common/Box";
 import {SkeletonPayload}                    from "./../../common/Skeleton";
 import ErrorScreen                          from "./../../common/ErrorScreen";
 import {fetchProFeed}                       from "./../../../actions/api";
 
 import Utils from "../../../utils";
 
-import "./ProFeed.css";
+import * as Styled from "./ProFeedBox.style.js";
 
 const PRO_FEED_ITEM_PER_PAGE = 6;
-
 
 class ProFeed extends React.Component {
 
@@ -87,22 +86,20 @@ class ProFeed extends React.Component {
     }
 
     return (
-      <Box className="ProFeed-box animated fadeInLeft">
-      <BoxTitle>Pro History 5v5</BoxTitle>
-      <BoxBody>
-        <div className="ProFeed">
+      <Styled.Wrapper animation="fadeInLeft">
+        <BoxTitle>Pro History 5v5</BoxTitle>
+        <Styled.Body>
           {content}
-        </div>
-      </BoxBody>
-      <BoxActions>
-        <div className="button" id={(page > 1       ) ? "" : "disabled"}  onClick={this.paginateDown.bind(this)}>
-          Back
-        </div>
-        <div className="button" id={(page < lastPage) ? "" : "disabled"}  onClick={this.paginateUp.bind(this)  } >
-          Next
-        </div>
-      </BoxActions>
-    </Box>
+        </Styled.Body>
+        <BoxActions>
+          <div className="button" id={(page > 1       ) ? "" : "disabled"}  onClick={this.paginateDown.bind(this)}>
+            Back
+          </div>
+          <div className="button" id={(page < lastPage) ? "" : "disabled"}  onClick={this.paginateUp.bind(this)  } >
+            Next
+          </div>
+        </BoxActions>
+    </Styled.Wrapper>
     )
   }
 }

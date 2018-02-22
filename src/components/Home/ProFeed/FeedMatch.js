@@ -1,111 +1,84 @@
 import React from "react";
 
-import {translate} from "react-i18next";
+import { translate } from "react-i18next";
 import AssetLoader from "../../common/AssetLoader";
 
 import Utils from "utils";
-import { Link }   from 'react-router-dom';
-import {Skeleton, SkeletonContainer} from "../../common/Skeleton";
+import { Link } from 'react-router-dom';
+import { SkeletonWrapper } from "../../common/Skeleton";
+
+import * as Styled from "./FeedMatch.style";
+
+const FeedMatch = ({ status, t, data }) => {
 
 
-const Loading = () => {
-  return (
-      <div className="ProFeed-each skeletonDiv" >
-        <div className="ProFeed-each-status" />
-        <div className="ProFeed-each-info">
-          <Skeleton width={30} height={30}/>
-          <div className="ProFeed-each-info-personal">
-            <Skeleton width={50} height={10}/>
-            <span><Skeleton width={40} height={5}/></span>
-          </div>
-        </div>
-        <div className="ProFeed-each-game">
-          <Skeleton width={25} height={25} borderRadius={"50%"}/>
-          <div className="ProFeed-each-game-kda">
-            <Skeleton width={25} height={10}/>
-          </div>
-          
-        </div>
-        <div className="ProFeed-each-items">
-          <Skeleton width={20} height={20} borderRadius={"50%"}/>
-          <Skeleton width={20} height={20} borderRadius={"50%"}/>
-          <Skeleton width={20} height={20} borderRadius={"50%"}/>
-          <Skeleton width={20} height={20} borderRadius={"50%"}/>
-          <Skeleton width={20} height={20} borderRadius={"50%"}/>
-          <Skeleton width={20} height={20} borderRadius={"50%"}/>
-        </div>
-        <div className="ProFeed-each-arrow"> <i className="fa fa-angle-right" /> </div>
-      </div>
-  )
-}
+  const win = (data.winner) ? "Win" : "Loss";
+  let link = "/";
 
-const Loaded = ({t, data, style}) => {
-
-  const {
-    proInfo, 
-    actor, 
-    winner, 
-    kills,
-    role,
-    deaths,
-    assists,
-    items,
-  } = data;
-  
-  const {name, region, team} = proInfo;
-
-  const win = (winner) ? "Win" : "Loss";
-
+  // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
   const itemsImage = [];
-  
-    // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
-  let itemsWithout5v5Default = items.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
+  let itemsWithout5v5Default = [];
+
+  if (status === "loaded") {
+    link = Utils.goToPlayer(data.proInfo.name);
+    itemsWithout5v5Default = data.items.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
+  };
 
   for (let i = 0; i < 6; i++) {
-    
     let name
-    if (items[i]) {
+    if (itemsWithout5v5Default[i]) {
       name = itemsWithout5v5Default[i];
     }
 
     itemsImage.push(
-      <AssetLoader key={i} type="items" name={name} className="ProFeed-each-items-each"/>
-    )
-      /* <div
-        key={i}
-        className="ProFeed-each-items-each"
-        name={name}
-        style={style}/>); */
+      <Styled.Item key={i} type="items" name={name}/>
+    );
   }
 
   return (
-  <Link to={Utils.goToPlayer(name)} className="ProFeed-each" style={style}>
-    <div className="ProFeed-each-status" id={win}/>
-    <div className="ProFeed-each-info">
-      <div className="ProFeed-each-info-picture" style={{
-        backgroundImage: `url(/players/${name}.png)`
-      }} />
-      <div className="ProFeed-each-info-personal">
-        <div>{name} {" "}<span>{region}</span></div>
-        <span>{team}</span>
-      </div>
-    </div>
-    <div className="ProFeed-each-game">
-      <AssetLoader type="heroes" className="ProFeed-each-game-hero" name={actor}>
-        <div className="ProFeed-each-game-role" id={role && role.toLowerCase()} />
-      </AssetLoader>
-      <div className="ProFeed-each-game-kda">{kills}/{deaths}/{assists}</div>
-      
-    </div>
-    <div className="ProFeed-each-items">
-      {itemsImage}
-    </div>
-    <div className="ProFeed-each-arrow"> <i className="fa fa-angle-right" /> </div>
-  </Link>
+    <Styled.Wrapper to={link}>
+
+      <Styled.Status winner={data.winner}/>
+
+      <Styled.PlayerInfo>
+
+        <SkeletonWrapper status={status} width={30} height={30}>
+          {() => <Styled.PlayerPicture playerName={data.proInfo.name} />}
+        </SkeletonWrapper>
+
+        <Styled.PlayerDetails>
+          <SkeletonWrapper status={status} width={50} height={10}>
+            {() => <div>{data.proInfo.name} {" "}<span>{data.proInfo.region}</span></div>}
+          </SkeletonWrapper>
+
+          <span><SkeletonWrapper width={40} height={5} status={status} children={() => data.proInfo.team} /></span>
+        </Styled.PlayerDetails>
+
+      </Styled.PlayerInfo>
+
+      <Styled.Game>
+        <SkeletonWrapper status={status} width={25} height={25} borderRadius={"50%"}>
+          {() => (
+            <Styled.GameHero type="heroes" name={data.actor}>
+              <Styled.GameRole role={data.role}/>
+            </Styled.GameHero>
+          )}
+        </SkeletonWrapper>
+
+        <Styled.GameKDA>
+          <SkeletonWrapper status={status} width={25} height={10}>
+            {() => (<React.Fragment>{data.kills}/{data.deaths}/{data.assists}</React.Fragment>)}
+          </SkeletonWrapper>
+        </Styled.GameKDA>
+
+      </Styled.Game>
+      <Styled.Items>
+        {itemsImage}
+      </Styled.Items>
+      <Styled.Arrow> <i className="fa fa-angle-right" /> </Styled.Arrow>
+    </Styled.Wrapper>
   )
 
-}
-
-const FeedMatch = SkeletonContainer(Loading, Loaded);
+};
 
 export default translate()(FeedMatch);

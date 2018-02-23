@@ -1,57 +1,56 @@
 import React from "react";
 
-import {translate} from "react-i18next";
+import { translate } from "react-i18next";
 
-import { NavLink }       from 'react-router-dom';
-import Media             from "react-media";
+import { NavLink } from 'react-router-dom';
+import Media from "react-media";
 
-import "./Menu.css";
+// import "./Menu.css";
+import * as Styled from "./Menu.style.js"
 
 const NavLinks = [
   {
     name: "Home",
-    loc:  "menuhome",
-    to:   "/",
+    loc: "menuhome",
+    to: "/",
     exact: true,
   },
   {
     name: "Leaderboard",
-    loc:  "leadboard",
-    to:   "/leaderboard",
+    loc: "leadboard",
+    to: "/leaderboard",
   },
   {
     name: "Teams",
-    loc:  "menuteams",
-    to:   "/teams",
+    loc: "menuteams",
+    to: "/teams",
   },
   {
     name: "Heroes",
-    loc:  "menuheroes",
-    to:   "/heroes",
+    loc: "menuheroes",
+    to: "/heroes",
   },
 ]
 
 
-const m = ({t}) => { 
+const MenuList = translate()(({ t }) => {
   return (
     <React.Fragment>
       {NavLinks.map(nav => (
         <NavLink key={nav.name}
-                 to={nav.to} 
-                 exact={nav.exact} 
-                 activeClassName={nav.soon ? "" : "active"}
+          to={nav.to}
+          exact={nav.exact}
+          activeClassName={nav.soon ? "" : "active"}
         >{nav.loc ? t(nav.loc) : nav.name} </NavLink>
       ))}
     </React.Fragment>
   );
-}
-
-const Menu = translate()(m);
+});
 
 
-class MobileMenu extends React.Component{
+class MenuMobile extends React.Component {
 
-  state = {open: false}
+  state = { open: false }
 
   handleMenu = () => {
     this.setState((prevState) => {
@@ -64,38 +63,41 @@ class MobileMenu extends React.Component{
   render() {
     return (
       <React.Fragment>
-        <div className="Menu-Mobile-Area">
-          <div className="Menu-Mobile-Button" id={this.state.open ? "open" : "closed"} onClick={this.handleMenu}>
+        <Styled.MobileButton>
+          <Styled.MobileIcon open={this.state.open} onClick={this.handleMenu}>
             <span />
-          </div>
-        </div>
+          </Styled.MobileIcon>
+        </Styled.MobileButton>
 
-        <div className={`Mobile-Menu ${this.state.open && "menu-open"}`} onClick={this.handleMenu}>
-          <Menu />
-        </div>
+        <Styled.MenuMobile open={this.state.open} onClick={this.handleMenu}>
+          <MenuList />
+        </Styled.MenuMobile>
 
       </React.Fragment>
     )
   }
-
 }
+
+const MenuDesktop = (props) => (
+  <Styled.MenuDesktop>
+    <MenuList {...props} />
+  </Styled.MenuDesktop>
+)
 
 
 const MenuHeader = (props) => {
 
   /** Please, keep this MediaQuery updated with Header.css **/
   return (
-      <Media query="(max-width: 768px)">
-        {matches =>
-          matches ? (
-            <MobileMenu {...props} />
-          ) : (
-            <div className="Header-Menu">
-              <Menu {...props} />
-            </div>
+    <Media query="(max-width: 768px)">
+      {matches =>
+        matches ? (
+          <MenuMobile {...props} />
+        ) : (
+            <MenuDesktop {...props} />
           )
-        }
-      </Media>
+      }
+    </Media>
   )
 }
 

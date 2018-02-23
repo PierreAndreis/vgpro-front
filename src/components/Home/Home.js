@@ -1,12 +1,13 @@
 import React from "react";
-import {Helmet} from "react-helmet";
-import {Adsense} from "./../common/Ads";
+import { Helmet } from "react-helmet";
+import { Adsense } from "./../common/Ads";
 
 import ProFeed from "./ProFeed";
-import Lead5   from "./Lead5";
-import Heroes   from "./Heroes";
+import Lead5 from "./Lead5";
+import Heroes from "./Heroes";
 import SearchPlayer from "./../common/SearchPlayer";
-import "./Home.css";
+
+import * as Styled from "./Home.style.js";
 
 class HomePage extends React.Component {
 
@@ -18,18 +19,20 @@ class HomePage extends React.Component {
         <Helmet titleTemplate="">
           <title>VGPRO.gg</title>
         </Helmet>
-        <div className="Home-logo">
-          <div className="logo">
+        <div>
+          <Styled.Logo>
             <div className="img" />
-          </div>
+          </Styled.Logo>
           <SearchPlayer mode="main" />
         </div>
         <Adsense />
-        <div className="Home-box">
+
+        <Styled.Content>
           <ProFeed t={t} />
-          <Lead5   t={t} />
-          <Heroes  t={t} />
-        </div>
+          <Lead5 t={t} />
+          <Heroes t={t} />
+        </Styled.Content>
+        
       </div>
     );
   }

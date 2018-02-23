@@ -3,13 +3,28 @@
  */
 import React from "react";
 
-import "./Alert.css";
+import styled from "styled-components";
+
+const AlertWrap = styled.div`
+  font-family: "Roboto Condensed", sans-serif;
+  width: 100%;
+  height: 45px;
+  background: #EED477;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  span {
+    color: rgba(119, 119, 119, 0.75);
+  }
+`
+
 
 const Alert = ({message}) => (
-  <div className="Alert">
+  <AlertWrap>
     <span>{message}</span>
-    {/* <div className="Alert__close"><i className="fa fa-close"/></div> */}
-  </div>
+  </AlertWrap>
 );
 
 export default Alert;

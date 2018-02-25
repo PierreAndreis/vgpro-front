@@ -88,7 +88,7 @@ class ProfileFilters extends React.Component {
 
   render() {
     
-    const {status, filters, playerStats} = this.props;
+    const {status, filters, player} = this.props;
 
     let gameModeOptions = [];
     let seasonOptions   = [];
@@ -98,7 +98,7 @@ class ProfileFilters extends React.Component {
     if (status === "loaded") {
       gameModeOptions = [
         { value: "", label: "All Modes" },
-        ...playerStats.gameModesAvailable.map(gameMode => {
+        ...player.gameModesAvailable.map(gameMode => {
           return { value: gameMode, label: gameMode };
         })
       ]
@@ -108,7 +108,7 @@ class ProfileFilters extends React.Component {
       
       seasonOptions = [
         { value: "", label: "Lifetime" },
-        ...playerStats.seasonsAvailable.map(season => {
+        ...player.seasonsAvailable.map(season => {
           return { value: season, label: season };
         })
       ]

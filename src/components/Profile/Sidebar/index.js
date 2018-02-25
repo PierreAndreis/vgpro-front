@@ -29,12 +29,12 @@ const SideBarItems = [
 
 class Sidebar extends React.Component {
   render() {
-    const {t, status, playerStats} = this.props;
+    const {t, status, player} = this.props;
 
     let propsPass = {
       t,
       status,
-      data: playerStats,
+      data: player,
     }
 
     const components = SideBarItems.map((item, index) => {

@@ -85,30 +85,21 @@ class Loaded extends React.Component {
   }
 
   render() {
-    const {playerStats, status} = this.props;
-    if (status === "error") return <ErrorScreen boxed width="100%" message={playerStats} />
+    const {player, status} = this.props;
+    if (status === "error") return <ErrorScreen boxed width="100%" message={player} />
 
     const {
       winRate,
       kda,
       wins,
       games,
-      // totalKills,
-      // totalDeaths,
-      // totalAssists,
       avgKills,
       avgDeaths,
       avgAssists,
       kp,
       blueWinRate,
       redWinRate,
-    } = playerStats.stats;
-
-    // const total = totalKills + totalAssists + totalDeaths;
-
-    // const killsPercent = (totalKills / total) * 100;
-    // const deathsPercent = (totalDeaths / total) * 100;
-    // const assistsPercent = (totalAssists / total) * 100;
+    } = player.stats;
 
     const winRateGraph = [
       { value: parseFloat(winRate), fill: 'url(#orange)' }
@@ -143,7 +134,6 @@ class Loaded extends React.Component {
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Chart">
                 <HalfPieChart {...commonGraphProps} data={winRateGraph}>
-                  {/* <Rate rate={winRate} /> */}
                   {winRate} <br />
                   <div className="ProfileStats_Chart-UnderLabel">
                     {wins} W / {games - wins} L <br />
@@ -168,11 +158,6 @@ class Loaded extends React.Component {
             <div className="ProfileStats__Stats">
               <div className="ProfileStats__Stats-Value"><KDA kda={kda || 0} /></div>
               <div className="ProfileStats__Stats-Label">KDA</div>
-              {/* <div className="ProfileStats__Stats-Bar">
-                <div className="fill" style={{width: `${killsPercent}%`, backgroundColor: "#9E2F31"}} />
-                <div className="fill" style={{width: `${deathsPercent}%`, backgroundColor: "#6CB525"}}  />
-                <div className="fill" style={{width: `${assistsPercent}%`, backgroundColor: "#BE9521"}}  />
-              </div> */}
 
               <div className="ProfileStats__Stats-Desc">
                 <div className="ProfileStats__KDA Kill">{avgKills}</div>

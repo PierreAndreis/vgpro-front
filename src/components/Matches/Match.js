@@ -5,6 +5,10 @@ import Utils from "./../../utils";
 
 import { fetchMatchDetails } from "./../../actions/api";
 
+import {commonWrapper} from "./../../styles/App.style";
+
+const Wrapper = commonWrapper;
+
 class MatchPage extends React.Component {
 
   state = {
@@ -57,9 +61,9 @@ class MatchPage extends React.Component {
 
   render() {
     return (
-      <div className="wrap">
+      <Wrapper>
         <Match payload={this.state.payload} status={this.state.status} forceOpen={true} />
-      </div>
+      </Wrapper>
     );
   }
 }

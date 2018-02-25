@@ -6,24 +6,29 @@ import { connect }          from "react-redux";
 
 import AsyncContainer from "./../../common/AsyncContainer";
 
+import PlayerInfo from "./PlayerInfo";
+import HeroesPlayed from "./HeroesPlayed";
+import RecentRoles from "./RecentRoles";
+import Friends from "./Friends";
+
 const SideBarItems = [
   {
-    componentBody: AsyncContainer(() => import("./PlayerInfo")),
+    componentBody: PlayerInfo,
     className: "PlayerInfo-Box"
-  },
-  {
-    label: "Recent Roles",
-    labelKey: "recent-roles",
-    componentBody: AsyncContainer(() => import("./RecentRoles"))
   },
   {
     label: "Most Played Heroes",
     labelKey: "most-played-heroes",
-    componentBody: AsyncContainer(() => import("./HeroesPlayed"))
+    componentBody: HeroesPlayed
+  },
+  {
+    label: "Recent Roles",
+    labelKey: "recent-roles",
+    componentBody: RecentRoles,
   },
   {
     label: "Played with",
-    componentBody: AsyncContainer(() => import("./RecentPlayedWith")),
+    componentBody: Friends,
   }
 ]
 
@@ -40,12 +45,7 @@ class Sidebar extends React.Component {
     const components = SideBarItems.map((item, index) => {
       const ComponentBody = item.componentBody;
 
-      return (
-        <Box.wrap key={index} className={`ProfileSidebar-box ${item.className ? item.className : ""}`}>
-          {(item.label || item.labelKey) && <Box.title>{(item.labelKey) ? t(item.labelKey) : item.label}</Box.title>}
-          <Box.body> <ComponentBody {...propsPass} /></Box.body>
-        </Box.wrap>
-      )
+      return (<ComponentBody key={index} {...propsPass} />)
     })
 
 

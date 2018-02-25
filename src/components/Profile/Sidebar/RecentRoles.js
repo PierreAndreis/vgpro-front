@@ -1,107 +1,84 @@
 import React from "react";
+import Box from "./../../common/Box";
 
 import ErrorScreen from "../../common/ErrorScreen";
 
 import {KDA, Rate} from "../../common/ColoredValues";
 
 import PieChart from "../../common/Charts/PieChart";
-import "./RecentRoles.css";
+import * as Styled from "./RecentRoles.style.js";
 
-import {Skeleton, SkeletonContainer, SkeletonPayload} from "../../common/Skeleton";
-
-// const CARRY_COLOR   = "#9E2F31";
-// const JUNGLE_COLOR  = "#9E2F31";
-// const CAPTAIN_COLOR = "#9E2F31";
-
-const Loading = () => (
-   <div className="PlayerRole">
-      <div className="PlayerRole-Image">
-        <Skeleton width="65px" height="65px" borderRadius="50%" />
-      </div>
-      <div className="PlayerRole-Stats">
-        <div className="PlayerRole-Stats-Value"><Skeleton width="80px" height="20px"/></div>
-
-        <div className="PlayerRole-Stats-Desc">
-          <Skeleton width="100px" height="25px"/>
-        </div>
-      </div>
-      <div className="PlayerRole-WR">
-        <div className="PlayerRole-WR-value"><Skeleton width="60px" height="20px"/></div>
-        <div className="PlayerRole-WR-desc"><Skeleton width="90px" height="15px"/></div>
-      </div>
-    </div>
-)
+import {SkeletonWrapper, SkeletonPayload} from "../../common/Skeleton";
 
 
-const Loaded = ({data}) => {
+const Role = ({status, role}) => {
 
-      // {
-      //   "name": "Captain",
-      //   "type": "role",
-      //   "kda": 2.73,
-      //   "games": 235,
-      //   "wins": 110,
-      //   "duration": 155701,
-      //   "loss": 125,
-      //   "winRate": "46.8%",
-      //   "kp": "77.6%",
-      //   "avgKills": 2.67,
-      //   "totalKills": 627,
-      //   "avgDeaths": 2.96,
-      //   "totalDeaths": 696,
-      //   "avgAssists": 5.42,
-      //   "totalAssists": 1273,
-      //   "avgCS": 22.6,
-      //   "totalCS": 5309.900000000001,
-      //   "blueGames": 99,
-      //   "blueWins": 45,
-      //   "blueWinRate": "45.5%",
-      //   "redGames": 136,
-      //   "redWins": 65,
-      //   "redWinRate": "47.8%"
-      // },
+  let chartData;
 
-  const {
-    name,
-    kda,
-    games,
-    winRate,
-    avgKills,
-    avgDeaths,
-    avgAssists,
-  } = data;
+  if (status === "loaded") {
+    let lowerName = role.name.toLowerCase();
 
-  let lowerName = name.toLowerCase();
-
-  let chartData = [
-    { value: parseFloat(winRate), fill: `url(#${lowerName})`}
-  ]
+    chartData = [
+      { value: parseFloat(role.winRate), fill: `url(#${lowerName})`}
+    ]
+  }
 
   return (
-     <div className="PlayerRole">
-      <div className="PlayerRole-Image">
-        <PieChart data={chartData} width={80}>
-          <div className={`PlayerRole-Icon ${lowerName}`}/>
-        </PieChart>
-      </div>
-      <div className="PlayerRole-Stats">
-        <div className="PlayerRole-Stats-Value"><KDA kda={kda} /> KDA</div>
+     <Styled.Role>
 
-        <div className="PlayerRole-Stats-Desc">
-          <div className="PlayerRole-Stats_KDA Kill">{avgKills}</div>
-          <div className="PlayerRole-Stats_KDA Death">{avgDeaths}</div>
-          <div className="PlayerRole-Stats_KDA Assist">{avgAssists}</div>
+      <Styled.IconChart>
+        <SkeletonWrapper status={status} width="65px" height="65px" borderRadius="50%">
+          {() => (  
+          <PieChart data={chartData} width={80}>
+            <Styled.Icon role={role.name}/>
+          </PieChart>
+          )}
+        </SkeletonWrapper>
+      </Styled.IconChart>
+
+      <Styled.Stats>
+        <div>
+        <SkeletonWrapper status={status} width="80px" height="20px">
+          {() => (
+            <React.Fragment>
+              <KDA kda={role.kda} /> KDA
+            </React.Fragment>
+          )}
+        </SkeletonWrapper>
         </div>
-      </div>
-      <div className="PlayerRole-WR">
-        <div className="PlayerRole-WR-value"><Rate rate={winRate} /></div>
-        <div className="PlayerRole-WR-desc">{games} played</div>
-      </div>
-    </div>
-  )
-}
 
-const Role = SkeletonContainer(Loading, Loaded);
+        <span>
+          <SkeletonWrapper status={status} width="100px" height="25px">
+            {() => (
+              <React.Fragment>
+                <Styled.KDAIcon icon="kills">{role.avgKills}</Styled.KDAIcon>
+                <Styled.KDAIcon icon="deaths">{role.avgDeaths}</Styled.KDAIcon>
+                <Styled.KDAIcon icon="assists">{role.avgAssists}</Styled.KDAIcon>
+              </React.Fragment>
+            )}
+          </SkeletonWrapper>
+        </span>
+      </Styled.Stats>
+
+      <Styled.WR>
+        <div>
+        <SkeletonWrapper status={status} width="60px" height="20px">
+          {() => <Rate rate={role.winRate} />}
+        </SkeletonWrapper>
+        </div>
+        <span>
+          <SkeletonWrapper status={status} width="90px" height="15px">
+            {() => (
+              <React.Fragment>
+                {role.games} played
+              </React.Fragment>
+            )}
+            </SkeletonWrapper>
+          </span>
+      </Styled.WR>
+    </Styled.Role>
+  )
+};
 
 const RecentRoles = ({t, status, data}) => {
 
@@ -122,13 +99,18 @@ const RecentRoles = ({t, status, data}) => {
   }
 
   payload.forEach((role, index) => {
-    content.push(<Role key={index} status={status} data={role} />);
+    content.push(<Role key={index} status={status} role={role} />);
   });
 
   return (
-    <div className="PlayerRoles">
-      {content}
-    </div>
+    <Styled.Wrap>
+    <Box.title>Recent Roles</Box.title>
+    <Styled.Content>
+      <div className="PlayerRoles">
+        {content}
+      </div>
+    </Styled.Content>
+    </Styled.Wrap>
   )
 }
 

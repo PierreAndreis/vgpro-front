@@ -12,9 +12,6 @@ import { connect } from "react-redux";
 
 import * as Styled from "./Overview.style";
 
-const BlueColor = "#288FCB";
-const RedColor = "#EC5B56";
-
 class Overview extends React.Component {
 
   render() {

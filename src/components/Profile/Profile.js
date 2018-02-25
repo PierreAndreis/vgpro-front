@@ -21,7 +21,6 @@ import { setPlayer, changeFilters } from "./../../actions/player";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import "./Profile.css";
 import * as Styled from "./Profile.style";
 
 class Profile extends React.Component {
@@ -84,9 +83,10 @@ class Profile extends React.Component {
           {title}
           <ErrorScreen message={
             <p>{playerName} was found but hasn't played a match in a while
-        <br /> Please try again later.
-        <br /> Last update: <TimeAgo date={player.lastCache} />
-            </p>} boxed />
+            <br /> Please try again later.
+            <br /> Last update: <TimeAgo date={player.lastCache} />
+            </p>}
+            boxed />
         </div>
       )
     }
@@ -108,14 +108,17 @@ class Profile extends React.Component {
         {title}
         <ProfileFilters onChange={this.changeFilters} />
         <Styled.Wrap>
-          <div className="Profile__Sidebar">
+
+          <Styled.Sidebar>
             <Sidebar t={t} />
-          </div>
-          <div className="Profile__Main">
+          </Styled.Sidebar>
+
+          <Styled.Main>
             <MatchStats t={t} />
             <Adsense />
             <MatchesManager t={t} filters={filters} />
-          </div>
+          </Styled.Main>
+
         </Styled.Wrap>
       </React.Fragment>
     );

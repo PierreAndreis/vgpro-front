@@ -1,107 +1,109 @@
-import React  from "react";
-import {Link} from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
-import Box               from "./../common/Box";
-import HalfPieChart      from "./../common/Charts/PieChart";
-import {SkeletonWrapper} from "./../common/Skeleton";
-import AssetLoader       from "./../common/AssetLoader";
-import {KDA}             from "./../common/ColoredValues";
-import {VPR}             from "./../common/Ratings";
+import Box from "./../common/Box";
+import HalfPieChart from "./../common/Charts/PieChart";
+import { SkeletonWrapper } from "./../common/Skeleton";
+import AssetLoader from "./../common/AssetLoader";
+import { KDA } from "./../common/ColoredValues";
+import { VPR } from "./../common/Ratings";
 
 import Utils from "./../../utils";
 
-import "./LeadMember.css";
+import * as Styled from "./LeadMember.style";
 
 class LeadMember extends React.PureComponent {
- 
+
   render() {
-    const {status, data} = this.props;
+    const { status, data } = this.props;
 
     const winRate = (data.winRate) ? parseFloat(data.winRate) : 0;
 
     const link = (!data.name) ? window.location : Utils.goToPlayer(data.name);
 
     let graph = [
-        { value: winRate, fill: 'url(#orange)'}
+      { value: winRate, fill: 'url(#orange)' }
     ]
 
     let heroes = [];
 
     for (let i = 0; i < 5; i++) {
       const hero = data && data.topHeroes && data.topHeroes[i];
-      heroes.push(<AssetLoader key={i} type="heroes" name={hero} className="Leaderboard-Member-Hero" />)
+      heroes.push(<Styled.Hero key={i} type="heroes" name={hero} />)
     }
     return (
 
-      <Box.wrap className="Leaderboard-Member-wrap">
+      <Styled.Wrapper>
         <Link to={link}>
-          <Box.body className="Leaderboard-Member">
-            <div className="Leaderboard-Member-Position">
+          <Styled.Body>
+
+            <Styled.Position>
               <SkeletonWrapper status={status} width="15px" height="25px">
-                { () => <span>{data.position}</span>}
+                {() => <span>{data.position}</span>}
               </SkeletonWrapper>
-            </div>
+            </Styled.Position>
+
             <div>
               <SkeletonWrapper status={status} width="35px" height="0px">
-                {() => <AssetLoader type="tiers" name={data.tier} className="Leaderboard-Member-Tier" />}
+                {() => <Styled.Tier type="tiers" name={data.tier} />}
               </SkeletonWrapper>
 
-              <div className="Leaderboard-Member-Info">
-                <div className="Leaderboard-Member-Name">
+              <Styled.PlayerInfo>
+                <Styled.PlayerName>
                   <SkeletonWrapper status={status} width={`${Math.floor(Math.random() * 60) + 40}px`} height="15px">
                     {() => <div>{data.name} <span>{data.region}</span></div>}
                   </SkeletonWrapper>
-                </div>
+                </Styled.PlayerName>
                 <span>
                   <SkeletonWrapper status={status} width="35px">
-                    {() => <span>KDA <KDA kda={data.kda}/></span>}
+                    {() => <span>KDA <KDA kda={data.kda} /></span>}
                   </SkeletonWrapper>
                 </span>
-              </div>
+              </Styled.PlayerInfo>
             </div>
 
-            <div className="Leaderboard-Member-Score">
+            <Styled.Points>
               <SkeletonWrapper status={status} width="55px">
                 {() => <div><VPR value={data.points} /></div>}
               </SkeletonWrapper>
               <span>Points</span>
-            </div>
+            </Styled.Points>
 
-            <div className="Leaderboard-Member-Stats">
-              <div className="Leaderboard-Member-Chart">
-              <SkeletonWrapper status={status} width="55px" height="0" borderRadius="50%">
-                {() => (
-                  <HalfPieChart width={55} data={graph}>
-                    <span>{winRate}%</span>
-                  </HalfPieChart>
-                )}
-              </SkeletonWrapper>
-              </div>
-              <div className="Leaderboard-Member-Rates">
+            <Styled.GameInfo>
+              <Styled.Chart>
+                <SkeletonWrapper status={status} width="55px" height="0" borderRadius="50%">
+                  {() => (
+                    <HalfPieChart width={55} data={graph}>
+                      <span>{winRate}%</span>
+                    </HalfPieChart>
+                  )}
+                </SkeletonWrapper>
+              </Styled.Chart>
+              <Styled.Rates>
 
                 <div>
-                  <span className="Rate-Win">W</span>
+                  <Styled.RateLabel label="w">W</Styled.RateLabel>
                   <SkeletonWrapper status={status} width="25px" height="10px">
                     {() => data.wins}
                   </SkeletonWrapper>
                 </div>
 
                 <div>
-                  <span className="Rate-Loss">L</span>
+                  <Styled.RateLabel label="l">L</Styled.RateLabel>
                   <SkeletonWrapper status={status} width="25px" height="10px">
                     {() => data.games - data.wins}
                   </SkeletonWrapper>
                 </div>
-              </div>
+              </Styled.Rates>
 
-            </div>
+            </Styled.GameInfo>
 
-            <div className="Leaderboard-Member-Heroes">
+            <Styled.Heroes>
               {heroes}
-            </div>
-          </Box.body>
+            </Styled.Heroes>
+          </Styled.Body>
         </Link>
-      </Box.wrap>
+      </Styled.Wrapper>
     );
   }
 }

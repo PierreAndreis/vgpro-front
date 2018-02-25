@@ -3,7 +3,6 @@ import {Helmet} from "react-helmet";
 import ReactGA  from "react-ga";
 
 import Header from "./Layout/Header";
-// import Sidebar from "./Layout/Sidebar";
 import Footer from "./Layout/Footer";
 
 import Routers from "./routers";
@@ -11,8 +10,9 @@ import Routers from "./routers";
 import Ads           from "./common/Ads";
 import ErrorBoundary from "./common/ErrorBoundary";
 
-import "./common/animate.css";
-import "./layout.css";
+import "./common/animate.style.js";
+
+import * as Styled from "./layout.style";
 
 ReactGA.initialize('UA-93754104-1');
 
@@ -20,23 +20,27 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div className="Layout">
+      <Styled.Wrap>
         <ErrorBoundary>
           <Helmet titleTemplate="%s - VGPRO.gg">
             <title>Loading</title>
           </Helmet>
           <Header />
-          {/* <div className="Layout-sidebar">
-            <Sidebar />
-          </div> */}
-          <div className="Layout-main">
-            <div className="Layout-BG" />
-            <div className="Layout-content"><Routers/></div>
+          <Styled.Main>
+
+            <Styled.Background/>
+
+            <Styled.Content>
+              <Routers/>
+            </Styled.Content>
+
             <Ads />
+
             <Footer/>
-          </div>
+
+          </Styled.Main>
         </ErrorBoundary>
-      </div>
+      </Styled.Wrap>
     );
   }
 }

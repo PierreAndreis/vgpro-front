@@ -1,52 +1,37 @@
-.Layout-BG {
+import styled from "styled-components";
+
+export const Background = styled.div`
   width: 100%;
   height: 100%;
   background: url("/images/logo_bg.png") no-repeat;
   background-position: center top;
   position: absolute;
   z-index: -1;
-  /* opacity: 0.08; */
-}
+`
 
-.Layout {
+export const Wrap = styled.section`
   position: relative;
   height: 100%;
   display: flex;
   flex-direction: row;
   flex-direction: column;
-}
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+`
 
-.Layout-sidebar {
-  width: 100px;
-  height: 100%;
-  flex-shrink: 0;
-  position: relative;
-}
-
-.Layout-main {
+export const Main = styled.section`
   display: flex;
-  /* max-width: calc(100% - 100px); */
   width: 100%;
   flex-direction: column;
   height: 100%;
   flex: 1;
   position: relative;
-}
-
-.Layout-content {
-  flex: 1;
-}
-
-@media screen and (max-width: 768px) {
-  .Layout {
-    flex-direction: column;
-  }
-
-  .Layout-main { 
+  @media screen and (max-width: 768px) {
     max-width: 100%;
   }
+`;
 
-  .Layout-sidebar  {
-    display: none;
-  }
-}
+export const Content = styled.section`
+  flex: 1;
+`;

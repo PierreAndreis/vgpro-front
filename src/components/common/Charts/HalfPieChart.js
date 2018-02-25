@@ -6,9 +6,13 @@ const HalfPieContainer = styled.div`
   position: relative;
   overflow: visible;
   width: ${props => `${props.width}px` || "100px"};
+  margin-bottom: -50px;
+  svg {
+    overflow:scroll;
+  }
   .HalfPie-Label {
     position: absolute;
-    bottom: 37%;
+    bottom: 45%;
     width: 100%;
     text-align: center;
   }
@@ -35,23 +39,22 @@ export default ({data, label, width, children}) => {
   }
 
   // const height = width / 1.6;
-  const height = width / 1;
+  const height = width / 1.3;
   
   // const cy = height / 1.2;
   const cy = height / 1.8;
   const outerRadius = width / 2.6;
-  const innerRadius = outerRadius - 10;
+  const innerRadius = outerRadius - 8;
 
-  const fontSize = width / 7;
+  const fontSize = width / 8;
 
-  const endAngle = -50;
+  const endAngle = -10;
   const startAngle = 180 + (endAngle * -1);
 
 
   return (
     <HalfPieContainer width={width}>
       <PieChart width={width} height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
-
         <defs>
           <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
             <stop offset="5%" stopColor="#FAD961" stopOpacity={1}/>

@@ -7,7 +7,9 @@ import { withRouter } from 'react-router';
 import ErrorScreen from "../common/ErrorScreen";
 
 import TimeAgo from "../../i18n/timeAgo";
-import MatchStats from "./MatchStats/MatchStats";
+import MatchStats from "./Overview";
+
+// import MatchStats from "./MatchStats/MatchStats";
 
 import Sidebar from "./Sidebar";
 import ProfileFilters from "./ProfileFilters";
@@ -20,6 +22,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import "./Profile.css";
+import * as Styled from "./Profile.style";
 
 class Profile extends React.Component {
 
@@ -104,7 +107,7 @@ class Profile extends React.Component {
       <React.Fragment>
         {title}
         <ProfileFilters onChange={this.changeFilters} />
-        <div className="wrap Profile-wrap">
+        <Styled.Wrap>
           <div className="Profile__Sidebar">
             <Sidebar t={t} />
           </div>
@@ -113,7 +116,7 @@ class Profile extends React.Component {
             <Adsense />
             <MatchesManager t={t} filters={filters} />
           </div>
-        </div>
+        </Styled.Wrap>
       </React.Fragment>
     );
   }

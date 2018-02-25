@@ -20,7 +20,6 @@ class Overview extends React.Component {
   render() {
     const { player, status } = this.props;
     if (status === "error") return <ErrorScreen boxed width="100%"/>;
-    // if (status === "loading") return <p>lul</p>
     let stats;
     let winRateGraph;
     let kpGraph;

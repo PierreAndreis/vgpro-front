@@ -3,7 +3,8 @@ import React    from "react";
 import AssetLoader         from "./../../AssetLoader";
 import { SkeletonPayload } from "./../../Skeleton";
 
-import "./Builds.css";
+// import "./Builds.css";
+import * as Styled from "./Builds.style.js"
 
 const MAX_LEVEL = 12;
 
@@ -43,14 +44,14 @@ function addTimes (startTime, endTime) {
 }
 
 const Abilities = ({name, levels}) => (
-  <div className="Ability-Row">
+  <Styled.AbilitiesRow>
     <span>{name.substring(name.indexOf("_") + 1)}</span>
-    <AssetLoader type="abilities" className="Ability-Label" name={name}/>
+    <Styled.AbilitiesLabel type="abilities" name={name}/>
     {SkeletonPayload(MAX_LEVEL).map((number, i) => (
-      <div key={i} className={(levels[i] === 1 && "active") || ""}>{i + 1}</div>
+      <Styled.AbilityLevel key={i} active={levels[i] === 1 && "active"}>{i + 1}</Styled.AbilityLevel>
     ))}
-  </div>
-)
+  </Styled.AbilitiesRow>
+);
 
 export default class extends React.PureComponent {
 
@@ -74,7 +75,7 @@ export default class extends React.PureComponent {
     const {teams, telemetry, status} = this.props;
     const { playerLoaded } = this.state;
     
-    if (status === "loading" || !telemetry) return "Loading.";
+    if (status === "loading" || !telemetry) return "Loading...";
 
     const detailsTeam = teams.find((team) => (
       team.players.find(player => player.name === playerLoaded)
@@ -140,58 +141,61 @@ export default class extends React.PureComponent {
 
 
     return (
-      <div className="MatchDetails-Builds">
-        <div className="MatchBuilds-Players">
+      <Styled.Wrap>
+        <Styled.Sidebar>
           {
             teams.map(team => (
-              <div key={team.side} className="MatchBuilds-Team">
+              <Styled.Team key={team.side}>
               { 
                 team.players.map(player => (
-                  <div key={player.id} 
+                  <Styled.Player key={player.id} 
                        onClick={this.changePlayer(player.name)}
-                       className={`Builds-Player ${playerLoaded === player.name && "active"}`}>
-                    <AssetLoader type="heroes" className="Builds-Player-Image" name={player.hero} />
-                    <div className="Builds-Player-Name">{player.name}</div>
-                  </div>
+                       active={playerLoaded === player.name}
+                       >
+                    <Styled.PlayerHero type="heroes" name={player.hero} />
+                    <span>{player.name}</span>
+                  </Styled.Player>
                 ))
               }
-              </div>
+              </Styled.Team>
             ))
           }
-        </div>
-        <div className="MatchBuilds-Content">
+        </Styled.Sidebar>
+        <Styled.Content>
+
           <h2>Abilities</h2>
-          <div className="MatchBuilds-Abilities">
-              <div className="Abilities-Grid">
-                <div className="Ability-Row Ability-Overdrive">
+          <Styled.Abilities>
+              <Styled.AbilitiesGrid>
+                <Styled.AbilitiesRow>
                   <span>OVERDRIVE</span>
                   {overdrive.map(ability => (
-                    <AssetLoader key={ability.name} type="abilities" className="Ability-Label" name={ability.name} />
+                    <Styled.AbilitiesLabel key={ability.name} type="abilities" name={ability.name} />
                   ))}
-                </div>
+                </Styled.AbilitiesRow>
                 {abilities.map(ability => (
                   <Abilities key={ability.name} {...ability} />
                 ))}
-            </div>
-          </div>
+            </Styled.AbilitiesGrid>
+          </Styled.Abilities>
+
           <h2>Build</h2>
-          <div className="MatchBuilds-Build">
+          <Styled.Builds>
             {items.map(i => (
-              <div className="Build-Group" key={i.label}>
-                <div className="Build-Items">
+              <Styled.BuildGroup key={i.label}>
+                <Styled.BuildItems>
                   {Object.keys(i.values).map((item) => (
-                    <AssetLoader key={item} type="items" className="Build-Item" name={item}>
-                      {i.values[item] > 1 && <div className="Build-Item-Tag">{i.values[item]}</div>}
-                    </AssetLoader>
+                    <Styled.BuildItem key={item} type="items" name={item}>
+                      {i.values[item] > 1 && <span>{i.values[item]}</span>}
+                    </Styled.BuildItem>
                   ))}
-                </div>
-                <div className="Build-Label">{i.label}</div>
-              </div>
+                </Styled.BuildItems>
+                <span>{i.label}</span>
+              </Styled.BuildGroup>
             ))}
 
-          </div>
-        </div>
-      </div>
+          </Styled.Builds>
+        </Styled.Content>
+      </Styled.Wrap>
     )
   }
 };

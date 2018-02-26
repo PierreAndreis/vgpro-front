@@ -159,8 +159,8 @@ class HeroesPlayed extends React.PureComponent {
           {content}
         </Styled.Content>
         <Box.action>
-          <Box.button disabled={page > 1} onClick={this.paginateDown.bind(this)}>Back</Box.button>
-          <Box.button disabled={page < lastPage} onClick={this.paginateUp.bind(this)}>Next</Box.button>
+          <Box.button disabled={page <= 1} onClick={this.paginateDown.bind(this)}>Back</Box.button>
+          <Box.button disabled={page > lastPage} onClick={this.paginateUp.bind(this)}>Next</Box.button>
         </Box.action>
       </Styled.Wrap>
     )

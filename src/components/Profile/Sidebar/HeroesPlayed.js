@@ -81,7 +81,7 @@ const Hero = ({ status, stats }) => {
 
       </Styled.Stats>
 
-            <Styled.WR>
+      <Styled.WR>
         <div>
           <SkeletonWrapper status={status} width="60px" height="20px">
             {() => <Rate rate={stats.winRate} />}
@@ -159,14 +159,8 @@ class HeroesPlayed extends React.PureComponent {
           {content}
         </Styled.Content>
         <Box.action>
-          <div className="button"
-            id={(page > 1) ? "" : "disabled"}
-            onClick={this.paginateDown.bind(this)}
-          >Back</div>
-          <div className="button"
-            id={(page < lastPage) ? "" : "disabled"}
-            onClick={this.paginateUp.bind(this)}
-          >Next</div>
+          <Box.button disabled={page > 1} onClick={this.paginateDown.bind(this)}>Back</Box.button>
+          <Box.button disabled={page < lastPage} onClick={this.paginateUp.bind(this)}>Next</Box.button>
         </Box.action>
       </Styled.Wrap>
     )

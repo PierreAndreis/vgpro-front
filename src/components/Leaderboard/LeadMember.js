@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Box from "./../common/Box";
 import HalfPieChart from "./../common/Charts/PieChart";
 import { SkeletonWrapper } from "./../common/Skeleton";
-import AssetLoader from "./../common/AssetLoader";
 import { KDA } from "./../common/ColoredValues";
 import { VPR } from "./../common/Ratings";
 

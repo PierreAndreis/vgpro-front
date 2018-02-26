@@ -151,8 +151,8 @@ export default class extends React.Component {
         
         </Styled.Body>
         <Box.action>
-          <div className="button" id={prevBlocked ? "disabled" : ""} onClick={this.prevPage}>Back</div>
-          <div className="button" id={nextBlocked ? "disabled" : ""} onClick={this.nextPage}>Next</div>
+          <Box.button disabled={prevBlocked} onClick={this.prevPage}>Back</Box.button>
+          <Box.button disabled={nextBlocked} onClick={this.nextPage}>Next</Box.button>
         </Box.action>
       </Styled.Wrapper> 
     )

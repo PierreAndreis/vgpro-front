@@ -2,6 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import _forEach from "lodash/forEach";
 
+import {BoxButton} from "./../common/Box";
+
 import { fetchLeaderboard } from "./../../actions/api";
 import { SkeletonPayload } from "./../common/Skeleton";
 import ErrorScreen from "./../common/ErrorScreen";
@@ -168,8 +170,8 @@ class Leaderboard extends React.Component {
               {content}
             </Styled.Content>
             <Styled.Buttons>
-              <div className="button" onClick={this.prevPage} id={prevDisabled ? "disabled" : ""}>View Less</div>
-              <div className="button" onClick={this.nextPage} id={nextDisabled ? "disabled" : ""}>View More</div>
+              <BoxButton onClick={this.prevPage} disabled={prevDisabled}>View Less</BoxButton>
+              <BoxButton onClick={this.nextPage} disabled={nextDisabled}>View More</BoxButton>
             </Styled.Buttons>
         </Styled.Wrapper>
       </React.Fragment>

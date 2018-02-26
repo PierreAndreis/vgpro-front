@@ -3,12 +3,11 @@ import { Link }   from 'react-router-dom';
 
 export const Wrapper = styled(Link)`
   height: 45px;
-  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  &:nth-child(even) {
-    background: rgba(241, 241, 241, 1);
+  &:nth-child(odd) {
+    background: ${props => props.theme.background.boxOdd};
   }
 
   &:first-of-type {

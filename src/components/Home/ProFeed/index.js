@@ -1,10 +1,10 @@
 import React from "react";
 
-import FeedMatch                            from "./FeedMatch";
-import {BoxTitle, BoxActions} from "./../../common/Box";
-import {SkeletonPayload}                    from "./../../common/Skeleton";
-import ErrorScreen                          from "./../../common/ErrorScreen";
-import {fetchProFeed}                       from "./../../../actions/api";
+import FeedMatch from "./FeedMatch";
+import Box from "./../../common/Box";
+import { SkeletonPayload } from "./../../common/Skeleton";
+import ErrorScreen from "./../../common/ErrorScreen";
+import { fetchProFeed } from "./../../../actions/api";
 
 import Utils from "../../../utils";
 
@@ -52,7 +52,7 @@ class ProFeed extends React.Component {
       }
     });
   }
-  
+
   fetch() {
     this.setState({
       status: "loading"
@@ -60,16 +60,16 @@ class ProFeed extends React.Component {
 
     this.cancel = Utils.makeCancelable(
       fetchProFeed(),
-      (res) => this.setState({status: "loaded", payload: res}),
-      (e) =>   this.setState({status: "error", payload: e})
+      (res) => this.setState({ status: "loaded", payload: res }),
+      (e) => this.setState({ status: "error", payload: e })
     );
   }
 
   render() {
 
-    const {t} = this.props;
+    const { t } = this.props;
 
-    const {status, payload, page} = this.state;
+    const { status, payload, page } = this.state;
 
     let lastPage;
     let content = null;
@@ -87,19 +87,15 @@ class ProFeed extends React.Component {
 
     return (
       <Styled.Wrapper animation="fadeInLeft">
-        <BoxTitle>Pro History 5v5</BoxTitle>
+        <Box.title>Pro History 5v5</Box.title>
         <Styled.Body>
           {content}
         </Styled.Body>
-        <BoxActions>
-          <div className="button" id={(page > 1       ) ? "" : "disabled"}  onClick={this.paginateDown.bind(this)}>
-            Back
-          </div>
-          <div className="button" id={(page < lastPage) ? "" : "disabled"}  onClick={this.paginateUp.bind(this)  } >
-            Next
-          </div>
-        </BoxActions>
-    </Styled.Wrapper>
+        <Box.action>
+          <Box.button disabled={page === 1} onClick={this.paginateDown.bind(this)}>Back</Box.button>
+          <Box.button disabled={page > lastPage} onClick={this.paginateUp.bind(this)}>Next</Box.button>
+        </Box.action>
+      </Styled.Wrapper>
     )
   }
 }

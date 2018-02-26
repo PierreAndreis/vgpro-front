@@ -111,7 +111,7 @@ class Lead5 extends React.Component {
         </Box.body>
         <Box.action>
             <Link to={"/leaderboard"}>
-              <div className="button">More</div>
+              <Box.button>More</Box.button>
             </Link>
         </Box.action>
       </Styled.Wrapper>

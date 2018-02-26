@@ -32,11 +32,10 @@ export const Each = styled.div`
     width: 100%;
     justify-content: flex-start;
     align-items: center;
-    /* background: green; */
     padding:7px 30px;
     box-sizing: border-box;
     &:nth-child(odd) {
-      background: rgb(240, 240, 240);
+      background: ${props => props.theme.background.boxOdd};
     }
   }
 `;

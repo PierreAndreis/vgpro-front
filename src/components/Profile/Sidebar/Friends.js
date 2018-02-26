@@ -131,14 +131,14 @@ class RecentPlayedWith extends React.Component {
           {content}
         </Styled.Content>
         <Box.action>
-          <div className="button"
-            id={(page > 1) ? "" : "disabled"}
+          <Box.button
+            disabled={page > 1}
             onClick={this.paginateDown.bind(this)}
-          >Back</div>
-          <div className="button"
-            id={(page < lastPage) ? "" : "disabled"}
+          >Back</Box.button>
+          <Box.button
+            disabled={page < lastPage}
             onClick={this.paginateUp.bind(this)}
-          >Next</div>
+          >Next</Box.button>
         </Box.action>
       </Styled.Wrap>
     )

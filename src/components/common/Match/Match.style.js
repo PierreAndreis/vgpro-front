@@ -10,11 +10,11 @@ export const Match = styled(Box.wrap)`
   border-left-color: ${props => props.winner ? "#5DB4F1" : "#F1685D"};
   position: relative;
   z-index: 2;
-  transition: all 300ms;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
   cursor: pointer;
 
   &:hover {
-    transform: scale3d(1.005, 1.005, 1.005);
+    transform: scale(1.01);
     background: rgb(247, 247, 247);
   }
 `;

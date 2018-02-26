@@ -10,7 +10,7 @@ import { Adsense }          from "./../common/Ads";
 
 import {fetchPlayerMatches, setPlayerMatches} from "./../../actions/player";
 
-const MATCHES_PER_PAGE = 7;
+const MATCHES_PER_PAGE = 10;
 const AD_EVERY = 9;
 
 class MatchManager extends React.Component {
@@ -71,18 +71,16 @@ class MatchManager extends React.Component {
       let matches = (page.status === "loaded") ? page.payload : SkeletonPayload(MATCHES_PER_PAGE);
 
       if (page.status !== "loaded") buttonsDisabled = true;
+      
       if (matches.length === 0) {
         buttonsDisabled = true;
-        done = (pages.length > 1);
       }
 
-      if (page.status === "error" && !done) {
+      if (page.status === "error") {
         content.push(<ErrorScreen key="error" width="100%" boxed message="There was an error while loading the matches." />);
       }
-      else if (done) {
-        content.push(<ErrorScreen key="error" width="100%" boxed message="No matches found" />);
-      }
       else {
+
         for (const index in matches) {
           let match = matches[index];
           content.push(<Match key={match.id || index} payload={match} status={page.status}/>);
@@ -91,6 +89,12 @@ class MatchManager extends React.Component {
           };
         }
 
+        if (!done && (page && page.payload)) {
+          done = (page.payload.length !== MATCHES_PER_PAGE);
+          console.log(page.payload.length, MATCHES_PER_PAGE)
+          buttonsDisabled = (buttonsDisabled) || done;
+          if (page.payload < 1) content.push(<ErrorScreen key="error" width="100%" boxed message="No matches found" />);
+        }
       }
     };
 

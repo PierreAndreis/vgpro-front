@@ -5,9 +5,9 @@ import AssetLoader from "./../common/AssetLoader";
 export const Wrapper = styled(Box.wrap)`
   width: 100%;
   margin: 3px 0;
-  transition: all 300ms;
+  transition: all ease-out 300ms;
   &:hover {
-    transform: scale3d(1.005, 1.005, 1.005);
+    transform: scale(1.005);
     background: rgb(247, 247, 247);
   }
 `;

@@ -79,7 +79,7 @@ class Profile extends React.Component {
 
     if (FoundButNoMatch) {
       return (
-        <div>
+        <div style={{marginTop: "5%"}}>
           {title}
           <ErrorScreen message={
             <p>{playerName} was found but hasn't played a match in a while

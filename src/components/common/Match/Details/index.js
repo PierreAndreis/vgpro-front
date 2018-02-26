@@ -5,7 +5,8 @@ import { fetchMatchTelemetry } from "./../../../../actions/api";
 
 import Utils from "../../../../utils";
 
-import "./Details.css";
+// import "./Details.css";
+import * as Styled from "./Details.style.js";
 
 const Tabs = [
   {
@@ -33,7 +34,7 @@ class MatchDetails extends React.Component {
   }
 
   fetch() {
-    const {matchId, region} = this.props;
+    const { matchId, region } = this.props;
 
     this.setState({
       telemetry: null
@@ -59,15 +60,15 @@ class MatchDetails extends React.Component {
   }
 
   render() {
-    
+
     const {
       telemetry,
       tab
     } = this.state;
 
-    let { 
-      playerName, 
-      status, 
+    let {
+      playerName,
+      status,
       details,
       gameMode
     } = this.props;
@@ -77,8 +78,8 @@ class MatchDetails extends React.Component {
 
     if (status === "loading") payload = [{}, {}]
     else {
-      
-      const {players, rosters} = details;
+
+      const { players, rosters } = details;
 
       payload = rosters.map(r => {
         const ps = players.filter(p => p.side === r.side);
@@ -99,19 +100,21 @@ class MatchDetails extends React.Component {
         teams: payload
       }
     );
-   
+
 
     return (
-      <div className="MatchDetails animated slideInDown">
-        <div className="MatchDetails-Tab">
+      <Styled.Container>
+        <Styled.Tabs>
           {Tabs.map(t => (
-            <div key={t.name} 
-                 className={(tab.name === t.name && "active") || ""} 
-                 onClick={this.changeTab(t)}>{t.name}</div>
+            <Styled.TabOption key={t.name}
+              active={tab.name === t.name}
+              onClick={this.changeTab(t)}>
+              {t.name}
+            </Styled.TabOption>
           ))}
-        </div>
+        </Styled.Tabs>
         {content}
-      </div>
+      </Styled.Container>
     )
   }
 }

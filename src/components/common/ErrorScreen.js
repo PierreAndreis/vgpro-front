@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Box from "./Box";
 
 const ErrorScreenBox = styled(Box.wrap)`
-  margin: 5% auto;
+  margin: 0 auto;
 `;
 
 const ErrorScreenContent = styled.div`

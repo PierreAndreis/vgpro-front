@@ -11,7 +11,7 @@ export const Content = styled(Box.body)`
   font-size: 10px;
 `;
 
-export const Each = styled.div`
+export const Each = styled(Link)`
   color: black;
   width: 100%;
   height: 40px;

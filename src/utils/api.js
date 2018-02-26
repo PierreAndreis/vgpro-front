@@ -99,7 +99,7 @@ API.fetchPlayerStats = (playerName, filtersArgs) => {
 API.fetchPlayerMatches = (playerName, filtersArgs) => {
 
   let f = {
-    limit: 7,
+    limit: 10,
     ...filtersArgs
   }
 

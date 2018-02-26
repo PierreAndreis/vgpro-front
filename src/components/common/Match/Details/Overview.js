@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import {KDA} from "../../ColoredValues";
+import { KDA } from "../../ColoredValues";
 
 import Utils from "../../../../utils";
 import AssetLoader from "../../AssetLoader";
 
 import { SkeletonWrapper, SkeletonPayload } from "./../../Skeleton";
 
-import "./Overview.css";
+import * as Styled from "./Overview.style";
 
-const OverviewPlayer = ({player, telemetry, gameMode, status}) => {
-  
+const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
+
   const items = [];
 
   let playerItems = (status === "loaded") ? player.items : [];
@@ -21,15 +21,15 @@ const OverviewPlayer = ({player, telemetry, gameMode, status}) => {
   if (gameMode.includes("5v5")) {
     itemsWithout5v5Default = playerItems.filter(itemName => itemName !== "Vision Totem" && itemName !== "Healing Flask");
   }
-  
-  
+
+
   for (let i = 0; i < 6; i++) {
     let name;
     if (itemsWithout5v5Default && itemsWithout5v5Default[i]) {
       name = itemsWithout5v5Default[i];
     }
 
-    items.push(<AssetLoader key={i} type="items" className="Overview-Player-Item" name={name} />);
+    items.push(<Styled.PlayerItem key={i} type="items" name={name} />);
   };
 
   let damage = "...";
@@ -40,11 +40,11 @@ const OverviewPlayer = ({player, telemetry, gameMode, status}) => {
   let healingDonePercent = "0%";
 
   if (telemetry) {
-    damage             = Utils.minifyNumber(telemetry.dealt, 0);
-    damageTaken        = Utils.minifyNumber(telemetry.taken, 0);
-    healingDone        = Utils.minifyNumber(telemetry.healed, 0);
+    damage = Utils.minifyNumber(telemetry.dealt, 0);
+    damageTaken = Utils.minifyNumber(telemetry.taken, 0);
+    healingDone = Utils.minifyNumber(telemetry.healed, 0);
 
-    damagePercent      = telemetry.damageShare;
+    damagePercent = telemetry.damageShare;
     damageTakenPercent = telemetry.takenShare;
     healingDonePercent = telemetry.healingShare;
   }
@@ -56,23 +56,25 @@ const OverviewPlayer = ({player, telemetry, gameMode, status}) => {
 
   return (
     <React.Fragment>
-      <div className="Overview-Player-Info">
-        <div className="Overview-Player-Image">
-          <AssetLoader type="heroes" className="Overview-Player-Image-Hero" name={heroName}>
+      <Styled.PlayerInfo>
+
+        <Styled.PlayerImage>
+          <Styled.PlayerHero type="heroes" name={heroName}>
             <SkeletonWrapper status={status} width="0" height="0">
-              {() => <div className="Overview-Player-Image-Role" id={player.role.toLowerCase()} />}
+              {() => <Styled.PlayerRole role={player.role} />}
             </SkeletonWrapper>
-          </AssetLoader>
-        </div>
-        <div className="Overview-Player-Info-details">
+          </Styled.PlayerHero>
+        </Styled.PlayerImage>
+
+        <Styled.PlayerDetails>
           <SkeletonWrapper status={status} width="45px" height="9px">
             {() => (
-              <Link to={Utils.goToPlayer(player.name)} className="Overview-Player-Info-Name">
+              <Styled.PlayerName to={Utils.goToPlayer(player.name)}>
                 {player.name}
-              </Link>
+              </Styled.PlayerName>
             )}
-            </SkeletonWrapper>
-          <div className="Overview-Player-Info-KDA">
+          </SkeletonWrapper>
+          <Styled.PlayerKDA>
             <SkeletonWrapper status={status} width="35px">
               {() => (
                 <React.Fragment>
@@ -81,96 +83,108 @@ const OverviewPlayer = ({player, telemetry, gameMode, status}) => {
                 </React.Fragment>
               )}
             </SkeletonWrapper>
-          </div>
-        </div>
-      </div>
-      <div className="Overview-Player-Items">
+          </Styled.PlayerKDA>
+        </Styled.PlayerDetails>
+      </Styled.PlayerInfo>
+
+      <Styled.PlayerItems>
         {items}
-      </div>
-      <div className="Overview-Player-Stats">
+      </Styled.PlayerItems>
 
-        <div className="Overview-Player-Stats-Game">
-          <div className="Overview-Player-CS">
+      <Styled.PlayerStats>
+
+        <Styled.PlayerGameStats>
+          <Styled.GameStats farm>
             <SkeletonWrapper status={status} width="15px" height="10px">{() => player.cs}</SkeletonWrapper>
-          </div>
-          <div className="Overview-Player-Gold">
+          </Styled.GameStats>
+          <Styled.GameStats gold>
             <SkeletonWrapper status={status} width="15px" height="10px">{() => Utils.minifyNumber(player.gold, 0)}</SkeletonWrapper>
-          </div>
-        </div>
+          </Styled.GameStats>
+        </Styled.PlayerGameStats>
 
-        <div className="Overview-Player-Damage">
-          <div className="Overview-Player-Damage-bar">
-            <div className="Overview-Player-Damage-fill" style={{width: damagePercent}} />
-          </div>
-          <div className="Overview-Player-Damage-label"> {damage} </div>
-        </div>
-        
-        <div className="Overview-Player-Damage">
-          <div className="Overview-Player-Damage-bar">
-            <div className="Overview-Player-Damage-fill Healing" style={{width: healingDonePercent}} />
-          </div>
-          <div className="Overview-Player-Damage-label"> {healingDone} </div>
-        </div>
-        
-        <div className="Overview-Player-Damage">
-          <div className="Overview-Player-Damage-bar">
-            <div className="Overview-Player-Damage-fill DamageTaken" style={{width: damageTakenPercent}} />
-          </div>
-          <div className="Overview-Player-Damage-label"> {damageTaken} </div>
-        </div>
+        <Styled.PlayerGraph>
+          <Styled.PlayerGraphBar type="done" percent={damagePercent}>
+            <div />
+          </Styled.PlayerGraphBar>
+          <span> {damage} </span>
+        </Styled.PlayerGraph>
 
-      </div>
-      <div className="Overview-Player-Rank">
+        <Styled.PlayerGraph>
+          <Styled.PlayerGraphBar type="healing" percent={healingDonePercent}>
+            <div />
+          </Styled.PlayerGraphBar>
+          <span> {healingDone} </span>
+        </Styled.PlayerGraph>
+
+        <Styled.PlayerGraph>
+          <Styled.PlayerGraphBar type="taken" percent={damageTakenPercent}>
+            <div />
+          </Styled.PlayerGraphBar>
+          <span> {damageTaken} </span>
+        </Styled.PlayerGraph>
+
+      </Styled.PlayerStats>
+
+      <Styled.PlayerRank>
         <SkeletonWrapper status={status} width="30px" height="40px">
           {() => (
             <React.Fragment>
-              <AssetLoader className="Overview-Player-Tier" type="tiers" name={player.tier} />
-              <div className="Overview-Player-RankPoints">{player.rankvst.toFixed(0)}</div>
+              <Styled.PlayerTier type="tiers" name={player.tier} />
+              <span>{player.rankvst.toFixed(0)}</span>
             </React.Fragment>
           )}
         </SkeletonWrapper>
-      </div>
+      </Styled.PlayerRank>
     </React.Fragment>
   )
 };
 
-const TeamStats = ({team, bans, status}) => (
-  <div className="Overview-Cell Overview-Team-Info">
-    <div className="Overview-Legends">
-      <div className="Overview-Legends-DamageDone">Damage Done</div>
-      <div className="Overview-Legends-HealingDone">Healing Done</div>
-      <div className="Overview-Legends-DamageTaken">Damage Taken</div>
-    </div>
-    <div className="Overview-Team-Stats">
-    { bans &&
-      <AssetLoader className="Overview-Team-Ban" type="heroes" name={bans.Hero} />
-    }
-      <div className="Overview-Team-Values">
-        <div className="Overview-Team-Top">
-          <div className="Overview-Team-Gold">
+const TeamStats = ({ team, bans, status }) => (
+  <Styled.CellTeam>
+    <Styled.Legend>
+      <Styled.LegendBall type="done">Damage Done</Styled.LegendBall>
+      <Styled.LegendBall type="healing">Healing Done</Styled.LegendBall>
+      <Styled.LegendBall type="taken">Damage Taken</Styled.LegendBall>
+    </Styled.Legend>
+
+    <Styled.TeamStats>
+      {bans &&
+        <Styled.TeamBan type="heroes" name={bans.Hero} />
+      }
+
+      <Styled.TeamValues>
+
+        <div>
+          <Styled.TeamIcon icon="gold">
             <SkeletonWrapper status={status} width="30px" height="13px">
               {() => Utils.minifyNumber(team.gold)}
             </SkeletonWrapper>
-          </div>
+          </Styled.TeamIcon>
         </div>
-        <div className="Overview-Team-Others">
-          <div className="Overview-Team-Turret">
+
+        <div>
+
+          <Styled.TeamIcon icon="sentry" ext="png">
             <SkeletonWrapper status={status} width="20px" height="13px">{() => team.turretKills}</SkeletonWrapper>
-          </div>
-          <div className="Overview-Team-Kraken">
+          </Styled.TeamIcon>
+
+          <Styled.TeamIcon icon="kraken">
             <SkeletonWrapper status={status} width="20px" height="13px">{() => team.krakenCaptures}</SkeletonWrapper>
-          </div>
+          </Styled.TeamIcon>
+
         </div>
-      </div>
-      <div className="Overview-Team-Score">
+      </Styled.TeamValues>
+
+      <Styled.TeamScore>
         <div><SkeletonWrapper status={status} width="30px" height="25px">{() => team.heroKills}</SkeletonWrapper></div>
         <span>Kills</span>
-      </div>
-    </div>
-  </div>
+      </Styled.TeamScore>
+
+    </Styled.TeamStats>
+  </Styled.CellTeam>
 )
 
-const OverviewTeam = ({team, telemetry, status, gameMode}) => {
+const OverviewTeam = ({ team, telemetry, status, gameMode }) => {
 
   let players = SkeletonPayload(gameMode.includes("5v5") ? 5 : 3);
   // Sort by role
@@ -191,24 +205,24 @@ const OverviewTeam = ({team, telemetry, status, gameMode}) => {
       return b.Type === "HeroBan" && tName(b.Team) === team.side;
     });
   };
-  
+
 
   return (
-    <div className="Overview-Team">
-      <div className="Overview-Cell Overview-Header">
-        <div className="Overview-Player-Info"> 
+    <Styled.Team>
+      <Styled.CellHeader>
+        <Styled.PlayerInfo>
           <SkeletonWrapper status={status} width="30px">
             {() => {
               if (team && team.players && team.players[0]) {
                 return (
                   <React.Fragment>
-                    {team.players[0].winner ? 
-                      <span className="win">Win</span> 
-                    : <span className="loss">Loss</span>
+                    {team.players[0].winner ?
+                      <span className="win">Win</span>
+                      : <span className="loss">Loss</span>
                     }
-                    <span style={{padding: "0 2px"}}>
-                      {team.side === "right/red" ? 
-                      "Red Team" : "Blue Team"}
+                    <span style={{ padding: "0 2px" }}>
+                      {team.side === "right/red" ?
+                        "Red Team" : "Blue Team"}
                     </span>
                   </React.Fragment>
                 )
@@ -216,11 +230,11 @@ const OverviewTeam = ({team, telemetry, status, gameMode}) => {
               return null;
             }}
           </SkeletonWrapper>
-        </div>
-        <div className="Overview-Player-Items">Items</div>
-        <div className="Overview-Player-Stats">Stats</div>
-        <div className="Overview-Player-Rank">Rank</div>
-      </div>
+        </Styled.PlayerInfo>
+        <Styled.PlayerItems>Items</Styled.PlayerItems>
+        <Styled.PlayerStats>Stats</Styled.PlayerStats>
+        <Styled.PlayerRank>Rank</Styled.PlayerRank>
+      </Styled.CellHeader>
       {players.map((p, i) => {
         let tm = false;
         if (telemetry && telemetry.facts) {
@@ -229,29 +243,29 @@ const OverviewTeam = ({team, telemetry, status, gameMode}) => {
         const key = (p.id) ? p.id : i;
 
         return (
-          <div key={key} className={`Overview-Cell Overview-Player ${p.me ? "Overview-Player-me" : ""}`}>
-            <OverviewPlayer status={status} player={p} telemetry={tm} gameMode={gameMode}/>
-          </div>
+          <Styled.CellPlayer key={key} me={p.me}>
+            <OverviewPlayer status={status} player={p} telemetry={tm} gameMode={gameMode} />
+          </Styled.CellPlayer>
         )
       })}
-      <TeamStats status={status} team={team} bans={bans}/>
-    </div>
+      <TeamStats status={status} team={team} bans={bans} />
+    </Styled.Team>
   )
-   
+
 }
 
 export default class extends React.Component {
 
   render() {
-    const {teams, telemetry, status, gameMode} = this.props
+    const { teams, telemetry, status, gameMode } = this.props
     return (
-      <div className="MatchDetails-Overview">
-          {
-            teams.map((team, i) => {
-              return <OverviewTeam key={i} status={status} team={team} telemetry={telemetry} gameMode={gameMode}/>
-            })
-          }
-      </div>
+      <Styled.Wrap>
+        {
+          teams.map((team, i) => {
+            return <OverviewTeam key={i} status={status} team={team} telemetry={telemetry} gameMode={gameMode} />
+          })
+        }
+      </Styled.Wrap>
     )
   }
 };

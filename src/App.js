@@ -78,6 +78,13 @@ const theme = {
     searchBarButtonError: "rgba(243, 156, 156, 0.747)",
     searchMenuContentHover: "rgba(99, 99, 99, 0.1)",
     searchMenuContentSpan: "rgb(99, 99, 99)",
+    boxShadow: "rgba(0, 14, 77, 0.07)",
+    boxHoverCss: "rgba(0, 0, 0, 0.055)",
+    boxButtonHoverBackground: "#f7d05b",
+    boxButtonHoverShadow: "#e4b727",
+    boxButtonDisabledBackground: "#d3d2d3",
+    boxButtonDisabledColor: "#565656",
+    soonColor: "rgba(71, 71, 71, 0.404)",
     white: "white",
     black: "black",
     grey: "grey",
@@ -88,7 +95,9 @@ const theme = {
     "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",
     "red": "radial-gradient(50% 100%, #F5515F 44%, #9F041B 0%)",
     "green": "radial-gradient(0% 100%, #B4EC51 51%, #429321 47%)",
-    "orange": "radial-gradient(0% 50%, #FAD961 45%, #F76B1C 41%)"
+    "orange": "radial-gradient(0% 50%, #FAD961 45%, #F76B1C 41%)",
+    "boxDividerBackground": "linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%)",
+    "skeletonStyletonCss": "linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2))"
   }
 }
 

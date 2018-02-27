@@ -15,7 +15,7 @@ const ErrorScreenContent = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-`
+`;
 
 const BadImage = styled.div`
   width: 50px;

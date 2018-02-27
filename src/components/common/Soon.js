@@ -10,7 +10,7 @@ const SoonWrapper = styled.div`
   h3 {
     font-size: 60px;
     font-style: italic;
-    color: rgba(71, 71, 71, 0.404);
+    color: ${props => props.theme.background.soonColor};
     font-weight: 500;
     text-decoration: italic;
   }

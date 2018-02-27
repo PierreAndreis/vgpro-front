@@ -6,7 +6,7 @@ export const Box = styled.div`
   background: ${props => props.theme.background.box};
   box-sizing: border-box;
   position: relative;
-  box-shadow: 0 6px 30px rgba(0, 14, 77, 0.07);
+  box-shadow: 0 6px 30px ${props => props.theme.background.boxShadow};
 
   border-radius: 5px;
 
@@ -92,7 +92,7 @@ export const BoxSelectorOptions = styled.div`
     `
   }
   &:hover {
-    ${props => !props.active && css`background-color: rgba(0, 0, 0, 0.055)`}
+    ${props => !props.active && css`background-color: ${props => props.theme.background.boxHoverCss}`}
   }
 `
 
@@ -121,16 +121,16 @@ export const BoxButton = styled.button.attrs({
     }
     ${props => !props.disabled && css`
       &:hover {
-        background: #f7d05b;
-        box-shadow: 0 0 10px #e4b727;
+        background: ${props => props.theme.background.boxButtonHoverBackground};
+        box-shadow: 0 0 10px ${props => props.theme.background.boxButtonHoverShadow};
       }
     `}
     ${props => props.disabled && css`
-      background: #d3d2d3;
-      color: #565656;
+      background: ${props => props.theme.background.boxButtonDisabledBackground};
+      color: ${props => props.theme.background.boxButtonDisabledColor};
       cursor: no-drop;
       opacity: .9;
-      box-shadow: 0 0 0 #d3d2d3;
+      box-shadow: 0 0 0 ${props => props.theme.background.boxButtonDisabledBackground};
     `}
 `;
 
@@ -165,7 +165,7 @@ injectGlobal`
     width: 100%;
     /* margin: 0 0 10px; */
     height: 10px;
-    background: linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%);
+    background: ${props => props.theme.gradient.boxDividerBackground};
   }
 `
 

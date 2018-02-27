@@ -8,7 +8,7 @@ export const Wrapper = styled(Box.wrap)`
   transition: all ease-out 300ms;
   &:hover {
     transform: scale(1.005);
-    background: rgb(247, 247, 247);
+    background: ${props => props.theme.background.matchHover};
   }
 `;
 
@@ -138,17 +138,17 @@ export const RateLabel = styled.span`
   ${props => {
     if (props.label === "w") {
       return css`
-        color: #5DB4F1;
+        color: ${props => props.theme.background.matchBorderWinner};
         :before {
-          background: #5DB4F1;
+          background: ${props => props.theme.background.matchBorderWinner};
         }
       `
     }
     if (props.label === "l") {
       return css`
-        color: #F1685D;
+        color: ${props => props.theme.background.matchBorder};
         :before {
-          background: #F1685D;
+          background: ${props => props.theme.background.matchBorder};
         }
       `
     }

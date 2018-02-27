@@ -493,9 +493,9 @@ export const TeamScore = styled.div`
 `;
 
 // .win {
-//   color: #5DB4F1;
+//   color: ${props => props.theme.background.matchBorderWinner};
 // }
 
 // .loss {
-//   color: #F1685D;
+//   color: ${props => props.theme.background.matchBorder};
 // }

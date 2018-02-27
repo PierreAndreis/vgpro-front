@@ -6,8 +6,8 @@ export const Match = styled(Box.wrap)`
   width: 100%;
   height: 140px;
   margin: 10px 0;
-  border-left: 6px solid #F1685D;
-  border-left-color: ${props => props.winner ? "#5DB4F1" : "#F1685D"};
+  border-left: 6px solid ${props => props.theme.background.matchBorder};
+  border-left-color: ${props => props.winner ? props.theme.background.matchBorderWinner : props.theme.background.matchBorder};
   position: relative;
   z-index: 2;
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
@@ -15,7 +15,7 @@ export const Match = styled(Box.wrap)`
 
   &:hover {
     transform: scale(1.01);
-    background: rgb(247, 247, 247);
+    background: ${props => props.theme.background.matchHover};
   }
 `;
 
@@ -35,8 +35,8 @@ export const Avatar = styled(AssetLoader)`
   height: 90px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: rgb(190, 190, 190);
-  border: 2px solid #9C9C9C;
+  background: ${props => props.theme.background.matchAvatar};
+  border: 2px solid ${props => props.theme.background.matchAvatarBorder};
   background-size: 100%;
   position: relative;
   .PlayerMatch-Avatar-Role {
@@ -123,7 +123,7 @@ export const MatchInfo = styled.div`
 `;
 
 export const MatchTime = styled.div`
-  color: #B1B1B1;
+  color: ${props => props.theme.background.matchTime};
   font-size: 13px;
   white-space: nowrap;
   margin-bottom: 5px;
@@ -150,7 +150,7 @@ export const MatchDuration = MatchTime.extend`
 `
 
 export const MatchKDA = styled.div`
-  color: #B1B1B1;
+  color: ${props => props.theme.background.matchTime};
   font-size: 14px;
   @media screen and (max-width: 1068px) {
     font-size: 13px;
@@ -159,7 +159,7 @@ export const MatchKDA = styled.div`
     color: ${props => props.theme.background.black};
   }
   span.death {
-    color: rgb(192, 61, 61);
+    color: ${props => props.theme.background.matchKdaDeath};
   }
 `
 
@@ -190,7 +190,7 @@ export const MatchVariables = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   font-size: 13px;
-  color: #B1B1B1;
+  color: ${props => props.theme.background.matchTime};
   >div {
     width: 90px;
     margin: 0 5px;
@@ -269,7 +269,7 @@ export const Item = styled(AssetLoader)`
   margin: 3px;
   border-radius: 50%;
   background: ${props => props.text[100]};
-  border: 1px solid #9C9C9C;
+  border: 1px solid ${props => props.theme.background.matchAvatarBorder};
   background-size: 100%;
   @media screen and (max-width: 400px) {
     width: 20px;
@@ -322,7 +322,7 @@ export const Player = styled.div`
       color: ${props => props.theme.background.black};
     }
     b {
-      color: #E6C156;
+      color: ${props => props.theme.background.matchPlayerColor};
     }
   }
 `
@@ -333,11 +333,11 @@ export const PlayerHero = styled(AssetLoader)`
   border-radius: 50%;
   background: ${props => props.text[100]};
   margin: 0 3px;
-  border: 2px solid #499BD2;
+  border: 2px solid ${props => props.theme.background.matchHero};
   background-size: 120%;
   background-position: center center;
   ${PlayersTeam}:last-of-type &{
-    border-color: #E64659;
+    border-color: ${props => props.theme.background.matchLastHero};
   }
 `
 
@@ -347,7 +347,7 @@ export const MatchBadge = styled.div`
   right: 10px;
   width: 40px;
   height: 20px;
-  background: ${props => props.win ? "#F1685D" : "#5DB4F1"};
+  background: ${props => props.win ? props.theme.background.matchBorder : props.theme.background.matchBorderWinner};
   font-size: 12px;
   color: ${props => props.theme.background.white};
   display: flex;

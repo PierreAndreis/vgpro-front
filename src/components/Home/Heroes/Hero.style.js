@@ -46,10 +46,10 @@ export const HeroImage = styled(AssetLoader)`
   position: relative;
   height: 50px;
   background-size: 100%;
-  background-color: rgb(190, 190, 190);
+  background-color: ${props => props.theme.background.matchAvatar};
   flex-shrink: 0;
   flex-grow: 0;
-  border: 2px solid #9C9C9C;
+  border: 2px solid ${props => props.theme.background.matchAvatarBorder};
   border-radius: 50%;
   ${props => (
     props.rank === 1 && css`

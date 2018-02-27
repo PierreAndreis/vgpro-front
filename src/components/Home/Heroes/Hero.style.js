@@ -89,7 +89,7 @@ export const HeroTag = styled.div`
   }
   if (props.rank === 2) {
     return css`
-      background: ${props => props.text[300]};
+      background: ${props => props.theme.text[300]};
     `
   }
   if (props.rank === 3) {

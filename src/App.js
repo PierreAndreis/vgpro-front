@@ -161,7 +161,7 @@ const darkTheme = {
   },
   text: {
     500: "#4A4A4A",
-    "300": "#9B9B9B",
+    300: "#9B9B9B",
     100: "#D8D8D8"
   },
   background: {

@@ -25,7 +25,7 @@ let removeFromList = (fn, name, list) => (e) => {
   e.preventDefault();
   const l = list.filter(n => (name !== n));
   fn(l);
-}
+};
 
 let addToList = (fn, name, list) => (e) => {
   e.preventDefault();
@@ -37,7 +37,7 @@ let addToList = (fn, name, list) => (e) => {
   if (!list.includes(name)) {
     fn(name);
   }
-}
+};
 
 const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
 
@@ -205,14 +205,14 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
       </Styled.Content>
     </Styled.Wrap>
   )
-}
+};
 
 const mapStateToProps = state => {
 
   return {
     ...state.user
   }
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
@@ -222,7 +222,7 @@ const mapDispatchToProps = dispatch => {
     },
     dispatch
   )
-}
+};
 
 export default connect(
   mapStateToProps,

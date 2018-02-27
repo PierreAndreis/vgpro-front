@@ -21,7 +21,7 @@ export const Each = styled.div`
 
   align-items: center;
   &:nth-child(2n + 1) {
-    background: rgba(204, 204, 204, 0.205);
+    background: ${props => props.theme.background.sidebarFriendsNth};
   }
 `;
 
@@ -90,4 +90,4 @@ export const WR = styled.div`
   text-align: center;
   font-size: 11px;
 }
-`
+`;

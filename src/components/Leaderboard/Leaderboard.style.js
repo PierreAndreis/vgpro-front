@@ -49,7 +49,7 @@ export const FilterOption = styled.div`
     }
     return css`
       &:hover {
-        background: rgba(0,0,0,0.1);
+        background: ${props => props.theme.background.leaderboardFilter};
       }
     `
   }}
@@ -64,4 +64,4 @@ export const Content = styled.section`
 export const Buttons = styled.div`
   display: flex;
   justify-content: space-around;
-`
+`;

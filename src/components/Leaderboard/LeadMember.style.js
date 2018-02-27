@@ -22,7 +22,7 @@ export const Body = styled(Box.body)`
   justify-content: space-around;
   /* margin: 2px 0; */
   box-sizing: border-box;
-  border-bottom: 1px solid #e9e9e9;
+  border-bottom: 1px solid ${props => props.theme.background.leaderboardMemberBody};
   color: ${props => props.theme.background.grey};
   >div {
     flex-shrink: 0;
@@ -86,7 +86,7 @@ export const Points = styled.div`
   &>span {
     font-size: 11px;
     text-transform: uppercase;
-    color: gray;
+    color: ${props => props.theme.background.grey};
     @media screen and (max-width: 560px) {
       font-size: 9px;
     }

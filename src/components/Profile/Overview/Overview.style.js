@@ -16,7 +16,7 @@ export const Group = styled(Box.wrap)`
 `;
 
 export const Title = styled(Box.title)`
-`
+`;
 
 export const Content = styled(Box.body)`
   padding: 15px 0;
@@ -33,7 +33,7 @@ export const Chart = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-`
+`;
 
 export const ChartLabel = styled.div`
   text-align: center;
@@ -55,7 +55,7 @@ export const Stats = styled.div`
   &>div {
     font-size: 25px;
     font-weight: 500;
-    color: rgba(128, 128, 128, 1);
+    color: ${props => props.theme.background.profileOverviewStatsDiv};
   }
   &>span {
     font-size: 13px;

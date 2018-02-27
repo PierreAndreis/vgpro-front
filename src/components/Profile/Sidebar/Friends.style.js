@@ -22,16 +22,16 @@ export const Each = styled(Link)`
   align-items: center;
   transition: all 300ms;
   &:nth-child(2n + 1) {
-    background: rgba(204, 204, 204, 0.205);
+    background: ${props => props.theme.background.sidebarFriendsNth};
   }
   &:hover {
-    background: rgba(128, 128, 128, 0.205);
+    background: ${props => props.theme.background.sidebarFriendsHover};
   }
 `;
 
 export const Name = styled.div`
   font-size: 13px;
-  color: rgb(61, 61, 61);
+  color: ${props => props.theme.background.sidebarFriendsName};
   width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -46,6 +46,6 @@ export const Stats = styled.div`
   }
   &>div{
     font-size: 10px;
-    color: rgb(83, 83, 83);
+    color: ${props => props.theme.background.sidebarFriendsStats};
   }
 `;

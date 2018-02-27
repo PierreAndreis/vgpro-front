@@ -2,13 +2,13 @@ import styled, {css} from "styled-components";
 
 
 export const Wrapper = styled.div`
-	width: 100%;
+  width: 100%;
   align-items: center;
   display: flex;
   height: 45px;
   justify-content: center;
   font-size: 12px;
-  color: rgb(65, 65, 65);
+  color: ${props => props.theme.background.profileFiltersWrapper};
   font-weight: 500;
   margin: 20px 0 5px;
 `;
@@ -31,7 +31,7 @@ export const Menu = styled.div`
   z-index: 99;
   border-radius: 5px;
   /* box-shadow: rgba(54, 54, 54, 0.315) 0 10px 30px 0; */
-  box-shadow: 0 0.625rem 1.25rem 0 rgba(0,0,0,0.25);
+  box-shadow: 0 0.625rem 1.25rem 0 ${props => props.theme.background.profileFiltersMenuShadow};
 `;
 
 export const Option = styled.div`
@@ -45,7 +45,7 @@ export const Option = styled.div`
       background: ${props => props.theme.background.searchInput};
     `) || css `
       &:hover {
-        background: whitesmoke;
+        background: ${props => props.theme.background.whitesmoke};
       }
     `
   )}
@@ -59,7 +59,7 @@ export const MenuLabel = styled.div`
     text-transform: uppercase;
     padding: 5px 25px 5px 10px;
     cursor: pointer;
-    color: #F3C249;
+    color: ${props => props.theme.background.profileFiltersMenuLabel};
     font-weight: 700;
     background: ${props => props.theme.background.white};
     border-radius: 5px;
@@ -74,4 +74,4 @@ export const MenuLabel = styled.div`
       margin-top: 2px;
     }
   }
-`
+`;

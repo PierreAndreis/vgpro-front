@@ -18,8 +18,8 @@ export const Content = styled(Box.body)`
 export const Divider = styled.div`
   width: 100%;
   height: 0;
-  border-bottom: 2px solid #F8F8F8;
-`
+  border-bottom: 2px solid ${props => props.theme.background.sidebarPlayerDivider};
+`;
 
 export const Info = styled.section`
   width: 100%;
@@ -47,7 +47,7 @@ export const TierBar = styled.div`
   position: relative;
 
   &>div{
-    background: #F4C338;
+    background: ${props => props.theme.background.sidebarPlayerTierDiv};
     border-radius: 10px;
     height: 100%;
     width: ${props => `${props.percentage}%`};
@@ -59,7 +59,7 @@ export const TierBar = styled.div`
     left: 50%;
     transform: translate(-50%,0);
     font-size: 13px;
-    color: #F4C338;
+    color: ${props => props.theme.background.sidebarPlayerTierDiv};
     border: 2px solid ${props => props.text[100]};
     background: ${props => props.theme.background.white};
     font-weight: bolder;
@@ -79,14 +79,14 @@ export const Icons = styled.div`
   text-align: right;
   i {
     font-size: 20px;
-    color: #F4C338;
+    color: ${props => props.theme.background.sidebarPlayerTierDiv};
     cursor: pointer;
   }
 `;
 
 export const Name = styled.div`
   font-size: 21px;
-  color: #EFC317;
+  color: ${props => props.theme.background.sidebarPlayerName};
   font-weight: bold;
   margin-bottom: 5px;
 `;
@@ -94,13 +94,13 @@ export const Name = styled.div`
 export const UnderName = styled.div`
   font-size: 15px;
   font-weight: 300;
-  color: #4B4B4B;
+  color: ${props => props.theme.background.sidebarPlayerUnderName};
 `;
 
 export const LastUpdate = styled.div`
   margin-top: 20px;
   font-size: 13px;
-  color: #4B4B4B;
+  color: ${props => props.theme.background.sidebarPlayerUnderName};
 `;
 
 export const Team = styled.section`
@@ -138,11 +138,11 @@ export const TeamDetails = styled.div`
   h4 {
     margin: 0;
     font-size: 13px;
-    color: #4B4B4B;
+    color: ${props => props.theme.background.sidebarPlayerUnderName};
     font-weight: 400;
   }
   span {
-    color: rgb(66, 66, 66);
+    color: ${props => props.theme.background.sidebarPlayerTeamDetailsSpan};
     font-weight: bold;
     font-size: 15px;
   }
@@ -160,7 +160,7 @@ export const PlayerStats = styled.div`
     text-transform: uppercase;
     margin: 0 0 5px;
     text-align: center;
-    color: #EFC317;
+    color: ${props => props.theme.background.sidebarPlayerName};
   }
 `;
 
@@ -179,7 +179,7 @@ export const PlayerStat = styled.div`
 
   span {
     font-size: 13px;
-    color: #EFC317;
+    color: ${props => props.theme.background.sidebarPlayerName};
     font-weight: bold;
   }
 `;
@@ -192,16 +192,16 @@ export const PlayerAka = styled.section`
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 500;
-    color: #4B4B4B;
+    color: ${props => props.theme.background.sidebarPlayerUnderName};
     margin: 2px 5px 10px;
   }
 
   &>span {
     padding: 2px 5px;
-    background: #F4C338;
+    background: ${props => props.theme.background.sidebarPlayerTierDiv};
     color: ${props => props.theme.background.white};
     margin-left: 5px;
     border-radius: 5px;
     font-size: 13px;
   }
-`
+`;

@@ -18,7 +18,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  font-family: ${props => props.theme.font.body}, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #ECEEF1;
   background-attachment: fixed;
   overflow-x: none;

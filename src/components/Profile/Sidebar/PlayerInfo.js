@@ -45,9 +45,9 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
   let percentageVst;
   let favoriteClass;
   let favoriteClick;
-  let rankingGlobal = 0;
-  let rankingRegion = 0;
-  let rankingRegionName = "...";
+  // let rankingGlobal = 0;
+  // let rankingRegion = 0;
+  // let rankingRegionName = "...";
 
   if (status === "loaded") {
     rankVst = (data.rankVst) ? Number(data.rankVst).toFixed(0) : 0;
@@ -63,11 +63,11 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
       favoriteClick = removeFromList(setFavorite, data.name, favorites);
     }
 
-    if (data.rankedRanking) {
-      rankingGlobal = data.rankedRanking.global === -1 ? "--" : data.rankedRanking.global;
-      rankingRegion = data.rankedRanking.regional === -1 ? "--" : data.rankedRanking.regional;
-      rankingRegionName = data.region === "sg" ? "SEA" : data.region.toUpperCase();
-    }
+    // if (data.rankedRanking) {
+    //   rankingGlobal = data.rankedRanking.global === -1 ? "--" : data.rankedRanking.global;
+    //   rankingRegion = data.rankedRanking.regional === -1 ? "--" : data.rankedRanking.regional;
+    //   rankingRegionName = data.region === "sg" ? "SEA" : data.region.toUpperCase();
+    // }
 
     // team = (
     //   <Styled.Team>

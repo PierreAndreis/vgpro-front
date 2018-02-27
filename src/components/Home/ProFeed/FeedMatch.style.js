@@ -14,7 +14,7 @@ export const Wrapper = styled(Link)`
     background: ${props => props.theme.background.boxOdd};
   }
   &:hover {
-    background-color: #E7E7E7;
+    background-color: ${props => props.theme.background.feedWrapperHover};
   }
 `;
 
@@ -30,11 +30,11 @@ export const Status = styled.div`
     }
     if (props.winner) {
       return css`
-        background: hsl(205, 86%, 65%);
+        background: ${props => props.theme.background.feedStatusWinner};
       `
     }
     else return css`
-      background: hsl(6, 86%, 65%);
+      background: ${props => props.theme.background.feedStatusLoser};
     `
   }}
 `
@@ -50,7 +50,7 @@ export const PlayerInfo = styled.div`
 export const PlayerPicture = styled.div`
   width: 30px;
   height: 30px;
-  background: rgb(80, 80, 80);
+  background: ${props => props.theme.background.feedPlayerPictureBackground};
   background-size: 180%;
   background-position: center 4%;
   border-radius: 100%;
@@ -86,7 +86,7 @@ export const PlayerDetails = styled.div`
     font-weight: 100;
     margin-top: 1px;
     font-size: 10px;
-    color: #2E2E2E
+    color: ${props => props.theme.background.feedPlayerDetailsSpan}
   }
 `;
 
@@ -167,7 +167,7 @@ export const Items = styled.div`
 export const Item = styled(AssetLoader)`
   width: 19px;
   height: 19px;
-  background: rgba(195, 195, 195, 1);
+  background: ${props => props.theme.background.feedItem};
   border-radius: 50%;
   margin: 0 1px;
   background-size: 100%;
@@ -176,10 +176,10 @@ export const Item = styled(AssetLoader)`
 export const Arrow = styled.div`
   width: 15px;
   height: 100%;
-  color: rgba(195, 195, 195, 0.6);
+  color: ${props => props.theme.background.feedArrow};
   font-size: 35px;
   padding-right: 2px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-`
+`;

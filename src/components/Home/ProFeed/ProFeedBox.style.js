@@ -12,4 +12,4 @@ export const Body = styled(Box.body)`
   position: relative;
   display: flex;
   flex-direction: column;
-`
+`;

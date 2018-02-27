@@ -7,7 +7,7 @@ export const Background = styled.div`
   background-position: center top;
   position: absolute;
   z-index: -1;
-`
+`;
 
 export const Wrap = styled.section`
   position: relative;
@@ -18,7 +18,7 @@ export const Wrap = styled.section`
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
-`
+`;
 
 export const Main = styled.section`
   display: flex;

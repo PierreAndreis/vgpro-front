@@ -47,6 +47,9 @@ const theme = {
     buildsGroupBorder: "#A7A7A7",
     buildsGroupSpanBackground: "rgb(146, 146, 146)",
     buildsItemSpanBackground: "rgb(247, 64, 64)",
+    detailsContainerBoxShadow: "#EAEDF3",
+    detailsTabOptionColor: "rgb(75, 75, 75)",
+    detailsTabOptionHover: "rgba(207, 207, 207, 0.24)",
     white: "white"
   },
   gradient: {

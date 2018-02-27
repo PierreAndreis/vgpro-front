@@ -36,7 +36,7 @@ export const SearchBarInput = styled.input`
   /* background: red; */
   border-radius: 50px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-  box-shadow: #EAEDF3 0 10px 30px 0;
+  box-shadow: ${props => props.theme.background.detailsContainerBoxShadow} 0 10px 30px 0;
   box-sizing: border-box;
 `;
 

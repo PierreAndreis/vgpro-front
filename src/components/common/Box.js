@@ -152,7 +152,7 @@ injectGlobal`
   }
 
   .Box_RegionSelect div:hover {
-    color: rgb(75, 75, 75);
+    color: ${props => props.theme.background.detailsTabOptionColor};
     cursor: pointer;
   }
 

@@ -10,7 +10,7 @@ export const Container = styled.div`
   box-sizing: border-box;
   background: ${props => props.theme.background.white};
   border-radius: 0 0 5px 5px;
-  box-shadow: #EAEDF3 0 0px 30px 0;
+  box-shadow: ${props => props.theme.background.detailsContainerBoxShadow} 0 0px 30px 0;
   animation-name: slideInDown;
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -31,7 +31,7 @@ export const TabOption = styled.div`
 
   text-transform: uppercase;
   font-size: 12px;
-  color: rgb(75, 75, 75);
+  color: ${props => props.theme.background.detailsTabOptionColor};
   font-weight: 700;
   cursor: pointer;
 
@@ -43,7 +43,7 @@ export const TabOption = styled.div`
     color: ${props => props.theme.background.buildsContentH2Color};
     `) || css`
       &:hover{
-        background: rgba(207, 207, 207, 0.24);
+        background: ${props => props.theme.background.detailsTabOptionHover};
       }
     `
   )}

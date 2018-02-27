@@ -68,7 +68,7 @@ export const PlayerDetails = styled.div`
   text-align: left;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   div {
-    color: rgba(57, 57, 57, 1);
+    color: ${props => props.theme.background.leadMemberName};
     font-weight: 100;
     font-size: 13px;
     font-weight: bold;
@@ -79,7 +79,7 @@ export const PlayerDetails = styled.div`
       text-transform: uppercase;
       font-size: 12px;
       font-weight: 100;
-      color: rgba(161, 161, 161, 1);
+      color: ${props => props.theme.background.leadMemberNameSpan};
     }
   }
   span {

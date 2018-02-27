@@ -7,4 +7,4 @@ export const Wrapper = styled(Box)`
 
 export const Title = styled(BoxTitle)`
   display: flex;
-`
+`;

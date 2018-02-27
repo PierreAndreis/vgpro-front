@@ -24,11 +24,11 @@ export const Position = styled.div`
   margin-right: 5px;
   ${Wrapper}:first-of-type &{
     font-size: 72px;
-    color: rgba(234, 203, 93, 1);
+    color: ${props => props.theme.background.leadMemberPosition};
     /** What? To align the big number with the small */
     letter-spacing: -10px;
   }
-`
+`;
 
 export const Info = styled.div`
   flex-grow: 1;
@@ -42,7 +42,7 @@ export const Name = styled.div`
   font-size: 14px;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  color: rgba(57, 57, 57, 1);
+  color: ${props => props.theme.background.leadMemberName};
   margin-bottom: 1px;
   >span {
     font-size: 12px;
@@ -51,7 +51,7 @@ export const Name = styled.div`
     /** lol, seriously? */
     padding-bottom: 1px;
 
-    color: rgba(161, 161, 161, 1);
+    color: ${props => props.theme.background.leadMemberNameSpan};
     font-weight: normal;
   }
 
@@ -64,7 +64,7 @@ export const SkillTier = styled.div`
   display: none;
   ${Wrapper}:first-of-type &{
     display: flex;
-    color: #A3A3A3;
+    color: ${props => props.theme.background.leadMemberSkill};
     font-size: 11px;
     text-transform: uppercase;
     font-weight: 500; 
@@ -73,7 +73,7 @@ export const SkillTier = styled.div`
 
 export const Stats = styled.div`
   display: flex;
-  color: #A3A3A3;
+  color: ${props => props.theme.background.leadMemberSkill};
   text-transform: uppercase;
   font-weight: 500;
   font-size: 11px;
@@ -82,7 +82,7 @@ export const Stats = styled.div`
 export const Points = styled.div`
   font-size: 24px;
   padding: 0 30px;
-  /* color: rgba(134, 200, 91, 1); */
+  /* color: ${props => props.theme.background.leadMemberPoints}; */
 `;
 
 export const PointsName = styled.span`
@@ -92,6 +92,6 @@ export const PointsName = styled.span`
     text-transform: uppercase;
     display: block;
     text-align: center;
-    color: rgba(130, 130, 130, 1);
+    color: ${props => props.theme.background.leadMemberPointsName};
   }
-`
+`;

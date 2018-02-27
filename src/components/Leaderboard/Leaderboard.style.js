@@ -25,7 +25,7 @@ export const FilterCategory = styled.div`
   &>h2 {
     margin: 5px;
     padding: 3px 4px;
-    border-bottom: 1px solid rgba(234, 203, 93, 1);
+    border-bottom: 1px solid ${props => props.theme.background.leadMemberPosition};
     font-size: 14px;
     text-transform: uppercase;
   }
@@ -43,7 +43,7 @@ export const FilterOption = styled.div`
   ${props => {
     if (props.active) {
       return css`
-        color: rgba(234, 203, 93, 1);
+        color: ${props => props.theme.background.leadMemberPosition};
         font-weight: 500;
       `
     }

@@ -31,7 +31,7 @@ export const Body = styled(Box.body)`
 
 export const Position = styled.div`
   font-size: 15px;
-  color: rgba(234, 203, 93, 1);
+  color: ${props => props.theme.background.leadMemberPosition};
   font-weight: 500;
   width: 30px;
 `;
@@ -60,7 +60,7 @@ export const PlayerName = styled.div`
   font-size: 15px;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  color: rgba(57, 57, 57, 1);
+  color: ${props => props.theme.background.leadMemberName};
   margin-bottom: 1px;
   span {
     font-size: 9px;

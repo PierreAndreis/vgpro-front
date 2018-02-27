@@ -10,20 +10,20 @@ export const Body = styled(BoxBody)`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-`
+`;
 
 export const Title = styled(BoxTitle)`
   display: flex;
   height: 56px;
   position: relative;
-`
+`;
 
 export const Top3 = styled.div`
   width: 100%;
   padding-top: 10px;
   display: flex;
   justify-content: space-around;
-`
+`;
 
 export const Others = styled.div`
   width: 100%;
@@ -32,4 +32,4 @@ export const Others = styled.div`
   animation-duration: 1s;
   animation-fill-mode: both;
   animation-name: "fadeInUp";
-`
+`;

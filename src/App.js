@@ -85,6 +85,8 @@ const theme = {
     boxButtonDisabledBackground: "#d3d2d3",
     boxButtonDisabledColor: "#565656",
     soonColor: "rgba(71, 71, 71, 0.404)",
+    heroTag: "rgb(73, 73, 73)",
+    heroTag3: "#A54916",
     white: "white",
     black: "black",
     grey: "grey",

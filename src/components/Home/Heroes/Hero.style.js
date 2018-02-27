@@ -77,7 +77,7 @@ export const HeroTag = styled.div`
   box-sizing: border-box;
   padding: 4px;
   border-radius: 50%;
-  background: rgb(73, 73, 73);
+  background: ${props => props.theme.background.heroTag};
   ${props => {
   if (props.rank === 1) {
     return css`
@@ -94,11 +94,11 @@ export const HeroTag = styled.div`
   }
   if (props.rank === 3) {
     return css`
-      background: #A54916;
+      background: ${props => props.theme.background.heroTag3};
     `
   }
   }}
-`
+`;
 
 export const Name = styled.div`
   text-align: center;
@@ -110,7 +110,7 @@ export const Name = styled.div`
   ${Others} &{
     margin-top: 0;
   }
-`
+`;
 
 export const Percentage = styled.div`
   margin: 5px;

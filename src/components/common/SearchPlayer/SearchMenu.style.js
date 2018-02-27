@@ -42,13 +42,13 @@ export const Content = styled.div`
     color: ${props => props.theme.background.overviewPlayerName};
     cursor: pointer;
     &:hover {
-      background-color: rgba(99, 99, 99, 0.1);
+      background-color: ${props => props.theme.background.searchMenuContentHover};
     }
     >span {
       position: absolute;
       right: 5px;
       font-size: 15px;
-      color: rgb(99, 99, 99);
+      color: ${props => props.theme.background.searchMenuContentSpan};
     }
     @media screen and (max-width: 700px) {
       flex-grow: 1;

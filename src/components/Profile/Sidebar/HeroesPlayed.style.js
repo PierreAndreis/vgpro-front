@@ -71,7 +71,7 @@ export const KDADetails = styled.div`
     margin:0  5px;
   }
   &span#deaths {
-    color: red;
+    color: ${props => props.theme.background.red};
   }
 `;
 

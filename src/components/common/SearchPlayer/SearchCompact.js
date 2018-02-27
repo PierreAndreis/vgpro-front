@@ -11,11 +11,11 @@ const Search = styled.div`
   text-align: right;
   position: relative;
   margin-left: auto;
-  /* background: red; */
+  /* background: ${props => props.theme.background.red}; */
   .Search-Icon {
     position: absolute;
     z-index: 2;
-    color: rgba(0, 0, 0, 0.459);
+    color: ${props => props.theme.background.searchIcon};
     height: 100%;
     line-height: 35px;
     margin-left: -35px;
@@ -34,7 +34,7 @@ const SearchInput = styled.input`
   border: 0;
   z-index: 1;
   border-radius: 5px;
-  background: rgb(230, 230, 230);
+  background: ${props => props.theme.background.searchInput};
   padding: 10px 30px 10px 10px;
   height: 35px;
   font-size: 16px;
@@ -45,7 +45,7 @@ const SearchInput = styled.input`
     ${props => !props.isOpen && css`
       width: 35px;
       font-size: 16px;
-      color: transparent;
+      color: ${props => props.theme.background.transparent};
       padding: 0;
     `}
   }

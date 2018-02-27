@@ -61,7 +61,7 @@ export const MenuMobile = styled.div`
 `;
 
 export const MobileButton = styled.div`
-  /* background: red; */
+  /* background: ${props => props.theme.background.red}; */
   margin-left: auto;
   box-sizing: border-box;
   font-size: 25px;
@@ -69,7 +69,7 @@ export const MobileButton = styled.div`
   text-align: right;
   position: relative;
   z-index: 1;
-  /* background: red; */
+  /* background: ${props => props.theme.background.red}; */
 
   display: flex;
   justify-content: flex-end;
@@ -121,7 +121,7 @@ export const MobileIcon = styled.div`
       span,
       span:before,
       span:after {
-        background-color: transparent;
+        background-color: ${props => props.theme.background.transparent};
       }
 
       span:before {

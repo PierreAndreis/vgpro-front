@@ -69,7 +69,7 @@ export const Stats = styled.div`
     bottom: -10px;
     &>b {
       ${'' /* Deaths */}
-      color: red;
+      color: ${props => props.theme.background.red};
     }
 
   }

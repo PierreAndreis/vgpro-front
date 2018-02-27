@@ -71,9 +71,18 @@ const theme = {
     matchPlayerColor: "#E6C156",
     matchHero: "#499BD2",
     matchLastHero: "#E64659",
+    searchIcon: "rgba(0, 0, 0, 0.459)",
+    searchInput: "rgb(230, 230, 230)",
+    searchMainBar: "rgb(110, 112, 117)",
+    searchMainBarInputShadow: "rgba(0, 0, 0, 0.1)",
+    searchBarButtonError: "rgba(243, 156, 156, 0.747)",
+    searchMenuContentHover: "rgba(99, 99, 99, 0.1)",
+    searchMenuContentSpan: "rgb(99, 99, 99)",
     white: "white",
     black: "black",
-    grey: "grey"
+    grey: "grey",
+    red: "red",
+    transparent: "transparent"
   },
   gradient: {
     "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",

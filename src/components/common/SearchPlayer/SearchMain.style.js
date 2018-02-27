@@ -15,7 +15,7 @@ export const SearchBar = styled.div`
       text-align: center;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      color: rgb(110, 112, 117);
+      color: ${props => props.theme.background.searchMainBar};
     }
   }
 `;
@@ -33,9 +33,9 @@ export const SearchBarInput = styled.input`
   outline: 0;
 
   background: ${props => props.theme.background.white};
-  /* background: red; */
+  /* background: ${props => props.theme.background.red}; */
   border-radius: 50px;
-  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0 0 10px ${props => props.theme.background.searchMainBarInputShadow}; */
   box-shadow: ${props => props.theme.background.detailsContainerBoxShadow} 0 10px 30px 0;
   box-sizing: border-box;
 `;
@@ -49,11 +49,11 @@ export const SearchBarButton = styled.button`
   transform: all 300ms;
   border-radius: 50px 0 0 50px;
   border: 0;
-  background: transparent;
+  background: ${props => props.theme.background.transparent};
   outline: 0;
   transition: all 300ms;
   ${(props) => props.isError && css`
-    background-color: rgba(243, 156, 156, 0.747);
+    background-color: ${props => props.theme.background.searchBarButtonError};
   `}
 `;
 

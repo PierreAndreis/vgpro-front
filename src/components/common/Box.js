@@ -117,7 +117,7 @@ export const BoxButton = styled.button.attrs({
     transition: all 300ms;
     cursor: pointer;
     &::selection{
-      background-color:transparent !important;
+      background-color:${props => props.theme.background.transparent} !important;
     }
     ${props => !props.disabled && css`
       &:hover {

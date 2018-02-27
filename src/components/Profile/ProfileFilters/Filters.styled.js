@@ -42,7 +42,7 @@ export const Option = styled.div`
   font-size: 12px;
   ${props => (
     (props.active && css`
-      background: rgb(230, 230, 230);
+      background: ${props => props.theme.background.searchInput};
     `) || css `
       &:hover {
         background: whitesmoke;

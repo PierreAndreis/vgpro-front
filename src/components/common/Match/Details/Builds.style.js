@@ -32,7 +32,7 @@ export const Player = styled.div`
   align-items: center;
   box-sizing: border-box;
   transition: all 300ms;
-  border-bottom: 1px solid #97979731;
+  border-bottom: 1px solid ${props => props.theme.background.builds};
   ${Team}:first-of-type &{
     @media screen and (max-width: 710px) {
       flex-direction: row-reverse;
@@ -44,7 +44,7 @@ export const Player = styled.div`
     }
   }
   &:hover {
-    background: rgba(230, 230, 230, 0.514);
+    background: ${props => props.theme.background.buildsHover};
     font-weight: bold;
   }
   &>span {
@@ -53,13 +53,13 @@ export const Player = styled.div`
     text-overflow: ellipsis;
     display: block;
     font-size: 12px;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: ${props => props.theme.font.highlight}, sans-serif;
     font-weight: 500;
-    color: rgb(109, 109, 109);
+    color: ${props => props.theme.background.buildsSpanColor};
     ${props => props.active &&
     css`
       font-weight: 700;
-      color: #E5C05E;
+      color: ${props => props.theme.background.buildsSpanCssColor};
     `}
   }
 `;
@@ -69,26 +69,26 @@ export const PlayerHero = styled(AssetLoader)`
   height: 30px;
   border-radius: 90%;
   background-size: 100%;
-  border: 3px solid #4A90E2;
+  border: 3px solid ${props => props.theme.background.buildsPlayerBorder};
   ${Team}:last-of-type &{
-    border-color: #FF6262;
+    border-color: ${props => props.theme.background.buildsPlayerLastBorder};
   }
 `;
 
 export const Content = styled.section`
-  border-left: 1px solid rgba(128, 128, 128, 0.212);
+  border-left: 1px solid ${props => props.theme.background.buildsContentBorder};
   padding-left: 20px;
   flex-grow: 1;
   box-sizing: border-box;
   &>h2 {
       font-size: 15px;
       padding-bottom: 5px;
-      color: #DCAF5A;
+      color: ${props => props.theme.background.buildsContentH2Color};
       margin: 0;
       text-transform: uppercase;
       font-weight: 700;
       width: 100%;
-      border-bottom: 1px solid #DCAF5A;
+      border-bottom: 1px solid ${props => props.theme.background.buildsContentH2Color};
   }
 `;
 
@@ -136,9 +136,9 @@ export const AbilityLevel = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 0;
-  color: #D8D8D8;
-  background-color: #D8D8D8;
-  border: 1px solid #BDBDBD;
+  color: ${props => props.text[100]};
+  background-color: ${props => props.text[100]};
+  border: 1px solid ${props => props.theme.background.buildsAbilityBorder};
   background-size: 100%;
   margin: 0 2px;
   @media screen and (max-width: 710px) {
@@ -152,8 +152,8 @@ export const AbilityLevel = styled.div`
   css`
     font-size: 13px;
     font-weight: 500;
-    color: white;
-    background-color: #E8A827;
+    color: ${props => props.theme.background.white};
+    background-color: ${props => props.theme.background.buildsAbilityCssBackground};
   `}
   }
 `;
@@ -173,17 +173,17 @@ export const Builds = styled.div`
 export const BuildGroup = styled.div`
   margin: 0 5px 5px;
   box-sizing: border-box;
-  background: #D8D8D8;
-  border: 1px solid #A7A7A7;
+  background: ${props => props.text[100]};
+  border: 1px solid ${props => props.theme.background.buildsGroupsBorder};
   &>span {
     display: block;
-    background: rgb(146, 146, 146);
+    background: ${props => props.theme.background.buildsGroupsSpanBackground};
     font-size: 12px;
     font-weight: 400;
     padding: 5px;
     text-transform: uppercase;
     text-align: center;
-    color: white;
+    color: ${props => props.theme.background.white};
   }
 `;
 
@@ -208,7 +208,7 @@ export const BuildItem = styled(AssetLoader)`
     border-radius: 50%;
     font-size: 12px;
     text-align: center;
-    background: rgb(247, 64, 64);
-    color: white;
+    background: ${props => props.theme.background.buildsItemSpanBackground};
+    color: ${props => props.theme.background.white};
   }
 `

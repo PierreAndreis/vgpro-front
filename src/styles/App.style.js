@@ -18,7 +18,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: ${props => props.theme.font.body}, sans-serif;
   background-color: #ECEEF1;
   background-attachment: fixed;
   overflow-x: none;
@@ -30,7 +30,7 @@ html, body, #app {
 
 a {
   text-decoration: none;
-  color: white;
+  color: ${props => props.theme.background.white};
 }
 
 a:hover {

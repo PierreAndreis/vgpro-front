@@ -100,7 +100,7 @@ export const MatchInfo = styled.div`
   padding-left: 20px;
   h2 {
     margin: 0;
-    color: #4A4A4A;
+    color: ${props => props.text[500]};
     text-transform: uppercase;
     font-size: 16px;
   }
@@ -166,7 +166,7 @@ export const MatchKDA = styled.div`
 export const MatchKDAText = styled.div`
   font-size: 18px;
   font-weight: 500;
-  /* color: #FF6262; */
+  /* color: ${props => props.theme.background.buildsPlayerLastBorder}; */
   @media screen and (max-width: 450px) {
     font-size: 14px;
   }
@@ -215,7 +215,7 @@ export const Gold = styled.div`
   >div {
     font-size: 110%;
     white-space: nowrap;
-    color: #4A4A4A;
+    color: ${props => props.text[500]};
     font-weight: 500;
     &:after {
       content: "";
@@ -234,7 +234,7 @@ export const Gold = styled.div`
 export const CS = styled.div`
   >div {
     font-size: 110%;
-    color: #4A4A4A;
+    color: ${props => props.text[500]};
     font-weight: 500;
     &:after {
       content: "";
@@ -268,7 +268,7 @@ export const Item = styled(AssetLoader)`
   height: 35px;
   margin: 3px;
   border-radius: 50%;
-  background: #D8D8D8;
+  background: ${props => props.text[100]};
   border: 1px solid #9C9C9C;
   background-size: 100%;
   @media screen and (max-width: 400px) {
@@ -312,7 +312,7 @@ export const Player = styled.div`
     flex-direction: row;
   }
   a {
-    color: #4A4A4A;
+    color: ${props => props.text[500]};
     width: 100px;
     overflow: hidden;
     white-space: nowrap;
@@ -331,7 +331,7 @@ export const PlayerHero = styled(AssetLoader)`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #D8D8D8;
+  background: ${props => props.text[100]};
   margin: 0 3px;
   border: 2px solid #499BD2;
   background-size: 120%;
@@ -349,7 +349,7 @@ export const MatchBadge = styled.div`
   height: 20px;
   background: ${props => props.win ? "#F1685D" : "#5DB4F1"};
   font-size: 12px;
-  color: white;
+  color: ${props => props.theme.background.white};
   display: flex;
   align-items: center;
   justify-content: center;

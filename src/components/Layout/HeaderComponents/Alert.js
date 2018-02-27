@@ -6,7 +6,7 @@ import React from "react";
 import styled from "styled-components";
 
 const AlertWrap = styled.div`
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
   width: 100%;
   height: 45px;
   background: #EED477;

@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin-top: -10px;
   padding: 15px 5px 5px;
   box-sizing: border-box;
-  background: white;
+  background: ${props => props.theme.background.white};
   border-radius: 0 0 5px 5px;
   box-shadow: #EAEDF3 0 0px 30px 0;
   animation-name: slideInDown;
@@ -40,7 +40,7 @@ export const TabOption = styled.div`
   transition: all 300ms;
   ${props => (
     (props.active && css`
-    color: #DCAF5A;
+    color: ${props => props.theme.background.buildsContentH2Color};
     `) || css`
       &:hover{
         background: rgba(207, 207, 207, 0.24);

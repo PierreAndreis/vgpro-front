@@ -43,7 +43,7 @@ const Button = styled.div`
 const Selected = styled.div`
   z-index: 99;
   padding: 5px 2px;
-  color: white;
+  color: ${props => props.theme.background.white};
   border-radius: 5px;
   background: #19191E;
 `;
@@ -55,7 +55,7 @@ const Menu = styled.div`
   top: 35px;
   z-index: 99;
   padding: 5px;
-  color: white;
+  color: ${props => props.theme.background.white};
   border-radius: 5px;
   background: #19191E;
 `;

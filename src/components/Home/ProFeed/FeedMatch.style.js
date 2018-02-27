@@ -66,7 +66,7 @@ export const PlayerDetails = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
   div {
     color: rgba(57, 57, 57, 1);
     font-weight: 100;

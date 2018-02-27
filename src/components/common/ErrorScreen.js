@@ -28,7 +28,7 @@ const BadImage = styled.div`
 `;
 
 const Message = styled.div`
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-size: 13px;
   text-align: center;
 

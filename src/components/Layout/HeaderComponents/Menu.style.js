@@ -17,7 +17,7 @@ export const MenuDesktop = styled.div`
       color: #39393F;
     }
     &.active {
-      color: #DCAF5A;
+      color: ${props => props.theme.background.buildsContentH2Color};
     }
     i {
       font-size: 12px;

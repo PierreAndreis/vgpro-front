@@ -42,7 +42,7 @@ export const TierBar = styled.div`
   width: 110px;
   margin: 85% auto;
   height: 10px;
-  background: #D8D8D8;
+  background: ${props => props.text[100]};
   border-radius: 10px;
   position: relative;
 
@@ -60,8 +60,8 @@ export const TierBar = styled.div`
     transform: translate(-50%,0);
     font-size: 13px;
     color: #F4C338;
-    border: 2px solid #D8D8D8;
-    background: white;
+    border: 2px solid ${props => props.text[100]};
+    background: ${props => props.theme.background.white};
     font-weight: bolder;
     padding: 2px 5px;
     text-align: center;
@@ -199,7 +199,7 @@ export const PlayerAka = styled.section`
   &>span {
     padding: 2px 5px;
     background: #F4C338;
-    color: white;
+    color: ${props => props.theme.background.white};
     margin-left: 5px;
     border-radius: 5px;
     font-size: 13px;

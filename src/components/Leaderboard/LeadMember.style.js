@@ -58,7 +58,7 @@ export const PlayerInfo = styled.div`
 
 export const PlayerName = styled.div`
   font-size: 15px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
   color: rgba(57, 57, 57, 1);
   margin-bottom: 1px;
@@ -169,7 +169,7 @@ export const Hero = styled(AssetLoader)`
   border-radius: 50%;
   margin: 0 2px;
   border: 1px solid grey;
-  background-color: #D8D8D8;
+  background-color: ${props => props.text[100]};
   background-size: 120%;
   background-position: center center;
 `;

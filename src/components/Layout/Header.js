@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 55px;
   text-align: center;
-  background: white;
+  background: ${props => props.theme.background.white};
   position: relative;
   z-index: 4;
   display: flex;

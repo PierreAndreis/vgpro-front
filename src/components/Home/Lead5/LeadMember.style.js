@@ -40,7 +40,7 @@ export const Info = styled.div`
 export const Name = styled.div`
   display: flex;
   font-size: 14px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
   color: rgba(57, 57, 57, 1);
   margin-bottom: 1px;

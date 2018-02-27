@@ -157,7 +157,7 @@ injectGlobal`
   }
 
   .Box_RegionSelect div.active {
-    color: #DCAF5A;
+    color: ${props => props.theme.background.buildsContentH2Color};
     
   }
 

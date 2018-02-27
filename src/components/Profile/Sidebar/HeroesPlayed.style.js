@@ -16,7 +16,7 @@ export const Each = styled.div`
   height: 70px;
   padding: 5px 15px;
   box-sizing: border-box;
-  background: white;
+  background: ${props => props.theme.background.white};
   display: flex;
 
   align-items: center;
@@ -44,7 +44,7 @@ export const Name = styled.div`
   font-weight: 500;
   font-size: 12px;
   padding-bottom: 2px;
-  color: #4A4A4A;
+  color: ${props => props.text[500]};
 `;
 
 export const SubName = styled.div`
@@ -67,7 +67,7 @@ export const KDA = styled.div`
 export const KDADetails = styled.div`
   color: grey;
   &span {
-    color: #4A4A4A;;
+    color: ${props => props.text[500]};
     margin:0  5px;
   }
   &span#deaths {

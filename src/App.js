@@ -34,6 +34,20 @@ const theme = {
     third: "hsla(0,0%,76%,.3)",
     box: "#FFFFFF",
     boxOdd: "#f1f1f1",
+    builds: "#979731",
+    buildsHover: "rgba(230, 230, 230, 0.514)",
+    buildsSpanColor: "rgb(109, 109, 109)",
+    buildsSpanCssColor: "#E5C05E",
+    buildsPlayerBorder: "#4A90E2",
+    buildsPlayerLastBorder: "#FF6262",
+    buildsContentBorder: "rgba(128, 128, 128, 0.212)",
+    buildsContentH2Color: "#DCAF5A",
+    buildsAbilityBorder: "#BDBDBD",
+    buildsAbilityCssBackground: "#E8A827",
+    buildsGroupBorder: "#A7A7A7",
+    buildsGroupSpanBackground: "rgb(146, 146, 146)",
+    buildsItemSpanBackground: "rgb(247, 64, 64)",
+    white: "white"
   },
   gradient: {
     "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",
@@ -56,7 +70,7 @@ const darkTheme = {
   },
   text: {
     500: "#4A4A4A",
-    300: "#9B9B9B",
+    "300": "#9B9B9B",
     100: "#D8D8D8"
   },
   background: {

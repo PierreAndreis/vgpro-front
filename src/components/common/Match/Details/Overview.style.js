@@ -97,10 +97,10 @@ export const PlayerHero = styled(AssetLoader)`
   background-size: 140%;
   background-position: center center;
   background-color: rgb(201, 201, 201);
-  border: 3px solid #4A90E2;
+  border: 3px solid ${props => props.theme.background.buildsPlayerBorder};
   position: relative;
   ${Team}:last-of-type &{
-    border-color: #FF6262;
+    border-color: ${props => props.theme.background.buildsPlayerLastBorder};
   }
 `;
 
@@ -161,7 +161,7 @@ export const PlayerName = styled(Link)`
   text-overflow: ellipsis;
   display: block;
   font-size: 12px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
   color: #3A3A3A;
 `;
@@ -307,7 +307,7 @@ export const PlayerRank = styled.div`
   &>span {
     width: 30px;
     margin-top: -2px;
-    background: white;
+    background: ${props => props.theme.background.white};
     font-size: 10px;
     color: grey;
     border: 1px solid rgb(218, 218, 218);
@@ -405,10 +405,10 @@ export const TeamBan = styled(AssetLoader)`
   background-size: 120%;
   background-position: center;
   border-radius: 50%;
-  border: 3px solid #FF6262;
+  border: 3px solid ${props => props.theme.background.buildsPlayerLastBorder};
   position: relative;
   ${Team}:last-of-type &{
-    border-color: #4A90E2;
+    border-color: ${props => props.theme.background.buildsPlayerBorder};
   }
 
   &:after {
@@ -420,9 +420,9 @@ export const TeamBan = styled(AssetLoader)`
     transform: rotate(120deg);
     width: 50px;
     height: 3px;
-    background: #FF6262;
+    background: ${props => props.theme.background.buildsPlayerLastBorder};
     ${Team}:last-of-type & {
-      background: #4A90E2;
+      background: ${props => props.theme.background.buildsPlayerBorder};
     }
   }
 `;
@@ -441,10 +441,10 @@ export const TeamValues = styled.div`
   font-size: 13px;
   color: grey;
   &>div:first-of-type {
-    border-bottom: 2px solid #FF6262;
+    border-bottom: 2px solid ${props => props.theme.background.buildsPlayerLastBorder};
     height: 20px;
     ${Team}:last-of-type &{
-      border-bottom-color: #4A90E2;
+      border-bottom-color: ${props => props.theme.background.buildsPlayerBorder};
     }
   }
 
@@ -474,9 +474,9 @@ export const TeamIcon = styled.div`
 
 export const TeamScore = styled.div`
   width: 40px;
-  color:#FF6262;
+  color:${props => props.theme.background.buildsPlayerLastBorder};
   ${Team}:last-of-type &{
-    color: #4A90E2;
+    color: ${props => props.theme.background.buildsPlayerBorder};
   }
   &>div {
     font-size: 25px;

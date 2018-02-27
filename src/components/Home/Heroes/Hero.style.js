@@ -72,7 +72,7 @@ export const HeroTag = styled.div`
   display: block;
   width: 23px;
   font-size: 14px;
-  color: white;
+  color: ${props => props.theme.background.white};
   height: 23px;
   box-sizing: border-box;
   padding: 4px;
@@ -84,12 +84,12 @@ export const HeroTag = styled.div`
       width: 25px;
       height: 25px;
       font-size: 14px;
-      background: #E8A827;
+      background: ${props => props.theme.background.buildsAbilityCssBackground};
     `
   }
   if (props.rank === 2) {
     return css`
-      background: #9B9B9B;
+      background: ${props => props.text[300]};
     `
   }
   if (props.rank === 3) {
@@ -104,7 +104,7 @@ export const Name = styled.div`
   text-align: center;
   margin-top: 5px;
   font-size: 13px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
   color: #3A3A3A;
   ${Others} &{

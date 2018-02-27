@@ -16,12 +16,12 @@ export const Category = styled.div`
   h1 {
     font-size: 15px;
     padding-bottom: 5px;
-    color: #DCAF5A;
+    color: ${props => props.theme.background.buildsContentH2Color};
     margin: 0;
     text-transform: uppercase;
     font-weight: 700;
     width: 100%;
-    border-bottom: 1px solid #DCAF5A;
+    border-bottom: 1px solid ${props => props.theme.background.buildsContentH2Color};
   }
 `;
 
@@ -37,7 +37,7 @@ export const Content = styled.div`
     margin: 2px 2px;
     position: relative;
     font-size: 15px;
-    font-family: "Roboto Condensed", sans-serif;
+    font-family: ${props => props.theme.font.highlight}, sans-serif;
     font-weight: 600;
     color: #3A3A3A;
     cursor: pointer;

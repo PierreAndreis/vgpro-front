@@ -21,7 +21,7 @@ export const SearchBar = styled.div`
 `;
 
 export const SearchBarInput = styled.input`
-  /* font-family: 'Roboto Condensed', sans-serif; */
+  /* font-family: ${props => props.theme.font.highlight}, sans-serif; */
   font-size: 100%;
 
   width: 100%;
@@ -32,7 +32,7 @@ export const SearchBarInput = styled.input`
   border-radius: 2px;
   outline: 0;
 
-  background: white;
+  background: ${props => props.theme.background.white};
   /* background: red; */
   border-radius: 50px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */

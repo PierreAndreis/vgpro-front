@@ -27,7 +27,7 @@ export const Menu = styled.div`
   right: 0;
   height: auto;
   padding: 5px;
-  background: white;
+  background: ${props => props.theme.background.white};
   z-index: 99;
   border-radius: 5px;
   /* box-shadow: rgba(54, 54, 54, 0.315) 0 10px 30px 0; */
@@ -61,7 +61,7 @@ export const MenuLabel = styled.div`
     cursor: pointer;
     color: #F3C249;
     font-weight: 700;
-    background: white;
+    background: ${props => props.theme.background.white};
     border-radius: 5px;
     &:after {
       content: "";

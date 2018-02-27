@@ -136,8 +136,8 @@ export const AbilityLevel = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 0;
-  color: ${props => props.text[100]};
-  background-color: ${props => props.text[100]};
+  color: ${props => props.theme.text[100]};
+  background-color: ${props => props.theme.text[100]};
   border: 1px solid ${props => props.theme.background.buildsAbilityBorder};
   background-size: 100%;
   margin: 0 2px;
@@ -173,7 +173,7 @@ export const Builds = styled.div`
 export const BuildGroup = styled.div`
   margin: 0 5px 5px;
   box-sizing: border-box;
-  background: ${props => props.text[100]};
+  background: ${props => props.theme.text[100]};
   border: 1px solid ${props => props.theme.background.buildsGroupsBorder};
   &>span {
     display: block;

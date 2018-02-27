@@ -44,7 +44,7 @@ export const Name = styled.div`
   font-weight: 500;
   font-size: 12px;
   padding-bottom: 2px;
-  color: ${props => props.text[500]};
+  color: ${props => props.theme.text[500]};
 `;
 
 export const SubName = styled.div`
@@ -67,7 +67,7 @@ export const KDA = styled.div`
 export const KDADetails = styled.div`
   color: ${props => props.theme.background.grey};
   &span {
-    color: ${props => props.text[500]};
+    color: ${props => props.theme.text[500]};
     margin:0  5px;
   }
   &span#deaths {

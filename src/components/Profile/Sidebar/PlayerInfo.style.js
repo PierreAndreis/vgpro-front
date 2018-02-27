@@ -42,7 +42,7 @@ export const TierBar = styled.div`
   width: 110px;
   margin: 85% auto;
   height: 10px;
-  background: ${props => props.text[100]};
+  background: ${props => props.theme.text[100]};
   border-radius: 10px;
   position: relative;
 
@@ -60,7 +60,7 @@ export const TierBar = styled.div`
     transform: translate(-50%,0);
     font-size: 13px;
     color: ${props => props.theme.background.sidebarPlayerTierDiv};
-    border: 2px solid ${props => props.text[100]};
+    border: 2px solid ${props => props.theme.text[100]};
     background: ${props => props.theme.background.white};
     font-weight: bolder;
     padding: 2px 5px;

@@ -146,7 +146,7 @@ const theme = {
     "skeletonStyletonCss": "linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2))",
     "menuMobileBackground": "linear-gradient(-180deg, #E6BE3E 0%, #DFA436 100%)"
   }
-}
+};
 
 const darkTheme = {
   font: {

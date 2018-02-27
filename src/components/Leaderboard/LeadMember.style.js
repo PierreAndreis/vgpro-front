@@ -169,7 +169,7 @@ export const Hero = styled(AssetLoader)`
   border-radius: 50%;
   margin: 0 2px;
   border: 1px solid ${props => props.theme.background.grey};
-  background-color: ${props => props.text[100]};
+  background-color: ${props => props.theme.text[100]};
   background-size: 120%;
   background-position: center center;
 `;

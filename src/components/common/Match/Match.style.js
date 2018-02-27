@@ -100,7 +100,7 @@ export const MatchInfo = styled.div`
   padding-left: 20px;
   h2 {
     margin: 0;
-    color: ${props => props.text[500]};
+    color: ${props => props.theme.text[500]};
     text-transform: uppercase;
     font-size: 16px;
   }
@@ -215,7 +215,7 @@ export const Gold = styled.div`
   >div {
     font-size: 110%;
     white-space: nowrap;
-    color: ${props => props.text[500]};
+    color: ${props => props.theme.text[500]};
     font-weight: 500;
     &:after {
       content: "";
@@ -234,7 +234,7 @@ export const Gold = styled.div`
 export const CS = styled.div`
   >div {
     font-size: 110%;
-    color: ${props => props.text[500]};
+    color: ${props => props.theme.text[500]};
     font-weight: 500;
     &:after {
       content: "";
@@ -268,7 +268,7 @@ export const Item = styled(AssetLoader)`
   height: 35px;
   margin: 3px;
   border-radius: 50%;
-  background: ${props => props.text[100]};
+  background: ${props => props.theme.text[100]};
   border: 1px solid ${props => props.theme.background.matchAvatarBorder};
   background-size: 100%;
   @media screen and (max-width: 400px) {
@@ -312,7 +312,7 @@ export const Player = styled.div`
     flex-direction: row;
   }
   a {
-    color: ${props => props.text[500]};
+    color: ${props => props.theme.text[500]};
     width: 100px;
     overflow: hidden;
     white-space: nowrap;
@@ -331,7 +331,7 @@ export const PlayerHero = styled(AssetLoader)`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: ${props => props.text[100]};
+  background: ${props => props.theme.text[100]};
   margin: 0 3px;
   border: 2px solid ${props => props.theme.background.matchHero};
   background-size: 120%;

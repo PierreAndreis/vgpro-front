@@ -1,10 +1,6 @@
 import React from "react";
 
-import Box from "../../common/Box";
-
 import { connect }          from "react-redux";
-
-import AsyncContainer from "./../../common/AsyncContainer";
 
 import PlayerInfo from "./PlayerInfo";
 import HeroesPlayed from "./HeroesPlayed";

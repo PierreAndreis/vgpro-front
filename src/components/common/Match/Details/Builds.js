@@ -1,6 +1,5 @@
 import React    from "react";
 
-import AssetLoader         from "./../../AssetLoader";
 import { SkeletonPayload } from "./../../Skeleton";
 
 // import "./Builds.css";

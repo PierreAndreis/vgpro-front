@@ -1,10 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import { KDA } from "../../ColoredValues";
 
 import Utils from "../../../../utils";
-import AssetLoader from "../../AssetLoader";
 
 import { SkeletonWrapper, SkeletonPayload } from "./../../Skeleton";
 

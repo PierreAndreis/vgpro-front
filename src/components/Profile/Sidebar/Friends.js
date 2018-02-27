@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import ErrorScreen from "../../common/ErrorScreen";
 import Box from "../../common/Box";

@@ -1,12 +1,9 @@
 import React from "react";
 
 import Box from "./../../common/Box";
-import AssetLoader from "./../../common/AssetLoader";
 import ErrorScreen from "../../common/ErrorScreen";
 import { KDA, Rate } from "../../common/ColoredValues";
 import {
-  Skeleton,
-  SkeletonContainer,
   SkeletonPayload,
   SkeletonWrapper
 } from "../../common/Skeleton";

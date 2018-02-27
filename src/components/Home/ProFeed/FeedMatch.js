@@ -1,18 +1,14 @@
 import React from "react";
 
 import { translate } from "react-i18next";
-import AssetLoader from "../../common/AssetLoader";
 
 import Utils from "utils";
-import { Link } from 'react-router-dom';
 import { SkeletonWrapper } from "../../common/Skeleton";
 
 import * as Styled from "./FeedMatch.style";
 
 const FeedMatch = ({ status, t, data }) => {
 
-
-  const win = (data.winner) ? "Win" : "Loss";
   let link = "/";
 
   // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.

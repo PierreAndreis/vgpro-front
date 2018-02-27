@@ -2,7 +2,6 @@ import React from "react";
 import ErrorScreen from "../../common/ErrorScreen";
 
 import HalfPieChart from "../../common/Charts/HalfPieChart";
-import { Box, BoxBody } from "./../../common/Box";
 
 import { KDA } from "./../../common/ColoredValues";
 

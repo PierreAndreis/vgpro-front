@@ -1,12 +1,10 @@
 import React from "react";
-import Box from "./../../common/Box";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { addFavorite, setFavorite } from "./../../../actions/user";
 
 import { SkeletonWrapper } from "../../common/Skeleton";
-import AssetLoader from "./../../common/AssetLoader";
 
 import TimeAgo from "../../../i18n/timeAgo.js";
 import Utils from "../../../utils";

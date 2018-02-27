@@ -29,7 +29,7 @@ export const HeroImage = styled(AssetLoader)`
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  border: 1px solid grey;
+  border: 1px solid ${props => props.theme.background.grey};
   border-radius: 50%;
   background-size: 120%;
   background-position: center;
@@ -48,7 +48,7 @@ export const Name = styled.div`
 `;
 
 export const SubName = styled.div`
-  color: grey;
+  color: ${props => props.theme.background.grey};
   font-size: 11px;
 `;
 
@@ -65,7 +65,7 @@ export const KDA = styled.div`
 `;
 
 export const KDADetails = styled.div`
-  color: grey;
+  color: ${props => props.theme.background.grey};
   &span {
     color: ${props => props.text[500]};
     margin:0  5px;

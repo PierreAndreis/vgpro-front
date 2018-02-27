@@ -173,7 +173,7 @@ export const PlayerStat = styled.div`
 
   div {
     font-size: 16px;
-    color: #3a3a3a;
+    color: ${props => props.theme.background.overviewPlayerName};
     font-weight: 500;
   }
 

@@ -39,7 +39,7 @@ export const ChartLabel = styled.div`
   text-align: center;
   font-size: 16px;
   width: 100%;
-  color: grey;
+  color: ${props => props.theme.background.grey};
   font-weight: 500;
   text-transform: uppercase;
   margin-top: 10px;

@@ -5,7 +5,7 @@ import AssetLoader from "../../common/AssetLoader";
 export const Wrapper = styled(Link)`
   width: 100%;
   height: 45px;
-  color: black;
+  color: ${props => props.theme.background.black};
   display: flex;
   transition: background-color 0.2s;
   flex-direction: space-between;
@@ -25,7 +25,7 @@ export const Status = styled.div`
   ${props => {
     if (typeof props.winner === "undefined") {
       return css`
-        background: grey;
+        background: ${props => props.theme.background.grey};
       `
     }
     if (props.winner) {
@@ -101,7 +101,7 @@ export const Game = styled.div`
 export const GameHero = styled(AssetLoader)`
   width: 25px;
   height: 25px;
-  background-color: grey;
+  background-color: ${props => props.theme.background.grey};
   background-size: 130%;
   background-position: center;
   border-radius: 50%;
@@ -122,26 +122,26 @@ export const GameRole = styled.div`
   ${props => {
     if (props.role === "Captain") {
       return css`
-        background-color: rgb(191, 150, 1);
+        background-color: ${props => props.theme.background.overviewPlayerRoleCaptain};
         background-image: url("/roles/captain.png");
       `
     };
     if (props.role === "Carry") {
       return css`
-        background-color: rgb(160, 46, 45);
+        background-color: ${props => props.theme.background.overviewPlayerRoleCarry};
         background-image: url("/roles/carry.png");
       `
     }
     if (props.role === "Jungler") {
       return css`
-        background-color: rgb(106, 183, 11);
+        background-color: ${props => props.theme.background.overviewPlayerRoleJungler};
         background-image: url("/roles/jungler.png");
       `
     }
 
     if (props.role === "Sub") {
       return css`
-        background-color: rgb(49, 49, 49);
+        background-color: ${props => props.theme.background.overviewPlayerRoleSub};
         background-image: url("/roles/sub.png");
       `
     }

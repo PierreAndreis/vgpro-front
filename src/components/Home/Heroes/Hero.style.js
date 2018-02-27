@@ -106,7 +106,7 @@ export const Name = styled.div`
   font-size: 13px;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  color: #3A3A3A;
+  color: ${props => props.theme.background.overviewPlayerName};
   ${Others} &{
     margin-top: 0;
   }

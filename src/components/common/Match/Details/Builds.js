@@ -81,12 +81,12 @@ export default class extends React.PureComponent {
       team.players.find(player => player.name === playerLoaded)
     ));
      
-    const detailsPlayer = detailsTeam.players.find(player => player.name === playerLoaded);
+    const overviewPlayer = detailsTeam.players.find(player => player.name === playerLoaded);
 
     const teamName = detailsTeam.side === "left/blue" ? "blue" : "red";
 
     // this is really prune to give undefined errors.... god.
-    const telemetryPlayer = telemetry.facts[teamName][detailsPlayer.hero];
+    const telemetryPlayer = telemetry.facts[teamName][overviewPlayer.hero];
 
     // Create an array of unique abilities and sort...
     // we will use this to create each array of abilities

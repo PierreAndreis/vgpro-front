@@ -109,7 +109,7 @@ export const AbilitiesRow = styled.div`
   margin: 2px 0;
   &>span {
     font-size: 11px;
-    color: grey;
+    color: ${props => props.theme.background.grey};
     display: flex;
     align-items: center;
     justify-content: flex-end;

@@ -12,7 +12,7 @@ export const Content = styled(Box.body)`
 `;
 
 export const Each = styled(Link)`
-  color: black;
+  color: ${props => props.theme.background.black};
   width: 100%;
   height: 40px;
   padding: 5px 15px;

@@ -40,7 +40,7 @@ export const Avatar = styled(AssetLoader)`
   background-size: 100%;
   position: relative;
   .PlayerMatch-Avatar-Role {
-    background: grey;
+    background: ${props => props.theme.background.grey};
     width: 35px;
     height: 35px;
     top: -8px;
@@ -51,17 +51,17 @@ export const Avatar = styled(AssetLoader)`
     background-repeat: no-repeat;
     background-position: center center;
     &#captain {
-      background-color: rgb(191, 150, 1);
+      background-color: ${props => props.theme.background.overviewPlayerRoleCaptain};
       background-image: url("/roles/captain.png");
     }
 
     &#carry {
-      background-color: rgb(160, 46, 45);
+      background-color: ${props => props.theme.background.overviewPlayerRoleCarry};
       background-image: url("/roles/carry.png");
     }
 
     &#jungler {
-      background-color: rgb(106, 183, 11);
+      background-color: ${props => props.theme.background.overviewPlayerRoleJungler};
       background-image: url("/roles/jungler.png");
     }
   }
@@ -156,7 +156,7 @@ export const MatchKDA = styled.div`
     font-size: 13px;
   }
   span.k {
-    color: black;
+    color: ${props => props.theme.background.black};
   }
   span.death {
     color: rgb(192, 61, 61);
@@ -319,7 +319,7 @@ export const Player = styled.div`
     text-overflow: ellipsis;
     transition: all 300ms;
     &:hover {
-      color: black;
+      color: ${props => props.theme.background.black};
     }
     b {
       color: #E6C156;

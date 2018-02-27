@@ -18,7 +18,7 @@ export const Wrapper = styled(Link)`
 export const Position = styled.div`
   min-width: 50px;
   font-size: 32px;
-  color: grey;
+  color: ${props => props.theme.background.grey};
   text-align: right;
   font-weight: 500;
   margin-right: 5px;

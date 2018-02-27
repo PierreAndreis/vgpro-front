@@ -23,7 +23,7 @@ export const Body = styled(Box.body)`
   /* margin: 2px 0; */
   box-sizing: border-box;
   border-bottom: 1px solid #e9e9e9;
-  color: grey;
+  color: ${props => props.theme.background.grey};
   >div {
     flex-shrink: 0;
   }
@@ -48,7 +48,7 @@ export const PlayerInfo = styled.div`
   display: inline-block;
   span {
     font-size: 12px;
-    color: grey;
+    color: ${props => props.theme.background.grey};
   }
   @media screen and (max-width: 560px) {
     width: 100px;
@@ -64,7 +64,7 @@ export const PlayerName = styled.div`
   margin-bottom: 1px;
   span {
     font-size: 9px;
-    color: grey;
+    color: ${props => props.theme.background.grey};
     text-transform: uppercase;
     font-weight: 300;
   }
@@ -168,7 +168,7 @@ export const Hero = styled(AssetLoader)`
   height: 25px;
   border-radius: 50%;
   margin: 0 2px;
-  border: 1px solid grey;
+  border: 1px solid ${props => props.theme.background.grey};
   background-color: ${props => props.text[100]};
   background-size: 120%;
   background-position: center center;

@@ -50,7 +50,20 @@ const theme = {
     detailsContainerBoxShadow: "#EAEDF3",
     detailsTabOptionColor: "rgb(75, 75, 75)",
     detailsTabOptionHover: "rgba(207, 207, 207, 0.24)",
-    white: "white"
+    overviewCellHeader: "#EAEAEA",
+    overviewCellPlayer: "rgba(75, 75, 75, 0.041)",
+    overviewPlayerHero: "rgb(201, 201, 201)",
+    overviewPlayerRoleCaptain: "rgb(191, 150, 1)",
+    overviewPlayerRoleCarry: "rgb(160, 46, 45)",
+    overviewPlayerRoleJungler: "rgb(106, 183, 11)",
+    overviewPlayerRoleSub: "rgb(49, 49, 49)",
+    overviewPlayerName: "#3A3A3A",
+    overviewPlayerKDA: "rgb(179, 32, 32)",
+    overviewGameStats: "rgb(53, 53, 53)",
+    overviewPlayerGraphBar: "rgba(95, 95, 95, 0.356)",
+    white: "white",
+    black: "black",
+    grey: "grey"
   },
   gradient: {
     "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",

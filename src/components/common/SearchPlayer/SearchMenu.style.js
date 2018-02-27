@@ -39,7 +39,7 @@ export const Content = styled.div`
     font-size: 15px;
     font-family: ${props => props.theme.font.highlight}, sans-serif;
     font-weight: 600;
-    color: #3A3A3A;
+    color: ${props => props.theme.background.overviewPlayerName};
     cursor: pointer;
     &:hover {
       background-color: rgba(99, 99, 99, 0.1);

@@ -43,24 +43,24 @@ export const Cell = styled.div`
 
   
 `;
-
+// todo: extra background color here
 export const CellHeader = Cell.extend`
   height: 25px;
   font-size: 10px;
   text-align: center;
   font-weight: 700;
-  color: grey;
+  color: ${props => props.theme.background.grey};
   text-transform: uppercase;
   
   background: #D5EDFE;
-  background: #EAEAEA;
+  background: ${props => props.theme.background.overviewCellHeader};
 `;
 
 export const CellPlayer = Cell.extend`
   height: 65px;
-  border-bottom: 1px solid #97979731;
+  border-bottom: 1px solid ${props => props.theme.background.builds};
   &:nth-child(odd) {
-    background: rgba(75, 75, 75, 0.041);
+    background: ${props => props.theme.background.overviewCellPlayer};
   }
 `;
 
@@ -96,7 +96,7 @@ export const PlayerHero = styled(AssetLoader)`
   border-radius: 50%;
   background-size: 140%;
   background-position: center center;
-  background-color: rgb(201, 201, 201);
+  background-color: ${props => props.theme.background.overviewPlayerHero};
   border: 3px solid ${props => props.theme.background.buildsPlayerBorder};
   position: relative;
   ${Team}:last-of-type &{
@@ -117,26 +117,26 @@ export const PlayerRole = styled.div`
   ${props => {
     if (props.role === "Captain") {
       return css`
-        background-color: rgb(191, 150, 1);
+        background-color: ${props => props.theme.background.overviewPlayerRoleCaptain};
         background-image: url("/roles/captain.png");
       `
     };
     if (props.role === "Carry") {
       return css`
-        background-color: rgb(160, 46, 45);
+        background-color: ${props => props.theme.background.overviewPlayerRoleCarry};
         background-image: url("/roles/carry.png");
       `
     }
     if (props.role === "Jungler") {
       return css`
-        background-color: rgb(106, 183, 11);
+        background-color: ${props => props.theme.background.overviewPlayerRoleJungler};
         background-image: url("/roles/jungler.png");
       `
     }
 
     if (props.role === "Sub") {
       return css`
-        background-color: rgb(49, 49, 49);
+        background-color: ${props => props.theme.background.overviewPlayerRoleSub};
         background-image: url("/roles/sub.png");
       `
     }
@@ -163,21 +163,21 @@ export const PlayerName = styled(Link)`
   font-size: 12px;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  color: #3A3A3A;
+  color: ${props => props.theme.background.overviewPlayerName};
 `;
 
 export const PlayerKDA = styled.div`
   font-size: 11px;
-  color: grey;
+  color: ${props => props.theme.background.grey};
   &>span {
-    color: black;
+    color: ${props => props.theme.background.black};
   }
   &>span.d {
-    color: rgb(179, 32, 32);
+    color: ${props => props.theme.background.overviewPlayerKDA};
   }
   &>div {
     font-size: 13px;
-    color: black;
+    color: ${props => props.theme.background.black};
     font-weight: bold;
   }
 `;
@@ -198,7 +198,7 @@ export const PlayerItem = styled(AssetLoader)`
   height: 23px;
   margin: 2px 0;
   flex-shrink: 0;
-  background-color: rgb(201, 201, 201);
+  background-color: ${props => props.theme.background.overviewPlayerHero};
   background-size: 100%;
   border-radius: 50%;
 `;
@@ -218,7 +218,7 @@ export const PlayerGameStats = styled.div`
 
 export const GameStats = styled.div`
   font-size: 11px;
-  color: rgb(53, 53, 53);
+  color: ${props => props.theme.background.overviewGameStats};
   font-weight: 500;
   ${props => props.farm && css`
     margin-right: 10px;
@@ -261,7 +261,7 @@ export const PlayerGraph = styled.div`
     font-size: 10px;
     font-weight: bold;
     white-space: nowrap;
-    color: grey;
+    color: ${props => props.theme.background.grey};
     margin-left: 3px;
   }
 `;
@@ -271,7 +271,7 @@ export const PlayerGraphBar = styled.div`
   border-radius: 15px;
   height: 7px;
   position: relative;
-  background: rgba(95, 95, 95, 0.356);
+  background: ${props => props.theme.background.overviewPlayerGraphBar};
   &>div {
     height: 100%;
     border-radius: 15px;
@@ -309,7 +309,7 @@ export const PlayerRank = styled.div`
     margin-top: -2px;
     background: ${props => props.theme.background.white};
     font-size: 10px;
-    color: grey;
+    color: ${props => props.theme.background.grey};
     border: 1px solid rgb(218, 218, 218);
     border-radius: 5px;
     text-align: center;
@@ -439,7 +439,7 @@ export const TeamValues = styled.div`
   box-sizing: border-box;
 
   font-size: 13px;
-  color: grey;
+  color: ${props => props.theme.background.grey};
   &>div:first-of-type {
     border-bottom: 2px solid ${props => props.theme.background.buildsPlayerLastBorder};
     height: 20px;

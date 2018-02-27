@@ -39,7 +39,7 @@ export const MenuMobile = styled.div`
   padding-top: 70px;
   box-sizing: border-box;
   background-image: linear-gradient(-180deg, #E6BE3E 0%, #DFA436 100%);
-  color: black;
+  color: ${props => props.theme.background.black};
 
   opacity: 0;
   transition: all 300ms;

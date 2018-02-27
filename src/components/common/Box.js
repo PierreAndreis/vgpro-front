@@ -145,7 +145,7 @@ injectGlobal`
 
   .Box_RegionSelect div {
     font-size: 14px;
-    color: grey;
+    color: ${props => props.theme.background.grey};
     font-weight: 500;
     padding: 0 5px 2px;
     cursor: pointer;

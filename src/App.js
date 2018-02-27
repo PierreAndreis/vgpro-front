@@ -100,10 +100,22 @@ const theme = {
     feedPlayerDetailsSpan: "#2E2E2E",
     feedItem: "rgba(195, 195, 195, 1)",
     feedArrow: "rgba(195, 195, 195, 0.6)",
+    alert: "#EED477",
+    alertSpan: "rgba(119, 119, 119, 0.75)",
+    languageSelectorButton: "rgba(0,0,0,0.6)",
+    languageSelectorMenu: "#19191E",
+    languageSelectorOptions: "rgba(0,0,0,0.9)",
+    menuDesktop: "rgba(0,0,0,0.5)",
+    menuDesktopHover: "#39393F",
+    menuMobileIcon: "#7C7C7C",
+    footerWrapperBackground: "rgb(56, 56, 56)",
+    footerWrapperColor: "rgb(136, 136, 136)",
+    footerWrapperShadow: "rgba(63, 63, 63, 0.12)",
     white: "white",
     black: "black",
     grey: "grey",
     red: "red",
+    blue: "blue",
     transparent: "transparent"
   },
   gradient: {
@@ -112,7 +124,8 @@ const theme = {
     "green": "radial-gradient(0% 100%, #B4EC51 51%, #429321 47%)",
     "orange": "radial-gradient(0% 50%, #FAD961 45%, #F76B1C 41%)",
     "boxDividerBackground": "linear-gradient(to top, rgba(0,0,0,0.05) 0%,rgba(0,0,0,0) 100%)",
-    "skeletonStyletonCss": "linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2))"
+    "skeletonStyletonCss": "linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2))",
+    "menuMobileBackground": "linear-gradient(-180deg, #E6BE3E 0%, #DFA436 100%)"
   }
 }
 

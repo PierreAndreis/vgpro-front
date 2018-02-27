@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   position: relative;
   z-index: 4;
   display: flex;
-  box-shadow: 0 4px 2px -2px rgba(63, 63, 63, 0.12);
+  box-shadow: 0 4px 2px -2px ${props => props.theme.background.footerWrapperShadow};
 `;
 
 const Content = commonWrapper.extend`

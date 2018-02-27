@@ -33,7 +33,7 @@ const Button = styled.div`
   padding: 5px;
   cursor: pointer;
   text-transform: uppercase;
-  color: rgba(0,0,0,0.6);
+  color: ${props => props.theme.background.languageSelectorButton};
   border-radius: 5px;
   span {
     margin-right: 5px;
@@ -45,7 +45,7 @@ const Selected = styled.div`
   padding: 5px 2px;
   color: ${props => props.theme.background.white};
   border-radius: 5px;
-  background: #19191E;
+  background: ${props => props.theme.background.languageSelectorMenu};
 `;
 
 const Menu = styled.div`
@@ -57,7 +57,7 @@ const Menu = styled.div`
   padding: 5px;
   color: ${props => props.theme.background.white};
   border-radius: 5px;
-  background: #19191E;
+  background: ${props => props.theme.background.languageSelectorMenu};
 `;
 
 const Options = styled.div`
@@ -65,7 +65,7 @@ const Options = styled.div`
   cursor: pointer;
   transition: all 300ms;
   &:hover {
-    background-color: rgba(0,0,0,0.9);
+    background-color: ${props => props.theme.background.languageSelectorOptions};
   }
 `;
 

@@ -6,13 +6,13 @@ import {commonWrapper} from "./../../styles/App.style";
 
 const Wrapper = styled.div`
   width: 100%;
-  background: rgb(56, 56, 56);
+  background: ${props => props.theme.background.footerWrapperBackground};
   margin: 25px auto 0;
   padding: 5px;
   box-sizing: border-box;
-  color: rgb(136, 136, 136);
+  color: ${props => props.theme.background.footerWrapperColor};
 
-  box-shadow: 0 -4px 2px -2px rgba(63, 63, 63, 0.12);
+  box-shadow: 0 -4px 2px -2px ${props => props.theme.background.footerWrapperShadow};
   font-size: 10px;
 `;
 

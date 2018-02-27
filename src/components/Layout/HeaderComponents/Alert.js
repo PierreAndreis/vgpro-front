@@ -9,16 +9,16 @@ const AlertWrap = styled.div`
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   width: 100%;
   height: 45px;
-  background: #EED477;
+  background: ${props => props.theme.background.alert};
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   span {
-    color: rgba(119, 119, 119, 0.75);
+    color: ${props => props.theme.background.alertSpan};
   }
-`
+`;
 
 
 const Alert = ({message}) => (

@@ -3,10 +3,10 @@ import styled, {css} from "styled-components";
 
 export const MenuDesktop = styled.div`
   a {
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: ${props => props.theme.font.highlight}, sans-serif;
     font-size: 15px;
     text-transform: uppercase;
-    color: rgba(0,0,0,0.5);
+    color: ${props => props.theme.background.menuDesktop};
 
     box-sizing: border-box;
     margin: 0 10px;
@@ -14,7 +14,7 @@ export const MenuDesktop = styled.div`
 
     transition: all 300ms;
     &:hover {
-      color: #39393F;
+      color: ${props => props.theme.background.menuDesktopHover};
     }
     &.active {
       color: ${props => props.theme.background.buildsContentH2Color};
@@ -38,7 +38,7 @@ export const MenuMobile = styled.div`
   flex-direction: column;
   padding-top: 70px;
   box-sizing: border-box;
-  background-image: linear-gradient(-180deg, #E6BE3E 0%, #DFA436 100%);
+  background-image: ${props => props.theme.gradient.menuMobileBackground};
   color: ${props => props.theme.background.black};
 
   opacity: 0;
@@ -82,7 +82,7 @@ export const MobileIcon = styled.div`
   cursor: pointer;
   width: 30px;
   height: 22px;
-  /* background: blue; */
+  /* background: ${props => props.theme.background.blue}; */
   position: relative;
   text-indent: -9999em;
 
@@ -90,7 +90,7 @@ export const MobileIcon = styled.div`
   span:before,
   span:after {
     transition: all 0.4s;
-    background-color: #7C7C7C;
+    background-color: ${props => props.theme.background.menuMobileIcon};
     display: block;
     position: absolute;
     width: 30px;
@@ -126,13 +126,13 @@ export const MobileIcon = styled.div`
 
       span:before {
         transform: translateY(4px) translateX(0px) rotate(45deg);
-        background-color: #7C7C7C;
+        background-color: ${props => props.theme.background.menuMobileIcon};
       }
 
       span:after {
         transform: translateY(-4px) translateX(0px) rotate(-45deg);
-        background-color: #7C7C7C;
+        background-color: ${props => props.theme.background.menuMobileIcon};
       }
   `}
 
-`
+`;

@@ -1,7 +1,5 @@
-import styled from "styled-components";
-
 import Box from "./../../common/Box";
-import {css} from "styled-components";
+import styled, {css} from "styled-components";
 
 export const Wrap = styled.div`
   display: flex;
@@ -82,16 +80,16 @@ export const PlayerGraphBar = styled.div`
   height: 7px;
   position: relative;
   background: ${props => props.theme.background.overviewPlayerGraphBar};
+  
   &>div {
     height: 100%;
     border-radius: 15px;
     width: ${props => props.percent};
     transition: all 300ms;
-
-          background-image: "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)";
-          box-shadow: 0 0 2px #E7AE2A;
-        `
-;
+    background-image: linear-gradient(-90deg, #FAD961 0%, #F76B1C 100%);
+    box-shadow: 0 0 2px #E7AE2A;
+  }
+`;
 
 export const PlayerGraph = styled.div`
   width: 100%;
@@ -106,4 +104,12 @@ export const PlayerGraph = styled.div`
     color: ${props => props.theme.background.grey};
     margin-left: 3px;
   }
+`;
+
+export const PlayerStats = styled.div`
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 `;

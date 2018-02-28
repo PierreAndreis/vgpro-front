@@ -10,6 +10,7 @@ import { SkeletonWrapper } from "../../common/Skeleton";
 import { connect } from "react-redux";
 
 import * as Styled from "./Overview.style";
+import Utils from "../../../utils";
 
 class Overview extends React.Component {
 
@@ -45,9 +46,19 @@ class Overview extends React.Component {
             <Styled.Chart>
               <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
                 {() => (
-                  <HalfPieChart {...commonGraphProps} data={winRateGraph}>
-                    {stats.winRate}
-                  </HalfPieChart>
+                    <React.Fragment>
+
+                        <Styled.PlayerStats>
+
+                            <Styled.PlayerGraph>
+                                <Styled.PlayerGraphBar percent={stats.winRate}>
+                                    <div />
+                                </Styled.PlayerGraphBar>
+                                <span> {stats.winRate} </span>
+                            </Styled.PlayerGraph>
+
+                        </Styled.PlayerStats>
+                    </React.Fragment>
                 )}
               </SkeletonWrapper>
               <Styled.ChartLabel>Win Rate</Styled.ChartLabel>
@@ -56,18 +67,86 @@ class Overview extends React.Component {
             <Styled.Chart>
               <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
                 {() => (
-                    <Styled.PlayerGraph>
-                    <Styled.PlayerGraphBar type="done" percent={stats.kp}>
-                        <div />
-                    </Styled.PlayerGraphBar>
-                    </Styled.PlayerGraph>
-                  // <HalfPieChart {...commonGraphProps} data={kpGraph}>
-                  //   {stats.kp}
-                  // </HalfPieChart>
+                    <React.Fragment>
+
+                        <Styled.PlayerStats>
+
+                            <Styled.PlayerGraph>
+                                <Styled.PlayerGraphBar percent={stats.kp}>
+                                    <div />
+                                </Styled.PlayerGraphBar>
+                                <span>{stats.kp}</span>
+                            </Styled.PlayerGraph>
+
+                            <Styled.PlayerGraph>
+                                <Styled.PlayerGraphBar percent={stats.kp}>
+                                    <div />
+                                </Styled.PlayerGraphBar>
+                                <span>{stats.kp}</span>
+                            </Styled.PlayerGraph>
+
+                            <Styled.PlayerGraph>
+                                <Styled.PlayerGraphBar percent={stats.kp}>
+                                    <div />
+                                </Styled.PlayerGraphBar>
+                                <span>{stats.kp}</span>
+                            </Styled.PlayerGraph>
+
+                            <Styled.PlayerGraph>
+                                <Styled.PlayerGraphBar percent={stats.kp}>
+                                    <div />
+                                </Styled.PlayerGraphBar>
+                                <span>{stats.kp}</span>
+                            </Styled.PlayerGraph>
+
+                        </Styled.PlayerStats>
+                    </React.Fragment>
                 )}
               </SkeletonWrapper>
               <Styled.ChartLabel>K/P</Styled.ChartLabel>
             </Styled.Chart>
+
+              <Styled.Chart>
+                  <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
+                      {() => (
+                          <React.Fragment>
+
+                              <Styled.PlayerStats>
+
+                                  <Styled.PlayerGraph>
+                                      <Styled.PlayerGraphBar percent={stats.kp}>
+                                          <div />
+                                      </Styled.PlayerGraphBar>
+                                      <span>{stats.kp}</span>
+                                  </Styled.PlayerGraph>
+
+                                  <Styled.PlayerGraph>
+                                      <Styled.PlayerGraphBar percent={stats.kp}>
+                                          <div />
+                                      </Styled.PlayerGraphBar>
+                                      <span>{stats.kp}</span>
+                                  </Styled.PlayerGraph>
+
+                                  <Styled.PlayerGraph>
+                                      <Styled.PlayerGraphBar percent={stats.kp}>
+                                          <div />
+                                      </Styled.PlayerGraphBar>
+                                      <span>{stats.kp}</span>
+                                  </Styled.PlayerGraph>
+
+                                  <Styled.PlayerGraph>
+                                      <Styled.PlayerGraphBar percent={stats.kp}>
+                                          <div />
+                                      </Styled.PlayerGraphBar>
+                                      <span>{stats.kp}</span>
+                                  </Styled.PlayerGraph>
+
+                              </Styled.PlayerStats>
+                          </React.Fragment>
+                      )}
+                  </SkeletonWrapper>
+                  <Styled.ChartLabel>K/P</Styled.ChartLabel>
+              </Styled.Chart>
 
           </Styled.Content>
         </Styled.Group>
@@ -148,3 +227,16 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps
 )(Overview);
+
+/* {/*<React.Fragment>*/
+/*<Styled.PlayerStats>*/
+/*<Styled.PlayerGraph>*/
+/*<Styled.PlayerGraphBar type="done" percent={kpGraph}>*/
+/*<div />*/
+/*</Styled.PlayerGraphBar>*/
+/*</Styled.PlayerGraph>*/
+/*</Styled.PlayerStats>*/
+/*</React.Fragment>*/
+// <HalfPieChart {...commonGraphProps} data={kpGraph}>
+//   {stats.kp}
+// </HalfPieChart>

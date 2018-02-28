@@ -92,13 +92,16 @@ export const PlayerGraphBar = styled.div`
         switch (props.type) {
             case "winRate":
                 return css`
-          background-image: linear-gradient(-90deg, #F76B1C 0%, #FAD961 100%);`;
+          background-image: linear-gradient(-90deg, #F76B1C 0%, #FAD961 100%);
+          box-shadow: 0 0 6px 0 #F5A623;`;
             case "kp":
                 return css`
-          background-image: linear-gradient(-225deg, #2B86C5 0%, #FF3CAC 100%);`;
+          background-image: linear-gradient(-225deg, #2B86C5 0%, #FF3CAC 100%);
+          box-shadow: 0 0 6px 0 #F83EAC;`;
             default:
                 return css`
-          background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);`;
+          background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);
+          box-shadow: 0 0 6px 0 #2AF49A;`;
         }
     }
   }
@@ -120,7 +123,7 @@ export const PlayerGraph = styled.div`
 `;
 
 export const PlayerStats = styled.div`
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

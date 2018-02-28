@@ -47,7 +47,7 @@ class Overview extends React.Component {
               <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
                 {() => (
                     <React.Fragment>
-                        <Styled.ChartLabel>Win Rate</Styled.ChartLabel>
+                        <Styled.ChartLabel>Win Rate <span>{stats.games} Games {stats.wins} W - {stats.loss} L</span></Styled.ChartLabel>
                         <Styled.PlayerStats>
                             <Styled.PlayerGraph>
                                 <Styled.PlayerGraphBar type="winRate" percent={stats.winRate}>

@@ -41,6 +41,8 @@ export const ChartLabel = styled.div`
   color: ${props => props.theme.background.grey};
   font-weight: 500;
   margin-top: 10px;
+  &>span {
+    color: ${props => props.theme.text[300]}
 `;
 
 export const Stats = styled.div`
@@ -90,14 +92,13 @@ export const PlayerGraphBar = styled.div`
         switch (props.type) {
             case "winRate":
                 return css`
-          background-image: linear-gradient(-90deg, #FAD961 0%, #F76B1C 100%);`;
+          background-image: linear-gradient(-90deg, #F76B1C 0%, #FAD961 100%);`;
             case "kp":
                 return css`
-          background-image: linear-gradient(-225deg, #FF3CAC 0%, #784BA0 51%, #2B86C5 100%);`;
+          background-image: linear-gradient(-225deg, #2B86C5 0%, #FF3CAC 100%);`;
             default:
                 return css`
-          background-image: linear-gradient(90deg, #08AEEA 2%, #2AF598 100%);
-        `
+          background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);`;
         }
     }
   }

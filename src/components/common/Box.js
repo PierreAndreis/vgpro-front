@@ -34,15 +34,15 @@ export const BoxTitle = styled.div`
   width: 100%;
   box-sizing: border-box;
   text-align: left;
-  background: ${props => props.theme.background.secondary};
+  background: rgb(255, 255, 255);
   color: ${props => props.theme.primary[400]};
-  border-bottom: 2px solid ${props => props.theme.primary[400]};
+  border-bottom: 2px solid rgb(230, 190, 61);
 
-  padding: 15px;
+  padding: 13px;
 
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
   text-transform: uppercase;
   border-radius: 5px 5px 0 0;
 `;
@@ -94,7 +94,7 @@ export const BoxSelectorOptions = styled.div`
   &:hover {
     ${props => !props.active && css`background-color: ${props => props.theme.background.boxHoverCss}`}
   }
-`
+`;
 
 export const BoxButton = styled.button.attrs({
   disabled: props => props.disabled

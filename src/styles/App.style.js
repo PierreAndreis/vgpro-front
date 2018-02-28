@@ -19,7 +19,7 @@ html {
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #ECEEF1;
+  background-color: #1B2937;
   background-attachment: fixed;
   overflow-x: none;
 	height:100%;

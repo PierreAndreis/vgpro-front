@@ -34,9 +34,9 @@ export const BoxTitle = styled.div`
   width: 100%;
   box-sizing: border-box;
   text-align: left;
-  background: rgb(255, 255, 255);
+  background: ${props => props.theme.background.boxTitle};
   color: ${props => props.theme.primary[400]};
-  border-bottom: 2px solid rgb(230, 190, 61);
+  border-bottom: 2px solid ${props => props.theme.background.boxTitleBorder};
 
   padding: 13px;
 

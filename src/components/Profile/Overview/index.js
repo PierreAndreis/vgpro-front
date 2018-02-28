@@ -108,102 +108,11 @@ class Overview extends React.Component {
 
               </Styled.Chart>
 
-            {/*<Styled.Chart>*/}
-              {/*<SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>*/}
-                {/*{() => (*/}
-                    {/*<React.Fragment>*/}
-
-                        {/*<Styled.PlayerStats>*/}
-
-                            {/*<Styled.PlayerGraph>*/}
-                                {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                    {/*<div />*/}
-                                {/*</Styled.PlayerGraphBar>*/}
-                                {/*<span>{stats.kp}</span>*/}
-                            {/*</Styled.PlayerGraph>*/}
-
-                            {/*<Styled.PlayerGraph>*/}
-                                {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                    {/*<div />*/}
-                                {/*</Styled.PlayerGraphBar>*/}
-                                {/*<span>{stats.kp}</span>*/}
-                            {/*</Styled.PlayerGraph>*/}
-
-                            {/*<Styled.PlayerGraph>*/}
-                                {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                    {/*<div />*/}
-                                {/*</Styled.PlayerGraphBar>*/}
-                                {/*<span>{stats.kp}</span>*/}
-                            {/*</Styled.PlayerGraph>*/}
-
-                            {/*<Styled.PlayerGraph>*/}
-                                {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                    {/*<div />*/}
-                                {/*</Styled.PlayerGraphBar>*/}
-                                {/*<span>{stats.kp}</span>*/}
-                            {/*</Styled.PlayerGraph>*/}
-
-                        {/*</Styled.PlayerStats>*/}
-                    {/*</React.Fragment>*/}
-                {/*)}*/}
-              {/*</SkeletonWrapper>*/}
-              {/*<Styled.ChartLabel>K/P</Styled.ChartLabel>*/}
-            {/*</Styled.Chart>*/}
-
-              {/*<Styled.Chart>*/}
-                  {/*<SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>*/}
-                      {/*{() => (*/}
-                          {/*<React.Fragment>*/}
-
-                              {/*<Styled.PlayerStats>*/}
-
-                                  {/*<Styled.PlayerGraph>*/}
-                                      {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                          {/*<div />*/}
-                                      {/*</Styled.PlayerGraphBar>*/}
-                                      {/*<span>{stats.kp}</span>*/}
-                                  {/*</Styled.PlayerGraph>*/}
-
-                                  {/*<Styled.PlayerGraph>*/}
-                                      {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                          {/*<div />*/}
-                                      {/*</Styled.PlayerGraphBar>*/}
-                                      {/*<span>{stats.kp}</span>*/}
-                                  {/*</Styled.PlayerGraph>*/}
-
-                                  {/*<Styled.PlayerGraph>*/}
-                                      {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                          {/*<div />*/}
-                                      {/*</Styled.PlayerGraphBar>*/}
-                                      {/*<span>{stats.kp}</span>*/}
-                                  {/*</Styled.PlayerGraph>*/}
-
-                                  {/*<Styled.PlayerGraph>*/}
-                                      {/*<Styled.PlayerGraphBar percent={stats.kp}>*/}
-                                          {/*<div />*/}
-                                      {/*</Styled.PlayerGraphBar>*/}
-                                      {/*<span>{stats.kp}</span>*/}
-                                  {/*</Styled.PlayerGraph>*/}
-
-                              {/*</Styled.PlayerStats>*/}
-                          {/*</React.Fragment>*/}
-                      {/*)}*/}
-                  {/*</SkeletonWrapper>*/}
-                  {/*<Styled.ChartLabel>K/P</Styled.ChartLabel>*/}
-              {/*</Styled.Chart>*/}
-
           </Styled.Content>
         </Styled.Group>
 
         <Styled.Group>
-            <Styled.Title>Average Stats
-
-                {/*<SkeletonWrapper status={status}>*/}
-                    {/*{() => (*/}
-                        {/*<React.Fragment>Stats of {stats.games} Games: {stats.wins} W - {stats.loss} L</React.Fragment>*/}
-                    {/*)}*/}
-                {/*</SkeletonWrapper>*/}
-                </Styled.Title>
+            <Styled.Title>Average Stats</Styled.Title>
           <Styled.Content>
 
             <Styled.Stats>

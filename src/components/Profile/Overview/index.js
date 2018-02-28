@@ -39,7 +39,7 @@ class Overview extends React.Component {
       <Styled.Wrap>
 
         <Styled.Group>
-          <Styled.Title>OverallStats</Styled.Title>
+          <Styled.Title>Overall Stats</Styled.Title>
           <Styled.Content>
 
             <Styled.Chart>
@@ -56,9 +56,14 @@ class Overview extends React.Component {
             <Styled.Chart>
               <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
                 {() => (
-                  <HalfPieChart {...commonGraphProps} data={kpGraph}>
-                    {stats.kp}
-                  </HalfPieChart>
+                    <Styled.PlayerGraph>
+                    <Styled.PlayerGraphBar type="done" percent={stats.kp}>
+                        <div />
+                    </Styled.PlayerGraphBar>
+                    </Styled.PlayerGraph>
+                  // <HalfPieChart {...commonGraphProps} data={kpGraph}>
+                  //   {stats.kp}
+                  // </HalfPieChart>
                 )}
               </SkeletonWrapper>
               <Styled.ChartLabel>K/P</Styled.ChartLabel>
@@ -68,20 +73,15 @@ class Overview extends React.Component {
         </Styled.Group>
 
         <Styled.Group>
-          <Styled.Title>Overview Stats</Styled.Title>
-          <Styled.Content>
+            <Styled.Title>Average Stats
 
-            <Styled.Stats>
-              <span>Games</span>
-              <SkeletonWrapper status={status} width={40} height={30}>
-                {() => (
-                  <React.Fragment>
-                    <div>{stats.games}</div>
-                    <small>{stats.wins} W - {stats.loss} L</small>
-                  </React.Fragment>
-                )}
-              </SkeletonWrapper>
-            </Styled.Stats>
+                {/*<SkeletonWrapper status={status}>*/}
+                    {/*{() => (*/}
+                        {/*<React.Fragment>Stats of {stats.games} Games: {stats.wins} W - {stats.loss} L</React.Fragment>*/}
+                    {/*)}*/}
+                {/*</SkeletonWrapper>*/}
+                </Styled.Title>
+          <Styled.Content>
 
             <Styled.Stats>
               <span>Avg. KDA</span>
@@ -101,7 +101,7 @@ class Overview extends React.Component {
                 {() => (
                   <React.Fragment>
                     <div>{stats.avgCS}</div>
-                    <small>{Math.floor(stats.totalCS)} Minions</small>
+                    <small>{Math.floor(stats.totalCS).toLocaleString()} Minions</small>
                   </React.Fragment>
                 )}
               </SkeletonWrapper>
@@ -112,7 +112,7 @@ class Overview extends React.Component {
               <SkeletonWrapper status={status} width={40} height={30}>
                 {() => (
                   <React.Fragment>
-                    <div>{stats.totalKills}</div>
+                    <div>{stats.totalKills.toLocaleString()}</div>
                     <small>{Number(stats.totalKills/(stats.duration / 60)).toFixed(2)} per min</small>
                   </React.Fragment>
                 )}
@@ -124,7 +124,7 @@ class Overview extends React.Component {
               <SkeletonWrapper status={status} width={40} height={30}>
                 {() => (
                   <React.Fragment>
-                    <div>{stats.totalDeaths}</div>
+                    <div>{stats.totalDeaths.toLocaleString()}</div>
                     <small>{Number(stats.totalDeaths/(stats.duration / 60)).toFixed(2)} per min</small>
                   </React.Fragment>
                 )}

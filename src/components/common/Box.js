@@ -145,27 +145,26 @@ injectGlobal`
 
   .Box_RegionSelect div {
     font-size: 14px;
-    color: ${props => props.theme.background.grey};
+    color: grey;
     font-weight: 500;
     padding: 0 5px 2px;
     cursor: pointer;
   }
 
   .Box_RegionSelect div:hover {
-    color: ${props => props.theme.background.detailsTabOptionColor};
+    color: rgb(75, 75, 75);
     cursor: pointer;
   }
 
   .Box_RegionSelect div.active {
-    color: ${props => props.theme.background.buildsContentH2Color};
+    color: #DCAF5A;
     
   }
 
   .Box_Divider {
     width: 100%;
-    /* margin: 0 0 10px; */
     height: 10px;
-    background: ${props => props.theme.gradient.boxDividerBackground};
+    background: linear-gradient(0deg, rgba(0,0,0,.05) 0, transparent);
   }
 `
 

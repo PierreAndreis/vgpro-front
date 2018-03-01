@@ -19,10 +19,11 @@ html {
 }
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #1B2937;
+  ${'' /* background-color: #1B2937; */}
+  background-color: #eceef1;
   background-attachment: fixed;
   overflow-x: none;
-	height:100%;
+	height: 100%;
 }
 html, body, #app {
   height: 100%
@@ -30,7 +31,7 @@ html, body, #app {
 
 a {
   text-decoration: none;
-  color: ${props => props.theme.background.white};
+  color: white;
 }
 
 a:hover {

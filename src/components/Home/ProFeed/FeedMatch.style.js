@@ -30,11 +30,11 @@ export const Status = styled.div`
     }
     if (props.winner) {
       return css`
-        background: ${props => props.theme.background.feedStatusWinner};
+        background: ${props => props.theme.extra.win};
       `
     }
     else return css`
-      background: ${props => props.theme.background.feedStatusLoser};
+      background: ${props => props.theme.extra.loss};
     `
   }}
 `

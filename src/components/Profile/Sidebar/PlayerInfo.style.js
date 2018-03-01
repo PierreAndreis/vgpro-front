@@ -47,7 +47,7 @@ export const TierBar = styled.div`
   position: relative;
 
   &>div{
-    background: ${props => props.theme.background.sidebarPlayerTierDiv};
+    background: ${props => props.theme.primary[400]};
     border-radius: 10px;
     height: 100%;
     width: ${props => `${props.percentage}%`};
@@ -59,7 +59,7 @@ export const TierBar = styled.div`
     left: 50%;
     transform: translate(-50%,0);
     font-size: 13px;
-    color: ${props => props.theme.background.sidebarPlayerTierDiv};
+    color: ${props => props.theme.primary[400]};
     border: 2px solid ${props => props.theme.text[100]};
     background: ${props => props.theme.background.white};
     font-weight: bolder;
@@ -79,14 +79,14 @@ export const Icons = styled.div`
   text-align: right;
   i {
     font-size: 20px;
-    color: ${props => props.theme.background.sidebarPlayerTierDiv};
+    color: ${props => props.theme.primary[400]};
     cursor: pointer;
   }
 `;
 
 export const Name = styled.div`
   font-size: 21px;
-  color: ${props => props.theme.background.sidebarPlayerName};
+  color: ${props => props.theme.primary[300]};
   font-weight: bold;
   margin-bottom: 5px;
 `;
@@ -160,7 +160,7 @@ export const PlayerStats = styled.div`
     text-transform: uppercase;
     margin: 0 0 5px;
     text-align: center;
-    color: ${props => props.theme.background.sidebarPlayerName};
+    color: ${props => props.theme.primary[300]};
   }
 `;
 
@@ -179,7 +179,7 @@ export const PlayerStat = styled.div`
 
   span {
     font-size: 13px;
-    color: ${props => props.theme.background.sidebarPlayerName};
+    color: ${props => props.theme.primary[300]};
     font-weight: bold;
   }
 `;
@@ -198,7 +198,7 @@ export const PlayerAka = styled.section`
 
   &>span {
     padding: 2px 5px;
-    background: ${props => props.theme.background.sidebarPlayerTierDiv};
+    background: ${props => props.theme.primary[400]};
     color: ${props => props.theme.background.white};
     margin-left: 5px;
     border-radius: 5px;

@@ -6,8 +6,8 @@ export const Match = styled(Box.wrap)`
   width: 100%;
   height: 140px;
   margin: 10px 0;
-  border-left: 6px solid ${props => props.theme.background.matchBorder};
-  border-left-color: ${props => props.winner ? props.theme.background.matchBorderWinner : props.theme.background.matchBorder};
+  border-left: 6px solid ${props => props.theme.extra.win};
+  border-left-color: ${props => props.winner ? props.theme.extra.loss : props.theme.extra.win};
   position: relative;
   z-index: 2;
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
@@ -159,7 +159,7 @@ export const MatchKDA = styled.div`
     color: ${props => props.theme.background.black};
   }
   span.death {
-    color: ${props => props.theme.background.matchKdaDeath};
+    color: ${props => props.theme.extra.carry};
   }
 `
 
@@ -322,7 +322,7 @@ export const Player = styled.div`
       color: ${props => props.theme.background.black};
     }
     b {
-      color: ${props => props.theme.background.matchPlayerColor};
+      color: ${props => props.theme.primary[400]};
     }
   }
 `
@@ -333,11 +333,11 @@ export const PlayerHero = styled(AssetLoader)`
   border-radius: 50%;
   background: ${props => props.theme.text[100]};
   margin: 0 3px;
-  border: 2px solid ${props => props.theme.background.matchHero};
+  border: 2px solid ${props => props.theme.extra.blueSide};
   background-size: 120%;
   background-position: center center;
   ${PlayersTeam}:last-of-type &{
-    border-color: ${props => props.theme.background.matchLastHero};
+    border-color: ${props => props.theme.extra.redSideHero};
   }
 `
 
@@ -347,7 +347,7 @@ export const MatchBadge = styled.div`
   right: 10px;
   width: 40px;
   height: 20px;
-  background: ${props => props.win ? props.theme.background.matchBorder : props.theme.background.matchBorderWinner};
+  background: ${props => props.win ? props.theme.extra.win : props.theme.extra.loss};
   font-size: 12px;
   color: ${props => props.theme.background.white};
   display: flex;

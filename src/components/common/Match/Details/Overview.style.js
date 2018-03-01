@@ -500,9 +500,9 @@ export const TeamScore = styled.div`
 `;
 
 // .win {
-//   color: ${props => props.theme.background.matchBorderWinner};
+//   color: ${props => props.theme.extra.loss};
 // }
 
 // .loss {
-//   color: ${props => props.theme.background.matchBorder};
+//   color: ${props => props.theme.extra.win};
 // }

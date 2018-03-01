@@ -36,7 +36,7 @@ export const BoxTitle = styled.div`
   text-align: left;
   background: ${props => props.theme.background.boxTitle};
   color: ${props => props.theme.primary[400]};
-  border-bottom: 2px solid ${props => props.theme.background.boxTitleBorder};
+  border-bottom: 2px solid ${props => props.theme.primary[400]};
 
   padding: 13px;
 
@@ -121,16 +121,16 @@ export const BoxButton = styled.button.attrs({
     }
     ${props => !props.disabled && css`
       &:hover {
-        background: ${props => props.theme.background.boxButtonHoverBackground};
-        box-shadow: 0 0 10px ${props => props.theme.background.boxButtonHoverShadow};
+        background: ${props => props.theme.primary[300]};
+        box-shadow: 0 0 10px ${props => props.theme.primary[400]};
       }
     `}
     ${props => props.disabled && css`
-      background: ${props => props.theme.background.boxButtonDisabledBackground};
+      background: ${props => props.theme.extra.slot};
       color: ${props => props.theme.background.boxButtonDisabledColor};
       cursor: no-drop;
       opacity: .9;
-      box-shadow: 0 0 0 ${props => props.theme.background.boxButtonDisabledBackground};
+      box-shadow: 0 0 0 ${props => props.theme.background.theme.extra.slot};
     `}
 `;
 

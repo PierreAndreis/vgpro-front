@@ -59,7 +59,7 @@ export const MenuLabel = styled.div`
     text-transform: uppercase;
     padding: 5px 25px 5px 10px;
     cursor: pointer;
-    color: ${props => props.theme.background.profileFiltersMenuLabel};
+    color: ${props => props.theme.primary[400]};
     font-weight: 700;
     background: ${props => props.theme.background.white};
     border-radius: 5px;

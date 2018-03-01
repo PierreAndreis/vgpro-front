@@ -138,17 +138,17 @@ export const RateLabel = styled.span`
   ${props => {
     if (props.label === "w") {
       return css`
-        color: ${props => props.theme.background.matchBorderWinner};
+        color: ${props => props.theme.extra.loss};
         :before {
-          background: ${props => props.theme.background.matchBorderWinner};
+          background: ${props => props.theme.extra.loss};
         }
       `
     }
     if (props.label === "l") {
       return css`
-        color: ${props => props.theme.background.matchBorder};
+        color: ${props => props.theme.extra.win};
         :before {
-          background: ${props => props.theme.background.matchBorder};
+          background: ${props => props.theme.extra.win};
         }
       `
     }

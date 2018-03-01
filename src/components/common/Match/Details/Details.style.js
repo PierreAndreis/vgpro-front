@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-
+import { transparentize } from 'polished';
 
 export const Container = styled.div`
   width: 98%;
@@ -8,9 +8,9 @@ export const Container = styled.div`
   margin-top: -10px;
   padding: 15px 5px 5px;
   box-sizing: border-box;
-  background: ${props => props.theme.background.white};
+  background: ${props => props.theme.background.secondary};
   border-radius: 0 0 5px 5px;
-  box-shadow: ${props => props.theme.background.detailsContainerBoxShadow} 0 0px 30px 0;
+  box-shadow: ${props => props.theme.shadow} 0 0px 30px 0;
   animation-name: slideInDown;
   animation-duration: 1s;
   animation-fill-mode: both;
@@ -31,7 +31,7 @@ export const TabOption = styled.div`
 
   text-transform: uppercase;
   font-size: 12px;
-  color: ${props => props.theme.background.detailsTabOptionColor};
+  color: ${props => props.theme.text[500]};
   font-weight: 700;
   cursor: pointer;
 
@@ -40,10 +40,10 @@ export const TabOption = styled.div`
   transition: all 300ms;
   ${props => (
     (props.active && css`
-    color: ${props => props.theme.background.buildsContentH2Color};
+    color: ${props => props.theme.primary[400]};
     `) || css`
       &:hover{
-        background: ${props => props.theme.background.detailsTabOptionHover};
+        background: ${props => transparentize(0.8, props.theme.background.third)};
       }
     `
   )}

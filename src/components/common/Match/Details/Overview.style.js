@@ -2,6 +2,8 @@ import styled, {css} from "styled-components";
 import {Link} from "react-router-dom";
 import AssetLoader from "../../AssetLoader";
 
+import { transparentize, darken } from 'polished';
+
 const GREEN_GRADIENT = "linear-gradient(-90deg, rgb(110, 243, 92) 0%, rgb(11, 201, 21) 100%)";
 const ORANGE_GRADIENT = "linear-gradient(-90deg, rgb(243, 165, 92) 0%, rgb(231, 118, 42) 100%)";
 const YELLOW_GRADIENT = "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)";
@@ -43,24 +45,28 @@ export const Cell = styled.div`
 
   
 `;
-// todo: extra background color here
+
 export const CellHeader = Cell.extend`
   height: 25px;
   font-size: 10px;
   text-align: center;
   font-weight: 700;
-  color: ${props => props.theme.background.grey};
+  color: ${props => props.theme.text[300]};
   text-transform: uppercase;
   
-  background: #D5EDFE;
-  background: ${props => props.theme.background.overviewCellHeader};
+  background: ${props => transparentize(0.5, props.theme.background.third)};
+
+  span {
+    &.win { color: ${props => props.theme.extra.win};}
+    &.loss { color: ${props => props.theme.extra.loss};}
+  }
 `;
 
 export const CellPlayer = Cell.extend`
   height: 65px;
-  border-bottom: 1px solid ${props => props.theme.background.builds};
+  border-bottom: 1px solid ${props => transparentize(0.5, props.theme.background.third)};
   &:nth-child(odd) {
-    background: ${props => props.theme.background.overviewCellPlayer};
+    background: ${props => props.theme.background.boxOdd};
   }
 `;
 
@@ -96,11 +102,11 @@ export const PlayerHero = styled(AssetLoader)`
   border-radius: 50%;
   background-size: 140%;
   background-position: center center;
-  background-color: ${props => props.theme.background.overviewPlayerHero};
-  border: 3px solid ${props => props.theme.background.buildsPlayerBorder};
+  background-color: ${props => props.theme.background.slot};
+  border: 3px solid ${props => props.theme.extra.blueSide};
   position: relative;
   ${Team}:last-of-type &{
-    border-color: ${props => props.theme.background.buildsPlayerLastBorder};
+    border-color: ${props => props.theme.extra.redSide};
   }
 `;
 
@@ -117,26 +123,26 @@ export const PlayerRole = styled.div`
   ${props => {
     if (props.role === "Captain") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleCaptain};
+        background-color: ${props => props.theme.extra.captain};
         background-image: url("/roles/captain.png");
       `
     };
     if (props.role === "Carry") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleCarry};
+        background-color: ${props => props.theme.extra.carry};
         background-image: url("/roles/carry.png");
       `
     }
     if (props.role === "Jungler") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleJungler};
+        background-color: ${props => props.theme.extra.jungler};
         background-image: url("/roles/jungler.png");
       `
     }
 
     if (props.role === "Sub") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleSub};
+        background-color: ${props => props.theme.extra.sub};
         background-image: url("/roles/sub.png");
       `
     }
@@ -163,21 +169,21 @@ export const PlayerName = styled(Link)`
   font-size: 12px;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  color: ${props => props.theme.background.overviewPlayerName};
+  color: ${props => props.theme.text[500]};
 `;
 
 export const PlayerKDA = styled.div`
   font-size: 11px;
-  color: ${props => props.theme.background.grey};
+  color: ${props => props.theme.text[300]};
   &>span {
-    color: ${props => props.theme.background.black};
+    color: ${props => props.theme.text[500]};
   }
   &>span.d {
-    color: ${props => props.theme.background.overviewPlayerKDA};
+    color: red;
   }
   &>div {
     font-size: 13px;
-    color: ${props => props.theme.background.black};
+    color: ${props => props.theme.text.solid};
     font-weight: bold;
   }
 `;
@@ -198,7 +204,7 @@ export const PlayerItem = styled(AssetLoader)`
   height: 23px;
   margin: 2px 0;
   flex-shrink: 0;
-  background-color: ${props => props.theme.background.overviewPlayerHero};
+  background-color: ${props => props.theme.background.slot};
   background-size: 100%;
   border-radius: 50%;
 `;
@@ -218,7 +224,7 @@ export const PlayerGameStats = styled.div`
 
 export const GameStats = styled.div`
   font-size: 11px;
-  color: ${props => props.theme.background.overviewGameStats};
+  color: ${props => props.theme.text[500]};
   font-weight: 500;
   ${props => props.farm && css`
     margin-right: 10px;
@@ -261,7 +267,7 @@ export const PlayerGraph = styled.div`
     font-size: 10px;
     font-weight: bold;
     white-space: nowrap;
-    color: ${props => props.theme.background.grey};
+    color: ${props => props.theme.text[500]};
     margin-left: 3px;
   }
 `;
@@ -271,7 +277,7 @@ export const PlayerGraphBar = styled.div`
   border-radius: 15px;
   height: 7px;
   position: relative;
-  background: ${props => props.theme.background.overviewPlayerGraphBar};
+  background: ${props => props.theme.background.slot};
   &>div {
     height: 100%;
     border-radius: 15px;
@@ -305,15 +311,16 @@ export const PlayerGraphBar = styled.div`
 export const PlayerRank = styled.div`
   width: 30px;
   &>span {
+    display: block;
     width: 30px;
     margin-top: -2px;
-    background: ${props => props.theme.background.white};
+    background: ${props => props.theme.background.secondary};
     font-size: 10px;
-    color: ${props => props.theme.background.grey};
-    border: 1px solid rgb(218, 218, 218);
+    color: ${props => props.theme.text[400]};
+    border: 1px solid ${props => darken(0.3, props.theme.background.secondary)};
     border-radius: 5px;
     text-align: center;
-    padding: 1px;
+    padding: 3px;
     box-sizing: border-box;
   }
 `;
@@ -354,7 +361,7 @@ export const LegendBall = styled.div`
 
   font-size: 10px;
   font-weight: 500;
-  color: rgba(68, 68, 68, 0.473);
+  color: ${props => props.theme.text[300]};
   text-transform: uppercase;
   &:before {
     content: "";
@@ -405,10 +412,10 @@ export const TeamBan = styled(AssetLoader)`
   background-size: 120%;
   background-position: center;
   border-radius: 50%;
-  border: 3px solid ${props => props.theme.background.buildsPlayerLastBorder};
+  border: 3px solid ${props => props.theme.extra.redSide};
   position: relative;
   ${Team}:last-of-type &{
-    border-color: ${props => props.theme.background.buildsPlayerBorder};
+    border-color: ${props => props.theme.extra.blueSide};
   }
 
   &:after {
@@ -420,9 +427,9 @@ export const TeamBan = styled(AssetLoader)`
     transform: rotate(120deg);
     width: 50px;
     height: 3px;
-    background: ${props => props.theme.background.buildsPlayerLastBorder};
+    background: ${props => props.theme.extra.redSide};
     ${Team}:last-of-type & {
-      background: ${props => props.theme.background.buildsPlayerBorder};
+      background: ${props => props.theme.extra.blueSide};
     }
   }
 `;
@@ -439,12 +446,12 @@ export const TeamValues = styled.div`
   box-sizing: border-box;
 
   font-size: 13px;
-  color: ${props => props.theme.background.grey};
+  color: ${props => props.theme.text[500]};
   &>div:first-of-type {
-    border-bottom: 2px solid ${props => props.theme.background.buildsPlayerLastBorder};
+    border-bottom: 2px solid ${props => props.theme.extra.redSide};
     height: 20px;
     ${Team}:last-of-type &{
-      border-bottom-color: ${props => props.theme.background.buildsPlayerBorder};
+      border-bottom-color: ${props => props.theme.extra.blueSide};
     }
   }
 
@@ -474,9 +481,9 @@ export const TeamIcon = styled.div`
 
 export const TeamScore = styled.div`
   width: 40px;
-  color:${props => props.theme.background.buildsPlayerLastBorder};
+  color:${props => props.theme.extra.redSide};
   ${Team}:last-of-type &{
-    color: ${props => props.theme.background.buildsPlayerBorder};
+    color: ${props => props.theme.extra.blueSide};
   }
   &>div {
     font-size: 25px;

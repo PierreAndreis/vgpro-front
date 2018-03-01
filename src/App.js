@@ -24,23 +24,29 @@ const theme = {
     100: "#faf3d9",
   },
   text: {
+    solid: "#000000",
     500: "#4A4A4A",
     300: "#9B9B9B",
     100: "#D8D8D8"
   },
   extra: {
+    "win": "#5DB4F1",
+    "loss": "#F1685D",
     "blueSide": "#4A90E2",
     "redSide": "#FF6262",
-    "carryColor": "rgb(160, 46, 45)",
-    "captainColor": "rgb(191, 150, 1)",
-    "junglerColor": "rgb(106, 183, 11)"
+    "carry": "rgb(160, 46, 45)",
+    "captain": "rgb(191, 150, 1)",
+    "jungler": "rgb(106, 183, 11)",
+    "sub": "rgb(49, 49, 49)"
   },
+  shadow: "#EAEDF3",
   background: {
     primary: "#ECEEF1",
     secondary: "#FAFAFA",
     third: "hsl(0,0%,76%)",
     box: "#FFFFFF",
     boxOdd: "#f1f1f1",
+    slot: "rgb(201, 201, 201)",
 
     // PLEASE DON'T USE NOTHING BELOW
     builds: "#979731",

@@ -130,7 +130,7 @@ export const BoxButton = styled.button.attrs({
       color: ${props => props.theme.background.boxButtonDisabledColor};
       cursor: no-drop;
       opacity: .9;
-      box-shadow: 0 0 0 ${props => props.theme.background.theme.extra.slot};
+      box-shadow: 0 0 0 ${props => props.theme.extra.slot};
     `}
 `;
 

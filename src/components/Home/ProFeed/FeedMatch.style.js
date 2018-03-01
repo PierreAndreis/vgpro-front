@@ -34,7 +34,7 @@ export const Status = styled.div`
       `
     }
     else return css`
-      background: ${props => props.theme.extra.loss};
+      background: ${props => props.theme.extra.win};
     `
   }}
 `

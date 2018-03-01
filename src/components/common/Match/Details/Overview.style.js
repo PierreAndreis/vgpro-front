@@ -58,7 +58,7 @@ export const CellHeader = Cell.extend`
 
   span {
     &.win { color: ${props => props.theme.extra.win};}
-    &.loss { color: ${props => props.theme.extra.loss};}
+    &.loss { color: ${props => props.theme.extra.win};}
   }
 `;
 
@@ -500,7 +500,7 @@ export const TeamScore = styled.div`
 `;
 
 // .win {
-//   color: ${props => props.theme.extra.loss};
+//   color: ${props => props.theme.extra.win};
 // }
 
 // .loss {

@@ -7,7 +7,7 @@ export const Match = styled(Box.wrap)`
   height: 140px;
   margin: 10px 0;
   border-left: 6px solid ${props => props.theme.extra.win};
-  border-left-color: ${props => props.winner ? props.theme.extra.loss : props.theme.extra.win};
+  border-left-color: ${props => props.winner ? props.theme.extra.win : props.theme.extra.loss};
   position: relative;
   z-index: 2;
   transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;

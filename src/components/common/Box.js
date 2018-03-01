@@ -56,7 +56,7 @@ export const BoxBody = styled.div`
 
 export const BoxActions = styled.div`
   margin-top: auto;
-  background: ${props => props.theme.background.third};
+  background: ${props => props.theme.background.primary};
   border-radius: 0 0 5px 5px;
   height: 20px;
   display: flex;

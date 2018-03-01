@@ -54,7 +54,7 @@ export const CellHeader = Cell.extend`
   color: ${props => props.theme.text[300]};
   text-transform: uppercase;
   
-  background: ${props => transparentize(0.5, props.theme.background.third)};
+  background: ${props => transparentize(0.5, props.theme.background.slot)};
 
   span {
     &.win { color: ${props => props.theme.extra.win};}

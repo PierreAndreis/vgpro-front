@@ -24,16 +24,31 @@ const theme = {
     100: "#faf3d9",
   },
   text: {
+    solid: "#000000",
     500: "#4A4A4A",
     300: "#9B9B9B",
     100: "#D8D8D8"
   },
+  extra: {
+    "win": "#5DB4F1",
+    "loss": "#F1685D",
+    "blueSide": "#4A90E2",
+    "redSide": "#FF6262",
+    "carry": "rgb(160, 46, 45)",
+    "captain": "rgb(191, 150, 1)",
+    "jungler": "rgb(106, 183, 11)",
+    "sub": "rgb(49, 49, 49)"
+  },
+  shadow: "#EAEDF3",
   background: {
     primary: "#ECEEF1",
     secondary: "#FAFAFA",
-    third: "hsla(0,0%,76%,.3)",
+    third: "hsl(0,0%,76%)",
     box: "#FFFFFF",
     boxOdd: "#f1f1f1",
+    slot: "rgb(201, 201, 201)",
+
+    // PLEASE DON'T USE NOTHING BELOW
     builds: "#979731",
     buildsHover: "rgba(230, 230, 230, 0.514)",
     buildsSpanColor: "rgb(109, 109, 109)",
@@ -138,6 +153,7 @@ const theme = {
     blue: "blue",
     whitesmoke: "whitesmoke",
     transparent: "transparent"
+    // PLEASE DON'T USE NOTHING ABOVE
   },
   gradient: {
     "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",
@@ -172,7 +188,7 @@ const darkTheme = {
     third: "hsla(0,0%,76%,.3)",
     box: "#1B2937",
     boxOdd: "rgba(51, 62, 84, 0.54)",
-    builds: "#979731",
+    // builds: "#979731",
     buildsHover: "rgba(128, 128, 128, 0.205)",
     buildsSpanColor: "rgb(109, 109, 109)",
     buildsSpanCssColor: "#E5C05E",
@@ -289,7 +305,7 @@ const darkTheme = {
 class App extends Component {
   render() {
     return (
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={theme}>
         <Router>
           <Layout/>
         </Router>

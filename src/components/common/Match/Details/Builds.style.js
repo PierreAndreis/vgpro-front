@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import AssetLoader from "./../../AssetLoader";
+import { transparentize, darken } from 'polished';
 
 
 export const Wrap = styled.div`
@@ -32,7 +33,7 @@ export const Player = styled.div`
   align-items: center;
   box-sizing: border-box;
   transition: all 300ms;
-  border-bottom: 1px solid ${props => props.theme.background.builds};
+  border-bottom: 1px solid ${props => transparentize(0.7, props.theme.background.third)};
   ${Team}:first-of-type &{
     @media screen and (max-width: 710px) {
       flex-direction: row-reverse;
@@ -44,7 +45,7 @@ export const Player = styled.div`
     }
   }
   &:hover {
-    background: ${props => props.theme.background.buildsHover};
+    background: ${props => transparentize(0.7, props.theme.background.third)};
     font-weight: bold;
   }
   &>span {
@@ -55,11 +56,11 @@ export const Player = styled.div`
     font-size: 12px;
     font-family: ${props => props.theme.font.highlight}, sans-serif;
     font-weight: 500;
-    color: ${props => props.theme.background.buildsSpanColor};
+    color: ${props => props.theme.text[500]};
     ${props => props.active &&
     css`
       font-weight: 700;
-      color: ${props => props.theme.background.buildsSpanCssColor};
+      color: ${props => props.theme.primary[400]};
     `}
   }
 `;
@@ -69,26 +70,26 @@ export const PlayerHero = styled(AssetLoader)`
   height: 30px;
   border-radius: 90%;
   background-size: 100%;
-  border: 3px solid ${props => props.theme.background.buildsPlayerBorder};
+  border: 3px solid ${props => props.theme.extra.blueSide};
   ${Team}:last-of-type &{
-    border-color: ${props => props.theme.background.buildsPlayerLastBorder};
+    border-color: ${props => props.theme.extra.redSide};
   }
 `;
 
 export const Content = styled.section`
-  border-left: 1px solid ${props => props.theme.background.buildsContentBorder};
+  border-left: 1px solid ${props => transparentize(0.7, props.theme.background.third)};
   padding-left: 20px;
   flex-grow: 1;
   box-sizing: border-box;
   &>h2 {
       font-size: 15px;
       padding-bottom: 5px;
-      color: ${props => props.theme.background.buildsContentH2Color};
+      color: ${props => props.theme.primary[400]};
       margin: 0;
       text-transform: uppercase;
       font-weight: 700;
       width: 100%;
-      border-bottom: 1px solid ${props => props.theme.background.buildsContentH2Color};
+      border-bottom: 1px solid ${props => props.theme.primary[500]};
   }
 `;
 
@@ -109,7 +110,7 @@ export const AbilitiesRow = styled.div`
   margin: 2px 0;
   &>span {
     font-size: 11px;
-    color: ${props => props.theme.background.grey};
+    color: ${props => props.theme.text[300]};
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -138,7 +139,7 @@ export const AbilityLevel = styled.div`
   font-size: 0;
   color: ${props => props.theme.text[100]};
   background-color: ${props => props.theme.text[100]};
-  border: 1px solid ${props => props.theme.background.buildsAbilityBorder};
+  border: 1px solid ${props => props.theme.background.third};
   background-size: 100%;
   margin: 0 2px;
   @media screen and (max-width: 710px) {
@@ -152,8 +153,9 @@ export const AbilityLevel = styled.div`
   css`
     font-size: 13px;
     font-weight: 500;
-    color: ${props => props.theme.background.white};
-    background-color: ${props => props.theme.background.buildsAbilityCssBackground};
+    color: white; 
+    ${'' /* This color should be hardcoded. it is likely we will never change this background since its primary */}
+    background-color: ${props => props.theme.primary[400]};
   `}
   }
 `;
@@ -173,17 +175,18 @@ export const Builds = styled.div`
 export const BuildGroup = styled.div`
   margin: 0 5px 5px;
   box-sizing: border-box;
-  background: ${props => props.theme.text[100]};
-  border: 1px solid ${props => props.theme.background.buildsGroupsBorder};
+  background: ${props => props.theme.background.third};
+  border: 1px solid ${props => darken(0.2, props.theme.background.third)};
   &>span {
+    ${'' /* This is a small container, we won't likely change the background of this */}
     display: block;
-    background: ${props => props.theme.background.buildsGroupsSpanBackground};
+    background: rgb(109, 109, 109);
     font-size: 12px;
     font-weight: 400;
     padding: 5px;
     text-transform: uppercase;
     text-align: center;
-    color: ${props => props.theme.background.white};
+    color: white;
   }
 `;
 
@@ -207,8 +210,9 @@ export const BuildItem = styled(AssetLoader)`
     height: 15px;
     border-radius: 50%;
     font-size: 12px;
+    line-height: 15px;
     text-align: center;
-    background: ${props => props.theme.background.buildsItemSpanBackground};
-    color: ${props => props.theme.background.white};
+    background: #FF6262;
+    color: white;
   }
 `

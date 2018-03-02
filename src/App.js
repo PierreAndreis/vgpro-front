@@ -44,6 +44,7 @@ const theme = {
     "silverMedal": "#9B9B9B",
     "bronzeMedal": "#A54916",
   },
+  bgOpacity: 0.4,
   shadow: "rgba(0, 0, 0, 0.1)",
   background: {
     primary: "#ECEEF1",
@@ -102,6 +103,7 @@ const darkTheme = {
     "silverMedal": "#9B9B9B",
     "bronzeMedal": "#A54916",
   },
+  bgOpacity: 0.04,
   shadow: "rgba(0, 0, 0, 0.1)",
   background: {
     primary: "#141E26 ",
@@ -126,9 +128,45 @@ const darkTheme = {
 };
 
 class App extends Component {
+
+  state = {
+    theme: 1
+  }
+
+  changeTheme = () => {
+    this.setState({
+      theme: this.state.theme ? 0 : 1
+    })
+  }
+
+  componentWillMount() {
+    let self = this;
+
+    document.onkeydown = function(evt) {
+      evt = evt || window.event;
+      var isEscape = false;
+      if ("key" in evt) {
+          isEscape = (evt.key == "Escape" || evt.key == "Esc");
+      } else {
+          isEscape = (evt.keyCode == 27);
+      }
+
+      if (isEscape) {
+        self.changeTheme();
+      }
+    }
+  }
+
+
   render() {
+
+    let t = darkTheme;
+    if (this.state.theme === 1) {
+      t = theme;
+    }
+
     return (
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={t}>
         <Router>
           <Layout/>
         </Router>

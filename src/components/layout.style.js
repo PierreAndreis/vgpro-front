@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Background = styled.div`
   width: 100%;
   height: 100%;
-  background: url("/images/logo_bg_dark.png") no-repeat;
+  background: url("/images/logo_bg.png") no-repeat;
+  opacity: ${props => props.theme.bgOpacity};
   background-position: center top;
   position: absolute;
   z-index: -1;
@@ -27,6 +28,8 @@ export const Main = styled.section`
   height: 100%;
   flex: 1;
   position: relative;
+  z-index: 1;
+  background-color: ${props => props.theme.background.primary};
   @media screen and (max-width: 768px) {
     max-width: 100%;
   }

@@ -11,6 +11,8 @@ import {
 import { ThemeProvider } from 'styled-components';
 
 const theme = {
+  name: "Default",
+  logo: "logo_small.png",
   font: {
     body: "Roboto",
     highlight: "Roboto Condensed",
@@ -70,6 +72,8 @@ const theme = {
 
 
 const darkTheme = {
+  name: "Night",
+  logo: "logo_small_inverse.png",
   font: {
     body: "Roboto",
     highlight: "Roboto Condensed",
@@ -87,7 +91,7 @@ const darkTheme = {
     400: "#E7E7E7",
     300: "#D8D8D8",
     200: "#c3c3c3",
-    100: "#8c0119"
+    100: "#8C8C8C"
   },
   extra: {
     "win": "#4A90E2",
@@ -107,7 +111,7 @@ const darkTheme = {
   shadow: "rgba(0, 0, 0, 0.1)",
   background: {
     primary: "#141E26 ",
-    secondary: "rgb(49, 49, 49)",
+    secondary: "#1e2c3a",
     third: "#c2c2c2",
     box: "#1B2937",
     boxHover: "#1e2c3a",
@@ -146,9 +150,9 @@ class App extends Component {
       evt = evt || window.event;
       var isEscape = false;
       if ("key" in evt) {
-          isEscape = (evt.key == "Escape" || evt.key == "Esc");
+          isEscape = (evt.key === "Escape" || evt.key === "Esc");
       } else {
-          isEscape = (evt.keyCode == 27);
+          isEscape = (evt.keyCode === 27);
       }
 
       if (isEscape) {

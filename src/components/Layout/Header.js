@@ -30,7 +30,7 @@ const Content = commonWrapper.extend`
 `;
 
 const Logo = styled.div`
-  background: url('/images/logo_small.png') no-repeat;
+  background: url(/images/${props => props.theme.logo}) no-repeat;
   background-size: 100%;
   background-position: center center;
   width: 125px;

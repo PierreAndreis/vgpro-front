@@ -1,5 +1,5 @@
 import styled, {injectGlobal, css} from "styled-components";
-import { transparentize } from "polished";
+import { transparentize, darken } from "polished";
 
 export const Box = styled.div`
   width: 320px;
@@ -57,7 +57,7 @@ export const BoxBody = styled.div`
 
 export const BoxActions = styled.div`
   margin-top: auto;
-  background: ${props => transparentize(0.7, props.theme.background.third)};
+  background: ${props => transparentize(0.8, props.theme.background.third)};
   border-radius: 0 0 5px 5px;
   height: 20px;
   display: flex;
@@ -127,10 +127,10 @@ export const BoxButton = styled.button.attrs({
       }
     `}
     ${props => props.disabled && css`
-      background: ${props => props.theme.background.third};
+      background: ${props => darken(0.1, props.theme.background.third)};
       color: ${props => props.theme.text[500]};
       cursor: no-drop;
-      opacity: .9;
+      opacity: 1;
       box-shadow: 0 0 0 ${props => props.theme.shadow};
     `}
 `;

@@ -12,10 +12,12 @@ export const Background = styled.div`
 
 export const Wrap = styled.section`
   position: relative;
-  height: 100%;
   display: flex;
+  min-height: 100%;
   flex-direction: row;
   flex-direction: column;
+  background-color: ${props => props.theme.background.primary};
+
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
@@ -25,11 +27,10 @@ export const Main = styled.section`
   display: flex;
   width: 100%;
   flex-direction: column;
-  height: 100%;
+  
   flex: 1;
   position: relative;
   z-index: 1;
-  background-color: ${props => props.theme.background.primary};
   @media screen and (max-width: 768px) {
     max-width: 100%;
   }

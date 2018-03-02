@@ -40,7 +40,6 @@ export const SidebarBox = styled(Box.wrap)`
 export const Main = styled.section`
   width: 100%;
   padding: 0 10px;
-  overflow: hidden;
   animation-name: fadeInRight;
   animation-duration: 1s;
   animation-fill-mode: both;

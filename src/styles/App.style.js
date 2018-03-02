@@ -19,8 +19,8 @@ html {
 }
 body {
   font-family: 'Roboto', sans-serif;
-  ${'' /* background-color: #1B2937; */}
-  background-color: #eceef1;
+  background-color: #141326; 
+  ${'' /* background-color: #eceef1; */}
   background-attachment: fixed;
   overflow-x: none;
 	height: 100%;

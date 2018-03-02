@@ -16,7 +16,7 @@ export const SearchBar = styled.div`
       text-align: center;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      color: ${props => props.theme.background.searchMainBar};
+      color: ${props => props.theme.text[300]};
     }
   }
 `;
@@ -33,8 +33,8 @@ export const SearchBarInput = styled.input`
   border-radius: 2px;
   outline: 0;
 
-  background: ${props => props.theme.background.white};
-  /* background: ${props => props.theme.background.red}; */
+  background: ${props => props.theme.background.box};
+  color: ${props => props.theme.text[300]};
   border-radius: 50px;
   box-shadow: 0 10px 30px 0 ${props => props.theme.shadow};
   box-sizing: border-box;
@@ -49,7 +49,7 @@ export const SearchBarButton = styled.button`
   transform: all 300ms;
   border-radius: 50px 0 0 50px;
   border: 0;
-  background: ${props => props.theme.background.transparent};
+  background: transparent;
   outline: 0;
   transition: all 300ms;
   ${(props) => props.isError && css`

@@ -15,7 +15,7 @@ export const Match = styled(Box.wrap)`
 
   &:hover {
     transform: scale(1.01);
-    background: ${props => props.theme.background.matchHover};
+    background: ${props => props.theme.background.boxHover};
   }
 `;
 
@@ -35,12 +35,12 @@ export const Avatar = styled(AssetLoader)`
   height: 90px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: ${props => props.theme.background.matchAvatar};
-  border: 2px solid ${props => props.theme.background.matchAvatarBorder};
+  background: ${props => props.theme.background.slot};
+  border: 2px solid ${props => props.theme.background.slotBorder};
   background-size: 100%;
   position: relative;
   .PlayerMatch-Avatar-Role {
-    background: ${props => props.theme.background.grey};
+    background: ${props => props.theme.background.slot};
     width: 35px;
     height: 35px;
     top: -8px;
@@ -123,7 +123,7 @@ export const MatchInfo = styled.div`
 `;
 
 export const MatchTime = styled.div`
-  color: ${props => props.theme.background.matchTime};
+  color: ${props => props.theme.text[300]};
   font-size: 13px;
   white-space: nowrap;
   margin-bottom: 5px;
@@ -150,23 +150,26 @@ export const MatchDuration = MatchTime.extend`
 `
 
 export const MatchKDA = styled.div`
-  color: ${props => props.theme.background.matchTime};
+  color: ${props => props.theme.text[300]};
   font-size: 14px;
   @media screen and (max-width: 1068px) {
     font-size: 13px;
   }
+  span {
+    margin-right: 3px;
+  }
   span.k {
-    color: ${props => props.theme.background.black};
+    color: ${props => props.theme.text.solid};
   }
   span.death {
-    color: ${props => props.theme.extra.carry};
+    color: red;
   }
 `
 
 export const MatchKDAText = styled.div`
   font-size: 18px;
   font-weight: 500;
-  /* color: ${props => props.theme.background.buildsPlayerLastBorder}; */
+  color: ${props => props.theme.text.solid};
   @media screen and (max-width: 450px) {
     font-size: 14px;
   }
@@ -190,7 +193,7 @@ export const MatchVariables = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   font-size: 13px;
-  color: ${props => props.theme.background.matchTime};
+  color: ${props => props.theme.text[300]};
   >div {
     width: 90px;
     margin: 0 5px;
@@ -215,7 +218,7 @@ export const Gold = styled.div`
   >div {
     font-size: 110%;
     white-space: nowrap;
-    color: ${props => props.theme.text[500]};
+    color: ${props => props.theme.text[400]};
     font-weight: 500;
     &:after {
       content: "";
@@ -234,7 +237,7 @@ export const Gold = styled.div`
 export const CS = styled.div`
   >div {
     font-size: 110%;
-    color: ${props => props.theme.text[500]};
+    color: ${props => props.theme.text[400]};
     font-weight: 500;
     &:after {
       content: "";
@@ -268,8 +271,8 @@ export const Item = styled(AssetLoader)`
   height: 35px;
   margin: 3px;
   border-radius: 50%;
-  background: ${props => props.theme.text[100]};
-  border: 1px solid ${props => props.theme.background.matchAvatarBorder};
+  background: ${props => props.theme.background.slot};
+  border: 1px solid ${props => props.theme.background.slotBorder};
   background-size: 100%;
   @media screen and (max-width: 400px) {
     width: 20px;
@@ -312,14 +315,14 @@ export const Player = styled.div`
     flex-direction: row;
   }
   a {
-    color: ${props => props.theme.text[500]};
+    color: ${props => props.theme.text[400]};
     width: 100px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     transition: all 300ms;
     &:hover {
-      color: ${props => props.theme.background.black};
+      color: ${props => props.theme.text.solid};
     }
     b {
       color: ${props => props.theme.primary[400]};
@@ -331,13 +334,13 @@ export const PlayerHero = styled(AssetLoader)`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: ${props => props.theme.text[100]};
+  background: ${props => props.theme.background.slot};
   margin: 0 3px;
   border: 2px solid ${props => props.theme.extra.blueSide};
   background-size: 120%;
   background-position: center center;
   ${PlayersTeam}:last-of-type &{
-    border-color: ${props => props.theme.extra.redSideHero};
+    border-color: ${props => props.theme.extra.redSide};
   }
 `
 
@@ -349,7 +352,7 @@ export const MatchBadge = styled.div`
   height: 20px;
   background: ${props => props.win ? props.theme.extra.win : props.theme.extra.loss};
   font-size: 12px;
-  color: ${props => props.theme.background.white};
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

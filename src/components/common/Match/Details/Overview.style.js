@@ -64,9 +64,13 @@ export const CellHeader = Cell.extend`
 
 export const CellPlayer = Cell.extend`
   height: 65px;
-  border-bottom: 1px solid ${props => transparentize(0.5, props.theme.background.third)};
+  border-bottom: 1px solid ${props => darken(0.2, props.theme.background.listOdd)};
+  transition: all 300ms;
   &:nth-child(odd) {
     background: ${props => props.theme.background.listOdd};
+  }
+  &:hover {
+    background: ${props => props.theme.background.listHover};
   }
 `;
 
@@ -224,7 +228,7 @@ export const PlayerGameStats = styled.div`
 
 export const GameStats = styled.div`
   font-size: 11px;
-  color: ${props => props.theme.text[500]};
+  color: ${props => props.theme.text[400]};
   font-weight: 500;
   ${props => props.farm && css`
     margin-right: 10px;
@@ -498,11 +502,3 @@ export const TeamScore = styled.div`
     font-size: 11px;
   }
 `;
-
-// .win {
-//   color: ${props => props.theme.extra.win};
-// }
-
-// .loss {
-//   color: ${props => props.theme.extra.win};
-// }

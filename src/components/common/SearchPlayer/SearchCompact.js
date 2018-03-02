@@ -2,7 +2,7 @@ import React from "react";
 import styled, {css} from "styled-components";
 
 import SearchMenu from "./SearchMenu";
-import { transparentize } from "polished";
+import { darken } from "polished";
 
 // import "./SearchCompact.css"
 
@@ -16,7 +16,7 @@ const Search = styled.div`
   .Search-Icon {
     position: absolute;
     z-index: 2;
-    color: ${props => props.theme.background.searchIcon};
+    color: ${props => props.theme.text.solid};
     height: 100%;
     line-height: 35px;
     margin-left: -35px;
@@ -35,7 +35,8 @@ const SearchInput = styled.input`
   border: 0;
   z-index: 1;
   border-radius: 5px;
-  background: ${props => transparentize(0.5, props.theme.background.third)};
+  background: ${props => darken(0.6, props.theme.background.third)};
+  color: ${props => props.theme.text.solid};
   padding: 10px 30px 10px 10px;
   height: 35px;
   font-size: 16px;
@@ -45,8 +46,7 @@ const SearchInput = styled.input`
   @media screen and (max-width: 790px) {
     ${props => !props.isOpen && css`
       width: 35px;
-      font-size: 16px;
-      color:red;
+      font-size: 0;
       padding: 0;
     `}
   }

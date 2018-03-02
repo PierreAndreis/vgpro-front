@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Background = styled.div`
   width: 100%;
   height: 100%;
-  background: url("/images/logo_bg.png") no-repeat;
+  background: url("/images/logo_bg_dark.png") no-repeat;
   background-position: center top;
   position: absolute;
   z-index: -1;

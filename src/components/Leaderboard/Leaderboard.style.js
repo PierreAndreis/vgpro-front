@@ -23,6 +23,8 @@ export const FilterCategory = styled.div`
   box-sizing: border-box;
   margin-left: 10px;
 
+  color: ${props => props.theme.text[400]};
+
   &>h2 {
     margin: 5px;
     padding: 3px 4px;

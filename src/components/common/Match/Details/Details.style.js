@@ -8,7 +8,7 @@ export const Container = styled.div`
   margin-top: -10px;
   padding: 15px 5px 5px;
   box-sizing: border-box;
-  background: ${props => props.theme.background.secondary};
+  background: ${props => props.theme.background.box};
   border-radius: 0 0 5px 5px;
   box-shadow: ${props => props.theme.shadow} 0 0px 30px 0;
   animation-name: slideInDown;

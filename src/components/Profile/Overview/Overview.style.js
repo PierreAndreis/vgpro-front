@@ -53,6 +53,7 @@ export const Stats = styled.div`
   align-items: center;
   position: relative;
   margin-bottom: 15px;
+  color: ${props => props.theme.text[500]};
   &>div {
     font-size: 25px;
     font-weight: 500;

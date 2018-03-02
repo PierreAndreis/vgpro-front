@@ -16,12 +16,14 @@ export const Each = styled.div`
   height: 70px;
   padding: 5px 15px;
   box-sizing: border-box;
-  background: ${props => props.theme.background.white};
   display: flex;
 
   align-items: center;
   &:nth-child(2n + 1) {
-    background: ${props => props.theme.background.sidebarFriendsNth};
+    background: ${props => props.theme.background.listOdd};
+  }
+  &:hover {
+    background: ${props => props.theme.background.listHover};
   }
 `;
 
@@ -29,8 +31,9 @@ export const HeroImage = styled(AssetLoader)`
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  border: 1px solid ${props => props.theme.background.grey};
+  border: 1px solid ${props => props.theme.background.slotBorder};
   border-radius: 50%;
+  background-color: ${props => props.theme.background.slot};
   background-size: 120%;
   background-position: center;
 `;
@@ -65,13 +68,13 @@ export const KDA = styled.div`
 `;
 
 export const KDADetails = styled.div`
-  color: ${props => props.theme.background.grey};
-  &span {
+  color: ${props => props.theme.text[300]};
+  &>span {
     color: ${props => props.theme.text[500]};
     margin:0  5px;
   }
-  &span#deaths {
-    color: ${props => props.theme.background.red};
+  &>span#deaths {
+    color: red;
   }
 `;
 

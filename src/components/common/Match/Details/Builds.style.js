@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 import AssetLoader from "./../../AssetLoader";
-import { transparentize, darken } from 'polished';
+import { transparentize } from 'polished';
 
 
 export const Wrap = styled.div`
@@ -176,7 +176,7 @@ export const BuildGroup = styled.div`
   margin: 0 5px 5px;
   box-sizing: border-box;
   background: ${props => props.theme.background.slot};
-  border: 1px solid ${props => darken(0.2, props.theme.background.slot)};
+  border: 1px solid ${props => props.theme.background.slotBorder};
   &>span {
     ${'' /* This is a small container, we won't likely change the background of this */}
     display: block;

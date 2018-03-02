@@ -8,7 +8,7 @@ export const Wrapper = styled(Box.wrap)`
   transition: all ease-out 300ms;
   &:hover {
     transform: scale(1.005);
-    background: ${props => props.theme.background.matchHover};
+    background: ${props => props.theme.background.boxHover};
   }
 `;
 
@@ -22,8 +22,7 @@ export const Body = styled(Box.body)`
   justify-content: space-around;
   /* margin: 2px 0; */
   box-sizing: border-box;
-  border-bottom: 1px solid ${props => props.theme.background.leaderboardMemberBody};
-  color: ${props => props.theme.background.grey};
+  color: ${props => props.theme.text[300]};
   >div {
     flex-shrink: 0;
   }
@@ -31,7 +30,7 @@ export const Body = styled(Box.body)`
 
 export const Position = styled.div`
   font-size: 15px;
-  color: ${props => props.theme.background.leadMemberPosition};
+  color: ${props => props.theme.primary[400]};
   font-weight: 500;
   width: 30px;
 `;
@@ -48,7 +47,7 @@ export const PlayerInfo = styled.div`
   display: inline-block;
   span {
     font-size: 12px;
-    color: ${props => props.theme.background.grey};
+    color: ${props => props.theme.text[400]};
   }
   @media screen and (max-width: 560px) {
     width: 100px;
@@ -60,11 +59,11 @@ export const PlayerName = styled.div`
   font-size: 15px;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  color: ${props => props.theme.background.leadMemberName};
+  color: ${props => props.theme.text[400]};
   margin-bottom: 1px;
   span {
     font-size: 9px;
-    color: ${props => props.theme.background.grey};
+    color: ${props => props.theme.text[300]};
     text-transform: uppercase;
     font-weight: 300;
   }
@@ -86,7 +85,7 @@ export const Points = styled.div`
   &>span {
     font-size: 11px;
     text-transform: uppercase;
-    color: ${props => props.theme.background.grey};
+    color: ${props => props.theme.text[500]};
     @media screen and (max-width: 560px) {
       font-size: 9px;
     }
@@ -168,8 +167,8 @@ export const Hero = styled(AssetLoader)`
   height: 25px;
   border-radius: 50%;
   margin: 0 2px;
-  border: 1px solid ${props => props.theme.background.grey};
-  background-color: ${props => props.theme.text[100]};
+  border: 1px solid ${props => props.theme.background.slotBorder};
+  background-color: ${props => props.theme.background.slot};
   background-size: 120%;
   background-position: center center;
 `;

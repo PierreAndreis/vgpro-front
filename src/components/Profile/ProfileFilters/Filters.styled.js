@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   height: 45px;
   justify-content: center;
   font-size: 12px;
-  color: ${props => props.theme.background.profileFiltersWrapper};
+  color: ${props => props.theme.text[500]};
   font-weight: 500;
   margin: 20px 0 5px;
 `;
@@ -27,11 +27,10 @@ export const Menu = styled.div`
   right: 0;
   height: auto;
   padding: 5px;
-  background: ${props => props.theme.background.white};
+  background: ${props => props.theme.background.box};
   z-index: 99;
   border-radius: 5px;
-  /* box-shadow: rgba(54, 54, 54, 0.315) 0 10px 30px 0; */
-  box-shadow: 0 0.625rem 1.25rem 0 ${props => props.theme.background.profileFiltersMenuShadow};
+  box-shadow: 0 0.625rem 1.25rem 0 ${props => props.theme.shadow};
 `;
 
 export const Option = styled.div`
@@ -42,10 +41,10 @@ export const Option = styled.div`
   font-size: 12px;
   ${props => (
     (props.active && css`
-      background: ${props => props.theme.background.searchInput};
+      background: ${props => props.theme.background.listOdd};
     `) || css `
       &:hover {
-        background: ${props => props.theme.background.whitesmoke};
+        background: ${props => props.theme.background.listHover};
       }
     `
   )}
@@ -61,7 +60,7 @@ export const MenuLabel = styled.div`
     cursor: pointer;
     color: ${props => props.theme.primary[400]};
     font-weight: 700;
-    background: ${props => props.theme.background.white};
+    background: ${props => props.theme.background.box};
     border-radius: 5px;
     &:after {
       content: "";

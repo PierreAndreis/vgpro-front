@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { transparentize } from "polished";
 import Box from "../Box";
 
 export const SearchMenu = styled(Box.wrap)`
@@ -16,12 +17,12 @@ export const Category = styled.div`
   h1 {
     font-size: 15px;
     padding-bottom: 5px;
-    color: ${props => props.theme.background.buildsContentH2Color};
+    color: ${props => props.theme.primary[400]};
     margin: 0;
     text-transform: uppercase;
     font-weight: 700;
     width: 100%;
-    border-bottom: 1px solid ${props => props.theme.background.buildsContentH2Color};
+    border-bottom: 1px solid ${props => props.theme.primary[400]};
   }
 `;
 
@@ -39,16 +40,16 @@ export const Content = styled.div`
     font-size: 15px;
     font-family: ${props => props.theme.font.highlight}, sans-serif;
     font-weight: 600;
-    color: ${props => props.theme.background.overviewPlayerName};
+    color: ${props => props.theme.text[500]};
     cursor: pointer;
     &:hover {
-      background-color: ${props => props.theme.background.searchMenuContentHover};
+      background-color: ${props => transparentize(0.7, props.theme.background.third)};
     }
     >span {
       position: absolute;
       right: 5px;
       font-size: 15px;
-      color: ${props => props.theme.background.searchMenuContentSpan};
+      color: ${props => props.theme.text[300]};
     }
     @media screen and (max-width: 700px) {
       flex-grow: 1;

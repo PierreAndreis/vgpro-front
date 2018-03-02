@@ -27,7 +27,6 @@ export const Top3 = styled.div`
 
 export const Others = styled.div`
   width: 100%;
-  /* padding: 0 15px; */
   box-sizing: border-box;
   animation-duration: 1s;
   animation-fill-mode: both;

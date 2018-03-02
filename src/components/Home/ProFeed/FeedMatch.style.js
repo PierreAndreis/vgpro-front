@@ -5,16 +5,16 @@ import AssetLoader from "../../common/AssetLoader";
 export const Wrapper = styled(Link)`
   width: 100%;
   height: 45px;
-  color: ${props => props.theme.background.black};
+  color: ${props => props.theme.text[300]};
   display: flex;
   transition: background-color 0.2s;
   flex-direction: space-between;
   align-items: center;
   &:nth-child(even) {
-    background: ${props => props.theme.background.boxOdd};
+    background: ${props => props.theme.background.listOdd};
   }
   &:hover {
-    background-color: ${props => props.theme.background.feedWrapperHover};
+    background-color: ${props => props.theme.background.listHover};
   }
 `;
 
@@ -34,7 +34,7 @@ export const Status = styled.div`
       `
     }
     else return css`
-      background: ${props => props.theme.extra.win};
+      background: ${props => props.theme.extra.loss};
     `
   }}
 `
@@ -50,7 +50,7 @@ export const PlayerInfo = styled.div`
 export const PlayerPicture = styled.div`
   width: 30px;
   height: 30px;
-  background: ${props => props.theme.background.feedPlayerPictureBackground};
+  background: ${props => props.theme.background.slot};
   background-size: 180%;
   background-position: center 4%;
   border-radius: 100%;
@@ -68,7 +68,7 @@ export const PlayerDetails = styled.div`
   text-align: left;
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   div {
-    color: ${props => props.theme.background.leadMemberName};
+    color: ${props => props.theme.text[400]};
     font-weight: 100;
     font-size: 13px;
     font-weight: bold;
@@ -79,14 +79,14 @@ export const PlayerDetails = styled.div`
       text-transform: uppercase;
       font-size: 12px;
       font-weight: 100;
-      color: ${props => props.theme.background.leadMemberNameSpan};
+      color: ${props => props.theme.text[300]};
     }
   }
   span {
     font-weight: 100;
     margin-top: 1px;
     font-size: 10px;
-    color: ${props => props.theme.background.feedPlayerDetailsSpan}
+    color: ${props => props.theme.text[400]}
   }
 `;
 
@@ -101,7 +101,10 @@ export const Game = styled.div`
 export const GameHero = styled(AssetLoader)`
   width: 25px;
   height: 25px;
-  background-color: ${props => props.theme.background.grey};
+  flex-grow: 0;
+  flex-shrink: 0;
+  border: 1px solid ${props => props.theme.background.slotBorder};
+  background-color: ${props => props.theme.background.slot};
   background-size: 130%;
   background-position: center;
   border-radius: 50%;
@@ -122,26 +125,26 @@ export const GameRole = styled.div`
   ${props => {
     if (props.role === "Captain") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleCaptain};
+        background-color: ${props => props.theme.extra.captain};
         background-image: url("/roles/captain.png");
       `
     };
     if (props.role === "Carry") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleCarry};
+        background-color: ${props => props.theme.extra.carry};
         background-image: url("/roles/carry.png");
       `
     }
     if (props.role === "Jungler") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleJungler};
+        background-color: ${props => props.theme.extra.jungler};
         background-image: url("/roles/jungler.png");
       `
     }
 
     if (props.role === "Sub") {
       return css`
-        background-color: ${props => props.theme.background.overviewPlayerRoleSub};
+        background-color: ${props => props.theme.extra.sub};
         background-image: url("/roles/sub.png");
       `
     }
@@ -153,6 +156,7 @@ export const GameKDA = styled.div`
   font-size: 12px;
   white-space: nowrap;
   text-align: center;
+  color: ${props => props.theme.text[500]};
 `;
 
 export const Items = styled.div`
@@ -167,7 +171,8 @@ export const Items = styled.div`
 export const Item = styled(AssetLoader)`
   width: 19px;
   height: 19px;
-  background: ${props => props.theme.background.feedItem};
+  background: ${props => props.theme.background.slot};
+  border: 1px solid ${props => props.theme.background.slotBorder};
   border-radius: 50%;
   margin: 0 1px;
   background-size: 100%;
@@ -176,7 +181,7 @@ export const Item = styled(AssetLoader)`
 export const Arrow = styled.div`
   width: 15px;
   height: 100%;
-  color: ${props => props.theme.background.feedArrow};
+  color: ${props => props.theme.text[200]};
   font-size: 35px;
   padding-right: 2px;
   display: flex;

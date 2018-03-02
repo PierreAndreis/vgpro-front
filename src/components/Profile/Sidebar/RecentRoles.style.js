@@ -13,11 +13,10 @@ export const Role = styled.div`
   height: 100px;
   padding: 10px 5px;
   box-sizing: border-box;
-  border-bottom: 1px solid ${props => props.theme.background.sidebarRoles};
   display: flex;
   justify-content: space-around;
   &:nth-child(2) {
-    background: none;
+    background: ${props => props.theme.background.listOdd};
   }
 
   &:last-child {
@@ -69,7 +68,7 @@ export const Stats = styled.div`
     font-size: 16px;
     text-align: center;
     font-weight: 500;
-    color: ${props => props.theme.background.sidebarPlayerTeamDetailsSpan};
+    color: ${props => props.theme.text[400]};
   }
   &>span {
       display: flex;
@@ -101,7 +100,7 @@ export const KDAIcon = styled.div`
         background-image: url("/icons/death.svg");
         background-position: center -3px;
         background-size: 15px;
-        color: ${props => props.theme.background.sidebarRolesKdaDeaths};
+        color: red;
       `;
     }
 
@@ -130,6 +129,6 @@ export const WR = styled.div`
     display: block;
     text-align: center;
     font-size: 13px;
-    color: ${props => props.theme.background.sidebarRolesWr};
+    color: ${props => props.theme.text[400]};
   }
 `;

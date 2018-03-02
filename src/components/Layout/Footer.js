@@ -6,13 +6,13 @@ import {commonWrapper} from "./../../styles/App.style";
 
 const Wrapper = styled.div`
   width: 100%;
-  background: ${props => props.theme.background.footerWrapperBackground};
+  background: ${props => props.theme.background.footer};
   margin: 25px auto 0;
   padding: 5px;
   box-sizing: border-box;
-  color: ${props => props.theme.background.footerWrapperColor};
+  color: ${props => props.theme.text[300]};
 
-  box-shadow: 0 -4px 2px -2px ${props => props.theme.background.footerWrapperShadow};
+  box-shadow: 0 -10px 30px ${props => props.theme.shadow};
   font-size: 10px;
 `;
 
@@ -59,7 +59,7 @@ class Footer extends React.PureComponent {
       <Content>
         <div>
           <p>
-            Copyright © 2017 VGPRO.gg
+            Copyright © 2018 VGPRO.gg
           </p>
           <p>
             {t('footer-data')}

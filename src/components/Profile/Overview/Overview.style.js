@@ -38,11 +38,12 @@ export const ChartLabel = styled.div`
   text-align: left;
   font-size: 12px;
   width: 100%;
-  color: ${props => props.theme.background.grey};
+  color: ${props => props.theme.text[500]};
   font-weight: 500;
   margin-top: 10px;
   &>span {
-    color: ${props => props.theme.text[300]}
+    color: ${props => props.theme.text[300]};
+  }
 `;
 
 export const Stats = styled.div`
@@ -55,7 +56,7 @@ export const Stats = styled.div`
   &>div {
     font-size: 25px;
     font-weight: 500;
-    color: ${props => props.theme.background.profileOverviewStatsDiv};
+    color: ${props => props.theme.text[400]};
   }
   &>span {
     font-size: 13px;
@@ -69,7 +70,7 @@ export const Stats = styled.div`
     bottom: -10px;
     &>b {
       ${'' /* Deaths */}
-      color: ${props => props.theme.background.red};
+      color: red;
     }
 
   }
@@ -80,7 +81,7 @@ export const PlayerGraphBar = styled.div`
   border-radius: 15px;
   height: 7px;
   position: relative;
-  background: ${props => props.theme.background.overviewPlayerGraphBar};
+  background: ${props => props.theme.background.slot};
   
   &>div {
     height: 100%;
@@ -89,21 +90,24 @@ export const PlayerGraphBar = styled.div`
     transition: all 300ms;
     box-shadow: 0 0 2px #E7AE2A;
     ${props => {
-        switch (props.type) {
-            case "winRate":
-                return css`
-          background-image: linear-gradient(-90deg, #F76B1C 0%, #FAD961 100%);
-          box-shadow: 0 0 6px 0 #F5A623;`;
-            case "kp":
-                return css`
-          background-image: linear-gradient(-225deg, #2B86C5 0%, #FF3CAC 100%);
-          box-shadow: 0 0 6px 0 #F83EAC;`;
-            default:
-                return css`
-          background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);
-          box-shadow: 0 0 6px 0 #2AF49A;`;
-        }
-    }
+      switch (props.type) {
+        case "winRate":
+          return css`
+            background-image: linear-gradient(-90deg, #F76B1C 0%, #FAD961 100%);
+            box-shadow: 0 0 6px 0 #F5A623;
+          `;
+        case "kp":
+          return css`
+            background-image: linear-gradient(-225deg, #2B86C5 0%, #FF3CAC 100%);
+            box-shadow: 0 0 6px 0 #F83EAC;
+          `;
+        default:
+          return css`
+            background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);
+            box-shadow: 0 0 6px 0 #2AF49A;
+          `;
+      }
+    }}
   }
 `;
 

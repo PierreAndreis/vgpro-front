@@ -1,4 +1,5 @@
 import styled, {css} from "styled-components";
+import { transparentize } from "polished";
 
 export const SearchBar = styled.div`
   position: relative;
@@ -35,8 +36,7 @@ export const SearchBarInput = styled.input`
   background: ${props => props.theme.background.white};
   /* background: ${props => props.theme.background.red}; */
   border-radius: 50px;
-  /* box-shadow: 0 0 10px ${props => props.theme.background.searchMainBarInputShadow}; */
-  box-shadow: ${props => props.theme.background.detailsContainerBoxShadow} 0 10px 30px 0;
+  box-shadow: 0 10px 30px 0 ${props => props.theme.shadow};
   box-sizing: border-box;
 `;
 

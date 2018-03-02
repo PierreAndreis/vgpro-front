@@ -1,6 +1,7 @@
 import styled, {css} from "styled-components";
 
 import {commonWrapper} from "./../../styles/App.style";
+import { transparentize } from "polished";
 
 export const Wrapper = commonWrapper.extend`
   width: 100%;
@@ -25,7 +26,7 @@ export const FilterCategory = styled.div`
   &>h2 {
     margin: 5px;
     padding: 3px 4px;
-    border-bottom: 1px solid ${props => props.theme.background.leadMemberPosition};
+    border-bottom: 1px solid ${props => props.theme.primary[400]};
     font-size: 14px;
     text-transform: uppercase;
   }
@@ -43,13 +44,13 @@ export const FilterOption = styled.div`
   ${props => {
     if (props.active) {
       return css`
-        color: ${props => props.theme.background.leadMemberPosition};
+        color: ${props => props.theme.primary[400]};
         font-weight: 500;
       `
     }
     return css`
       &:hover {
-        background: ${props => props.theme.background.leaderboardFilter};
+        background: ${props => transparentize(0.5, props.theme.background.third)};
       }
     `
   }}

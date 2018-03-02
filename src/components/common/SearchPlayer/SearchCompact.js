@@ -2,6 +2,7 @@ import React from "react";
 import styled, {css} from "styled-components";
 
 import SearchMenu from "./SearchMenu";
+import { transparentize } from "polished";
 
 // import "./SearchCompact.css"
 
@@ -34,7 +35,7 @@ const SearchInput = styled.input`
   border: 0;
   z-index: 1;
   border-radius: 5px;
-  background: ${props => props.theme.background.searchInput};
+  background: ${props => transparentize(0.5, props.theme.background.third)};
   padding: 10px 30px 10px 10px;
   height: 35px;
   font-size: 16px;
@@ -45,7 +46,7 @@ const SearchInput = styled.input`
     ${props => !props.isOpen && css`
       width: 35px;
       font-size: 16px;
-      color: ${props => props.theme.background.transparent};
+      color:red;
       padding: 0;
     `}
   }

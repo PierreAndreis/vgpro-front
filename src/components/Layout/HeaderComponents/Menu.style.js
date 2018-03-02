@@ -6,7 +6,7 @@ export const MenuDesktop = styled.div`
     font-family: ${props => props.theme.font.highlight}, sans-serif;
     font-size: 15px;
     text-transform: uppercase;
-    color: ${props => props.theme.background.menuDesktop};
+    color: ${props => props.theme.text[300]};
 
     box-sizing: border-box;
     margin: 0 10px;
@@ -14,10 +14,10 @@ export const MenuDesktop = styled.div`
 
     transition: all 300ms;
     &:hover {
-      color: ${props => props.theme.background.menuDesktopHover};
+      color: ${props => props.theme.text[500]};
     }
     &.active {
-      color: ${props => props.theme.background.buildsContentH2Color};
+      color: ${props => props.theme.primary[400]};
     }
     i {
       font-size: 12px;
@@ -38,7 +38,7 @@ export const MenuMobile = styled.div`
   flex-direction: column;
   padding-top: 70px;
   box-sizing: border-box;
-  background-image: ${props => props.theme.gradient.menuMobileBackground};
+  background-image: ${props => props.theme.gradient.primary};
   color: ${props => props.theme.background.black};
 
   opacity: 0;
@@ -90,7 +90,7 @@ export const MobileIcon = styled.div`
   span:before,
   span:after {
     transition: all 0.4s;
-    background-color: ${props => props.theme.background.menuMobileIcon};
+    background-color: ${props => props.theme.text[500]};
     display: block;
     position: absolute;
     width: 30px;
@@ -121,17 +121,17 @@ export const MobileIcon = styled.div`
       span,
       span:before,
       span:after {
-        background-color: ${props => props.theme.background.transparent};
+        background-color: transparent;
       }
 
       span:before {
         transform: translateY(4px) translateX(0px) rotate(45deg);
-        background-color: ${props => props.theme.background.menuMobileIcon};
+        background-color: ${props => props.theme.text[500]};
       }
 
       span:after {
         transform: translateY(-4px) translateX(0px) rotate(-45deg);
-        background-color: ${props => props.theme.background.menuMobileIcon};
+        background-color: ${props => props.theme.text[500]};
       }
   `}
 

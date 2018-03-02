@@ -66,7 +66,7 @@ export const CellPlayer = Cell.extend`
   height: 65px;
   border-bottom: 1px solid ${props => transparentize(0.5, props.theme.background.third)};
   &:nth-child(odd) {
-    background: ${props => props.theme.background.boxOdd};
+    background: ${props => props.theme.background.listOdd};
   }
 `;
 

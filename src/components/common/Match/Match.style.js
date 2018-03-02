@@ -51,17 +51,17 @@ export const Avatar = styled(AssetLoader)`
     background-repeat: no-repeat;
     background-position: center center;
     &#captain {
-      background-color: ${props => props.theme.background.overviewPlayerRoleCaptain};
+      background-color: ${props => props.theme.extra.captain};
       background-image: url("/roles/captain.png");
     }
 
     &#carry {
-      background-color: ${props => props.theme.background.overviewPlayerRoleCarry};
+      background-color: ${props => props.theme.extra.carry};
       background-image: url("/roles/carry.png");
     }
 
     &#jungler {
-      background-color: ${props => props.theme.background.overviewPlayerRoleJungler};
+      background-color: ${props => props.theme.extra.jungler};
       background-image: url("/roles/jungler.png");
     }
   }

@@ -18,7 +18,7 @@ export const Content = styled(Box.body)`
 export const Divider = styled.div`
   width: 100%;
   height: 0;
-  border-bottom: 2px solid ${props => props.theme.background.sidebarPlayerDivider};
+  border-bottom: 2px solid ${props => props.theme.background.listOdd};
 `;
 
 export const Info = styled.section`
@@ -42,7 +42,7 @@ export const TierBar = styled.div`
   width: 110px;
   margin: 85% auto;
   height: 10px;
-  background: ${props => props.theme.text[100]};
+  background: ${props => props.theme.background.slot};
   border-radius: 10px;
   position: relative;
 
@@ -60,8 +60,8 @@ export const TierBar = styled.div`
     transform: translate(-50%,0);
     font-size: 13px;
     color: ${props => props.theme.primary[400]};
-    border: 2px solid ${props => props.theme.text[100]};
-    background: ${props => props.theme.background.white};
+    border: 2px solid ${props => props.theme.background.third};
+    background: ${props => props.theme.background.box};
     font-weight: bolder;
     padding: 2px 5px;
     text-align: center;
@@ -94,13 +94,13 @@ export const Name = styled.div`
 export const UnderName = styled.div`
   font-size: 15px;
   font-weight: 300;
-  color: ${props => props.theme.background.sidebarPlayerUnderName};
+  color: ${props => props.theme.text[400]};
 `;
 
 export const LastUpdate = styled.div`
   margin-top: 20px;
   font-size: 13px;
-  color: ${props => props.theme.background.sidebarPlayerUnderName};
+  color: ${props => props.theme.text[400]};
 `;
 
 export const Team = styled.section`
@@ -138,11 +138,11 @@ export const TeamDetails = styled.div`
   h4 {
     margin: 0;
     font-size: 13px;
-    color: ${props => props.theme.background.sidebarPlayerUnderName};
+    color: ${props => props.theme.text[400]};
     font-weight: 400;
   }
   span {
-    color: ${props => props.theme.background.sidebarPlayerTeamDetailsSpan};
+    color: ${props => props.theme.text[500]};
     font-weight: bold;
     font-size: 15px;
   }
@@ -160,7 +160,7 @@ export const PlayerStats = styled.div`
     text-transform: uppercase;
     margin: 0 0 5px;
     text-align: center;
-    color: ${props => props.theme.primary[300]};
+    color: ${props => props.theme.primary[400]};
   }
 `;
 
@@ -173,13 +173,13 @@ export const PlayerStat = styled.div`
 
   div {
     font-size: 16px;
-    color: ${props => props.theme.background.overviewPlayerName};
+    color: ${props => props.theme.text[500]};
     font-weight: 500;
   }
 
   span {
     font-size: 13px;
-    color: ${props => props.theme.primary[300]};
+    color: ${props => props.theme.primary[400]};
     font-weight: bold;
   }
 `;
@@ -192,14 +192,14 @@ export const PlayerAka = styled.section`
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 500;
-    color: ${props => props.theme.background.sidebarPlayerUnderName};
+    color: ${props => props.theme.text[500]};
     margin: 2px 5px 10px;
   }
 
   &>span {
     padding: 2px 5px;
     background: ${props => props.theme.primary[400]};
-    color: ${props => props.theme.background.white};
+    color: ${props => props.theme.primary[100]};
     margin-left: 5px;
     border-radius: 5px;
     font-size: 13px;

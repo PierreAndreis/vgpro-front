@@ -1,4 +1,5 @@
 import styled, {injectGlobal, css} from "styled-components";
+import { transparentize } from "polished";
 
 export const Box = styled.div`
   width: 320px;
@@ -6,7 +7,7 @@ export const Box = styled.div`
   background: ${props => props.theme.background.box};
   box-sizing: border-box;
   position: relative;
-  box-shadow: 0 6px 30px ${props => props.theme.background.boxShadow};
+  box-shadow: 0 6px 30px ${props => props.theme.shadow};
 
   border-radius: 5px;
 
@@ -34,7 +35,7 @@ export const BoxTitle = styled.div`
   width: 100%;
   box-sizing: border-box;
   text-align: left;
-  background: ${props => props.theme.background.boxTitle};
+  background: ${props => props.theme.background.box};
   color: ${props => props.theme.primary[400]};
   border-bottom: 2px solid ${props => props.theme.primary[400]};
 
@@ -42,7 +43,7 @@ export const BoxTitle = styled.div`
 
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 18px;
   text-transform: uppercase;
   border-radius: 5px 5px 0 0;
 `;
@@ -56,7 +57,7 @@ export const BoxBody = styled.div`
 
 export const BoxActions = styled.div`
   margin-top: auto;
-  background: ${props => props.theme.background.primary};
+  background: ${props => transparentize(0.7, props.theme.background.third)};
   border-radius: 0 0 5px 5px;
   height: 20px;
   display: flex;
@@ -126,11 +127,11 @@ export const BoxButton = styled.button.attrs({
       }
     `}
     ${props => props.disabled && css`
-      background: ${props => props.theme.extra.slot};
-      color: ${props => props.theme.background.boxButtonDisabledColor};
+      background: ${props => props.theme.background.third};
+      color: ${props => props.theme.text[500]};
       cursor: no-drop;
       opacity: .9;
-      box-shadow: 0 0 0 ${props => props.theme.extra.slot};
+      box-shadow: 0 0 0 ${props => props.theme.shadow};
     `}
 `;
 

@@ -12,7 +12,7 @@ export const Content = styled(Box.body)`
 `;
 
 export const Each = styled(Link)`
-  color: ${props => props.theme.background.black};
+  color: ${props => props.theme.text[500]};
   width: 100%;
   height: 40px;
   padding: 5px 15px;
@@ -22,16 +22,17 @@ export const Each = styled(Link)`
   align-items: center;
   transition: all 300ms;
   &:nth-child(2n + 1) {
-    background: ${props => props.theme.background.sidebarFriendsNth};
+    background: ${props => props.theme.background.listOdd};
   }
   &:hover {
-    background: ${props => props.theme.background.sidebarFriendsHover};
+    background: ${props => props.theme.background.listHover};
   }
 `;
 
 export const Name = styled.div`
   font-size: 13px;
-  color: ${props => props.theme.background.sidebarFriendsName};
+  font-family: ${props => props.theme.font.highlight}, sans-serif;
+  color: ${props => props.theme.text[500]};
   width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -46,6 +47,6 @@ export const Stats = styled.div`
   }
   &>div{
     font-size: 10px;
-    color: ${props => props.theme.background.sidebarFriendsStats};
+    color: ${props => props.theme.text[400]};
   }
 `;

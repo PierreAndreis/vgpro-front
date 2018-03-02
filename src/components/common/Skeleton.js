@@ -13,7 +13,7 @@ const cardLoading = keyframes`
 const StyletonCSS = styled.div`
   display: inline-block;
   border-radius: 2px;
-  background: ${props => props.theme.gradient.skeletonStyletonCss};
+  background: ${props => props.theme.gradient.skeleton};
   animation: ${cardLoading} 2s ease infinite;
   background-size: 600% 600%;
   margin-bottom: 1px;

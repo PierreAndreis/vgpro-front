@@ -145,9 +145,9 @@ export const RateLabel = styled.span`
     }
     if (props.label === "l") {
       return css`
-        color: ${props => props.theme.extra.win};
+        color: ${props => props.theme.extra.loss};
         :before {
-          background: ${props => props.theme.extra.win};
+          background: ${props => props.theme.extra.loss};
         }
       `
     }

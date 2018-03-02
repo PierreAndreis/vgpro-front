@@ -86,6 +86,7 @@ export const KDAIcon = styled.div`
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 13px;
+  color: ${props => props.theme.text.solid};
 
   ${props => {
 

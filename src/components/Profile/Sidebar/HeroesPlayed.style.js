@@ -41,6 +41,7 @@ export const HeroImage = styled(AssetLoader)`
 export const Info = styled.div`
   margin-left: 10px;
   width: 85px;
+  color: ${props => props.theme.text[300]};
 `;
 
 export const Name = styled.div`
@@ -58,12 +59,14 @@ export const SubName = styled.div`
 export const Stats = styled.div`
   flex-grow: 1;
   width: 80px;
+  color: ${props => props.theme.text[300]};
   text-align: center;
 `;
 
 export const KDA = styled.div`
   font-size: 16px;
   font-weight: 500;
+  color: ${props => props.theme.text.solid};
   white-space: nowrap;
 `;
 
@@ -84,6 +87,7 @@ export const WR = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: ${props => props.theme.text[300]};
   &>div {
     font-size: 19px;
     text-align: center;

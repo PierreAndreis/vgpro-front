@@ -2,9 +2,6 @@ import React from "react";
 import styled, {css} from "styled-components";
 
 import SearchMenu from "./SearchMenu";
-import { darken } from "polished";
-
-// import "./SearchCompact.css"
 
 const Search = styled.div`
   width: 35px;
@@ -12,11 +9,10 @@ const Search = styled.div`
   text-align: right;
   position: relative;
   margin-left: auto;
-  /* background: ${props => props.theme.background.red}; */
   .Search-Icon {
     position: absolute;
     z-index: 2;
-    color: ${props => props.theme.text.solid};
+    color: ${props => props.theme.text[500]};
     height: 100%;
     line-height: 35px;
     margin-left: -35px;
@@ -35,8 +31,8 @@ const SearchInput = styled.input`
   border: 0;
   z-index: 1;
   border-radius: 5px;
-  background: ${props => darken(0.6, props.theme.background.third)};
-  color: ${props => props.theme.text.solid};
+  background: ${props => props.theme.background.listHover};
+  color: ${props => props.theme.text[500]};
   padding: 10px 30px 10px 10px;
   height: 35px;
   font-size: 16px;

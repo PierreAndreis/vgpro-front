@@ -1,5 +1,4 @@
 import styled, {css} from "styled-components";
-import { transparentize } from "polished";
 
 export const SearchBar = styled.div`
   position: relative;

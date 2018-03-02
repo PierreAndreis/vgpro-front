@@ -93,7 +93,7 @@ export const BoxSelectorOptions = styled.div`
     `
   }
   &:hover {
-    ${props => !props.active && css`background-color: ${props => props.theme.background.boxHoverCss}`}
+    ${props => !props.active && css`background-color: ${props => props.theme.background.listHover}`}
   }
 `;
 
@@ -118,7 +118,7 @@ export const BoxButton = styled.button.attrs({
     transition: all 300ms;
     cursor: pointer;
     &::selection{
-      background-color:${props => props.theme.background.transparent} !important;
+      background-color: transparent !important;
     }
     ${props => !props.disabled && css`
       &:hover {

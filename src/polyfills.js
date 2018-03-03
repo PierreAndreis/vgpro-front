@@ -11,6 +11,7 @@ import "core-js/fn/array/find";
 import "core-js/fn/array/filter";
 import "core-js/fn/array/for-each";
 import "core-js/fn/array/of";
+import "core-js/fn/array/from";
 import "core-js/fn/array/reduce";
 import "core-js/fn/array/slice";
 import "core-js/fn/array/includes";

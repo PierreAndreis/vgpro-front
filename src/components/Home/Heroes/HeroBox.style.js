@@ -14,7 +14,6 @@ export const Body = styled(BoxBody)`
 
 export const Title = styled(BoxTitle)`
   display: flex;
-  height: 56px;
   position: relative;
 `;
 

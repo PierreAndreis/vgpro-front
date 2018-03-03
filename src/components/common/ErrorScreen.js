@@ -31,8 +31,7 @@ const Message = styled.div`
   font-family: ${props => props.theme.font.highlight}, sans-serif;
   font-size: 13px;
   text-align: center;
-
-  opacity: 0.4;
+  color: ${props => props.theme.text[300]};
 `;
 
 

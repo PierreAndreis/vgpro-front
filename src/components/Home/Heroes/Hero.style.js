@@ -56,11 +56,23 @@ export const HeroImage = styled(AssetLoader)`
   border: 2px solid ${props => props.theme.background.slotBorder};
   border-radius: 50%;
   ${props => (
-    props.rank === 1 && css`
+    (props.rank === 1 && css`
       width: 65px;
       height: 65px;
-    `
+      border-color: red;
+      border-color: ${props => props.theme.extra.goldMedal};
+    `)
+    || 
+    (props.rank === 2 && css`
+      border-color: ${props => props.theme.extra.silverMedal};
+    `)
+    || 
+    (props.rank === 3 && css`
+      border-color: ${props => props.theme.extra.bronzeMedal};
+    `)
   )}
+
+  
 
   ${Others} &{
     width: 40px;

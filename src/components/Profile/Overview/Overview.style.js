@@ -27,25 +27,6 @@ export const Content = styled(Box.body)`
   flex-wrap: wrap;
 `;
 
-export const Chart = styled.div`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const ChartLabel = styled.div`
-  text-align: left;
-  font-size: 12px;
-  width: 100%;
-  color: ${props => props.theme.text[500]};
-  font-weight: 500;
-  margin-top: 10px;
-  &>span {
-    color: ${props => props.theme.text[300]};
-  }
-`;
-
 export const Stats = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,10 +58,31 @@ export const Stats = styled.div`
   }
 `;
 
-export const PlayerGraphBar = styled.div`
+export const Bar = styled.div`
+  width: 90%;
+  padding: 5px;
+  box-sizing:border-box;
+`;
+
+export const Label = styled.div`
+  text-align: left;
+  font-size: 12px;
+  width: 100%;
+  color: ${props => props.theme.text[500]};
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 5px;
+  &>span {
+    color: ${props => props.theme.text[300]};
+    float:right;
+  }
+  
+`;
+
+export const GraphBar = styled.div`
   width: 100%;
   border-radius: 15px;
-  height: 7px;
+  height: 10px;
   position: relative;
   background: ${props => props.theme.background.slot};
   
@@ -92,7 +94,7 @@ export const PlayerGraphBar = styled.div`
     box-shadow: 0 0 2px #E7AE2A;
     ${props => {
       switch (props.type) {
-        case "winRate":
+        case "win":
           return css`
             background-image: linear-gradient(-90deg, #F76B1C 0%, #FAD961 100%);
             box-shadow: 0 0 6px 0 #F5A623;
@@ -112,15 +114,17 @@ export const PlayerGraphBar = styled.div`
   }
 `;
 
-export const PlayerGraph = styled.div`
+export const Graph = styled.div`
   width: 100%;
   display: flex;
   margin-top: 1px;
   height: 10px;
   align-items: center;
   &>span {
-    font-size: 14px;
-    font-weight: bold;
+    width: 30px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 500;
     white-space: nowrap;
     color: ${props => props.theme.text[500]};
     margin-left: 3px;

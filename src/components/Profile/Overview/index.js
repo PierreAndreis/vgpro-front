@@ -5,7 +5,7 @@ import HalfPieChart from "../../common/Charts/HalfPieChart";
 
 import { KDA } from "./../../common/ColoredValues";
 
-import { SkeletonWrapper } from "../../common/Skeleton";
+import { SkeletonWrapper, Skeleton } from "../../common/Skeleton";
 
 import { connect } from "react-redux";
 
@@ -16,25 +16,30 @@ class Overview extends React.Component {
 
   render() {
     const { player, status } = this.props;
-    if (status === "error") return <ErrorScreen boxed width="100%"/>;
+    if (status === "error") return <ErrorScreen boxed width="100%" />;
+
     let stats;
-    let winRateGraph;
-    let kpGraph;
-    let commonGraphProps;
+    let winRate = 0;
+    let kp = 0;
 
     if (status === "loaded") {
       stats = player.stats;
-      winRateGraph = [
-        { value: parseFloat(stats.winRate), fill: 'url(#orange)' }
-      ];
-      kpGraph = [
-        { value: parseFloat(stats.kp), fill: 'url(#orange)' }
-      ];
-
-      commonGraphProps = {
-        width: 160,
-      };
+      winRate = stats.winRate;
+      kp = stats.kp;
     }
+
+    let games = (
+      <SkeletonWrapper status={status} height={10} width={30} borderRadius={2} children={() => stats.games} />
+    );
+    let wins = (
+      <SkeletonWrapper status={status} height={10} width={20} borderRadius={2} children={() => stats.wins} />
+    );
+    let loss = (
+      <SkeletonWrapper status={status} height={10} width={20} borderRadius={2} children={() => stats.loss} />
+    );
+
+    let winPercent = (stats && stats.winRate) || "..";
+    let kpPercent = (stats && stats.kp) || "..";
 
     return (
       <Styled.Wrap>
@@ -43,76 +48,41 @@ class Overview extends React.Component {
           <Styled.Title>Overall Stats</Styled.Title>
           <Styled.Content>
 
-            <Styled.Chart>
-              <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
-                {() => (
-                    <React.Fragment>
-                        <Styled.ChartLabel>Win Rate <span>{stats.games} Games {stats.wins} W - {stats.loss} L</span></Styled.ChartLabel>
-                        <Styled.PlayerStats>
-                            <Styled.PlayerGraph>
-                                <Styled.PlayerGraphBar type="winRate" percent={stats.winRate}>
-                                    <div />
-                                </Styled.PlayerGraphBar>
-                                <span> {stats.winRate} </span>
-                            </Styled.PlayerGraph>
+            <Styled.Bar>
+              <Styled.Label>
+                WIN RATE
+                <span> </span>
+                <span>{games} Games {wins} W - {loss} L</span>
+              </Styled.Label>
+              <Styled.Graph>
+                <Styled.GraphBar type="win" percent={winRate}>
+                  <div />
+                </Styled.GraphBar>
+                <span>
+                  {winPercent}
+                </span>
+              </Styled.Graph>
+            </Styled.Bar>
 
-                        </Styled.PlayerStats>
-                    </React.Fragment>
-                )}
-              </SkeletonWrapper>
-
-            </Styled.Chart>
-
-              <Styled.Chart>
-                  <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
-                      {() => (
-                          <React.Fragment>
-
-                              <Styled.PlayerStats>
-                                  <Styled.ChartLabel>K/P</Styled.ChartLabel>
-                                  <Styled.PlayerGraph>
-
-                                      <Styled.PlayerGraphBar type="kp" percent={stats.kp}>
-                                          <div />
-                                      </Styled.PlayerGraphBar>
-                                      <span> {stats.kp} </span>
-                                  </Styled.PlayerGraph>
-
-                              </Styled.PlayerStats>
-                          </React.Fragment>
-                      )}
-                  </SkeletonWrapper>
-              </Styled.Chart>
-
-              <Styled.Chart>
-                  <Styled.ChartLabel>Whatever</Styled.ChartLabel>
-
-                <SkeletonWrapper status={status} width={100} height={70} borderRadius={50}>
-                      {() => (
-
-                          <React.Fragment>
-
-                              <Styled.PlayerStats>
-
-                                  <Styled.PlayerGraph>
-                                      <Styled.PlayerGraphBar percent={stats.winRate}>
-                                          <div />
-                                      </Styled.PlayerGraphBar>
-                                      <span> {stats.winRate} </span>
-                                  </Styled.PlayerGraph>
-
-                              </Styled.PlayerStats>
-                          </React.Fragment>
-                      )}
-                  </SkeletonWrapper>
-
-              </Styled.Chart>
+            <Styled.Bar>
+              <Styled.Label>
+                KILL PARTICIPATION
+              </Styled.Label>
+              <Styled.Graph>
+                <Styled.GraphBar type="kpx" percent={kp}>
+                  <div />
+                </Styled.GraphBar>
+                <span>
+                  {kpPercent}
+                </span>
+              </Styled.Graph>
+            </Styled.Bar>
 
           </Styled.Content>
         </Styled.Group>
 
         <Styled.Group>
-            <Styled.Title>Average Stats</Styled.Title>
+          <Styled.Title>Overview Stats</Styled.Title>
           <Styled.Content>
 
             <Styled.Stats>
@@ -145,7 +115,7 @@ class Overview extends React.Component {
                 {() => (
                   <React.Fragment>
                     <div>{stats.totalKills.toLocaleString()}</div>
-                    <small>{Number(stats.totalKills/(stats.duration / 60)).toFixed(2)} per min</small>
+                    <small>{Number(stats.totalKills / (stats.duration / 60)).toFixed(2)} per min</small>
                   </React.Fragment>
                 )}
               </SkeletonWrapper>
@@ -157,7 +127,7 @@ class Overview extends React.Component {
                 {() => (
                   <React.Fragment>
                     <div>{stats.totalDeaths.toLocaleString()}</div>
-                    <small>{Number(stats.totalDeaths/(stats.duration / 60)).toFixed(2)} per min</small>
+                    <small>{Number(stats.totalDeaths / (stats.duration / 60)).toFixed(2)} per min</small>
                   </React.Fragment>
                 )}
               </SkeletonWrapper>
@@ -180,16 +150,3 @@ const mapStateToProps = state => {
 export default connect(
   mapStateToProps
 )(Overview);
-
-/* {/*<React.Fragment>*/
-/*<Styled.PlayerStats>*/
-/*<Styled.PlayerGraph>*/
-/*<Styled.PlayerGraphBar type="done" percent={kpGraph}>*/
-/*<div />*/
-/*</Styled.PlayerGraphBar>*/
-/*</Styled.PlayerGraph>*/
-/*</Styled.PlayerStats>*/
-/*</React.Fragment>*/
-// <HalfPieChart {...commonGraphProps} data={kpGraph}>
-//   {stats.kp}
-// </HalfPieChart>

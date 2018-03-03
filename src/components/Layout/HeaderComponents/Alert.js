@@ -16,7 +16,7 @@ const AlertWrap = styled.div`
   align-items: center;
   position: relative;
   span {
-    color: ${props => props.theme.text[300]};
+    color: rgba(0, 0, 0, 0.4);
   }
 `;
 

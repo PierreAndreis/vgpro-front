@@ -169,8 +169,8 @@ export const Items = styled.div`
 `;
 
 export const Item = styled(AssetLoader)`
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
   background: ${props => props.theme.background.slot};
   border: 1px solid ${props => props.theme.background.slotBorder};
   border-radius: 50%;

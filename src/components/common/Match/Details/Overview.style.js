@@ -58,7 +58,7 @@ export const CellHeader = Cell.extend`
 
   span {
     &.win { color: ${props => props.theme.extra.win};}
-    &.loss { color: ${props => props.theme.extra.win};}
+    &.loss { color: ${props => props.theme.extra.loss};}
   }
 `;
 
@@ -271,7 +271,7 @@ export const PlayerGraph = styled.div`
     font-size: 10px;
     font-weight: bold;
     white-space: nowrap;
-    color: ${props => props.theme.text[500]};
+    color: ${props => props.theme.text[400]};
     margin-left: 3px;
   }
 `;

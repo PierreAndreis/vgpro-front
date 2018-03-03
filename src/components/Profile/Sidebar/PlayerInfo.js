@@ -19,6 +19,16 @@ const regions = {
   "sa": "South America",
 };
 
+const TRIBE_PLAYERS = [
+  "ttigers",
+  "Oldskool",
+  "gabevizzle",
+  "DNZio",
+  "MaxGreen",
+  "iLoveJoseph",
+  "Xelciar"
+];
+
 let removeFromList = (fn, name, list) => (e) => {
   e.preventDefault();
   const l = list.filter(n => (name !== n));
@@ -69,17 +79,20 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
       rankingRegionName = data.region === "sg" ? "SEA" : data.region.toUpperCase();
     }
 
-    team = (
-      <Styled.Team>
-        <Styled.TeamPhoto img={'/players/Chicken.png'} />
-        <Styled.TeamDetails>
-          <h4>Player of</h4>
-          <span>Team SoloMid</span>
-        </Styled.TeamDetails>
-        <Styled.TeamLogo img={'/teams/TSM.png'} />
 
-      </Styled.Team>
-    );
+    if (TRIBE_PLAYERS.includes(data.name)) {
+      team = (
+        <Styled.Team>
+          <Styled.TeamPhoto img={`/players/${data.name}.png`} />
+          <Styled.TeamDetails>
+            <h4>Player of</h4>
+            <span>Tribe Gaming</span>
+          </Styled.TeamDetails>
+          <Styled.TeamLogo img={'/teams/tribe.png'} />
+
+        </Styled.Team>
+      );
+    }
 
   }
 

@@ -39,7 +39,10 @@ export const Tier = styled(AssetLoader)`
   width: 45px;
   display: inline-block;
   height: 35px;
-  background-size: 100%;
+  background-size: 70%;
+  background-position: top middle;
+  ${'' /* background-color: red; */}
+  background-repeat: no-repeat;
 `;
 
 export const PlayerInfo = styled.div`

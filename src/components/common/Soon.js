@@ -1,7 +1,20 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-import "./Soon.css";
+import styled from "styled-components";
+
+const SoonWrapper = styled.div`
+  margin: 20px auto;
+  text-align: center;
+
+  h3 {
+    font-size: 60px;
+    font-style: italic;
+    color: ${props => props.theme.background.soonColor};
+    font-weight: 500;
+    text-decoration: italic;
+  }
+`;
 
 const Soon = () => {
   return (
@@ -9,9 +22,9 @@ const Soon = () => {
       <Helmet>
         <title>Soon</title>
       </Helmet>
-        <div className="Soon-page">
+        <SoonWrapper>
           <h3>SOON.</h3>
-        </div>
+        </SoonWrapper>
     </React.Fragment>
   )
 }

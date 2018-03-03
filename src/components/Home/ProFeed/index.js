@@ -1,17 +1,16 @@
 import React from "react";
 
-import FeedMatch                            from "./FeedMatch";
-import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
-import {SkeletonPayload}                    from "./../../common/Skeleton";
-import ErrorScreen                          from "./../../common/ErrorScreen";
-import {fetchProFeed}                       from "./../../../actions/api";
+import FeedMatch from "./FeedMatch";
+import Box from "./../../common/Box";
+import { SkeletonPayload } from "./../../common/Skeleton";
+import ErrorScreen from "./../../common/ErrorScreen";
+import { fetchProFeed } from "./../../../actions/api";
 
 import Utils from "../../../utils";
 
-import "./ProFeed.css";
+import * as Styled from "./ProFeedBox.style.js";
 
 const PRO_FEED_ITEM_PER_PAGE = 6;
-
 
 class ProFeed extends React.Component {
 
@@ -23,51 +22,54 @@ class ProFeed extends React.Component {
       page: 1,
       payload: SkeletonPayload(PRO_FEED_ITEM_PER_PAGE)
     }
-
-  }
-
-  paginateUp(e) {
-    e.preventDefault();
-    if (e.target.id === "disabled") return;
-    
-    this.setState({
-      page: this.state.page + 1
-    })
-  }
-
-  paginateDown(e) {
-    e.preventDefault();
-
-    if (   e.target.id === "disabled"
-        || this.state.page < 2) return;
-    this.setState({
-      page: this.state.page - 1
-    })
-  }
-  
-  fetch() {
-    this.setState({
-      status: "loading"
-    });
-    this.cancel = Utils.makeCancelable(
-      fetchProFeed(),
-      (res) => this.setState({status: "loaded", payload: res}),
-      (e) =>   this.setState({status: "error", payload: e})
-    );
   }
 
   componentWillMount() {
     this.fetch();
   }
+
   componentWillUnmount() {
     if (typeof this.cancel === "function") this.cancel();
   }
 
+  paginateUp(e) {
+    e.preventDefault();
+    if (e.target.id === "disabled") return;
+    this.setState((prevState) => {
+      return {
+        page: prevState.page + 1
+      }
+    });
+  }
+  paginateDown(e) {
+    e.preventDefault();
+    if (e.target.id === "disabled") return;
+
+    this.setState((prevState) => {
+      if (prevState.page < 2) return;
+      return {
+        page: prevState.page - 1
+      }
+    });
+  }
+
+  fetch() {
+    this.setState({
+      status: "loading"
+    });
+
+    this.cancel = Utils.makeCancelable(
+      fetchProFeed(),
+      (res) => this.setState({ status: "loaded", payload: res }),
+      (e) => this.setState({ status: "error", payload: e })
+    );
+  }
+
   render() {
 
-    const {t} = this.props;
+    const { t } = this.props;
 
-    const {status, payload, page} = this.state;
+    const { status, payload, page } = this.state;
 
     let lastPage;
     let content = null;
@@ -84,23 +86,16 @@ class ProFeed extends React.Component {
     }
 
     return (
-
-      <Box className="ProFeed-box animated fadeInLeft">
-      <BoxTitle>Pro History 5v5</BoxTitle>
-      <BoxBody>
-        <div className="ProFeed">
+      <Styled.Wrapper animation="fadeInLeft">
+        <Box.title>Pro History 5v5</Box.title>
+        <Styled.Body>
           {content}
-        </div>
-      </BoxBody>
-      <BoxActions>
-        <div className="button" id={(page > 1       ) ? "" : "disabled"}  onClick={this.paginateDown.bind(this)}>
-          Back
-        </div>
-        <div className="button" id={(page < lastPage) ? "" : "disabled"}  onClick={this.paginateUp.bind(this)  } >
-          Next
-        </div>
-      </BoxActions>
-    </Box>
+        </Styled.Body>
+        <Box.action>
+          <Box.button disabled={page === 1} onClick={this.paginateDown.bind(this)}>Back</Box.button>
+          <Box.button disabled={page > lastPage} onClick={this.paginateUp.bind(this)}>Next</Box.button>
+        </Box.action>
+      </Styled.Wrapper>
     )
   }
 }

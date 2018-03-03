@@ -7,25 +7,13 @@ import {fetchLeaderboard} from "./../../../actions/api";
 import {SkeletonPayload} from "../../common/Skeleton";
 import Utils from "./../../../utils";
 
-import {Box, BoxTitle, BoxBody, BoxActions} from "./../../common/Box";
-import ErrorScreen                          from "./../../common/ErrorScreen";
+import {REGIONS, LEADERBOARD_TYPES} from "./../../../config/constants";
+
+import Box         from "./../../common/Box";
+import ErrorScreen from "./../../common/ErrorScreen";
 import LeadMember from "./LeadMember";
-import "./Lead5.css";
 
-const TYPES = [
-    { value: "ranked", label: "Ranked", selector: "Selector-Ranked" },
-    { value: "blitz" , label: "Blitz" , selector: "Selector-Blitz"  },
-];
-
-const REGIONS = [
-  "all",
-  "na",
-  "eu",
-  "ea",
-  "sea",
-  "sa",
-  "cn"
-];
+import * as Styled from "./LeadBox.style";
 
 class Lead5 extends React.Component {
   constructor() {
@@ -33,11 +21,10 @@ class Lead5 extends React.Component {
 
     this.state = {
       status: "loading",
-      mode: TYPES[0],
-      region: "all", /* all, eu, na, sg, ea, cn */
+      type: LEADERBOARD_TYPES[0],
+      region: "all",
       payload: SkeletonPayload(4)
-    }
-
+    };
   }
 
   changeRegion = (region) => (e) => {
@@ -47,10 +34,10 @@ class Lead5 extends React.Component {
     }, this.fetch)
   }
 
-  changeMode = (mode) => (e) => {
-    if (this.state.mode === mode) return;
+  changeType = (type) => (e) => {
+    if (this.state.type === type) return;
     this.setState({
-        mode,
+      type,
     }, this.fetch)
   }
 
@@ -60,7 +47,7 @@ class Lead5 extends React.Component {
 
   async fetch() {
     
-    let {mode, region} = this.state;
+    let {type, region} = this.state;
 
     const server_region = (region === "sea") ? "sg" : region;
 
@@ -69,7 +56,7 @@ class Lead5 extends React.Component {
     });
 
     this.cancel = Utils.makeCancelable(
-      fetchLeaderboard(mode.value, server_region, {limit: 4}),
+      fetchLeaderboard(type.value, server_region, {limit: 4}),
       (res) => this.setState({ status: "loaded", payload: res }),
       (e) => this.setState({ status: "error", payload: e })
     );
@@ -86,51 +73,48 @@ class Lead5 extends React.Component {
     if (status === "error" || !payload) content = <ErrorScreen err={payload} />
     else {  
       _forEach(payload, (each, index) => {
-        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={each} mode={this.state.mode.value} />);
+        content.push(<LeadMember key={`${index} - ${each.name}`} status={status} data={each} mode={this.state.type.value} />);
         index++;
       });
     }
 
 
     return (
-      <Box className="Lead5-box animated fadeInUp">
-        <BoxTitle className="Lead5-Title">
-          {this.state.mode.label} TOP4
-          <div className="Lead5-Selector">
-              {TYPES.map(type => (
-                  <div key={type.value}
-                       className={`
-                  Lead5-Selector-Icon
-                  ${type.selector}
-                  ${type.selector === this.state.mode.selector ? "active" : ""}`}
-                       onClick={this.changeMode(type)}
-                  />
-              ))}
-          </div>
-        </BoxTitle>
-        <BoxBody className="Lead5-body"> 
-        <div className="Box_RegionSelect">
-            {
-              REGIONS.map(region => (
-                <div key={region} 
-                     className={region === this.state.region ? "active" : ""}
-                     onClick={this.changeRegion(region)}>
-                  {region}
-                </div>
-              ))
-            }
+      <Styled.Wrapper animation="fadeInUp">
+        <Styled.Title className="Lead5-Title">
+          {this.state.type.label} TOP4
+          <Box.selector>
+            {LEADERBOARD_TYPES.map(type => (
+              <Box.selectorOptions
+                   key={type.value}
+                   icon={type.icon}
+                   active={type.value === this.state.type.value}
+                  onClick={this.changeType(type)}
+              />
+            ))}
+          </Box.selector>
+        </Styled.Title>
+        <Box.body> 
+          <div className="Box_RegionSelect">
+              {
+                REGIONS.map(region => (
+                  <div key={region} 
+                      className={region === this.state.region ? "active" : ""}
+                      onClick={this.changeRegion(region)}>
+                    {region}
+                  </div>
+                ))
+              }
           </div>
           <div className="Box_Divider" />
-          <div className="Lead5">
-            {content}
-         </div>
-        </BoxBody>
-        <BoxActions>
+          {content}
+        </Box.body>
+        <Box.action>
             <Link to={"/leaderboard"}>
-              <div className="button">More</div>
+              <Box.button>More</Box.button>
             </Link>
-        </BoxActions>
-      </Box>
+        </Box.action>
+      </Styled.Wrapper>
      
     )
   }

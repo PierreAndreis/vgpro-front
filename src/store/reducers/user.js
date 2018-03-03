@@ -1,6 +1,7 @@
 const initialState = {
   favorites:        [],
   recents:          [],
+  currentTheme:     "light"
 }
 
 const user = (state = initialState, action) => {
@@ -26,6 +27,11 @@ const user = (state = initialState, action) => {
     return {
       ...state,
       recents: action.payload
+    }
+  case 'USER_SET_THEME': 
+    return {
+      ...state,
+      currentTheme: action.theme
     }
   default:
     return state

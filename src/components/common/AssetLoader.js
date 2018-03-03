@@ -1,57 +1,27 @@
 import React from "react";
-import Utils from "../../utils";
 
 class AssetLoader extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      image: "url()"
-    }
-  }
-
-  async getImage(type, name) {
-
-    let cleanImage = "blank.png";
-    if (name && type) {
-      if (type === "tiers") name = parseInt(name, 10) + 2;
-      let cleanName = String(name).replace(/([ ])+/g, "-").replace("'", "").toLowerCase();
-      cleanImage = `${type}/${cleanName}.png`;
-    };
-
-    this.cancel = Utils.makeCancelable(
-      import(`./../../assets/${cleanImage}`),
-      (image) => this.setState({image}),
-      () => {console.log(String(name).replace(/([ ])+/g, "-").replace("'", "").toLowerCase()); this.getImage()}
-    );
-  }
-
-  componentWillMount() {
-
-    const {type, name} = this.props;
-    
-    return this.getImage(type, name);
-  }
-
-  componentWillUnmount() {
-    this.cancel();
-  }
-
-  componentWillReceiveProps(nextProps) {
-    
-    if (this.props.name !== nextProps.name) {
-      this.getImage(nextProps.type, nextProps.name);
-    }
-
-  }
 
   render() {
+    const {type, name, className} = this.props;
 
-    const {image} = this.state;
-    const {className} = this.props;
+    let name_ = name;
+    
+
+    if (type === "tiers") name_ = parseInt(name_, 10) + 1;
+    let cleanName = String(name_).replace(/([ ])+/g, "-").replace("'", "").toLowerCase();
+    let cleanImage = `https://cdn.vgpro.gg/${type}/${cleanName}.png?1`;
+
+    let style = {}
+
+    if (typeof name !== "undefined") {
+      style = {
+        backgroundImage: `url(${cleanImage})`
+      }
+    }
 
     return (
-      <div className={className} style={{backgroundImage: `url(${image})`}}>
+      <div className={className} style={style}>
         {this.props.children}
       </div>
     );

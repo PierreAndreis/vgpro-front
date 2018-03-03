@@ -1,16 +1,17 @@
-import React                from "react";
-import {bindActionCreators} from "redux";
-import { connect }          from "react-redux";
-import _isEqual             from "lodash/isEqual";
+import React from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import _isEqual from "lodash/isEqual";
 
-import Match                from "./../common/Match/Match";
-import ErrorScreen          from "./../common/ErrorScreen";
-import { SkeletonPayload }  from "./../common/Skeleton";
-import { Adsense }          from "./../common/Ads";
+import Match from "./../common/Match/Match";
+import ErrorScreen from "./../common/ErrorScreen";
+import { SkeletonPayload } from "./../common/Skeleton";
+import { Adsense } from "./../common/Ads";
+import { BoxButton } from "../common/Box";
 
-import {fetchPlayerMatches, setPlayerMatches} from "./../../actions/player";
+import { fetchPlayerMatches, setPlayerMatches } from "./../../actions/player";
 
-const MATCHES_PER_PAGE = 7;
+const MATCHES_PER_PAGE = 10;
 const AD_EVERY = 9;
 
 class MatchManager extends React.Component {
@@ -19,19 +20,19 @@ class MatchManager extends React.Component {
     const nextPlayer = nextProps.player;
     const nextFilters = nextProps.filters;
 
-    const {player, filters} = this.props;
+    const { player, filters } = this.props;
     if (nextPlayer === "") {
       // small hack to turn status to loading whenever changing player
       // the reason is that nextPlayer turns into "" before turning into the player name
       // that's because we are doing a /player/:name/find
       if (this.props.playerMatches[0] && this.props.playerMatches[0].status !== "loading") {
-        this.props.setPlayerMatches(0, {0: {status: "loading"}});
+        this.props.setPlayerMatches(0, { 0: { status: "loading" } });
       }
       return;
     }
 
     if (player === nextPlayer
-    && _isEqual(filters, nextFilters)) return;
+      && _isEqual(filters, nextFilters)) return;
     else {
       this.props.setPlayerMatches(0, {});
       this.props.fetchPlayerMatches(nextPlayer, 0, nextFilters);
@@ -40,15 +41,15 @@ class MatchManager extends React.Component {
 
   viewMore = (e) => {
     if (e.target.id === "disabled") return;
-    const {currentPage, name, filters} = this.props;
+    const { currentPage, name, filters } = this.props;
     return this.props.fetchPlayerMatches(name, currentPage + 1, filters);
   }
 
   viewLess = (e) => {
     if (e.target.id === "disabled") return;
-    const {currentPage, playerMatches} = this.props;
+    const { currentPage, playerMatches } = this.props;
     let newPage = currentPage - 1;
-    let newPlayerMatches = {...playerMatches};
+    let newPlayerMatches = { ...playerMatches };
     delete newPlayerMatches[currentPage];
 
     return this.props.setPlayerMatches(newPage, newPlayerMatches);
@@ -56,9 +57,9 @@ class MatchManager extends React.Component {
 
 
   render() {
-    let {playerMatches: pages, currentPage} = this.props;
+    let { playerMatches: pages, currentPage } = this.props;
 
-    const content  = [];
+    const content = [];
 
     let viewLessDisabled = (currentPage === 0)
     let buttonsDisabled = false;
@@ -71,41 +72,40 @@ class MatchManager extends React.Component {
       let matches = (page.status === "loaded") ? page.payload : SkeletonPayload(MATCHES_PER_PAGE);
 
       if (page.status !== "loaded") buttonsDisabled = true;
+
       if (matches.length === 0) {
         buttonsDisabled = true;
-        done = (pages.length > 1);
       }
 
-      if (page.status === "error" && !done) {
+      if (page.status === "error") {
         content.push(<ErrorScreen key="error" width="100%" boxed message="There was an error while loading the matches." />);
       }
-      else if (done) {
-        content.push(<ErrorScreen key="error" width="100%" boxed message="No matches found" />);
-      }
       else {
+
         for (const index in matches) {
           let match = matches[index];
-          content.push(<Match key={match.id || index} payload={match} status={page.status}/>);
+          content.push(<Match key={match.id || index} payload={match} status={page.status} />);
           if (++adCount % AD_EVERY === 0) {
             content.push(<Adsense key={`Adsense-Key-${adCount}`} />)
           };
         }
 
+        if (!done && (page && page.payload)) {
+          done = (page.payload.length !== MATCHES_PER_PAGE);
+          buttonsDisabled = (buttonsDisabled) || done;
+          if (page.payload < 1) content.push(<ErrorScreen key="error" width="100%" boxed message="No matches found" />);
+        }
       }
     };
 
     return (
-    <div>
-      {content}
-      <div className="Matches_Buttons">
-        <div className="button" 
-             id={(viewLessDisabled || buttonsDisabled) ? "disabled" : undefined} 
-             onClick={this.viewLess}>View Less</div>
-        <div className="button" 
-            id={(buttonsDisabled) ? "disabled" : undefined} 
-             onClick={this.viewMore}>View More</div>
-      </div>
-    </div>)
+      <div>
+        {content}
+        <div className="Matches_Buttons">
+          <BoxButton disabled={viewLessDisabled || buttonsDisabled} onClick={this.viewLess}>View Less</BoxButton>
+          <BoxButton disabled={buttonsDisabled} onClick={this.viewMore}>View More</BoxButton>
+        </div>
+      </div>)
 
   }
 }

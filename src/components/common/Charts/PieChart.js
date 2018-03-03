@@ -1,7 +1,22 @@
 import React from "react";
 import {PieChart, Pie} from "recharts";
+import styled from "styled-components";
 
-import "./FullPieChart.css";
+const FullPieContainer = styled.div`
+  position: relative;
+  overflow: visible;
+  width: ${(props) => `${props.width}px` || "100%"};
+  .FullPie-Label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+`
 
 export default ({data, label, children, ...props}) => {
 
@@ -37,7 +52,7 @@ export default ({data, label, children, ...props}) => {
 
 
   return (
-    <div className="FullPie-Container" style={{width}}>
+    <FullPieContainer width={width}>
       <PieChart width={width} height={height} margin={{top:0, left: 0, bottom:0, right: 0}}>
         <defs>
           <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="0%" gradientUnits="userSpaceOnUse">
@@ -89,7 +104,7 @@ export default ({data, label, children, ...props}) => {
             filter={"url(#blur)"}
             />
       </PieChart>
-      <div className="FullPie-Label" style={{fontSize}} >{children}</div>
-    </div>
+      <div className="FullPie-Label" style={{fontSize}}>{children}</div>
+    </FullPieContainer>
   )
 }

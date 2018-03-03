@@ -55,7 +55,7 @@ const routes = [
     ...router,
     component: translate()(router.component)
   }
-})
+});
 
 
 
@@ -68,7 +68,7 @@ const RouteWithSubRoutes = (route) => (
     ReactGA.pageview(props.location.pathname);
     return (<route.component {...props} routes={route.routes}/>);
   }}/>
-)
+);
 
 const Routers = () => (
   <div>
@@ -78,6 +78,6 @@ const Routers = () => (
       ))}
     </Switch>
   </div>
-)
+);
 
 export default Routers;

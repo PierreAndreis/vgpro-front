@@ -1,24 +1,45 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 
-import './styles/normalize.css';
-import './styles/base.css';
-import './styles/base.resp.css';
+import './styles/normalize.style.js';
+import './styles/App.style.js';
 
 import Layout from "./components/layout";
 
 import {
   BrowserRouter as Router,
-} from 'react-router-dom'
+} from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
+import Themes from "./themes";
 
 class App extends Component {
+
   render() {
+
+    const { currentTheme } = this.props;
+
+    let themeSchema = Themes.find(t => t.name === currentTheme);
+
+    if (!themeSchema) themeSchema = Themes[0];
+
     return (
-      <Router>
-        <Layout/>
-      </Router>
+      <ThemeProvider theme={themeSchema}>
+        <Router>
+          <Layout/>
+        </Router>
+      </ThemeProvider>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    currentTheme: state.user.currentTheme
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(App);
+

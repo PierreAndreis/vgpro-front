@@ -1,6 +1,12 @@
 export const LEADERBOARD_TYPES = [
-    { value: "ranked", label: "Ranked", selector: "Selector-Ranked" },
-    { value: "blitz" , label: "Blitz" , selector: "Selector-Blitz"  },
+    { value: "ranked", label: "Ranked",  icon: "/icons/ranked"},
+    { value: "blitz" , label: "Blitz" ,  icon: "/icons/blitz" },
+];
+
+export const HEROES_TYPES = [
+  { value: "pickrate", label: "Pick Rate", icon: "/icons/pickrate" },
+  { value: "winrate" , label: "Win Rate" , icon: "/icons/winrate"  },
+  { value: "banrate" , label: "Ban Rate" , icon: "/icons/banrate"  },
 ];
 
 export const REGIONS = [
@@ -15,5 +21,6 @@ export const REGIONS = [
 
 export default {
   LEADERBOARD_TYPES,
-  REGIONS
+  REGIONS,
+  HEROES_TYPES
 }

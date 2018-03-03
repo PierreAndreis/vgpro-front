@@ -25,3 +25,10 @@ export const setFavorite = (favorites) => {
     payload: favorites
   }
 }
+
+export const setTheme = (themeName) => {
+  return {
+    type: 'USER_SET_THEME',
+    theme: themeName
+  }
+}

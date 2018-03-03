@@ -19,6 +19,7 @@ const regions = {
   "sa": "South America",
 };
 
+// LUL. THIS SHOULD BE SERVER
 const TRIBE_PLAYERS = [
   "ttigers",
   "Oldskool",

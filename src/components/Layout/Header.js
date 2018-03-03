@@ -8,6 +8,7 @@ import { commonWrapper } from "./../../styles/App.style";
 import Alert from './HeaderComponents/Alert';
 // import LanguageSelector from './Header/LanguageSelector';
 import MenuHeader from "./HeaderComponents/Menu";
+import ThemeSwitch from "./HeaderComponents/ThemeSwitch";
 import SearchPlayer from "./../common/SearchPlayer";
 
 const Wrapper = styled.div`
@@ -66,9 +67,8 @@ class Header extends React.Component {
             </ToHomePage>
 
             <MenuHeader t={t} />
-
             <SearchPlayer mode="compact" />
-
+            <ThemeSwitch />
           </Content>
         </Wrapper>
       </React.Fragment>

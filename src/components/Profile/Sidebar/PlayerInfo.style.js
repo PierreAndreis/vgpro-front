@@ -30,7 +30,7 @@ export const Info = styled.section`
 export const Tier = styled(AssetLoader)`
   width: 130px;
   height: 150px;
-  background-size: 110%;
+  background-size: 75%;
   background-repeat: no-repeat;
   background-position: top center;
   flex-shrink: 0;

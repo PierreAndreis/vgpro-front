@@ -332,7 +332,8 @@ export const PlayerRank = styled.div`
 export const PlayerTier = styled(AssetLoader)`
   width: 30px;
   height: 40px;
-  background-size: 150%;
+  background-size: 100%;
+  background-repeat: no-repeat;
   border-radius: 50%;
   background-position: center top;
 `;

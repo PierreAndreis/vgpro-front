@@ -11,7 +11,7 @@ class AssetLoader extends React.Component {
 
     if (type === "tiers") name_ = parseInt(name_, 10) + 1;
     let cleanName = String(name_).replace(/([ ])+/g, "-").replace("'", "").toLowerCase();
-    let cleanImage = `https://images.vgpro.gg/${type}/${cleanName}.png`;
+    let cleanImage = `https://vgproassets.nyc3.digitaloceanspaces.com/${type}/${cleanName}.png`;
 
     let style = {}
 

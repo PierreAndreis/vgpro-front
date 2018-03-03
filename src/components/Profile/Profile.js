@@ -117,6 +117,7 @@ class Profile extends React.Component {
             <MatchStats t={t} />
             <Adsense />
             <MatchesManager t={t} filters={filters} />
+            <Adsense />
           </Styled.Main>
 
         </Styled.Wrap>

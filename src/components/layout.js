@@ -6,8 +6,6 @@ import Header from "./Layout/Header";
 import Footer from "./Layout/Footer";
 
 import Routers from "./routers";
-
-import Ads           from "./common/Ads";
 import ErrorBoundary from "./common/ErrorBoundary";
 
 import "./common/animate.style.js";
@@ -33,9 +31,7 @@ class Layout extends React.Component {
             <Styled.Content>
               <Routers/>
             </Styled.Content>
-
-            <Ads />
-
+            
             <Footer/>
 
           </Styled.Main>

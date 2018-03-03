@@ -136,3 +136,10 @@ export const MobileIcon = styled.div`
   `}
 
 `;
+
+export const MenuMobileBottom = styled.div`
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+`

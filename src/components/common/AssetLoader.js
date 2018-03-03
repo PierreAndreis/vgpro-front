@@ -1,5 +1,4 @@
 import React from "react";
-import Utils from "../../utils";
 
 class AssetLoader extends React.Component {
 

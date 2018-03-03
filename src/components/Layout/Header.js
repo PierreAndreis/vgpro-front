@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { translate } from 'react-i18next';
 
 import styled from "styled-components";
+import Media from "react-media";
 import { commonWrapper } from "./../../styles/App.style";
 
 import Alert from './HeaderComponents/Alert';
@@ -68,7 +69,9 @@ class Header extends React.Component {
 
             <MenuHeader t={t} />
             <SearchPlayer mode="compact" />
-            <ThemeSwitch />
+            <Media query="(max-width: 768px)">
+              {matches =>!matches && (<ThemeSwitch />)}
+            </Media>
           </Content>
         </Wrapper>
       </React.Fragment>

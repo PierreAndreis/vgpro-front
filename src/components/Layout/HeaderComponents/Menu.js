@@ -7,6 +7,7 @@ import Media from "react-media";
 
 // import "./Menu.css";
 import * as Styled from "./Menu.style.js"
+import ThemeSwitch from "./ThemeSwitch";
 
 const NavLinks = [
   {
@@ -71,6 +72,9 @@ class MenuMobile extends React.Component {
 
         <Styled.MenuMobile open={this.state.open} onClick={this.handleMenu}>
           <MenuList />
+          <Styled.MenuMobileBottom>
+            <ThemeSwitch text/>
+          </Styled.MenuMobileBottom>
         </Styled.MenuMobile>
 
       </React.Fragment>

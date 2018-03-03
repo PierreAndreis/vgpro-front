@@ -1,16 +1,13 @@
 import React from "react";
 import ErrorScreen from "../../common/ErrorScreen";
 
-import HalfPieChart from "../../common/Charts/HalfPieChart";
-
 import { KDA } from "./../../common/ColoredValues";
 
-import { SkeletonWrapper, Skeleton } from "../../common/Skeleton";
+import { SkeletonWrapper } from "../../common/Skeleton";
 
 import { connect } from "react-redux";
 
 import * as Styled from "./Overview.style";
-import Utils from "../../../utils";
 
 class Overview extends React.Component {
 

@@ -140,6 +140,7 @@ export const MobileIcon = styled.div`
 export const MenuMobileBottom = styled.div`
   position: absolute;
   bottom: 15px;
-  left: 0;
-  right: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 `

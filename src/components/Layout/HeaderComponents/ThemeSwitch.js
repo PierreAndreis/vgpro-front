@@ -9,11 +9,15 @@ import styled, {css} from "styled-components";
 const Button = styled.button`
   border: 0;
   background: none;
-  margin: 0 10px;
+  margin: -8px 10px 0;
+  display: flex;
+  align-items: center;
   padding: 5px;
-  font-size: 18px;
+  box-sizing: border-box;
+  vertical-align: center;
   height: 30px;
   cursor: pointer;
+  font-size: 13px;
   color: ${props => props.theme.text[300]};
 
   ${props => props.text && css`
@@ -21,6 +25,14 @@ const Button = styled.button`
     padding: 5px;
     border-radius: 5px;
   `}
+
+  i {
+    font-size: 23px;
+  }
+  span {
+    font-size: 14px;
+    margin-left: 5px;
+  }
 `;
 
 class ThemeSwitcher extends React.Component {
@@ -36,7 +48,7 @@ class ThemeSwitcher extends React.Component {
 
     return (
       <div>
-        <Button onClick={this.changeTheme} text={this.props.text}><i className="fa fa-adjust" /> {this.props.text && text} </Button>
+        <Button onClick={this.changeTheme} text={this.props.text}><i className="fa fa-adjust" /> {this.props.text && <span>{text}</span>} </Button>
       </div>
     )
   }

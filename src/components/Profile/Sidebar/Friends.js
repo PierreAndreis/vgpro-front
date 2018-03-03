@@ -131,11 +131,11 @@ class RecentPlayedWith extends React.Component {
         </Styled.Content>
         <Box.action>
           <Box.button
-            disabled={page === 1}
+            disabled={status !== "loaded" || page === 1}
             onClick={this.paginateDown.bind(this)}
           >Back</Box.button>
           <Box.button
-            disabled={page > lastPage}
+            disabled={status !== "loaded" || page > lastPage}
             onClick={this.paginateUp.bind(this)}
           >Next</Box.button>
         </Box.action>

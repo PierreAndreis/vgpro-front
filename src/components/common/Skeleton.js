@@ -15,6 +15,7 @@ const StyletonCSS = styled.div`
   border-radius: 2px;
   background: ${props => props.theme.gradient.skeleton};
   animation: ${cardLoading} 2s ease infinite;
+  animation-delay: ${() => Math.floor(Math.random() * 3) + 1}s;
   background-size: 600% 600%;
   margin-bottom: 1px;
 

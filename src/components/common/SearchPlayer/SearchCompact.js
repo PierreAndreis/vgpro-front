@@ -42,7 +42,8 @@ const SearchInput = styled.input`
   @media screen and (max-width: 790px) {
     ${props => !props.isOpen && css`
       width: 35px;
-      font-size: 0;
+      font-size: 16px;
+      color: transparent;
       padding: 0;
     `}
   }

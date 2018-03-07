@@ -70,6 +70,8 @@ Utils.paginateArray = (array, itemsPerPage, page) => {
 }
 
 Utils.transformRegion = (region) => {
+  if (!region) return "Unknown";
+  
   return ({
     "sg": "sea",
     "sea": "sg"

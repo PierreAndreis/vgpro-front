@@ -197,7 +197,7 @@ const OverviewTeam = ({ team, telemetry, status, gameMode }) => {
   const tName = (t) => t !== "1" ? "right/red" : "left/blue";
   const tName2 = (team.side === "right/red") ? "red" : "blue";
 
-  let bans = null;
+  let bans = [];
   if (telemetry && telemetry.draft) {
     bans = telemetry.draft.filter(b => {
       return b.Type === "HeroBan" && tName(b.Team) === team.side;

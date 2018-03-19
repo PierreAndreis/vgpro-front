@@ -417,6 +417,7 @@ export const TeamBan = styled(AssetLoader)`
   background-size: 120%;
   background-position: center;
   border-radius: 50%;
+  margin: 0 2px;
   border: 3px solid ${props => props.theme.extra.redSide};
   position: relative;
   ${Team}:last-of-type &{

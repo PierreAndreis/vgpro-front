@@ -146,8 +146,8 @@ const TeamStats = ({ team, bans, status }) => (
     </Styled.Legend>
 
     <Styled.TeamStats>
-      {bans &&
-        <Styled.TeamBan type="heroes" name={bans.Hero} />
+      {
+        bans.map((ban) => <Styled.TeamBan key={ban.Hero} type="heroes" name={ban.Hero} />)
       }
 
       <Styled.TeamValues>
@@ -197,9 +197,9 @@ const OverviewTeam = ({ team, telemetry, status, gameMode }) => {
   const tName = (t) => t !== "1" ? "right/red" : "left/blue";
   const tName2 = (team.side === "right/red") ? "red" : "blue";
 
-  let bans = null;
+  let bans = [];
   if (telemetry && telemetry.draft) {
-    bans = telemetry.draft.find(b => {
+    bans = telemetry.draft.filter(b => {
       return b.Type === "HeroBan" && tName(b.Team) === team.side;
     });
   };

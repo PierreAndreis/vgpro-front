@@ -26,6 +26,7 @@
     "react-scripts": "1.1.1",
     "react-spinkit": "^3.0.0",
     "react-timeago": "^3.4.3",
+    "react-transition-group": "^1.2.1",
     "recharts": "^1.0.0-beta.10",
     "redux": "^3.7.2",
     "redux-persist": "^5.9.1",

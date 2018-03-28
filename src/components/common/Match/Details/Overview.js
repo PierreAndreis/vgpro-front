@@ -31,11 +31,11 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
   };
 
   let damage = "...";
-  let damagePercent = "0%"
+  let damagePercent = "0"
   let damageTaken = "...";
-  let damageTakenPercent = "0%"
+  let damageTakenPercent = "0"
   let healingDone = "...";
-  let healingDonePercent = "0%";
+  let healingDonePercent = "0";
 
   if (telemetry) {
     damage = Utils.minifyNumber(telemetry.dealt, 0);
@@ -61,6 +61,8 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
             <SkeletonWrapper status={status} width="0" height="0">
               {() => <Styled.PlayerRole role={player.role} />}
             </SkeletonWrapper>
+
+            {player && player.mvp && <Styled.MVP>MVP</Styled.MVP>}
           </Styled.PlayerHero>
         </Styled.PlayerImage>
 
@@ -101,21 +103,21 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
         </Styled.PlayerGameStats>
 
         <Styled.PlayerGraph>
-          <Styled.PlayerGraphBar type="done" percent={damagePercent}>
+          <Styled.PlayerGraphBar type="done" percent={damagePercent + "%"}>
             <div />
           </Styled.PlayerGraphBar>
           <span> {damage} </span>
         </Styled.PlayerGraph>
 
         <Styled.PlayerGraph>
-          <Styled.PlayerGraphBar type="healing" percent={healingDonePercent}>
+          <Styled.PlayerGraphBar type="healing" percent={healingDonePercent + "%"}>
             <div />
           </Styled.PlayerGraphBar>
           <span> {healingDone} </span>
         </Styled.PlayerGraph>
 
         <Styled.PlayerGraph>
-          <Styled.PlayerGraphBar type="taken" percent={damageTakenPercent}>
+          <Styled.PlayerGraphBar type="taken" percent={damageTakenPercent + "%"}>
             <div />
           </Styled.PlayerGraphBar>
           <span> {damageTaken} </span>

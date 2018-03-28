@@ -43,7 +43,7 @@ export default class extends React.Component {
   }
 
   async fetch() {
-    const {active, region} = this.state;
+    const {region} = this.state;
 
     this.setState({
       status: "loading",

@@ -49,7 +49,7 @@ return (<span style={{color}}>{value}</span>)
 
 export const Rate = ({rate, label}) => {
 
- let value = Number(rate.replace("%", ""));
+ let value = Number(rate);
   // redo this color plz todo
   const RateColors = [
     {between: [0,   49.0]    , color: "grey"            },
@@ -63,6 +63,7 @@ export const Rate = ({rate, label}) => {
 
   const color = findInArray(RateColors, value);
 
+  rate = Number(rate).toFixed(1) + "%";
 
   return (<span style={{color}}>{rate}{label}</span>)
 }

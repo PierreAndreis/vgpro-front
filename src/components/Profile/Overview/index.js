@@ -56,7 +56,7 @@ class Overview extends React.Component {
                   <div />
                 </Styled.GraphBar>
                 <span>
-                  {winPercent}
+                  {winPercent}%
                 </span>
               </Styled.Graph>
             </Styled.Bar>
@@ -70,7 +70,7 @@ class Overview extends React.Component {
                   <div />
                 </Styled.GraphBar>
                 <span>
-                  {kpPercent}
+                  {kpPercent}%
                 </span>
               </Styled.Graph>
             </Styled.Bar>

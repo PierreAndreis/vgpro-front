@@ -22,11 +22,6 @@ const NavLinks = [
     to: "/leaderboard",
   },
   {
-    name: "Teams",
-    loc: "menuteams",
-    to: "/teams",
-  },
-  {
     name: "Heroes",
     loc: "menuheroes",
     to: "/heroes",

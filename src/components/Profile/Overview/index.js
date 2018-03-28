@@ -21,8 +21,8 @@ class Overview extends React.Component {
 
     if (status === "loaded") {
       stats = player.stats;
-      winRate = stats.winRate;
-      kp = stats.kp;
+      winRate = stats.winRate + "%";
+      kp = stats.kp + "%";
     }
 
     let games = (

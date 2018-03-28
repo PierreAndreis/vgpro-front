@@ -26,7 +26,7 @@ const Hero = ({status, name, value, rank}) => {
       </Styled.Name>
       <Styled.Percentage>
         <SkeletonWrapper status={status} width="25px" height="7px">
-          {() => <Rate rate={value[Object.keys(value)[0]]} />}
+          {() => <Rate rate={value} />}
         </SkeletonWrapper>
       </Styled.Percentage>
     </Styled.Each>

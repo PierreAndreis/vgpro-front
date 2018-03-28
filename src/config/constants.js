@@ -4,9 +4,9 @@ export const LEADERBOARD_TYPES = [
 ];
 
 export const HEROES_TYPES = [
-  { value: "pickrate", label: "Pick Rate", icon: "/icons/pickrate" },
-  { value: "winrate" , label: "Win Rate" , icon: "/icons/winrate"  },
-  { value: "banrate" , label: "Ban Rate" , icon: "/icons/banrate"  },
+  { value: "pickRate", label: "Pick Rate", icon: "/icons/pickrate" },
+  { value: "winRate" , label: "Win Rate" , icon: "/icons/winrate"  },
+  { value: "banRate" , label: "Ban Rate" , icon: "/icons/banrate"  },
 ];
 
 export const REGIONS = [

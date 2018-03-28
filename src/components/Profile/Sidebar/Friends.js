@@ -53,7 +53,7 @@ const Friend = ({status, player}) => {
 
       <Styled.Stats>
         <span>
-          <SkeletonWrapper status={status} width="20px" height="15px" children={() => <Rate rate={wR} label="%" />} />
+          <SkeletonWrapper status={status} width="20px" height="15px" children={() => <Rate rate={wR} />} />
         </span>
         <div>W/R</div>
       </Styled.Stats>
@@ -135,7 +135,7 @@ class RecentPlayedWith extends React.Component {
             onClick={this.paginateDown.bind(this)}
           >Back</Box.button>
           <Box.button
-            disabled={status !== "loaded" || page > lastPage}
+            disabled={status !== "loaded" || page >= lastPage}
             onClick={this.paginateUp.bind(this)}
           >Next</Box.button>
         </Box.action>

@@ -13,9 +13,9 @@ import AsyncContainer from "./common/AsyncContainer";
 const HomePage    = AsyncContainer(() =>  import("./Home/Home")                 );
 const Profile     = AsyncContainer(() =>  import('./Profile/Profile')           );
 const Match       = AsyncContainer(() =>  import("./Matches/Match")             );
-const Teams       = AsyncContainer(() =>  import('./common/Soon')               );
+// const Teams       = AsyncContainer(() =>  import('./common/Soon')               );
 const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard.js'));
-const Heroes      = AsyncContainer(() =>  import('./common/Soon')               );
+const Heroes      = AsyncContainer(() =>  import('./Heroes')                    );
 
 // then our route config
 const routes = [
@@ -30,10 +30,6 @@ const routes = [
   {
     path: '/players/:player',
     component: Profile,
-  },
-  { 
-    path: '/teams',
-    component: Teams
   },
   {
     path: '/leaderboard',

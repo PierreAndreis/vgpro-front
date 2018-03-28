@@ -120,10 +120,10 @@ class Leaderboard extends React.Component {
 
     if (anyError) content = <ErrorScreen err={anyError.payload} boxed />
     else {
-      _forEach(pages, (page) => {
+      _forEach(pages, (page, pageIndex) => {
         page.payload.forEach((each, index) => {
           content.push(
-            <LeadMember key={`${index} - ${each.name}`}
+            <LeadMember key={`${index * (pageIndex + 1)} - ${this.state.mode.label} - ${this.state.region}`}
               status={page.status}
               data={each}
               mode={this.state.mode.value}

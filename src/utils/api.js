@@ -78,8 +78,8 @@ API.getLead5 = (mode, region, filtersArgs) => {
   return sendRequest(`/leaderboard/${mode}/${region}?${filters}`);
 }
 
-API.getTopHeroes = (type = "pickrate", region = "all") => {
-  return sendRequest(`/heroes/${type}/${region}`);
+API.getTopHeroes = (region = "all") => {
+  return sendRequest(`/heroes/${region}`);
 }
 
 /* ==== PLAYER LOOKUP ===== */

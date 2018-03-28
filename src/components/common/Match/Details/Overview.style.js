@@ -64,7 +64,7 @@ export const CellHeader = Cell.extend`
 
 export const CellPlayer = Cell.extend`
   height: 65px;
-  border-bottom: 1px solid ${props => darken(0.2, props.theme.background.listOdd)};
+  ${'' /* border-bottom: 1px solid ${props => darken(0.2, props.theme.background.listOdd)}; */}
   transition: all 300ms;
   &:nth-child(odd) {
     background: ${props => props.theme.background.listOdd};
@@ -72,6 +72,25 @@ export const CellPlayer = Cell.extend`
   &:hover {
     background: ${props => props.theme.background.listHover};
   }
+
+  
+
+  ${props => props.me && css`
+    background: linear-gradient(
+      90deg, 
+      ${transparentize(0.7, props.theme.primary[400])} 0%, 
+      ${transparentize(1, props.theme.primary[400])} 100%
+    );
+    @media screen and (min-width: 768px) {
+      ${Team}:last-of-type & {
+        background: linear-gradient(
+          -90deg, 
+          ${transparentize(0.7, props.theme.primary[400])} 0%, 
+          ${transparentize(1, props.theme.primary[400])} 100%
+        );
+      }
+    }
+  `}
 `;
 
 export const PlayerInfo = styled.div`
@@ -113,6 +132,22 @@ export const PlayerHero = styled(AssetLoader)`
     border-color: ${props => props.theme.extra.redSide};
   }
 `;
+
+export const MVP = styled.div`
+
+  padding: 2px 4px;
+  width: 20px;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  margin-left: -13px;
+  
+  background: ${props => props.theme.primary[500]};
+  font-size: 8px;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+`
 
 export const PlayerRole = styled.div`
   width: 20px;
@@ -156,6 +191,7 @@ export const PlayerRole = styled.div`
 export const PlayerDetails = styled.div`
   width: 80px;
   align-self: flex-start;
+  position: relative;
   ${Team}:last-of-type &{
     text-align: right;
     margin-right: 5px;

@@ -361,6 +361,23 @@ export const MatchBadge = styled.div`
   border-radius: 30px;
 `
 
+export const MatchMVP = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 60px;
+  width: 40px;
+  height: 20px;
+  background: ${props => props.theme.primary[400]};
+  font-size: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  margin-bottom: auto;
+  border-radius: 30px;
+`
+
 injectGlobal`
   .Matches_Buttons {
     width: 100%;

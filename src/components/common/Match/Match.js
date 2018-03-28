@@ -196,7 +196,7 @@ class Match extends React.PureComponent {
 
     const {payload, status} = this.props;
 
-    let winBadge = null;
+    let badges = [];
     let me;
     let winner = 1;
 
@@ -204,11 +204,19 @@ class Match extends React.PureComponent {
       me = payload.players.find(p => p.me);
       winner = me.winner;
 
-      winBadge = (
-      <Styled.MatchBadge win={winner}>
-        {(me.winner && "Win") || "Loss"}
-      </Styled.MatchBadge>
+      badges.push(
+        <Styled.MatchBadge key={"win"} win={winner}>
+          {(me.winner && "Win") || "Loss"}
+        </Styled.MatchBadge>
       );
+
+      if (me.mvp) {
+        badges.push(
+          <Styled.MatchMVP key={"mvp"}>
+            MVP
+          </Styled.MatchMVP>
+        );
+      }
     }
 
     const shouldOpen = (this.props.forceOpen || this.state.details) && this.props.status === "loaded";
@@ -217,7 +225,7 @@ class Match extends React.PureComponent {
     <React.Fragment>
       <Styled.Match winner={winner}>
         <Styled.MatchBody onClick={this.handleOpen}>
-            {winBadge}
+            {badges}
 
             <Styled.Avatar type="heroes" name={me && me.hero}>
               <SkeletonWrapper status={status} width="0"> 

@@ -6,6 +6,7 @@ export const Wrapper = styled(Box.wrap)`
   width: 100%;
   margin: 3px 0;
   transition: all ease-out 300ms;
+
   &:hover {
     transform: scale(1.005);
     background: ${props => props.theme.background.boxHover};

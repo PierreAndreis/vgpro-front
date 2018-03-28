@@ -31,8 +31,8 @@ export default class extends React.Component {
   changeType = (type) => (e) => {
     if (this.state.active.value === type.value) return;
     this.setState({
-      active: type,
-    }, this.fetch)
+      active: type
+    })
   }
 
   changeRegion = (region) => (e) => {
@@ -43,7 +43,7 @@ export default class extends React.Component {
   }
 
   async fetch() {
-    const {active, region} = this.state;
+    const {region} = this.state;
 
     this.setState({
       status: "loading",
@@ -55,7 +55,7 @@ export default class extends React.Component {
 
 
     this.cancel = Utils.makeCancelable(
-      fetchTopHeroes(active.value, server_region),
+      fetchTopHeroes(server_region),
       (res) => this.setState({status: "loaded", payload: res})
     );
   }
@@ -85,8 +85,14 @@ export default class extends React.Component {
     
     let toShow = 1 + (perPage * page) + perPage;
 
-    const totalHeroes = payload.length;
-    const heroes = payload.map((hero, i) => ({
+    let payloadSorted = payload.sort((a, b) => {
+      if (parseFloat(a[active.value]) > parseFloat(b[active.value])) return -1;
+      if (parseFloat(a[active.value]) < parseFloat(b[active.value])) return 1;
+      return 0;
+    })
+
+    const totalHeroes = payloadSorted.length;
+    const heroes = payloadSorted.map((hero, i) => ({
       ...hero,
       rank: i + 1
     }))
@@ -135,16 +141,16 @@ export default class extends React.Component {
           { page === 0 && 
             <Styled.Top3>
               {
-                top3.map(({name, rank, ...value}) => (
-                  <Hero key={rank} status={status} name={name} value={value} rank={rank} />
+                top3.map(({name, rank, ...data}) => (
+                  <Hero key={rank} status={status} name={name} value={data[active.value]} rank={rank} />
                 ))
               }
             </Styled.Top3>
           }
           <Styled.Others>
             {
-              rest.map(({name, rank, ...value}) => (
-                <Hero key={rank} status={status} name={name} value={value} rank={rank} />
+              rest.map(({name, rank, ...data}) => (
+                <Hero key={rank} status={status} name={name} value={data[active.value]} rank={rank} />
               ))
             }
           </Styled.Others>

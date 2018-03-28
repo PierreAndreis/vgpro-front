@@ -13,10 +13,10 @@ export const fetchLeaderboard = async (mode, region, filterArgs) => {
   return await API.getLead5(mode, region, filterArgs);
 }
 
-export const fetchTopHeroes = async (type, region) => {
+export const fetchTopHeroes = async (region) => {
   /** This is not a redux action */
   
-  return await API.getTopHeroes(type, region);
+  return await API.getTopHeroes(region);
 }
 
 export const lookupPlayer = async (player) => {

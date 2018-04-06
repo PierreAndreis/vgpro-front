@@ -8,9 +8,6 @@ export const Wrap = commonWrapper.extend`
   width: 100%;
   max-width: 800px;
   margin: 15px auto;
-  @media screen and (max-width: 560px) {
-    padding: 5px;
-  }
 `;
 
 export const Button = styled.button`

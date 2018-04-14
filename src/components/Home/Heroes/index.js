@@ -3,9 +3,9 @@ import React from "react";
 import Box from "./../../common/Box";
 import { SkeletonPayload } from "./../../common/Skeleton";
 
-import {fetchTopHeroes} from "./../../../actions/api";
-import Utils            from "./../../../utils";
-import {REGIONS, HEROES_TYPES} from "./../../../config/constants";
+import { fetchTopHeroes } from "./../../../actions/api";
+import Utils from "./../../../utils";
+import { REGIONS, HEROES_TYPES } from "./../../../config/constants";
 
 import Hero from "./Hero";
 import * as Styled from "./HeroBox.style.js";
@@ -43,7 +43,7 @@ export default class extends React.Component {
   }
 
   async fetch() {
-    const {region} = this.state;
+    const { region } = this.state;
 
     this.setState({
       status: "loading",
@@ -56,7 +56,7 @@ export default class extends React.Component {
 
     this.cancel = Utils.makeCancelable(
       fetchTopHeroes(server_region),
-      (res) => this.setState({status: "loaded", payload: res})
+      (res) => this.setState({ status: "loaded", payload: res })
     );
   }
 
@@ -78,11 +78,11 @@ export default class extends React.Component {
 
   render() {
 
-    const {status, payload, active, page} = this.state;
+    const { status, payload, active, page } = this.state;
 
     let firstPage = 2;
     let perPage = 4;
-    
+
     let toShow = 1 + (perPage * page) + perPage;
 
     let payloadSorted = payload.sort((a, b) => {
@@ -116,10 +116,10 @@ export default class extends React.Component {
           <Box.selector>
             {HEROES_TYPES.map(type => (
               <Box.selectorOptions
-                   key={type.value}
-                   icon={type.icon}
-                   active={type.value === active.value}
-                  onClick={this.changeType(type)}
+                key={type.value}
+                icon={type.icon}
+                active={type.value === active.value}
+                onClick={this.changeType(type)}
               />
             ))}
           </Box.selector>
@@ -129,19 +129,19 @@ export default class extends React.Component {
           <div className="Box_RegionSelect">
             {
               REGIONS.map(region => (
-                <div key={region} 
-                     className={region === this.state.region ? "active" : ""}
-                     onClick={this.changeRegion(region)}>
+                <div key={region}
+                  className={region === this.state.region ? "active" : ""}
+                  onClick={this.changeRegion(region)}>
                   {region}
                 </div>
               ))
             }
           </div>
           <div className="Box_Divider" />
-          { page === 0 && 
+          {page === 0 &&
             <Styled.Top3>
               {
-                top3.map(({name, rank, ...data}) => (
+                top3.map(({ name, rank, ...data }) => (
                   <Hero key={rank} status={status} name={name} value={data[active.value]} rank={rank} />
                 ))
               }
@@ -149,18 +149,18 @@ export default class extends React.Component {
           }
           <Styled.Others>
             {
-              rest.map(({name, rank, ...data}) => (
+              rest.map(({ name, rank, ...data }) => (
                 <Hero key={rank} status={status} name={name} value={data[active.value]} rank={rank} />
               ))
             }
           </Styled.Others>
-        
+
         </Styled.Body>
         <Box.action>
           <Box.button disabled={prevBlocked} onClick={this.prevPage}>Back</Box.button>
           <Box.button disabled={nextBlocked} onClick={this.nextPage}>Next</Box.button>
         </Box.action>
-      </Styled.Wrapper> 
+      </Styled.Wrapper>
     )
   }
 }

@@ -86,7 +86,7 @@ export default ({data, label, children, ...props}) => {
             <stop offset="95%" stopColor="#F76B1C" stopOpacity={1}/>
           </linearGradient>
 
-          <filter id="blur" x="0" y="0" width="200%" height="200%">
+          <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
             <feOffset result="offOut" in="SourceGraphic" dx="0" dy="0" />
             <feGaussianBlur result="blurOut" in="offOut" stdDeviation="1.5" />
             <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />

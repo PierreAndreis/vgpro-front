@@ -1,8 +1,8 @@
 import styled, {css} from "styled-components";
+import {Link} from "react-router-dom";
 import Box from "../common/Box";
 import { commonWrapper } from "../../styles/App.style";
 import AssetLoader from "../common/AssetLoader";
-
 
 export const Wrap = commonWrapper.extend`
   width: 100%;
@@ -10,33 +10,9 @@ export const Wrap = commonWrapper.extend`
   margin: 15px auto;
 `;
 
-export const Button = styled.button`
-  border: 0;
-  padding: 10px 15px;
-  margin: 0 5px;
-  border-radius: 20px;
+let BoxWrap = Box.wrap;
 
-  background: transparent;
-  border: 1px solid ${props => props.theme.primary[400]};
-  color: ${props => props.theme.text.solid};
-  transition: all 300ms;
-  font-size: 11px;
-  text-transform: uppercase;
-  font-weight: bold;
-  
-  ${props => (props.active && css`
-    background: linear-gradient(90deg, rgba(230, 202, 121) 0%, rgba(238, 178, 130, 1) 100%);
-    border-color: transparent;
-  `) || css`
-    &:hover {
-      background: ${props => props.theme.primary[200]};
-    }
-  `}
-
-
-`
-
-export const Hero = styled(Box.wrap)`
+export const Hero = BoxWrap.withComponent(Link).extend`
   width: 100%;
   margin: 3px 0;
 `;

@@ -19,6 +19,19 @@ export const fetchTopHeroes = async (region) => {
   return await API.getTopHeroes(region);
 }
 
+export const fetchHero = async (heroName, region = "all") => {
+  /** This is not a redux action */
+  
+  return await API.getHero(heroName, region);
+}
+
+export const fetchHeroHistory = async (heroName, options = {}) => {
+  /** This is not a redux action */
+  
+  return await API.getHeroHistory(heroName, options);
+}
+
+
 export const lookupPlayer = async (player) => {
   /** This is not a redux action */
   

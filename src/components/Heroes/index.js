@@ -5,6 +5,7 @@ import * as Styled from "./Heroes.style";
 
 import { SkeletonWrapper, SkeletonPayload } from "./../common/Skeleton";
 import { fetchTopHeroes } from "../../actions/api";
+import Button from "./../common/Button";
 import Utils from "./../../utils";
 
 const ITEM_PER_PAGE = 30;
@@ -28,7 +29,7 @@ function compare(a, b, property, valueToReturn) {
 };
 
 const Hero = ({status, position, subtitles, payload}) => (
-  <Styled.Hero>
+  <Styled.Hero to={payload.name ? `/heroes/${payload.name}` : "/heroes"}>
     <Styled.HeroContent>
 
       <Styled.Info>
@@ -120,7 +121,6 @@ class Heroes extends React.Component {
 
   // Track if the header is visible or not
   trackScrolling = () => {
-     console.log("lol");
     if (!this.header) return;
 
     const rect = this.header.getBoundingClientRect();
@@ -193,21 +193,21 @@ class Heroes extends React.Component {
         <title>Heroes</title>
       </Helmet>
       <div>
-        <Styled.Button active={!roleFilter} onClick={this.roleFilter(null)}>
+        <Button active={!roleFilter} onClick={this.roleFilter(null)}>
           All
-        </Styled.Button>
+        </Button>
 
-        <Styled.Button active={roleFilter === "Carry"} onClick={this.roleFilter("Carry")}>
+        <Button active={roleFilter === "Carry"} onClick={this.roleFilter("Carry")}>
           Carry
-        </Styled.Button>
+        </Button>
 
-        <Styled.Button active={roleFilter === "Captain"} onClick={this.roleFilter("Captain")}>
+        <Button active={roleFilter === "Captain"} onClick={this.roleFilter("Captain")}>
           Captain
-        </Styled.Button>
+        </Button>
 
-        <Styled.Button active={roleFilter === "Jungler"} onClick={this.roleFilter("Jungler")}>
+        <Button active={roleFilter === "Jungler"} onClick={this.roleFilter("Jungler")}>
           Jungler
-        </Styled.Button>
+        </Button>
       </div>
 
       <Styled.Header innerRef={(r) => this.header = r}>

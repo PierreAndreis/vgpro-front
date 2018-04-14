@@ -82,6 +82,19 @@ API.getTopHeroes = (region = "all") => {
   return sendRequest(`/heroes/${region}`);
 }
 
+API.getHero = (heroName, region = "all") => {
+  return sendRequest(`/heroes/${region}/${heroName}`);
+}
+
+API.getHeroHistory = (heroName, options) => {
+
+  let region = options.region || "all";
+  delete options.region;
+  let filters = queryString.stringify(options);
+
+  return sendRequest(`/heroes/${region}/${heroName}/history?${filters}`)
+}
+
 /* ==== PLAYER LOOKUP ===== */
 API.lookupPlayer = (playerName) => {
   return sendRequest(`/player/${playerName}/find`);

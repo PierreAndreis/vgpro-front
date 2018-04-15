@@ -1,10 +1,11 @@
 import React from "react";
+import Spinner from "react-spinkit";
 
 import * as Styled from "./Builds.style";
 import Box from "../../../common/Box";
 import { SkeletonPayload } from "../../../common/Skeleton";
 
-const Popular = ({payload}) => {
+const Popular = ({payload, heroName}) => {
   let items = [];
   if (payload) {
     items = payload.builds
@@ -15,7 +16,7 @@ const Popular = ({payload}) => {
 
   for (let i = 0; i < 4; i++) {
     build.push(
-       <Styled.Item key={items[i] || i} type="items" name={items[i]}/>
+       <Styled.Item key={i} type="items" name={items[i]}/>
     )
   }
 
@@ -42,7 +43,7 @@ const WinRate = ({payload}) => {
 
   for (let i = 0; i < 4; i++) {
     build.push(
-       <Styled.Item key={items[i] || i} type="items" name={items[i]}/>
+       <Styled.Item key={i} type="items" name={items[i]}/>
     )
   }
 

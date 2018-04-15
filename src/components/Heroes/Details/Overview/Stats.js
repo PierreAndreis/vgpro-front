@@ -5,6 +5,42 @@ import Box from "../../../common/Box";
 import { SkeletonWrapper } from "../../../common/Skeleton";
 import { Rate } from "../../../common/ColoredValues";
 
+const AllStats = [
+  {
+    label: "KDA",
+    property: "kda",
+  },
+  {
+    label: "Kills",
+    property: "killsPerGame",
+  },
+  {
+    label: "Deaths",
+    property: "deathsPerGame",
+  },
+  {
+    label: "Assists",
+    property: "assistsPerGame",
+  },
+  {
+    label: "Gold/Min",
+    property: "goldPerMin",
+  },
+  {
+    label: "Farm",
+    property: "farmPerGame",
+  },
+  {
+    label: "Damage",
+    property: "damagePerGame",
+  },
+  {
+    label: "Healing",
+    property: "healingPerGame",
+  },
+
+]
+
 const Stats = ({payload, heroName}) => (
 
   <Box.wrap>
@@ -18,7 +54,7 @@ const Stats = ({payload, heroName}) => (
           <div>Placement</div>
         </Styled.Row>
 
-        <Styled.Row>
+        {/* <Styled.Row>
           <div>Win Rate</div>
           <div>
             <SkeletonWrapper width={30} height={10}>
@@ -46,48 +82,38 @@ const Stats = ({payload, heroName}) => (
             </SkeletonWrapper>
           </div>
           <div>23/49</div>
-        </Styled.Row>
+        </Styled.Row> */}
 
-        <Styled.Row>
-          <div>Kills</div>
-          <div>
-            <SkeletonWrapper width={30} height={10}>
-              {() => payload.killsPerGame}
-            </SkeletonWrapper>
-          </div>
-          <div>23/49</div>
-        </Styled.Row>
+        {
+          AllStats.map(stat => {
+            let rank = "..";
+            let total = "..";
+            let value = 0;
 
-        <Styled.Row>
-          <div>Deaths</div>
-          <div>
-            <SkeletonWrapper width={30} height={10}>
-              {() => payload.deathsPerGame}
-            </SkeletonWrapper>
-          </div>
-          <div>23/49</div>
-        </Styled.Row>
+            if (payload) {
+              const stats = payload.stats.find(l => l.name === stat.property);
+              rank = stats.rank;
+              value = stats.stats;
+              total = stats.total;
+            }
 
-        <Styled.Row>
-          <div>Assists</div>
-          <div>
-            <SkeletonWrapper width={30} height={10}>
-              {() => payload.assistsPerGame}
-            </SkeletonWrapper>
-          </div>
-          <div>23/49</div>
-        </Styled.Row>
-
-
-        <Styled.Row>
-          <div>Gold/Min</div>
-          <div>
-            <SkeletonWrapper width={30} height={10}>
-              {() => payload.goldPerMin}
-            </SkeletonWrapper>
-          </div>
-          <div>23/49</div>
-        </Styled.Row>
+            return (
+              <Styled.Row key={stat.property}>
+                <div>{stat.label}</div>
+                <div>
+                  <SkeletonWrapper width={30} height={10}>
+                    {() => value}
+                  </SkeletonWrapper>
+                </div>
+                <div>
+                  <SkeletonWrapper width={30} height={10}>
+                    {() => <React.Fragment>{rank}/{total}</React.Fragment>}
+                  </SkeletonWrapper>
+                </div>
+              </Styled.Row>
+            );
+          })
+        }
 
       </Styled.Table>
     </Box.body>

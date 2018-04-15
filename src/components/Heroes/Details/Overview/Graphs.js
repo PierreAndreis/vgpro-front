@@ -86,12 +86,20 @@ const SimpleLineChart = ({data, color, syncId}) => (
           <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
         </filter>
       </defs>
-      <XAxis dataKey="name" tickLine={false} axisLine={false} padding={{left: 0, right: 0}} />
-      <YAxis tickLine={false} scale="auto" domain={["auto", "auto"]} axisLine={false} padding={{left: 0, right: 0, top: 0, bottom: 0}} width={30}/>
+      <XAxis dataKey="name" 
+             padding={{left: 0, right: 0}} 
+             height={20} 
+             allowDecimals={false}/>
+      <YAxis scale="auto" 
+             domain={["auto", "auto"]}
+             padding={{left: 0, right: 0, top: 0, bottom: 0}} 
+             width={20} 
+             allowDecimals={false}/>
+             
       <CartesianGrid stroke="rgba(104, 104, 104, 0.2)" strokeDasharray="5 5"/>
       <Tooltip content={<CustomTooltip/>}/>
       <ReferenceLine y={50} stroke="rgba(250, 0, 0, 0.5)" strokeDasharray="5 5"/>
-      <Line type="linear" dot={true} dataKey="average" stroke={`url(#${color})`} strokeWidth="2" filter={"url(#blur)"}/>
+      <Line type="monotone" dot={true} dataKey="average" stroke={`url(#${color})`} strokeWidth="2" filter={"url(#blur)"}/>
       {/* <Line type="linear" dot={true} dataKey="pickRate" stroke={`url(#orange)`} strokeWidth="1" filter={"url(#blur)"}/> */}
     </LineChart>
   </ResponsiveContainer>
@@ -151,9 +159,9 @@ class HistoryCharts extends React.Component {
     let banRate = null;
 
     if (payload) {
-      winRate = payload.map(p => ({name: p.patch, average: p.winRate || 0})).reverse();
-      pickRate = payload.map(p => ({name: p.patch, average: p.pickRate || 0})).reverse();
-      banRate = payload.map(p => ({name: p.patch, average: p.banRate || 0})).reverse();
+      winRate = payload.map(p => ({name: p.patch,  placement: p.rank && p.rank.winRate,  average: p.winRate || 0})).reverse();
+      pickRate = payload.map(p => ({name: p.patch, placement: p.rank && p.rank.pickRate, average: p.pickRate || 0})).reverse();
+      banRate = payload.map(p => ({name: p.patch,  placement: p.rank&& p.rank.banRate,   average: p.banRate || 0})).reverse();
     }
 
     let timeRelative = null;
@@ -164,6 +172,8 @@ class HistoryCharts extends React.Component {
       .map(duration => ({name: `${duration.key - 5}-${parseInt(duration.key) + 5}`, average: duration.winRate, pickRate: duration.pickRate}));
     }
 
+
+    console.log(winRate);
     return (
       <React.Fragment>
         <GraphBox title="Win Rate By Patch"       type="patch" payload={winRate}      color="orange"/>
@@ -176,20 +186,44 @@ class HistoryCharts extends React.Component {
 }
 
 
-const GraphBox = ({title, payload, color, type}) => (
-  <Box.wrap>
-    <Box.title>{title}</Box.title>
-    <Box.body>
-      <GraphArea>
-        {payload && <SimpleLineChart data={payload} color={color} syncId={type}/>}
-        {!payload && (
-          <div style={{alignSelf: "center", justifySelf: "center"}}>
-            <Spinner name="line-spin-fade-loader" color="rgba(0, 0, 0, 0.2)" fadeIn="none"/>
-          </div>
-        )}
-      </GraphArea>
-    </Box.body>
-  </Box.wrap>
-);
+const GraphBox = ({title, payload, color, type}) => {
+
+  let placementContent;
+
+  if (payload && type === "patch") {
+    
+    // Make a copy since it's going to be mutated
+    let patches = [...payload];
+
+    let last = patches.pop();
+    // let beforeLast = patches.pop();
+
+    placementContent = (
+      <Box.subtitle>
+        {last.average}% (#{last.placement})
+      </Box.subtitle>
+    )
+
+  }
+
+  return (
+    <Box.wrap>
+      <Box.title>
+        {title}
+        {placementContent}
+      </Box.title>
+      <Box.body>
+        <GraphArea>
+          {payload && <SimpleLineChart data={payload} color={color} syncId={type}/>}
+          {!payload && (
+            <div style={{alignSelf: "center", justifySelf: "center"}}>
+              <Spinner name="line-spin-fade-loader" color="rgba(0, 0, 0, 0.2)" fadeIn="none"/>
+            </div>
+          )}
+        </GraphArea>
+      </Box.body>
+    </Box.wrap>
+  )
+}
 
 export default HistoryCharts;

@@ -3,7 +3,6 @@ import React from "react";
 import * as Styled from "./Stats.style";
 import Box from "../../../common/Box";
 import { SkeletonWrapper } from "../../../common/Skeleton";
-import { Rate } from "../../../common/ColoredValues";
 
 const AllStats = [
   {

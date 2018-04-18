@@ -1,7 +1,6 @@
 import styled, {css} from "styled-components";
 
 import {commonWrapper} from "./../../styles/App.style";
-import { transparentize } from "polished";
 import { Box } from "../common/Box";
 
 export const Wrapper = commonWrapper.extend`

@@ -57,8 +57,6 @@ class SkeletonWrapper extends React.PureComponent {
   render() {
     const {children, status, render, ...props} = this.props;
 
-    let providedStatus
-
     if (typeof render === "function") {
       return (
         <SkeletonContext.Consumer>

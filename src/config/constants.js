@@ -1,7 +1,7 @@
 export const LEADERBOARD_TYPES = [
+    { value: "ranked5v5" , label: "Ranked 5v5" ,  icon: "/icons/ranked" },
     { value: "ranked", label: "Ranked",  icon: "/icons/ranked"},
     { value: "blitz" , label: "Blitz" ,  icon: "/icons/blitz" },
-    { value: "ranked5v5" , label: "Ranked 5v5" ,  icon: "/icons/ranked" },
 ];
 
 export const HEROES_TYPES = [

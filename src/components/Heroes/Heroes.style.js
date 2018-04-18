@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import {Link} from "react-router-dom";
 import Box from "../common/Box";
 import { commonWrapper } from "../../styles/App.style";
@@ -12,7 +12,8 @@ export const Wrap = commonWrapper.extend`
 
 let BoxWrap = Box.wrap;
 
-export const Hero = BoxWrap.withComponent(Link).extend`
+// export const Hero = BoxWrap.withComponent(Link).extend`
+export const Hero = BoxWrap.extend`
   width: 100%;
   margin: 3px 0;
 `;

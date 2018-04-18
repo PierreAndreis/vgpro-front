@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import { commonWrapper } from "../../../styles/App.style";
 import AssetLoader from "../../common/AssetLoader";
 import {Box} from "../../common/Box";

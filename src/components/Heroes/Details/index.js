@@ -1,6 +1,5 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { withRouter } from "react-router-dom";
 
 import * as Styled from "./Details.style.js";
 import Button from "./../../common/Button";

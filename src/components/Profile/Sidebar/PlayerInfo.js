@@ -60,9 +60,18 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
   let rankingRegion = 0;
   let rankingRegionName = "...";
 
+  let ranking5v5Global = 0;
+  let ranking5v5Region = 0;
+
+  let tier = -1;
+
   if (status === "loaded") {
-    rankVst = (data.rankVst) ? Number(data.rankVst).toFixed(0) : 0;
-    percentageVst = Utils.getPercentageTillNext(data.tier, rankVst);
+    
+    rankVst = Math.max(Number(data.rankVst), Number(data.rank5v5Vst), 0);
+    tier = Utils.getTier(rankVst);
+
+    console.log(tier, rankVst);
+    percentageVst = Utils.getPercentageTillNext(tier, rankVst);
 
     AKAs = data.aka && data.aka.filter(k => k !== data.name);
 
@@ -74,10 +83,17 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
       favoriteClick = removeFromList(setFavorite, data.name, favorites);
     }
 
+
+    rankingRegionName = data.region === "sg" ? "SEA" : data.region.toUpperCase();
+
     if (data.rankedRanking) {
       rankingGlobal = data.rankedRanking.global === -1 ? "--" : data.rankedRanking.global;
       rankingRegion = data.rankedRanking.regional === -1 ? "--" : data.rankedRanking.regional;
-      rankingRegionName = data.region === "sg" ? "SEA" : data.region.toUpperCase();
+    }
+
+    if (data.ranked5v5Ranking) {
+      ranking5v5Global = data.ranked5v5Ranking.global === -1 ? "--" : data.ranked5v5Ranking.global;
+      ranking5v5Region = data.ranked5v5Ranking.regional === -1 ? "--" : data.ranked5v5Ranking.regional;
     }
 
 
@@ -103,10 +119,10 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
         <Styled.Info>
           <SkeletonWrapper status={status} width="140px" height="0">
             {() => (
-              <Styled.Tier AssetLoader type="tiers" name={data.tier}>
+              <Styled.Tier AssetLoader type="tiers" name={tier}>
                 <Styled.TierBar percentage={percentageVst}>
                   <div />
-                  <span>{rankVst}</span>
+                  <span>{rankVst.toFixed(0)}</span>
                 </Styled.TierBar>
               </Styled.Tier>
             )}
@@ -131,7 +147,7 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
                   [
                     <span key="region">{regions[data.region]}</span>,
                     <br key="br" />,
-                    <span key="skillTier">{Utils.getSkillTier(data.tier)}</span>
+                    <span key="skillTier">{Utils.getSkillTier(tier)}</span>
                   ]
                 )}
               </SkeletonWrapper>
@@ -194,6 +210,34 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
               #
           <SkeletonWrapper status={status} width="25px" height="15px">
                 {() => rankingRegion}
+              </SkeletonWrapper>
+            </div>
+            <span>
+              <SkeletonWrapper status={status}
+                width="25px"
+                height="15px"
+                children={() => rankingRegionName} />
+            </span>
+          </Styled.PlayerStat>
+          <Styled.Divider />
+          <br />
+          <h3>Ranked 5v5 Ranking</h3>
+
+          <Styled.PlayerStat>
+            <div>
+              #
+              <SkeletonWrapper status={status} width="25px" height="15px">
+                {() => ranking5v5Global}
+              </SkeletonWrapper>
+            </div>
+            <span>Global</span>
+          </Styled.PlayerStat>
+
+          <Styled.PlayerStat>
+            <div>
+              #
+          <SkeletonWrapper status={status} width="25px" height="15px">
+                {() => ranking5v5Region}
               </SkeletonWrapper>
             </div>
             <span>

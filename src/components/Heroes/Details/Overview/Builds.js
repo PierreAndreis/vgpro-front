@@ -1,9 +1,7 @@
 import React from "react";
-import Spinner from "react-spinkit";
 
 import * as Styled from "./Builds.style";
 import Box from "../../../common/Box";
-import { SkeletonPayload } from "../../../common/Skeleton";
 
 const Popular = ({payload, heroName}) => {
   let items = [];

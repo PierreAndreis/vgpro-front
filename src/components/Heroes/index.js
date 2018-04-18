@@ -29,7 +29,8 @@ function compare(a, b, property, valueToReturn) {
 };
 
 const Hero = ({status, position, subtitles, payload}) => (
-  <Styled.Hero to={payload.name ? `/heroes/${payload.name}` : "/heroes"}>
+  // <Styled.Hero to={payload.name ? `/heroes/${payload.name}` : "/heroes"}>
+  <Styled.Hero>
     <Styled.HeroContent>
 
       <Styled.Info>

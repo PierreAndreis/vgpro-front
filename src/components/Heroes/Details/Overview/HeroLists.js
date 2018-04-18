@@ -51,7 +51,7 @@ const Counter = ({ payload }) => {
             <span>Win Rate</span>
             <span>Play Rate</span>
           </div>
-          {heroes.map((hero, index) => <Hero key={hero && hero.name || index} payload={hero} rank={index + 1}/>)}
+          {heroes.map((hero, index) => <Hero key={(hero && hero.name) || index} payload={hero} rank={index + 1}/>)}
         </Styled.List>
       </Box.body>
       <Box.action></Box.action>

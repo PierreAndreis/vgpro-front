@@ -1,21 +1,11 @@
 import React from "react";
-import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, ReferenceLine, CartesianGrid, Tooltip, Legend} from "recharts";
+import {ResponsiveContainer, LineChart, Line, XAxis, YAxis, ReferenceLine, CartesianGrid, Tooltip} from "recharts";
 import styled from "styled-components";
 import Spinner from "react-spinkit";
 
 import Box from "../../../common/Box";
 import { fetchHeroHistory } from "../../../../actions/api";
 import Utils from "../../../../utils";
-import { darken } from "polished";
-
-const data = [
-      {name: '3.1', average: 52},
-      {name: '3.2', average: 51},
-      {name: '3.3', average: 52},
-      {name: '3.4', average: 50},
-      {name: '3.5', average: 53},
-];
-
 
 const GraphArea = styled.div`
   display: flex;
@@ -168,8 +158,8 @@ class HistoryCharts extends React.Component {
 
     if (heroPayload) {
       timeRelative = heroPayload.durations
-      .filter(duration => parseInt(duration.key) < 50) // Remove 45-55 That's way too not often
-      .map(duration => ({name: `${duration.key - 5}-${parseInt(duration.key) + 5}`, average: duration.winRate, pickRate: duration.pickRate}));
+      .filter(duration => parseInt(duration.key, 10) < 50) // Remove 45-55 That's way too not often
+      .map(duration => ({name: `${duration.key - 5}-${parseInt(duration.key, 10) + 5}`, average: duration.winRate, pickRate: duration.pickRate}));
     }
 
 

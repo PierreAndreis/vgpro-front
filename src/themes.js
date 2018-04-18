@@ -49,7 +49,7 @@ const Light = {
     footer: "#383838",
   },
   gradient: {
-    "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",
+    "primary": "linear-gradient(-90deg, rgb(230, 202, 121) 0%, rgb(238, 178, 130) 100%)",
     "red": "radial-gradient(50% 100%, #F5515F 44%, #9F041B 0%)",
     "green": "radial-gradient(0% 100%, #B4EC51 51%, #429321 47%)",
     "orange": "radial-gradient(0% 50%, #FAD961 45%, #F76B1C 41%)",
@@ -57,7 +57,6 @@ const Light = {
     "skeleton": "linear-gradient(90deg,rgba(102, 107, 109, 0.192),rgba(184, 193, 197, 0.4),rgba(186, 194, 197, 0.2))"
   }
 };
-
 
 const Night = {
   name: "night",
@@ -110,7 +109,8 @@ const Night = {
     footer: "#1B2937",
   },
   gradient: {
-    "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",
+    // "primary": "linear-gradient(-90deg, #F3DD5C 0%, #E7AE2A 100%)",
+    "primary": "linear-gradient(-90deg, rgb(230, 202, 121) 0%, rgb(238, 178, 130) 100%)",
     "red": "radial-gradient(50% 100%, #F5515F 44%, #9F041B 0%)",
     "green": "radial-gradient(0% 100%, #B4EC51 51%, #429321 47%)",
     "orange": "radial-gradient(0% 50%, #FAD961 45%, #F76B1C 41%)",

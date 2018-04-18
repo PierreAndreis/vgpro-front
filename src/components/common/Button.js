@@ -19,7 +19,7 @@ export default styled.button`
   `}
   
   ${props => (props.active && css`
-    background: linear-gradient(90deg, rgba(230, 202, 121) 0%, rgba(238, 178, 130, 1) 100%);
+    background: linear-gradient(-90deg, rgb(230, 202, 121) 0%, rgb(238, 178, 130) 100%);
     border-color: transparent;
     color: white;
   `) || css`

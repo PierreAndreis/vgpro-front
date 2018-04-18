@@ -22,7 +22,6 @@ const StyletonCSS = styled.div`
 ${'' /* .skeletonDiv:nth-child(odd) .loadingSkeleton {
   animation-delay: 0.4s;
 } */}
-
 `
 
 const Skeleton = ({width, height, borderRadius}) => {
@@ -59,11 +58,22 @@ class SkeletonWrapper extends React.PureComponent {
     const {children, status, render, ...props} = this.props;
 
     if (typeof render === "function") {
-      return (render(status, Skeleton));
+      return (
+        <SkeletonContext.Consumer>
+          {(value) => render(value || status, Skeleton)}
+        </SkeletonContext.Consumer>
+      );
     }
 
-    if (status === "loading") return <Skeleton {...props} />
-    else return (children());
+    return (
+        <SkeletonContext.Consumer>
+          {(value) => {
+            let providedStatus = value || status;
+            if (providedStatus === "loading") return <Skeleton {...props} />
+            else return (children());
+          }}
+        </SkeletonContext.Consumer>
+    )
   }
 }
 
@@ -71,10 +81,13 @@ const SkeletonPayload = (number) => {
   return Array(number).fill({});
 }
 
+const SkeletonContext = new React.createContext();
+
 export {
   Skeleton,
   SkeletonWrapper,
   SkeletonContainer,
-  SkeletonPayload
+  SkeletonPayload,
+  SkeletonContext
 }
 

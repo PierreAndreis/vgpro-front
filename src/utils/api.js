@@ -70,16 +70,32 @@ API.getProFeed = () => {
   return sendRequest("/pro/history/");
 }
 
-API.getLead5 = (mode, region, filtersArgs) => {
+API.getLead5 = (mode, region, {player, ...filtersArgs}) => {
 
   let f = filtersArgs;
   const filters = queryString.stringify(f);
+  if (!player) {
+    return sendRequest(`/leaderboard/${mode}/${region}?${filters}`);
+  }
+  return sendRequest(`/leaderboard/${mode}/${region}/${player}?${filters}`);
 
-  return sendRequest(`/leaderboard/${mode}/${region}?${filters}`);
 }
 
 API.getTopHeroes = (region = "all") => {
   return sendRequest(`/heroes/${region}`);
+}
+
+API.getHero = (heroName, region = "all") => {
+  return sendRequest(`/heroes/${region}/${heroName}`);
+}
+
+API.getHeroHistory = (heroName, options) => {
+
+  let region = options.region || "all";
+  delete options.region;
+  let filters = queryString.stringify(options);
+
+  return sendRequest(`/heroes/${region}/${heroName}/history?${filters}`)
 }
 
 /* ==== PLAYER LOOKUP ===== */

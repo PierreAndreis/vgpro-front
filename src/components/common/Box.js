@@ -47,6 +47,9 @@ export const BoxTitle = styled.div`
   font-size: 18px;
   text-transform: uppercase;
   border-radius: 5px 5px 0 0;
+
+  display: flex;
+  flex-direction: row;
 `;
 
 export const BoxBody = styled.div`
@@ -65,13 +68,16 @@ export const BoxActions = styled.div`
   justify-content: space-around;
 `;
 
-export const BoxSelector = styled.div`
+export const BoxSubtitle = styled.div`
   margin-left: auto;
-  width: 150px;
-  height: 20px;
   display: flex;
   justify-content: flex-end;
-`
+`;
+
+export const BoxSelector = BoxSubtitle.extend`
+  width: 150px;
+  height: 20px;
+`;
 
 export const BoxSelectorOptions = styled.div`
   cursor: pointer;
@@ -173,6 +179,7 @@ injectGlobal`
 export default {
   wrap           : Box,
   title          : BoxTitle,
+  subtitle       : BoxSubtitle,
   selector       : BoxSelector,
   selectorOptions: BoxSelectorOptions,
   body           : BoxBody,

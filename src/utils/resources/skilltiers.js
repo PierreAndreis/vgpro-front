@@ -7,7 +7,7 @@ export default [{
   },
   "0": {
     "title": "Just Beginning Bronze",
-    "starts": 0,
+    "starts": 1,
     "ends": 108.9
   },
   "1": {

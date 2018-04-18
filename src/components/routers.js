@@ -16,6 +16,7 @@ const Match       = AsyncContainer(() =>  import("./Matches/Match")             
 // const Teams       = AsyncContainer(() =>  import('./common/Soon')               );
 const Leaderboard = AsyncContainer(() =>  import('./Leaderboard/Leaderboard.js'));
 const Heroes      = AsyncContainer(() =>  import('./Heroes')                    );
+const HeroPage    = AsyncContainer(() =>  import('./Heroes/Details')            );
 
 // then our route config
 const routes = [
@@ -34,6 +35,10 @@ const routes = [
   {
     path: '/leaderboard',
     component: Leaderboard,
+  },
+  {
+    path: '/heroes/:heroName',
+    component: HeroPage,
   },
   {
     path: '/heroes',

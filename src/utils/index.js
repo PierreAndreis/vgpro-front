@@ -3,10 +3,30 @@ import SkillTiers from "./resources/skilltiers";
 
 const Utils = {};
 
-Utils.getSkillTier = (skillNumber) => {
+Utils.getSkillTier = (skillNumber, complete = false) => {
   const skill = (typeof skillNumber !== "number") ? parseInt(skillNumber, 10) : skillNumber;
   const result = SkillTiers[0][skill];
+  if (complete) return result;
   return (result && result.title) ? result.title : "Unknown";
+}
+
+Utils.getTier = (rankpoints) => {
+  let skillTier = -1;
+  rankpoints = Number(rankpoints);
+
+  // Lol at those with more than 3000
+  if (rankpoints > 3000) return 29;
+
+  for(let tier in SkillTiers[0]) {
+    let obj = SkillTiers[0][tier];
+    if ((obj.starts <= rankpoints) && (obj.ends >= rankpoints)) {
+      skillTier = tier;
+      break;
+    }
+  }
+
+
+  return skillTier;
 }
 
 Utils.getPercentageTillNext = (skillNumber, vst) => {

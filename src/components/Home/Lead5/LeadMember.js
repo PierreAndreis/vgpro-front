@@ -59,7 +59,7 @@ const LeadMember = ({status, data, mode}) => {
           </SkeletonWrapper>
         </div>
         <Styled.PointsName>
-          {mode === "ranked" ? "Rank" : "Blitz"} <br /> Points
+          Points
         </Styled.PointsName>
       </Styled.Points>
     </Styled.Wrapper>

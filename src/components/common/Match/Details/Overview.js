@@ -14,6 +14,13 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
 
   let playerItems = (status === "loaded") ? player.items : [];
 
+  let rankPoints = player.rankvst;
+  if (gameMode.includes("5v5")) rankPoints = player.rank5v5vst;
+  if (gameMode.includes("Blitz")) rankPoints = player.blitzvst;
+  if (gameMode.includes("Battle Royale")) rankPoints = Math.max(player.rank5v5vst, player.rankvst);
+
+  let tier = Utils.getTier(rankPoints);
+
   // In 5v5, HealingFlask and Vision Totems are default items. We don't need them.
   let itemsWithout5v5Default = playerItems;
   if (gameMode.includes("5v5")) {
@@ -129,8 +136,8 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
         <SkeletonWrapper status={status} width="30px" height="40px">
           {() => (
             <React.Fragment>
-              <Styled.PlayerTier type="tiers" name={player.tier} />
-              <span>{player.rankvst.toFixed(0)}</span>
+              <Styled.PlayerTier type="tiers" name={tier} />
+              <span>{rankPoints.toFixed(0)}</span>
             </React.Fragment>
           )}
         </SkeletonWrapper>

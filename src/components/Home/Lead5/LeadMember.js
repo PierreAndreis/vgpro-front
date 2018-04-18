@@ -39,7 +39,7 @@ const LeadMember = ({status, data, mode}) => {
 
         <Styled.SkillTier>
           <SkeletonWrapper status={status} width={80} height={10}>
-            {() => Utils.getSkillTier(data.tier)}
+            {() => Utils.getSkillTier(Utils.getTier(data.points))}
           </SkeletonWrapper>
         </Styled.SkillTier>
 

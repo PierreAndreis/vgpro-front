@@ -42,7 +42,7 @@ class LeadMember extends React.PureComponent {
 
             <div>
               <SkeletonWrapper status={status} width="35px" height="0px">
-                {() => <Styled.Tier type="tiers" name={data.tier} />}
+                {() => <Styled.Tier type="tiers" name={Utils.getTier(data.points)} />}
               </SkeletonWrapper>
 
               <Styled.PlayerInfo>

@@ -16,6 +16,8 @@ import Utils from "./../../utils";
 
 import * as Styled from "./Leaderboard.style";
 
+import Button from "./../common/Button";
+
 const PER_PAGE = 10;
 
 // Small helper to modify a certain page easily
@@ -41,7 +43,9 @@ class Leaderboard extends React.Component {
     return {
       mode: LEADERBOARD_TYPES[0],
       region: "all",
-      pages: [this.initialPage()]
+      pages: [this.initialPage()],
+      player: "",
+      isPlayer: false
     }
   }
 
@@ -65,6 +69,29 @@ class Leaderboard extends React.Component {
     }, () => this.fetch(0))
   }
 
+  changePlayer = (e) => {
+    let value = e.target.value;
+    this.setState({
+      player: value
+    })
+  }
+
+  resetPlayer = () => {
+    this.setState({
+      isPlayer: false,
+      player: "",
+      page: [this.initialPage()]
+    }, this.fetch.bind(this, [0]));
+  }
+
+  searchPlayer = (e) => {
+    e.preventDefault();
+    this.setState({
+      pages: [this.initialPage()],
+      isPlayer: this.state.player
+    }, this.fetch.bind(this, [0]));
+  }
+
   componentDidMount() {
     this.fetch(0);
   }
@@ -79,11 +106,13 @@ class Leaderboard extends React.Component {
     const offset = page * PER_PAGE;
     const limit = PER_PAGE;
 
+    const player = this.state.isPlayer && this.state.player;
+
     // Create a loading page
     this.setState(modifyPage(page, this.initialPage()));
 
     this.cancel = Utils.makeCancelable(
-      fetchLeaderboard(mode.value, server_region, { limit, offset }),
+      fetchLeaderboard(mode.value, server_region, { player, limit, offset }),
       (res) => this.setState(modifyPage(page, { status: "ready", payload: res })),
       (e) => this.setState(modifyPage(page, { status: "error", payload: e }))
     );
@@ -106,7 +135,7 @@ class Leaderboard extends React.Component {
 
   render() {
 
-    const { pages } = this.state;
+    const { isPlayer, pages } = this.state;
     let content = [];
 
     let anyError = pages.find(s => s.status === "error");
@@ -114,16 +143,17 @@ class Leaderboard extends React.Component {
     let anyEmpty = pages.find(s => s.payload.length < 1);
     let onePage = pages.length === 1;
 
-    let nextDisabled = anyError || anyLoading || anyEmpty;
-    let prevDisabled = anyError || anyLoading || onePage;
-
+    let nextDisabled = isPlayer || anyError || anyLoading || anyEmpty;
+    let prevDisabled = isPlayer || anyError || anyLoading || onePage;
 
     if (anyError) content = <ErrorScreen err={anyError.payload} boxed />
+    else if (isPlayer && pages[0].payload.length < 1) content = <ErrorScreen message={`${isPlayer} was not found on this search criteria`} boxed />
     else {
       _forEach(pages, (page, pageIndex) => {
         page.payload.forEach((each, index) => {
           content.push(
             <LeadMember key={`${index * (pageIndex + 1)} - ${this.state.mode.label} - ${this.state.region}`}
+              me={this.state.isPlayer}
               status={page.status}
               data={each}
               mode={this.state.mode.value}
@@ -143,11 +173,12 @@ class Leaderboard extends React.Component {
               <h2>Region</h2>
               {
                 REGIONS.map(region => (
-                  <Styled.FilterOption key={region}
+                  <Button key={region}
                     onClick={this.changeRegion(region)}
-                    active={this.state.region === region}>
+                    active={this.state.region === region}
+                    group >
                     {region}
-                  </Styled.FilterOption>
+                  </Button>
                 ))
               }
             </Styled.FilterCategory>
@@ -156,22 +187,49 @@ class Leaderboard extends React.Component {
               <h2>Game Mode</h2>
               {
                 LEADERBOARD_TYPES.map(type => (
-                  <Styled.FilterOption key={type.label}
+                  <Button key={type.label}
                     onClick={this.changeMode(type)}
-                    active={this.state.mode.label === type.label}>
+                    active={this.state.mode.label === type.label}
+                    small>
                     {type.label}
-                  </Styled.FilterOption>
+                  </Button>
                 ))
               }
             </Styled.FilterCategory>
+
+            <Styled.InputCategory>
+              <h2>Search</h2>
+              <form onSubmit={this.searchPlayer} style={{position: "relative"}}>
+                <Styled.Icon left onClick={this.searchPlayer}><i className="fa fa-search"/></Styled.Icon>
+                {isPlayer && (
+                  <Styled.Icon right 
+                  onClick={this.resetPlayer}>
+                  <i className="fa fa-close" style={{color: "rgba(250, 0, 0, 0.7)"}} />
+                  </Styled.Icon>)}
+                <Styled.Input onChange={this.changePlayer} 
+                  onSubmit={() => console.log("lol")} 
+                  value={this.state.player}
+                />
+              </form>
+            </Styled.InputCategory>
+
           </Styled.Filter>
+          
 
             <Styled.Content>
               {content}
             </Styled.Content>
             <Styled.Buttons>
-              <BoxButton onClick={this.prevPage} disabled={prevDisabled}>View Less</BoxButton>
-              <BoxButton onClick={this.nextPage} disabled={nextDisabled}>View More</BoxButton>
+              {
+                !isPlayer ? (
+                  <React.Fragment>
+                    <BoxButton onClick={this.prevPage} disabled={prevDisabled}>View Less</BoxButton>
+                    <BoxButton onClick={this.nextPage} disabled={nextDisabled}>View More</BoxButton>
+                  </React.Fragment>
+                ) : (
+                  <BoxButton onClick={this.resetPlayer}>Reset</BoxButton>
+                )
+              }
             </Styled.Buttons>
         </Styled.Wrapper>
       </React.Fragment>

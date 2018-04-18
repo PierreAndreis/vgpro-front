@@ -13,7 +13,7 @@ import * as Styled from "./LeadMember.style";
 class LeadMember extends React.PureComponent {
 
   render() {
-    const { status, data } = this.props;
+    const { status, data, me } = this.props;
 
     const winRate = (data.winRate) ? parseFloat(data.winRate) : 0;
 
@@ -32,7 +32,7 @@ class LeadMember extends React.PureComponent {
     return (
       <Styled.Wrapper>
         <Link to={link}>
-          <Styled.Body>
+          <Styled.Body me={data && me === data.name}>
 
             <Styled.Position>
               <SkeletonWrapper status={status} width="15px" height="25px">
@@ -48,7 +48,7 @@ class LeadMember extends React.PureComponent {
               <Styled.PlayerInfo>
                 <Styled.PlayerName>
                   <SkeletonWrapper status={status} width={`${Math.floor(Math.random() * 60) + 40}px`} height="15px">
-                    {() => <div>{data.name} <span>{data.region}</span></div>}
+                    {() => <div>{data.name} <span>{data.region === "sg" ? "sea" : data.region}</span></div>}
                   </SkeletonWrapper>
                 </Styled.PlayerName>
                 <span>

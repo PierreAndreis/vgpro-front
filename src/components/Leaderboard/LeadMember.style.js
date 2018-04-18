@@ -1,6 +1,8 @@
 import styled, {css} from "styled-components";
 import Box from "./../common/Box";
 import AssetLoader from "./../common/AssetLoader";
+import { transparentize } from "polished";
+
 
 export const Wrapper = styled(Box.wrap)`
   width: 100%;
@@ -27,6 +29,13 @@ export const Body = styled(Box.body)`
   >div {
     flex-shrink: 0;
   }
+  ${props => props.me && css`
+    background: linear-gradient(
+      -90deg, 
+      ${transparentize(0.7, props.theme.primary[400])} 0%, 
+      ${transparentize(1, props.theme.primary[400])} 100%
+    );
+  `}
 `;
 
 export const Position = styled.div`

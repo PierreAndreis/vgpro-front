@@ -49,7 +49,7 @@ const WinRate = ({payload}) => {
 
   return (
     <Box.wrap>
-      <Box.title>Highest Win % Skill Order</Box.title>
+      <Box.title>Highest Win % Build</Box.title>
       <Box.body>
         <Styled.Builds>
           {build}

@@ -70,12 +70,15 @@ API.getProFeed = () => {
   return sendRequest("/pro/history/");
 }
 
-API.getLead5 = (mode, region, filtersArgs) => {
+API.getLead5 = (mode, region, {player, ...filtersArgs}) => {
 
   let f = filtersArgs;
   const filters = queryString.stringify(f);
+  if (!player) {
+    return sendRequest(`/leaderboard/${mode}/${region}?${filters}`);
+  }
+  return sendRequest(`/leaderboard/${mode}/${region}/${player}?${filters}`);
 
-  return sendRequest(`/leaderboard/${mode}/${region}?${filters}`);
 }
 
 API.getTopHeroes = (region = "all") => {

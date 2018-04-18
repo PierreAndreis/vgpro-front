@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 export default styled.button`
   border: 0;
   padding: 10px 15px;
-  margin: 0 5px;
+  margin: 0 5px 2px;
   border-radius: 20px;
 
   background: transparent;
@@ -27,4 +27,17 @@ export default styled.button`
       background: ${props => props.theme.primary[200]};
     }
   `}
+
+  ${props => (props.group && css`
+    margin: 2px 0;
+    border-radius: 0;
+    margin-left: -1px;
+    padding: 5px 10px;
+  `)}
+
+  ${props => (props.small && css`
+    padding: 5px 10px;
+    margin: 2px;
+    ${'' /* margin: 0 5px 5px; */}
+  `)}
 `;

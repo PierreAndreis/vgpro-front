@@ -44,7 +44,7 @@ const FeedMatch = ({ status, t, data }) => {
 
         <Styled.PlayerDetails>
           <SkeletonWrapper status={status} width={50} height={10}>
-            {() => <div>{data.proInfo.name} {" "}<span>{data.proInfo.region}</span></div>}
+            {() => <div>{data.proInfo.name} {" "}<span>{data.region}</span></div>}
           </SkeletonWrapper>
 
           <span><SkeletonWrapper width={40} height={5} status={status} children={() => data.proInfo.team} /></span>

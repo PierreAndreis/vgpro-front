@@ -8,9 +8,6 @@ export const Wrapper = commonWrapper.extend`
   width: 100%;
   max-width: 800px;
   margin: 15px auto;
-  @media screen and (max-width: 560px) {
-    padding: 5px;
-  }
 `;
 
 export const Filter = styled.div`
@@ -65,17 +62,19 @@ export const InputCategory = FilterCategory.extend`
   margin-left: auto;
   align-self: center;
   position: relative;
+  box-sizing: border-box;
 `;
 
 export const Input = Box.withComponent("input").extend`
   border: 0;
   max-width: 250px;
   padding: 10px 35px;
+  box-sizing: border-box;
   margin: 0 5px;
   color: ${props => props.theme.text[400]};
 
   @media screen and (max-width: 500px) {
-    max-width: auto;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
   }

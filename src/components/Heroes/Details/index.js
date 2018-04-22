@@ -44,6 +44,7 @@ class HeroDetails extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.heroName !== this.state.heroName) {
+      if (this.cancel) this.cancel();
       this.fetch();
     }
   }

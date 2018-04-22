@@ -37,7 +37,7 @@ const routes = [
     component: Leaderboard,
   },
   {
-    path: '/heroes/:heroName',
+    path: '/heroes/:heroName/:tab?',
     component: HeroPage,
   },
   {

@@ -30,7 +30,7 @@ class LeadMember extends React.PureComponent {
       heroes.push(<Styled.Hero key={i} type="heroes" name={hero} />)
     }
     return (
-      <Styled.Wrapper>
+      <Styled.Wrapper hover>
         <Link to={link}>
           <Styled.Body me={data && me === data.name}>
 

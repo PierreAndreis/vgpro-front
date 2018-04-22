@@ -149,10 +149,11 @@ class Leaderboard extends React.Component {
     if (anyError) content = <ErrorScreen err={anyError.payload} boxed />
     else if (isPlayer && pages[0].payload.length < 1) content = <ErrorScreen message={`${isPlayer} was not found on this search criteria`} boxed />
     else {
-      _forEach(pages, (page, pageIndex) => {
-        page.payload.forEach((each, index) => {
+      let index = 0;
+      _forEach(pages, (page, pageIndex, lol) => {
+        page.payload.forEach((each) => {
           content.push(
-            <LeadMember key={`${index * (pageIndex + 1)} - ${this.state.mode.label} - ${this.state.region}`}
+            <LeadMember key={`${index++} - ${this.state.mode.label} - ${this.state.region}`}
               me={this.state.isPlayer}
               status={page.status}
               data={each}

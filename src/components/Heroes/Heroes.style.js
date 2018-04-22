@@ -12,8 +12,8 @@ export const Wrap = commonWrapper.extend`
 
 let BoxWrap = Box.wrap;
 
-// export const Hero = BoxWrap.withComponent(Link).extend`
-export const Hero = BoxWrap.extend`
+export const Hero = BoxWrap.withComponent(Link).extend`
+${'' /* export const Hero = BoxWrap.extend` */}
   width: 100%;
   margin: 3px 0;
 `;

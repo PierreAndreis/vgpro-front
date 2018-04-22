@@ -15,6 +15,14 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
 
+  ${props => props.hover && css`
+    transition: all ease-out 300ms;
+    &:hover {
+      transform: scale(1.005);
+      background: ${props => props.theme.background.boxHover};
+    }
+  `}
+
   ${(props) => props.animation && css`
 
     animation-duration: 1s;

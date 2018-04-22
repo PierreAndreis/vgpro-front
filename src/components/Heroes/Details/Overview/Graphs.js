@@ -206,7 +206,7 @@ const GraphBox = ({title, payload, color, type}) => {
         <GraphArea>
           {payload && <SimpleLineChart data={payload} color={color} syncId={type}/>}
           {!payload && (
-            <div style={{alignSelf: "center", justifySelf: "center"}}>
+            <div style={{alignSelf: "center", justifySelf: "center", gridColumn: "2"}}>
               <Spinner name="line-spin-fade-loader" color="rgba(0, 0, 0, 0.2)" fadeIn="none"/>
             </div>
           )}

@@ -1,14 +1,17 @@
 import React from "react";
 import Helmet from "react-helmet";
+import {Link} from "react-router-dom";
+
+import Button from "./../../common/Button";
 
 import * as Styled from "./Details.style.js";
-import Button from "./../../common/Button";
-import Overview from "./Overview";
 import Utils from "../../../utils/index.js";
 import { fetchHero } from "../../../actions/api.js"
 
 import { SkeletonWrapper, SkeletonContext } from "./../../common/Skeleton";
 
+import Overview from "./Overview";
+import Skills from "./Skills";
 
 class HeroDetails extends React.Component {
 
@@ -39,6 +42,12 @@ class HeroDetails extends React.Component {
     this.cancel();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.heroName !== this.state.heroName) {
+      this.fetch();
+    }
+  }
+
   async fetch() {
 
     let heroName = this.state.heroName;
@@ -49,16 +58,10 @@ class HeroDetails extends React.Component {
     );
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.heroName !== this.state.heroName) {
-      this.fetch();
-    }
-  }
-
-
   render() {
 
     let heroName = this.state.heroName;
+    let tab = this.props.match.params.tab;
 
     let payload = this.state.payload;
 
@@ -71,6 +74,18 @@ class HeroDetails extends React.Component {
         .map(role => `${role.key} (${role.pickRate.toFixed(0)}%)`)
         .join(", ")
     };
+
+    let element = {
+      overview: Overview,
+      skills:   Skills,
+    }[tab] || Overview;
+
+    let content = React.createElement(element, {
+      hero:    heroName,
+      payload: this.state.payload
+    });
+
+    let toLink = `/heroes/${heroName}/`
 
     return (
       <SkeletonContext.Provider value={this.state.status}>
@@ -95,14 +110,14 @@ class HeroDetails extends React.Component {
           </Styled.Header>
 
           <Styled.Tabs>
-            <Button active> Overview </Button>
-            <Button> Skills </Button>
-            <Button> Builds </Button>
-            <Button> Heroes </Button>
+            <Link to={`${toLink}overview`}><Button active={tab === "overview" || !tab}> Overview </Button></Link>
+            <Link to={`${toLink}skills`}  ><Button active={tab === "skills"}>           Skills   </Button></Link>
+            {/* <Link to={`${toLink}builds`}  ><Button active={tab === "builds"}>           Builds   </Button></Link>
+            <Link to={`${toLink}heroes`}  ><Button active={tab === "heroes"}>           Heroes   </Button></Link> */}
           </Styled.Tabs>
 
           <Styled.Content>
-            <Overview hero={heroName} payload={payload} />
+            {content}
           </Styled.Content>
 
         </Styled.Wrapper>

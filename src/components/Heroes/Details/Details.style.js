@@ -1,9 +1,11 @@
 import styled from "styled-components";
+
 import { commonWrapper } from "../../../styles/App.style";
 import AssetLoader from "../../common/AssetLoader";
 import {Box} from "../../common/Box";
 
 export const SPACE_GRID = "10px";
+
 
 export const Wrapper = commonWrapper.extend`
   max-width: 950px;
@@ -48,6 +50,9 @@ export const HeroTitle = styled.div`
 
 export const Tabs = styled.section`
   display: flex;
+  & button {
+    cursor: pointer;
+  }
 `;
 
 export const Content = styled.section`
@@ -63,9 +68,9 @@ export const Content = styled.section`
     flex-direction: column;
   }
   & ${Box} {
+    width: 100%;
     margin: 0;
     @media screen and (max-width: 800px) {
-      width: 100%;
       margin: ${SPACE_GRID} 0;
     }
   }

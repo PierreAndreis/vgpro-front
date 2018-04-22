@@ -147,16 +147,14 @@ class HistoryCharts extends React.Component {
     let winRate = null;
     let pickRate = null;
     let banRate = null;
+    let timeRelative = null;
 
-    if (payload) {
+    // It sucks that we can't allow one graph to be faster than the other
+    // Otherwise component will re-render and cut animation
+    if (payload && heroPayload) {
       winRate = payload.map(p => ({name: p.patch,  placement: p.rank && p.rank.winRate,  average: p.winRate || 0})).reverse();
       pickRate = payload.map(p => ({name: p.patch, placement: p.rank && p.rank.pickRate, average: p.pickRate || 0})).reverse();
       banRate = payload.map(p => ({name: p.patch,  placement: p.rank&& p.rank.banRate,   average: p.banRate || 0})).reverse();
-    }
-
-    let timeRelative = null;
-
-    if (heroPayload) {
       timeRelative = heroPayload.durations
       .filter(duration => parseInt(duration.key, 10) < 50) // Remove 45-55 That's way too not often
       .map(duration => ({name: `${duration.key - 5}-${parseInt(duration.key, 10) + 5}`, average: duration.winRate, pickRate: duration.pickRate}));

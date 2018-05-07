@@ -87,7 +87,7 @@ class SearchPlayer extends React.Component {
       value:          this.state.playerField,
       onSearch:       this.search,
       status:         this.state.status,
-      placeholder:    t('search-placeholder')
+      placeholder:    t('search.placeholder')
     }
 
     if (mode === "compact") return (<SearchCompact {...props} />);

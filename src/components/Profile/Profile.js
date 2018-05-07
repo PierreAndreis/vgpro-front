@@ -2,14 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
 import { Adsense } from "./../common/Ads";
-import { withRouter } from 'react-router';
 
 import ErrorScreen from "../common/ErrorScreen";
 
 import TimeAgo from "../../i18n/timeAgo";
 import MatchStats from "./Overview";
-
-// import MatchStats from "./MatchStats/MatchStats";
 
 import Sidebar from "./Sidebar";
 import ProfileFilters from "./ProfileFilters";
@@ -82,9 +79,9 @@ class Profile extends React.Component {
         <div style={{marginTop: "5%"}}>
           {title}
           <ErrorScreen message={
-            <p>{playerName} was found but hasn't played a match in a while
-            <br /> Please try again later.
-            <br /> Last update: <TimeAgo date={player.lastCache} />
+            <p>{t('profile.foundButNoMatches', {name: playerName})}
+            <br /> {t('general.tryAgain')}
+            <br /> {t('general.lastUpdated')} <TimeAgo date={player.lastCache} />
             </p>}
             boxed />
         </div>
@@ -93,11 +90,11 @@ class Profile extends React.Component {
 
     if (!player.lastCache && status === "loaded") {
       return (
-        <div>
+        <div style={{marginTop: "5%"}}>
           {title}
           <ErrorScreen message={
-            <p>{player} was not found.
-          <br /> Please try again later.
+            <p>{t('profile.notFound', {name: playerName})}
+          <br /> {t('general.tryAgain')}
           </p>} boxed />
         </div>
       )
@@ -146,5 +143,5 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(Profile));
+)(Profile);
 

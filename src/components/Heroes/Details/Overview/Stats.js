@@ -101,7 +101,7 @@ const Stats = ({payload, heroName}) => (
                 <div>{stat.label}</div>
                 <div>
                   <SkeletonWrapper width={30} height={10}>
-                    {() => value}
+                    {() => value.toLocaleString()}
                   </SkeletonWrapper>
                 </div>
                 <div>

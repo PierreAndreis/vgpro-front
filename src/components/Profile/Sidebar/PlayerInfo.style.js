@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import {SidebarBox} from "./../Profile.style";
+import { SidebarBox } from "./../Profile.style";
 import Box from "./../../common/Box";
 import AssetLoader from "./../../common/AssetLoader";
 
@@ -46,18 +46,18 @@ export const TierBar = styled.div`
   border-radius: 10px;
   position: relative;
 
-  &>div{
+  & > div {
     background: ${props => props.theme.primary[400]};
     border-radius: 10px;
     height: 100%;
     width: ${props => `${props.percentage}%`};
   }
 
-  &>span {
+  & > span {
     position: absolute;
     bottom: -23px;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
     font-size: 13px;
     color: ${props => props.theme.primary[400]};
     border: 2px solid ${props => props.theme.background.third};
@@ -188,7 +188,7 @@ export const PlayerAka = styled.section`
   width: 100%;
   padding: 5px;
   box-sizing: border-box;
-  &>h2 {
+  & > h2 {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 500;
@@ -196,10 +196,11 @@ export const PlayerAka = styled.section`
     margin: 2px 5px 10px;
   }
 
-  &>span {
+  & span {
+    margin: 1px;
     padding: 2px 5px;
     background: ${props => props.theme.primary[400]};
-    color: ${props => props.theme.primary[100]};
+    color: white;
     margin-left: 5px;
     border-radius: 5px;
     font-size: 13px;

@@ -1,6 +1,6 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
-import {commonWrapper} from "./../../styles/App.style";
+import { commonWrapper } from "./../../styles/App.style";
 import { Box } from "../common/Box";
 
 export const Wrapper = commonWrapper.extend`
@@ -16,18 +16,15 @@ export const Filter = styled.div`
   @media screen and (max-width: 500px) {
     display: block;
   }
-
 `;
 
 export const FilterCategory = styled.div`
-  padding: 5px;
+  margin: 0 5px;
   box-sizing: border-box;
-
-  &>h2 {
+  & > h2 {
     margin: 5px;
     padding: 3px 4px;
-    ${'' /* border-bottom: 1px solid ${props => props.theme.primary[400]}; */}
-    font-size: 14px;
+    ${"" /* border-bottom: 1px solid ${props => props.theme.primary[400]}; */} font-size: 14px;
     text-transform: uppercase;
   }
   color: ${props => props.theme.text[400]};
@@ -77,24 +74,27 @@ export const Input = Box.withComponent("input").extend`
     width: 100%;
     margin: 0 auto;
   }
-`
+`;
 
 export const Icon = styled.div`
   position: absolute;
   z-index: 2;
   cursor: pointer;
   color: ${props => props.theme.text[400]};
-  &>i {
+  & > i {
     font-size: 18px;
   }
   top: 10px;
 
-  ${props => (props.left && css`
-    left: 15px;
-  `) || css`
-    right: 15px
-  `}
-`
+  ${props =>
+    (props.left &&
+      css`
+        left: 15px;
+      `) ||
+    css`
+      right: 15px;
+    `};
+`;
 
 export const Content = styled.section`
   display: flex;

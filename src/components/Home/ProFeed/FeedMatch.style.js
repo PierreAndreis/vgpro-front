@@ -1,5 +1,5 @@
-import styled, {css} from "styled-components";
-import {Link} from "react-router-dom";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 import AssetLoader from "../../common/AssetLoader";
 
 export const Wrapper = styled(Link)`
@@ -26,18 +26,18 @@ export const Status = styled.div`
     if (typeof props.winner === "undefined") {
       return css`
         background: ${props => props.theme.background.grey};
-      `
+      `;
     }
     if (props.winner) {
       return css`
         background: ${props => props.theme.extra.win};
-      `
-    }
-    else return css`
-      background: ${props => props.theme.extra.loss};
-    `
-  }}
-`
+      `;
+    } else
+      return css`
+        background: ${props => props.theme.extra.loss};
+      `;
+  }};
+`;
 
 export const PlayerInfo = styled.div`
   display: flex;
@@ -54,13 +54,15 @@ export const PlayerPicture = styled.div`
   background-size: 180%;
   background-position: center 4%;
   border-radius: 100%;
-  ${props => props.playerName && css`
-    background-image: url(/players/${props.playerName}.png)
-  `}
+  ${props =>
+    props.playerName &&
+    css`
+      background-image: url(/players/${props.playerName}.png);
+    `};
 `;
 
 export const PlayerDetails = styled.div`
-  width: 80px;
+  width: 100px;
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -75,7 +77,7 @@ export const PlayerDetails = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    >span {
+    > span {
       text-transform: uppercase;
       font-size: 12px;
       font-weight: 100;
@@ -86,7 +88,7 @@ export const PlayerDetails = styled.div`
     font-weight: 100;
     margin-top: 1px;
     font-size: 10px;
-    color: ${props => props.theme.text[400]}
+    color: ${props => props.theme.text[400]};
   }
 `;
 
@@ -127,28 +129,28 @@ export const GameRole = styled.div`
       return css`
         background-color: ${props => props.theme.extra.captain};
         background-image: url("/roles/captain.png");
-      `
-    };
+      `;
+    }
     if (props.role === "Carry") {
       return css`
         background-color: ${props => props.theme.extra.carry};
         background-image: url("/roles/carry.png");
-      `
+      `;
     }
     if (props.role === "Jungler") {
       return css`
         background-color: ${props => props.theme.extra.jungler};
         background-image: url("/roles/jungler.png");
-      `
+      `;
     }
 
     if (props.role === "Sub") {
       return css`
         background-color: ${props => props.theme.extra.sub};
         background-image: url("/roles/sub.png");
-      `
+      `;
     }
-  }}
+  }};
 `;
 
 export const GameKDA = styled.div`

@@ -43,7 +43,7 @@ Skeleton.defaultProps = {
   borderRadius: "5px"
 }
 
-
+// DEPRECATED HOC
 const SkeletonContainer = (Loading, Loaded) => {
   return class extends React.PureComponent {
     render() {

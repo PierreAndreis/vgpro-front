@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Trans } from "react-i18next";
 
 import Box from "./Box";
 
@@ -34,10 +35,12 @@ const Message = styled.div`
   color: ${props => props.theme.text[300]};
 `;
 
-
-const ErrorScreen = ({err, height, message, boxed, width}) => {
-
-  let text = (message) ? message : "Sorry, an error has occured!";
+const ErrorScreen = ({ err, height, message, boxed, width }) => {
+  let text = message ? (
+    message
+  ) : (
+    <Trans i18nKey="general.errorMessageDefault" />
+  );
 
   if (err && err.message) {
     // text = err.message;
@@ -48,16 +51,16 @@ const ErrorScreen = ({err, height, message, boxed, width}) => {
 
   if (width) {
     style = {
-      width
-    }
+      width,
+    };
   }
 
   let content = (
     <ErrorScreenContent>
-      <BadImage/>
+      <BadImage />
       <Message>{text}</Message>
     </ErrorScreenContent>
-  )
+  );
 
   if (boxed) {
     return (
@@ -65,11 +68,10 @@ const ErrorScreen = ({err, height, message, boxed, width}) => {
         <Box.title>Error!</Box.title>
         <Box.body>{content}</Box.body>
       </ErrorScreenBox>
-    )
+    );
   }
 
   return content;
-
-}
+};
 
 export default ErrorScreen;

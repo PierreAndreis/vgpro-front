@@ -11,7 +11,7 @@ const sort = (property, backup) => (a, b) => {
   if (a[property] === b[property]) {
     return a[backup] > b[backup] ? 1 : -1;
   }
-  return a[property] > b[property] ? 1 : -1;
+  return a[property] > b[property] ? -1 : 1;
 };
 
 const withModal = Component => {

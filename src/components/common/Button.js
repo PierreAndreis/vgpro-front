@@ -36,7 +36,7 @@ export default styled.button`
       `) ||
     css`
       &:hover {
-        background: ${props => props.theme.primary[200]};
+        background: ${props => props.theme.primary[500]};
       }
     `}
 

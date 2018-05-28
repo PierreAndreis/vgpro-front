@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Trans } from "react-i18next";
+
 import { SkeletonWrapper } from "./../../../common/Skeleton";
 import { Rate } from "./../../../common/ColoredValues";
 
@@ -72,23 +74,30 @@ const WinRate = ({ hero, payload }) => {
                 />
               ))}
             </b>
-            <span> Overdrive </span>
+            <span>
+              {" "}
+              <Trans i18nKey="terms.Overdrive" />{" "}
+            </span>
           </div>
           <div>
             <b>
-              <SkeletonWrapper>
+              <SkeletonWrapper width={40}>
                 {() => <Rate rate={skillsInfo.winRate} />}
               </SkeletonWrapper>
             </b>
-            <span>Win Rate</span>
+            <span>
+              <Trans i18nKey="terms.winrate" />
+            </span>
           </div>
           <div>
             <b>
-              <SkeletonWrapper>
+              <SkeletonWrapper width={40}>
                 {() => <Rate rate={skillsInfo.pickRate} />}
               </SkeletonWrapper>
             </b>
-            <span>Pick Rate</span>
+            <span>
+              <Trans i18nKey="terms.pickrate" />
+            </span>
           </div>
         </Styled.Stats>
       </Box.body>
@@ -126,23 +135,30 @@ const Popular = ({ hero, payload }) => {
                 />
               ))}
             </b>
-            <span> Overdrive </span>
+            <span>
+              {" "}
+              <Trans i18nKey="terms.Overdrive" />{" "}
+            </span>
           </div>
           <div>
             <b>
-              <SkeletonWrapper>
+              <SkeletonWrapper width={40}>
                 {() => <Rate rate={skillsInfo.winRate} />}
               </SkeletonWrapper>
             </b>
-            <span>Win Rate</span>
+            <span>
+              <Trans i18nKey="terms.winrate" />
+            </span>
           </div>
           <div>
             <b>
-              <SkeletonWrapper>
+              <SkeletonWrapper width={40}>
                 {() => <Rate rate={skillsInfo.pickRate} />}
               </SkeletonWrapper>
             </b>
-            <span>Pick Rate</span>
+            <span>
+              <Trans i18nKey="terms.pickrate" />
+            </span>
           </div>
         </Styled.Stats>
       </Box.body>

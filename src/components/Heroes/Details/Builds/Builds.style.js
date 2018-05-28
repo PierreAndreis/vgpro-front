@@ -15,8 +15,7 @@ export const Content = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-
+  align-items: flex-start;
   @media screen and (max-width: 450px) {
     justify-content: center;
   }
@@ -25,6 +24,7 @@ export const Content = styled.div`
 export const BuildBox = Box.extend`
   margin: 5px;
   width: auto;
+  height: 100px;
 `;
 
 export const Builds = styled.div`

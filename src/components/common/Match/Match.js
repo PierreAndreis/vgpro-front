@@ -103,7 +103,9 @@ const MatchInfo = ({ payload, me, status, t }) => {
         <SkeletonWrapper status={status} width="50px">
           {() =>
             t(
-              `gamemode.${payload.gameMode.replace(" ", "").toLowerCase()}`
+              `gamemode.${payload.gameMode
+                .replace(/\ /g, "")
+                .toLowerCase()}`
             )
           }
         </SkeletonWrapper>

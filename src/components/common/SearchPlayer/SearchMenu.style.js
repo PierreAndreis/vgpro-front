@@ -4,7 +4,7 @@ import Box from "../Box";
 
 export const SearchMenu = styled(Box.wrap)`
   position: absolute;
-  z-index: 99;
+  z-index: 3;
   margin: 10px 5px;
   padding: 15px;
   box-sizing: border-box;

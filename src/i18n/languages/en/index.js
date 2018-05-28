@@ -9,6 +9,9 @@ export default {
   "general.ViewLess": "View Less",
   "general.Reset": "Reset",
 
+  "footer.copy":
+    "VGPROgg is not affiliated or part of Super Evil Megacorp. All Vainglory copyrights and art assets belong to Super Evil Megacorp.",
+
   "feature.ProHistory": "Pro History",
   "feature.Leaderboard": "Leaderboard",
   "feature.Home": "Home",
@@ -73,6 +76,8 @@ export default {
   "gamemode.blitz": "Blitz",
   "gamemode.ranked": "Ranked 3v3",
   "gamemode.ranked5v5": "Ranked 5v5",
+  "gamemode.private": "Private 3v3",
+  "gamemode.private5v5": "Private 5v5",
   "gamemode.privateranked": "Private Draft",
   "gamemode.privateranked5v5": "Private Draft 5v5",
   "gamemode.privateblitz": "Private Blitz",

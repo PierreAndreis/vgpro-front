@@ -1,5 +1,4 @@
-import styled, {css} from "styled-components";
-
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -28,7 +27,7 @@ export const Menu = styled.div`
   height: auto;
   padding: 5px;
   background: ${props => props.theme.background.box};
-  z-index: 99;
+  z-index: 3;
   border-radius: 5px;
   box-shadow: 0 0.625rem 1.25rem 0 ${props => props.theme.shadow};
 `;
@@ -39,21 +38,22 @@ export const Option = styled.div`
   text-transform: uppercase;
   transition: all 300ms;
   font-size: 12px;
-  ${props => (
-    (props.active && css`
-      background: ${props => props.theme.background.listOdd};
-    `) || css `
+  ${props =>
+    (props.active &&
+      css`
+        background: ${props => props.theme.background.listOdd};
+      `) ||
+    css`
       &:hover {
         background: ${props => props.theme.background.listHover};
       }
-    `
-  )}
+    `};
 `;
 
 export const MenuLabel = styled.div`
   width: auto;
   position: relative;
-  &>span {
+  & > span {
     font-size: 13px;
     text-transform: uppercase;
     padding: 5px 25px 5px 10px;

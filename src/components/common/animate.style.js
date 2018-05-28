@@ -1,4 +1,4 @@
-import {injectGlobal} from "styled-components";
+import { injectGlobal } from "styled-components";
 
 injectGlobal`
 @charset "UTF-8";
@@ -1578,4 +1578,4 @@ injectGlobal`
 .slideOutUp {
   animation-name: slideOutUp;
 }
-`
+`;

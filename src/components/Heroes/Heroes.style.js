@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {Link} from "react-router-dom";
+import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 import Box from "../common/Box";
 import { commonWrapper } from "../../styles/App.style";
 import AssetLoader from "../common/AssetLoader";
@@ -13,9 +13,17 @@ export const Wrap = commonWrapper.extend`
 let BoxWrap = Box.wrap;
 
 export const Hero = BoxWrap.withComponent(Link).extend`
-${'' /* export const Hero = BoxWrap.extend` */}
+${"" /* export const Hero = BoxWrap.extend` */}
   width: 100%;
   margin: 3px 0;
+`;
+
+export const FilterTitle = styled.h3`
+  margin: 10px 5px;
+  padding: 3px 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: ${props => props.theme.text[400]};
 `;
 
 export const Header = styled.div`
@@ -33,7 +41,7 @@ export const Header = styled.div`
 
   text-transform: uppercase;
   font-size: 12px;
-  >div {
+  > div {
     cursor: pointer;
     font-weight: bold;
 
@@ -47,8 +55,7 @@ export const Header = styled.div`
   @media screen and (max-width: 560px) {
     font-size: 10px;
   }
-
-`
+`;
 
 export const HeroContent = styled(Box.body)`
   display: flex;
@@ -60,27 +67,9 @@ export const HeroContent = styled(Box.body)`
   justify-content: space-around;
   box-sizing: border-box;
   color: ${props => props.theme.text[400]};
-  >div {
+  > div {
     flex-shrink: 0;
     position: relative;
-    b {
-      display: block;
-      position: absolute;
-      bottom: -15px;
-      font-size: 11px;
-      color: ${props => props.theme.text[500]};
-      font-weight: 500;
-      text-transform: uppercase;
-      width: 100%;
-      white-space: nowrap;
-      
-      animation-duration: 1s;
-      animation-fill-mode: both;
-      animation-name: fadeIn;
-      @media screen and (max-width: 560px) {
-        font-size: 9px;
-      }
-    }
     span {
       font-size: 11px;
       color: ${props => props.theme.text[300]};
@@ -89,11 +78,35 @@ export const HeroContent = styled(Box.body)`
       @media screen and (max-width: 560px) {
         font-size: 9px;
       }
-
     }
   }
-`
+`;
 
+export const Subtitle = styled.b`
+  display: block;
+  position: absolute;
+  bottom: -15px;
+  font-size: 11px;
+  color: ${props => props.theme.text[500]};
+  font-weight: 500;
+  text-transform: uppercase;
+  width: 100%;
+  white-space: nowrap;
+
+  ${props =>
+    (props.visible &&
+      css`
+        animation-duration: 300ms;
+        animation-fill-mode: both;
+        animation-name: fadeIn;
+      `) ||
+    css`
+      opacity: 0;
+    `};
+  @media screen and (max-width: 560px) {
+    font-size: 9px;
+  }
+`;
 
 export const Info = styled.div`
   display: flex;
@@ -118,15 +131,16 @@ export const Position = styled.div`
     font-size: 15px;
     margin-right: 10px;
   }
-`
+`;
 
 export const HeroImage = styled(AssetLoader)`
   width: 50px;
   height: 50px;
   border-radius: 100%;
-  background-size: 130%;
-  background-position: top center;
+  background-size: 120%;
+  background-position: center center;
   background-color: grey;
+  border: 1px solid ${props => props.theme.background.slotBorder};
   flex-shrink: 0;
   @media screen and (max-width: 560px) {
     width: 35px;
@@ -140,14 +154,14 @@ export const HeroInfo = styled.div`
   @media screen and (max-width: 560px) {
     flex-direction: column;
   }
-`
+`;
 
 export const HeroNameRole = styled.div`
   margin: 0 5px;
   @media screen and (max-width: 560px) {
     margin: 5px 0;
   }
-`
+`;
 
 export const Name = styled.div`
   font-size: 15px;
@@ -167,7 +181,7 @@ export const Stats = styled.div`
   width: 60px;
   text-align: center;
   color: ${props => props.theme.text[400]};
-  ${HeroContent} &{
+  ${HeroContent} & {
     font-size: 18px;
     @media screen and (max-width: 560px) {
       font-size: 14px;
@@ -190,4 +204,4 @@ export const TierImg = styled.div`
   background-image: url("/${props => props.tier}.svg");
   margin-bottom: 5px;
 
-`
+`;

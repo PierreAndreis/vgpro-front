@@ -1,5 +1,31 @@
 import AssetLoader from "../../../common/AssetLoader";
 import styled, { css } from "styled-components";
+import { Box } from "../../../common/Box";
+
+export const Sidebar = styled.div`
+  width: 100%;
+  font-size: 13px;
+  color: ${props => props.theme.text[400]};
+`;
+
+export const Content = styled.div`
+  width: 100%;
+  grid-column: 2 / 4;
+  grid-row: 1 / 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  @media screen and (max-width: 450px) {
+    justify-content: center;
+  }
+`;
+
+export const BuildBox = Box.extend`
+  margin: 5px;
+  width: auto;
+`;
 
 export const Builds = styled.div`
   display: flex;
@@ -7,7 +33,6 @@ export const Builds = styled.div`
   justify-content: center;
   padding: 5px;
   box-sizing: border-box;
-  width: 200px;
 `;
 
 export const Description = styled.div`
@@ -44,21 +69,11 @@ export const Item = styled(AssetLoader)`
   margin: 2px;
 
   position: relative;
-`;
 
-export const Interrogation = styled.div`
-  position: absolute;
-  top: -5;
-  right: -5;
-  width: 15px;
-  height: 15px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 50%;
-  text-align: center;
-  line-height: 14px;
-  font-size: 12px;
-  font-weight: bold;
+  @media screen and (max-width: 450px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 export const SubtitleItem = styled(AssetLoader).attrs({
@@ -81,38 +96,4 @@ export const SubtitleItem = styled(AssetLoader).attrs({
       height: 20px;
       top: 3px;
     `};
-`;
-
-export const Modal = styled.div`
-  position: fixed;
-  z-index: 5;
-  top: 4%;
-  left: 50%;
-  margin-left: -160px;
-  width: 320px;
-  font-size: 13px;
-  color: ${props => props.theme.text[400]};
-  transition: all 300ms;
-  ${props =>
-    props.visible
-      ? css`
-          opacity: 1;
-          display: block;
-          animation-duration: 300ms;
-          animation-fill-mode: both;
-          animation-name: fadeIn;
-        `
-      : css`
-          opacity: 0;
-          display: none;
-        `};
-`;
-
-export const ModalBackground = styled.div`
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.3);
 `;

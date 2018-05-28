@@ -14,30 +14,46 @@ export default styled.button`
   text-transform: uppercase;
   font-weight: bold;
 
-  ${props => typeof props.onClick === "function" && css`
-    cursor: pointer;
-  `}
+  ${props =>
+    typeof props.onClick === "function" &&
+    css`
+      cursor: pointer;
+    `}
   
-  ${props => (props.active && css`
-    background: linear-gradient(-90deg, rgb(230, 202, 121) 0%, rgb(238, 178, 130) 100%);
-    border-color: transparent;
-    color: white;
-  `) || css`
-    &:hover {
-      background: ${props => props.theme.primary[200]};
-    }
-  `}
+  ${props =>
+    (props.active &&
+      css`
+        ${
+          "" /* background: linear-gradient(
+          -90deg,
+          rgb(230, 202, 121) 0%,
+          rgb(238, 178, 130) 100%
+        ); */
+        }
+        background: ${props => props.theme.gradient.primary};
+        border-color: transparent;
+        color: white;
+      `) ||
+    css`
+      &:hover {
+        background: ${props => props.theme.primary[200]};
+      }
+    `}
 
-  ${props => (props.group && css`
-    margin: 2px 0;
-    border-radius: 0;
-    margin-left: -1px;
-    padding: 5px 10px;
-  `)}
+  ${props =>
+    props.group &&
+    css`
+      margin: 2px 0;
+      border-radius: 0;
+      margin-left: -1px;
+      padding: 5px 10px;
+    `}
 
-  ${props => (props.small && css`
-    padding: 5px 10px;
-    margin: 2px;
-    ${'' /* margin: 0 5px 5px; */}
-  `)}
+  ${props =>
+    props.small &&
+    css`
+      padding: 5px 10px;
+      margin: 2px;
+      ${"" /* margin: 0 5px 5px; */};
+    `}
 `;

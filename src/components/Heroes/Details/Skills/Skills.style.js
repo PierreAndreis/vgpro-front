@@ -4,13 +4,12 @@ import AssetLoader from "../../../common/AssetLoader";
 
 export const Sidebar = styled.div`
   width: 100%;
-  ${'' /* background: red; */}
+  ${"" /* background: red; */};
 `;
 
 export const Content = styled.div`
   width: 100%;
-  ${'' /* background: blue; */}
-  grid-column: 2 / 4;
+  ${"" /* background: blue; */} grid-column: 2 / 4;
   grid-row: 1 / 1;
 `;
 
@@ -21,34 +20,33 @@ export const Category = Box.extend`
   width: 100%;
   border-left: 5px solid transparent;
   cursor: pointer;
+  margin: 10px 0;
 
-  ${props => props.active && css`
-    border-left-color: ${props => props.theme.primary[300]};
-  `}
-
-  &>div {
+  ${props =>
+    props.active &&
+    css`
+      border-left-color: ${props => props.theme.primary[300]};
+    `} &>div {
     display: flex;
     justify-content: center;
     margin: 15px 0;
   }
 
-  &>section {
+  & > section {
     display: flex;
     justify-content: space-around;
     text-align: center;
     b {
       display: block;
     }
-    &>div>span {
+    & > div > span {
       font-family: ${props => props.theme.font.highlight};
       color: ${props => props.theme.text[400]};
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 400;
-      
     }
   }
-
 `;
 
 export const CategorySkills = styled(AssetLoader)`
@@ -67,8 +65,7 @@ export const CategorySkills = styled(AssetLoader)`
     color: ${props => props.theme.text[100]};
     font-family: "FontAwesome";
     font-size: 45px;
-    ${'' /* line-height: 50px; */}
-    content: "\f105"; 
+    ${"" /* line-height: 50px; */} content: "\f105";
   }
 
   &:last-of-type {
@@ -77,13 +74,14 @@ export const CategorySkills = styled(AssetLoader)`
       display: none;
     }
   }
-`
+`;
 
 // Content
 
 export const Each = Box.extend`
   width: 100%;
   padding: 15px;
+  margin: 10px 0;
   box-sizing: border-box;
   flex-direction: row;
   justify-content: center;
@@ -91,7 +89,7 @@ export const Each = Box.extend`
     flex-direction: column;
   }
 
-  &>section {
+  & > section {
     flex-grow: 1;
     display: flex;
     justify-content: space-around;
@@ -101,13 +99,12 @@ export const Each = Box.extend`
     b {
       display: block;
     }
-    &>div>span {
+    & > div > span {
       font-family: ${props => props.theme.font.highlight};
       color: ${props => props.theme.text[400]};
       font-size: 12px;
       text-transform: uppercase;
       font-weight: 400;
-      
     }
   }
 `;

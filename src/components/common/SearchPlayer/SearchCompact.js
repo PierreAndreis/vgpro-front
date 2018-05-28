@@ -11,7 +11,7 @@ const Search = styled.div`
   margin-left: auto;
   .Search-Icon {
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     color: ${props => props.theme.text[500]};
     height: 100%;
     line-height: 35px;

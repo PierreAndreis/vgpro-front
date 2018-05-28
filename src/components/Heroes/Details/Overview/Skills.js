@@ -1,5 +1,8 @@
 import React from "react";
 
+import { SkeletonWrapper } from "./../../../common/Skeleton";
+import { Rate } from "./../../../common/ColoredValues";
+
 import * as Styled from "./Skills.style";
 import Box from "../../../common/Box";
 
@@ -8,34 +11,49 @@ const Skills = ({ hero, skills }) => (
     <Styled.AbilitiesRow>
       <span>A</span>
       <Styled.AbilitiesLabel type="abilities" name={`${hero}_a`} />
-      {Array(12).fill({}).map((number, i) => (
-        <Styled.AbilityLevel key={i} active={skills[i] === "a"}>{i + 1}</Styled.AbilityLevel>
-      ))}
+      {Array(12)
+        .fill({})
+        .map((number, i) => (
+          <Styled.AbilityLevel key={i} active={skills[i] === "a"}>
+            {i + 1}
+          </Styled.AbilityLevel>
+        ))}
     </Styled.AbilitiesRow>
     <Styled.AbilitiesRow>
       <span>A</span>
       <Styled.AbilitiesLabel type="abilities" name={`${hero}_b`} />
-      {Array(12).fill({}).map((number, i) => (
-        <Styled.AbilityLevel key={i} active={skills[i] === "b"}>{i + 1}</Styled.AbilityLevel>
-      ))}
+      {Array(12)
+        .fill({})
+        .map((number, i) => (
+          <Styled.AbilityLevel key={i} active={skills[i] === "b"}>
+            {i + 1}
+          </Styled.AbilityLevel>
+        ))}
     </Styled.AbilitiesRow>
     <Styled.AbilitiesRow>
       <span>A</span>
       <Styled.AbilitiesLabel type="abilities" name={`${hero}_c`} />
-      {Array(12).fill({}).map((number, i) => (
-        <Styled.AbilityLevel key={i} active={skills[i] === "c"}>{i + 1}</Styled.AbilityLevel>
-      ))}
+      {Array(12)
+        .fill({})
+        .map((number, i) => (
+          <Styled.AbilityLevel key={i} active={skills[i] === "c"}>
+            {i + 1}
+          </Styled.AbilityLevel>
+        ))}
     </Styled.AbilitiesRow>
   </Styled.AbilitiesGrid>
-)
+);
 
 const WinRate = ({ hero, payload }) => {
-
   let skills = [];
+  let skillsInfo;
+  let overdrive = [];
 
   if (payload) {
-    payload.skills.sort((a, b) => a.winRate < b.winRate ? 1 : -1);
-    skills = payload.skills[0].key.split(",");
+    payload.skills.sort((a, b) => (a.winRate < b.winRate ? 1 : -1));
+    skillsInfo = payload.skills[0];
+    skills = skillsInfo.key.split(",");
+    overdrive = skillsInfo.category.split("").slice(0, 2);
   }
 
   return (
@@ -43,34 +61,97 @@ const WinRate = ({ hero, payload }) => {
       <Box.title>Highest Win % Skill Order</Box.title>
       <Box.body>
         <Skills skills={skills} hero={hero} />
+        <Styled.Stats>
+          <div>
+            <b style={{ display: "flex" }}>
+              {overdrive.map(name => (
+                <Styled.AbilitiesLabel
+                  type="abilities"
+                  name={`${hero}_${name}`}
+                  key={name}
+                />
+              ))}
+            </b>
+            <span> Overdrive </span>
+          </div>
+          <div>
+            <b>
+              <SkeletonWrapper>
+                {() => <Rate rate={skillsInfo.winRate} />}
+              </SkeletonWrapper>
+            </b>
+            <span>Win Rate</span>
+          </div>
+          <div>
+            <b>
+              <SkeletonWrapper>
+                {() => <Rate rate={skillsInfo.pickRate} />}
+              </SkeletonWrapper>
+            </b>
+            <span>Pick Rate</span>
+          </div>
+        </Styled.Stats>
       </Box.body>
+      <Box.action />
     </Box.wrap>
   );
 };
 
 const Popular = ({ hero, payload }) => {
-
   let skills = [];
+  let skillsInfo;
+
+  let overdrive = [];
 
   if (payload) {
-    payload.skills.sort((a, b) => a.pickRate < b.pickRate ? 1 : -1);
-
-  console.log(payload.skills[0]);
-    skills = payload.skills[0].key.split(",");
+    payload.skills.sort((a, b) => (a.pickRate < b.pickRate ? 1 : -1));
+    skillsInfo = payload.skills[0];
+    skills = skillsInfo.key.split(",");
+    overdrive = skillsInfo.category.split("").slice(0, 2);
   }
-
 
   return (
     <Box.wrap>
       <Box.title>Most Frequent Skill Order</Box.title>
       <Box.body>
         <Skills skills={skills} hero={hero} />
+        <Styled.Stats>
+          <div>
+            <b style={{ display: "flex" }}>
+              {overdrive.map(name => (
+                <Styled.AbilitiesLabel
+                  type="abilities"
+                  name={`${hero}_${name}`}
+                  key={name}
+                />
+              ))}
+            </b>
+            <span> Overdrive </span>
+          </div>
+          <div>
+            <b>
+              <SkeletonWrapper>
+                {() => <Rate rate={skillsInfo.winRate} />}
+              </SkeletonWrapper>
+            </b>
+            <span>Win Rate</span>
+          </div>
+          <div>
+            <b>
+              <SkeletonWrapper>
+                {() => <Rate rate={skillsInfo.pickRate} />}
+              </SkeletonWrapper>
+            </b>
+            <span>Pick Rate</span>
+          </div>
+        </Styled.Stats>
       </Box.body>
+      <Box.action />
     </Box.wrap>
   );
 };
 
 export default {
   Popular,
-  WinRate
-}
+  WinRate,
+};

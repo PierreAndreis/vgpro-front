@@ -188,7 +188,7 @@ const MatchStats = ({ payload, status, me, t }) => {
             }
             return (
               <Styled.Gold>
-                <div>{Utils.minifyNumber(me.gold)}</div>
+                <div>{me.gold.toLocaleString()}</div>
                 (<Rate rate={me.goldShare} /> {t("terms.share")})
               </Styled.Gold>
             );

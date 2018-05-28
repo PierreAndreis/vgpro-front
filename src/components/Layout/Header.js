@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   text-align: center;
   background: ${props => props.theme.background.box};
   position: relative;
-  z-index: 4;
+  ${"" /* z-index: 4; */};
   display: flex;
   box-shadow: 0 4px 2px -2px ${props => props.theme.shadow};
 `;

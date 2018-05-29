@@ -67,6 +67,10 @@ export default {
   "terms.banrate": "Ban Rate",
   "terms.winrate": "Win Rate",
 
+  "terms.crystal": "Crystal",
+  "terms.weapon": "Weapon",
+  "terms.utility": "Utility",
+
   "terms.All": "All", // All Region
 
   "terms.Top": "Top {{term}}", // Top Win Rate, Top Pick Rate, Top Ban Rate, Top 4

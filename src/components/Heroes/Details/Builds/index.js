@@ -63,24 +63,63 @@ const Build = ({ info }) => {
 };
 
 export default class Builds extends React.Component {
+  state = {
+    sort: "winRate",
+    filter: "All",
+  };
+
+  changeSort = value => () => {
+    this.setState({
+      sort: value,
+    });
+  };
+
+  changeFilter = value => () => {
+    this.setState({
+      filter: value,
+    });
+  };
+
   render() {
     let payload = this.props.payload;
+    let { sort } = this.state;
 
     if (!payload) return <div>Loading</div>;
+
+    let builds;
+
+    if (payload) {
+      builds = payload.builds;
+      builds.sort((a, b) => (a[sort] > b[sort] ? -1 : 1));
+    }
 
     return (
       <React.Fragment>
         <Styled.Sidebar>
           <div style={{ marginBottom: 5 }}>
             <h3>Sort by</h3>
-            <Button>Win Rate</Button>
-            <Button>Pick Rate</Button>
+            {["winRate", "pickRate"].map(type => (
+              <Button
+                group
+                key={type}
+                onClick={this.changeSort(type)}
+                active={this.state.sort === type}
+              >
+                <Trans i18nKey={`terms.${type.toLowerCase()}`} />
+              </Button>
+            ))}
 
-            <h3>Filter by</h3>
-            <Button>Crystal</Button>
-            <Button>Weapon</Button>
-
-            <Button>Utility</Button>
+            {/* <h3>Filter by</h3>
+            {["All", "crystal", "weapon", "utility"].map(type => (
+              <Button
+                group
+                key={type}
+                onClick={this.changeFilter(type)}
+                active={this.state.filter === type}
+              >
+                <Trans i18nKey={`terms.${type}`} />
+              </Button>
+            ))} */}
           </div>
 
           <Box.wrap>
@@ -122,9 +161,7 @@ export default class Builds extends React.Component {
           </Box.wrap>
         </Styled.Sidebar>
         <Styled.Content>
-          {payload.builds.map(build => (
-            <Build info={build} key={build.key} />
-          ))}
+          {builds.map(build => <Build info={build} key={build.key} />)}
         </Styled.Content>
       </React.Fragment>
     );

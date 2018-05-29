@@ -6,6 +6,18 @@ export const Sidebar = styled.div`
   width: 100%;
   font-size: 13px;
   color: ${props => props.theme.text[400]};
+
+  & > div:first-of-type {
+    padding: 10px;
+  }
+
+  h3 {
+    margin: 10px 5px;
+    padding: 3px 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: ${props => props.theme.text[400]};
+  }
 `;
 
 export const Content = styled.div`

@@ -149,7 +149,6 @@ const Popular = withModal(({ payload, heroName, openModal }) => {
           </Styled.Description>
         </div>
       </Box.body>
-      <Box.action />
     </Box.wrap>
   );
 });
@@ -211,7 +210,6 @@ const WinRate = withModal(({ payload, openModal }) => {
           </Styled.Description>
         </div>
       </Box.body>
-      <Box.action />
     </Box.wrap>
   );
 });

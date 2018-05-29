@@ -2,6 +2,8 @@ import React from "react";
 import Helmet from "react-helmet";
 import _forEach from "lodash/forEach";
 
+import { Adsense } from "./../common/Ads";
+
 import { Trans, translate } from "react-i18next";
 
 import { BoxButton } from "./../common/Box";
@@ -21,6 +23,8 @@ import * as Styled from "./Leaderboard.style";
 import Button from "./../common/Button";
 
 const PER_PAGE = 10;
+
+const AD_EVERY = 9;
 
 // Small helper to modify a certain page easily without changing statw
 const modifyPage = (page, newState) => prevState => {
@@ -172,6 +176,7 @@ class Leaderboard extends React.Component {
       );
     else {
       let key = 0;
+      let adCount = 0;
       _forEach(pages, (page, pageIndex, lol) => {
         page.payload.forEach(each => {
           content.push(
@@ -185,6 +190,16 @@ class Leaderboard extends React.Component {
               mode={this.state.mode.value}
             />
           );
+          if (++adCount % AD_EVERY === 0) {
+            content.push(
+              <div
+                key={`Adsense-Key-${adCount}`}
+                style={{ width: "100%", height: "120px", flex: 1 }}
+              >
+                <Adsense />
+              </div>
+            );
+          }
         });
       });
     }
@@ -256,7 +271,7 @@ class Leaderboard extends React.Component {
               </form>
             </Styled.InputCategory>
           </Styled.Filter>
-
+          <Adsense />
           <Styled.Content>{content}</Styled.Content>
           <Styled.Buttons>
             {!isPlayer ? (

@@ -8,6 +8,7 @@ import { SkeletonWrapper, SkeletonPayload } from "./../common/Skeleton";
 import { fetchTopHeroes } from "../../actions/api";
 import Button from "./../common/Button";
 import Utils from "./../../utils";
+import { Adsense } from "../common/Ads";
 
 const ITEM_PER_PAGE = 30;
 
@@ -62,7 +63,7 @@ const Hero = ({ status, position, payload }) => (
 
       <Styled.Stats>
         <SkeletonWrapper status={status} width={40} height={20}>
-          {() => payload.pickRate + "%"}
+          {() => payload.pickRate.toFixed(2) + "%"}
         </SkeletonWrapper>
         <Subtitles.Consumer>
           {value => (
@@ -75,7 +76,7 @@ const Hero = ({ status, position, payload }) => (
 
       <Styled.Stats>
         <SkeletonWrapper status={status} width={40} height={20}>
-          {() => payload.winRate + "%"}
+          {() => payload.winRate.toFixed(2) + "%"}
         </SkeletonWrapper>
         <Subtitles.Consumer>
           {value => (
@@ -88,7 +89,7 @@ const Hero = ({ status, position, payload }) => (
 
       <Styled.Stats>
         <SkeletonWrapper status={status} width={40} height={20}>
-          {() => payload.banRate + "%"}
+          {() => payload.banRate.toFixed(2) + "%"}
         </SkeletonWrapper>
         <Subtitles.Consumer>
           {value => (
@@ -219,6 +220,8 @@ class Heroes extends React.Component {
             Jungler
           </Button>
         </div>
+
+        <Adsense />
 
         <Styled.Header innerRef={this.props.headerRef}>
           <Styled.Info />

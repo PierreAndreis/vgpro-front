@@ -104,7 +104,7 @@ const MatchInfo = ({ payload, me, status, t }) => {
           {() =>
             t(
               `gamemode.${payload.gameMode
-                .replace(/\ /g, "")
+                .replace(/ /g, "")
                 .toLowerCase()}`
             )
           }

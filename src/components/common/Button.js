@@ -13,6 +13,7 @@ export default styled.button`
   font-size: 11px;
   text-transform: uppercase;
   font-weight: bold;
+  outline: 0;
 
   ${props =>
     typeof props.onClick === "function" &&
@@ -23,16 +24,10 @@ export default styled.button`
   ${props =>
     (props.active &&
       css`
-        ${
-          "" /* background: linear-gradient(
-          -90deg,
-          rgb(230, 202, 121) 0%,
-          rgb(238, 178, 130) 100%
-        ); */
-        }
         background: ${props => props.theme.gradient.primary};
         border-color: transparent;
         color: white;
+        text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
       `) ||
     css`
       &:hover {

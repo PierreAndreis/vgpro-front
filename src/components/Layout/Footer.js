@@ -74,20 +74,33 @@ class Footer extends React.PureComponent {
             <p>{t("footer.copy")}</p>
             <p>
               Made by{" "}
-              <a href="https://twitter.com/@4ever_vg" target="_blank">
+              <a
+                href="https://twitter.com/@4ever_vg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Pierre Ortega
               </a>,{" "}
-              <a href="https://twitter.com/AngeloCant1" target="_blank">
+              <a
+                href="https://twitter.com/AngeloCant1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 AngeloCant1
               </a>{" "}
               and{" "}
               <a
                 href="https://twitter.com/IGNSkillz4Killz"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Skillz4Killz
               </a>.<br /> Algorithms by{" "}
-              <a href="https://twitter.com/vyzeox" target="_blank">
+              <a
+                href="https://twitter.com/vyzeox"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Vyzeox
               </a>
             </p>

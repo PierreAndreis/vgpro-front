@@ -8,7 +8,7 @@ import {
   SkeletonWrapper,
 } from "../../../common/Skeleton";
 
-let TOTAL_COUNTERS = 6;
+let TOTAL_COUNTERS = 5;
 
 const Hero = ({ payload, rank }) => (
   <Link to={payload.key ? `/heroes/${payload.key}` : "/heroes"}>
@@ -60,7 +60,10 @@ const Counter = ({ payload }) => {
           ))}
         </Styled.List>
       </Box.body>
-      <Box.action />
+      <Box.action>
+        <Box.button>Back</Box.button>
+        <Box.button>Next</Box.button>
+      </Box.action>
     </Box.wrap>
   );
 };

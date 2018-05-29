@@ -101,7 +101,6 @@ const WinRate = ({ hero, payload }) => {
           </div>
         </Styled.Stats>
       </Box.body>
-      <Box.action />
     </Box.wrap>
   );
 };
@@ -162,7 +161,6 @@ const Popular = ({ hero, payload }) => {
           </div>
         </Styled.Stats>
       </Box.body>
-      <Box.action />
     </Box.wrap>
   );
 };

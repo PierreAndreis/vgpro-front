@@ -10,7 +10,7 @@ export default {
     "general.Reset": "Redémarrer",
 
     "footer.copy":
-        "VGPROgg n'est pas affilié ou fait partie de Super Evil Megacorp.\" Tous les droits d'auteur et les arts originaux de Vainglory sont la propriété de Super Evil Megacorp.",
+        "VGPROgg n'est pas affilié ou fait partie de Super Evil Megacorp. Tous les droits d'auteur et les arts originaux de Vainglory sont la propriété de Super Evil Megacorp.",
 
     "feature.ProHistory": "",
     "feature.Leaderboard": "",

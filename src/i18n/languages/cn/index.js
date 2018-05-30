@@ -10,7 +10,7 @@ export default {
     "general.Reset": "重启",
 
     "footer.copy":
-        "VGPROgg不隶属于SuperEvilMegaCorp或属于SuperEvilMegaCorp的一部分。所有虚荣的版权和艺术资产属于SuperEvilMegaCorp",
+        "VGPROgg不隶属于Super Evil MegaCorp或属于Super Evil MegaCorp的一部分。所有虚荣的版权和艺术资产属于Super Evil MegaCorp",
 
     "feature.ProHistory": "专业史",
     "feature.Leaderboard": "排行榜",

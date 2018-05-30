@@ -22,7 +22,7 @@ export default {
     "terms.Search": "Rechercher",
 
     "terms.AVG": "Moyenne",
-    "terms.KDA": "Moyenne Kill/Mort",
+    "terms.KDA": "Kill/Mort/Assists",
     "terms.MVP": "Meilleur Joueur",
     "terms.Win": "Victoire",
     "terms.Loss": "Défaite",
@@ -101,5 +101,5 @@ export default {
     "profile.PlayerOf": "Joueur de",
     "profile.Roles": "Rôles",
 
-    "search.placeholder": "Rechercher un joueu",
+    "search.placeholder": "Rechercher un joueur",
 };

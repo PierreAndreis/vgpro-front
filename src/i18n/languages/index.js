@@ -19,9 +19,9 @@ langs['en'] = en;
 // import ir from "./ir";
 // langs['ir'] = ir;
 
-// /** Spanish */
-// import es from "./es";
-// langs['es'] = es;
+/** Spanish */
+import es from "./es";
+langs['es'] = es;
 
 // /** Portuguese */
 // import br from "./br";
@@ -39,9 +39,9 @@ langs['en'] = en;
 // import id from "./id";
 // langs['id'] = id;
 
-// /** French */
-// import fr from "./fr";
-// langs['fr'] = fr;
+/** French */
+import fr from "./fr";
+langs['fr'] = fr;
 
 // /** Korean */
 // import kr from "./kr";
@@ -51,9 +51,9 @@ langs['en'] = en;
 // import ph from "./ph";
 // langs['ph'] = ph;
 
-// /** Chinese */
-// import cn from "./cn";
-// langs['cn'] = cn;
+/** Chinese */
+import cn from "./cn";
+langs['cn'] = cn;
 
 // /** Russian */
 // import ru from "./ru";
@@ -66,6 +66,10 @@ langs['en'] = en;
 // /** Malasyan */
 // import my from "./my";
 // langs['my'] = my;
+
+/** Arabic */
+import ar from "./ar";
+langs['ar'] = ar;
 
 let res = {};
 

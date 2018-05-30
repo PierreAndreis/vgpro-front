@@ -18,7 +18,7 @@ export default {
     "feature.Heroes": "الأبطال",
 
     "terms.GameMode": "نوع اللعبة",
-    "terms.Region": "منطقة",
+    "terms.Region": "المنطقة",
     "terms.Search": "بحث",
 
     "terms.AVG": "المعدل",
@@ -71,7 +71,7 @@ export default {
     "terms.weapon": "أسلحة",
     "terms.utility": "خدمة",
 
-    "terms.All": "جميع المناطق", // All Region
+    "terms.All": "جميع", // All Region
 
     "terms.Top": "معدل {{term}}", // Top Win Rate, Top Pick Rate, Top Ban Rate, Top 4
     "terms.Points": "النقاط",

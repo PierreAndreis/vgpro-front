@@ -63,8 +63,8 @@ export default {
     "terms.Favorites": "Favorits",
     "terms.RecentSearches": "Recherches Recentes",
 
-    "terms.pickrate": "Taux des choix",
-    "terms.banrate": "Taux des Bans",
+    "terms.pickrate": "Taux de choix",
+    "terms.banrate": "Taux de Bans",
     "terms.winrate": "Taux de victoire",
 
     "terms.crystal": "Cristal",

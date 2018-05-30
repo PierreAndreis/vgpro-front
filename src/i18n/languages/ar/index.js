@@ -63,9 +63,9 @@ export default {
     "terms.Favorites": "المفضلة",
     "terms.RecentSearches": "البحث",
 
-    "terms.pickrate": "معدل الاختيار",
-    "terms.banrate": "معدل الحظر",
-    "terms.winrate": "معدل الفوز",
+    "terms.pickrate": "الاختيار",
+    "terms.banrate": "الحظر",
+    "terms.winrate": "الفوز",
 
     "terms.crystal": "كريستال",
     "terms.weapon": "أسلحة",

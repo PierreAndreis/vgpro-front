@@ -99,6 +99,8 @@ export default {
   "gamemode.blitz": "Blitz",
   "gamemode.ranked": "Ranked 3v3",
   "gamemode.ranked5v5": "Ranked 5v5",
+  "gamemode.casual": "Casual 3v3",
+  "gamemode.casual5v5": "Casual 5v5",
   "gamemode.private": "Private 3v3",
   "gamemode.private5v5": "Private 5v5",
   "gamemode.privateranked": "Private Draft",

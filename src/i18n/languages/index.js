@@ -7,6 +7,10 @@ let langs = {};
 import en from "./en";
 langs['en'] = en;
 
+/** Dutch */
+import du from "./du";
+langs['du'] = du;
+
 // /** Japanese */
 // import jp from "./jp";
 // langs['jp'] = jp;

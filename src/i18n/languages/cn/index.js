@@ -107,7 +107,7 @@ export default {
 
     "tab.Overview": "總覽",
     "tab.Abilities": "能力",
-    "tab.Builds": "出裝",
+    "tab.Builds": "裝備組",
     "tab.Heroes": "英雄",
 
     "terms.OverallStats": "整體表現",
@@ -123,9 +123,9 @@ export default {
 
     "heroes.mostPlayedAs": "最常遊玩",
     "heroes.highestWinSkill": "最高技能升級次序勝率",
-    "heroes.mostFrequentSkill": "最常技能升級次序",
-    "heroes.mostFrequentBuild": "最常出裝",
-    "heroes.highestWinBuild": "最高出裝勝率",
+    "heroes.mostFrequentSkill": "最常用技能升級次序",
+    "heroes.mostFrequentBuild": "最常使用裝備組",
+    "heroes.highestWinBuild": "最高勝率的裝備組",
     "heroes.winRateByPatch": "版本勝率",
     "heroes.banRateByPatch": "版本禁用率",
     "heroes.pickRateByPatch": "版本使用率",

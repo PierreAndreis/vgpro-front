@@ -63,9 +63,9 @@ langs['cn'] = cn;
 // import ru from "./ru";
 // langs['ru'] = ru;
 
-// /** Romanian */
-// import ro from "./ro";
-// langs['ro'] = ro;
+/** Romanian */
+import ro from "./ro";
+langs['ro'] = ro;
 
 // /** Malasyan */
 // import my from "./my";

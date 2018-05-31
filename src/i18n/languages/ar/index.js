@@ -87,19 +87,19 @@ export default {
     "gamemode.privateblitz": "Private Blitz",
     "gamemode.privatebattleRoyale": "Private Battle Royale",
 
-    "tab.Overview": "",
-    "tab.Builds": "",
+    "tab.Overview": "نظرة عامة",
+    "tab.Builds": "البناء",
 
-    "terms.OverallStats": "",
-    "terms.OverviewStats": "",
+    "terms.OverallStats": "احصائيات",
+    "terms.OverviewStats": "احصائيات",
 
-    "profile.notFound": "{{name}} was not found.",
+    "profile.notFound": "{{name}} لا يمكن العثور على {{الاسم",
     "profile.foundButNoMatches":
-        "{{name}} was found but hasn't played a match in a while",
-    "profile.PlayedWith": "",
-    "profile.Heroes": "",
+        "{{name}} تم العثور على {{الاسم}} لكنه لم يلعب منذ فترة",
+    "profile.PlayedWith": "لعب مع",
+    "profile.Heroes": "الأبطال",
     "profile.PlayerOf": "",
-    "profile.Roles": "",
+    "profile.Roles": "الأدوار",
 
-    "search.placeholder": "",
+    "search.placeholder": "البحث عن اسم اللاعب",
 };

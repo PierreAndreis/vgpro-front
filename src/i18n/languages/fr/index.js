@@ -86,7 +86,7 @@ export default {
     "terms.op": "OP",
     "terms.bad": "Mauvais",
 
-    "terms.type": "Categorie",
+    "terms.type": "Catégorie",
     "terms.Average": "Average",
     "terms.Placement": "Placement",
 
@@ -109,7 +109,7 @@ export default {
     "gamemode.privatebattleRoyale": "Privé Battle Royale",
 
     "tab.Overview": "Vue globale",
-    "tab.Abilities": "Les pouvoirs",
+    "tab.Abilities": "les capacités",
     "tab.Builds": "Composition",
     "tab.Heroes": "Héros",
 
@@ -125,8 +125,8 @@ export default {
     "profile.Roles": "Rôles",
 
     "heroes.mostPlayedAs": "Plus joué avec",
-    "heroes.highestWinSkill": "Les skill order avec les meilleur taux de réussite",
-    "heroes.mostFrequentSkill": "Les skills order les plus frequent",
+    "heroes.highestWinSkill": "les compétences avec le plus de victoires",
+    "heroes.mostFrequentSkill": " les compétences les plus utilisés",
     "heroes.mostFrequentBuild": "Le build le plus frequent",
     "heroes.highestWinBuild": "Le build avec les meilleur taux de reussite",
     "heroes.winRateByPatch": "Taux de réussite par patch",
@@ -140,7 +140,7 @@ export default {
     "heroes.winRateByGameLength": "Taux de réussite par durée de jeu",
 
     "heroes.playingAgainst": "Entrain de jouer contre",
-    "heroes.playingWith": "Entrain de jouer avec",
+    "heroes.playingWith": "En Train de jouer avec",
 
     "search.placeholder": "Rechercher le nom d'un joueur",
     "filters.role": "trier par role",

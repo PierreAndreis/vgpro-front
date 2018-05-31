@@ -133,9 +133,15 @@ export default {
     "heroes.winRateByTime": "整體勝率",
     "heroes.banRateByTime": "整體禁用率",
     "heroes.pickRateByTime": "整體使用率",
+
     "heroes.winRateByGameLength": "遊戲長度勝率",
+
     "heroes.playingAgainst": "遊玩面對",
     "heroes.playingWith": "與｛heroes｝遊玩",
+
     "search.placeholder": "搜尋玩家名字",
+
     "filters.role": "以崗位篩選",
+
+    situationalItem: "選擇性裝備",
 };

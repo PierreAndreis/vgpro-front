@@ -39,9 +39,9 @@ langs['br'] = br;
 // import it from "./it";
 // langs['it'] = it;
 
-// /** Indonesian */
-// import id from "./id";
-// langs['id'] = id;
+/** Indonesian */
+import id from "./id";
+langs['id'] = id;
 
 /** French */
 import fr from "./fr";

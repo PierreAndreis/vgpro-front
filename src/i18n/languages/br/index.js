@@ -2,15 +2,14 @@ export default {
     "general.errorMessageDefault": "Desculpe, ocorreu um erro!",
     "general.lastUpdated": "Ultima atualização:",
     "general.tryAgain": "Por favor, tente novamente mais tarde.",
-    "general.noMatches": "",
-    "general.Next": "Próximo",
+    "general.noMatches": "Nenhuma Partida Encontrada",    "general.Next": "Próximo",
     "general.Back": "Voltar",
     "general.More": "Mais",
     "general.ViewMore": "Vizualizar Mais",
     "general.ViewLess": "Vizualizar Menos",
     "general.Reset": "Restabelecer",
 
-    "general.sortBy": "",
+    "general.sortBy": "Ordenar por",
 
     "footer.copy":
         "VGPROgg não é afiliado ou parte de Super Evil Megacorp. Todos os direitos autorais e objetos de arte de Vainglory pertencem à Super Evil Megacorp.",
@@ -24,9 +23,9 @@ export default {
     "terms.Region": "Região",
     "terms.Search": "Busca",
 
-    "terms.average": "",
-    "terms.placement": "",
-    "terms.name": "",
+    "terms.average": "Média",
+    "terms.placement": "Colocação",
+    "terms.name": "Nome",
 
     "terms.AVG": "AVG",
     "terms.KDA": "KDA",
@@ -79,16 +78,16 @@ export default {
     "terms.utility": "Utilitário",
 
     "terms.carry": "Carry",
-    "terms.captain": "Captain",
+    "terms.captain": "Capitão",
     "terms.jungler": "Jungler",
 
-    "terms.tier": "Tier {{tier}}",
+    "terms.tier": "Nível {{tier}}",
     "terms.op": "OP",
-    "terms.bad": "Bad",
+    "terms.bad": "Mau",
 
-    "terms.type": "Type",
-    "terms.Average": "Average",
-    "terms.Placement": "Placement",
+    "terms.type": "Tipo",
+    "terms.Average": "Média",
+    "terms.Placement": "Colocação",
 
     "terms.All": "Todos", // All Region
 
@@ -99,8 +98,8 @@ export default {
     "gamemode.blitz": "Blitz",
     "gamemode.ranked": "Classificação 3v3",
     "gamemode.ranked5v5": "Classificação 5v5",
-    "gamemode.casual": "",
-    "gamemode.casual5v5": "",
+    "gamemode.casual": "Casual 3v3",
+    "gamemode.casual5v5": "Casual 5v5",
     "gamemode.private": "Privada 3v3",
     "gamemode.private5v5": "Privada 5v5",
     "gamemode.privateranked": "Privada Draft",
@@ -109,9 +108,9 @@ export default {
     "gamemode.privatebattleRoyale": "Privada Batalha Real",
 
     "tab.Overview": "Visão Geral",
-    "tab.Abilities": "Abilities",
+    "tab.Abilities": "Habilidades",
     "tab.Builds": "Builds",
-    "tab.Heroes": "Heroes",
+    "tab.Heroes": "Heróis",
 
     "terms.OverallStats": "Estatísticas gerais",
     "terms.OverviewStats": "Visão geral Estatísticas",
@@ -124,28 +123,28 @@ export default {
     "profile.PlayerOf": "Jogador De",
     "profile.Roles": "Papéis",
 
-    "heroes.mostPlayedAs": "",
-    "heroes.highestWinSkill": "",
-    "heroes.mostFrequentSkill": "",
-    "heroes.mostFrequentBuild": "",
-    "heroes.highestWinBuild": "",
-    "heroes.winRateByPatch": "",
-    "heroes.banRateByPatch": "",
-    "heroes.pickRateByPatch": "",
+    "heroes.mostPlayedAs": "Mais jogado como",
+    "heroes.highestWinSkill": "Maior ordem de habilidade de % de ganhos",
+    "heroes.mostFrequentSkill": "Ordem de habilidade mais frequente",
+    "heroes.mostFrequentBuild": "Compilação mais frequente",
+    "heroes.highestWinBuild": "Maior ganho de% Build",
+    "heroes.winRateByPatch": "Taxa de Vitória por Patch",
+    "heroes.banRateByPatch": "Taxa de banimento por patch",
+    "heroes.pickRateByPatch": "Taxa de Escolha por Patch",
 
-    "heroes.winRateByTime": "",
-    "heroes.banRateByTime": "",
-    "heroes.pickRateByTime": "",
+    "heroes.winRateByTime": "Taxa de Ganhos ao Longo do Tempo",
+    "heroes.banRateByTime": "Taxa de Banimento ao Longo do Tempo",
+    "heroes.pickRateByTime": "Taxa de Escolha ao Longo do Tempo",
 
-    "heroes.winRateByGameLength": "",
+    "heroes.winRateByGameLength": "Taxa de Vitória por Comprimento do Jogo",
 
-    "heroes.playingAgainst": "",
-    "heroes.playingWith": "",
+    "heroes.playingAgainst": "Jogando contra",
+    "heroes.playingWith": "Jogando com",
 
     "search.placeholder": "Pesquisar nome do jogador",
 
-    "filters.role": "",
+    "filters.role": "Filtrar por papel",
 
-    situationalItemTitle: "",
-    situationalItem: ``,
+    situationalItemTitle: "Itens situacionais",
+    SituationalItem: `<0> Os itens de Defesa e Botas podem ser substituídos por itens" Situacionais ". <2><0></0> significa "Item de Defesa Situacional". Pode ser <3></3>, <6></6>, <9></9> ou <12></12></2><3></3><4><0></0> significa "Item de Botas Situacionais". Pode ser <3></3>,<6></6> ou <9></9></4><5></5><6> Para encontrar as melhores compilações, nós agrupamos builds com os mesmos itens centrais e diferentes itens situacionais, como botas ou defesa. Uma vez que estes grupos são feitos, nós executamos algoritmos para descobrir se existe alguma compilação em cada grupo que seja 80% mais relevante que os outros. </6><7></7><8> Se não houver, nós sinalizamos o item de defesa / botas como "situacional" e agrega suas estatísticas em um. Caso contrário, nós os manteremos como se fossem deles. </8> </0>`,
 };

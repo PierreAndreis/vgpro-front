@@ -102,4 +102,7 @@ export default {
     "profile.Roles": "الأدوار",
 
     "search.placeholder": "البحث عن اسم اللاعب",
+
+    situationalItemTitle: "قطع تتعلق بالموقف",
+    situationalItem: ``
 };

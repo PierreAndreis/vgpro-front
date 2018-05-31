@@ -27,9 +27,9 @@ langs['du'] = du;
 import es from "./es";
 langs['es'] = es;
 
-// /** Portuguese */
-// import br from "./br";
-// langs['br'] = br;
+/** Portuguese */
+import br from "./br";
+langs['br'] = br;
 
 // /** German */
 // import de from "./de";

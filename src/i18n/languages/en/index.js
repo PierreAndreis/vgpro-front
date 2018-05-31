@@ -2,12 +2,15 @@ export default {
   "general.errorMessageDefault": "Sorry, an error has occured!",
   "general.lastUpdated": "Last Updated:",
   "general.tryAgain": "Please try again later.",
+  "general.noMatches": "No matches found",
   "general.Next": "Next",
   "general.Back": "Back",
   "general.More": "More",
   "general.ViewMore": "View More",
   "general.ViewLess": "View Less",
   "general.Reset": "Reset",
+
+  "general.sortBy": "Sort By",
 
   "footer.copy":
     "VGPROgg is not affiliated or part of Super Evil Megacorp. All Vainglory copyrights and art assets belong to Super Evil Megacorp.",
@@ -20,6 +23,10 @@ export default {
   "terms.GameMode": "Game Mode",
   "terms.Region": "Region",
   "terms.Search": "Search",
+
+  "terms.average": "Average",
+  "terms.placement": "Placement",
+  "terms.name": "Name",
 
   "terms.AVG": "AVG",
   "terms.KDA": "KDA",
@@ -71,6 +78,18 @@ export default {
   "terms.weapon": "Weapon",
   "terms.utility": "Utility",
 
+  "terms.carry": "Carry",
+  "terms.captain": "Captain",
+  "terms.jungler": "Jungler",
+
+  "terms.tier": "Tier {{tier}}",
+  "terms.op": "OP",
+  "terms.bad": "Bad",
+
+  "terms.type": "Type",
+  "terms.Average": "Average",
+  "terms.Placement": "Placement",
+
   "terms.All": "All", // All Region
 
   "terms.Top": "Top {{term}}", // Top Win Rate, Top Pick Rate, Top Ban Rate, Top 4
@@ -88,7 +107,9 @@ export default {
   "gamemode.privatebattleRoyale": "Private Battle Royale",
 
   "tab.Overview": "Overview",
+  "tab.Abilities": "Abilities",
   "tab.Builds": "Builds",
+  "tab.Heroes": "Heroes",
 
   "terms.OverallStats": "Overall Stats",
   "terms.OverviewStats": "Overview Stats",
@@ -101,5 +122,28 @@ export default {
   "profile.PlayerOf": "Player Of",
   "profile.Roles": "Roles",
 
+  "heroes.mostPlayedAs": "Most Played as",
+  "heroes.highestWinSkill": "Highest Win % Skill Order",
+  "heroes.mostFrequentSkill": "Most Frequent Skill Order",
+  "heroes.mostFrequentBuild": "Most Frequent Build",
+  "heroes.highestWinBuild": "Highest Win % Build",
+  "heroes.winRateByPatch": "Win Rate By Patch",
+  "heroes.banRateByPatch": "Ban Rate By Patch",
+  "heroes.pickRateByPatch": "Pick Rate By Patch",
+
+  "heroes.winRateByTime": "Win Rate Over Time",
+  "heroes.banRateByTime": "Ban Rate Over Time",
+  "heroes.pickRateByTime": "Pick Rate Over Time",
+
+  "heroes.winRateByGameLength": "Win Rate By Game Length",
+
+  "heroes.playingAgainst": "Playing Against",
+  "heroes.playingWith": "Playing With",
+
   "search.placeholder": "Search Player Name",
+
+  "filters.role": "Filter by Role",
+
+  situationalItemTitle: "Situational Items",
+  situationalItem: `<0>Defense and Boots items can be replaced by "Situational" items. <2><0></0> means "Situational Defense Item". It can be either <3></3>, <6></6>, <9></9> or <12></12></2><3></3><4><0></0> means "Situational Boots Item". It can be either <3></3>, <6></6>, or <9></9></4><5></5><6>In order to find the best builds, we group builds with the same core items and different situational items like boots or defense. Once these groups are made, we run algorithms to find if there is any build on each group that is 80% more relevant than the others.</6><7></7><8> If there is not, we flag the defense/boots item as "situational" and aggregate their stats in one. Otherwise we keep them as their own.</8></0>`,
 };

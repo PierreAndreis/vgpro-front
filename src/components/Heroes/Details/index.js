@@ -1,5 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
+import { Trans } from "react-i18next";
 import { Link } from "react-router-dom";
 
 import Button from "./../../common/Button";
@@ -59,6 +60,8 @@ class HeroDetails extends React.Component {
   }
 
   render() {
+    const t = this.props.t;
+
     let heroName = this.state.heroName;
     let tab = this.props.match.params.tab;
 
@@ -70,14 +73,19 @@ class HeroDetails extends React.Component {
       topRoles = payload.roles
         .sort((a, b) => (a.pickRate > b.pickRate ? -1 : 1))
         .filter(role => role.pickRate > 33)
-        .map(role => `${role.key} (${role.pickRate.toFixed(0)}%)`)
+        .map(
+          role =>
+            `${t(
+              `terms.${role.key.toLowerCase()}`
+            )} (${role.pickRate.toFixed(0)}%)`
+        )
         .join(", ");
     }
 
     let element =
       {
         overview: Overview,
-        skills: Skills,
+        abilities: Skills,
         builds: Builds,
       }[tab] || Overview;
 
@@ -101,7 +109,11 @@ class HeroDetails extends React.Component {
               <h1>{heroName}</h1>
               <div>
                 <SkeletonWrapper height={15}>
-                  {() => `Most played as ${topRoles}`}
+                  {() => (
+                    <React.Fragment>
+                      <Trans i18nKey="heroes.mostPlayedAs" /> {topRoles}
+                    </React.Fragment>
+                  )}
                 </SkeletonWrapper>
               </div>
             </Styled.HeroTitle>
@@ -109,16 +121,26 @@ class HeroDetails extends React.Component {
 
           <Styled.Tabs>
             <Link to={`${toLink}overview`}>
-              <Button active={tab === "overview" || !tab}>Overview</Button>
+              <Button active={tab === "overview" || !tab}>
+                <Trans i18nKey="tab.Overview" />
+              </Button>
             </Link>
-            <Link to={`${toLink}skills`}>
-              <Button active={tab === "skills"}>Skills</Button>
+            <Link to={`${toLink}abilities`}>
+              <Button active={tab === "abilities"}>
+                <Trans i18nKey="tab.Abilities" />
+              </Button>
             </Link>
             <Link to={`${toLink}builds`}>
-              <Button active={tab === "builds"}>Builds</Button>
+              <Button active={tab === "builds"}>
+                <Trans i18nKey="tab.Builds" />
+              </Button>
             </Link>
-            {/* <Link to={`${toLink}builds`}  ><Button active={tab === "builds"}>           Builds   </Button></Link>
-            <Link to={`${toLink}heroes`}  ><Button active={tab === "heroes"}>           Heroes   </Button></Link> */}
+            <Link to={`${toLink}heroes`}>
+              <Button active={tab === "heroes"}>
+                {" "}
+                <Trans i18nKey="tab.Heroes" />{" "}
+              </Button>
+            </Link>
           </Styled.Tabs>
           <Adsense />
           <Styled.Content>{content}</Styled.Content>

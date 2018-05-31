@@ -61,28 +61,6 @@ export const Interrogation = styled.div`
   font-weight: bold;
 `;
 
-export const SubtitleItem = styled(AssetLoader).attrs({
-  type: "items",
-})`
-  display: inline-block;
-  background-size: 110%;
-  background-position: center center;
-  background-color: ${props => props.theme.background.slot};
-  position: relative;
-
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-
-  ${props =>
-    props.big &&
-    css`
-      width: 20px;
-      height: 20px;
-      top: 3px;
-    `};
-`;
-
 export const Modal = styled.div`
   position: fixed;
   z-index: 5;

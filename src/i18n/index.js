@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+import i18n from "i18next";
 
 import resources from "./languages";
 
@@ -11,28 +11,28 @@ store.subscribe(() => {
   if (state && state.i18n && state.i18n.current !== i18n.language) {
     i18n.changeLanguage(state.i18n.current);
   }
-})
+});
 
-i18n
-.init({
-    // we init with resources
-    resources: resources,
-    fallbackLng: 'en',
+i18n.init({
+  debug: true,
+  // we init with resources
+  resources: resources,
+  fallbackLng: "en",
 
-    // have a common namespace used around the full app
-    ns: ['translations'],
-    defaultNS: 'translations',
+  // have a common namespace used around the full app
+  ns: ["translations"],
+  defaultNS: "translations",
 
-    keySeparator: false, // we use content as keys
+  keySeparator: false, // we use content as keys
 
-    interpolation: {
-      escapeValue: false, // not needed for react!!
-      formatSeparator: ','
-    },
+  interpolation: {
+    escapeValue: false, // not needed for react!!
+    formatSeparator: ",",
+  },
 
-    react: {
-      wait: true
-    }
-  });
+  react: {
+    wait: true,
+  },
+});
 
 export default i18n;

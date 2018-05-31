@@ -6,6 +6,7 @@ import { Rate } from "./../../../common/ColoredValues";
 
 import * as Styled from "./Builds.style";
 import Box from "../../../common/Box";
+import SituationalItemModal from "./../SituationalModal";
 
 const sort = (property, backup) => (a, b) => {
   if (a[property] === b[property]) {
@@ -36,7 +37,7 @@ const withModal = Component => {
             <div style={{ position: "relative", zIndex: 10 }}>
               <Box.wrap>
                 <Box.title>
-                  Situational Items
+                  <Trans i18nKey="situationalItemTitle" />
                   <Box.selector>
                     <i
                       className="fa fa-close"
@@ -46,42 +47,7 @@ const withModal = Component => {
                   </Box.selector>
                 </Box.title>
                 <Box.body style={{ padding: "10px" }}>
-                  <div>
-                    Defense and Boots items can be replaced by
-                    "Situational" items.{" "}
-                    <p>
-                      <Styled.SubtitleItem
-                        name="Situational Defense"
-                        big
-                      />{" "}
-                      means "Situational Defense Item". It can be either{" "}
-                      <Styled.SubtitleItem name="Aegis" />,{" "}
-                      <Styled.SubtitleItem name="Atlas Pauldron" />,{" "}
-                      <Styled.SubtitleItem name="Metal Jacket" /> or{" "}
-                      <Styled.SubtitleItem name="Slumbering Husk" />
-                    </p>
-                    <p>
-                      <Styled.SubtitleItem name="Situational Boots" big />{" "}
-                      means "Situational Boots Item". It can be either{" "}
-                      <Styled.SubtitleItem name="Journey Boots" />,{" "}
-                      <Styled.SubtitleItem name="Halcyon Chargers" />, or{" "}
-                      <Styled.SubtitleItem name="Teleport Boots" />
-                    </p>
-                    <p>
-                      In order to find the best builds, we group builds
-                      with the same core items and different situational
-                      items like boots or defense. Once these groups are
-                      made, we run algorithms to find if there is any build
-                      on each group that is 80% more relevant than the
-                      others.
-                    </p>
-                    <p>
-                      {" "}
-                      If there is not, we flag the defense/boots item as
-                      "situational" and aggregate their stats in one.
-                      Otherwise we keep them as their own.
-                    </p>
-                  </div>
+                  <SituationalItemModal />
                 </Box.body>
               </Box.wrap>
             </div>
@@ -121,7 +87,9 @@ const Popular = withModal(({ payload, heroName, openModal }) => {
 
   return (
     <Box.wrap>
-      <Box.title>Most Frequent Build</Box.title>
+      <Box.title>
+        <Trans i18nKey="heroes.mostFrequentBuild" />
+      </Box.title>
       <Box.body>
         <div style={{ display: "flex" }}>
           <Styled.Builds>{build}</Styled.Builds>
@@ -182,7 +150,9 @@ const WinRate = withModal(({ payload, openModal }) => {
 
   return (
     <Box.wrap>
-      <Box.title>Highest Win % Build</Box.title>
+      <Box.title>
+        <Trans i18nKey="heroes.highestWinBuild" />
+      </Box.title>
       <Box.body>
         <div style={{ display: "flex" }}>
           <Styled.Builds>{build}</Styled.Builds>

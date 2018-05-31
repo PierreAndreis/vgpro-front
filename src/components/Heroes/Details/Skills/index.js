@@ -1,4 +1,6 @@
 import React from "react";
+import { Trans } from "react-i18next";
+
 import Spinner from "react-spinkit";
 import Media from "react-media";
 
@@ -8,12 +10,11 @@ import { Rate } from "../../../common/ColoredValues";
 // Query to show content below skills, and not on content div
 const queryToMobile = "(max-width: 768px)";
 
-const Skill = ({hero, skill}) => {
-
+const Skill = ({ hero, skill }) => {
   let order = skill.key.split(",");
 
   // Used to detect overdrives
-  let abilitiesLevels =  {a: 0, b: 0, c: 0};
+  let abilitiesLevels = { a: 0, b: 0, c: 0 };
 
   let winRate = skill.winRate;
   let pickRate = skill.pickRate;
@@ -21,40 +22,54 @@ const Skill = ({hero, skill}) => {
   return (
     <Styled.Each>
       <Styled.SkillOrder>
-        {
-          Array(12).fill(1).map((value, index) => {
+        {Array(12)
+          .fill(1)
+          .map((value, index) => {
             let ability = order[index];
             let level = ++abilitiesLevels[ability];
             // Ult is level 3, anything else is level 5
-            let isOverdriveLevel = (ability === "c") ? level === 3 : level === 5;
+            let isOverdriveLevel =
+              ability === "c" ? level === 3 : level === 5;
             return (
               <div key={index}>
                 {index + 1}
-                <Styled.Order type="abilities" name={(isOverdriveLevel && `${hero}_${order[index]}`) || undefined}>
+                <Styled.Order
+                  type="abilities"
+                  name={
+                    (isOverdriveLevel && `${hero}_${order[index]}`) ||
+                    undefined
+                  }
+                >
                   {!isOverdriveLevel && order[index]}
                 </Styled.Order>
               </div>
             );
-          })
-        }
+          })}
       </Styled.SkillOrder>
       <section>
         <div>
-          <b><Rate rate={winRate} /></b>
-          <span>Win Rate</span>
+          <b>
+            <Rate rate={winRate} />
+          </b>
+          <span>
+            <Trans i18nKey="terms.winrate" />
+          </span>
         </div>
         <div>
-          <b><Rate rate={pickRate} /></b>
-          <span>Pick Rate</span>
+          <b>
+            <Rate rate={pickRate} />
+          </b>
+          <span>
+            <Trans i18nKey="terms.pickrate" />
+          </span>
         </div>
       </section>
     </Styled.Each>
-  )
-}
+  );
+};
 
-const ContentSkill = ({hero, skills}) => {
-
-  skills.sort((a, b) => a.pickRate > b.pickRate ? -1 : 1);
+const ContentSkill = ({ hero, skills }) => {
+  skills.sort((a, b) => (a.pickRate > b.pickRate ? -1 : 1));
 
   return (
     <React.Fragment>
@@ -62,12 +77,10 @@ const ContentSkill = ({hero, skills}) => {
         <Skill key={skill.key} hero={hero} skill={skill} />
       ))}
     </React.Fragment>
-  )
+  );
+};
 
-}
-
-const CategorySkill = ({onClick, selected, hero, category, skills}) => {
-
+const CategorySkill = ({ onClick, selected, hero, category, skills }) => {
   let skillOrder = category.key.split("");
   let winRate = category.winRate;
   let pickRate = category.pickRate;
@@ -76,38 +89,52 @@ const CategorySkill = ({onClick, selected, hero, category, skills}) => {
     <React.Fragment>
       <Styled.Category hover active={selected} onClick={onClick}>
         <div>
-        {skillOrder.map((ability, index) => (
-          <Styled.CategorySkills key={index} type="abilities" name={`${hero}_${ability}`} />
-        ))}
+          {skillOrder.map((ability, index) => (
+            <Styled.CategorySkills
+              key={index}
+              type="abilities"
+              name={`${hero}_${ability}`}
+            />
+          ))}
         </div>
         <section>
           <div>
-            <b><Rate rate={winRate} /></b>
-            <span>Win Rate</span>
+            <b>
+              <Rate rate={winRate} />
+            </b>
+            <span>
+              <Trans i18nKey="terms.winrate" />
+            </span>
           </div>
           <div>
-            <b><Rate rate={pickRate} /></b>
-            <span>Pick Rate</span>
+            <b>
+              <Rate rate={pickRate} />
+            </b>
+            <span>
+              <Trans i18nKey="terms.pickrate" />
+            </span>
           </div>
         </section>
       </Styled.Category>
       <Media query={queryToMobile}>
-        {matches => matches && selected && <ContentSkill hero={hero} skills={skills} />}
+        {matches =>
+          matches &&
+          selected && <ContentSkill hero={hero} skills={skills} />
+        }
       </Media>
     </React.Fragment>
-  )
-}
+  );
+};
 
 class Skills extends React.Component {
-
   state = {
-    category: null
-  }
+    category: null,
+  };
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.payload && !prevState.category) {
       return {
-        category: nextProps.payload.categorySkills[0]
+        category: nextProps.payload.categorySkills[0],
       };
     }
 
@@ -115,14 +142,13 @@ class Skills extends React.Component {
     return null;
   }
 
-  selectCategory = (category) => (e) => {
+  selectCategory = category => e => {
     // if (this.state.category && this.state.category.key === category.key) return;
-    this.setState((prevState) => {
-      if (prevState.category === category.key) return ({category: null})
-      return ({category});
-    })
-  }
-
+    this.setState(prevState => {
+      if (prevState.category === category.key) return { category: null };
+      return { category };
+    });
+  };
 
   render() {
     let payload = this.props.payload;
@@ -130,41 +156,55 @@ class Skills extends React.Component {
 
     if (!payload) {
       return (
-        <div style={{margin: "10% auto", gridColumn: "2 / 2"}}>
-            <Spinner name="line-spin-fade-loader" color="rgba(0, 0, 0, 0.2)" fadeIn="none"/>
+        <div style={{ margin: "10% auto", gridColumn: "2 / 2" }}>
+          <Spinner
+            name="line-spin-fade-loader"
+            color="rgba(0, 0, 0, 0.2)"
+            fadeIn="none"
+          />
         </div>
-      )
+      );
     }
 
     let currentCategory = this.state.category;
 
     let skills = payload.skills;
     let categories = payload.categorySkills;
-    let skillsSelected = skills.filter((skill) => skill.category === currentCategory.key);
+    let skillsSelected = skills.filter(
+      skill => skill.category === currentCategory.key
+    );
 
     return (
       <React.Fragment>
         <Styled.Sidebar>
-          {
-            categories.map((category, index) => (
-              <CategorySkill key={index} 
-                hero={hero}
-                selected={currentCategory && currentCategory.key === category.key}
-                skills={skills && skills.filter((skill) => skill.category === category.key)} 
-                category={category} 
-                onClick={this.selectCategory(category)}
-              />
-            ))
-          }
+          {categories.map((category, index) => (
+            <CategorySkill
+              key={index}
+              hero={hero}
+              selected={
+                currentCategory && currentCategory.key === category.key
+              }
+              skills={
+                skills &&
+                skills.filter(skill => skill.category === category.key)
+              }
+              category={category}
+              onClick={this.selectCategory(category)}
+            />
+          ))}
         </Styled.Sidebar>
 
         <Styled.Content>
-        <Media query={queryToMobile}>
-          {matches => !matches && <ContentSkill hero={hero} skills={skillsSelected} />}
-        </Media>
+          <Media query={queryToMobile}>
+            {matches =>
+              !matches && (
+                <ContentSkill hero={hero} skills={skillsSelected} />
+              )
+            }
+          </Media>
         </Styled.Content>
       </React.Fragment>
-    )
+    );
   }
 }
 

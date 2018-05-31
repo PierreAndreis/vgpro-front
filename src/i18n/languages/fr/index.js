@@ -2,12 +2,15 @@ export default {
     "general.errorMessageDefault": "Désolé, une erreur est survenue!",
     "general.lastUpdated": "Dernière mise à jour:",
     "general.tryAgain": "Veuillez réessayer plus tard.",
+    "general.noMatches": "No matches found",
     "general.Next": "Suivant",
     "general.Back": "précédent",
     "general.More": "Plus",
     "general.ViewMore": "Voir plus",
     "general.ViewLess": "Voir moins",
     "general.Reset": "Redémarrer",
+
+    "general.sortBy": "Trier Par",
 
     "footer.copy":
         "VGPROgg n'est pas affilié ou fait partie de Super Evil Megacorp. Tous les droits d'auteur et les arts originaux de Vainglory sont la propriété de Super Evil Megacorp.",
@@ -20,6 +23,10 @@ export default {
     "terms.GameMode": "Mode de jeu",
     "terms.Region": "Région",
     "terms.Search": "Rechercher",
+
+    "terms.average": "Moyenne",
+    "terms.placement": "Placement",
+    "terms.name": "Nom",
 
     "terms.AVG": "Moyenne",
     "terms.KDA": "Kill/Mort/Assists",
@@ -71,6 +78,18 @@ export default {
     "terms.weapon": "Arme",
     "terms.utility": "Support",
 
+    "terms.carry": "Carry",
+    "terms.captain": "Capitaine",
+    "terms.jungler": "Jungleur",
+
+    "terms.tier": "Skill Tier {{tier}}",
+    "terms.op": "OP",
+    "terms.bad": "Mauvais",
+
+    "terms.type": "Categorie",
+    "terms.Average": "Average",
+    "terms.Placement": "Placement",
+
     "terms.All": "Tout", // All Region
 
     "terms.Top": "Meilleurs {{term}}", // Top Win Rate, Top Pick Rate, Top Ban Rate, Top 4
@@ -88,7 +107,9 @@ export default {
     "gamemode.privatebattleRoyale": "Privé Battle Royale",
 
     "tab.Overview": "Vue globale",
+    "tab.Abilities": "Les pouvoirs",
     "tab.Builds": "Composition",
+    "tab.Heroes": "Héros",
 
     "terms.OverallStats": "Statistiques globales",
     "terms.OverviewStats": "Statistiques générales",
@@ -101,5 +122,27 @@ export default {
     "profile.PlayerOf": "Joueur de",
     "profile.Roles": "Rôles",
 
-    "search.placeholder": "Rechercher un joueur",
+    "heroes.mostPlayedAs": "Plus joué avec",
+    "heroes.highestWinSkill": "Les skill order avec les meilleur taux de réussite",
+    "heroes.mostFrequentSkill": "Les skills order les plus frequent",
+    "heroes.mostFrequentBuild": "Le build le plus frequent",
+    "heroes.highestWinBuild": "Le build avec les meilleur taux de reussite",
+    "heroes.winRateByPatch": "Taux de réussite par patch",
+    "heroes.banRateByPatch": "Taux de ban par patch",
+    "heroes.pickRateByPatch": "Taux de choix par patch",
+
+    "heroes.winRateByTime": "Taux de réussite par temps6",
+    "heroes.banRateByTime": "Taux de ban par temps",
+    "heroes.pickRateByTime": "Taux de choix par temps",
+
+    "heroes.winRateByGameLength": "Taux de réussite par durée de jeu",
+
+    "heroes.playingAgainst": "Entrain de jouer contre",
+    "heroes.playingWith": "Entrain de jouer avec",
+
+    "search.placeholder": "Rechercher le nom d'un joueur",
+    "filters.role": "trier par role",
+
+    situationalItemTitle: "Equipement Situationel",
+    situationalItem: `<0>Les equipements de défense et les bottes peuvent être remplacé par des équipements "situationnels". <2><0></0> ce qui veut dire "Équipement de défense situationnel". Ça peut être soit <3></3>, <6></6>, <9></9> ou bien <12></12></2><3></3><4><0></0> ce qui veut dire "Bottes situationnels". Ca peut être soit  <3></3>, <6></6>, ou bien <9></9></4><5></5><6>Pour trouver les meilleurs builds, nous regroupons les builds avec les mêmes équipement de base et des équipements situationels comme les bottes ou de la défense . Une fois ces regroupements fait, on lance des algorithmes pour trouver si il y'a un build dans chaque regroupement qui est 80% plus pertinant que les autres.</6><7></7><8> Si il n y'a aucun , nous marquons la défence/botts comme "situationels" et on rassemble leurs stats en une. Sinon on laisse tout seuls.</8></0>`
 };

@@ -55,9 +55,13 @@ langs['fr'] = fr;
 // import ph from "./ph";
 // langs['ph'] = ph;
 
-/** Chinese */
+/** Traditional Chinese */
 import cn from "./cn";
 langs['cn'] = cn;
+
+/** Traditional Chinese */
+import sc from "./sc";
+langs['sc'] = sc;
 
 // /** Russian */
 // import ru from "./ru";

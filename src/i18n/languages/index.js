@@ -79,6 +79,14 @@ langs['ro'] = ro;
 import ar from "./ar";
 langs['ar'] = ar;
 
+/** Vietnamese */
+import vi from "./vi";
+langs['vi'] = vi;
+
+/** Thai */
+import th from "./th";
+langs['th'] = th;
+
 let res = {};
 
 // Due to i18next needing a namespace, we will insert all translations into a ghost namespace

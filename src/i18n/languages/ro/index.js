@@ -10,7 +10,7 @@ export default {
     "general.ViewLess": "Vezi mai puțin",
     "general.Reset": "Resetează",
 
-    "general.sortBy": "Sort By",
+    "general.sortBy": "",
 
     "footer.copy":
         "VGPROgg nu este afiliat sau parte a Super Evil Megacorp. Toate drepturile intelectuale legate de Vainglory aparțin companiei Super Evil Megacorp.",
@@ -124,23 +124,23 @@ export default {
     "profile.PlayerOf": "A jucat",
     "profile.Roles": "Roluri",
 
-    "heroes.mostPlayedAs": "Most Played as",
-    "heroes.highestWinSkill": "Highest Win % Skill Order",
-    "heroes.mostFrequentSkill": "Most Frequent Skill Order",
-    "heroes.mostFrequentBuild": "Most Frequent Build",
-    "heroes.highestWinBuild": "Highest Win % Build",
-    "heroes.winRateByPatch": "Win Rate By Patch",
-    "heroes.banRateByPatch": "Ban Rate By Patch",
-    "heroes.pickRateByPatch": "Pick Rate By Patch",
+    "heroes.mostPlayedAs": "jucat cel mai mult ca",
+    "heroes.highestWinSkill": "cel mai mare % de victorie ordinea priceperii",
+    "heroes.mostFrequentSkill": "cei mai frecvenți dupa ordinea priceperii",
+    "heroes.mostFrequentBuild": "cel mai frecvent echipament",
+    "heroes.highestWinBuild": "echipament cu cel mai mare % de victorie",
+    "heroes.winRateByPatch": "rata de victorie dupa versiune",
+    "heroes.banRateByPatch": "rata de BAN dupa versiune",
+    "heroes.pickRateByPatch": "rata de alegere dupa versiune",
 
-    "heroes.winRateByTime": "Win Rate Over Time",
-    "heroes.banRateByTime": "Ban Rate Over Time",
-    "heroes.pickRateByTime": "Pick Rate Over Time",
+    "heroes.winRateByTime": "rata de victorie de-a lungul timpului",
+    "heroes.banRateByTime": "rata de BAN de-a lungul timpului",
+    "heroes.pickRateByTime": "rata de alegere de-a lungul timpului",
 
-    "heroes.winRateByGameLength": "Win Rate By Game Length",
+    "heroes.winRateByGameLength": "rata de victorie dupa durata meciului",
 
-    "heroes.playingAgainst": "Playing Against",
-    "heroes.playingWith": "Playing With",
+    "heroes.playingAgainst": "jucand impotriva",
+    "heroes.playingWith": "jucand impreuna cu",
 
     "search.placeholder": "Caută jucător",
 

@@ -72,7 +72,7 @@ export default {
 
     "terms.pickrate": "Tỉ lệ chọn",
     "terms.banrate": "Tỉ lệ cấm",
-    "terms.winrate": "Tỉ lệ chọn",
+    "terms.winrate": "Tỉ lệ thắng",
 
     "terms.crystal": "Phép",
     "terms.weapon": "Vật lý",
@@ -107,11 +107,6 @@ export default {
     "gamemode.privateranked5v5": "Riêng tư cấm chọn 5v5",
     "gamemode.privateblitz": "Đột kích riêng tư",
     "gamemode.privatebattleRoyale": "Battle Royale riêng tư",
-
-    "tab.Overview": "Overview",
-    "tab.Abilities": "Abilities",
-    "tab.Builds": "Builds",
-    "tab.Heroes": "Heroes",
 
     "tab.Overview": "Tổng quan",
     "tab.Abilities": "Khả năng",

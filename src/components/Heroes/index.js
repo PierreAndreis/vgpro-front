@@ -1,5 +1,5 @@
 import React from "react";
-import { Trans } from "react-i18next";
+import { Trans, translate } from "react-i18next";
 import Helmet from "react-helmet";
 
 import * as Styled from "./Heroes.style";
@@ -13,11 +13,11 @@ import { Adsense } from "../common/Ads";
 const ITEM_PER_PAGE = 30;
 
 let HERO_TIERS = {
-  0: "Tier 1",
-  1: "Tier 2",
-  2: "Tier 3",
-  3: "Tier 4",
-  4: "OP",
+  0: t => t("terms.tier", { tier: 1 }),
+  1: t => t("terms.tier", { tier: 2 }),
+  2: t => t("terms.tier", { tier: 3 }),
+  3: t => t("terms.tier", { tier: 4 }),
+  4: t => t("terms.op"),
 };
 
 function compare(a, b, property, valueToReturn) {
@@ -32,7 +32,7 @@ function compare(a, b, property, valueToReturn) {
 
 const Subtitles = React.createContext(false);
 
-const Hero = ({ status, position, payload }) => (
+const Hero = ({ status, position, payload, t }) => (
   <Styled.Hero
     hover="true"
     to={payload.name ? `/heroes/${payload.name}` : "/heroes"}
@@ -104,7 +104,7 @@ const Hero = ({ status, position, payload }) => (
         <Styled.TierImg tier={payload && `tier${payload.tier}`} />
         <span>
           <SkeletonWrapper status={status} with={40} height={20}>
-            {() => HERO_TIERS[payload.tier]}
+            {() => HERO_TIERS[payload.tier](t)}
           </SkeletonWrapper>
         </span>
       </Styled.Tier>
@@ -167,6 +167,8 @@ class Heroes extends React.Component {
   };
 
   render() {
+    const { t } = this.props;
+
     const { status, roleFilter, sort, payload } = this.state;
 
     let sortIcon = property => {
@@ -191,33 +193,36 @@ class Heroes extends React.Component {
     return (
       <Styled.Wrap>
         <Helmet>
-          <title>Heroes</title>
+          <title>{t("profile.Heroes")}</title>
         </Helmet>
         <div>
-          <Styled.FilterTitle>Filter by Role</Styled.FilterTitle>
+          <Styled.FilterTitle>
+            <Trans i18nKey="filters.role" />
+          </Styled.FilterTitle>
+
           <Button active={!roleFilter} onClick={this.roleFilter(null)}>
-            All
+            <Trans i18nKey="terms.All" />
           </Button>
 
           <Button
             active={roleFilter === "Carry"}
             onClick={this.roleFilter("Carry")}
           >
-            Carry
+            <Trans i18nKey="terms.carry" />
           </Button>
 
           <Button
             active={roleFilter === "Captain"}
             onClick={this.roleFilter("Captain")}
           >
-            Captain
+            <Trans i18nKey="terms.captain" />
           </Button>
 
           <Button
             active={roleFilter === "Jungler"}
             onClick={this.roleFilter("Jungler")}
           >
-            Jungler
+            <Trans i18nKey="terms.jungler" />
           </Button>
         </div>
 
@@ -238,7 +243,8 @@ class Heroes extends React.Component {
             <i className={sortIcon("banRate")} />
           </Styled.Stats>
           <Styled.Tier onClick={this.changeSort("tier")}>
-            Tier <i className={sortIcon("tier")} />
+            {t("terms.tier", { tier: null })}{" "}
+            <i className={sortIcon("tier")} />
           </Styled.Tier>
         </Styled.Header>
 
@@ -248,6 +254,7 @@ class Heroes extends React.Component {
             position={index}
             status={status}
             payload={hero}
+            t={t}
           />
         ))}
       </Styled.Wrap>
@@ -292,10 +299,10 @@ class TrackScroll extends React.Component {
     console.log(this.state.isHeaderVisible);
     return (
       <Subtitles.Provider value={!this.state.isHeaderVisible}>
-        <Heroes headerRef={ref => (this.header = ref)} />
+        <Heroes headerRef={ref => (this.header = ref)} t={this.props.t} />
       </Subtitles.Provider>
     );
   }
 }
 
-export default TrackScroll;
+export default translate()(TrackScroll);

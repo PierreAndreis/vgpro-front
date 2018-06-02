@@ -1,4 +1,5 @@
 import React from "react";
+import Spinner from "react-spinkit";
 import { Trans } from "react-i18next";
 import Box from "../../../common/Box";
 import { SkeletonWrapper } from "../../../common/Skeleton";
@@ -6,6 +7,8 @@ import { SkeletonWrapper } from "../../../common/Skeleton";
 import * as Styled from "./Builds.style";
 import { Rate } from "../../../common/ColoredValues";
 import Button from "./../../../common/Button";
+
+import SituationalItemModal from "./../SituationalModal";
 
 const Build = ({ info }) => {
   let items = [];
@@ -84,7 +87,17 @@ export default class Builds extends React.Component {
     let payload = this.props.payload;
     let { sort } = this.state;
 
-    if (!payload) return <div>Loading</div>;
+    if (!payload) {
+      return (
+        <div style={{ margin: "10% auto", gridColumn: "2 / 2" }}>
+          <Spinner
+            name="line-spin-fade-loader"
+            color="rgba(0, 0, 0, 0.5)"
+            fadeIn="none"
+          />
+        </div>
+      );
+    }
 
     let builds;
 
@@ -97,7 +110,9 @@ export default class Builds extends React.Component {
       <React.Fragment>
         <Styled.Sidebar>
           <div style={{ marginBottom: 5 }}>
-            <h3>Sort by</h3>
+            <h3>
+              <Trans i18nKey="general.sortBy" />
+            </h3>
             {["winRate", "pickRate"].map(type => (
               <Button
                 group
@@ -123,40 +138,11 @@ export default class Builds extends React.Component {
           </div>
 
           <Box.wrap>
-            <Box.title>Situational Items</Box.title>
+            <Box.title>
+              <Trans i18nKey="terms.situationalItemTitle" />
+            </Box.title>
             <Box.body style={{ padding: "10px" }}>
-              <div>
-                Defense and Boots items can be replaced by "Situational"
-                items.{" "}
-                <p>
-                  <Styled.SubtitleItem name="Situational Defense" big />{" "}
-                  means "Situational Defense Item". It can be either{" "}
-                  <Styled.SubtitleItem name="Aegis" />,{" "}
-                  <Styled.SubtitleItem name="Atlas Pauldron" />,{" "}
-                  <Styled.SubtitleItem name="Metal Jacket" /> or{" "}
-                  <Styled.SubtitleItem name="Slumbering Husk" />
-                </p>
-                <p>
-                  <Styled.SubtitleItem name="Situational Boots" big />{" "}
-                  means "Situational Boots Item". It can be either{" "}
-                  <Styled.SubtitleItem name="Journey Boots" />,{" "}
-                  <Styled.SubtitleItem name="Halcyon Chargers" />, or{" "}
-                  <Styled.SubtitleItem name="Teleport Boots" />
-                </p>
-                <p>
-                  In order to find the best builds, we group builds with
-                  the same core items and different situational items like
-                  boots or defense. Once these groups are made, we run
-                  algorithms to find if there is any build on each group
-                  that is 80% more relevant than the others.
-                </p>
-                <p>
-                  {" "}
-                  If there is not, we flag the defense/boots item as
-                  "situational" and aggregate their stats in one. Otherwise
-                  we keep them as their own.
-                </p>
-              </div>
+              <SituationalItemModal />
             </Box.body>
           </Box.wrap>
         </Styled.Sidebar>

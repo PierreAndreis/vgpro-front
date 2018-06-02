@@ -1,4 +1,6 @@
 import React from "react";
+import { Trans } from "react-i18next";
+
 import { Link } from "react-router-dom";
 import * as Styled from "./HeroLists.style";
 import Box from "../../../common/Box";
@@ -41,15 +43,24 @@ const Counter = ({ payload }) => {
 
   return (
     <Box.wrap>
-      <Box.title>Playing Against</Box.title>
+      <Box.title>
+        <Trans i18nKey="heroes.playingAgainst" />
+      </Box.title>
       <Box.body>
         <Styled.List>
           <div>
             <span>#</span>
             <Styled.HeroImage />
-            <Styled.Info> Name </Styled.Info>
-            <span>Win Rate</span>
-            <span>Play Rate</span>
+            <Styled.Info>
+              {" "}
+              <Trans i18nKey="terms.name" />{" "}
+            </Styled.Info>
+            <span>
+              <Trans i18nKey="terms.winrate" />
+            </span>
+            <span>
+              <Trans i18nKey="terms.pickrate" />
+            </span>
           </div>
           {heroes.map((hero, index) => (
             <Hero
@@ -61,8 +72,12 @@ const Counter = ({ payload }) => {
         </Styled.List>
       </Box.body>
       <Box.action>
-        <Box.button>Back</Box.button>
-        <Box.button>Next</Box.button>
+        <Box.button>
+          <Trans i18nKey="general.Back" />
+        </Box.button>
+        <Box.button>
+          <Trans i18nKey="general.Next" />
+        </Box.button>
       </Box.action>
     </Box.wrap>
   );

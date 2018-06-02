@@ -134,7 +134,7 @@ const PlayerInfo = ({
         <Styled.Info>
           <SkeletonWrapper status={status} width="140px" height="0">
             {() => (
-              <Styled.Tier AssetLoader type="tiers" name={tier}>
+              <Styled.Tier type="tiers" name={tier}>
                 <Styled.TierBar percentage={percentageVst}>
                   <div />
                   <span>{rankVst.toFixed(0)}</span>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from "react-i18next";
 import {
   ResponsiveContainer,
   LineChart,
@@ -246,28 +247,28 @@ class HistoryCharts extends React.Component {
     return (
       <React.Fragment>
         <GraphBox
-          title="Win Rate By Patch"
+          title="heroes.winRateByPatch"
           type="patch"
           payload={winRate}
           color="orange"
         />
         <GraphBox
-          title="Pick Rate By Patch"
+          title="heroes.pickRateByPatch"
           type="patch"
           payload={pickRate}
           color="bluexpink"
         />
         <GraphBox
-          title="Win Rate By Game Length"
-          type="time"
-          payload={timeRelative}
-          color="blue"
-        />
-        <GraphBox
-          title="Ban Rate By Patch"
+          title="heroes.banRateByPatch"
           type="patch"
           payload={banRate}
           color="red"
+        />
+        <GraphBox
+          title="heroes.winRateByGameLength"
+          type="time"
+          payload={timeRelative}
+          color="blue"
         />
       </React.Fragment>
     );
@@ -294,7 +295,7 @@ const GraphBox = ({ title, payload, color, type }) => {
   return (
     <Box.wrap>
       <Box.title>
-        {title}
+        <Trans i18nKey={title} />
         {placementContent}
       </Box.title>
       <Box.body>

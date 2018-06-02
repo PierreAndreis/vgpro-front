@@ -11,7 +11,6 @@ import Box from "../../../common/Box";
 const Skills = ({ hero, skills }) => (
   <Styled.AbilitiesGrid>
     <Styled.AbilitiesRow>
-      <span>A</span>
       <Styled.AbilitiesLabel type="abilities" name={`${hero}_a`} />
       {Array(12)
         .fill({})
@@ -22,7 +21,6 @@ const Skills = ({ hero, skills }) => (
         ))}
     </Styled.AbilitiesRow>
     <Styled.AbilitiesRow>
-      <span>A</span>
       <Styled.AbilitiesLabel type="abilities" name={`${hero}_b`} />
       {Array(12)
         .fill({})
@@ -33,7 +31,6 @@ const Skills = ({ hero, skills }) => (
         ))}
     </Styled.AbilitiesRow>
     <Styled.AbilitiesRow>
-      <span>A</span>
       <Styled.AbilitiesLabel type="abilities" name={`${hero}_c`} />
       {Array(12)
         .fill({})
@@ -60,7 +57,9 @@ const WinRate = ({ hero, payload }) => {
 
   return (
     <Box.wrap>
-      <Box.title>Highest Win % Skill Order</Box.title>
+      <Box.title>
+        <Trans i18nKey="heroes.mostFrequentSkill" />
+      </Box.title>
       <Box.body>
         <Skills skills={skills} hero={hero} />
         <Styled.Stats>
@@ -120,7 +119,9 @@ const Popular = ({ hero, payload }) => {
 
   return (
     <Box.wrap>
-      <Box.title>Most Frequent Skill Order</Box.title>
+      <Box.title>
+        <Trans i18nKey="heroes.mostFrequentSkill" />
+      </Box.title>
       <Box.body>
         <Skills skills={skills} hero={hero} />
         <Styled.Stats>

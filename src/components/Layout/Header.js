@@ -74,9 +74,9 @@ class Header extends React.Component {
             <SearchPlayer mode="compact" />
             <ThemeSwitch />
             {<LanguageSelector />}
-            {<Media query="(max-width: 768px)">
+            {/* {<Media query="(max-width: 768px)">
               {matches => !matches && <ThemeSwitch />}
-            </Media>}
+            </Media>} */}
           </Content>
         </Wrapper>
       </React.Fragment>

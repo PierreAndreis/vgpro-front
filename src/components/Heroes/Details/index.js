@@ -15,6 +15,7 @@ import { Adsense } from "../../common/Ads";
 import Overview from "./Overview";
 import Skills from "./Skills";
 import Builds from "./Builds";
+import Heroes from "./Heroes";
 
 class HeroDetails extends React.Component {
   state = {
@@ -87,6 +88,7 @@ class HeroDetails extends React.Component {
         overview: Overview,
         abilities: Skills,
         builds: Builds,
+        heroes: Heroes,
       }[tab] || Overview;
 
     let content = React.createElement(element, {
@@ -137,12 +139,11 @@ class HeroDetails extends React.Component {
             </Link>
             <Link to={`${toLink}heroes`}>
               <Button active={tab === "heroes"}>
-                {" "}
-                <Trans i18nKey="tab.Heroes" />{" "}
+                <Trans i18nKey="tab.Heroes" />
               </Button>
             </Link>
           </Styled.Tabs>
-          <Adsense />
+          {/* <Adsense /> */}
           <Styled.Content>{content}</Styled.Content>
         </Styled.Wrapper>
       </SkeletonContext.Provider>

@@ -28,6 +28,7 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  align-content: start;
   @media screen and (max-width: 450px) {
     justify-content: center;
   }

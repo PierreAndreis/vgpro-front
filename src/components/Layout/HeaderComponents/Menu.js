@@ -73,9 +73,9 @@ class MenuMobile extends React.Component {
           onClick={this.handleMenu}
         >
           <MenuList />
-          <Styled.MenuMobileBottom>
+          {/* <Styled.MenuMobileBottom>
             <ThemeSwitch text />
-          </Styled.MenuMobileBottom>
+          </Styled.MenuMobileBottom> */}
         </Styled.MenuMobile>
       </React.Fragment>
     );

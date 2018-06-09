@@ -38,7 +38,6 @@ const Hero = ({ status, position, payload, t }) => (
     to={payload.name ? `/heroes/${payload.name}` : "/heroes"}
   >
     {/* <Styled.Hero> */}
-    {console.log("re-rendering")}
     <Styled.HeroContent>
       <Styled.Info>
         <Styled.Position>{position + 1}</Styled.Position>
@@ -296,7 +295,6 @@ class TrackScroll extends React.Component {
   };
 
   render() {
-    console.log(this.state.isHeaderVisible);
     return (
       <Subtitles.Provider value={!this.state.isHeaderVisible}>
         <Heroes headerRef={ref => (this.header = ref)} t={this.props.t} />

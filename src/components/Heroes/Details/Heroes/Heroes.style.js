@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import AssetLoader from "../../../common/AssetLoader";
+import Button from "../../../common/Button";
 
 export const Sidebar = styled.div`
   width: 100%;
@@ -14,6 +15,11 @@ export const Content = styled.div`
 
   display: flex;
   flex-wrap: wrap;
+  }
+`;
+
+export const BackButton = styled(Button)`
+  margin: 0 2px;
 `;
 
 export const List = styled.div`
@@ -22,7 +28,7 @@ export const List = styled.div`
 
   & > section {
     height: 400px;
-    overflow: scroll;
+    overflow-y: scroll;
     &:first-of-type {
       height: auto;
       overflow: auto;

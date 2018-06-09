@@ -20,10 +20,8 @@ const Portrait = ({ heroName, payload }) => {
       .map(r => r.key);
   }
 
-  console.log(payload);
-
   return (
-    <div style={{ flex: 1, margin: "0 2px" }}>
+    <div style={{ flex: 1, margin: "0 2px 10px" }}>
       <Box.wrap>
         <Box.body>
           <Styled.Container>
@@ -57,9 +55,13 @@ const Portrait = ({ heroName, payload }) => {
 export default class CompareBox extends React.Component {
   state = {
     status: "loading",
-    selectedHero: null,
+    selectedHero: this.props.selectedHero,
     payload: null,
   };
+
+  componentDidMount() {
+    this.props.selectedHero && this.fetch();
+  }
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.selectedHero !== prevState.selectedHero) {
@@ -88,7 +90,10 @@ export default class CompareBox extends React.Component {
     this.cancel = Utils.makeCancelable(
       fetchHero(this.state.selectedHero),
       r => this.setState({ status: "loaded", payload: r }),
-      () => this.setState({ status: "error" })
+      () =>
+        this.setState({
+          status: "error",
+        })
     );
   };
 

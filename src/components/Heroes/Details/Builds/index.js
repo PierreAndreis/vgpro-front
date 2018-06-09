@@ -139,7 +139,7 @@ export default class Builds extends React.Component {
 
           <Box.wrap>
             <Box.title>
-              <Trans i18nKey="terms.situationalItemTitle" />
+              <Trans i18nKey="situationalItemTitle" />
             </Box.title>
             <Box.body style={{ padding: "10px" }}>
               <SituationalItemModal />

@@ -242,8 +242,6 @@ class HistoryCharts extends React.Component {
           pickRate: duration.pickRate,
         }));
     }
-
-    console.log(winRate);
     return (
       <React.Fragment>
         <GraphBox

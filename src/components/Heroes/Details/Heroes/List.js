@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Trans } from "react-i18next";
+import { translate, Trans } from "react-i18next";
 import Box from "./../../../common/Box";
 
 import { Rate } from "../../../common/ColoredValues.js";
@@ -32,7 +32,7 @@ class Hero extends React.Component {
     );
   }
 }
-export class List extends React.Component {
+class List extends React.Component {
   state = {
     value: "",
     list: "against",
@@ -69,7 +69,7 @@ export class List extends React.Component {
             type="text"
             value={this.state.value}
             onChange={this.onChange}
-            placeholder="Search for a hero"
+            placeholder={this.props.t("search.placeholderShort")}
           />
           <div style={{ display: "flex", justifyContent: "center" }}>
             <Button
@@ -118,4 +118,4 @@ export class List extends React.Component {
   }
 }
 
-export default List;
+export default translate()(List);

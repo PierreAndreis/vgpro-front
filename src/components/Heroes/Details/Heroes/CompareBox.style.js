@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import AssetLoader from "../../../common/AssetLoader";
-import Button from "../../../common/Button";
-import { transparentize, lighten, darken } from "polished";
+import { transparentize, lighten } from "polished";
 
 export const Container = styled.div`
   display: flex;

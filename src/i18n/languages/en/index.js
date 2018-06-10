@@ -145,6 +145,7 @@ export default {
   "heroes.playingWith": "Playing With",
 
   "search.placeholder": "Search Player Name",
+  "search.placeholderShort": "Search",
 
   "filters.role": "Filter by Role",
 

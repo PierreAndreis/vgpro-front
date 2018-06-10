@@ -6,7 +6,7 @@ import Media from "react-media";
 import * as Styled from "./Heroes.style.js";
 
 import CompareBox from "./CompareBox";
-import { List } from "./List.js";
+import List from "./List.js";
 
 class Heroes extends React.Component {
   state = {
@@ -35,16 +35,8 @@ class Heroes extends React.Component {
     });
   };
 
-  changeList = mode => e => {
-    this.setState({
-      list: mode,
-    });
-  };
-
   render() {
     let mobile = this.props.mobile;
-
-    let list = this.state.list;
 
     if (!this.props.payload) {
       return <div>Loading</div>;

@@ -7,7 +7,7 @@ import Media from "react-media";
 
 // import "./Menu.css";
 import * as Styled from "./Menu.style.js";
-import ThemeSwitch from "./ThemeSwitch";
+// import ThemeSwitch from "./ThemeSwitch";
 
 const NavLinks = [
   {

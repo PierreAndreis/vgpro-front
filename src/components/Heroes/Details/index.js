@@ -143,8 +143,10 @@ class HeroDetails extends React.Component {
               </Button>
             </Link>
           </Styled.Tabs>
-          {/* <Adsense /> */}
+
+          <Adsense />
           <Styled.Content>{content}</Styled.Content>
+          <Adsense />
         </Styled.Wrapper>
       </SkeletonContext.Provider>
     );

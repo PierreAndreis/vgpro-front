@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import AssetLoader from "../../../common/AssetLoader";
+import styled from "styled-components";
 import Button from "../../../common/Button";
 
 export const Sidebar = styled.div`

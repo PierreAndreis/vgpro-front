@@ -10,15 +10,27 @@ export const Container = styled.div`
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
-  margin: 10px 0;
+  margin: 10px auto;
+  max-width: 150px;
 
   & h3 {
-    margin: 5px auto;
+    width: 100%;
+    text-align: center;
     color: ${props => props.theme.text[500]};
     font-family: ${props => props.theme.font.highlight};
     font-weight: 700;
     font-size: 21px;
     text-align: center;
+    margin: 10px 0;
+  }
+
+  & h4 {
+    width: 100%;
+    font-size: 11px;
+    color: ${props => props.theme.text[400]};
+    text-transform: uppercase;
+    text-align: center;
+    margin: 5px 0;
   }
 `;
 
@@ -58,6 +70,7 @@ export const Role = styled.div`
       transparentize(0.3, props.theme.extra[props.name.toLowerCase()])};
 
   border-radius: 50%;
+  margin: 0 5px;
 
   &:before {
     content: "";
@@ -106,4 +119,16 @@ export const Role = styled.div`
         background: rgba(0, 0, 0, 0.3);
       `};
   }
+`;
+
+export const Portrait = styled(AssetLoader)`
+  width: 25px;
+  height: 25px;
+  background-size: 100%;
+  background-position: center center;
+  border-radius: 50%;
+
+  border: 1px solid ${props => props.theme.background.slotBorder};
+  background-color: ${props => props.theme.background.slot};
+  margin: 0 3px;
 `;

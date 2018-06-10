@@ -5,28 +5,13 @@ import Media from "react-media";
 
 import * as Styled from "./Heroes.style.js";
 
-import Box from "./../../../common/Box";
-import { Rate } from "../../../common/ColoredValues.js";
-
 import CompareBox from "./CompareBox";
-import Button from "../../../common/Button.js";
-
-const Hero = ({ payload, onClick }) => (
-  <Styled.ListRow onClick={onClick}>
-    <Styled.HeroImage type="heroes" name={payload && payload.key} />
-    <Styled.Info>{payload.key}</Styled.Info>
-    <span>
-      <Rate rate={payload.winRate} />
-    </span>
-    <span>
-      <Rate rate={payload.pickRate} />
-    </span>
-  </Styled.ListRow>
-);
+import { List } from "./List.js";
 
 class Heroes extends React.Component {
   state = {
     selectedHero: null,
+    searchingHero: null,
   };
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -43,46 +28,34 @@ class Heroes extends React.Component {
     this.setState({ selectedHero: hero });
   };
 
+  onChange = e => {
+    let value = e.target.value;
+    this.setState({
+      searchingHero: value,
+    });
+  };
+
+  changeList = mode => e => {
+    this.setState({
+      list: mode,
+    });
+  };
+
   render() {
     let mobile = this.props.mobile;
+
+    let list = this.state.list;
 
     if (!this.props.payload) {
       return <div>Loading</div>;
     }
 
-    let heroes = this.props.payload.playingAgainst;
-
     let sidebar = (
-      <Box.wrap>
-        <Box.body>
-          <Styled.Search />
-          <Styled.List>
-            <section>
-              <Styled.ListRow>
-                <Styled.HeroImage />
-                <Styled.Info>
-                  <Trans i18nKey="terms.name" />
-                </Styled.Info>
-                <span>
-                  <Trans i18nKey="terms.winrate" />
-                </span>
-                <span>
-                  <Trans i18nKey="terms.pickrate" />
-                </span>
-              </Styled.ListRow>
-            </section>
-            <section>
-              {heroes.map((hero, index) => (
-                <Hero
-                  onClick={this.selectHero(hero.key)}
-                  key={hero.key}
-                  payload={hero}
-                />
-              ))}
-            </section>
-          </Styled.List>
-        </Box.body>
-      </Box.wrap>
+      <List
+        payload={this.props.payload}
+        onClick={this.selectHero}
+        current={this.state.selectedHero}
+      />
     );
 
     let content = (

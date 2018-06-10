@@ -140,6 +140,8 @@ export default {
   "heroes.winRateByGameLength": "Win Rate By Game Length",
 
   "heroes.playingAgainst": "Playing Against",
+  "heroes.weakAgainst": "Weak Against",
+  "heroes.strongAgainst": "Strong Against",
   "heroes.playingWith": "Playing With",
 
   "search.placeholder": "Search Player Name",

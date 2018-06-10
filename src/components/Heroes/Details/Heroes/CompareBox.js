@@ -1,6 +1,6 @@
 import React from "react";
+import { Trans } from "react-i18next";
 import Box from "../../../common/Box";
-import Button from "../../../common/Button";
 
 import * as Styled from "./CompareBox.style.js";
 
@@ -14,10 +14,21 @@ import Stats from "./Stats";
 const Portrait = ({ heroName, payload }) => {
   let roles = [];
 
+  let strongAgainst = ["", "", ""];
+  let weakAgainst = strongAgainst;
+
   if (payload) {
+    let sortedEnemies = payload.playingAgainst.sort(
+      (a, b) => (a.winRate > b.winRate ? 1 : -1)
+    );
+
     roles = payload.roles
       .filter(role => role.pickRate > 33)
       .map(r => r.key);
+
+    strongAgainst = sortedEnemies.slice(0, 3);
+
+    weakAgainst = sortedEnemies.reverse().slice(0, 3);
   }
 
   return (
@@ -38,13 +49,46 @@ const Portrait = ({ heroName, payload }) => {
           </Styled.Container>
           <Styled.Line />
           <Styled.Container>
-            {["Carry", "Jungler", "Captain"].map(role => (
-              <Styled.Role
-                key={role}
-                name={role}
-                highlight={roles.includes(role)}
-              />
-            ))}
+            <div>
+              <h4>
+                <Trans i18nKey="profile.Roles" />
+              </h4>
+              <div style={{ display: "flex" }}>
+                {["Carry", "Jungler", "Captain"].map(role => (
+                  <Styled.Role
+                    key={role}
+                    name={role}
+                    highlight={roles.includes(role)}
+                  />
+                ))}
+              </div>
+            </div>
+          </Styled.Container>
+
+          <Styled.Container>
+            <div>
+              <h4>
+                <Trans i18nKey="heroes.strongAgainst" />
+              </h4>
+              <div style={{ display: "flex" }}>
+                {strongAgainst.map((hero, i) => (
+                  <Styled.Portrait key={i} type="heroes" name={hero.key} />
+                ))}
+              </div>
+            </div>
+          </Styled.Container>
+
+          <Styled.Container>
+            <div>
+              <h4>
+                <Trans i18nKey="heroes.weakAgainst" />
+              </h4>
+              <div style={{ display: "flex" }}>
+                {weakAgainst.map((hero, i) => (
+                  <Styled.Portrait key={i} type="heroes" name={hero.key} />
+                ))}
+              </div>
+            </div>
           </Styled.Container>
         </Box.body>
       </Box.wrap>

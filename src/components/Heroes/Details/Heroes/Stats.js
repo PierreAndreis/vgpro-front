@@ -4,24 +4,6 @@ import { AllStats } from "./../Overview/Stats";
 
 import { SkeletonWrapper } from "../../../common/Skeleton";
 import Box from "../../../common/Box";
-// const HeroStats = ({ status, payload }) => (
-//   <Styled.Row>
-//     {AllStats.map(stat => (
-//       <div key={stat.property}>
-//         <SkeletonWrapper
-//           status={status}
-//           width={Math.floor(Math.random() * 100) + 10}
-//         >
-//           {() =>
-//             payload.stats
-//               .find(l => l.name === stat.property)
-//               .stats.toLocaleString()
-//           }
-//         </SkeletonWrapper>
-//       </div>
-//     ))}
-//   </Styled.Row>
-// );
 
 import * as Styled from "./Stats.style";
 

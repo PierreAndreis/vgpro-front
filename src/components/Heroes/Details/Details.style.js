@@ -49,6 +49,17 @@ export const HeroTitle = styled.div`
 
 export const Tabs = styled.section`
   display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 400px) {
+    justify-content: center;
+    & button {
+      font-size: 12px;
+      margin: 0;
+      border-radius: 0;
+      margin-left: -1px;
+      padding: 7px 10px;
+    }
+  }
   & button {
     cursor: pointer;
   }
@@ -60,12 +71,14 @@ export const Content = styled.section`
   grid-column-gap: ${SPACE_GRID};
   grid-row-gap: ${SPACE_GRID};
   justify-content: end;
+
   @media screen and (max-width: 800px) {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     flex-direction: column;
   }
+
   & ${Box} {
     width: 100%;
     margin: 0;

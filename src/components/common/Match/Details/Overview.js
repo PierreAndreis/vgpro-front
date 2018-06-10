@@ -71,7 +71,12 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
               {() => <Styled.PlayerRole role={player.role} />}
             </SkeletonWrapper>
 
-            {player && player.mvp && <Styled.MVP><Trans i18nKey="terms.MVP" /></Styled.MVP>}
+            {player &&
+              player.mvp && (
+                <Styled.MVP>
+                  <Trans i18nKey="terms.MVP" />
+                </Styled.MVP>
+              )}
           </Styled.PlayerHero>
         </Styled.PlayerImage>
 
@@ -91,7 +96,7 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
                   <span className="d">{player.deaths}</span> /{" "}
                   <span>{player.assists}</span>
                   <div>
-                    <KDA kda={player.kda} /> <Trans i18nKey="terms.kda" />
+                    <KDA kda={player.kda} /> <Trans i18nKey="terms.KDA" />
                   </div>
                 </React.Fragment>
               )}
@@ -269,9 +274,15 @@ const OverviewTeam = ({ team, telemetry, status, gameMode }) => {
             }}
           </SkeletonWrapper>
         </Styled.PlayerInfo>
-        <Styled.PlayerItems><Trans i18nKey="terms.Items" /></Styled.PlayerItems>
-        <Styled.PlayerStats><Trans i18nKey="terms.Stats" /></Styled.PlayerStats>
-        <Styled.PlayerRank><Trans i18nKey="terms.Rank" /></Styled.PlayerRank>
+        <Styled.PlayerItems>
+          <Trans i18nKey="terms.Items" />
+        </Styled.PlayerItems>
+        <Styled.PlayerStats>
+          <Trans i18nKey="terms.Stats" />
+        </Styled.PlayerStats>
+        <Styled.PlayerRank>
+          <Trans i18nKey="terms.Rank" />
+        </Styled.PlayerRank>
       </Styled.CellHeader>
       {players.map((p, i) => {
         let tm = false;

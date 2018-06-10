@@ -274,7 +274,11 @@ class Match extends React.PureComponent {
 
     return (
       <React.Fragment>
-        <Styled.Match winner={winner}>
+        <Styled.Match
+          winner={winner}
+          animation="fadeInRightBig"
+          animationDelay={this.props.animationDelay}
+        >
           <Styled.MatchBody onClick={this.handleOpen}>
             {badges}
 

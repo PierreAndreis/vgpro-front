@@ -1,6 +1,7 @@
 import React from "react";
 import { Trans } from "react-i18next";
 
+import Spinner from "react-spinkit";
 import { SkeletonPayload } from "./../../Skeleton";
 
 // import "./Builds.css";
@@ -80,7 +81,23 @@ export default class extends React.PureComponent {
     const { teams, telemetry, status } = this.props;
     const { playerLoaded } = this.state;
 
-    if (status === "loading" || !telemetry) return "Loading...";
+    if (status === "loading" || !telemetry || true) {
+      return (
+        <div
+          style={{
+            width: "1px",
+            height: "1px",
+            margin: "3% auto",
+          }}
+        >
+          <Spinner
+            name="line-spin-fade-loader"
+            color="rgba(0, 0, 0, 0.2)"
+            fadeIn="none"
+          />
+        </div>
+      );
+    }
 
     const detailsTeam = teams.find(team =>
       team.players.find(player => player.name === playerLoaded)

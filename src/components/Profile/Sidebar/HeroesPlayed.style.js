@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 import Box from "./../../common/Box";
 import AssetLoader from "./../../common/AssetLoader";
-import {SidebarBox} from "./../Profile.style";
+import { SidebarBox } from "./../Profile.style";
+import Link from "react-router-dom/Link";
 
 export const Wrap = SidebarBox;
 
@@ -11,7 +12,7 @@ export const Content = styled(Box.body)`
   flex-direction: column;
 `;
 
-export const Each = styled.div`
+export const Each = styled(Link)`
   width: 100%;
   height: 70px;
   padding: 5px 15px;
@@ -72,11 +73,11 @@ export const KDA = styled.div`
 
 export const KDADetails = styled.div`
   color: ${props => props.theme.text[300]};
-  &>span {
+  & > span {
     color: ${props => props.theme.text[500]};
-    margin:0  5px;
+    margin: 0 5px;
   }
-  &>span#deaths {
+  & > span#deaths {
     color: red;
   }
 `;
@@ -88,13 +89,13 @@ export const WR = styled.div`
   flex-direction: column;
   justify-content: center;
   color: ${props => props.theme.text[300]};
-  &>div {
+  & > div {
     font-size: 19px;
     text-align: center;
     font-weight: 500;
   }
-  &>span{
-  text-align: center;
-  font-size: 11px;
-}
+  & > span {
+    text-align: center;
+    font-size: 11px;
+  }
 `;

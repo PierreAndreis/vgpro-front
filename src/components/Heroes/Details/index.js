@@ -151,6 +151,7 @@ class HeroDetails extends React.Component {
 
           <Adsense />
           <Styled.Content>{content}</Styled.Content>
+          <br />
           <Adsense />
         </Styled.Wrapper>
       </SkeletonContext.Provider>

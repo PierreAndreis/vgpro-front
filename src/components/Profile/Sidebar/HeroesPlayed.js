@@ -23,15 +23,17 @@ const Hero = ({ status, stats, t }) => {
   let kills;
   let deaths;
   let assists;
+  let link = "/heroes";
 
   if (status === "loaded") {
+    link = `/heroes/${stats.name}`;
     kills = stats.avgKills.toFixed(0);
     deaths = stats.avgDeaths.toFixed(0);
     assists = stats.avgAssists.toFixed(0);
   }
 
   return (
-    <Styled.Each>
+    <Styled.Each to={link}>
       <SkeletonWrapper
         status={status}
         width="40px"

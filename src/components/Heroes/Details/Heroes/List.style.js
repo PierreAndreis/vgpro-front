@@ -38,6 +38,7 @@ export const ListRow = styled.div`
 
   & > span {
     ${"" /* Rate */};
+    font-weight: bold;
     width: 70px;
     text-align: center;
   }

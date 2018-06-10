@@ -29,8 +29,13 @@ class LeadMember extends React.PureComponent {
       const hero = data && data.topHeroes && data.topHeroes[i];
       heroes.push(<Styled.Hero key={i} type="heroes" name={hero} />);
     }
+
     return (
-      <Styled.Wrapper hover>
+      <Styled.Wrapper
+        hover
+        animation="fadeIn"
+        animationDelay={this.props.animationDelay}
+      >
         <Link to={link}>
           <Styled.Body me={data && me === data.name}>
             <Styled.Position>

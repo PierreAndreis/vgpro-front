@@ -16,6 +16,7 @@ import Overview from "./Overview";
 import Skills from "./Skills";
 import Builds from "./Builds";
 import Heroes from "./Heroes";
+import ErrorScreen from "../../common/ErrorScreen";
 
 class HeroDetails extends React.Component {
   state = {
@@ -69,7 +70,11 @@ class HeroDetails extends React.Component {
     let payload = this.state.payload;
 
     let topRoles;
+    if (this.state.status === "loaded" && !payload.name) {
+      return <ErrorScreen />;
+    }
 
+    console.log(this.state.status, payload);
     if (this.state.status === "loaded") {
       topRoles = payload.roles
         .sort((a, b) => (a.pickRate > b.pickRate ? -1 : 1))

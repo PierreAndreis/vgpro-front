@@ -1,12 +1,12 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import Box from "./../common/Box";
 import AssetLoader from "./../common/AssetLoader";
 import { transparentize } from "polished";
 
-
 export const Wrapper = styled(Box.wrap)`
   width: 100%;
   margin: 3px 0;
+  animation-delay: ${props => props.animationDelay * 100}ms;
 `;
 
 export const Body = styled(Box.body)`
@@ -20,16 +20,18 @@ export const Body = styled(Box.body)`
   /* margin: 2px 0; */
   box-sizing: border-box;
   color: ${props => props.theme.text[300]};
-  >div {
+  > div {
     flex-shrink: 0;
   }
-  ${props => props.me && css`
-    background: linear-gradient(
-      -90deg, 
-      ${transparentize(0.7, props.theme.primary[400])} 0%, 
-      ${transparentize(1, props.theme.primary[400])} 100%
-    );
-  `}
+  ${props =>
+    props.me &&
+    css`
+      background: linear-gradient(
+        -90deg,
+        ${transparentize(0.7, props.theme.primary[400])} 0%,
+        ${transparentize(1, props.theme.primary[400])} 100%
+      );
+    `};
 `;
 
 export const Position = styled.div`
@@ -45,8 +47,7 @@ export const Tier = styled(AssetLoader)`
   height: 35px;
   background-size: 70%;
   background-position: top middle;
-  ${'' /* background-color: red; */}
-  background-repeat: no-repeat;
+  ${"" /* background-color: red; */} background-repeat: no-repeat;
 `;
 
 export const PlayerInfo = styled.div`
@@ -59,7 +60,6 @@ export const PlayerInfo = styled.div`
   @media screen and (max-width: 560px) {
     width: 100px;
   }
-
 `;
 
 export const PlayerName = styled.div`
@@ -83,13 +83,13 @@ export const PlayerName = styled.div`
 export const Points = styled.div`
   width: 50px;
   text-align: center;
-  &>div {
+  & > div {
     font-size: 21px;
     @media screen and (max-width: 560px) {
       font-size: 18px;
     }
   }
-  &>span {
+  & > span {
     font-size: 11px;
     text-transform: uppercase;
     color: ${props => props.theme.text[500]};
@@ -112,18 +112,18 @@ export const GameInfo = styled.div`
 `;
 
 export const Chart = styled.div`
- width: 60px;
- span {
-  font-size: 9px;
-  font-weight: 500;
- }
+  width: 60px;
+  span {
+    font-size: 9px;
+    font-weight: 500;
+  }
 `;
 
 export const Rates = styled.div`
   font-size: 13px;
   font-weight: 500;
   width: 100px;
-  &>div {
+  & > div {
     white-space: nowrap;
   }
 `;
@@ -148,7 +148,7 @@ export const RateLabel = styled.span`
         :before {
           background: ${props => props.theme.extra.win};
         }
-      `
+      `;
     }
     if (props.label === "l") {
       return css`
@@ -156,9 +156,9 @@ export const RateLabel = styled.span`
         :before {
           background: ${props => props.theme.extra.loss};
         }
-      `
+      `;
     }
-  }}
+  }};
 `;
 
 export const Heroes = styled.div`

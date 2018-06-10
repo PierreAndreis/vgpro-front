@@ -178,12 +178,13 @@ class Leaderboard extends React.Component {
       let key = 0;
       let adCount = 0;
       _forEach(pages, (page, pageIndex, lol) => {
-        page.payload.forEach(each => {
+        page.payload.forEach((each, animationDelay) => {
           content.push(
             <LeadMember
               key={`${key++} - ${this.state.mode.label} - ${
                 this.state.region
               }`}
+              animationDelay={animationDelay}
               me={this.state.isPlayer}
               status={page.status}
               data={each}

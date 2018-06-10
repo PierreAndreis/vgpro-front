@@ -41,8 +41,8 @@ export const Line = styled.div`
 `;
 
 export const HeroImage = styled(AssetLoader)`
-  width: 70px;
-  height: 80px;
+  width: 90px;
+  height: 100px;
   margin: 0 auto;
 
   background-size: 120%;

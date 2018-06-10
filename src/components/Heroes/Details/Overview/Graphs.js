@@ -291,7 +291,7 @@ const GraphBox = ({ title, payload, color, type }) => {
   }
 
   return (
-    <Box.wrap>
+    <Box.wrap animation="fadeInDown">
       <Box.title>
         <Trans i18nKey={title} />
         {placementContent}

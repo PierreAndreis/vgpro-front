@@ -74,7 +74,34 @@ export class Stats extends React.Component {
       <Styled.Container>
         <Box.wrap>
           <Styled.Body>
-            <Styled.Vs />
+            <h4>Win Rate</h4>
+            <div>
+              <Styled.Label>
+                <div>30%</div>
+
+                <span>Playing Against</span>
+                <div>70%</div>
+              </Styled.Label>
+              <Styled.Bar>
+                <div style={{ width: "30%" }} />
+                <div style={{ width: "70%" }} />
+              </Styled.Bar>
+            </div>
+
+            <div>
+              <Styled.Label>
+                <div>30%</div>
+
+                <span>Playing With</span>
+                <div>70%</div>
+              </Styled.Label>
+              <Styled.Bar>
+                <div style={{ width: "30%" }} />
+                <div style={{ width: "70%" }} />
+              </Styled.Bar>
+            </div>
+
+            <h4>Overall Stats</h4>
 
             {AllStats.map(this.renderStats)}
           </Styled.Body>

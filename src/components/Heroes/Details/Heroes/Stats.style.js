@@ -34,16 +34,22 @@ export const Vs = styled(Button).attrs({
 export const Body = styled(Box.body)`
   display: flex;
   height: 100%;
-  padding-top: 30px;
-  padding: 30px 10px;
+  padding: 10px;
   box-sizing: border-box;
+
+  & h4 {
+    width: 100%;
+    font-size: 11px;
+    color: ${props => props.theme.text[300]};
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-align: center;
+  }
 `;
 
 export const Label = styled.div`
   display: flex;
   justify-content: space-between;
-
-  margin: 10px 0 0;
   position: relative;
 
   & > div {
@@ -74,6 +80,8 @@ export const Bar = styled.div`
   position: relative;
   display: flex;
   flex-wrap: nowrap;
+
+  margin-bottom: 10px;
 
   & > div {
     background: linear-gradient(90deg, #4fa8dc 0%, #77e8c3 100%);

@@ -32,7 +32,7 @@ const Hero = ({ payload, rank }) => (
   </Link>
 );
 
-const Counter = ({ payload }) => {
+const Counter = ({ hero, payload }) => {
   let heroes;
   if (!payload) heroes = SkeletonPayload(TOTAL_COUNTERS);
   else {
@@ -44,7 +44,7 @@ const Counter = ({ payload }) => {
   return (
     <Box.wrap>
       <Box.title>
-        <Trans i18nKey="heroes.playingAgainst" />
+        <Trans i18nKey="heroes.weakAgainst" />
       </Box.title>
       <Box.body>
         <Styled.List>
@@ -52,8 +52,7 @@ const Counter = ({ payload }) => {
             <span>#</span>
             <Styled.HeroImage />
             <Styled.Info>
-              {" "}
-              <Trans i18nKey="terms.name" />{" "}
+              <Trans i18nKey="terms.name" />
             </Styled.Info>
             <span>
               <Trans i18nKey="terms.winrate" />
@@ -72,12 +71,11 @@ const Counter = ({ payload }) => {
         </Styled.List>
       </Box.body>
       <Box.action>
-        <Box.button>
-          <Trans i18nKey="general.Back" />
-        </Box.button>
-        <Box.button>
-          <Trans i18nKey="general.Next" />
-        </Box.button>
+        <Link to={`/heroes/${hero}/heroes`}>
+          <Box.button>
+            <Trans i18nKey="general.More" />
+          </Box.button>
+        </Link>
       </Box.action>
     </Box.wrap>
   );

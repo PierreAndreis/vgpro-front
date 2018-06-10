@@ -10,6 +10,7 @@ export const Wrapper = styled(Link)`
   transition: background-color 0.2s;
   flex-direction: space-between;
   align-items: center;
+
   &:nth-child(even) {
     background: ${props => props.theme.background.listOdd};
   }

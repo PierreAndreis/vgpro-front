@@ -115,6 +115,7 @@ export default {
 
   "terms.OverallStats": "Overall Stats",
   "terms.OverviewStats": "Overview Stats",
+  "terms.AverageStats": "Average Stats",
 
   "profile.notFound": "{{name}} was not found.",
   "profile.foundButNoMatches":

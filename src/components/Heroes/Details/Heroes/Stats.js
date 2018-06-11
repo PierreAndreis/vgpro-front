@@ -101,7 +101,9 @@ export class Stats extends React.Component {
               </Styled.Bar>
             </div>
 
-            <h4>Overall Stats</h4>
+            <h4>
+              <Trans i18nKey="terms.AverageStats" />
+            </h4>
 
             {AllStats.map(this.renderStats)}
           </Styled.Body>

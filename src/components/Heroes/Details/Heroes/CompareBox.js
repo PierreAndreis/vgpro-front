@@ -1,4 +1,6 @@
 import React from "react";
+import Tilt from "react-tilt";
+
 import { Trans } from "react-i18next";
 import Box from "../../../common/Box";
 
@@ -10,6 +12,7 @@ import { fetchHero } from "../../../../actions/api.js";
 import PolygonSVG from "./PolygonSVG";
 
 import Stats from "./Stats";
+import Link from "react-router-dom/Link";
 
 const Portrait = ({ heroName, payload }) => {
   let roles = [];
@@ -35,18 +38,26 @@ const Portrait = ({ heroName, payload }) => {
     <div style={{ flex: 1, margin: "0 2px 10px" }}>
       <Box.wrap>
         <Box.body>
-          <Styled.Container>
-            <div>
-              <div
-                style={{
-                  filter: "drop-shadow(0px 5px 30px rgba(0, 0, 0, 0.2))",
-                }}
-              >
-                <Styled.HeroImage type="heroes" name={heroName} />
+          <Link to={`/heroes/${heroName}`}>
+            <Styled.Container>
+              <div>
+                <Tilt
+                  options={{ max: 20, scale: 1.1 }}
+                  style={{ height: 100, width: 90 }}
+                >
+                  <div
+                    style={{
+                      filter:
+                        "drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.4))",
+                    }}
+                  >
+                    <Styled.HeroImage type="heroes" name={heroName} />
+                  </div>
+                </Tilt>
+                <h3>{heroName}</h3>
               </div>
-              <h3>{heroName}</h3>
-            </div>
-          </Styled.Container>
+            </Styled.Container>
+          </Link>
           <Styled.Line />
           <Styled.Container>
             <div>
@@ -72,7 +83,12 @@ const Portrait = ({ heroName, payload }) => {
               </h4>
               <div style={{ display: "flex" }}>
                 {strongAgainst.map((hero, i) => (
-                  <Styled.Portrait key={i} type="heroes" name={hero.key} />
+                  <Link
+                    key={i}
+                    to={hero.key ? `/heroes/${hero.key}` : "/"}
+                  >
+                    <Styled.Portrait type="heroes" name={hero.key} />
+                  </Link>
                 ))}
               </div>
             </div>
@@ -85,7 +101,12 @@ const Portrait = ({ heroName, payload }) => {
               </h4>
               <div style={{ display: "flex" }}>
                 {weakAgainst.map((hero, i) => (
-                  <Styled.Portrait key={i} type="heroes" name={hero.key} />
+                  <Link
+                    key={i}
+                    to={hero.key ? `/heroes/${hero.key}` : "/"}
+                  >
+                    <Styled.Portrait type="heroes" name={hero.key} />
+                  </Link>
                 ))}
               </div>
             </div>

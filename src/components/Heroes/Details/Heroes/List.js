@@ -19,11 +19,17 @@ class Hero extends React.Component {
     let payload = this.props.payload;
 
     return (
-      <Styled.ListRow onClick={this.props.onClick}>
+      <Styled.ListRow onClick={this.props.onClick} tabIndex={0}>
         <Styled.HeroImage type="heroes" name={payload && payload.key} />
         <Styled.Info>{payload.key}</Styled.Info>
         <span>
-          <Rate rate={payload.winRate} />
+          <Rate
+            rate={
+              this.props.type === "against"
+                ? 100 - payload.winRate
+                : payload.winRate
+            }
+          />
         </span>
         <span>
           <Rate rate={payload.pickRate} />
@@ -77,14 +83,14 @@ class List extends React.Component {
               group
               onClick={this.changeList("against")}
             >
-              <Trans i18nKey="heroes.playingAgainst" />
+              <Trans i18nKey="heroes.playingAgainst" /> {payload.name}
             </Button>
             <Button
               active={currentList === "with"}
               group
               onClick={this.changeList("with")}
             >
-              <Trans i18nKey="heroes.playingWith" />
+              <Trans i18nKey="heroes.playingWith" /> {payload.name}
             </Button>
           </div>
           <Styled.List>
@@ -106,6 +112,7 @@ class List extends React.Component {
               {heroes.map((hero, index) => (
                 <Hero
                   key={hero.key + currentList}
+                  type={currentList}
                   onClick={this.props.onClick(hero.key)}
                   payload={hero}
                 />

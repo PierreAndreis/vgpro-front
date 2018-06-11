@@ -4809,10 +4809,6 @@ normalize-range@^0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
 
-normalize-scss@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/normalize-scss/-/normalize-scss-7.0.1.tgz#74485e82bb5d0526371136422a09fdb868ffc1a4"
-
 normalize-url@^1.4.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-1.9.1.tgz#2cc0d66b31ea23036458436e3620d85954c66c3c"
@@ -5884,6 +5880,10 @@ react-spinkit@^3.0.0:
     loaders.css "^0.1.2"
     object-assign "^4.1.0"
     prop-types "^15.5.8"
+
+react-tilt@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/react-tilt/-/react-tilt-0.1.4.tgz#0ac1f33674a3fff6c617cf411002d7ecdd2ebcb1"
 
 react-timeago@^3.4.3:
   version "3.4.3"

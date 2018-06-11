@@ -4,7 +4,6 @@ import { SkeletonWrapper } from "./../../common/Skeleton";
 import { Rate } from "./../../common/ColoredValues";
 
 import * as Styled from "./Hero.style.js";
-import { Link } from "react-router-dom";
 
 const Hero = ({ status, name, value, rank }) => {
   let heroName;

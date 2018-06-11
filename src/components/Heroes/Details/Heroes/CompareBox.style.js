@@ -64,10 +64,16 @@ export const Role = styled.div`
       100%
   );
 
-  box-shadow: 0 0 20px
-    ${props =>
-      transparentize(0.3, props.theme.extra[props.name.toLowerCase()])};
-
+  ${props =>
+    props.highlight &&
+    css`
+      box-shadow: 0 0 20px
+        ${props =>
+          transparentize(
+            0.3,
+            props.theme.extra[props.name.toLowerCase()]
+          )};
+    `};
   border-radius: 50%;
   margin: 0 5px;
 

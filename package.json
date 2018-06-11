@@ -24,6 +24,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.4",
     "react-spinkit": "^3.0.0",
+    "react-tilt": "^0.1.4",
     "react-timeago": "^3.4.3",
     "recharts": "^1.0.0-beta.10",
     "redux": "^3.7.2",

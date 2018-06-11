@@ -7,49 +7,49 @@ let langs = {};
 import en from "./en";
 langs["en"] = en;
 
-/** Dutch */
-import du from "./du";
-langs["du"] = du;
+// /** Dutch */
+// import du from "./du";
+// langs["du"] = du;
 
-/** Spanish */
-import es from "./es";
-langs["es"] = es;
+// /** Spanish */
+// import es from "./es";
+// langs["es"] = es;
 
-/** Portuguese */
-import br from "./br";
-langs["br"] = br;
+// /** Portuguese */
+// import pt from "./pt";
+// langs["pt"] = pt;
 
-/** Indonesian */
-import id from "./id";
-langs["id"] = id;
+// /** Indonesian */
+// import id from "./id";
+// langs["id"] = id;
 
-/** French */
-import fr from "./fr";
-langs["fr"] = fr;
-
-/** Traditional Chinese */
-import cn from "./cn";
-langs["cn"] = cn;
+// /** French */
+// import fr from "./fr";
+// langs["fr"] = fr;
 
 /** Traditional Chinese */
-import sc from "./sc";
-langs["sc"] = sc;
+import zh from "./zh";
+langs["zh"] = zh;
 
-/** Romanian */
-import ro from "./ro";
-langs["ro"] = ro;
+/** Traditional Chinese */
+import zhTW from "./zhTW";
+langs["zh-TW"] = zhTW;
 
-/** Arabic */
-import ar from "./ar";
-langs["ar"] = ar;
+// /** Romanian */
+// import ro from "./ro";
+// langs["ro"] = ro;
 
-/** Vietnamese */
-import vi from "./vi";
-langs["vi"] = vi;
+// /** Arabic */
+// import ar from "./ar";
+// langs["ar"] = ar;
 
-/** Thai */
-import th from "./th";
-langs["th"] = th;
+// /** Vietnamese */
+// import vi from "./vi";
+// langs["vi"] = vi;
+
+// /** Thai */
+// import th from "./th";
+// langs["th"] = th;
 
 let res = {};
 

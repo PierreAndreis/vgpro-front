@@ -6,11 +6,10 @@
     "axios": "^0.18.0",
     "core-js": "^2.5.5",
     "cross-env": "^5.1.4",
-    "fade-props": "^2.1.0",
     "history": "^4.7.2",
     "i18next": "^10.6.0",
+    "i18next-browser-languagedetector": "^2.2.0",
     "lodash": "^4.17.5",
-    "normalize-scss": "^7.0.1",
     "polished": "^1.9.2",
     "query-string": "^5.1.1",
     "react": "^16.3.1",
@@ -26,7 +25,6 @@
     "react-scripts": "^1.1.4",
     "react-spinkit": "^3.0.0",
     "react-timeago": "^3.4.3",
-    "react-transition-group": "^1.2.1",
     "recharts": "^1.0.0-beta.10",
     "redux": "^3.7.2",
     "redux-persist": "^5.9.1",
@@ -34,12 +32,14 @@
     "styled-components": "^3.2.5"
   },
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
     "start": "cross-env NODE_PATH=src/ react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "redux-devtools": "^3.4.1"
+    "redux-devtools": "^3.4.1",
+    "source-map-explorer": "^1.5.0"
   }
 }

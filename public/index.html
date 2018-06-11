@@ -7,42 +7,34 @@
 
   <meta name="description" content="All about Vainglory! Search Pro players, players, match history, stats, damage done e so much more!">
   <meta name="robots" content="index, follow">
-  <meta name="author" content="pierreandreis.com">
+  <meta name="author" content="@pierreandreis">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicons/apple-touch-icon.png?v=oLd0w9Jyw8">
-  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicons/favicon-32x32.png?v=oLd0w9Jyw8">
-  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicons/favicon-16x16.png?v=oLd0w9Jyw8">
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicons/favicon-16x16.png">
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json?v=123">
-  <link rel="mask-icon" href="%PUBLIC_URL%/favicons/safari-pinned-tab.svg?v=oLd0w9Jyw8" color="#5bbad5">
-  <link rel="shortcut icon" href="%PUBLIC_URL%/favicons/favicon.ico?v=oLd0w9Jyw8">
+  <link rel="mask-icon" href="%PUBLIC_URL%/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicons/favicon.ico">
   <meta name="apple-mobile-web-app-title" content="VGPRO.gg">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="#333333">
   <meta name="application-name" content="VGPRO.gg">
-  <meta name="msapplication-config" content="/favicons/browserconfig.xml?v=oLd0w9Jyw8">
+  <meta name="msapplication-config" content="/favicons/browserconfig.xml">
   <meta name="theme-color" content="#333333">
-
   <!--
        Hard-coded stylesheets
     -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
+  <link defer href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link defer href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500,700|Roboto:300,400,500,700" rel="stylesheet">
 
-  <script src="https://cdn.ravenjs.com/3.21.0/raven.min.js" crossorigin="anonymous"></script>
-  <script type="text/javascript">
-    Raven.config('https://7b17a53d1c694fe08105008c3029105c@sentry.io/265032',
-      {
-        whitelistUrls: [/vgpro\.gg/, /www\.vgpro\.gg/],
-        ignoreErrors: [/SecurityError/, /^Exact Match Message$/, /MyAppGetLinkTitleNameAtPoint/]
-      }).install()
-  </script>
   <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-8733440501534468",
-        enable_page_level_ads: true
-      });
+    (adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client: "ca-pub-8733440501534468",
+      enable_page_level_ads: true
+    });
   </script>
+
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -61,5 +53,14 @@
   </noscript>
   <div id="app"></div>
 </body>
+
+<script src="https://cdn.ravenjs.com/3.21.0/raven.min.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  Raven.config('https://7b17a53d1c694fe08105008c3029105c@sentry.io/265032',
+    {
+      whitelistUrls: [/vgpro\.gg/, /www\.vgpro\.gg/],
+      ignoreErrors: [/SecurityError/, /^Exact Match Message$/, /MyAppGetLinkTitleNameAtPoint/]
+    }).install()
+</script>
 
 </html>

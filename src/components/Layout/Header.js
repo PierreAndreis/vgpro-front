@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { commonWrapper } from "./../../styles/App.style";
 
 // import Alert from "./HeaderComponents/Alert";
-import LanguageSelector from "./HeaderComponents/LanguageSelector";
+// import LanguageSelector from "./HeaderComponents/LanguageSelector";
 import MenuHeader from "./HeaderComponents/Menu";
 import ThemeSwitch from "./HeaderComponents/ThemeSwitch";
 import SearchPlayer from "./../common/SearchPlayer";
@@ -73,7 +73,7 @@ class Header extends React.Component {
             <MenuHeader t={t} />
             <SearchPlayer mode="compact" />
             <ThemeSwitch />
-            <LanguageSelector />
+            {/* <LanguageSelector /> */}
             {/* {<Media query="(max-width: 768px)">
               {matches => !matches && <ThemeSwitch />}
             </Media>} */}

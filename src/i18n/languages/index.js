@@ -87,6 +87,10 @@ langs['vi'] = vi;
 import th from "./th";
 langs['th'] = th;
 
+/** Turkish */
+import tu from "./tu";
+langs['tu'] = tu;
+
 let res = {};
 
 // Due to i18next needing a namespace, we will insert all translations into a ghost namespace

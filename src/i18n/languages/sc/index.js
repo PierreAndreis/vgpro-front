@@ -139,7 +139,10 @@ export default {
     "heroes.winRateByGameLength": "游戏长度胜率",
     "heroes.playingAgainst": "游玩面对",
     "heroes.playingWith": "与｛heroes｝遊玩",
+    "heroes.weakAgainst": "较弱对付",
+    "heroes.strongAgainst": "强于对付",
 
+    "search.placeholderShort": "搜索",
     "search.placeholder": "搜尋玩家名字",
 
     "filters.role": "以岗位筛选",

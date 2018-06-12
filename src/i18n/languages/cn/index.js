@@ -138,7 +138,10 @@ export default {
 
     "heroes.playingAgainst": "遊玩面對",
     "heroes.playingWith": "與｛heroes｝遊玩",
+    "heroes.weakAgainst": "較弱對付",
+    "heroes.strongAgainst": "強於對付",
 
+    "search.placeholderShort": "搜索",
     "search.placeholder": "搜尋玩家名字",
 
     "filters.role": "以崗位篩選",

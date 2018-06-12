@@ -141,8 +141,12 @@ export default {
 
     "heroes.playingAgainst": "Entrain de jouer contre",
     "heroes.playingWith": "En Train de jouer avec",
+    "heroes.weakAgainst": "Faible Contre",
+    "heroes.strongAgainst": "Fort Contre",
 
+    "search.placeholderShort": "Recherche",
     "search.placeholder": "Rechercher le nom d'un joueur",
+
     "filters.role": "trier par role",
 
     situationalItemTitle: "Equipement Situationel",

@@ -140,7 +140,10 @@ export default {
 
     "heroes.playingAgainst": "Jugados contra",
     "heroes.playingWith": "Jugados con",
+    "heroes.weakAgainst": "Débil Contra",
+    "heroes.strongAgainst": "Fuerte Contra",
 
+    "search.placeholderShort": "Búsqueda",
     "search.placeholder": "Buscar Nombre de Jugador",
 
     "filters.role": "Filtrar por Rol",

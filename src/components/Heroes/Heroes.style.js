@@ -13,10 +13,6 @@ export const Wrap = commonWrapper.extend`
 let BoxWrap = Box.wrap;
 
 export const Hero = BoxWrap.withComponent(Link).extend`
-<<<<<<< HEAD
-${"" /* export const Hero = BoxWrap.extend` */}
-=======
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
   width: 100%;
   margin: 3px 0;
   animation-delay: ${props => (props.delay / 2) * 100}ms;
@@ -82,11 +78,7 @@ export const HeroContent = styled(Box.body)`
   > div {
     flex-shrink: 0;
     position: relative;
-<<<<<<< HEAD
-    span {
-=======
     b {
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
       font-size: 11px;
       color: ${props => props.theme.text[300]};
       text-transform: uppercase;
@@ -153,11 +145,7 @@ export const HeroImage = styled(AssetLoader)`
   border-radius: 100%;
   background-size: 120%;
   background-position: center center;
-<<<<<<< HEAD
-  background-color: grey;
-=======
   background-color: ${props => props.theme.background.slot};
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
   border: 1px solid ${props => props.theme.background.slotBorder};
   flex-shrink: 0;
   @media screen and (max-width: 560px) {

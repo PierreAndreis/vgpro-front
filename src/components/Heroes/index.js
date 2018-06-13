@@ -9,10 +9,7 @@ import { fetchTopHeroes } from "../../actions/api";
 import Button from "./../common/Button";
 import Utils from "./../../utils";
 import { Adsense } from "../common/Ads";
-<<<<<<< HEAD
-=======
 import { Rate } from "../common/ColoredValues";
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 
 const ITEM_PER_PAGE = 30;
 
@@ -35,24 +32,15 @@ function compare(a, b, property, valueToReturn) {
 }
 
 const Subtitles = React.createContext(false);
-<<<<<<< HEAD
 
-=======
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 const Hero = ({ status, position, payload, t }) => (
   <Styled.Hero
     hover="true"
     to={payload.name ? `/heroes/${payload.name}` : "/heroes"}
-<<<<<<< HEAD
-  >
-    {/* <Styled.Hero> */}
-    {console.log("re-rendering")}
-=======
     animation="fadeIn"
     delay={position}
   >
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
-    <Styled.HeroContent>
+      <Styled.HeroContent>
       <Styled.Info>
         <Styled.Position>{position + 1}</Styled.Position>
 
@@ -76,11 +64,8 @@ const Hero = ({ status, position, payload, t }) => (
 
       <Styled.Stats>
         <SkeletonWrapper status={status} width={40} height={20}>
-<<<<<<< HEAD
-          {() => payload.pickRate.toFixed(2) + "%"}
-=======
+
           {() => <Rate fixed={2} rate={payload.pickRate} />}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
         </SkeletonWrapper>
         <Subtitles.Consumer>
           {value => (
@@ -93,11 +78,7 @@ const Hero = ({ status, position, payload, t }) => (
 
       <Styled.Stats>
         <SkeletonWrapper status={status} width={40} height={20}>
-<<<<<<< HEAD
-          {() => payload.winRate.toFixed(2) + "%"}
-=======
           {() => <Rate fixed={2} rate={payload.winRate} />}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
         </SkeletonWrapper>
         <Subtitles.Consumer>
           {value => (
@@ -110,11 +91,7 @@ const Hero = ({ status, position, payload, t }) => (
 
       <Styled.Stats>
         <SkeletonWrapper status={status} width={40} height={20}>
-<<<<<<< HEAD
-          {() => payload.banRate.toFixed(2) + "%"}
-=======
           {() => <Rate fixed={2} rate={payload.banRate} />}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
         </SkeletonWrapper>
         <Subtitles.Consumer>
           {value => (
@@ -127,13 +104,8 @@ const Hero = ({ status, position, payload, t }) => (
 
       <Styled.Tier>
         <Styled.TierImg tier={payload && `tier${payload.tier}`} />
-<<<<<<< HEAD
-        <span>
-          <SkeletonWrapper status={status} with={40} height={20}>
-=======
         <b>
           <SkeletonWrapper status={status} width={40} height={20}>
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
             {() => HERO_TIERS[payload.tier](t)}
           </SkeletonWrapper>
         </b>
@@ -280,11 +252,7 @@ class Heroes extends React.Component {
 
         {heroes.map((hero, index) => (
           <Hero
-<<<<<<< HEAD
-            key={status === "loaded" ? hero.name : index}
-=======
             key={status === "loaded" ? hero.name + index : index}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
             position={index}
             status={status}
             payload={hero}
@@ -330,10 +298,6 @@ class TrackScroll extends React.Component {
   };
 
   render() {
-<<<<<<< HEAD
-    console.log(this.state.isHeaderVisible);
-=======
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     return (
       <Subtitles.Provider value={!this.state.isHeaderVisible}>
         <Heroes headerRef={ref => (this.header = ref)} t={this.props.t} />

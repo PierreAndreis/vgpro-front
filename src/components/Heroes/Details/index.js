@@ -15,11 +15,8 @@ import { Adsense } from "../../common/Ads";
 import Overview from "./Overview";
 import Skills from "./Skills";
 import Builds from "./Builds";
-<<<<<<< HEAD
-=======
 import Heroes from "./Heroes";
 import ErrorScreen from "../../common/ErrorScreen";
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 
 class HeroDetails extends React.Component {
   state = {
@@ -95,10 +92,7 @@ class HeroDetails extends React.Component {
         overview: Overview,
         abilities: Skills,
         builds: Builds,
-<<<<<<< HEAD
-=======
         heroes: Heroes,
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
       }[tab] || Overview;
 
     let content = React.createElement(element, {
@@ -149,15 +143,6 @@ class HeroDetails extends React.Component {
             </Link>
             <Link to={`${toLink}heroes`}>
               <Button active={tab === "heroes"}>
-<<<<<<< HEAD
-                {" "}
-                <Trans i18nKey="tab.Heroes" />{" "}
-              </Button>
-            </Link>
-          </Styled.Tabs>
-          <Adsense />
-          <Styled.Content>{content}</Styled.Content>
-=======
                 <Trans i18nKey="tab.Heroes" />
               </Button>
             </Link>
@@ -167,7 +152,6 @@ class HeroDetails extends React.Component {
           <Styled.Content>{content}</Styled.Content>
           <br />
           <Adsense />
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
         </Styled.Wrapper>
       </SkeletonContext.Provider>
     );

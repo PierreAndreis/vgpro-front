@@ -6,10 +6,7 @@ import { transparentize } from "polished";
 export const Wrapper = styled(Box.wrap)`
   width: 100%;
   margin: 3px 0;
-<<<<<<< HEAD
-=======
   animation-delay: ${props => props.animationDelay * 100}ms;
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 `;
 
 export const Body = styled(Box.body)`

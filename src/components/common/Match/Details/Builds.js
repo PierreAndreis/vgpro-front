@@ -80,11 +80,6 @@ export default class extends React.PureComponent {
   render() {
     const { teams, telemetry, status } = this.props;
     const { playerLoaded } = this.state;
-<<<<<<< HEAD
-
-    if (status === "loading" || !telemetry) return "Loading...";
-
-=======
 
     if (status === "loading" || !telemetry) {
       return (
@@ -104,7 +99,6 @@ export default class extends React.PureComponent {
       );
     }
 
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     const detailsTeam = teams.find(team =>
       team.players.find(player => player.name === playerLoaded)
     );
@@ -209,11 +203,6 @@ export default class extends React.PureComponent {
                   />
                 ))}
               </Styled.AbilitiesRow>
-<<<<<<< HEAD
-              {abilities.map(ability => (
-                <Abilities key={ability.name} {...ability} />
-              ))}
-=======
               {[
                 `${overviewPlayer.hero}_a`,
                 `${overviewPlayer.hero}_b`,
@@ -234,7 +223,6 @@ export default class extends React.PureComponent {
                   />
                 );
               })}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
             </Styled.AbilitiesGrid>
           </Styled.Abilities>
 

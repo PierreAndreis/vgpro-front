@@ -126,10 +126,7 @@ const SimpleLineChart = ({ data, color, syncId }) => (
       />
       <YAxis
         scale="auto"
-<<<<<<< HEAD
-=======
         tickCount={10}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
         domain={["auto", "auto"]}
         padding={{ left: 0, right: 0, top: 0, bottom: 0 }}
         width={20}
@@ -151,16 +148,9 @@ const SimpleLineChart = ({ data, color, syncId }) => (
         dot={true}
         dataKey="average"
         stroke={`url(#${color})`}
-<<<<<<< HEAD
-        strokeWidth="2"
-        filter={"url(#blur)"}
-      />
-      {/* <Line type="linear" dot={true} dataKey="pickRate" stroke={`url(#orange)`} strokeWidth="1" filter={"url(#blur)"}/> */}
-=======
         strokeWidth="3"
         filter={"url(#blur)"}
       />
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     </LineChart>
   </ResponsiveContainer>
 );
@@ -253,10 +243,6 @@ class HistoryCharts extends React.Component {
         }));
     }
 
-<<<<<<< HEAD
-    console.log(winRate);
-=======
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     return (
       <React.Fragment>
         <GraphBox

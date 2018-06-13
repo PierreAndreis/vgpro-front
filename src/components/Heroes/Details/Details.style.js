@@ -49,8 +49,6 @@ export const HeroTitle = styled.div`
 
 export const Tabs = styled.section`
   display: flex;
-<<<<<<< HEAD
-=======
   flex-wrap: wrap;
   @media screen and (max-width: 400px) {
     justify-content: center;
@@ -62,7 +60,6 @@ export const Tabs = styled.section`
       padding: 7px 10px;
     }
   }
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
   & button {
     cursor: pointer;
   }

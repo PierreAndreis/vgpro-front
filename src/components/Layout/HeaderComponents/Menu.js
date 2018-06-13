@@ -7,11 +7,7 @@ import Media from "react-media";
 
 // import "./Menu.css";
 import * as Styled from "./Menu.style.js";
-<<<<<<< HEAD
-import ThemeSwitch from "./ThemeSwitch";
-=======
 // import ThemeSwitch from "./ThemeSwitch";
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 
 const NavLinks = [
   {
@@ -77,15 +73,9 @@ class MenuMobile extends React.Component {
           onClick={this.handleMenu}
         >
           <MenuList />
-<<<<<<< HEAD
-          <Styled.MenuMobileBottom>
-            <ThemeSwitch text />
-          </Styled.MenuMobileBottom>
-=======
           {/* <Styled.MenuMobileBottom>
             <ThemeSwitch text />
           </Styled.MenuMobileBottom> */}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
         </Styled.MenuMobile>
       </React.Fragment>
     );

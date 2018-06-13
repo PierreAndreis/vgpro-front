@@ -31,15 +31,11 @@ class LeadMember extends React.PureComponent {
     }
 
     return (
-<<<<<<< HEAD
-      <Styled.Wrapper hover>
-=======
       <Styled.Wrapper
         hover
         animation="fadeIn"
         animationDelay={this.props.animationDelay}
       >
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
         <Link to={link}>
           <Styled.Body me={data && me === data.name}>
             <Styled.Position>

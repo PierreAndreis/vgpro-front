@@ -6,13 +6,8 @@ import styled from "styled-components";
 // import Media from "react-media";
 import { commonWrapper } from "./../../styles/App.style";
 
-<<<<<<< HEAD
-import Alert from "./HeaderComponents/Alert";
-import LanguageSelector from "./HeaderComponents/LanguageSelector";
-=======
 // import Alert from "./HeaderComponents/Alert";
 // import LanguageSelector from "./HeaderComponents/LanguageSelector";
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 import MenuHeader from "./HeaderComponents/Menu";
 import ThemeSwitch from "./HeaderComponents/ThemeSwitch";
 import SearchPlayer from "./../common/SearchPlayer";
@@ -52,21 +47,6 @@ class Header extends React.Component {
   render() {
     const { t } = this.props;
 
-<<<<<<< HEAD
-    const message = (
-      <span>
-        Welcome! This is the preview of our new website. Please report any
-        bugs or feedback to{" "}
-        <a
-          href="http://twitter.com/vgprogg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          @vgprogg
-        </a>
-      </span>
-    );
-=======
     // const message = (
     //   <span>
     //     Welcome! This is the preview of our new website. Please report any
@@ -80,7 +60,6 @@ class Header extends React.Component {
     //     </a>
     //   </span>
     // );
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 
     return (
       <React.Fragment>
@@ -94,17 +73,10 @@ class Header extends React.Component {
             <MenuHeader t={t} />
             <SearchPlayer mode="compact" />
             <ThemeSwitch />
-<<<<<<< HEAD
-            {<LanguageSelector />}
-            {<Media query="(max-width: 768px)">
-              {matches => !matches && <ThemeSwitch />}
-            </Media>}
-=======
             {/* <LanguageSelector /> */}
             {/* {<Media query="(max-width: 768px)">
               {matches => !matches && <ThemeSwitch />}
             </Media>} */}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
           </Content>
         </Wrapper>
       </React.Fragment>

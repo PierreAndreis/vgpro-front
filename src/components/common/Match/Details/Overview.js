@@ -70,17 +70,12 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
             <SkeletonWrapper status={status} width="0" height="0">
               {() => <Styled.PlayerRole role={player.role} />}
             </SkeletonWrapper>
-
-<<<<<<< HEAD
-            {player && player.mvp && <Styled.MVP><Trans i18nKey="terms.MVP" /></Styled.MVP>}
-=======
             {player &&
               player.mvp && (
                 <Styled.MVP>
                   <Trans i18nKey="terms.MVP" />
                 </Styled.MVP>
               )}
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
           </Styled.PlayerHero>
         </Styled.PlayerImage>
 
@@ -100,11 +95,7 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
                   <span className="d">{player.deaths}</span> /{" "}
                   <span>{player.assists}</span>
                   <div>
-<<<<<<< HEAD
-                    <KDA kda={player.kda} /> <Trans i18nKey="terms.kda" />
-=======
                     <KDA kda={player.kda} /> <Trans i18nKey="terms.KDA" />
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
                   </div>
                 </React.Fragment>
               )}
@@ -282,11 +273,6 @@ const OverviewTeam = ({ team, telemetry, status, gameMode }) => {
             }}
           </SkeletonWrapper>
         </Styled.PlayerInfo>
-<<<<<<< HEAD
-        <Styled.PlayerItems><Trans i18nKey="terms.Items" /></Styled.PlayerItems>
-        <Styled.PlayerStats><Trans i18nKey="terms.Stats" /></Styled.PlayerStats>
-        <Styled.PlayerRank><Trans i18nKey="terms.Rank" /></Styled.PlayerRank>
-=======
         <Styled.PlayerItems>
           <Trans i18nKey="terms.Items" />
         </Styled.PlayerItems>
@@ -296,7 +282,6 @@ const OverviewTeam = ({ team, telemetry, status, gameMode }) => {
         <Styled.PlayerRank>
           <Trans i18nKey="terms.Rank" />
         </Styled.PlayerRank>
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
       </Styled.CellHeader>
       {players.map((p, i) => {
         let tm = false;

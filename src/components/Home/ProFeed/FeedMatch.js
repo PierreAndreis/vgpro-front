@@ -84,12 +84,7 @@ const FeedMatch = ({ status, t, data }) => {
       </Styled.Game>
       <Styled.Items>{itemsImage}</Styled.Items>
       <Styled.Arrow>
-<<<<<<< HEAD
-        {" "}
-        <i className="fa fa-angle-right" />{" "}
-=======
         <i className="fa fa-angle-right" />
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
       </Styled.Arrow>
     </Styled.Wrapper>
   );

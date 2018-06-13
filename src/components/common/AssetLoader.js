@@ -2,8 +2,6 @@ import React from "react";
 import TooltipItem from "./Tooltips/items";
 
 class AssetLoader extends React.Component {
-<<<<<<< HEAD
-=======
   state = {
     tooltip: false,
   };
@@ -16,7 +14,6 @@ class AssetLoader extends React.Component {
     });
   };
 
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
   render() {
     const {
       type,
@@ -28,11 +25,7 @@ class AssetLoader extends React.Component {
 
     let name_ = name;
 
-<<<<<<< HEAD
-    if (type === "tiers") name_ = parseInt(name_, 10) + 1;
-=======
     if (type === "tiers") name_ = parseInt(name_, 10);
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     let cleanName = String(name_)
       .replace(/([ ])+/g, "-")
       .replace("'", "")
@@ -45,8 +38,6 @@ class AssetLoader extends React.Component {
       style = {
         backgroundImage: `url(${cleanImage})`,
       };
-<<<<<<< HEAD
-=======
     }
 
     if (styleProps) style = { ...style, ...styleProps };
@@ -72,7 +63,6 @@ class AssetLoader extends React.Component {
           )}
         </TooltipItem>
       );
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     }
 
     if (styleProps) style = { ...style, ...styleProps };

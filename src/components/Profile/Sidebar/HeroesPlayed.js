@@ -33,11 +33,7 @@ const Hero = ({ status, stats, t }) => {
   }
 
   return (
-<<<<<<< HEAD
-    <Styled.Each>
-=======
     <Styled.Each to={link}>
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
       <SkeletonWrapper
         status={status}
         width="40px"

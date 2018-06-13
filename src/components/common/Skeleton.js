@@ -37,13 +37,8 @@ const Skeleton = ({ width, height, borderRadius }) => {
 Skeleton.defaultProps = {
   width: 100,
   height: 20,
-<<<<<<< HEAD
-  borderRadius: "5px"
-}
-=======
   borderRadius: "5px",
 };
->>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 
 // DEPRECATED HOC
 const SkeletonContainer = (Loading, Loaded) => {

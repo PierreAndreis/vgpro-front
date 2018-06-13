@@ -31,9 +31,9 @@ const Portrait = ({ heroName, payload }) => {
       .filter(role => role.pickRate > 33)
       .map(r => r.key);
 
-    strongAgainst = sortedEnemies.slice(0, 3);
+    weakAgainst = sortedEnemies.slice(0, 3);
 
-    weakAgainst = sortedEnemies.reverse().slice(0, 3);
+    strongAgainst = sortedEnemies.reverse().slice(0, 3);
   }
 
   return (

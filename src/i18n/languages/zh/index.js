@@ -28,9 +28,9 @@ export default {
     "terms.placement": "位置",
     "terms.name": "名稱",
 
-    "terms.AVG": "平均",
-    "terms.KDA": "擊殺死亡協助比例",
-    "terms.MVP": "最佳玩家",
+    "terms.AVG": "AVG",
+    "terms.KDA": "KDA",
+    "terms.MVP": "MVP",
     "terms.Win": "勝利",
     "terms.Loss": "落敗",
     "terms.Wins": "勝利數",

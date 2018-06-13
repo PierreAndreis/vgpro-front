@@ -141,7 +141,10 @@ export default {
 
     "heroes.playingAgainst": "jucand impotriva",
     "heroes.playingWith": "jucand impreuna cu",
+    "heroes.weakAgainst": "Slab impotriva",
+    "heroes.strongAgainst": " Puternic impotriva",
 
+    "search.placeholderShort": "Caută",
     "search.placeholder": "Caută jucător",
 
     "filters.role": "Filtrează după rol",

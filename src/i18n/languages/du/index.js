@@ -141,7 +141,10 @@ export default {
 
     "heroes.playingAgainst": "Spelen tegen",
     "heroes.playingWith": "Spelen met",
+    "heroes.weakAgainst": "Zwak tegen",
+    "heroes.strongAgainst": "Sterk tegen",
 
+    "search.placeholderShort": "Zoeken",
     "search.placeholder": "Zoek Spelersnaam",
 
     "filters.role": "Filter op rol",

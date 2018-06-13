@@ -70,7 +70,6 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
             <SkeletonWrapper status={status} width="0" height="0">
               {() => <Styled.PlayerRole role={player.role} />}
             </SkeletonWrapper>
-
             {player &&
               player.mvp && (
                 <Styled.MVP>

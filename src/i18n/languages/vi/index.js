@@ -141,7 +141,10 @@ export default {
 
     "heroes.playingAgainst": "Đối đầu với",
     "heroes.playingWith": "Chơi với",
+    "heroes.weakAgainst": "Yếu so với",
+    "heroes.strongAgainst": "Mạnh so với",
 
+    "search.placeholderShort": "Tìm",
     "search.placeholder": "Tìm kiếm tên người chơi",
 
     "filters.role": "Sắp xếp theo vai trò",

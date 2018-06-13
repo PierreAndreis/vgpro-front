@@ -26,6 +26,14 @@ export const FilterTitle = styled.h3`
   color: ${props => props.theme.text[400]};
 `;
 
+export const FilterTitle = styled.h3`
+  margin: 10px 5px;
+  padding: 3px 4px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: ${props => props.theme.text[400]};
+`;
+
 export const Header = styled.div`
   display: flex;
   margin: 20px 0 0;

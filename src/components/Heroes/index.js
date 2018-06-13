@@ -32,6 +32,7 @@ function compare(a, b, property, valueToReturn) {
 }
 
 const Subtitles = React.createContext(false);
+
 const Hero = ({ status, position, payload, t }) => (
   <Styled.Hero
     hover="true"
@@ -39,7 +40,7 @@ const Hero = ({ status, position, payload, t }) => (
     animation="fadeIn"
     delay={position}
   >
-    <Styled.HeroContent>
+      <Styled.HeroContent>
       <Styled.Info>
         <Styled.Position>{position + 1}</Styled.Position>
 
@@ -63,6 +64,7 @@ const Hero = ({ status, position, payload, t }) => (
 
       <Styled.Stats>
         <SkeletonWrapper status={status} width={40} height={20}>
+
           {() => <Rate fixed={2} rate={payload.pickRate} />}
         </SkeletonWrapper>
         <Subtitles.Consumer>

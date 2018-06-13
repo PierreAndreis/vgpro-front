@@ -65,6 +65,8 @@ class AssetLoader extends React.Component {
       );
     }
 
+    if (styleProps) style = { ...style, ...styleProps };
+
     return (
       <div className={className} style={style} {...othersProps}>
         {this.props.children}

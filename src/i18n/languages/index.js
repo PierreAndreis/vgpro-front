@@ -7,25 +7,41 @@ let langs = {};
 import en from "./en";
 langs["en"] = en;
 
-// /** Dutch */
-// import du from "./du";
-// langs["du"] = du;
+// /** Japanese */
+// import jp from "./jp";
+// langs['jp'] = jp;
 
-// /** Spanish */
-// import es from "./es";
-// langs["es"] = es;
+// /** Cambodian */
+// import kh from "./kh";
+// langs['kh'] = kh;
 
-// /** Portuguese */
-// import pt from "./pt";
-// langs["pt"] = pt;
+// /** Iran */
+// import ir from "./ir";
+// langs['ir'] = ir;
 
-// /** Indonesian */
-// import id from "./id";
-// langs["id"] = id;
+/** Dutch */
+import du from "./du";
+langs["du"] = du;
+
+/** Spanish */
+import es from "./es";
+langs["es"] = es;
+
+/** Portuguese */
+import pt from "./pt";
+langs["pt"] = pt;
+
+/** Indonesian */
+import id from "./id";
+langs["id"] = id;
 
 // /** French */
 // import fr from "./fr";
 // langs["fr"] = fr;
+
+// /** German */
+// import de from "./de";
+// langs['de'] = de;
 
 /** Traditional Chinese */
 import zh from "./zh";
@@ -35,21 +51,41 @@ langs["zh"] = zh;
 import zhTW from "./zhTW";
 langs["zh-TW"] = zhTW;
 
-// /** Romanian */
-// import ro from "./ro";
-// langs["ro"] = ro;
+// /** Korean */
+// import kr from "./kr";
+// langs['kr'] = kr;
 
-// /** Arabic */
-// import ar from "./ar";
-// langs["ar"] = ar;
+// /** Tagalog */
+// import ph from "./ph";
+// langs['ph'] = ph;
 
-// /** Vietnamese */
-// import vi from "./vi";
-// langs["vi"] = vi;
+// /** Russian */
+// import ru from "./ru";
+// langs['ru'] = ru;
 
-// /** Thai */
-// import th from "./th";
-// langs["th"] = th;
+/** Romanian */
+import ro from "./ro";
+langs['ro'] = ro;
+
+// /** Malasyan */
+// import my from "./my";
+// langs['my'] = my;
+
+/** Arabic */
+import ar from "./ar";
+langs['ar'] = ar;
+
+/** Vietnamese */
+import vi from "./vi";
+langs['vi'] = vi;
+
+/** Thai */
+import th from "./th";
+langs['th'] = th;
+
+/** Turkish */
+import tu from "./tu";
+langs['tu'] = tu;
 
 let res = {};
 

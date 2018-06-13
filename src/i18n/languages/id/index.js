@@ -139,8 +139,10 @@ export default {
 
     "heroes.playingAgainst": "Bermain Melawan",
     "heroes.playingWith": "Bermain Bersama",
+    "heroes.weakAgainst": "Lemah terhadap",
+    "heroes.strongAgainst": "Kuat terhadap",
 
-
+    "search.placeholderShort": "Cari",
     "search.placeholder": "Cari Nama Pemain",
 
     "filters.role": "Saring dari Peran",

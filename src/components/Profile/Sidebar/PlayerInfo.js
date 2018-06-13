@@ -137,7 +137,7 @@ const PlayerInfo = ({
               <Styled.Tier type="tiers" name={tier}>
                 <Styled.TierBar percentage={percentageVst}>
                   <div />
-                  <span>{rankVst.toFixed(0)}</span>
+                  <span>{rankVst ? rankVst.toFixed(0) : "Unknown"}</span>
                 </Styled.TierBar>
               </Styled.Tier>
             )}

@@ -21,16 +21,25 @@ import { connect } from "react-redux";
 import * as Styled from "./Profile.style";
 
 class Profile extends React.Component {
+<<<<<<< HEAD
   componentWillReceiveProps(nextProps) {
     const nextMatch = nextProps.match;
     const nextPlayer = nextMatch.params.player;
 
     const { match } = this.props;
     const { player } = match.params;
+=======
+  // componentWillReceiveProps(nextProps) {
+  //   const nextMatch = nextProps.match;
+  //   const nextPlayer = nextMatch.params.player;
 
-    if (player === nextPlayer) return;
-    else this.props.setPlayer(nextPlayer);
-  }
+  //   const { match } = this.props;
+  //   const { player } = match.params;
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
+
+  //   if (player === nextPlayer) return;
+  //   else this.props.setPlayer(nextPlayer);
+  // }
 
   componentDidMount() {
     const { match } = this.props;
@@ -146,4 +155,11 @@ const mapDispatchToProps = dispatch => {
   );
 };
 
+<<<<<<< HEAD
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+=======
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profile);
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75

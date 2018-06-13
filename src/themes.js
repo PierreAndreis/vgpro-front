@@ -102,7 +102,7 @@ const Night = {
     primary: "#141E26 ",
     secondary: "#1e2c3a",
     third: "#c2c2c2",
-    box: "#1B2937",
+    box: "#203142",
     boxHover: "#1e2c3a",
     listOdd: "rgba(51, 62, 84, 0.54)",
     listHover: "rgb(51,62,84)",

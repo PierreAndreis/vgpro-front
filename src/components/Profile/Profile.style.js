@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Box from "./../common/Box";
-import {commonWrapper} from "./../../styles/App.style";
+import { commonWrapper } from "./../../styles/App.style";
 
 export const Wrap = commonWrapper.extend`
   display: flex;
@@ -40,9 +40,6 @@ export const SidebarBox = styled(Box.wrap)`
 export const Main = styled.section`
   width: 100%;
   padding: 0 10px;
-  animation-name: fadeInRight;
-  animation-duration: 1s;
-  animation-fill-mode: both;
   box-sizing: border-box;
   @media screen and (max-width: 1120px) {
     flex-wrap: wrap;

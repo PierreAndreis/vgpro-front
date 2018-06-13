@@ -1,6 +1,7 @@
 import React from "react";
 import { Trans } from "react-i18next";
 
+import Spinner from "react-spinkit";
 import { SkeletonPayload } from "./../../Skeleton";
 
 // import "./Builds.css";
@@ -79,9 +80,31 @@ export default class extends React.PureComponent {
   render() {
     const { teams, telemetry, status } = this.props;
     const { playerLoaded } = this.state;
+<<<<<<< HEAD
 
     if (status === "loading" || !telemetry) return "Loading...";
 
+=======
+
+    if (status === "loading" || !telemetry) {
+      return (
+        <div
+          style={{
+            width: "1px",
+            height: "1px",
+            margin: "3% auto",
+          }}
+        >
+          <Spinner
+            name="line-spin-fade-loader"
+            color="rgba(0, 0, 0, 0.2)"
+            fadeIn="none"
+          />
+        </div>
+      );
+    }
+
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     const detailsTeam = teams.find(team =>
       team.players.find(player => player.name === playerLoaded)
     );
@@ -186,9 +209,32 @@ export default class extends React.PureComponent {
                   />
                 ))}
               </Styled.AbilitiesRow>
+<<<<<<< HEAD
               {abilities.map(ability => (
                 <Abilities key={ability.name} {...ability} />
               ))}
+=======
+              {[
+                `${overviewPlayer.hero}_a`,
+                `${overviewPlayer.hero}_b`,
+                `${overviewPlayer.hero}_c`,
+              ].map(ability => {
+                /*  This hack is to avoid depending on a player leveling up an ability to show it there*/
+                let abilityLevels = abilities.find(
+                  h => h.name === ability.toLowerCase()
+                );
+                if (!abilityLevels) {
+                  abilityLevels = [];
+                } else abilityLevels = abilityLevels.levels;
+                return (
+                  <Abilities
+                    key={ability}
+                    name={ability}
+                    levels={abilityLevels}
+                  />
+                );
+              })}
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
             </Styled.AbilitiesGrid>
           </Styled.Abilities>
 

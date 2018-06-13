@@ -115,6 +115,7 @@ export default {
 
   "terms.OverallStats": "Overall Stats",
   "terms.OverviewStats": "Overview Stats",
+  "terms.AverageStats": "Average Stats",
 
   "profile.notFound": "{{name}} was not found.",
   "profile.foundButNoMatches":
@@ -140,9 +141,12 @@ export default {
   "heroes.winRateByGameLength": "Win Rate By Game Length",
 
   "heroes.playingAgainst": "Playing Against",
+  "heroes.weakAgainst": "Weak Against",
+  "heroes.strongAgainst": "Strong Against",
   "heroes.playingWith": "Playing With",
 
   "search.placeholder": "Search Player Name",
+  "search.placeholderShort": "Search",
 
   "filters.role": "Filter by Role",
 

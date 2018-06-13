@@ -1,10 +1,9 @@
 import React from "react";
-import TimeAgo        from "react-timeago";
+import { translate } from "react-i18next";
+import TimeAgo from "react-timeago";
 import buildFormatter from "react-timeago/lib/formatters/buildFormatter";
 
-import { connect }    from "react-redux";
-import Utils          from "./../utils";
-
+import Utils from "./../utils";
 
 class timeAgoi18n extends React.Component {
   constructor() {
@@ -12,62 +11,36 @@ class timeAgoi18n extends React.Component {
 
     this.state = {
       language: "en",
-      strings: null
-    }
+      strings: null,
+    };
   }
 
   getLocale(language) {
-
     this.cancelImport = Utils.makeCancelable(
       import(`./timeAgo/${language}.js`),
-      (locale) => this.setState({language, strings: locale.default}),
-      ()       => this.getLocale("en")
+      locale => this.setState({ language, strings: locale.default }),
+      () => this.getLocale("en")
     );
   }
 
   componentWillMount() {
-
-    const {language} = this.props;
-    
-    return this.getLocale(language);
+    return this.getLocale(this.props.i18n.language);
   }
-  
+
   componentWillUnmount() {
     if (typeof this.cancelImport === "function") this.cancelImport();
   }
 
-  componentWillReceiveProps(nextProps) {
-    
-    if (this.props.language !== nextProps.language) {
-      this.getLocale(nextProps.language);
-    }
-  }
-
   render() {
+    const { strings } = this.state;
+    const { date } = this.props;
 
-    const {strings} = this.state;
-    const {date} = this.props;
+    if (!strings) return <TimeAgo date={date} />;
 
-    if (!strings) return <TimeAgo date={date} />
+    const formatter = buildFormatter(strings);
 
-    const formatter = buildFormatter(strings)
-  
-    return <TimeAgo date={date} formatter={formatter} live />
+    return <TimeAgo date={date} formatter={formatter} live />;
   }
-
 }
 
-
-const mapStateToProps = state => {
-  
-    return {
-      language: state.i18n.current
-    }
-  }
-  
-  
-  export default connect(
-    mapStateToProps,
-    null
-  )(timeAgoi18n);
-  
+export default translate()(timeAgoi18n);

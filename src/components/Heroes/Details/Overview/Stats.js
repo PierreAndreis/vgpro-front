@@ -6,7 +6,8 @@ import * as Styled from "./Stats.style";
 import Box from "../../../common/Box";
 import { SkeletonWrapper } from "../../../common/Skeleton";
 
-const AllStats = [
+// CompareBox depends on it
+export const AllStats = [
   {
     label: "terms.KDA",
     property: "kda",

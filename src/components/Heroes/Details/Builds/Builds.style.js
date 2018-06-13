@@ -1,5 +1,9 @@
 import AssetLoader from "../../../common/AssetLoader";
+<<<<<<< HEAD
 import styled, { css } from "styled-components";
+=======
+import styled from "styled-components";
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
 import { Box } from "../../../common/Box";
 
 export const Sidebar = styled.div`
@@ -28,6 +32,10 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
+<<<<<<< HEAD
+=======
+  align-content: start;
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
   @media screen and (max-width: 450px) {
     justify-content: center;
   }

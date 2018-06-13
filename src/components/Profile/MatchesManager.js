@@ -70,8 +70,13 @@ class MatchManager extends React.Component {
     let done = false;
     let adCount = 0;
 
+<<<<<<< HEAD
     for (const i in pages) {
       let page = pages[i];
+=======
+    for (const pageIndex in pages) {
+      let page = pages[pageIndex];
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
       let matches =
         page.status === "loaded"
           ? page.payload
@@ -90,7 +95,12 @@ class MatchManager extends React.Component {
           let match = matches[index];
           content.push(
             <Match
+<<<<<<< HEAD
               key={match.id || index}
+=======
+              key={index + pageIndex}
+              animationDelay={index}
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
               payload={match}
               status={page.status}
             />
@@ -152,6 +162,13 @@ const mapDispatchToProps = dispatch => {
   );
 };
 
+<<<<<<< HEAD
 export default connect(mapStateToProps, mapDispatchToProps)(
   translate()(MatchManager)
 );
+=======
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(translate()(MatchManager));
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75

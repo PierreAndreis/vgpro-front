@@ -20,16 +20,24 @@ export const Row = styled.div`
     font-size: 14px;
     text-align: left;
     text-transform: capitalize;
+<<<<<<< HEAD
   }
 
   & > div {
     ${"" /* border: 1px solid green; */} width: 50%;
+=======
+    width: 120px;
+  }
+
+  & > div {
+    width: 90px;
+>>>>>>> 550a391b015ec7375bc89effb5a216452a3c2d75
     padding: 0 10px;
-    font-size: 15px;
+    font-size: 16px;
     box-sizing: border-box;
     text-align: center;
-    font-weight: 500;
-    color: ${props => props.theme.text.solid};
+    font-weight: 700;
+    color: ${props => props.theme.text[400]};
   }
 
   &:nth-child(odd) {

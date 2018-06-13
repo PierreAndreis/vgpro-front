@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from "react-i18next";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
@@ -12,11 +13,11 @@ import Utils from "../../../utils";
 import * as Styled from "./PlayerInfo.style";
 
 const regions = {
-  "na": "North America",
-  "eu": "Europe",
-  "sg": "SouthEast Asia",
-  "cn": "China",
-  "sa": "South America",
+  na: "North America",
+  eu: "Europe",
+  sg: "SouthEast Asia",
+  cn: "China",
+  sa: "South America",
 };
 
 // LUL. THIS SHOULD BE SERVER
@@ -27,16 +28,16 @@ const TRIBE_PLAYERS = [
   "DNZio",
   "MaxGreen",
   "iLoveJoseph",
-  "Xelciar"
+  "Xelciar",
 ];
 
-let removeFromList = (fn, name, list) => (e) => {
+let removeFromList = (fn, name, list) => e => {
   e.preventDefault();
-  const l = list.filter(n => (name !== n));
+  const l = list.filter(n => name !== n);
   fn(l);
 };
 
-let addToList = (fn, name, list) => (e) => {
+let addToList = (fn, name, list) => e => {
   e.preventDefault();
 
   if (list.length >= 8) {
@@ -48,8 +49,13 @@ let addToList = (fn, name, list) => (e) => {
   }
 };
 
-const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
-
+const PlayerInfo = ({
+  status,
+  data,
+  favorites,
+  addFavorite,
+  setFavorite,
+}) => {
   let AKAs = [];
   let team;
   let rankVst;
@@ -66,11 +72,9 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
   let tier = -1;
 
   if (status === "loaded") {
-    
     rankVst = Math.max(Number(data.rankVst), Number(data.rank5v5Vst), 0);
     tier = Utils.getTier(rankVst);
 
-    console.log(tier, rankVst);
     percentageVst = Utils.getPercentageTillNext(tier, rankVst);
 
     AKAs = data.aka && data.aka.filter(k => k !== data.name);
@@ -83,34 +87,45 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
       favoriteClick = removeFromList(setFavorite, data.name, favorites);
     }
 
-
-    rankingRegionName = data.region === "sg" ? "SEA" : data.region.toUpperCase();
+    rankingRegionName =
+      data.region === "sg" ? "SEA" : data.region.toUpperCase();
 
     if (data.rankedRanking) {
-      rankingGlobal = data.rankedRanking.global === -1 ? "--" : data.rankedRanking.global;
-      rankingRegion = data.rankedRanking.regional === -1 ? "--" : data.rankedRanking.regional;
+      rankingGlobal =
+        data.rankedRanking.global === -1
+          ? "--"
+          : data.rankedRanking.global;
+      rankingRegion =
+        data.rankedRanking.regional === -1
+          ? "--"
+          : data.rankedRanking.regional;
     }
 
     if (data.ranked5v5Ranking) {
-      ranking5v5Global = data.ranked5v5Ranking.global === -1 ? "--" : data.ranked5v5Ranking.global;
-      ranking5v5Region = data.ranked5v5Ranking.regional === -1 ? "--" : data.ranked5v5Ranking.regional;
+      ranking5v5Global =
+        data.ranked5v5Ranking.global === -1
+          ? "--"
+          : data.ranked5v5Ranking.global;
+      ranking5v5Region =
+        data.ranked5v5Ranking.regional === -1
+          ? "--"
+          : data.ranked5v5Ranking.regional;
     }
-
 
     if (TRIBE_PLAYERS.includes(data.name)) {
       team = (
         <Styled.Team>
           <Styled.TeamPhoto img={`/players/${data.name}.png`} />
           <Styled.TeamDetails>
-            <h4>Player of</h4>
+            <h4>
+              <Trans i18nKey="profile.PlayerOf" />
+            </h4>
             <span>Tribe Gaming</span>
           </Styled.TeamDetails>
-          <Styled.TeamLogo img={'/teams/tribe.png'} />
-
+          <Styled.TeamLogo img={"/teams/tribe.png"} />
         </Styled.Team>
       );
     }
-
   }
 
   return (
@@ -119,10 +134,10 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
         <Styled.Info>
           <SkeletonWrapper status={status} width="140px" height="0">
             {() => (
-              <Styled.Tier AssetLoader type="tiers" name={tier}>
+              <Styled.Tier type="tiers" name={tier}>
                 <Styled.TierBar percentage={percentageVst}>
                   <div />
-                  <span>{rankVst.toFixed(0)}</span>
+                  <span>{rankVst ? rankVst.toFixed(0) : "Unknown"}</span>
                 </Styled.TierBar>
               </Styled.Tier>
             )}
@@ -131,7 +146,9 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
           <Styled.Details>
             <Styled.Icons>
               <SkeletonWrapper status={status} width="60px" height="20px">
-                {() => <i className={favoriteClass} onClick={favoriteClick} />}
+                {() => (
+                  <i className={favoriteClass} onClick={favoriteClick} />
+                )}
               </SkeletonWrapper>
             </Styled.Icons>
 
@@ -143,24 +160,21 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
 
             <Styled.UnderName>
               <SkeletonWrapper status={status} width="150px">
-                {() => (
-                  [
-                    <span key="region">{regions[data.region]}</span>,
-                    <br key="br" />,
-                    <span key="skillTier">{Utils.getSkillTier(tier)}</span>
-                  ]
-                )}
+                {() => [
+                  <span key="region">{regions[data.region]}</span>,
+                  <br key="br" />,
+                  <span key="skillTier">{Utils.getSkillTier(tier)}</span>,
+                ]}
               </SkeletonWrapper>
             </Styled.UnderName>
 
             <Styled.LastUpdate>
-              Last updated: <br />
+              <Trans i18nKey="general.lastUpdated" /> <br />
               <SkeletonWrapper status={status} width="80px" height="15px">
                 {() => <TimeAgo date={data.lastCache} />}
               </SkeletonWrapper>
             </Styled.LastUpdate>
           </Styled.Details>
-
         </Styled.Info>
 
         <Styled.Divider />
@@ -168,7 +182,10 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
         <div style={{ textAlign: "center", margin: "10px" }}>
           <SkeletonWrapper status={status} width="130px" height="35px">
             {() => (
-              <iframe src={`https://emojireact.com/embed?emojis=fire,whale,rocket&url=vgpro.gg/players/${data.region}/${data.name}`}
+              <iframe
+                src={`https://emojireact.com/embed?emojis=fire,whale,rocket&url=vgpro.gg/players/${
+                  data.region
+                }/${data.name}`}
                 scrolling="no"
                 frameBorder="0"
                 style={{
@@ -178,23 +195,25 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
                   height: "35px",
                 }}
                 title="iFrame Emoji"
-                allowtransparency="true" />
+                allowtransparency="true"
+              />
             )}
           </SkeletonWrapper>
         </div>
-        
-          {team && (
-            <React.Fragment>
-              <Styled.Divider />
-              {team}
-            </React.Fragment>
-          )}
 
+        {team && (
+          <React.Fragment>
+            <Styled.Divider />
+            {team}
+          </React.Fragment>
+        )}
 
         <Styled.Divider />
         <Styled.PlayerStats>
-
-          <h3>Ranked Ranking</h3>
+          <h3>
+            <Trans i18nKey="gamemode.ranked" />{" "}
+            <Trans i18nKey="terms.Rank" />
+          </h3>
           <Styled.PlayerStat>
             <div>
               #
@@ -202,26 +221,33 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
                 {() => rankingGlobal}
               </SkeletonWrapper>
             </div>
-            <span>Global</span>
+            <span>
+              <Trans i18nKey="terms.global" />
+            </span>
           </Styled.PlayerStat>
 
           <Styled.PlayerStat>
             <div>
               #
-          <SkeletonWrapper status={status} width="25px" height="15px">
+              <SkeletonWrapper status={status} width="25px" height="15px">
                 {() => rankingRegion}
               </SkeletonWrapper>
             </div>
             <span>
-              <SkeletonWrapper status={status}
+              <SkeletonWrapper
+                status={status}
                 width="25px"
                 height="15px"
-                children={() => rankingRegionName} />
+                children={() => rankingRegionName}
+              />
             </span>
           </Styled.PlayerStat>
           <Styled.Divider />
           <br />
-          <h3>Ranked 5v5 Ranking</h3>
+          <h3>
+            <Trans i18nKey="gamemode.ranked5v5" />{" "}
+            <Trans i18nKey="terms.Rank" />
+          </h3>
 
           <Styled.PlayerStat>
             <div>
@@ -230,56 +256,62 @@ const PlayerInfo = ({ status, data, favorites, addFavorite, setFavorite }) => {
                 {() => ranking5v5Global}
               </SkeletonWrapper>
             </div>
-            <span>Global</span>
+            <span>
+              <Trans i18nKey="terms.global" />
+            </span>
           </Styled.PlayerStat>
 
           <Styled.PlayerStat>
             <div>
               #
-          <SkeletonWrapper status={status} width="25px" height="15px">
+              <SkeletonWrapper status={status} width="25px" height="15px">
                 {() => ranking5v5Region}
               </SkeletonWrapper>
             </div>
             <span>
-              <SkeletonWrapper status={status}
+              <SkeletonWrapper
+                status={status}
                 width="25px"
                 height="15px"
-                children={() => rankingRegionName} />
+                children={() => rankingRegionName}
+              />
             </span>
           </Styled.PlayerStat>
         </Styled.PlayerStats>
 
-        {AKAs && AKAs.length > 0 &&
-        (
-          <React.Fragment>
-            <Styled.Divider />
-            <Styled.PlayerAka>
-              <h2> Also known as </h2>
-              {AKAs.map(name => <span key={name}>{name}</span>)}
-            </Styled.PlayerAka>
-          </React.Fragment>
-        )
-        }
+        {AKAs &&
+          AKAs.length > 0 && (
+            <React.Fragment>
+              <Styled.Divider />
+              <Styled.PlayerAka>
+                <h2>
+                  <Trans i18nKey="terms.aka" />{" "}
+                </h2>
+                <div style={{ display: "flex", flexWrap: "wrap" }}>
+                  {AKAs.map(name => <span key={name}>{name}</span>)}
+                </div>
+              </Styled.PlayerAka>
+            </React.Fragment>
+          )}
       </Styled.Content>
     </Styled.Wrap>
-  )
+  );
 };
 
 const mapStateToProps = state => {
-
   return {
-    ...state.user
-  }
+    ...state.user,
+  };
 };
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
       addFavorite,
-      setFavorite
+      setFavorite,
     },
     dispatch
-  )
+  );
 };
 
 export default connect(

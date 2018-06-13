@@ -1,23 +1,23 @@
 import React from "react";
 
 import { SkeletonWrapper } from "./../../common/Skeleton";
-import { Rate }            from "./../../common/ColoredValues";
+import { Rate } from "./../../common/ColoredValues";
 
 import * as Styled from "./Hero.style.js";
 
-const Hero = ({status, name, value, rank}) => {
+const Hero = ({ status, name, value, rank }) => {
   let heroName;
+  let link = "/";
 
-  if (status === "loaded") { 
+  if (status === "loaded") {
     heroName = name;
-  };
+    link = `/heroes/${name}`;
+  }
 
   return (
-    <Styled.Each rank={rank}>
+    <Styled.Each rank={rank} to={link}>
       <Styled.HeroImage rank={rank} type="heroes" name={heroName}>
-        <Styled.HeroTag rank={rank}>
-          {rank}
-        </Styled.HeroTag>
+        <Styled.HeroTag rank={rank}>{rank}</Styled.HeroTag>
       </Styled.HeroImage>
       <Styled.Name>
         <SkeletonWrapper status={status} width="70px" height="10px">
@@ -31,6 +31,6 @@ const Hero = ({status, name, value, rank}) => {
       </Styled.Percentage>
     </Styled.Each>
   );
-}
+};
 
 export default Hero;

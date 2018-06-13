@@ -4,7 +4,7 @@ import Box from "../Box";
 
 export const SearchMenu = styled(Box.wrap)`
   position: absolute;
-  z-index: 99;
+  z-index: 3;
   margin: 10px 5px;
   padding: 15px;
   box-sizing: border-box;
@@ -26,13 +26,12 @@ export const Category = styled.div`
   }
 `;
 
-
 export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  >a {
-    width: 155px;
+  > a {
+    width: ${props => (props.compact ? "100%" : "155px")};
     padding: 10px;
     box-sizing: border-box;
     margin: 2px 2px;
@@ -43,9 +42,10 @@ export const Content = styled.div`
     color: ${props => props.theme.text[500]};
     cursor: pointer;
     &:hover {
-      background-color: ${props => transparentize(0.7, props.theme.background.third)};
+      background-color: ${props =>
+        transparentize(0.7, props.theme.background.third)};
     }
-    >span {
+    > span {
       position: absolute;
       right: 5px;
       font-size: 15px;

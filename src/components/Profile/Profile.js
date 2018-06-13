@@ -2,14 +2,11 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
 import { Adsense } from "./../common/Ads";
-import { withRouter } from 'react-router';
 
 import ErrorScreen from "../common/ErrorScreen";
 
 import TimeAgo from "../../i18n/timeAgo";
 import MatchStats from "./Overview";
-
-// import MatchStats from "./MatchStats/MatchStats";
 
 import Sidebar from "./Sidebar";
 import ProfileFilters from "./ProfileFilters";
@@ -24,18 +21,16 @@ import { connect } from "react-redux";
 import * as Styled from "./Profile.style";
 
 class Profile extends React.Component {
+  // componentWillReceiveProps(nextProps) {
+  //   const nextMatch = nextProps.match;
+  //   const nextPlayer = nextMatch.params.player;
 
-  componentWillReceiveProps(nextProps) {
+  //   const { match } = this.props;
+  //   const { player } = match.params;
 
-    const nextMatch = nextProps.match;
-    const nextPlayer = nextMatch.params.player;
-
-    const { match } = this.props;
-    const { player } = match.params;
-
-    if (player === nextPlayer) return;
-    else this.props.setPlayer(nextPlayer);
-  }
+  //   if (player === nextPlayer) return;
+  //   else this.props.setPlayer(nextPlayer);
+  // }
 
   componentDidMount() {
     const { match } = this.props;
@@ -43,18 +38,17 @@ class Profile extends React.Component {
     this.props.setPlayer(player);
   }
 
-  changeFilters = (filter) => {
-
+  changeFilters = filter => {
     ReactGA.event({
-      category: 'Players',
-      action: 'Change Filters',
+      category: "Players",
+      action: "Change Filters",
       label: `${filter.gameMode}/${filter.season}`,
     });
 
     const { match } = this.props;
     const { player } = match.params;
     this.props.changeFilters(player, filter);
-  }
+  };
 
   render() {
     const { t } = this.props;
@@ -65,50 +59,61 @@ class Profile extends React.Component {
       <Helmet>
         <title>{playerName}</title>
         <meta name="robots" content="index, nofollow" />
-        <meta name="description" content={`${player} Stats on Vainglory.`} />
+        <meta
+          name="description"
+          content={`${player} Stats on Vainglory.`}
+        />
       </Helmet>
     );
 
-    let FoundButNoMatch = (
-      status !== "loading"
-      && player.stats
-      && player.id
-      && !player.name
-      && player.stats.errors
-    )
+    let FoundButNoMatch =
+      status !== "loading" &&
+      player.stats &&
+      player.id &&
+      !player.name &&
+      player.stats.errors;
 
     if (FoundButNoMatch) {
       return (
-        <div style={{marginTop: "5%"}}>
+        <div style={{ marginTop: "5%" }}>
           {title}
-          <ErrorScreen message={
-            <p>{playerName} was found but hasn't played a match in a while
-            <br /> Please try again later.
-            <br /> Last update: <TimeAgo date={player.lastCache} />
-            </p>}
-            boxed />
+          <ErrorScreen
+            message={
+              <p>
+                {t("profile.foundButNoMatches", { name: playerName })}
+                <br /> {t("general.tryAgain")}
+                <br /> {t("general.lastUpdated")}{" "}
+                <TimeAgo date={player.lastCache} />
+              </p>
+            }
+            boxed
+          />
         </div>
-      )
+      );
     }
 
     if (!player.lastCache && status === "loaded") {
       return (
-        <div>
+        <div style={{ marginTop: "5%" }}>
           {title}
-          <ErrorScreen message={
-            <p>{player} was not found.
-          <br /> Please try again later.
-          </p>} boxed />
+          <ErrorScreen
+            message={
+              <p>
+                {t("profile.notFound", { name: playerName })}
+                <br /> {t("general.tryAgain")}
+              </p>
+            }
+            boxed
+          />
         </div>
-      )
-    };
+      );
+    }
 
     return (
       <React.Fragment>
         {title}
         <ProfileFilters onChange={this.changeFilters} />
         <Styled.Wrap>
-
           <Styled.Sidebar>
             <Sidebar t={t} />
           </Styled.Sidebar>
@@ -119,7 +124,6 @@ class Profile extends React.Component {
             <MatchesManager t={t} filters={filters} />
             <Adsense />
           </Styled.Main>
-
         </Styled.Wrap>
       </React.Fragment>
     );
@@ -127,24 +131,22 @@ class Profile extends React.Component {
 }
 
 const mapStateToProps = state => {
-
   return {
-    ...state.playerStats
-  }
-}
+    ...state.playerStats,
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators(
     {
       changeFilters,
-      setPlayer
+      setPlayer,
     },
     dispatch
-  )
-}
+  );
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(Profile));
-
+)(Profile);

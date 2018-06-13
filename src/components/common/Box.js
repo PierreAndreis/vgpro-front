@@ -1,4 +1,4 @@
-import styled, {injectGlobal, css} from "styled-components";
+import styled, { injectGlobal, css } from "styled-components";
 import { transparentize, darken } from "polished";
 
 export const Box = styled.div`
@@ -15,14 +15,23 @@ export const Box = styled.div`
   display: flex;
   flex-direction: column;
 
-  ${(props) => props.animation && css`
+  ${props =>
+    props.hover &&
+    css`
+      transition: all ease-out 300ms;
+      &:hover {
+        transform: scale(1.005);
+        background: ${props => props.theme.background.boxHover};
+      }
+    `};
 
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-name: ${props.animation};
-  `}
-
-
+  ${props =>
+    props.animation &&
+    css`
+      animation-duration: 1s;
+      animation-fill-mode: both;
+      animation-name: ${props.animation};
+    `};
   @media screen and (max-width: 400px) {
     .box__card {
       margin-left: auto;
@@ -61,7 +70,8 @@ export const BoxBody = styled.div`
 
 export const BoxActions = styled.div`
   margin-top: auto;
-  background: ${props => transparentize(0.8, props.theme.background.third)};
+  background: ${props =>
+    transparentize(0.8, props.theme.background.third)};
   border-radius: 0 0 5px 5px;
   height: 20px;
   display: flex;
@@ -75,7 +85,7 @@ export const BoxSubtitle = styled.div`
 `;
 
 export const BoxSelector = BoxSubtitle.extend`
-  width: 150px;
+  width: 130px;
   height: 20px;
 `;
 
@@ -89,57 +99,63 @@ export const BoxSelectorOptions = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
   transition: all 300ms;
-  ${props => 
-    props.icon && css`
+  ${props =>
+    props.icon &&
+    css`
       background-image: url(${props.icon}${props.active ? ".svg" : "_.svg"});
-    `
-  }
-  ${props => 
-    props.active && css`
-    background-color: ${props => props.theme.primary[400]}; 
-    `
-  }
+    `} ${props =>
+    props.active &&
+    css`
+      background-color: ${props => props.theme.primary[400]};
+    `}
   &:hover {
-    ${props => !props.active && css`background-color: ${props => props.theme.background.listHover}`}
+    ${props =>
+      !props.active &&
+      css`
+        background-color: ${props => props.theme.background.listHover};
+      `};
   }
 `;
 
 export const BoxButton = styled.button.attrs({
-  disabled: props => props.disabled
-  })`
-    line-height: 12px;
-    border: 0;
-    display: block;
-    background: ${props => props.theme.primary[400]};
-    background-image: ${props => props.theme.gradient.primary};
-    border-radius: 100px;
-    color: ${props => props.theme.primary[100]};
-    padding: 10px 15px;
-    box-sizing: content-box;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 12px;
-    height: 12px;
-    box-shadow: 0 0 10px ${props => props.theme.primary[400]};
-    margin: 5px;
-    transition: all 300ms;
-    cursor: pointer;
-    &::selection{
-      background-color: transparent !important;
-    }
-    ${props => !props.disabled && css`
+  disabled: props => props.disabled,
+})`
+  line-height: 12px;
+  border: 0;
+  display: block;
+  background: ${props => props.theme.primary[400]};
+  background-image: ${props => props.theme.gradient.primary};
+  border-radius: 100px;
+  color: ${props => props.theme.primary[100]};
+  padding: 10px 15px;
+  box-sizing: content-box;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  height: 12px;
+  box-shadow: 0 0 10px ${props => props.theme.primary[400]};
+  margin: 5px;
+  transition: all 300ms;
+  cursor: pointer;
+  &::selection {
+    background-color: transparent !important;
+  }
+  ${props =>
+    !props.disabled &&
+    css`
       &:hover {
         background: ${props => props.theme.primary[300]};
         box-shadow: 0 0 10px ${props => props.theme.primary[400]};
       }
-    `}
-    ${props => props.disabled && css`
+    `} ${props =>
+    props.disabled &&
+    css`
       background: ${props => darken(0.1, props.theme.background.third)};
       color: ${props => props.theme.text[500]};
       cursor: no-drop;
       opacity: 1;
       box-shadow: 0 0 0 ${props => props.theme.shadow};
-    `}
+    `};
 `;
 
 injectGlobal`
@@ -174,15 +190,15 @@ injectGlobal`
     height: 10px;
     background: linear-gradient(0deg, rgba(0,0,0,.05) 0, transparent);
   }
-`
+`;
 
 export default {
-  wrap           : Box,
-  title          : BoxTitle,
-  subtitle       : BoxSubtitle,
-  selector       : BoxSelector,
+  wrap: Box,
+  title: BoxTitle,
+  subtitle: BoxSubtitle,
+  selector: BoxSelector,
   selectorOptions: BoxSelectorOptions,
-  body           : BoxBody,
-  button         : BoxButton,
-  action         : BoxActions,
-}
+  body: BoxBody,
+  button: BoxButton,
+  action: BoxActions,
+};

@@ -4,8 +4,7 @@ export const Table = styled.div`
   display: flex;
   flex-direction: column;
   margin: 10px 0;
-
-`
+`;
 
 export const Row = styled.div`
   display: flex;
@@ -15,22 +14,23 @@ export const Row = styled.div`
   padding: 10px 5px;
   box-sizing: border-box;
 
-  &>div:first-of-type {
+  & > div:first-of-type {
     color: ${props => props.theme.primary[400]};
     font-weight: 500;
     font-size: 14px;
     text-align: left;
+    text-transform: capitalize;
+    width: 120px;
   }
 
-  &>div {
-    ${'' /* border: 1px solid green; */}
-    width: 50%;
+  & > div {
+    width: 90px;
     padding: 0 10px;
-    font-size: 15px;
+    font-size: 16px;
     box-sizing: border-box;
     text-align: center;
-    font-weight: 500;
-    color: ${props => props.theme.text.solid};
+    font-weight: 700;
+    color: ${props => props.theme.text[400]};
   }
 
   &:nth-child(odd) {
@@ -39,7 +39,7 @@ export const Row = styled.div`
 
   ${Table} &:first-of-type {
     background: ${props => props.theme.background.box};
-    &>div {
+    & > div {
       font-weight: bold;
       font-size: 12px;
       text-transform: uppercase;

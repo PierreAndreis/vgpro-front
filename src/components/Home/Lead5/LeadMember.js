@@ -1,16 +1,15 @@
 import React from "react";
+import { Trans } from "react-i18next";
+import Utils from "utils";
 
-import Utils from "utils"; 
+import { KDA } from "../../common/ColoredValues";
+import { VPR } from "./../../common/Ratings";
 
-import {KDA} from "../../common/ColoredValues";
-import {VPR}      from "./../../common/Ratings";
-
-import {SkeletonWrapper} from "../../common/Skeleton";
+import { SkeletonWrapper } from "../../common/Skeleton";
 
 import * as Styled from "./LeadMember.style";
 
-const LeadMember = ({status, data, mode}) => {
-  
+const LeadMember = ({ status, data, mode }) => {
   let link = "/";
 
   if (status === "loaded") {
@@ -21,11 +20,9 @@ const LeadMember = ({status, data, mode}) => {
 
   return (
     <Styled.Wrapper to={link}>
-
       <Styled.Position>{data.position}</Styled.Position>
 
       <Styled.Info>
-
         <Styled.Name>
           <SkeletonWrapper status={status} width={60} height={20}>
             {() => (
@@ -44,13 +41,14 @@ const LeadMember = ({status, data, mode}) => {
         </Styled.SkillTier>
 
         <Styled.Stats>
-          <span style={{paddingRight: "5px"}}>AVG KDA</span> 
+          <span style={{ paddingRight: "5px" }}>
+            <Trans i18nKey="terms.AVG" /> <Trans i18nKey="terms.KDA" />
+          </span>
           {/* React dumbessery... need padding right to give space */}
           <SkeletonWrapper status={status} width={30} height={10}>
             {() => <KDA kda={data.kda} />}
           </SkeletonWrapper>
         </Styled.Stats>
-
       </Styled.Info>
       <Styled.Points>
         <div className="Lead5-each-vpr-number">
@@ -59,11 +57,11 @@ const LeadMember = ({status, data, mode}) => {
           </SkeletonWrapper>
         </div>
         <Styled.PointsName>
-          Points
+          <Trans i18nKey="terms.Points" />
         </Styled.PointsName>
       </Styled.Points>
     </Styled.Wrapper>
   );
-}
+};
 
 export default LeadMember;

@@ -1,8 +1,8 @@
 import React from "react";
-import { translate } from 'react-i18next';
+import { translate } from "react-i18next";
 import styled from "styled-components";
 
-import {commonWrapper} from "./../../styles/App.style";
+import { commonWrapper } from "./../../styles/App.style";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -16,15 +16,26 @@ const Wrapper = styled.div`
   font-size: 10px;
 `;
 
+const VGPROLogo = styled.div`
+  background: url("/images/logo_shield.svg") no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  width: 40px;
+  height: 65px;
+
+  margin-right: 10px;
+`;
+
 const Content = commonWrapper.extend`
   max-width: 1300px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 `;
 
 const Partners = styled.div`
   width: 300px;
   margin: 15px 0;
+  margin-left: auto;
 `;
 
 const PartnersLogos = styled.div`
@@ -48,36 +59,62 @@ const PartnersLogos = styled.div`
     height: 30px;
     border-radius: 50%;
   }
-`
+`;
 
-class Footer extends React.PureComponent {  
+class Footer extends React.PureComponent {
   render() {
-    const {t} = this.props;
+    const { t } = this.props;
 
     return (
-    <Wrapper>
-      <Content>
-        <div>
-          <p>
-            Copyright © 2018 VGPRO.gg
-          </p>
-          <p>
-            {t('footer-data')}
-            {" "}
-            <a href="https://madglory.com/" target="_blank" rel="noopener noreferrer" >Madglory</a> and <a href="http://superevilmegacorp.com" target="_blank" rel="noopener noreferrer" >Super Evil Megacorp</a>.
-          </p>
-          <p>{t('footer-copy')}</p>
-        </div>
-        <Partners>
-          Partners:
-          <PartnersLogos>
-            <div className="ezl-logo" />
-            <div className="vyz-logo" />
-          </PartnersLogos>
-        </Partners>
-      </Content>
-    </Wrapper>
-    )
+      <Wrapper>
+        <Content>
+          <VGPROLogo />
+          <div>
+            <p>Copyright © 2018 VGPRO.gg</p>
+            <p>{t("footer.copy")}</p>
+            <p>
+              Made by{" "}
+              <a
+                href="https://twitter.com/@4ever_vg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Pierre Ortega
+              </a>,{" "}
+              <a
+                href="https://twitter.com/AngeloCant1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AngeloCant1
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://twitter.com/IGNSkillz4Killz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Skillz4Killz
+              </a>.<br /> Algorithms by{" "}
+              <a
+                href="https://twitter.com/vyzeox"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Vyzeox
+              </a>
+            </p>
+          </div>
+          <Partners>
+            Partners:
+            <PartnersLogos>
+              <div className="ezl-logo" />
+              <div className="vyz-logo" />
+            </PartnersLogos>
+          </Partners>
+        </Content>
+      </Wrapper>
+    );
   }
 }
 

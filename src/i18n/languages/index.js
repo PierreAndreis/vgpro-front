@@ -5,67 +5,51 @@ let langs = {};
 
 /** English */
 import en from "./en";
-langs['en'] = en;
+langs["en"] = en;
 
-/** Japanese */
-import jp from "./jp";
-langs['jp'] = jp;
+// /** Dutch */
+// import du from "./du";
+// langs["du"] = du;
 
-/** Cambodian */
-import kh from "./kh";
-langs['kh'] = kh;
+// /** Spanish */
+// import es from "./es";
+// langs["es"] = es;
 
-/** Iran */
-import ir from "./ir";
-langs['ir'] = ir;
+// /** Portuguese */
+// import pt from "./pt";
+// langs["pt"] = pt;
 
-/** Spanish */
-import es from "./es";
-langs['es'] = es;
+// /** Indonesian */
+// import id from "./id";
+// langs["id"] = id;
 
-/** Portuguese */
-import br from "./br";
-langs['br'] = br;
+// /** French */
+// import fr from "./fr";
+// langs["fr"] = fr;
 
-/** German */
-import de from "./de";
-langs['de'] = de;
+/** Traditional Chinese */
+import zh from "./zh";
+langs["zh"] = zh;
 
-/** Italian */
-import it from "./it";
-langs['it'] = it;
+/** Traditional Chinese */
+import zhTW from "./zhTW";
+langs["zh-TW"] = zhTW;
 
-/** Indonesian */
-import id from "./id";
-langs['id'] = id;
+// /** Romanian */
+// import ro from "./ro";
+// langs["ro"] = ro;
 
-/** French */
-import fr from "./fr";
-langs['fr'] = fr;
+// /** Arabic */
+// import ar from "./ar";
+// langs["ar"] = ar;
 
-/** Korean */
-import kr from "./kr";
-langs['kr'] = kr;
+// /** Vietnamese */
+// import vi from "./vi";
+// langs["vi"] = vi;
 
-/** Tagalog */
-import ph from "./ph";
-langs['ph'] = ph;
-
-/** Chinese */
-import cn from "./cn";
-langs['cn'] = cn;
-
-/** Russian */
-import ru from "./ru";
-langs['ru'] = ru;
-
-/** Romanian */
-import ro from "./ro";
-langs['ro'] = ro;
-
-/** Malasyan */
-import my from "./my";
-langs['my'] = my;
+// /** Thai */
+// import th from "./th";
+// langs["th"] = th;
 
 let res = {};
 
@@ -73,7 +57,7 @@ let res = {};
 _forEach(langs, (lang, i) => {
   res[i] = {
     translations: lang,
-  }
+  };
 });
 
 export default res;

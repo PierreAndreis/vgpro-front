@@ -1,21 +1,18 @@
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 import AssetLoader from "../../../common/AssetLoader";
-
 
 export const AbilitiesGrid = styled.div`
   margin: 10px auto;
-`
+`;
 
 export const AbilitiesRow = styled.div`
   display: flex;
   align-items: stretch;
-  ${'' /* margin: 2px 0; */}
-
-  &>span {
+  ${"" /* margin: 2px 0; */} &>span {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    
+
     width: 15px;
 
     padding: 0 2px;
@@ -49,7 +46,8 @@ export const AbilityLevel = styled.div`
   flex-stretch: 0;
   flex-grow: 0;
 
-  ${props => props.active &&
+  ${props =>
+    props.active &&
     css`
       font-size: 13px;
       font-weight: 500;
@@ -59,7 +57,28 @@ export const AbilityLevel = styled.div`
   }
 `;
 
-export const AbilitiesLabel = AbilityLevel.withComponent(AssetLoader).extend`
+export const AbilitiesLabel = AbilityLevel.withComponent(AssetLoader)
+  .extend`
   border-radius: 5px;
   border: 0;
+`;
+
+export const Stats = styled.div`
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+
+  b {
+    display: block;
+  }
+
+  & > div > span {
+    font-family: ${props => props.theme.font.highlight};
+    color: ${props => props.theme.text[400]};
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
 `;

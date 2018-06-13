@@ -1,6 +1,6 @@
 import React from "react";
 
-import { connect }          from "react-redux";
+import { connect } from "react-redux";
 
 import PlayerInfo from "./PlayerInfo";
 import HeroesPlayed from "./HeroesPlayed";
@@ -10,56 +10,46 @@ import Friends from "./Friends";
 const SideBarItems = [
   {
     componentBody: PlayerInfo,
-    className: "PlayerInfo-Box"
+    className: "PlayerInfo-Box",
   },
   {
     label: "Most Played Heroes",
-    labelKey: "most-played-heroes",
-    componentBody: HeroesPlayed
+    componentBody: HeroesPlayed,
   },
   {
     label: "Recent Roles",
-    labelKey: "recent-roles",
     componentBody: RecentRoles,
   },
   {
     label: "Played with",
     componentBody: Friends,
-  }
-]
+  },
+];
 
 class Sidebar extends React.Component {
   render() {
-    const {t, status, player} = this.props;
+    const { t, status, player } = this.props;
 
     let propsPass = {
       t,
       status,
       data: player,
-    }
+    };
 
     const components = SideBarItems.map((item, index) => {
       const ComponentBody = item.componentBody;
 
-      return (<ComponentBody key={index} {...propsPass} />)
-    })
+      return <ComponentBody key={index} {...propsPass} />;
+    });
 
-
-
-    return (
-      <React.Fragment>
-        {components}
-      </React.Fragment>
-    )
+    return <React.Fragment>{components}</React.Fragment>;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    ...state.playerStats
-  }
-}
+    ...state.playerStats,
+  };
+};
 
-export default connect(
-  mapStateToProps
-)(Sidebar);
+export default connect(mapStateToProps)(Sidebar);

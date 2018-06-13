@@ -1,7 +1,8 @@
 import styled from "styled-components";
+
 import { commonWrapper } from "../../../styles/App.style";
 import AssetLoader from "../../common/AssetLoader";
-import {Box} from "../../common/Box";
+import { Box } from "../../common/Box";
 
 export const SPACE_GRID = "10px";
 
@@ -10,7 +11,7 @@ export const Wrapper = commonWrapper.extend`
   &>section {
     margin: 20px 0;
   }
-`
+`;
 
 export const Header = styled.section`
   padding: 15px;
@@ -22,10 +23,10 @@ export const Header = styled.section`
 `;
 
 export const HeroImage = styled(AssetLoader)`
-  background-size: 130%;
-  background-position: center top;
+  background-size: 120%;
+  background-position: center center;
   background-color: ${props => props.theme.background.slot};
-  border: 1px solid ${props => props.theme.background.slotBorder};
+  border: 2px solid ${props => props.theme.background.slotBorder};
   width: 60px;
   height: 60px;
   border-radius: 100%;
@@ -35,12 +36,12 @@ export const HeroTitle = styled.div`
   color: ${props => props.theme.text[400]};
   margin-left: 15px;
 
-  &>h1 {
+  & > h1 {
     font-size: 25px;
     margin: 0;
     font-family: ${props => props.theme.font.highlight};
   }
-  &>div {
+  & > div {
     color: ${props => props.theme.text[300]};
     font-size: 14px;
   }
@@ -48,6 +49,20 @@ export const HeroTitle = styled.div`
 
 export const Tabs = styled.section`
   display: flex;
+  flex-wrap: wrap;
+  @media screen and (max-width: 400px) {
+    justify-content: center;
+    & button {
+      font-size: 12px;
+      margin: 0;
+      border-radius: 0;
+      margin-left: -1px;
+      padding: 7px 10px;
+    }
+  }
+  & button {
+    cursor: pointer;
+  }
 `;
 
 export const Content = styled.section`
@@ -56,16 +71,18 @@ export const Content = styled.section`
   grid-column-gap: ${SPACE_GRID};
   grid-row-gap: ${SPACE_GRID};
   justify-content: end;
+
   @media screen and (max-width: 800px) {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     flex-direction: column;
   }
+
   & ${Box} {
+    width: 100%;
     margin: 0;
     @media screen and (max-width: 800px) {
-      width: 100%;
       margin: ${SPACE_GRID} 0;
     }
   }

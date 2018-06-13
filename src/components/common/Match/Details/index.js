@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from 'react-i18next';
 
 import AsyncContainer from "./../../AsyncContainer";
 import { fetchMatchTelemetry } from "./../../../../actions/api";
@@ -109,7 +110,7 @@ class MatchDetails extends React.Component {
             <Styled.TabOption key={t.name}
               active={tab.name === t.name}
               onClick={this.changeTab(t)}>
-              {t.name}
+              <Trans i18nKey={`tab.${t.name}`} />
             </Styled.TabOption>
           ))}
         </Styled.Tabs>

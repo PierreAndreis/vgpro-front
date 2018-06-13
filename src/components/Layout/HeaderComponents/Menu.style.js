@@ -1,5 +1,4 @@
-import styled, {css} from "styled-components";
-
+import styled, { css } from "styled-components";
 
 export const MenuDesktop = styled.div`
   a {
@@ -34,6 +33,7 @@ export const MenuMobile = styled.div`
   top: 0;
   left: 0;
   bottom: 0;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   padding-top: 70px;
@@ -44,13 +44,12 @@ export const MenuMobile = styled.div`
   opacity: 0;
   transition: all 300ms;
   visibility: hidden;
-  ${props => props.open &&
-  css `
-    opacity: 1;
-    visibility: visible;
-  `}
-
-  a {
+  ${props =>
+    props.open &&
+    css`
+      opacity: 1;
+      visibility: visible;
+    `} a {
     margin: 15px 0;
     text-transform: uppercase;
     font-size: 15px;
@@ -68,7 +67,7 @@ export const MobileButton = styled.div`
   flex-grow: 1;
   text-align: right;
   position: relative;
-  z-index: 1;
+  z-index: 4;
   /* background: ${props => props.theme.background.red}; */
 
   display: flex;
@@ -116,8 +115,9 @@ export const MobileIcon = styled.div`
     }
   }
 
-  ${props => 
-    props.open && css`
+  ${props =>
+    props.open &&
+    css`
       span,
       span:before,
       span:after {
@@ -133,7 +133,7 @@ export const MobileIcon = styled.div`
         transform: translateY(-4px) translateX(0px) rotate(-45deg);
         background-color: ${props => props.theme.text[500]};
       }
-  `}
+    `}
 
 `;
 
@@ -143,4 +143,4 @@ export const MenuMobileBottom = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-`
+`;

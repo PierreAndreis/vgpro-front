@@ -1,4 +1,4 @@
-import {injectGlobal} from "styled-components";
+import { injectGlobal } from "styled-components";
 
 injectGlobal`
 @charset "UTF-8";
@@ -654,7 +654,7 @@ injectGlobal`
 @keyframes fadeInRightBig {
   from {
     opacity: 0;
-    transform: translate3d(2000px, 0, 0);
+    transform: translate3d(250px, 0, 0);
   }
 
   to {
@@ -1578,4 +1578,4 @@ injectGlobal`
 .slideOutUp {
   animation-name: slideOutUp;
 }
-`
+`;

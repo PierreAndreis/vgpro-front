@@ -1,21 +1,23 @@
 import Box from "./../../common/Box";
-import styled, {css} from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrap = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 `;
 
 export const Group = styled(Box.wrap)`
-  ${'' /* width: 550px; */}
+  ${"" /* width: 550px; */};
   flex-grow: 1;
   margin: 5px 10px;
   box-sizing: border-box;
 `;
 
-export const Title = styled(Box.title)`
-`;
+export const Title = styled(Box.title)``;
 
 export const Content = styled(Box.body)`
   padding: 15px 0;
@@ -35,33 +37,31 @@ export const Stats = styled.div`
   position: relative;
   margin-bottom: 15px;
   color: ${props => props.theme.text[500]};
-  &>div {
+  & > div {
     font-size: 25px;
     font-weight: 500;
     color: ${props => props.theme.text[400]};
   }
-  &>span {
+  & > span {
     font-size: 13px;
     text-transform: uppercase;
     text-align: center;
     font-weight: 500;
   }
-  &>small {
+  & > small {
     font-size: 10px;
     position: absolute;
     bottom: -10px;
-    &>b {
-      ${'' /* Deaths */}
-      color: red;
+    & > b {
+      ${"" /* Deaths */} color: red;
     }
-
   }
 `;
 
 export const Bar = styled.div`
   width: 90%;
   padding: 5px;
-  box-sizing:border-box;
+  box-sizing: border-box;
 `;
 
 export const Label = styled.div`
@@ -72,11 +72,10 @@ export const Label = styled.div`
   text-transform: uppercase;
   font-weight: 500;
   margin-bottom: 5px;
-  &>span {
+  & > span {
     color: ${props => props.theme.text[300]};
-    float:right;
+    float: right;
   }
-  
 `;
 
 export const GraphBar = styled.div`
@@ -85,32 +84,44 @@ export const GraphBar = styled.div`
   height: 10px;
   position: relative;
   background: ${props => props.theme.background.slot};
-  
-  &>div {
+
+  & > div {
     height: 100%;
     border-radius: 15px;
     width: ${props => props.percent};
     transition: all 300ms;
-    box-shadow: 0 0 2px #E7AE2A;
+    box-shadow: 0 0 2px #e7ae2a;
     ${props => {
       switch (props.type) {
         case "win":
           return css`
-            background-image: linear-gradient(-90deg, #F76B1C 0%, #FAD961 100%);
-            box-shadow: 0 0 6px 0 #F5A623;
+            background-image: linear-gradient(
+              -90deg,
+              #f76b1c 0%,
+              #fad961 100%
+            );
+            box-shadow: 0 0 6px 0 #f5a623;
           `;
         case "kp":
           return css`
-            background-image: linear-gradient(-225deg, #2B86C5 0%, #FF3CAC 100%);
-            box-shadow: 0 0 6px 0 #F83EAC;
+            background-image: linear-gradient(
+              -225deg,
+              #2b86c5 0%,
+              #ff3cac 100%
+            );
+            box-shadow: 0 0 6px 0 #f83eac;
           `;
         default:
           return css`
-            background-image: linear-gradient(90deg, #2AF598 0%, #08AEEA 100%);
-            box-shadow: 0 0 6px 0 #2AF49A;
+            background-image: linear-gradient(
+              90deg,
+              #2af598 0%,
+              #08aeea 100%
+            );
+            box-shadow: 0 0 6px 0 #2af49a;
           `;
       }
-    }}
+    }};
   }
 `;
 
@@ -120,7 +131,7 @@ export const Graph = styled.div`
   margin-top: 1px;
   height: 10px;
   align-items: center;
-  &>span {
+  & > span {
     width: 30px;
     text-align: right;
     font-size: 13px;

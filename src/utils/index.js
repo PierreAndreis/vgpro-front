@@ -8,27 +8,53 @@ Utils.getSkillTier = (skillNumber, complete = false) => {
     typeof skillNumber !== "number"
       ? parseInt(skillNumber, 10)
       : skillNumber;
-  const result = SkillTiers[0][skill];
+  const result = SkillTiers[skill];
   if (complete) return result;
   return result && result.title ? result.title : "Unknown";
 };
 
-Utils.getTier = rankpoints => {
-  let skillTier = -1;
-  rankpoints = Number(rankpoints);
+// Utils.getTier = rankpoints => {
+//   let skillTier = -1;
+//   rankpoints = Number(rankpoints);
 
-  // Lol at those with more than 3000
-  if (rankpoints > 3000) return 29;
+//   // Lol at those with more than 3000
+//   if (rankpoints > 3000) return 29;
 
-  for (let tier in SkillTiers[0]) {
-    let obj = SkillTiers[0][tier];
-    if (obj.starts <= rankpoints && obj.ends >= rankpoints) {
-      skillTier = tier;
+//   for (let tier in SkillTiers[0]) {
+//     let obj = SkillTiers[0][tier];
+//     if (obj.starts <= rankpoints && obj.ends >= rankpoints) {
+//       skillTier = tier;
+//       break;
+//     }
+//   }
+
+//   return skillTier;
+// };
+
+Utils.getTier = points => {
+  points = Number(points);
+  let tierInfo;
+
+  for (let tier in SkillTiers) {
+    let t = SkillTiers[tier];
+    if (t.starts <= points && t.ends > points) {
+      tierInfo = tier;
+
       break;
     }
   }
 
-  return skillTier;
+  if (!tierInfo) {
+    if (points === -1) tierInfo = 0;
+    if (points >= 3000) tierInfo = 30;
+  }
+
+  return tierInfo || 0;
+
+  // return {
+  //   ...tiers[tierInfo],
+  //   tier: Math.ceil(tierInfo / 3), // Bronze, Silver, Gold
+  // };
 };
 
 Utils.getPercentageTillNext = (skillNumber, vst) => {
@@ -39,7 +65,7 @@ Utils.getPercentageTillNext = (skillNumber, vst) => {
 
   if (!skill) return 0;
 
-  const result = SkillTiers[0][skill];
+  const result = SkillTiers[skill];
   const delta = result.ends - result.starts;
   const delta_two = vst - result.starts;
 
@@ -133,9 +159,12 @@ Utils.makeCancelable = (promise, onfulfilled, onrejected) => {
 Utils.getItem = itemName => {
   let cleanName = itemName.replace(/([-])+/g, "_");
 
-  console.log(cleanName);
+  // We call it Super Scout, but it is called Super Scout 200
+  if (cleanName === "superscout") cleanName = "superscout_2000";
 
   let itemDescription = Items[cleanName];
+
+  if (!itemDescription) console.log("MISSING ITEM=", cleanName, itemName);
 
   return itemDescription;
 };

@@ -15,7 +15,7 @@ import resources from "./languages";
 // });
 
 i18n.use(LngDetector).init({
-  debug: true,
+  // debug: true,
   // we init with resources
   resources: resources,
   fallbackLng: "en",

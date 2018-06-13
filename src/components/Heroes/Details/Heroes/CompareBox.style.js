@@ -10,7 +10,7 @@ export const Container = styled.div`
   padding: 0 20px;
   box-sizing: border-box;
   margin: 10px auto;
-  max-width: 150px;
+  max-width: 200px;
 
   & h3 {
     width: 100%;
@@ -18,7 +18,7 @@ export const Container = styled.div`
     color: ${props => props.theme.text[500]};
     font-family: ${props => props.theme.font.highlight};
     font-weight: 700;
-    font-size: 21px;
+    font-size: 19px;
     text-align: center;
     margin: 10px 0;
   }
@@ -136,4 +136,23 @@ export const Portrait = styled(AssetLoader)`
   border: 1px solid ${props => props.theme.background.slotBorder};
   background-color: ${props => props.theme.background.slot};
   margin: 0 3px;
+`;
+
+export const Value = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > span {
+    font-size: 15px;
+    color: ${props => props.theme.text[400]};
+  }
+  & > div {
+    font-size: 9px;
+    color: ${props => props.theme.text[400]};
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
 `;

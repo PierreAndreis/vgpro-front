@@ -43,7 +43,7 @@ export const AllStats = [
 ];
 
 const Stats = ({ payload, heroName }) => (
-  <Box.wrap animation="fadeInLeft">
+  <Box.wrap>
     <Box.title>
       <Trans i18nKey="terms.OverallStats" />
     </Box.title>

@@ -41,7 +41,7 @@ export default function asyncComponent(importComponent) {
             style={{
               width: "1px",
               height: "1px",
-              margin: "3% auto",
+              margin: "5% auto",
             }}
           >
             <Spinner

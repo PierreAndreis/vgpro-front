@@ -74,7 +74,6 @@ class HeroDetails extends React.Component {
       return <ErrorScreen />;
     }
 
-    console.log(this.state.status, payload);
     if (this.state.status === "loaded") {
       topRoles = payload.roles
         .sort((a, b) => (a.pickRate > b.pickRate ? -1 : 1))

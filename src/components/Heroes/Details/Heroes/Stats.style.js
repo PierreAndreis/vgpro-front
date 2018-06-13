@@ -5,7 +5,7 @@ import Button from "../../../common/Button";
 export const Container = styled.div`
   flex-shrink: 0;
   flex-grow: 0;
-  width: 300px;
+  width: 250px;
   height: 100%;
   margin: 0 5px;
   box-sizing: border-box;
@@ -93,5 +93,24 @@ export const Bar = styled.div`
     &:last-of-type {
       background: linear-gradient(90deg, #bf5e9f 0%, #2d2ca7 100%);
     }
+  }
+`;
+
+export const Value = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > span {
+    font-size: 21px;
+    color: ${props => props.theme.text[500]};
+  }
+  & > div {
+    font-size: 11px;
+    color: ${props => props.theme.text[400]};
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
   }
 `;

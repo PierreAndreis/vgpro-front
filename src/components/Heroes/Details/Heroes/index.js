@@ -1,4 +1,5 @@
 import React from "react";
+import Spinner from "react-spinkit";
 import { Trans } from "react-i18next";
 
 import Media from "react-media";
@@ -39,7 +40,15 @@ class Heroes extends React.Component {
     let mobile = this.props.mobile;
 
     if (!this.props.payload) {
-      return <div>Loading</div>;
+      return (
+        <div style={{ margin: "10% auto", gridColumn: "2 / 2" }}>
+          <Spinner
+            name="line-spin-fade-loader"
+            color="rgba(0, 0, 0, 0.2)"
+            fadeIn="none"
+          />
+        </div>
+      );
     }
 
     let sidebar = (

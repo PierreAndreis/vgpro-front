@@ -7,9 +7,9 @@ import { translate } from "react-i18next";
 import AsyncContainer from "./common/AsyncContainer";
 
 import HomePage from "./Home/Home";
+
 const Profile = AsyncContainer(() => import("./Profile/Profile"));
 const Match = AsyncContainer(() => import("./Matches/Match"));
-// const Teams       = AsyncContainer(() =>  import('./common/Soon')               );
 const Leaderboard = AsyncContainer(() =>
   import("./Leaderboard/Leaderboard.js")
 );

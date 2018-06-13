@@ -81,7 +81,7 @@ export default class extends React.PureComponent {
     const { teams, telemetry, status } = this.props;
     const { playerLoaded } = this.state;
 
-    if (status === "loading" || !telemetry || true) {
+    if (status === "loading" || !telemetry) {
       return (
         <div
           style={{
@@ -203,9 +203,28 @@ export default class extends React.PureComponent {
                   />
                 ))}
               </Styled.AbilitiesRow>
-              {abilities.map(ability => (
-                <Abilities key={ability.name} {...ability} />
-              ))}
+              {[
+                `${overviewPlayer.hero}_a`,
+                `${overviewPlayer.hero}_b`,
+                `${overviewPlayer.hero}_c`,
+              ].map(ability => {
+                {
+                  /*  This hack is to avoid depending on a player leveling up an ability to show it there*/
+                }
+                let abilityLevels = abilities.find(
+                  h => h.name === ability.toLowerCase()
+                );
+                if (!abilityLevels) {
+                  abilityLevels = [];
+                } else abilityLevels = abilityLevels.levels;
+                return (
+                  <Abilities
+                    key={ability}
+                    name={ability}
+                    levels={abilityLevels}
+                  />
+                );
+              })}
             </Styled.AbilitiesGrid>
           </Styled.Abilities>
 

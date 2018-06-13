@@ -75,6 +75,7 @@ export const HeroContent = styled(Box.body)`
       color: ${props => props.theme.text[300]};
       text-transform: uppercase;
       font-weight: 500;
+      white-space: nowrap;
       @media screen and (max-width: 560px) {
         font-size: 9px;
       }

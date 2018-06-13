@@ -25,7 +25,7 @@ class AssetLoader extends React.Component {
 
     let name_ = name;
 
-    if (type === "tiers") name_ = parseInt(name_, 10) + 1;
+    if (type === "tiers") name_ = parseInt(name_, 10);
     let cleanName = String(name_)
       .replace(/([ ])+/g, "-")
       .replace("'", "")

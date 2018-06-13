@@ -61,7 +61,7 @@ export const Rate = ({ rate, label, fixed }) => {
 
   const color = findInArray(RateColors, value);
 
-  rate = Number(rate).toFixed(fixed || 1) + "%";
+  rate = (Number(rate) || 0).toFixed(fixed || 1) + "%";
 
   return (
     <span

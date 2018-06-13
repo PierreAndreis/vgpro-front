@@ -2,6 +2,7 @@ import React from "react";
 import { Trans } from "react-i18next";
 import { AllStats } from "./../Overview/Stats";
 
+import { Rate } from "../../../common/ColoredValues";
 import { SkeletonWrapper } from "../../../common/Skeleton";
 import Box from "../../../common/Box";
 
@@ -70,35 +71,52 @@ export class Stats extends React.Component {
   };
 
   render() {
+    let playingAgainstRate = this.props.stats[0].playingAgainst.find(
+      hero => hero.key === this.props.name[1]
+    );
+
+    let playingWithRate = this.props.stats[0].playingWith.find(
+      hero => hero.key === this.props.name[1]
+    );
+
+    if (!playingAgainstRate) {
+      playingAgainstRate = {};
+    }
+    if (!playingWithRate) {
+      playingWithRate = {};
+    }
+
     return (
       <Styled.Container>
         <Box.wrap>
           <Styled.Body>
-            <h4>Win Rate</h4>
-            <div>
-              <Styled.Label>
-                <div>30%</div>
-
-                <span>Playing Against</span>
-                <div>70%</div>
-              </Styled.Label>
-              <Styled.Bar>
-                <div style={{ width: "30%" }} />
-                <div style={{ width: "70%" }} />
-              </Styled.Bar>
-            </div>
-
-            <div>
-              <Styled.Label>
-                <div>30%</div>
-
-                <span>Playing With</span>
-                <div>70%</div>
-              </Styled.Label>
-              <Styled.Bar>
-                <div style={{ width: "30%" }} />
-                <div style={{ width: "70%" }} />
-              </Styled.Bar>
+            <h4>
+              {this.props.name[0]} <Trans i18nKey="terms.winrate" />
+            </h4>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-around",
+              }}
+            >
+              <Styled.Value>
+                <span>
+                  <Rate rate={playingAgainstRate.winRate} />
+                </span>
+                <div>
+                  <Trans i18nKey="heroes.playingAgainst" /> <br />
+                  {this.props.name[1]}
+                </div>
+              </Styled.Value>
+              <Styled.Value>
+                <span>
+                  <Rate rate={playingWithRate.winRate} />
+                </span>
+                <div>
+                  <Trans i18nKey="heroes.playingWith" /> <br />
+                  {this.props.name[1]}
+                </div>
+              </Styled.Value>
             </div>
 
             <h4>

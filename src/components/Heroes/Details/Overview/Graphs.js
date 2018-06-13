@@ -126,6 +126,7 @@ const SimpleLineChart = ({ data, color, syncId }) => (
       />
       <YAxis
         scale="auto"
+        tickCount={10}
         domain={["auto", "auto"]}
         padding={{ left: 0, right: 0, top: 0, bottom: 0 }}
         width={20}
@@ -147,10 +148,9 @@ const SimpleLineChart = ({ data, color, syncId }) => (
         dot={true}
         dataKey="average"
         stroke={`url(#${color})`}
-        strokeWidth="2"
+        strokeWidth="3"
         filter={"url(#blur)"}
       />
-      {/* <Line type="linear" dot={true} dataKey="pickRate" stroke={`url(#orange)`} strokeWidth="1" filter={"url(#blur)"}/> */}
     </LineChart>
   </ResponsiveContainer>
 );
@@ -292,7 +292,7 @@ const GraphBox = ({ title, payload, color, type }) => {
   }
 
   return (
-    <Box.wrap animation="fadeInDown">
+    <Box.wrap>
       <Box.title>
         <Trans i18nKey={title} />
         {placementContent}

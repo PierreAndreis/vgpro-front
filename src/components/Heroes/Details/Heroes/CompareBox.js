@@ -1,7 +1,8 @@
 import React from "react";
 import Tilt from "react-tilt";
-
+import Link from "react-router-dom/Link";
 import { Trans } from "react-i18next";
+
 import Box from "../../../common/Box";
 
 import * as Styled from "./CompareBox.style.js";
@@ -12,7 +13,8 @@ import { fetchHero } from "../../../../actions/api.js";
 import PolygonSVG from "./PolygonSVG";
 
 import Stats from "./Stats";
-import Link from "react-router-dom/Link";
+import { SkeletonWrapper } from "../../../common/Skeleton";
+import { Rate } from "../../../common/ColoredValues";
 
 const Portrait = ({ heroName, payload }) => {
   let roles = [];
@@ -55,6 +57,43 @@ const Portrait = ({ heroName, payload }) => {
                   </div>
                 </Tilt>
                 <h3>{heroName}</h3>
+
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <Styled.Value>
+                    <span>
+                      <SkeletonWrapper
+                        width={30}
+                        height={12}
+                        status={payload ? "loaded" : "loading"}
+                      >
+                        {() => <Rate rate={payload.winRate} />}
+                      </SkeletonWrapper>
+                    </span>
+                    <div>
+                      <Trans i18nKey="terms.winrate" />
+                    </div>
+                  </Styled.Value>
+
+                  <Styled.Value>
+                    <span>
+                      <SkeletonWrapper
+                        width={30}
+                        height={12}
+                        status={payload ? "loaded" : "loading"}
+                      >
+                        {() => <Rate rate={payload.pickRate} />}
+                      </SkeletonWrapper>
+                    </span>
+                    <div>
+                      <Trans i18nKey="terms.pickrate" />
+                    </div>
+                  </Styled.Value>
+                </div>
               </div>
             </Styled.Container>
           </Link>
@@ -170,7 +209,10 @@ export default class CompareBox extends React.Component {
           payload={this.props.payload}
         />
 
-        <Stats stats={[this.props.payload, this.state.payload]} />
+        <Stats
+          stats={[this.props.payload, this.state.payload]}
+          name={[this.props.hero, this.props.selectedHero]}
+        />
 
         <Portrait
           heroName={this.state.selectedHero}

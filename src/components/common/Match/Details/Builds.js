@@ -208,9 +208,7 @@ export default class extends React.PureComponent {
                 `${overviewPlayer.hero}_b`,
                 `${overviewPlayer.hero}_c`,
               ].map(ability => {
-                {
-                  /*  This hack is to avoid depending on a player leveling up an ability to show it there*/
-                }
+                /*  This hack is to avoid depending on a player leveling up an ability to show it there*/
                 let abilityLevels = abilities.find(
                   h => h.name === ability.toLowerCase()
                 );

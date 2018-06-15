@@ -12,6 +12,8 @@ import Utils from "../../../utils";
 
 import * as Styled from "./PlayerInfo.style";
 
+window.pierre = false;
+
 const regions = {
   na: "North America",
   eu: "Europe",
@@ -280,6 +282,7 @@ const PlayerInfo = ({
         </Styled.PlayerStats>
 
         {AKAs &&
+          window.pierre &&
           AKAs.length > 0 && (
             <React.Fragment>
               <Styled.Divider />

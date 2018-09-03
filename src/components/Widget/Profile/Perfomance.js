@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Box } from "../../common/Box";
 import styled from "styled-components";
 import { SkeletonWrapper } from "../../common/Skeleton";
-import { Rate } from "../../common/ColoredValues";
 
 const Wrap = styled(Box)`
   height: 100% !important;

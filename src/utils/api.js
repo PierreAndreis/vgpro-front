@@ -1,5 +1,5 @@
 import axios from "axios";
-import ReactGA, { send } from "react-ga";
+import ReactGA from "react-ga";
 const http = require("http");
 const https = require("https");
 const queryString = require("query-string");

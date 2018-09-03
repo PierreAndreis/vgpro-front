@@ -5,8 +5,8 @@ const https = require("https");
 const queryString = require("query-string");
 
 //HARDCODED. CHANGE TO PROCESS FILE
-// const hostname = "https://api.vgpro.gg";
-const hostname = "http://localhost:8080";
+const hostname = "https://api.vgpro.gg";
+// const hostname = "http://localhost:8080";
 
 const request = axios.create();
 

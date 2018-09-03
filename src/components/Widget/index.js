@@ -93,8 +93,9 @@ export default class Widget extends Component {
   async componentDidMount() {
     const playerId = this.props.match.params.playerId;
 
+    // change this before it goes live
     Utils.makeCancelable(
-      API.lookupPlayerId(playerId),
+      API.lookupPlayerId("a84deea2-c360-11e4-ad12-06eb725f8a76"),
       res =>
         this.setState({
           status: "loaded",

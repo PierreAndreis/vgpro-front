@@ -1,0 +1,406 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "vainglory-icons-font";
+  src:url("/vg-fonts/vainglory-icons-font.eot");
+  src:url("/vg-fonts/vainglory-icons-font.eot?#iefix") format("embedded-opentype"),
+    url("/vg-fonts/vainglory-icons-font.woff") format("woff"),
+    url("/vg-fonts/vainglory-icons-font.ttf") format("truetype"),
+    url("/vg-fonts/vainglory-icons-font.svg#vainglory-icons-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "vainglory-icons-font" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="vg-"]:before,
+[class*=" vg-"]:before {
+  font-family: "vainglory-icons-font" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vg-happy-1:before {
+  content: "\61";
+}
+.vg-happy-2:before {
+  content: "\62";
+}
+.vg-happy-3:before {
+  content: "\63";
+}
+.vg-jungler:before {
+  content: "\64";
+}
+.vg-mobility:before {
+  content: "\65";
+}
+.vg-offense:before {
+  content: "\66";
+}
+.vg-sad-1:before {
+  content: "\67";
+}
+.vg-sad-2:before {
+  content: "\68";
+}
+.vg-sad-3:before {
+  content: "\69";
+}
+.vg-carry:before {
+  content: "\6b";
+}
+.vg-crystal:before {
+  content: "\6c";
+}
+.vg-defense:before {
+  content: "\6d";
+}
+.vg-support:before {
+  content: "\6e";
+}
+.vg-weapon:before {
+  content: "\6a";
+}
+.vg-utility:before {
+  content: "\6f";
+}
+.vg-captain:before {
+  content: "\70";
+}
+.vg-ability-shield:before {
+  content: "\71";
+}
+.vg-beer-1:before {
+  content: "\72";
+}
+.vg-beer-2:before {
+  content: "\73";
+}
+.vg-beer-3:before {
+  content: "\74";
+}
+.vg-blackclaw:before {
+  content: "\75";
+}
+.vg-blitz-coin:before {
+  content: "\76";
+}
+.vg-coin:before {
+  content: "\77";
+}
+.vg-defense-shield:before {
+  content: "\78";
+}
+.vg-ghostwing:before {
+  content: "\79";
+}
+.vg-rank-3:before {
+  content: "\7a";
+}
+.vg-recommended-shield:before {
+  content: "\41";
+}
+.vg-utility-shield:before {
+  content: "\42";
+}
+.vg-vain-crystal:before {
+  content: "\43";
+}
+.vg-other-shield:before {
+  content: "\44";
+}
+.vg-rank-1:before {
+  content: "\45";
+}
+.vg-rank-2:before {
+  content: "\46";
+}
+.vg-turret:before {
+  content: "\47";
+}
+.vg-thumbs-up-3:before {
+  content: "\48";
+}
+.vg-thumbs-up-2:before {
+  content: "\49";
+}
+.vg-thumbs-up-1:before {
+  content: "\4a";
+}
+.vg-minion:before {
+  content: "\4b";
+}
+.vg-kraken:before {
+  content: "\4c";
+}
+.vg-weapon-shield:before {
+  content: "\4e";
+}
+.vg-rank-4:before {
+  content: "\4f";
+}
+.vg-rank-5:before {
+  content: "\50";
+}
+.vg-rank-6:before {
+  content: "\51";
+}
+.vg-rank-7:before {
+  content: "\52";
+}
+.vg-rank-8:before {
+  content: "\53";
+}
+.vg-rank-9:before {
+  content: "\54";
+}
+.vg-rank-10:before {
+  content: "\55";
+}
+.vg-bot-lane:before {
+  content: "\56";
+}
+.vg-caution:before {
+  content: "\57";
+}
+.vg-caution-outline:before {
+  content: "\58";
+}
+.vg-meet:before {
+  content: "\59";
+}
+.vg-meet-outline:before {
+  content: "\5a";
+}
+.vg-mid-lane:before {
+  content: "\30";
+}
+.vg-target:before {
+  content: "\31";
+}
+.vg-target-outline:before {
+  content: "\32";
+}
+.vg-question-outline:before {
+  content: "\33";
+}
+.vg-question:before {
+  content: "\34";
+}
+.vg-en-route-outline:before {
+  content: "\35";
+}
+.vg-en-route:before {
+  content: "\36";
+}
+.vg-top-lane:before {
+  content: "\37";
+}
+.vg-abilities-shield:before {
+  content: "\38";
+}
+.vg-academy:before {
+  content: "\39";
+}
+.vg-armory:before {
+  content: "\21";
+}
+.vg-banner-1:before {
+  content: "\22";
+}
+.vg-banner-2:before {
+  content: "\23";
+}
+.vg-brand-logo:before {
+  content: "\24";
+}
+.vg-gg:before {
+  content: "\25";
+}
+.vg-brand-mark:before {
+  content: "\26";
+}
+.vg-calendar-check:before {
+  content: "\27";
+}
+.vg-guild-officer:before {
+  content: "\28";
+}
+.vg-kills:before {
+  content: "\2a";
+}
+.vg-leaderboard:before {
+  content: "\2b";
+}
+.vg-lightbulb:before {
+  content: "\2c";
+}
+.vg-profile:before {
+  content: "\2d";
+}
+.vg-pickaxe-minion:before {
+  content: "\2e";
+}
+.vg-pickaxe-coin:before {
+  content: "\2f";
+}
+.vg-pickaxe:before {
+  content: "\3a";
+}
+.vg-ok:before {
+  content: "\3b";
+}
+.vg-news:before {
+  content: "\3c";
+}
+.vg-quill:before {
+  content: "\3d";
+}
+.vg-swords-alt:before {
+  content: "\3e";
+}
+.vg-scroll:before {
+  content: "\3f";
+}
+.vg-target-scope:before {
+  content: "\40";
+}
+.vg-warning:before {
+  content: "\5b";
+}
+.vg-team-1:before {
+  content: "\5d";
+}
+.vg-scroll-attention:before {
+  content: "\5e";
+}
+.vg-season-dial:before {
+  content: "\5f";
+}
+.vg-team-2:before {
+  content: "\60";
+}
+.vg-shop-1:before {
+  content: "\7b";
+}
+.vg-shop-2:before {
+  content: "\7c";
+}
+.vg-stopwatch:before {
+  content: "\7d";
+}
+.vg-timer:before {
+  content: "\7e";
+}
+.vg-trophy:before {
+  content: "\5c";
+}
+.vg-sword:before {
+  content: "\e000";
+}
+.vg-recall:before {
+  content: "\e001";
+}
+.vg-swords:before {
+  content: "\e002";
+}
+.vg-academy-2:before {
+  content: "\e003";
+}
+.vg-bolt:before {
+  content: "\e004";
+}
+.vg-chest:before {
+  content: "\e005";
+}
+.vg-glory-coin:before {
+  content: "\e006";
+}
+.vg-glory:before {
+  content: "\e007";
+}
+.vg-gift:before {
+  content: "\e008";
+}
+.vg-flag:before {
+  content: "\e009";
+}
+.vg-inventory:before {
+  content: "\e00a";
+}
+.vg-home:before {
+  content: "\e00b";
+}
+.vg-heroes:before {
+  content: "\e00c";
+}
+.vg-market:before {
+  content: "\e00d";
+}
+.vg-leaderboards:before {
+  content: "\e00e";
+}
+.vg-party:before {
+  content: "\e00f";
+}
+.vg-party-simple:before {
+  content: "\e010";
+}
+.vg-plate:before {
+  content: "\e011";
+}
+.vg-question-mark:before {
+  content: "\e012";
+}
+.vg-stunned:before {
+  content: "\e013";
+}
+.vg-today:before {
+  content: "\e014";
+}
+.vg-social:before {
+  content: "\e015";
+}
+.vg-silenced:before {
+  content: "\e016";
+}
+.vg-shrug:before {
+  content: "\e017";
+}
+.vg-pvp:before {
+  content: "\e018";
+}
+.vg-news-2:before {
+  content: "\e019";
+}
+.vg-pve:before {
+  content: "\e01a";
+}
+.vg-practice:before {
+  content: "\e01b";
+}
+.vg-assists:before {
+  content: "\4d";
+}
+.vg-deaths:before {
+  content: "\29";
+}

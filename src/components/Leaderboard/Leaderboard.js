@@ -24,7 +24,7 @@ import Button from "./../common/Button";
 
 const PER_PAGE = 10;
 
-const AD_EVERY = 9;
+const AD_EVERY = 5;
 
 // Small helper to modify a certain page easily without changing statw
 const modifyPage = (page, newState) => prevState => {

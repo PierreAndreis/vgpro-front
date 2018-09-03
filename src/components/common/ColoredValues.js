@@ -47,7 +47,7 @@ export const KDA = ({ kda, label }) => {
   return <span style={{ color }}>{value}</span>;
 };
 
-export const Rate = ({ rate, label, fixed }) => {
+export const Rate = ({ rate, label, fixed, component }) => {
   let value = Number(rate);
   // redo this color plz todo
   const RateColors = [
@@ -63,8 +63,12 @@ export const Rate = ({ rate, label, fixed }) => {
 
   rate = (Number(rate) || 0).toFixed(fixed || 1) + "%";
 
+  const Wrap = component || "span";
+
+  console.log("Wrap=", Wrap);
+
   return (
-    <span
+    <Wrap
       style={{
         color,
         textShadow: `0 0 ${
@@ -74,6 +78,6 @@ export const Rate = ({ rate, label, fixed }) => {
     >
       {rate}
       {label}
-    </span>
+    </Wrap>
   );
 };

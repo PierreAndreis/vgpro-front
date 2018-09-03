@@ -9,7 +9,8 @@ export const Box = styled.div`
   position: relative;
   box-shadow: 0 6px 30px ${props => props.theme.shadow};
 
-  border-radius: 5px;
+  /*border-radius: 5px;*/
+  border-radius: 10px;
 
   /* Flex so we can have actions at bottom */
   display: flex;
@@ -55,7 +56,7 @@ export const BoxTitle = styled.div`
   font-weight: bold;
   font-size: 18px;
   text-transform: uppercase;
-  border-radius: 5px 5px 0 0;
+  border-radius: 10px 10px 0 0;
 
   display: flex;
   flex-direction: row;
@@ -72,7 +73,7 @@ export const BoxActions = styled.div`
   margin-top: auto;
   background: ${props =>
     transparentize(0.8, props.theme.background.third)};
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 10px 10px;
   height: 20px;
   display: flex;
   justify-content: space-around;

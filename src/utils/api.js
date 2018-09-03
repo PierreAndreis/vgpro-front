@@ -1,12 +1,12 @@
 import axios from "axios";
-import ReactGA from "react-ga";
+import ReactGA, { send } from "react-ga";
 const http = require("http");
 const https = require("https");
 const queryString = require("query-string");
 
 //HARDCODED. CHANGE TO PROCESS FILE
-const hostname = "https://api.vgpro.gg";
-// const hostname = "http://localhost:8080";
+// const hostname = "https://api.vgpro.gg";
+const hostname = "http://localhost:8080";
 
 const request = axios.create();
 
@@ -95,6 +95,10 @@ API.getHeroHistory = (heroName, options) => {
 /* ==== PLAYER LOOKUP ===== */
 API.lookupPlayer = playerName => {
   return sendRequest(`/player/${playerName}/find`);
+};
+
+API.lookupPlayerId = playerId => {
+  return sendRequest(`/player/${playerId}/uuid/find`);
 };
 
 API.fetchPlayerStats = (playerName, filtersArgs) => {

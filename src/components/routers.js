@@ -13,11 +13,17 @@ const Match = AsyncContainer(() => import("./Matches/Match"));
 const Leaderboard = AsyncContainer(() =>
   import("./Leaderboard/Leaderboard.js")
 );
+
 const Heroes = AsyncContainer(() => import("./Heroes"));
 const HeroPage = AsyncContainer(() => import("./Heroes/Details"));
+const Widget = AsyncContainer(() => import("./Widget"));
 
 // then our route config
 const routes = [
+  {
+    path: "/widget/:playerId",
+    component: Widget,
+  },
   {
     path: "/players/:region/:player",
     component: Profile,
@@ -75,7 +81,9 @@ const RouteWithSubRoutes = route => (
 const Routers = () => (
   <div>
     <Switch>
-      {routes.map((route, i) => <RouteWithSubRoutes key={i} {...route} />)}
+      {routes.map((route, i) => (
+        <RouteWithSubRoutes key={i} {...route} />
+      ))}
     </Switch>
   </div>
 );

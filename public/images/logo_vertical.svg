@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="302px" height="225px" viewBox="0 0 302 225" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>vertical white@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="52 86 52 138.072024 2 166"></polygon>
+        <polygon id="path-2" points="107 86 107 138.072024 57 166"></polygon>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-802.000000, -351.000000)">
+        <g id="vertical-white" transform="translate(802.000000, 351.000000)">
+            <g id="Group-5" transform="translate(98.000000, 0.000000)">
+                <g id="Path" transform="translate(27.000000, 126.000000) scale(1, -1) translate(-27.000000, -126.000000) ">
+                    <use fill="#D8D8D8" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+                <g id="Path" transform="translate(82.000000, 126.000000) scale(-1, -1) translate(-82.000000, -126.000000) ">
+                    <use fill="#D8D8D8" xlink:href="#path-2"></use>
+                    <use fill="#FFFFFF" xlink:href="#path-2"></use>
+                </g>
+                <polygon id="Path" fill="#FFFFFF" points="52 0 52 108 0 79.5800711"></polygon>
+                <polygon id="Path" fill="#FFFFFF" points="57 0 109 79.5800711 57 108"></polygon>
+            </g>
+            <text id="VGPRO.GG" font-family="Lato-Bold, Lato" font-size="60" font-weight="bold" fill="#FFFFFF">
+                <tspan x="0" y="224">VGPRO.GG</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

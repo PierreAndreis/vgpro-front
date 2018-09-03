@@ -9,7 +9,12 @@ Utils.getSkillTier = (skillNumber, complete = false) => {
       ? parseInt(skillNumber, 10)
       : skillNumber;
   const result = SkillTiers[skill];
-  if (complete) return result;
+  if (complete)
+    return {
+      ...result,
+      tier: Math.ceil(skillNumber / 3),
+    };
+
   return result && result.title ? result.title : "Unknown";
 };
 

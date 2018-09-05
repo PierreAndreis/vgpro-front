@@ -1,0 +1,57 @@
+{
+  "widget.more": "А ТАКЖЕ",
+  "widget.profile": "ОБЗОР",
+  "widget.matches": "МАТЧИ",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "СТАТИСТИКА",
+  "widget.win_rate": "ДОЛЯ ПОБЕД",
+  "widget.kill_participation": "УЧАСТИЕ В УБИЙСТВАХ",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "Игр: {{games}}",
+  "widget.games": "{{games}} игра",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "УБИЙСТВА",
+  "widget.deaths_label": "СМЕРТИ",
+  "widget.assists_label": "ПОДДЕРЖКИ",
+
+  "widget.roles": "РОЛИ",
+  "widget.captain": "КАПИТАН",
+  "widget.carry": "КЕРРИ",
+  "widget.jungler": "ЛЕСНИК",
+
+  "widget.heroes": "ГЕРОИ",
+
+  "widget.view_more": "ПОДРОБНЕЕ",
+  "widget.view_more_on_vgproogg": "ПОДРОБНЕЕ НА VGPRO<1>.GG</1>",
+
+  "widget.mode": "РЕЖИМ ИГРЫ",
+  "widget.all_modes": "ВСЕ РЕЖИМЫ",
+  "widget.casual_5v5": "ПРОСТОЙ — 5V5",
+  "widget.ranked_5v5": "РАНГОВЫЙ — 5V5",
+  "widget.casual_3v3": "ПРОСТОЙ — 3V3",
+  "widget.ranked_3v3": "РАНГОВЫЙ — 5V5",
+  "widget.blitz": "БЛИЦ-МАТЧ",
+  "widget.battleroyale": "КОРОЛЕВСКАЯ БИТВА",
+  "widget.private_blitz": "ЧАСТНЫЙ – БЛИЦ",
+  "widget.private_battleroyale": "ЧАСТНЫЙ — КОРОЛ. БИТВА",
+  "widget.private_ranked_5v5": "ЧАСТНЫЙ — ДРАФТ 5V5",
+  "widget.private_casual_5v5": "ЧАСТНЫЙ — 5V5",
+  "widget.private_ranked_3v3": "ЧАСТНЫЙ — ДРАФТ 3V3",
+  "widget.private_casual_3v3": "ЧАСТНЫЙ — 3 НА 3",
+
+  "widget.season": "СЕЗОН",
+  "widget.lifetime": "ЗА ВСЕ ВРЕМЯ",
+  "widget.winter": "ЗИМА {{year}}",
+  "widget.fall": "ОСЕНЬ {{year}}",
+  "widget.spring": "ВЕСНА {{year}}",
+  "widget.summer": "ЛЕТО {{year}}",
+
+  "widget.win": "ПБД",
+  "widget.loss": "ПОРАЖЕНИЕ",
+  "widget.cs": "{{cs}} cs",
+  "widget.goldShare": "(доля: {{goldShare}}%)",
+  "widget.csMin": "({{csPerMinute}} cs/мин.)"
+}

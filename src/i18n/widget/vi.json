@@ -1,0 +1,57 @@
+{
+  "widget.more": "THÊM",
+  "widget.profile": "TỔNG QUAN",
+  "widget.matches": "TRẬN ĐẤU",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "KẾT QUẢ",
+  "widget.win_rate": "TỶ LỆ THẮNG",
+  "widget.kill_participation": "THAM GIA ĂN MẠNG",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} Trận",
+  "widget.games": "{{games}} Trận",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "GIẾT",
+  "widget.deaths_label": "CHẾT",
+  "widget.assists_label": "HỖ TRỢ",
+
+  "widget.roles": "VAI TRÒ",
+  "widget.captain": "ĐỘI TRƯỞNG",
+  "widget.carry": "SÁT THƯƠNG CHÍNH",
+  "widget.jungler": "ĐI RỪNG",
+
+  "widget.heroes": "HERO",
+
+  "widget.view_more": "XEM THÊM",
+  "widget.view_more_on_vgproogg": "XEM THÊM TRÊN VGPRO<1>.GG</1>",
+
+  "widget.mode": "CHẾ ĐỘ CHƠI",
+  "widget.all_modes": "MỌI CHẾ ĐỘ",
+  "widget.casual_5v5": "TỰ DO - 5V5",
+  "widget.ranked_5v5": "XẾP HẠNG - 5V5",
+  "widget.casual_3v3": "TỰ DO - 3V3",
+  "widget.ranked_3v3": "XẾP HẠNG - 5V5",
+  "widget.blitz": "TRẬN ĐẤU ĐỘT KÍCH",
+  "widget.battleroyale": "TRẬN ĐẤU HOÀNG GIA",
+  "widget.private_blitz": "RIÊNG TƯ - ĐỘT KÍCH ",
+  "widget.private_battleroyale": "RIÊNG TƯ - HOÀNG GIA",
+  "widget.private_ranked_5v5": "RIÊNG TƯ - CẤM CHỌN 5V5",
+  "widget.private_casual_5v5": "RIÊNG TƯ - 5V5",
+  "widget.private_ranked_3v3": "RIÊNG TƯ - CẤM CHỌN 3V3",
+  "widget.private_casual_3v3": "RIÊNG TƯ - 3V3",
+
+  "widget.season": "MÙA",
+  "widget.lifetime": "MỌI MÙA",
+  "widget.winter": "MÙA ĐÔNG {{year}}",
+  "widget.fall": "MÙA THU {{year}}",
+  "widget.spring": "MÙA XUÂN {{year}}",
+  "widget.summer": "MÙA HÈ {{year}}",
+
+  "widget.win": "TRẬN THẮNG",
+  "widget.loss": "TRẬN THUA",
+  "widget.cs": "{{cs}} cs",
+  "widget.goldShare": "({{goldShare}}% vàng đóng góp)",
+  "widget.csMin": "({{csPerMinute}} cs/phút)"
+}

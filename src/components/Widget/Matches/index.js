@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from "react-i18next";
 import Spinner from "react-spinkit";
 import styled from "styled-components";
 
@@ -64,7 +65,7 @@ export default class WidgetMatches extends React.Component {
 
     if (this.state.payload < 1) {
       return (
-        <ErrorScreen message="No records found for this player in the past 30 days" />
+        <ErrorScreen message={<Trans i18nKey="widget.playerInactive" />} />
       );
     }
 
@@ -79,8 +80,10 @@ export default class WidgetMatches extends React.Component {
         </Content>
         <a href={link} target="_blank">
           <ViewMore>
-            VIEW MORE ON VGPRO.
-            <b>GG</b>
+            <Trans i18nKey="widget.view_more_on_vgproogg">
+              VIEW MORE ON VGPRO
+              <b>.GG</b>
+            </Trans>
           </ViewMore>
         </a>
       </React.Fragment>

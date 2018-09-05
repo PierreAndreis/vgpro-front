@@ -1,0 +1,57 @@
+{
+  "widget.more": "その他",
+  "widget.profile": "基本情報",
+  "widget.matches": "試合",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "パフォーマンス",
+  "widget.win_rate": "勝率",
+  "widget.kill_participation": "キル貢献",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} ゲーム",
+  "widget.games": "{{games}} ゲーム",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "キル",
+  "widget.deaths_label": "デス",
+  "widget.assists_label": "도움",
+
+  "widget.roles": "役割",
+  "widget.captain": "キャプテン",
+  "widget.carry": "キャリー",
+  "widget.jungler": "ジャングラー",
+
+  "widget.heroes": "ヒーロー",
+
+  "widget.view_more": "詳細を表示",
+  "widget.view_more_on_vgproogg": "VGPRO.ggで詳細を確認",
+
+  "widget.mode": "ゲームモード",
+  "widget.all_modes": "全モード",
+  "widget.casual_5v5": "カジュアル - 5V5",
+  "widget.ranked_5v5": "ランク - 5V5",
+  "widget.casual_3v3": "カジュアル - 3V3",
+  "widget.ranked_3v3": "ランク - 5V5",
+  "widget.blitz": "電撃モード",
+  "widget.battleroyale": "大乱闘モード",
+  "widget.private_blitz": "プライベート - 電撃モード",
+  "widget.private_battleroyale": "プライベート - 大乱闘モード",
+  "widget.private_ranked_5v5": "プライベート - 5V5ドラフト",
+  "widget.private_casual_5v5": "プライベート - 5V5",
+  "widget.private_ranked_3v3": "プライベート - 3V3ドラフト",
+  "widget.private_casual_3v3": "プライベート - 3V3",
+
+  "widget.season": "シーズン",
+  "widget.lifetime": "通算",
+  "widget.winter": "{{year}}ウィンター",
+  "widget.fall": "{{year}}オータム",
+  "widget.spring": "{{year}}スプリング",
+  "widget.summer": "{{year}}サマー",
+
+  "widget.win": "勝利数",
+  "widget.loss": "負け",
+  "widget.cs": "{{cs}} cs",
+  "widget.goldShare": "(シェア{{goldShare}}%)",
+  "widget.csMin": "({{csPerMinute}} cs/分)"
+}

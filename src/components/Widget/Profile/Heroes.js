@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { translate, Trans } from "react-i18next";
+
 import Spinner from "react-spinkit";
 import Swiper from "react-id-swiper";
 
@@ -134,7 +136,7 @@ const Games = styled.div`
   font-weight: 700;
 `;
 
-const Hero = ({ payload }) => {
+const Hero = translate("widget")(({ t, payload }) => {
   const wR = ((payload.wins / payload.games) * 100).toFixed(1);
   return (
     <Wrap>
@@ -151,7 +153,9 @@ const Hero = ({ payload }) => {
       </Info>
       <Stats>
         <div>
-          <KDA kda={payload.kda} /> KDA
+          <Trans i18nKey={"widget.kda"}>
+            <KDA kda={payload.kda} /> KDA
+          </Trans>
         </div>
         <span>
           <i className="vg-kills" /> {payload.avgKills.toFixed(0)}{" "}
@@ -161,10 +165,10 @@ const Hero = ({ payload }) => {
           <i className="vg-assists" /> {payload.avgAssists.toFixed(0)}
         </span>
       </Stats>
-      <Games>{payload.games} Matches</Games>
+      <Games>{t("widget.games", { games: payload.games })}</Games>
     </Wrap>
   );
-};
+});
 
 export default class WidgetInfo extends Component {
   render() {
@@ -202,7 +206,9 @@ export default class WidgetInfo extends Component {
 
     return (
       <div>
-        <h2>HEROES</h2>
+        <h2>
+          <Trans i18nKey="widget.heroes" />
+        </h2>
         <Container>
           <SkeletonContext.Consumer>
             {status =>

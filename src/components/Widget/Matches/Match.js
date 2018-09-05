@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Trans } from "react-i18next";
 import styled from "styled-components";
 import { Box } from "../../common/Box";
 import AssetLoader from "../../common/AssetLoader";
@@ -61,7 +62,7 @@ const Section = styled.div`
 
 const FloatingBadges = styled.div`
   position: absolute;
-  top: -1.8vw;
+  top: -2.3vw;
   display: flex;
 
   & > span {
@@ -157,17 +158,29 @@ export default class WidgetMatch extends Component {
         <Section>
           <FloatingBadges>
             <WinnerBadge winner={me.winner}>
-              {me.winner ? "WIN" : "LOSS"}
+              {me.winner ? (
+                <Trans i18nKey="widget.win" />
+              ) : (
+                <Trans i18nKey="widget.loss" />
+              )}
             </WinnerBadge>
             {me.mvp && <MVPBadge>MVP</MVPBadge>}
           </FloatingBadges>
-          <Text>{payload.gameMode}</Text>
+          <Text>
+            <Trans
+              i18nKey={`widget.${payload.gameMode
+                .replace(/ /g, "_")
+                .toLowerCase()}`}
+            />
+          </Text>
           <Time>
             <TimeAgo date={payload.ended} /> <i className="vg-timer" />{" "}
             {payload.minutes}
           </Time>
           <Text>
-            <KDARate kda={me.kda} /> KDA
+            <Trans i18nKey="widget.kda">
+              <KDARate kda={me.kda} /> KDA
+            </Trans>
           </Text>
           <KDA>
             <i className="vg-kills" /> {me.kills}{" "}
@@ -182,13 +195,25 @@ export default class WidgetMatch extends Component {
             <div>
               <i className="vg-coin" /> {me.gold.toLocaleString()}
             </div>
-            <span>({me.goldShare}% share)</span>
+            <span>
+              <Trans
+                defaults="({{goldShare}}% share)"
+                i18nKey="widget.goldShare"
+                values={{ goldShare: me.goldShare }}
+              />
+            </span>
           </Stat>
           <Stat>
             <div>
               <i className="vg-minion" /> {me.cs}
             </div>
-            <span>({me.csMin} cs/min)</span>
+            <span>
+              <Trans
+                defaults="({{csPerMinute}} cs/min)"
+                i18nKey="widget.csMin"
+                values={{ csPerMinute: me.csMin }}
+              />
+            </span>
           </Stat>
         </Section>
         <Items>

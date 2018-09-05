@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { translate, Trans } from "react-i18next";
+
 import { Box } from "../../common/Box";
 import styled from "styled-components";
 import { SkeletonWrapper } from "../../common/Skeleton";
@@ -93,9 +95,10 @@ const StatBar = styled.div`
   }
 `;
 
-export default class WidgetInfo extends Component {
+class WidgetPerfomance extends Component {
   render() {
-    const payload = this.props.payload;
+    const { payload, t } = this.props;
+
     let wr = 0;
     let kp = 0;
     if (payload.stats) {
@@ -105,11 +108,17 @@ export default class WidgetInfo extends Component {
 
     return (
       <div style={{ gridArea: "stats" }}>
-        <h2>PERFORMANCE</h2>
+        <h2>
+          <Trans i18nKey="widget.performance" />
+        </h2>
         <Wrap>
           <Stats>
             <Stat>
-              <span>KDA</span>
+              <span>
+                <Trans i18nKey="widget.kda">
+                  <span /> KDA
+                </Trans>
+              </span>
               <div>
                 <SkeletonWrapper width="4vw" height="2vw">
                   {() => payload.stats.kda}
@@ -117,7 +126,9 @@ export default class WidgetInfo extends Component {
               </div>
             </Stat>
             <Stat>
-              <span>KILLS</span>
+              <span>
+                <Trans i18nKey="widget.kills_label" />
+              </span>
               <div>
                 <SkeletonWrapper width="4vw" height="2vw">
                   {() => payload.stats.totalKills}
@@ -125,7 +136,9 @@ export default class WidgetInfo extends Component {
               </div>
             </Stat>
             <Stat>
-              <span>DEATHS</span>
+              <span>
+                <Trans i18nKey="widget.deaths_label" />
+              </span>
               <div>
                 <SkeletonWrapper width="4vw" height="2vw">
                   {() => payload.stats.totalDeaths}
@@ -133,7 +146,9 @@ export default class WidgetInfo extends Component {
               </div>
             </Stat>
             <Stat>
-              <span>ASSISTS</span>
+              <span>
+                <Trans i18nKey="widget.assists_label" />
+              </span>
               <div>
                 <SkeletonWrapper width="4vw" height="2vw">
                   {() => payload.stats.totalAssists}
@@ -146,12 +161,13 @@ export default class WidgetInfo extends Component {
             <Stat2>
               <div>
                 <div>
-                  WIN RATE
+                  <Trans i18nKey="widget.win_rate" />
                   <span>
                     <SkeletonWrapper width="1.2vw" height="0.8vw">
-                      {() => payload.stats.games}
+                      {() =>
+                        t("widget.games", { games: payload.stats.games })
+                      }
                     </SkeletonWrapper>{" "}
-                    Matches{" "}
                     <SkeletonWrapper width="1vw" height="0.8vw">
                       {() => payload.stats.wins}
                     </SkeletonWrapper>{" "}
@@ -175,7 +191,9 @@ export default class WidgetInfo extends Component {
             </Stat2>
             <Stat2>
               <div>
-                <div>KILL PARTICIPATION</div>
+                <div>
+                  <Trans i18nKey="widget.kill_participation" />
+                </div>
                 <div>
                   <SkeletonWrapper width="3vw" height="2vw">
                     {() => kp + "%"}
@@ -193,3 +211,5 @@ export default class WidgetInfo extends Component {
     );
   }
 }
+
+export default translate("widget")(WidgetPerfomance);

@@ -12,8 +12,7 @@
 
   "general.sortBy": "Sort By",
 
-  "footer.copy":
-    "VGPROgg is not affiliated or part of Super Evil Megacorp. All Vainglory copyrights and art assets belong to Super Evil Megacorp.",
+  "footer.copy": "VGPROgg is not affiliated or part of Super Evil Megacorp. All Vainglory copyrights and art assets belong to Super Evil Megacorp.",
 
   "feature.ProHistory": "Pro History",
   "feature.Leaderboard": "Leaderboard",
@@ -90,9 +89,9 @@
   "terms.Average": "Average",
   "terms.Placement": "Placement",
 
-  "terms.All": "All", // All Region
+  "terms.All": "All",
 
-  "terms.Top": "Top {{term}}", // Top Win Rate, Top Pick Rate, Top Ban Rate, Top 4
+  "terms.Top": "Top {{term}}",
   "terms.Points": "Points",
 
   "gamemode.battleroyale": "Battle Royale",
@@ -118,8 +117,7 @@
   "terms.AverageStats": "Average Stats",
 
   "profile.notFound": "{{name}} was not found.",
-  "profile.foundButNoMatches":
-    "{{name}} was found but hasn't played a match in a while",
+  "profile.foundButNoMatches": "{{name}} was found but hasn't played a match in a while",
   "profile.PlayedWith": "Played With",
   "profile.Heroes": "Heroes",
   "profile.PlayerOf": "Player Of",

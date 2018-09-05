@@ -1,0 +1,57 @@
+{
+  "widget.more": "更多",
+  "widget.profile": "概览",
+  "widget.matches": "比赛",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "表现",
+  "widget.win_rate": "胜率",
+  "widget.kill_participation": "击杀参与",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}}场",
+  "widget.games": "{{games}}场",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "终结",
+  "widget.deaths_label": "死亡",
+  "widget.assists_label": "助攻",
+
+  "widget.roles": "角色",
+  "widget.captain": "指挥",
+  "widget.carry": "输出",
+  "widget.jungler": "打野",
+
+  "widget.heroes": "英雄",
+
+  "widget.view_more": "查看更多",
+  "widget.view_more_on_vgproogg": "前往VGPRO<1>.GG</1>查看更多",
+
+  "widget.mode": "游戏模式",
+  "widget.all_modes": "所有模式",
+  "widget.casual_5v5": "匹配赛 - 5V5",
+  "widget.ranked_5v5": "排位赛 - 5V5",
+  "widget.casual_3v3": "3V3 - 匹配赛",
+  "widget.ranked_3v3": "排位赛 - 5V5",
+  "widget.blitz": "闪电战",
+  "widget.battleroyale": "大乱斗",
+  "widget.private_blitz": "好友对战-闪电战",
+  "widget.private_battleroyale": "好友对战-大乱斗",
+  "widget.private_ranked_5v5": "好友对战 - 5V5征召",
+  "widget.private_casual_5v5": "好友对战 - 5V5",
+  "widget.private_ranked_3v3": "好友对战 - 3V3征召",
+  "widget.private_casual_3v3": "好友对战 - 3V3",
+
+  "widget.season": "赛季",
+  "widget.lifetime": "所有时间",
+  "widget.winter": "{{year}}冬季赛",
+  "widget.fall": "{{year}}秋季赛",
+  "widget.spring": "{{year}}春季赛",
+  "widget.summer": "{{year}}夏季赛",
+
+  "widget.win": "胜场数",
+  "widget.loss": "战败",
+  "widget.cs": "{{cs}}小兵野怪击杀数",
+  "widget.goldShare": "（{{goldShare}}%金币分享）",
+  "widget.csMin": "（{{csPerMinute}}小兵野怪击杀数/分钟）"
+}

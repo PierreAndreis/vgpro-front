@@ -1,0 +1,61 @@
+{
+  "widget.more": "MORE",
+  "widget.profile": "OVERVIEW",
+  "widget.matches": "MATCHES",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "PERFORMANCE",
+  "widget.win_rate": "WIN RATE",
+  "widget.kill_participation": "KILL PARTICIPATION",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} Games",
+  "widget.games": "{{games}} Game",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "KILLS",
+  "widget.deaths_label": "DEATHS",
+  "widget.assists_label": "ASSISTS",
+
+  "widget.roles": "ROLES",
+  "widget.captain": "CAPTAIN",
+  "widget.carry": "CARRY",
+  "widget.jungler": "JUNGLER",
+
+  "widget.heroes": "HEROES",
+
+  "widget.view_more": "VIEW MORE",
+  "widget.view_more_on_vgproogg": "VIEW MORE ON VGPRO<1>.GG</1>",
+
+  "widget.mode": "GAME MODE",
+  "widget.all_modes": "ALL MODES",
+  "widget.casual_5v5": "CASUAL - 5V5",
+  "widget.ranked_5v5": "RANKED - 5V5",
+  "widget.casual_3v3": "CASUAL - 3V3",
+  "widget.ranked_3v3": "RANKED - 5V5",
+  "widget.blitz": "BLITZ",
+  "widget.battleroyale": "BATTLE ROYALE",
+  "widget.private_blitz": "PRIVATE - BLITZ",
+  "widget.private_battleroyale": "PRIVATE - BATTLE ROYALE",
+  "widget.private_ranked_5v5": "PRIVATE - 5V5 DRAFT",
+  "widget.private_casual_5v5": "PRIVATE - 5V5",
+  "widget.private_ranked_3v3": "PRIVATE - 3V3 DRAFT",
+  "widget.private_casual_3v3": "PRIVATE - 3V3",
+
+  "widget.season": "SEASON",
+  "widget.lifetime": "LIFETIME",
+  "widget.winter": "WINTER {{year}}",
+  "widget.fall": "FALL {{year}}",
+  "widget.spring": "SPRING {{year}}",
+  "widget.summer": "SUMMER {{year}}",
+
+  "widget.win": "WIN",
+  "widget.loss": "LOSS",
+  "widget.cs": "{{cs}} cs",
+  "widget.goldShare": "({{goldShare}}% share)",
+  "widget.csMin": "({{csPerMinute}} cs/min)",
+
+  "widget.playerNotFound": "Player not found. \n Please play a public match and try again.",
+  "widget.errorHelper": "If you think this is a mistake, please contact VGPRO.gg on twitter at @vgprogg",
+  "widget.playerInactive": "No records found for this player in the past 30 days"
+}

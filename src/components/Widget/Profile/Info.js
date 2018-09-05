@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Trans } from "react-i18next";
 
 import { Box } from "../../common/Box";
 import styled from "styled-components";
@@ -92,7 +93,9 @@ export default class WidgetInfo extends Component {
 
     return (
       <div>
-        <h2>PROFILE</h2>
+        <h2>
+          <Trans i18nKey="widget.profile" />
+        </h2>
         <Wrap>
           <Name>
             <h3>
@@ -111,7 +114,9 @@ export default class WidgetInfo extends Component {
             <div>
               <div className={tier5v5} />
               <span>
-                <b>5v5</b>{" "}
+                <b>
+                  <Trans i18nKey="widget.5v5" />
+                </b>{" "}
                 <SkeletonWrapper width="3vw" height="1.3vw">
                   {() => points5v5}
                 </SkeletonWrapper>
@@ -120,7 +125,9 @@ export default class WidgetInfo extends Component {
             <div>
               <div className={tier3v3} />
               <span>
-                <b>3v3</b>{" "}
+                <b>
+                  <Trans i18nKey="widget.3v3" />
+                </b>{" "}
                 <SkeletonWrapper width="3vw" height="1.3vw">
                   {() => points3v3}
                 </SkeletonWrapper>
@@ -129,7 +136,9 @@ export default class WidgetInfo extends Component {
             <div>
               <div className="vg-trophy" />
               <span>
-                <b>Blitz</b>{" "}
+                <b>
+                  <Trans i18nKey="widget.blitz" />
+                </b>{" "}
                 <SkeletonWrapper width="3vw" height="1.3vw">
                   {() => pointsBlitz}
                 </SkeletonWrapper>

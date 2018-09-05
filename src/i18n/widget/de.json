@@ -1,0 +1,57 @@
+{
+  "widget.more": "MEHR",
+  "widget.profile": "ÜBERSICHT",
+  "widget.matches": "SPIELE",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "LEISTUNG",
+  "widget.win_rate": "GEWINNRATE",
+  "widget.kill_participation": "KILL-BETEILIGUNG",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} Spiele",
+  "widget.games": "{{games}} Spiel",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "KILLS",
+  "widget.deaths_label": "TODE",
+  "widget.assists_label": "UNTERSTÜTZT",
+
+  "widget.roles": "ROLLEN",
+  "widget.captain": "CAPTAIN",
+  "widget.carry": "CARRY",
+  "widget.jungler": "JUNGLER",
+
+  "widget.heroes": "HELDEN",
+
+  "widget.view_more": "MEHR ANZEIGEN",
+  "widget.view_more_on_vgproogg": "MEHR AUF VGPRO<1>.GG</1>",
+
+  "widget.mode": "SPIELMODUS",
+  "widget.all_modes": "ALLE MODI",
+  "widget.casual_5v5": "FREUNDSCHAFTSSPIEL – 5V5",
+  "widget.ranked_5v5": "RANGLISTENSPIEL – 5V5",
+  "widget.casual_3v3": "FREUNDSCHAFTSSPIEL – 3V3",
+  "widget.ranked_3v3": "RANGLISTENSPIEL – 5V5",
+  "widget.blitz": "BLITZ-SPIEL",
+  "widget.battleroyale": "BATTLE ROYALE",
+  "widget.private_blitz": "PRIVAT – BLITZ",
+  "widget.private_battleroyale": "PRIVAT – BATTLE ROYALE",
+  "widget.private_ranked_5v5": "PRIVAT – 5V5-DRAFT",
+  "widget.private_casual_5v5": "PRIVAT – 5V5",
+  "widget.private_ranked_3v3": "PRIVATE – 3V3 DRAFT",
+  "widget.private_casual_3v3": "PRIVAT – 3V3",
+
+  "widget.season": "SAISON",
+  "widget.lifetime": "GESAMTWERTE",
+  "widget.winter": "WINTER {{year}}",
+  "widget.fall": "HERBST {{year}}",
+  "widget.spring": "FRÜHLING {{year}}",
+  "widget.summer": "SOMMER {{year}}",
+
+  "widget.win": "SIEG",
+  "widget.loss": "NIEDERLAGEN",
+  "widget.cs": "{{cs}} CS",
+  "widget.goldShare": "({{goldShare}} % geteilt)",
+  "widget.csMin": "({{csPerMinute}} CS/Min)"
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from "react-i18next";
 import styled from "styled-components";
 
 const Wrap = styled.div`
@@ -30,6 +31,7 @@ const Message = styled.div`
   margin-top: auto;
   text-align: center;
   margin: 1vw 0;
+  white-space: pre-line;
 `;
 
 export default class ErrorScreen extends React.Component {
@@ -40,8 +42,7 @@ export default class ErrorScreen extends React.Component {
         <Message>{this.props.message}</Message>
 
         <span>
-          If you think this is a mistake, please contact VGPRO.gg on
-          twitter at @vgprogg
+          <Trans i18nKey="widget.errorHelper" />
         </span>
       </Wrap>
     );

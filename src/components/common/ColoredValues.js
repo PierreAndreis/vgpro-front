@@ -65,8 +65,6 @@ export const Rate = ({ rate, label, fixed, component }) => {
 
   const Wrap = component || "span";
 
-  console.log("Wrap=", Wrap);
-
   return (
     <Wrap
       style={{

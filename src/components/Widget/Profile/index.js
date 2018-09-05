@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Trans } from "react-i18next";
 import styled from "styled-components";
 import { Box } from "./../../common/Box";
 import { SkeletonContext } from "./../../common/Skeleton";
@@ -74,7 +75,7 @@ export default class Profile extends Component {
 
     if (FoundButNoMatch) {
       return (
-        <ErrorScreen message="No records found for this player in the past 30 days" />
+        <ErrorScreen message={<Trans i18nKey="widget.playerInactive" />} />
       );
     }
 

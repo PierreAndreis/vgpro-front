@@ -1,0 +1,57 @@
+{
+  "widget.more": "更多內容",
+  "widget.profile": "概觀",
+  "widget.matches": "對戰",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "戰績",
+  "widget.win_rate": "勝率",
+  "widget.kill_participation": "擊殺參與度",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} 比賽",
+  "widget.games": "{{games}} 比賽",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "擊殺",
+  "widget.deaths_label": "死亡",
+  "widget.assists_label": "助攻",
+
+  "widget.roles": "角色",
+  "widget.captain": "隊長",
+  "widget.carry": "輸出",
+  "widget.jungler": "打野",
+
+  "widget.heroes": "英雄",
+
+  "widget.view_more": "檢視更多",
+  "widget.view_more_on_vgproogg": "前往 VGPRO<1>.GG</1> 檢視更多",
+
+  "widget.mode": "遊戲模式",
+  "widget.all_modes": "所有模式",
+  "widget.casual_5v5": "休閒賽 - 5V5",
+  "widget.ranked_5v5": "排名賽 - 5V5",
+  "widget.casual_3v3": "休閒賽 - 3V3",
+  "widget.ranked_3v3": "排名賽 - 5V5",
+  "widget.blitz": "閃電戰",
+  "widget.battleroyale": "塔防生死戰",
+  "widget.private_blitz": "私人比賽 - 閃電戰",
+  "widget.private_battleroyale": "私人比賽 - 塔防生死戰",
+  "widget.private_ranked_5v5": "私人比賽 - 5V5 競技",
+  "widget.private_casual_5v5": "私人賽 - 5V5",
+  "widget.private_ranked_3v3": "私人比賽 - 3V3 競技",
+  "widget.private_casual_3v3": "私人比賽 - 3V3",
+
+  "widget.season": "賽季",
+  "widget.lifetime": "生涯",
+  "widget.winter": "{{year}} 冬季賽",
+  "widget.fall": "{{year}} 秋季賽",
+  "widget.spring": "{{year}} 春季賽",
+  "widget.summer": "{{year}} 夏季賽",
+
+  "widget.win": "勝場數",
+  "widget.loss": "敗場數",
+  "widget.cs": "{{cs}} 吃兵數",
+  "widget.goldShare": "（佔比{{goldShare}}%）",
+  "widget.csMin": "（每分鐘 {{csPerMinute}} 吃兵數）"
+}

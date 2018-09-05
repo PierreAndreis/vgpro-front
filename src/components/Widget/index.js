@@ -1,5 +1,6 @@
 /** this page has no footer or header */
 import React, { Component } from "react";
+import { translate, Trans } from "react-i18next";
 import { Helmet } from "react-helmet";
 
 import Spinner from "react-spinkit";
@@ -86,7 +87,7 @@ const Selector = styled.div`
   }
 `;
 
-export default class Widget extends Component {
+class Widget extends Component {
   state = {
     tab: "profile",
     status: "loading",
@@ -144,7 +145,11 @@ export default class Widget extends Component {
 
     if (status === "loaded") {
       if (!playerName) {
-        content = <ErrorScreen message="Player not found" />;
+        content = (
+          <ErrorScreen
+            message={<Trans i18nKey="widget.playerNotFound" />}
+          />
+        );
       } else {
         content = (
           <React.Fragment>
@@ -153,14 +158,14 @@ export default class Widget extends Component {
                 data-active={currentTab === "profile"}
                 onClick={this.onChangeTab("profile")}
               >
-                Profile
+                <Trans i18nKey="widget.profile" />
               </div>
 
               <div
                 data-active={currentTab === "matches"}
                 onClick={this.onChangeTab("matches")}
               >
-                Matches
+                <Trans i18nKey="widget.matches" />
               </div>
             </Selector>
             <section>
@@ -193,3 +198,5 @@ export default class Widget extends Component {
     );
   }
 }
+
+export default translate("widget")(Widget);

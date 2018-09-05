@@ -1,0 +1,57 @@
+{
+  "widget.more": "LAINNYA",
+  "widget.profile": "IKHTISAR",
+  "widget.matches": "LAGA",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "PERFORMA",
+  "widget.win_rate": "% MENANG",
+  "widget.kill_participation": "IKUT PEMBUNUHAN",
+  "widget.kda": " KDA <0></0>",
+  "widget.games_plural": "{{games}} Laga",
+  "widget.games": "{{games}} Laga",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "PEMBUNUHAN",
+  "widget.deaths_label": "KEMATIAN",
+  "widget.assists_label": "BANTUAN",
+
+  "widget.roles": "PERAN",
+  "widget.captain": "KAPTEN",
+  "widget.carry": "CARRY",
+  "widget.jungler": "PERIMBA",
+
+  "widget.heroes": "HERO",
+
+  "widget.view_more": "LIHAT LAINNYA",
+  "widget.view_more_on_vgproogg": "SELENGKAPNYA DI VGPRO<1>.GG</1>",
+
+  "widget.mode": "MODE GAME",
+  "widget.all_modes": "SEMUA MODE",
+  "widget.casual_5v5": "SANTAI - 5V5",
+  "widget.ranked_5v5": "BERPERINGKAT - 5V5",
+  "widget.casual_3v3": "SANTAI - 3V3",
+  "widget.ranked_3v3": "BERPERINGKAT - 5V5",
+  "widget.blitz": "LAGA KILAT",
+  "widget.battleroyale": "PERTARUNGAN AGUNG",
+  "widget.private_blitz": "PRIVAT - KILAT",
+  "widget.private_battleroyale": "PRIV. PERTARUNGAN AGUNG",
+  "widget.private_ranked_5v5": "PRIVAT - DRAF 5V5",
+  "widget.private_casual_5v5": "PRIVAT - 5v5",
+  "widget.private_ranked_3v3": "PRIVAT - DRAFT 3V3",
+  "widget.private_casual_3v3": "PRIVAT - 3V3",
+
+  "widget.season": "MUSIM",
+  "widget.lifetime": "SEMUA",
+  "widget.winter": "MUSIM DINGIN {{year}}",
+  "widget.fall": "MUSIM GUGUR {{year}}",
+  "widget.spring": "MUSIM SEMI {{year}}",
+  "widget.summer": "MUSIM PANAS {{year}}",
+
+  "widget.win": "MENANG",
+  "widget.loss": "KALAH",
+  "widget.cs": "CS {{cs}}",
+  "widget.goldShare": "(kontribusi {{goldShare}}%)",
+  "widget.csMin": "(CS {{csPerMinute}} per mnt)"
+}

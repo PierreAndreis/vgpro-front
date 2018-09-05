@@ -1,0 +1,57 @@
+{
+  "widget.more": "추가 변경 사항",
+  "widget.profile": "기본 정보",
+  "widget.matches": "경기",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "활약",
+  "widget.win_rate": "승률",
+  "widget.kill_participation": "킬 참가",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} 게임",
+  "widget.games": "{{games}} 게임",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "킬",
+  "widget.deaths_label": "사망",
+  "widget.assists_label": "도움",
+
+  "widget.roles": "역할",
+  "widget.captain": "캡틴",
+  "widget.carry": "캐리 꾸러미",
+  "widget.jungler": "정글러 꾸러미",
+
+  "widget.heroes": "영웅",
+
+  "widget.view_more": "더 보기",
+  "widget.view_more_on_vgproogg": "VGPRO.gg에서 더 보기",
+
+  "widget.mode": "게임 모드",
+  "widget.all_modes": "모든 모드",
+  "widget.casual_5v5": "일반전 - 5V5",
+  "widget.ranked_5v5": "경쟁전 - 5V5",
+  "widget.casual_3v3": "일반전 - 3V3",
+  "widget.ranked_3v3": "경쟁전 - 5V5",
+  "widget.blitz": "총력전",
+  "widget.battleroyale": "배틀로얄",
+  "widget.private_blitz": "비공개 - 총력전",
+  "widget.private_battleroyale": "비공개 - 배틀로얄",
+  "widget.private_ranked_5v5": "비공개 - 5V5 교차선택",
+  "widget.private_casual_5v5": "비공개 - 5V5",
+  "widget.private_ranked_3v3": "비공개 - 3V3 교차선택",
+  "widget.private_casual_3v3": "비공개 - 3V3",
+
+  "widget.season": "시즌",
+  "widget.lifetime": "전체 시간",
+  "widget.winter": "겨울 {{year}}",
+  "widget.fall": "가을 {{year}}",
+  "widget.spring": "봄 {{year}}",
+  "widget.summer": "여름 {{year}}",
+
+  "widget.win": "승리",
+  "widget.loss": "패",
+  "widget.cs": "{{cs}} cs",
+  "widget.goldShare": "({{goldShare}}% 공유)",
+  "widget.csMin": "({{csPerMinute}} cs/분)"
+}

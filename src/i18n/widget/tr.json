@@ -1,0 +1,57 @@
+{
+  "widget.more": "DİĞER",
+  "widget.profile": "ÖZET",
+  "widget.matches": "MAÇLAR",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "PERFORMANS",
+  "widget.win_rate": "GALİBİYET ORANI",
+  "widget.kill_participation": "ÖLDÜRME KATILIMI",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} Maç",
+  "widget.games": "{{games}} Maç",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "ÖLDÜRÜLEN",
+  "widget.deaths_label": "ÖLÜM",
+  "widget.assists_label": "YARDIMLAR",
+
+  "widget.roles": "ROLLER",
+  "widget.captain": "KAPTAN",
+  "widget.carry": "TAŞIYICI",
+  "widget.jungler": "ORMANCI",
+
+  "widget.heroes": "KAHRAMAN",
+
+  "widget.view_more": "DAHA FAZLASI",
+  "widget.view_more_on_vgproogg": "VGPRO.gg'DE DAHA FAZLASI",
+
+  "widget.mode": "OYUN MODU",
+  "widget.all_modes": "TÜM MODLAR",
+  "widget.casual_5v5": "SIRADAN - 5V5",
+  "widget.ranked_5v5": "SIRALAMALI - 5V5",
+  "widget.casual_3v3": "SIRADAN - 3V3",
+  "widget.ranked_3v3": "SIRALAMALI - 5V5",
+  "widget.blitz": "BASKIN MAÇI",
+  "widget.battleroyale": "ARBEDE",
+  "widget.private_blitz": "ÖZEL - BASKIN",
+  "widget.private_battleroyale": "ÖZEL - ARBEDE",
+  "widget.private_ranked_5v5": "ÖZEL - 5V5 SEÇİM",
+  "widget.private_casual_5v5": "ÖZEL - 5V5",
+  "widget.private_ranked_3v3": "ÖZEL - 3V3 SEÇİM",
+  "widget.private_casual_3v3": "ÖZEL - 3V3",
+
+  "widget.season": "SEZON",
+  "widget.lifetime": "TÜM ZAMANLAR",
+  "widget.winter": "KIŞ {{year}}",
+  "widget.fall": "SONBAHAR {{year}}",
+  "widget.spring": "İLKBAHAR {{year}}",
+  "widget.summer": "YAZ {{year}}",
+
+  "widget.win": "ZAFER",
+  "widget.loss": "YENİLGİ",
+  "widget.cs": "{{cs}} ys",
+  "widget.goldShare": "({{goldShare}}% paylaşımı)",
+  "widget.csMin": "({{csPerMinute}} ys/dk)"
+}

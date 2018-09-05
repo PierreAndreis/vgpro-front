@@ -1,0 +1,57 @@
+{
+  "widget.more": "PLUS",
+  "widget.profile": "APERÇU",
+  "widget.matches": "MATCHS",
+
+  "widget.3v3": "3V3",
+  "widget.5v5": "5V5",
+  "widget.performance": "PERFORMANCES",
+  "widget.win_rate": "TAUX DE VICTOIRE",
+  "widget.kill_participation": "PARTICIPATION AUX ÉLIMINATIONS",
+  "widget.kda": "<0></0> KDA",
+  "widget.games_plural": "{{games}} parties",
+  "widget.games": "{{games}} partie",
+
+  "widget.kda_label": "KDA",
+  "widget.kills_label": "ÉLIMINATIONS",
+  "widget.deaths_label": "MORTS",
+  "widget.assists_label": "AIDES",
+
+  "widget.roles": "RÔLES",
+  "widget.captain": "CAPITAINE",
+  "widget.carry": "CARRY",
+  "widget.jungler": "JUNGLEUR",
+
+  "widget.heroes": "HÉROS",
+
+  "widget.view_more": "VOIR PLUS",
+  "widget.view_more_on_vgproogg": "VOIR PLUS SUR VGPRO<1>.GG</1>",
+
+  "widget.mode": "MODE DE JEU",
+  "widget.all_modes": "TOUS LES MODES",
+  "widget.casual_5v5": "AMICAL - 5V5",
+  "widget.ranked_5v5": "CLASSÉ - 5V5",
+  "widget.casual_3v3": "3V3 AMICAL",
+  "widget.ranked_3v3": "CLASSÉ - 5V5",
+  "widget.blitz": "MATCH BLITZ",
+  "widget.battleroyale": "BATTLE ROYALE",
+  "widget.private_blitz": "PRIVÉ - BLITZ",
+  "widget.private_battleroyale": "PRIVÉ - BATTLE ROYALE",
+  "widget.private_ranked_5v5": "PRIVÉ - DRAFT 5V5",
+  "widget.private_casual_5v5": "PRIVÉ - 5V5",
+  "widget.private_ranked_3v3": "PRIVÉ - DRAFT 3V3",
+  "widget.private_casual_3v3": "PRIVÉ - 3V3",
+
+  "widget.season": "SAISON",
+  "widget.lifetime": "TOUTES SAISONS",
+  "widget.winter": "HIVER {{year}}",
+  "widget.fall": "AUTOMNE {{year}}",
+  "widget.spring": "PRINTEMPS {{year}}",
+  "widget.summer": "ÉTÉ {{year}}",
+
+  "widget.win": "VICT.",
+  "widget.loss": "DÉFAITES",
+  "widget.cs": "{{cs}} CS",
+  "widget.goldShare": "(part : {{goldShare}} %)",
+  "widget.csMin": "({{csPerMinute}} CS/min)"
+}

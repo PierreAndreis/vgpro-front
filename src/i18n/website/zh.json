@@ -1,4 +1,4 @@
-export default {
+{
   "general.errorMessageDefault": "抱歉，發生了一個錯誤",
   "general.lastUpdated": "最後更新",
   "general.tryAgain": "請稍後再試",
@@ -12,8 +12,7 @@ export default {
 
   "general.sortBy": "用(  ）分類",
 
-  "footer.copy":
-    "VGPRO不屬於Super Evil MegaCorp或屬於Super Evil MegaCorp的一部分。所有虛榮的版權和藝術資產屬於Super Evil MegaCorp",
+  "footer.copy": "VGPRO不屬於Super Evil MegaCorp或屬於Super Evil MegaCorp的一部分。所有虛榮的版權和藝術資產屬於Super Evil MegaCorp",
 
   "feature.ProHistory": "專業玩家遊玩歷史",
   "feature.Leaderboard": "排行榜",
@@ -89,9 +88,9 @@ export default {
   "terms.Average": "平均",
   "terms.Placement": "位置",
 
-  "terms.All": "全部", // 全部地區
+  "terms.All": "全部",
 
-  "terms.Top": "最高 {{term}}", // 赢率最高的, 英雄使用率最高的, 英雄禁用率最高的, 前四位
+  "terms.Top": "最高 {{term}}",
   "terms.Points": "分數",
 
   "gamemode.battleroyale": "推塔戰",
@@ -114,8 +113,7 @@ export default {
   "terms.OverviewStats": "總覽表現",
 
   "profile.notFound": "{{name}} 尋找不到.",
-  "profile.foundButNoMatches":
-    "{{name}} 找到了但他已有一段時間沒有玩過了。",
+  "profile.foundButNoMatches": "{{name}} 找到了但他已有一段時間沒有玩過了。",
   "profile.PlayedWith": "與他玩過",
   "profile.Heroes": "英雄",
   "profile.PlayerOf": "是｛team/guild}的玩家",
@@ -143,6 +141,6 @@ export default {
 
   "filters.role": "以崗位篩選",
 
-  situationalItemTitle: "選擇性裝備",
-  situationalItem: `<0>防禦及跑鞋裝備可以被 "選擇性"裝備取代. <2><0></0> 指 "選擇性防禦裝備". 它可以是 <3></3>, <6></6>, <9></9> 或是<12></12></2><3></3><4><0></0> 指 "選擇性跑鞋裝備". 它可以是 <3></3>, <6></6>, 或是 <9></9></4><5></5><6>為了找出最好的裝備組, 我們會用相同的核心裝備和不同的選擇性裝備像跑鞋和防禦去組合裝備組. 當這些組合被成功生成時, 我們會使用程式去尋找在每個組合中有沒有任何一個裝備組是與其他同組裝備組有80%相似.</6><7></7><8> 如果沒有的話, 我們便會把那些防禦/跑鞋裝備分類為 "選擇性" 並把它們的數據結合. 否則我們會保留它們為單一數據.</8></0>`,
-};
+  "situationalItemTitle": "選擇性裝備",
+  "situationalItem": "<0>防禦及跑鞋裝備可以被 \"選擇性\"裝備取代. <2><0></0> 指 \"選擇性防禦裝備\". 它可以是 <3></3>, <6></6>, <9></9> 或是<12></12></2><3></3><4><0></0> 指 \"選擇性跑鞋裝備\". 它可以是 <3></3>, <6></6>, 或是 <9></9></4><5></5><6>為了找出最好的裝備組, 我們會用相同的核心裝備和不同的選擇性裝備像跑鞋和防禦去組合裝備組. 當這些組合被成功生成時, 我們會使用程式去尋找在每個組合中有沒有任何一個裝備組是與其他同組裝備組有80%相似.</6><7></7><8> 如果沒有的話, 我們便會把那些防禦/跑鞋裝備分類為 \"選擇性\" 並把它們的數據結合. 否則我們會保留它們為單一數據.</8></0>"
+}

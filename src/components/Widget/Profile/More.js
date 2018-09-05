@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { Trans } from "react-i18next";
+
 import { Box } from "../../common/Box";
 import styled from "styled-components";
 
@@ -30,7 +32,9 @@ export default class WidgetInfo extends Component {
 
     return (
       <div>
-        <h2>VIEW MORE</h2>
+        <h2>
+          <Trans i18nKey="widget.view_more" />
+        </h2>
         <a href={link} target="_blank">
           <Wrap>
             <Logo />

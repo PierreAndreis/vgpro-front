@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import { translate, Trans } from "react-i18next";
+
 import Spinner from "react-spinkit";
 import Swiper from "react-id-swiper";
 
@@ -132,7 +134,7 @@ const Games = styled.div`
   font-weight: 700;
 `;
 
-const Role = ({ payload }) => {
+const Role = translate("widget")(({ t, payload }) => {
   const wR = ((payload.wins / payload.games) * 100).toFixed(1);
   return (
     <Wrap>
@@ -140,7 +142,9 @@ const Role = ({ payload }) => {
         <i className={`vg-${payload.name.toLowerCase()}`} />
       </Image>
       <Info>
-        <h4>{payload.name.toUpperCase()}</h4>
+        <h4>
+          <Trans i18nKey={`widget.${payload.name.toLowerCase()}`} />
+        </h4>
         <div>
           <i className="fa fa-trophy" />
           <Rate rate={wR} />
@@ -151,7 +155,9 @@ const Role = ({ payload }) => {
       </Info>
       <Stats>
         <div>
-          <KDA kda={payload.kda} /> KDA
+          <Trans i18nKey={"widget.kda"}>
+            <KDA kda={payload.kda} /> KDA
+          </Trans>
         </div>
         <span>
           <i className="vg-kills" /> {payload.avgKills.toFixed(0)}{" "}
@@ -161,10 +167,10 @@ const Role = ({ payload }) => {
           <i className="vg-assists" /> {payload.avgAssists.toFixed(0)}
         </span>
       </Stats>
-      <Games>{payload.games} Matches</Games>
+      <Games>{t("widget.games", { games: payload.games })}</Games>
     </Wrap>
   );
-};
+});
 
 export default class WidgetRole extends Component {
   render() {
@@ -203,7 +209,9 @@ export default class WidgetRole extends Component {
 
     return (
       <div>
-        <h2>ROLES</h2>
+        <h2>
+          <Trans i18nKey="widget.roles" />
+        </h2>
         <Container>
           <SkeletonContext.Consumer>
             {status =>

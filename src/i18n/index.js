@@ -1,7 +1,8 @@
 import i18n from "i18next";
 import LngDetector from "i18next-browser-languagedetector";
 
-import resources from "./languages";
+import website from "./website";
+import widget from "./widget";
 
 // import store from "../store";
 
@@ -14,15 +15,27 @@ import resources from "./languages";
 //   }
 // });
 
+// Quick hack to match i18next language resource format
+function createResource(resources) {
+  let obj = {};
+  for (let [resource, languages] of Object.entries(resources)) {
+    for (let [language, content] of Object.entries(languages)) {
+      if (!obj[language]) obj[language] = {};
+      obj[language][resource] = content;
+    }
+  }
+  return obj;
+}
+
+const resources = createResource({ website, widget });
+
 i18n.use(LngDetector).init({
-  // debug: true,
-  // we init with resources
+  debug: true,
   resources: resources,
   fallbackLng: "en",
 
-  // have a common namespace used around the full app
-  ns: ["translations"],
-  defaultNS: "translations",
+  ns: ["website", "widget"],
+  defaultNS: "website",
 
   keySeparator: false, // we use content as keys
 

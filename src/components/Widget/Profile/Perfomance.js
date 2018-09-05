@@ -46,7 +46,7 @@ const Stat2 = styled.div`
   margin-bottom: 1vw;
   width: 100%;
   position: relative;
-  font-size: 1.1vw;
+  font-size: 1.5vw;
   & > div {
     display: flex;
     justify-content: space-between;
@@ -54,12 +54,12 @@ const Stat2 = styled.div`
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      font-size: 1.3vw;
+      font-size: 1.4vw;
       font-weight: 500;
       color: ${props => props.theme.text.solid};
       & > span {
         display: block;
-        font-size: 1vw;
+        font-size: 1.3vw;
         color: ${props => props.theme.text[100]};
       }
     }
@@ -151,7 +151,7 @@ export default class WidgetInfo extends Component {
                     <SkeletonWrapper width="1.2vw" height="0.8vw">
                       {() => payload.stats.games}
                     </SkeletonWrapper>{" "}
-                    Games{" "}
+                    Matches{" "}
                     <SkeletonWrapper width="1vw" height="0.8vw">
                       {() => payload.stats.wins}
                     </SkeletonWrapper>{" "}

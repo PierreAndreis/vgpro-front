@@ -17,17 +17,25 @@ const Wrap = styled(Box)`
 const Logo = styled.div`
   width: 10vw;
   height: 7vw;
-  background: url("/images/logo_vertical.svg") no-repeat center;
+  background: url("/images/logo_vertical@2x.png") no-repeat center;
   background-size: contain;
 `;
 export default class WidgetInfo extends Component {
   render() {
+    let link = "https://vgpro.gg/";
+
+    if (this.props.payload && this.props.payload.name) {
+      link += `players/${this.props.payload.name}`;
+    }
+
     return (
       <div>
         <h2>VIEW MORE</h2>
-        <Wrap>
-          <Logo />
-        </Wrap>
+        <a href={link} target="_blank">
+          <Wrap>
+            <Logo />
+          </Wrap>
+        </a>
       </div>
     );
   }

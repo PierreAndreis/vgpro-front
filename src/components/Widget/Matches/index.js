@@ -1,7 +1,10 @@
 import React from "react";
 import Spinner from "react-spinkit";
-import Match from "./Match";
 import styled from "styled-components";
+
+import Match from "./Match";
+import ErrorScreen from "../ErrorScreen";
+
 import Utils from "../../../utils";
 import API from "../../../utils/api";
 
@@ -58,6 +61,15 @@ export default class WidgetMatches extends React.Component {
         </div>
       );
     const payload = this.state.payload;
+
+    if (this.state.payload < 1) {
+      return (
+        <ErrorScreen message="No records found for this player in the past 30 days" />
+      );
+    }
+
+    let link = "https://vgpro.gg/";
+
     return (
       <React.Fragment>
         <Content>
@@ -65,10 +77,12 @@ export default class WidgetMatches extends React.Component {
             <Match key={match.id} payload={match} />
           ))}
         </Content>
-        <ViewMore>
-          VIEW MORE ON VGPRO.
-          <b>GG</b>
-        </ViewMore>
+        <a href={link} target="_blank">
+          <ViewMore>
+            VIEW MORE ON VGPRO.
+            <b>GG</b>
+          </ViewMore>
+        </a>
       </React.Fragment>
     );
   }

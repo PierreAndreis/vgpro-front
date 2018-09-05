@@ -1,13 +1,15 @@
 import React, { Component } from "react";
-import { Box } from "./../../common/Box";
 import styled from "styled-components";
+import { Box } from "./../../common/Box";
 import { SkeletonContext } from "./../../common/Skeleton";
+import ErrorScreen from "./../ErrorScreen";
+
 import WidgetInfo from "./Info";
 import WidgetPerfomance from "./Perfomance";
 import WidgetHeroes from "./Heroes";
-// import WidgetOverview from "./Overview";
 import WidgetRoles from "./Roles";
 import WidgetMore from "./More";
+
 import Utils from "../../../utils";
 import API from "../../../utils/api";
 
@@ -28,7 +30,7 @@ const Content = styled.div`
     margin: 0.3rem 0.3rem 0;
     box-sizing: border-box;
     & > h2 {
-      font-size: 1.5vw;
+      font-size: 1.8vw;
       margin: 0.7vw 0;
       color: ${props => props.theme.primary[200]};
     }
@@ -57,9 +59,24 @@ export default class Profile extends Component {
   }
 
   render() {
+    const { status, payload } = this.state;
+
     const propsToPass = {
       payload: this.state.payload,
     };
+
+    let FoundButNoMatch =
+      status !== "loading" &&
+      payload.stats &&
+      payload.id &&
+      !payload.name &&
+      payload.stats.errors;
+
+    if (FoundButNoMatch) {
+      return (
+        <ErrorScreen message="No records found for this player in the past 30 days" />
+      );
+    }
 
     return (
       <SkeletonContext.Provider value={this.state.status}>

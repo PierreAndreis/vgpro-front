@@ -1,15 +1,25 @@
 /** this page has no footer or header */
 import React, { Component } from "react";
+import { Helmet } from "react-helmet";
 
 import Spinner from "react-spinkit";
-import styled, { ThemeProvider } from "styled-components";
-import ErrorScreen from "./../common/ErrorScreen";
+import styled, { ThemeProvider, injectGlobal } from "styled-components";
+import ErrorScreen from "./ErrorScreen";
 import Themes from "./../../themes";
 
 import Profile from "./Profile";
 import Matches from "./Matches";
 import API from "../../utils/api";
 import Utils from "../../utils";
+
+injectGlobal`
+  html {
+      -webkit-text-size-adjust: none
+  }
+  body {
+    background: #0f0f18;
+  }
+`;
 
 const Wrap = styled.div`
   width: 100%;
@@ -27,7 +37,7 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  padding: 5vw 0.5vw;
+  padding: 3vw 0.2vw;
 
   & > section {
     flex: 1;
@@ -57,6 +67,7 @@ const Selector = styled.div`
     text-transform: uppercase;
     cursor: pointer;
     transition: all 300ms;
+    font-size: 1.6vw;
     &[data-active="true"] {
       background: white;
       color: ${props => props.theme.background.primary};
@@ -95,7 +106,7 @@ export default class Widget extends Component {
 
     // change this before it goes live
     Utils.makeCancelable(
-      API.lookupPlayerId("a84deea2-c360-11e4-ad12-06eb725f8a76"),
+      API.lookupPlayerId(playerId),
       res =>
         this.setState({
           status: "loaded",
@@ -114,6 +125,23 @@ export default class Widget extends Component {
     const status = this.state.status;
 
     let content;
+
+    if (status === "loading") {
+      content = (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <Spinner
+            name="line-spin-fade-loader"
+            color="rgba(255, 255, 255, 0.5)"
+            fadeIn="none"
+          />
+        </div>
+      );
+    }
 
     if (status === "loaded") {
       if (!playerName) {
@@ -148,26 +176,17 @@ export default class Widget extends Component {
         );
       }
     }
-    if (status === "loading") {
-      content = (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          <Spinner
-            name="line-spin-fade-loader"
-            color="rgba(255, 255, 255, 0.5)"
-            fadeIn="none"
-          />
-        </div>
-      );
-    }
 
     return (
       <ThemeProvider theme={Themes[1]}>
         <Wrap>
+          <Helmet>
+            <meta
+              name="viewport"
+              content="width=device-width, user-scalable=no"
+            />
+            <meta name="HandheldFriendly" content="true" />
+          </Helmet>
           <Background />
           {content}
         </Wrap>

@@ -9,7 +9,7 @@ import styled from "styled-components";
 import { SkeletonContext } from "../../common/Skeleton";
 import { Rate, KDA } from "../../common/ColoredValues";
 
-const Wrap = styled(Box)`
+const Container = styled(Box)`
   display: flex;
   width: 100%;
   height: 100%;
@@ -49,16 +49,16 @@ const Wrap = styled(Box)`
   }
 `;
 
-const RoleWrap = styled.div`
+const Wrap = styled.div`
   height: 100%;
   width: 100%;
-  padding: 0 2.5vw;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  padding: 0 2.5vw;
 `;
 
-const RoleImage = styled(AssetLoader)`
+const Image = styled(AssetLoader)`
   width: 5vw;
   height: 5vw;
   font-size: 5vw;
@@ -66,13 +66,12 @@ const RoleImage = styled(AssetLoader)`
   color: ${props => props.theme.extra[props.color]};
 `;
 
-const RoleInfo = styled.div`
+const Info = styled.div`
   margin-left: 2vw;
   flex: 1;
   position: relative;
-  flex-wrap: no-wrap;
   h4 {
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     color: ${props => props.theme.primary[300]};
     position: absolute;
     margin: 0;
@@ -88,13 +87,13 @@ const RoleInfo = styled.div`
     font-size: 1.5vw;
   }
   b {
-    white-space: nowrap;
-    font-size: 1vw;
+    font-size: 1.3vw;
+    font-weight: normal;
     color: ${props => props.theme.text[300]};
   }
 `;
 
-const RoleStats = styled.div`
+const Stats = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -121,7 +120,7 @@ const RoleStats = styled.div`
   }
 `;
 
-const RoleGames = styled.div`
+const Games = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -136,11 +135,11 @@ const RoleGames = styled.div`
 const Role = ({ payload }) => {
   const wR = ((payload.wins / payload.games) * 100).toFixed(1);
   return (
-    <RoleWrap>
-      <RoleImage color={payload.name.toLowerCase()}>
+    <Wrap>
+      <Image color={payload.name.toLowerCase()}>
         <i className={`vg-${payload.name.toLowerCase()}`} />
-      </RoleImage>
-      <RoleInfo>
+      </Image>
+      <Info>
         <h4>{payload.name.toUpperCase()}</h4>
         <div>
           <i className="fa fa-trophy" />
@@ -149,8 +148,8 @@ const Role = ({ payload }) => {
         <b>
           {payload.wins} W - {payload.games - payload.wins} L{" "}
         </b>
-      </RoleInfo>
-      <RoleStats>
+      </Info>
+      <Stats>
         <div>
           <KDA kda={payload.kda} /> KDA
         </div>
@@ -161,9 +160,9 @@ const Role = ({ payload }) => {
           </b>{" "}
           <i className="vg-assists" /> {payload.avgAssists.toFixed(0)}
         </span>
-      </RoleStats>
-      <RoleGames>{payload.games} Games</RoleGames>
-    </RoleWrap>
+      </Stats>
+      <Games>{payload.games} Matches</Games>
+    </Wrap>
   );
 };
 
@@ -205,7 +204,7 @@ export default class WidgetRole extends Component {
     return (
       <div>
         <h2>ROLES</h2>
-        <Wrap>
+        <Container>
           <SkeletonContext.Consumer>
             {status =>
               status === "loading" ? (
@@ -225,7 +224,7 @@ export default class WidgetRole extends Component {
               )
             }
           </SkeletonContext.Consumer>
-        </Wrap>
+        </Container>
       </div>
     );
   }

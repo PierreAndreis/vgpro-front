@@ -8,7 +8,7 @@ import TimeAgo from "./../../../i18n/timeAgo";
 const Wrap = styled(Box)`
   background-color: #282c37;
   width: calc(50% - 2vw);
-  height: 11vw;
+  height: 13vw;
   margin: 1vw 1vw;
   padding: 1vw 1vw;
   box-sizing: border-box;
@@ -23,8 +23,8 @@ const Wrap = styled(Box)`
 `;
 
 const HeroImage = styled(AssetLoader)`
-  width: 5vw;
-  height: 5vw;
+  width: 7vw;
+  height: 7vw;
   border-radius: 100%;
   background-size: 120%;
   background-position: center center;
@@ -61,22 +61,24 @@ const Section = styled.div`
 
 const FloatingBadges = styled.div`
   position: absolute;
-  top: -1.5vw;
+  top: -1.8vw;
   display: flex;
 
   & > span {
     text-transform: uppercase;
     color: white;
     margin-right: 0.5vw;
-    font-size: 0.8vw;
+    font-size: 1vw;
     display: block;
     border-radius: 1vw;
+    border-sizing: border-box;
     padding: 0.2vw 1vw;
+    line-height: 1.5vw;
   }
 `;
 
 const Text = styled.div`
-  font-size: 1.3vw;
+  font-size: 1.5vw;
   text-transform: uppercase;
   font-weight: 700;
   margin-bottom: 0.2vw;
@@ -84,7 +86,7 @@ const Text = styled.div`
 
 const Time = styled.div`
   /*font-style: italic;*/
-  font-size: 1vw;
+  font-size: 1.3vw;
 
   i {
     display: inline-block;
@@ -94,7 +96,7 @@ const Time = styled.div`
 `;
 
 const KDA = styled.div`
-  font-size: 1vw;
+  font-size: 1.2vw;
   i {
     display: inline-block;
     position: relative;
@@ -118,12 +120,12 @@ const Stat = styled.div`
     color: ${props => props.theme.primary[300]};
   }
   div {
-    font-size: 1.2vw;
+    font-size: 1.5vw;
     font-weight: 700;
     margin-bottom: 0.3vw;
   }
   span {
-    font-size: 0.9vw;
+    font-size: 1.1vw;
     color: ${props => props.theme.text[100]};
   }
 `;
@@ -135,8 +137,8 @@ const Items = styled.div`
 `;
 
 const Item = styled(AssetLoader)`
-  width: 2.5vw;
-  height: 2.5vw;
+  width: 2.7vw;
+  height: 2.7vw;
   border-radius: 50%;
   background-size: 100%;
   background-position: center center;
@@ -161,8 +163,8 @@ export default class WidgetMatch extends Component {
           </FloatingBadges>
           <Text>{payload.gameMode}</Text>
           <Time>
-            <i className="vg-timer" /> <TimeAgo date={payload.ended} />{" "}
-            <i className="vg-stopwatch" /> {payload.minutes}
+            <TimeAgo date={payload.ended} /> <i className="vg-timer" />{" "}
+            {payload.minutes}
           </Time>
           <Text>
             <KDARate kda={me.kda} /> KDA

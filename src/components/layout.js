@@ -12,7 +12,16 @@ import "./common/animate.style.js";
 
 import * as Styled from "./layout.style";
 
-ReactGA.initialize("UA-93754104-1");
+if (
+  typeof window !== "undefined" &&
+  window.location.pathname.includes("/widget/")
+) {
+  console.log("Starting GA for Widget");
+  // Specific GA for Widget
+  ReactGA.initialize("UA-93754104-2");
+} else {
+  ReactGA.initialize("UA-93754104-1");
+}
 
 class Layout extends React.Component {
   render() {

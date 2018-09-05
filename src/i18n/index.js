@@ -30,7 +30,7 @@ function createResource(resources) {
 const resources = createResource({ website, widget });
 
 i18n.use(LngDetector).init({
-  debug: false,
+  debug: true,
   resources: resources,
   fallbackLng: "en",
 

@@ -35,6 +35,16 @@ class timeAgoi18n extends React.Component {
     const { strings } = this.state;
     const { date } = this.props;
 
+    if (new Date().toDateString() !== new Date(date).toDateString()) {
+      return new Date(date).toLocaleString("en-US", {
+        month: "numeric",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+      });
+    }
+
     if (!strings) return <TimeAgo date={date} />;
 
     const formatter = buildFormatter(strings);

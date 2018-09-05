@@ -97,6 +97,10 @@ API.lookupPlayer = playerName => {
   return sendRequest(`/player/${playerName}/find`);
 };
 
+API.lookupPlayerId = playerId => {
+  return sendRequest(`/player/${playerId}/uuid/find`);
+};
+
 API.fetchPlayerStats = (playerName, filtersArgs) => {
   let f = filtersArgs;
 

@@ -165,7 +165,7 @@ const Hero = translate("widget")(({ t, payload }) => {
           <i className="vg-assists" /> {payload.avgAssists.toFixed(0)}
         </span>
       </Stats>
-      <Games>{t("widget.games_plural", { count: 2 })}</Games>
+      <Games>{t("widget.games", { count: 2 })}</Games>
     </Wrap>
   );
 });

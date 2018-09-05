@@ -167,7 +167,7 @@ const Role = translate("widget")(({ t, payload }) => {
           <i className="vg-assists" /> {payload.avgAssists.toFixed(0)}
         </span>
       </Stats>
-      <Games>{t("widget.games_plural", { count: payload.games })}</Games>
+      <Games>{t("widget.games", { count: payload.games })}</Games>
     </Wrap>
   );
 });

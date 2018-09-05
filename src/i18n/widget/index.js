@@ -35,8 +35,8 @@ import ko from "./ko.json";
 langs["ko"] = ko;
 
 /** Portuguese Brazil */
-import pt_BR from "./pt_BR.json";
-langs["pt_BR"] = pt_BR;
+import pt from "./pt.json";
+langs["pt"] = pt;
 
 /** Russian */
 import ru from "./ru.json";

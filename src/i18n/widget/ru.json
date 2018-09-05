@@ -10,7 +10,7 @@
   "widget.kill_participation": "УЧАСТИЕ В УБИЙСТВАХ",
   "widget.kda": "<0></0> KDA",
   "widget.games_plural": "Игр: {{games}}",
-  "widget.games": "{{games}} игра",
+  "widget.games": "{{count}} игра",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "УБИЙСТВА",

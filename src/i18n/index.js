@@ -30,7 +30,7 @@ function createResource(resources) {
 const resources = createResource({ website, widget });
 
 i18n.use(LngDetector).init({
-  debug: true,
+  debug: false,
   resources: resources,
   fallbackLng: "en",
 
@@ -48,5 +48,12 @@ i18n.use(LngDetector).init({
     wait: true,
   },
 });
+
+// i18n.services.pluralResolver.addRule("pt_BR", {
+//   numbers: [0, 1, "plural"],
+//   plurals: function plurals(n) {
+//     return Number(n >= 2 ? 2 : n);
+//   },
+// });
 
 export default i18n;

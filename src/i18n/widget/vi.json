@@ -9,8 +9,8 @@
   "widget.win_rate": "TỶ LỆ THẮNG",
   "widget.kill_participation": "THAM GIA ĂN MẠNG",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}} Trận",
-  "widget.games": "{{games}} Trận",
+  "widget.games_plural": "{{count}} Trận",
+  "widget.games": "{{count}} Trận",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "GIẾT",

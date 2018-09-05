@@ -9,8 +9,8 @@
   "widget.win_rate": "GALİBİYET ORANI",
   "widget.kill_participation": "ÖLDÜRME KATILIMI",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}} Maç",
-  "widget.games": "{{games}} Maç",
+  "widget.games_plural": "{{count}} Maç",
+  "widget.games": "{{count}} Maç",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "ÖLDÜRÜLEN",

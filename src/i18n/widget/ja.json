@@ -9,8 +9,8 @@
   "widget.win_rate": "勝率",
   "widget.kill_participation": "キル貢献",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}} ゲーム",
-  "widget.games": "{{games}} ゲーム",
+  "widget.games_plural": "{{count}} ゲーム",
+  "widget.games": "{{count}} ゲーム",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "キル",

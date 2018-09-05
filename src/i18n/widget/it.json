@@ -9,8 +9,8 @@
   "widget.win_rate": "% VITTORIE",
   "widget.kill_participation": "PARTECIPAZIONE UCCISIONI",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}} partite",
-  "widget.games": "{{games}} partita",
+  "widget.games_plural": "{{count}} partite",
+  "widget.games": "{{count}} partita",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "UCCISIONI",

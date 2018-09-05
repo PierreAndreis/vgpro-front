@@ -9,8 +9,8 @@
   "widget.win_rate": "TAXA DE VITÓRIAS",
   "widget.kill_participation": "PARTICIPAÇÃO EM ELIMINAÇÕES",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}} partidas",
-  "widget.games": "{{games}} partida",
+  "widget.games": "{{count}} partida",
+  "widget.games_plural": "{{count}} partidas",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "EXTERMÍNIOS",

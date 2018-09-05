@@ -50,12 +50,12 @@ langs["tr"] = tr;
 import vi from "./vi.json";
 langs["vi"] = vi;
 
-/** Traditional Chinese */
-import zh_CN from "./zh_CN.json";
-langs["zh_CN"] = zh_CN;
+/** Simplified Chinese */
+import zh_Hans from "./zh_Hans.json";
+langs["zh_Hans"] = zh_Hans;
 
 /** Traditional Chinese */
-import zh_TW from "./zh_TW.json";
-langs["zh_TW"] = zh_TW;
+import zh_Hant from "./zh_Hant.json";
+langs["zh_Hant"] = zh_Hant;
 
 export default langs;

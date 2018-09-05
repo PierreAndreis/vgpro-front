@@ -9,8 +9,8 @@
   "widget.win_rate": "GEWINNRATE",
   "widget.kill_participation": "KILL-BETEILIGUNG",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}} Spiele",
-  "widget.games": "{{games}} Spiel",
+  "widget.games_plural": "{{count}} Spiele",
+  "widget.games": "{{count}} Spiel",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "KILLS",

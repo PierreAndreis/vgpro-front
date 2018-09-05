@@ -9,8 +9,8 @@
   "widget.win_rate": "胜率",
   "widget.kill_participation": "击杀参与",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}}场",
-  "widget.games": "{{games}}场",
+  "widget.games_plural": "{{count}}场",
+  "widget.games": "{{count}}场",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "终结",

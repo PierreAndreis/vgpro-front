@@ -9,8 +9,8 @@
   "widget.win_rate": "% MENANG",
   "widget.kill_participation": "IKUT PEMBUNUHAN",
   "widget.kda": " KDA <0></0>",
-  "widget.games_plural": "{{games}} Laga",
-  "widget.games": "{{games}} Laga",
+  "widget.games_plural": "{{count}} Laga",
+  "widget.games": "{{count}} Laga",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "PEMBUNUHAN",

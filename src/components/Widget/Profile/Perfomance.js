@@ -165,7 +165,9 @@ class WidgetPerfomance extends Component {
                   <span>
                     <SkeletonWrapper width="1.2vw" height="0.8vw">
                       {() =>
-                        t("widget.games", { games: payload.stats.games })
+                        t("widget.games_plural", {
+                          count: payload.stats.games,
+                        })
                       }
                     </SkeletonWrapper>{" "}
                     <SkeletonWrapper width="1vw" height="0.8vw">

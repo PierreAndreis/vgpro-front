@@ -9,8 +9,8 @@
   "widget.win_rate": "勝率",
   "widget.kill_participation": "擊殺參與度",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{games}} 比賽",
-  "widget.games": "{{games}} 比賽",
+  "widget.games_plural": "{{count}} 比賽",
+  "widget.games": "{{count}} 比賽",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "擊殺",

@@ -51,11 +51,11 @@ import vi from "./vi.json";
 langs["vi"] = vi;
 
 /** Simplified Chinese */
-import zh_Hans from "./zh_Hans.json";
-langs["zh_Hans"] = zh_Hans;
+import zh_Hans from "./zh-Hans.json";
+langs["zh-Hans"] = zh_Hans;
 
 /** Traditional Chinese */
-import zh_Hant from "./zh_Hant.json";
-langs["zh_Hant"] = zh_Hant;
+import zh_Hant from "./zh-Hant.json";
+langs["zh-Hant"] = zh_Hant;
 
 export default langs;

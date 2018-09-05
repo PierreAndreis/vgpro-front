@@ -78,7 +78,7 @@ export default class WidgetMatches extends React.Component {
             <Match key={match.id} payload={match} />
           ))}
         </Content>
-        <a href={link} target="_blank">
+        <a href={link}>
           <ViewMore>
             <Trans i18nKey="widget.view_more_on_vgproogg">
               VIEW MORE ON VGPRO

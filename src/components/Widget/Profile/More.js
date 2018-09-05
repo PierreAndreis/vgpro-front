@@ -35,7 +35,7 @@ export default class WidgetInfo extends Component {
         <h2>
           <Trans i18nKey="widget.view_more" />
         </h2>
-        <a href={link} target="_blank">
+        <a href={link}>
           <Wrap>
             <Logo />
           </Wrap>

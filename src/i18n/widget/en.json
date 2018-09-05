@@ -55,7 +55,7 @@
   "widget.goldShare": "({{goldShare}}% share)",
   "widget.csMin": "({{csPerMinute}} cs/min)",
 
-  "widget.playerNotFound": "Player not found. \n Please play a public match and try again.",
-  "widget.errorHelper": "If you think this is a mistake, please contact VGPRO.gg on twitter at @vgprogg",
-  "widget.playerInactive": "No records found for this player in the past 30 days"
+  "widget.playerNotFound": "Player not found.\nPlease play a public match and try again.",
+  "widget.errorHelper": "If you think this is a mistake, please contact VGPRO.gg on Twitter @vgprogg",
+  "widget.playerInactive": "No records found for this player in the past 30 days."
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Trans } from "react-i18next";
+import { translate, Trans } from "react-i18next";
 import styled from "styled-components";
 import { Box } from "../../common/Box";
 import AssetLoader from "../../common/AssetLoader";
@@ -146,9 +146,9 @@ const Item = styled(AssetLoader)`
   background-color: ${props => props.theme.background.slot};
 `;
 
-export default class WidgetMatch extends Component {
+class WidgetMatch extends Component {
   render() {
-    const payload = this.props.payload;
+    const { payload, t } = this.props;
     const me = payload.players.find(p => p.me);
 
     return (
@@ -196,24 +196,14 @@ export default class WidgetMatch extends Component {
               <i className="vg-coin" /> {me.gold.toLocaleString()}
             </div>
             <span>
-              <Trans
-                defaults="({{goldShare}}% share)"
-                i18nKey="widget.goldShare"
-                values={{ goldShare: me.goldShare }}
-              />
+              {t("widget.goldShare", { goldShare: me.goldShare })}
             </span>
           </Stat>
           <Stat>
             <div>
               <i className="vg-minion" /> {me.cs}
             </div>
-            <span>
-              <Trans
-                defaults="({{csPerMinute}} cs/min)"
-                i18nKey="widget.csMin"
-                values={{ csPerMinute: me.csMin }}
-              />
-            </span>
+            <span>{t("widget.csMin", { csPerMinute: me.goldShare })}</span>
           </Stat>
         </Section>
         <Items>
@@ -227,3 +217,5 @@ export default class WidgetMatch extends Component {
     );
   }
 }
+
+export default translate("widget")(WidgetMatch);

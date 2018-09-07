@@ -9,8 +9,8 @@
   "widget.win_rate": "% MENANG",
   "widget.kill_participation": "IKUT PEMBUNUHAN",
   "widget.kda": " KDA <0></0>",
-  "widget.games_plural": "{{count}} Laga",
   "widget.games": "{{count}} Laga",
+  "widget.games_plural": "{{count}} Laga",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "PEMBUNUHAN",
@@ -53,5 +53,9 @@
   "widget.loss": "KALAH",
   "widget.cs": "CS {{cs}}",
   "widget.goldShare": "(kontribusi {{goldShare}}%)",
-  "widget.csMin": "(CS {{csPerMinute}} per mnt)"
+  "widget.csMin": "(CS {{csPerMinute}} per mnt)",
+
+  "widget.playerNotFound": "Pemain tidak ditemukan.\nMainkan laga publik dan coba lagi.",
+  "widget.errorHelper": "Jika menurutmu ini kesalahan, harap hubungi VGPRO.gg di Twitter @vgprogg",
+  "widget.playerInactive": "Tidak ada catatan tentang pemain ini dalam 30 hari terakhir."
 }

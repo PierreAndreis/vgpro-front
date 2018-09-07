@@ -9,8 +9,8 @@
   "widget.win_rate": "胜率",
   "widget.kill_participation": "击杀参与",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{count}}场",
   "widget.games": "{{count}}场",
+  "widget.games_plural": "{{count}}场",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "终结",
@@ -53,5 +53,9 @@
   "widget.loss": "战败",
   "widget.cs": "{{cs}}小兵野怪击杀数",
   "widget.goldShare": "（{{goldShare}}%金币分享）",
-  "widget.csMin": "（{{csPerMinute}}小兵野怪击杀数/分钟）"
+  "widget.csMin": "（{{csPerMinute}}小兵野怪击杀数/分钟）",
+
+  "widget.playerNotFound": "玩家没有找到。\n请进行一局公开比赛，然后再试。",
+  "widget.errorHelper": "如果你觉得这里存在错误，请在Twitter @vgprogg联系VGPRO.gg",
+  "widget.playerInactive": "没有找到这个玩家30天内的记录"
 }

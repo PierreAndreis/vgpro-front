@@ -15,7 +15,7 @@
   "widget.kda_label": "KDA",
   "widget.kills_label": "EXTERMÍNIOS",
   "widget.deaths_label": "MORTES",
-  "widget.assists_label": "AJUDA",
+  "widget.assists_label": "ASSISTÊNCIAS",
 
   "widget.roles": "PAPEL",
   "widget.captain": "CAPITÃO",
@@ -33,7 +33,7 @@
   "widget.ranked_5v5": "POR RANKING - 5V5",
   "widget.casual_3v3": "CASUAL - 3V3",
   "widget.ranked_3v3": "POR RANKING - 5V5",
-  "widget.blitz": "PARTIDA BLITZ",
+  "widget.blitz": "BLITZ",
   "widget.battleroyale": "BATTLE ROYALE",
   "widget.private_blitz": "PRIVADA - BLITZ",
   "widget.private_battleroyale": "PRIVADA - BATTLE ROYALE",
@@ -49,9 +49,13 @@
   "widget.spring": "PRIMAVERA {{year}}",
   "widget.summer": "VERÃO {{year}}",
 
-  "widget.win": "VITÓRIAS",
-  "widget.loss": "DERROTAS",
+  "widget.win": "VITÓRIA",
+  "widget.loss": "DERROTA",
   "widget.cs": "{{cs}} CS",
   "widget.goldShare": "(Contribuição: {{goldShare}}%)",
-  "widget.csMin": "({{csPerMinute}} CS/min)"
+  "widget.csMin": "({{csPerMinute}} CS/min)",
+
+  "widget.playerNotFound": "Jogador não encontrado.\nJogue uma partida pública e tente novamente.",
+  "widget.errorHelper": "Se você acredita que ocorreu um erro, entre em contato com o VGPRO.gg pelo Twitter @vgprogg",
+  "widget.playerInactive": "Não foram encontradas informações sobre esse jogador nos últimos 30 dias."
 }

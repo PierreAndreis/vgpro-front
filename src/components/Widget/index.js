@@ -20,6 +20,13 @@ injectGlobal`
   body {
     background: #0f0f18;
   }
+
+  #disclaimer {
+    font-size: 1.3vw;
+    margin-top: 0.1vw;
+    text-align: center;
+    color: #8C8C8C;
+  }
 `;
 
 const Wrap = styled.div`

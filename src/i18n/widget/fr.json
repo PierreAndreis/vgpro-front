@@ -9,8 +9,8 @@
   "widget.win_rate": "TAUX DE VICTOIRE",
   "widget.kill_participation": "PARTICIPATION AUX ÉLIMINATIONS",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{count}} parties",
   "widget.games": "{{count}} partie",
+  "widget.games_plural": "{{count}} parties",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "ÉLIMINATIONS",
@@ -53,5 +53,9 @@
   "widget.loss": "DÉFAITES",
   "widget.cs": "{{cs}} CS",
   "widget.goldShare": "(part : {{goldShare}} %)",
-  "widget.csMin": "({{csPerMinute}} CS/min)"
+  "widget.csMin": "({{csPerMinute}} CS/min)",
+
+  "widget.playerNotFound": "Joueur introuvable.\nParticipez à un match public et réessayez.",
+  "widget.errorHelper": "Si vous pensez qu'il s'agit d'une erreur, veuillez contacter VGPRO.gg sur Twitter @vgprogg",
+  "widget.playerInactive": "Pas de stats trouvées pour ce joueur au cours des 30 derniers jours."
 }

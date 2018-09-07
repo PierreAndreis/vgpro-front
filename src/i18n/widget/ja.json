@@ -9,8 +9,8 @@
   "widget.win_rate": "勝率",
   "widget.kill_participation": "キル貢献",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{count}} ゲーム",
   "widget.games": "{{count}} ゲーム",
+  "widget.games_plural": "{{count}} ゲーム",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "キル",
@@ -53,5 +53,9 @@
   "widget.loss": "負け",
   "widget.cs": "{{cs}} cs",
   "widget.goldShare": "(シェア{{goldShare}}%)",
-  "widget.csMin": "({{csPerMinute}} cs/分)"
+  "widget.csMin": "({{csPerMinute}} cs/分)",
+
+  "widget.playerNotFound": "プレイヤーが見つかりませんでした。\nパブリック試合をプレイして再度お試しください。",
+  "widget.errorHelper": "これが間違いと思われる場合は、Twitter @vgproggでVGPRO.ggまでお知らせください。",
+  "widget.playerInactive": "過去30日間、このプレイヤーに関する記録はありません。"
 }

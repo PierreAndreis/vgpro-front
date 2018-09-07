@@ -9,8 +9,8 @@
   "widget.win_rate": "TỶ LỆ THẮNG",
   "widget.kill_participation": "THAM GIA ĂN MẠNG",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{count}} Trận",
   "widget.games": "{{count}} Trận",
+  "widget.games_plural": "{{count}} Trận",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "GIẾT",
@@ -53,5 +53,9 @@
   "widget.loss": "TRẬN THUA",
   "widget.cs": "{{cs}} cs",
   "widget.goldShare": "({{goldShare}}% vàng đóng góp)",
-  "widget.csMin": "({{csPerMinute}} cs/phút)"
+  "widget.csMin": "({{csPerMinute}} cs/phút)",
+
+  "widget.playerNotFound": "Không tìm thấy người chơi.\nVui lòng chơi một trận đấu chung và thử lại.",
+  "widget.errorHelper": "Nếu bạn nghĩ là có nhầm lẫn, vui lòng liên hệ VGPRO.gg qua Twitter @vgprogg",
+  "widget.playerInactive": "Không có hồ sơ về người chơi này trong 30 ngày gần đây."
 }

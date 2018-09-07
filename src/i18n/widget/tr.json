@@ -9,8 +9,8 @@
   "widget.win_rate": "GALİBİYET ORANI",
   "widget.kill_participation": "ÖLDÜRME KATILIMI",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{count}} Maç",
   "widget.games": "{{count}} Maç",
+  "widget.games_plural": "{{count}} Maç",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "ÖLDÜRÜLEN",
@@ -53,5 +53,9 @@
   "widget.loss": "YENİLGİ",
   "widget.cs": "{{cs}} ys",
   "widget.goldShare": "({{goldShare}}% paylaşımı)",
-  "widget.csMin": "({{csPerMinute}} ys/dk)"
+  "widget.csMin": "({{csPerMinute}} ys/dk)",
+
+  "widget.playerNotFound": "Oyuncu bulunamadı.\nLütfen bir umumi maç oyna ve tekrar dene.",
+  "widget.errorHelper": "Bunun bir hata olduğunu düşünüyorsan, lütfen VGPRO.gg ile Twitter @vgprogg üzerinden iletişime geç",
+  "widget.playerInactive": "Bu oyuncu için son 30 gün içerisinde hiç kayıt bulunamadı."
 }

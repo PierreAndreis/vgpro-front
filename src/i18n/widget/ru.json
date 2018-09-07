@@ -9,8 +9,8 @@
   "widget.win_rate": "ДОЛЯ ПОБЕД",
   "widget.kill_participation": "УЧАСТИЕ В УБИЙСТВАХ",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "Игр: {{games}}",
   "widget.games": "{{count}} игра",
+  "widget.games_plural": "Игр: {{games}}",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "УБИЙСТВА",
@@ -53,5 +53,9 @@
   "widget.loss": "ПОРАЖЕНИЕ",
   "widget.cs": "{{cs}} cs",
   "widget.goldShare": "(доля: {{goldShare}}%)",
-  "widget.csMin": "({{csPerMinute}} cs/мин.)"
+  "widget.csMin": "({{csPerMinute}} cs/мин.)",
+
+  "widget.playerNotFound": "Игрок не найден.\nСыграйте случайный матч и повторите попытку.",
+  "widget.errorHelper": "Если вам кажется, что произошла ошибка, свяжитесь с владельцами сайта VGPRO.gg через Twitter: @vgprogg",
+  "widget.playerInactive": "Для этого игрока не найдены записи за последние 30 дней."
 }

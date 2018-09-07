@@ -9,8 +9,8 @@
   "widget.win_rate": "勝率",
   "widget.kill_participation": "擊殺參與度",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{count}} 比賽",
   "widget.games": "{{count}} 比賽",
+  "widget.games_plural": "{{count}} 比賽",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "擊殺",
@@ -53,5 +53,9 @@
   "widget.loss": "敗場數",
   "widget.cs": "{{cs}} 吃兵數",
   "widget.goldShare": "（佔比{{goldShare}}%）",
-  "widget.csMin": "（每分鐘 {{csPerMinute}} 吃兵數）"
+  "widget.csMin": "（每分鐘 {{csPerMinute}} 吃兵數）",
+
+  "widget.playerNotFound": "找不到玩家。\n請進行公開比賽並再試一次。",
+  "widget.errorHelper": "如果您認為這出錯了，請前往 Twitter @vgprogg 聯絡 VGPRO.gg",
+  "widget.playerInactive": "找不到此玩家在過去 30 天內的紀錄。"
 }

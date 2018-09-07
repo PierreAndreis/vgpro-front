@@ -14,6 +14,11 @@ const Wrap = styled(Box)`
   );
   align-items: center;
   justify-content: center;
+
+  #disclaimer {
+    font-size: 1.1vw;
+    color: rgba(255, 255, 255, 0.8);
+  }
 `;
 
 const Logo = styled.div`
@@ -38,6 +43,9 @@ export default class WidgetInfo extends Component {
         <a href={link}>
           <Wrap>
             <Logo />
+            <div id="disclaimer">
+              <Trans i18nKey="widget.disclaimer_outside" />
+            </div>
           </Wrap>
         </a>
       </div>

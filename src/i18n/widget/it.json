@@ -9,8 +9,8 @@
   "widget.win_rate": "% VITTORIE",
   "widget.kill_participation": "PARTECIPAZIONE UCCISIONI",
   "widget.kda": "<0></0> KDA",
-  "widget.games_plural": "{{count}} partite",
   "widget.games": "{{count}} partita",
+  "widget.games_plural": "{{count}} partite",
 
   "widget.kda_label": "KDA",
   "widget.kills_label": "UCCISIONI",
@@ -53,5 +53,9 @@
   "widget.loss": "SCONFITTE",
   "widget.cs": "{{cs}} pc",
   "widget.goldShare": "({{goldShare}}% condiviso)",
-  "widget.csMin": "({{csPerMinute}} pc/min)"
+  "widget.csMin": "({{csPerMinute}} pc/min)",
+
+  "widget.playerNotFound": "Giocatore non trovato.\nGioca una partita pubblica e riprova.",
+  "widget.errorHelper": "Se pensi che si tratti di un errore, contatta VGPRO.gg su Twitter @vgprogg",
+  "widget.playerInactive": "Nessuna informazione trovata su questo giocatore negli ultimi 30 giorni."
 }

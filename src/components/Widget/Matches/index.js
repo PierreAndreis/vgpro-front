@@ -85,6 +85,9 @@ export default class WidgetMatches extends React.Component {
               <b>.GG</b>
             </Trans>
           </ViewMore>
+          <div id="disclaimer">
+            <Trans i18nKey="widget.disclaimer_outside" />
+          </div>
         </a>
       </React.Fragment>
     );

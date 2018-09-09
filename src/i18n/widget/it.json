@@ -57,5 +57,6 @@
 
   "widget.playerNotFound": "Giocatore non trovato.\nGioca una partita pubblica e riprova.",
   "widget.errorHelper": "Se pensi che si tratti di un errore, contatta VGPRO.gg su Twitter @vgprogg",
-  "widget.playerInactive": "Nessuna informazione trovata su questo giocatore negli ultimi 30 giorni."
+  "widget.playerInactive": "Nessuna informazione trovata su questo giocatore negli ultimi 30 giorni.",
+  "widget.disclaimer_outside": "Seguendo questo collegamento, passerai su un sito che non ci appartiene: https://vgpro.gg"
 }

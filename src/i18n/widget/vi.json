@@ -57,5 +57,6 @@
 
   "widget.playerNotFound": "Không tìm thấy người chơi.\nVui lòng chơi một trận đấu chung và thử lại.",
   "widget.errorHelper": "Nếu bạn nghĩ là có nhầm lẫn, vui lòng liên hệ VGPRO.gg qua Twitter @vgprogg",
-  "widget.playerInactive": "Không có hồ sơ về người chơi này trong 30 ngày gần đây."
+  "widget.playerInactive": "Không có hồ sơ về người chơi này trong 30 ngày gần đây.",
+  "widget.disclaimer_outside": "Khi nhấn vào liên kết này, bạn sẽ được chuyển đến trang web bên thứ ba tại địa chỉ https://vgpro.gg"
 }

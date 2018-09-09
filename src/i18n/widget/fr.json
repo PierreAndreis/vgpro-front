@@ -57,5 +57,6 @@
 
   "widget.playerNotFound": "Joueur introuvable.\nParticipez à un match public et réessayez.",
   "widget.errorHelper": "Si vous pensez qu'il s'agit d'une erreur, veuillez contacter VGPRO.gg sur Twitter @vgprogg",
-  "widget.playerInactive": "Pas de stats trouvées pour ce joueur au cours des 30 derniers jours."
+  "widget.playerInactive": "Pas de stats trouvées pour ce joueur au cours des 30 derniers jours.",
+  "widget.disclaimer_outside": "En suivant ce lien, vous serez redirigé(e) vers un site web tiers à l'adresse https://vgpro.gg"
 }

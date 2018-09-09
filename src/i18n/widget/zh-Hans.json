@@ -57,5 +57,6 @@
 
   "widget.playerNotFound": "玩家没有找到。\n请进行一局公开比赛，然后再试。",
   "widget.errorHelper": "如果你觉得这里存在错误，请在Twitter @vgprogg联系VGPRO.gg",
-  "widget.playerInactive": "没有找到这个玩家30天内的记录"
+  "widget.playerInactive": "没有找到这个玩家30天内的记录",
+  "widget.disclaimer_outside": "点击此链接，您将转跳至第三方网站https://vgpro.gg"
 }

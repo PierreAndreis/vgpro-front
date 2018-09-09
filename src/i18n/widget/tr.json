@@ -57,5 +57,6 @@
 
   "widget.playerNotFound": "Oyuncu bulunamadı.\nLütfen bir umumi maç oyna ve tekrar dene.",
   "widget.errorHelper": "Bunun bir hata olduğunu düşünüyorsan, lütfen VGPRO.gg ile Twitter @vgprogg üzerinden iletişime geç",
-  "widget.playerInactive": "Bu oyuncu için son 30 gün içerisinde hiç kayıt bulunamadı."
+  "widget.playerInactive": "Bu oyuncu için son 30 gün içerisinde hiç kayıt bulunamadı.",
+  "widget.disclaimer_outside": "Bu bağlantıyı takip ederek, https://vgpro.gg adresinde üçüncü parti bir web sitesine yönlendirileceksin"
 }

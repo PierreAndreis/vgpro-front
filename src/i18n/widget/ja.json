@@ -57,5 +57,6 @@
 
   "widget.playerNotFound": "プレイヤーが見つかりませんでした。\nパブリック試合をプレイして再度お試しください。",
   "widget.errorHelper": "これが間違いと思われる場合は、Twitter @vgproggでVGPRO.ggまでお知らせください。",
-  "widget.playerInactive": "過去30日間、このプレイヤーに関する記録はありません。"
+  "widget.playerInactive": "過去30日間、このプレイヤーに関する記録はありません。",
+  "widget.disclaimer_outside": "こちらのリンクから、外部サイトhttps://vgpro.ggに移動できます"
 }

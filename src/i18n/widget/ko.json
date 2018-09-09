@@ -57,5 +57,6 @@
 
   "widget.playerNotFound": "사용자를 찾을 수 없습니다.\n공개 경기를 플레이하고 다시 시도해 주세요.",
   "widget.errorHelper": "시스템 오류라고 생각하시면 트위터 @vgprogg로 VGPRO.gg에 제보해 주세요",
-  "widget.playerInactive": "지난 30일간 이 사용자의 기록이 없습니다."
+  "widget.playerInactive": "지난 30일간 이 사용자의 기록이 없습니다.",
+  "widget.disclaimer_outside": "이 링크를 누르면 서드파티 웹사이트인 https://vgpro.gg로 이동합니다"
 }

@@ -44,5 +44,11 @@
   "devDependencies": {
     "redux-devtools": "^3.4.1",
     "source-map-explorer": "^1.5.0"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

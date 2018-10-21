@@ -61,7 +61,7 @@ class Profile extends React.Component {
         <meta name="robots" content="index, nofollow" />
         <meta
           name="description"
-          content={`${player} Stats on Vainglory.`}
+          content={`${playerName} Stats on Vainglory.`}
         />
       </Helmet>
     );

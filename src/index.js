@@ -20,6 +20,7 @@ Sentry.init({
   release: process.env.REACT_APP_VERSION,
   whitelistUrls: [/vgpro\.gg/, /www\.vgpro\.gg/],
   ignoreErrors: [
+    /Loading chunk/,
     /SecurityError/,
     /^Exact Match Message$/,
     /MyAppGetLinkTitleNameAtPoint/,

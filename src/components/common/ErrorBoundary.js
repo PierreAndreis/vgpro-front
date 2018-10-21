@@ -1,6 +1,33 @@
 import React from "react";
 import * as Sentry from "@sentry/browser";
 
+const styles = {
+  container: {
+    display: "flex",
+    height: "90vh",
+    paddingTop: "10vh",
+    width: "100%",
+    alignItems: "center",
+    justifyContent: "center",
+    textAlign: "center",
+  },
+  inner: {
+    width: 200,
+  },
+  img: {
+    width: "100px",
+  },
+  paragraph: {
+    textAlign: "center",
+  },
+  button: {
+    backgroundColor: "white",
+    border: "1px solid grey",
+    borderRadius: "5px",
+    padding: "10px 20px",
+  },
+};
+
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
@@ -21,11 +48,24 @@ class ErrorBoundary extends React.Component {
     if (this.state.error) {
       //render fallback UI
       return (
-        <div>
-          <h1> Oops. 500 error </h1>
-          <button onClick={() => Sentry.showReportDialog()}>
-            Report feedback
-          </button>
+        <div style={styles.container}>
+          <div style={styles.inner}>
+            <img
+              src={"/images/logo_badge.svg"}
+              style={styles.img}
+              alt="logo"
+            />
+            <p style={styles.paragraph}>An error occurred.</p>
+            <p style={styles.paragraph}>
+              Our dev team has been notified automatically.
+            </p>
+            <button
+              onClick={() => Sentry.showReportDialog()}
+              style={styles.button}
+            >
+              Report feedback
+            </button>
+          </div>
         </div>
       );
     }

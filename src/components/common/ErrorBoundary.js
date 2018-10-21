@@ -1,30 +1,36 @@
 import React from "react";
+import * as Sentry from "@sentry/browser";
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
-    this.state = { error: null, errorInfo: null };
+    this.state = { error: null };
   }
 
   componentDidCatch(error, errorInfo) {
-    // Catch errors in any components below and re-render with error message
-    this.setState({
-      error: error,
-      errorInfo: errorInfo
-    })
-    global.Raven.captureException(error, { extra: errorInfo });
-    global.Raven.showReportDialog();
+    this.setState({ error });
+    Sentry.withScope(scope => {
+      Object.keys(errorInfo).forEach(key => {
+        scope.setExtra(key, errorInfo[key]);
+      });
+      Sentry.captureException(error);
+    });
   }
 
   render() {
-    if (this.state.errorInfo) {
+    if (this.state.error) {
+      //render fallback UI
       return (
-        <React.Fragment>
-          <div>Something went wrong!</div>
-        </React.Fragment>
+        <div>
+          <h1> Oops. 500 error </h1>
+          <button onClick={() => Sentry.showReportDialog()}>
+            Report feedback
+          </button>
+        </div>
       );
     }
-    else return this.props.children;
+    //when there's not an error, render children untouched
+    return this.props.children;
   }
 }
 

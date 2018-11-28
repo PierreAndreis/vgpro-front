@@ -6,7 +6,7 @@ import AssetLoader from "../common/AssetLoader";
 
 export const Wrap = commonWrapper.extend`
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 15px auto;
 `;
 

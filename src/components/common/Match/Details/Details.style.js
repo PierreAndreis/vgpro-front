@@ -1,9 +1,9 @@
-import styled, {css} from "styled-components";
-import { transparentize } from 'polished';
+import styled, { css } from "styled-components";
+import { transparentize } from "polished";
 
 export const Container = styled.div`
   width: 98%;
-  min-height: 140px;;
+  min-height: 140px;
   margin: 0 auto;
   margin-top: -10px;
   padding: 15px 5px 5px;
@@ -38,17 +38,19 @@ export const TabOption = styled.div`
   padding: 5px;
   border-radius: 5px;
   transition: all 300ms;
-  ${props => (
-    (props.active && css`
-    color: ${props => props.theme.primary[400]};
-    `) || css`
-      &:hover{
-        background: ${props => transparentize(0.8, props.theme.background.third)};
+  ${props =>
+    (props.active &&
+      css`
+        color: ${props => props.theme.primary[400]};
+      `) ||
+    css`
+      &:hover {
+        background: ${props =>
+          transparentize(0.8, props.theme.background.third)};
       }
-    `
-  )}
+    `}
 
   &:last-of-type {
     margin-right: 0;
   }
-`
+`;

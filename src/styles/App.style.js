@@ -1,4 +1,4 @@
-import styled, { injectGlobal } from 'styled-components';
+import styled, { injectGlobal } from "styled-components";
 
 export const commonWrapper = styled.div`
   position: relative;
@@ -7,7 +7,7 @@ export const commonWrapper = styled.div`
   @media only screen and (max-width: 700px) {
     width: 100%;
   }
-`
+`;
 
 injectGlobal`
 html {

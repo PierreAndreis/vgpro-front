@@ -19,9 +19,7 @@ export const Box = styled.div`
   ${props =>
     props.hover &&
     css`
-      transition: all ease-out 300ms;
       &:hover {
-        transform: scale(1.005);
         background: ${props => props.theme.background.boxHover};
       }
     `};
@@ -148,7 +146,8 @@ export const BoxButton = styled.button.attrs({
         background: ${props => props.theme.primary[300]};
         box-shadow: 0 0 10px ${props => props.theme.primary[400]};
       }
-    `} ${props =>
+    `};
+  ${props =>
     props.disabled &&
     css`
       background: ${props => darken(0.1, props.theme.background.third)};

@@ -71,12 +71,11 @@ const OverviewPlayer = ({ player, telemetry, gameMode, status }) => {
               {() => <Styled.PlayerRole role={player.role} />}
             </SkeletonWrapper>
 
-            {player &&
-              player.mvp && (
-                <Styled.MVP>
-                  <Trans i18nKey="terms.MVP" />
-                </Styled.MVP>
-              )}
+            {player && player.mvp && (
+              <Styled.MVP>
+                <Trans i18nKey="terms.MVP" />
+              </Styled.MVP>
+            )}
           </Styled.PlayerHero>
         </Styled.PlayerImage>
 

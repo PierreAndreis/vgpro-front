@@ -5,7 +5,7 @@ import { Box } from "../common/Box";
 
 export const Wrapper = commonWrapper.extend`
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   margin: 15px auto;
 `;
 

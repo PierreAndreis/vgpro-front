@@ -30,7 +30,6 @@ class HomePage extends React.Component {
           <Lead5 t={t} />
           <Heroes t={t} />
         </Styled.Content>
-        
       </div>
     );
   }

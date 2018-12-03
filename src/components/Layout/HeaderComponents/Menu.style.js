@@ -12,6 +12,18 @@ export const MenuDesktop = styled.div`
     transition: all 300ms;
 
     transition: all 300ms;
+    span {
+      font-size: 10px;
+      background: #85d3e8;
+      padding: 2px;
+      border-radius: 5px;
+      margin-left: -2px;
+      color: white;
+      position: relative;
+      top: -10px;
+      left: -5px;
+    }
+
     &:hover {
       color: ${props => props.theme.text[500]};
     }

@@ -41,6 +41,13 @@ const MenuList = translate()(({ t }) => {
           {nav.loc ? t(nav.loc) : nav.name}{" "}
         </NavLink>
       ))}
+      <a
+        href="https://prime.vgpro.gg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VGPRIME <span>NEW!</span>
+      </a>
     </React.Fragment>
   );
 });

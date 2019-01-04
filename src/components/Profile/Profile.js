@@ -19,19 +19,9 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import * as Styled from "./Profile.style";
+import Link from "react-router-dom/Link";
 
 class Profile extends React.Component {
-  // componentWillReceiveProps(nextProps) {
-  //   const nextMatch = nextProps.match;
-  //   const nextPlayer = nextMatch.params.player;
-
-  //   const { match } = this.props;
-  //   const { player } = match.params;
-
-  //   if (player === nextPlayer) return;
-  //   else this.props.setPlayer(nextPlayer);
-  // }
-
   componentDidMount() {
     const { match } = this.props;
     const { player } = match.params;
@@ -119,6 +109,14 @@ class Profile extends React.Component {
           </Styled.Sidebar>
 
           <Styled.Main>
+            {playerName === "cherryyeee" && (
+              <Styled.Birthday>
+                Happy Birthday from VGPRO and{" "}
+                <Link to="/players/IDieSoUCanLive">IDieSoUCanLive.</Link>
+                <br />
+                Now go freaking play Celeste <i>{"<"}3</i>
+              </Styled.Birthday>
+            )}
             <MatchStats t={t} />
             <Adsense />
             <MatchesManager t={t} filters={filters} />

@@ -49,3 +49,27 @@ export const Main = styled.section`
     padding: 0;
   }
 `;
+
+export const Birthday = styled(Box.wrap)`
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://pbs.twimg.com/media/CmUI9yLVUAESLnf.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 150px;
+  font-size: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  color: white;
+  animation-duration: 600ms;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  font-weight: bold;
+
+  & a {
+    border-bottom: 1px solid white;
+  }
+`;

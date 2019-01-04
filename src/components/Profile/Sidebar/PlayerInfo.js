@@ -181,36 +181,40 @@ const PlayerInfo = ({
 
         <Styled.Divider />
 
-        <div style={{ textAlign: "center", margin: "10px" }}>
-          <SkeletonWrapper status={status} width="130px" height="35px">
-            {() => (
-              <iframe
-                src={`https://emojireact.com/embed?emojis=fire,whale,rocket&url=vgpro.gg/players/${
-                  data.region
-                }/${data.name}`}
-                scrolling="no"
-                frameBorder="0"
-                style={{
-                  border: "none",
-                  overflow: "hidden",
-                  width: "180px",
-                  height: "35px",
-                }}
-                title="iFrame Emoji"
-                allowtransparency="true"
-              />
-            )}
-          </SkeletonWrapper>
-        </div>
-
-        {team && (
+        {false && (
           <React.Fragment>
+            <div style={{ textAlign: "center", margin: "10px" }}>
+              <SkeletonWrapper status={status} width="130px" height="35px">
+                {() => (
+                  <iframe
+                    src={`https://emojireact.com/embed?emojis=fire,whale,rocket&url=vgpro.gg/players/${
+                      data.region
+                    }/${data.name}`}
+                    scrolling="no"
+                    frameBorder="0"
+                    style={{
+                      border: "none",
+                      overflow: "hidden",
+                      width: "180px",
+                      height: "35px",
+                    }}
+                    title="iFrame Emoji"
+                    allowtransparency="true"
+                  />
+                )}
+              </SkeletonWrapper>
+            </div>
+
+            {team && (
+              <React.Fragment>
+                <Styled.Divider />
+                {team}
+              </React.Fragment>
+            )}
+
             <Styled.Divider />
-            {team}
           </React.Fragment>
         )}
-
-        <Styled.Divider />
         <Styled.PlayerStats>
           <h3>
             <Trans i18nKey="gamemode.ranked" />{" "}
@@ -281,21 +285,21 @@ const PlayerInfo = ({
           </Styled.PlayerStat>
         </Styled.PlayerStats>
 
-        {AKAs &&
-          window.pierre &&
-          AKAs.length > 0 && (
-            <React.Fragment>
-              <Styled.Divider />
-              <Styled.PlayerAka>
-                <h2>
-                  <Trans i18nKey="terms.aka" />{" "}
-                </h2>
-                <div style={{ display: "flex", flexWrap: "wrap" }}>
-                  {AKAs.map(name => <span key={name}>{name}</span>)}
-                </div>
-              </Styled.PlayerAka>
-            </React.Fragment>
-          )}
+        {AKAs && window.pierre && AKAs.length > 0 && (
+          <React.Fragment>
+            <Styled.Divider />
+            <Styled.PlayerAka>
+              <h2>
+                <Trans i18nKey="terms.aka" />{" "}
+              </h2>
+              <div style={{ display: "flex", flexWrap: "wrap" }}>
+                {AKAs.map(name => (
+                  <span key={name}>{name}</span>
+                ))}
+              </div>
+            </Styled.PlayerAka>
+          </React.Fragment>
+        )}
       </Styled.Content>
     </Styled.Wrap>
   );

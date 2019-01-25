@@ -109,7 +109,7 @@ class Profile extends React.Component {
           </Styled.Sidebar>
 
           <Styled.Main>
-            {playerName === "cherryyeee" && (
+            {false && (
               <Styled.Birthday>
                 Happy Birthday from VGPRO and{" "}
                 <Link to="/players/IDieSoUCanLive">IDieSoUCanLive.</Link>

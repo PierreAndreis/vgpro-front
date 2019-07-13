@@ -9,7 +9,7 @@
     "cross-env": "^5.2.0",
     "i18next": "^10.6.0",
     "i18next-browser-languagedetector": "^2.2.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "polished": "^1.9.3",
     "query-string": "^5.1.1",
     "react": "^16.6.3",

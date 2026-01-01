@@ -2,22 +2,31 @@
 
 export const HEROES = [
   'Adagio', 'Alpha', 'Ardan', 'Baptiste', 'Baron', 'Blackfeather', 'Catherine',
-  'Celeste', 'Churnwalker', 'Flicker', 'Fortress', 'Glaive', 'Grace', 'Grumpjaw',
-  'Gwen', 'Idris', 'Inara', 'Joule', 'Kensei', 'Kestrel', 'Kinetic', 'Koshka',
-  'Krul', 'Lance', 'Leo', 'Lorelai', 'Lyra', 'Magnus', 'Malene', 'Miho',
+  'Celeste', 'Flicker', 'Fortress', 'Glaive', 'Grace', 'Grumpjaw',
+  'Gwen', 'Idris', 'Joule', 'Kestrel', 'Koshka',
+  'Krul', 'Lance', 'Lyra',
   'Ozo', 'Petal', 'Phinn', 'Reim', 'Reza', 'Ringo', 'Rona', 'Samuel',
-  'San Feng', 'SAW', 'Silvernail', 'Skaarf', 'Skye', 'Taka', 'Tony',
-  'Varya', 'Viola', 'Vox', 'Warhawk', 'Yates', 'Ylva'
+  'SAW', 'Skaarf', 'Skye', 'Taka', 'Vox'
 ];
 
 export const ITEMS = [
   'Sorrowblade', 'Tyrant\'s Monocle', 'Tornado Trigger', 'Breaking Point',
-  'Serpent Mask', 'Shatterglass', 'Dragon\'s Eye', 'Spellfire', 'Frostburn',
+  'Serpent Mask', 'Shatterglass', 'Frostburn',
   'Clockwork', 'Broken Myth', 'Aftershock', 'Journey Boots', 'Halcyon Chargers',
   'War Treads', 'Fountain of Renewal', 'Crucible', 'Atlas Pauldron',
-  'Metal Jacket', 'Aegis', 'Slumbering Husk', 'Capacitor Plate',
-  'Pulseweave', 'Rooks Decree', 'Nullwave Gauntlet', 'Tension Bow',
-  'Bonesaw', 'Poisoned Shiv', 'Eve of Harvest', 'Stormcrown'
+  'Metal Jacket', 'Aegis', 'Slumbering Husk',
+  'Nullwave Gauntlet', 'Tension Bow',
+  'Bonesaw', 'Poisoned Shiv', 'Eve of Harvest', 'Stormcrown',
+  'Alternating Current', 'Barbed Needle', 'Blazing Salvo', 'Book of Eulogies',
+  'Chronograph', 'Coat of Plates', 'Contraption', 'Crystal Bit', 'Crystal Infusion',
+  'Dragonblood Contract', 'Dragonheart', 'Echo', 'Eclipse Prism', 'Energy Battery',
+  'Flare', 'Flare Gun', 'Halcyon Potion', 'Heavy Prism', 'Heavy Steel',
+  'Hourglass', 'Ironguard Contract', 'Kinetic Shield', 'Level Juice', 'Lifespring',
+  'Light Armor', 'Light Shield', 'Lucky Strike', 'Minion Candy', 'Minions Foot',
+  'Oakheart', 'Piercing Shard', 'Piercing Spear', 'Pot of Gold', 'Protector Contract',
+  'Reflex Block', 'Scout Trap', 'Shiversteel', 'Six Sins', 'Sprint Boots',
+  'Stormguard Banner', 'Swift Shooter', 'Travel Boots', 'Void Battery', 'Weapon Blade',
+  'Weapon Infusion'
 ];
 
 export const REGIONS = ['na', 'eu', 'sg', 'cn', 'sa'];

@@ -10,7 +10,6 @@ import Utils from "../../../utils/index.js";
 import { fetchHero } from "../../../actions/api.js";
 
 import { SkeletonWrapper, SkeletonContext } from "./../../common/Skeleton";
-import { Adsense } from "../../common/Ads";
 
 import Overview from "./Overview";
 import Skills from "./Skills";
@@ -148,10 +147,7 @@ class HeroDetails extends React.Component {
             </Link>
           </Styled.Tabs>
 
-          <Adsense />
           <Styled.Content>{content}</Styled.Content>
-          <br />
-          <Adsense />
         </Styled.Wrapper>
       </SkeletonContext.Provider>
     );

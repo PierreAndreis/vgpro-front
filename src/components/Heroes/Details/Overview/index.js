@@ -8,7 +8,6 @@ import Skills from "./Skills";
 
 import { SPACE_GRID } from "./../Details.style";
 import styled from "styled-components";
-import { Adsense } from "../../../common/Ads";
 
 export const Graphs = styled.div`
   display: grid;
@@ -50,9 +49,6 @@ const Overview = props => (
       <ChartsByHistory {...props} />
     </Graphs>
 
-    <Ads>
-      <Adsense />
-    </Ads>
     <Builds.Popular {...props} />
     <Builds.WinRate {...props} />
 

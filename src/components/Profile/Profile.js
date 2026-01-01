@@ -1,8 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
-import { Adsense } from "./../common/Ads";
-
 import ErrorScreen from "../common/ErrorScreen";
 
 import TimeAgo from "../../i18n/timeAgo";
@@ -118,9 +116,7 @@ class Profile extends React.Component {
               </Styled.Birthday>
             )}
             <MatchStats t={t} />
-            <Adsense />
             <MatchesManager t={t} filters={filters} />
-            <Adsense />
           </Styled.Main>
         </Styled.Wrap>
       </React.Fragment>

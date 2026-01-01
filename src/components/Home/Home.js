@@ -1,6 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { Adsense } from "./../common/Ads";
 
 import ProFeed from "./ProFeed";
 import Lead5 from "./Lead5";
@@ -24,7 +23,6 @@ class HomePage extends React.Component {
           </Styled.Logo>
           <SearchPlayer mode="main" />
         </div>
-        <Adsense />
         <Styled.Content>
           <ProFeed t={t} />
           <Lead5 t={t} />

@@ -7,7 +7,6 @@ import _isEqual from "lodash/isEqual";
 import Match from "./../common/Match/Match";
 import ErrorScreen from "./../common/ErrorScreen";
 import { SkeletonPayload } from "./../common/Skeleton";
-import { Adsense } from "./../common/Ads";
 import { BoxButton } from "../common/Box";
 
 import {
@@ -96,9 +95,6 @@ class MatchManager extends React.Component {
               status={page.status}
             />
           );
-          if (++adCount % AD_EVERY === 0) {
-            content.push(<Adsense key={`Adsense-Key-${adCount}`} />);
-          }
         }
 
         if (!done && (page && page.payload)) {

@@ -2,8 +2,6 @@ import React from "react";
 import Helmet from "react-helmet";
 import _forEach from "lodash/forEach";
 
-import { Adsense } from "./../common/Ads";
-
 import { Trans, translate } from "react-i18next";
 
 import { BoxButton } from "./../common/Box";
@@ -191,16 +189,6 @@ class Leaderboard extends React.Component {
               mode={this.state.mode.value}
             />
           );
-          if (++adCount % AD_EVERY === 0) {
-            content.push(
-              <div
-                key={`Adsense-Key-${adCount}`}
-                style={{ width: "100%", height: "120px", flex: 1 }}
-              >
-                <Adsense />
-              </div>
-            );
-          }
         });
       });
     }
@@ -272,7 +260,6 @@ class Leaderboard extends React.Component {
               </form>
             </Styled.InputCategory>
           </Styled.Filter>
-          <Adsense />
           <Styled.Content>{content}</Styled.Content>
           <Styled.Buttons>
             {!isPlayer ? (

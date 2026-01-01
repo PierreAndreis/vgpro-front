@@ -1,12 +1,14 @@
 import axios from "axios";
 import ReactGA from "react-ga";
+import MockAPI from "./mockApi";
 const http = require("http");
 const https = require("https");
 const queryString = require("query-string");
 
-//HARDCODED. CHANGE TO PROCESS FILE
-const hostname = "https://api.vgpro.gg";
-// const hostname = "http://localhost:8080";
+// Check if we should use mock data (no API URL configured or explicitly using mock)
+const USE_MOCK = true;
+
+const hostname = process.env.REACT_APP_API_URL || "";
 
 const request = axios.create();
 
@@ -17,9 +19,6 @@ request.defaults.httpAgent = new http.Agent({ keepAlive: true });
 request.defaults.httpsAgent = new https.Agent({ keepAlive: true });
 
 const errorRequest = e => {
-  // console.warn(e);
-  // throw new Error(e);
-  // // return [];
   ReactGA.exception({
     description: `API CALL: ${e}`,
     fatal: true,
@@ -62,10 +61,13 @@ const sendRequest = async (url, data, method = "get") => {
 const API = {};
 
 API.getProFeed = () => {
+  if (USE_MOCK) return MockAPI.getProFeed();
   return sendRequest("/pro/history/");
 };
 
 API.getLead5 = (mode, region, { player, ...filtersArgs }) => {
+  if (USE_MOCK)
+    return MockAPI.getLead5(mode, region, { player, ...filtersArgs });
   let f = filtersArgs;
   const filters = queryString.stringify(f);
   if (!player) {
@@ -77,14 +79,17 @@ API.getLead5 = (mode, region, { player, ...filtersArgs }) => {
 };
 
 API.getTopHeroes = (region = "all") => {
+  if (USE_MOCK) return MockAPI.getTopHeroes(region);
   return sendRequest(`/heroes/${region}`);
 };
 
 API.getHero = (heroName, region = "all") => {
+  if (USE_MOCK) return MockAPI.getHero(heroName, region);
   return sendRequest(`/heroes/${region}/${heroName}`);
 };
 
 API.getHeroHistory = (heroName, options) => {
+  if (USE_MOCK) return MockAPI.getHeroHistory(heroName, options);
   let region = options.region || "all";
   delete options.region;
   let filters = queryString.stringify(options);
@@ -94,14 +99,17 @@ API.getHeroHistory = (heroName, options) => {
 
 /* ==== PLAYER LOOKUP ===== */
 API.lookupPlayer = playerName => {
+  if (USE_MOCK) return MockAPI.lookupPlayer(playerName);
   return sendRequest(`/player/${playerName}/find`);
 };
 
 API.lookupPlayerId = playerId => {
+  if (USE_MOCK) return MockAPI.lookupPlayerId(playerId);
   return sendRequest(`/player/${playerId}/uuid/find`);
 };
 
 API.fetchPlayerStats = (playerName, filtersArgs) => {
+  if (USE_MOCK) return MockAPI.fetchPlayerStats(playerName, filtersArgs);
   let f = filtersArgs;
 
   const filters = queryString.stringify(f);
@@ -110,6 +118,11 @@ API.fetchPlayerStats = (playerName, filtersArgs) => {
 };
 
 API.fetchPlayerMatches = (playerName, filtersArgs) => {
+  if (USE_MOCK)
+    return MockAPI.fetchPlayerMatches(playerName, {
+      limit: 10,
+      ...filtersArgs,
+    });
   let f = {
     limit: 10,
     ...filtersArgs,
@@ -122,10 +135,13 @@ API.fetchPlayerMatches = (playerName, filtersArgs) => {
 
 /* ===== MATCH ===== */
 API.matchDetails = (matchId, region) => {
+  if (USE_MOCK) return MockAPI.matchDetails(matchId, region);
   return sendRequest(`/matches/${matchId}/${region}/details`);
 };
 
 API.matchTelemetry = (matchId, region) => {
+  if (USE_MOCK) return MockAPI.matchTelemetry(matchId, region);
   return sendRequest(`/matches/${matchId}/${region}/telemetry`);
 };
+
 export default API;

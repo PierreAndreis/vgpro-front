@@ -8,7 +8,6 @@ import { SkeletonWrapper, SkeletonPayload } from "./../common/Skeleton";
 import { fetchTopHeroes } from "../../actions/api";
 import Button from "./../common/Button";
 import Utils from "./../../utils";
-import { Adsense } from "../common/Ads";
 import { Rate } from "../common/ColoredValues";
 
 const ITEM_PER_PAGE = 30;
@@ -225,8 +224,6 @@ class Heroes extends React.Component {
             <Trans i18nKey="terms.jungler" />
           </Button>
         </div>
-
-        <Adsense />
 
         <Styled.Header innerRef={this.props.headerRef}>
           <Styled.Info />

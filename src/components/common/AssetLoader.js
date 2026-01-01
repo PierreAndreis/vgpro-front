@@ -30,7 +30,7 @@ class AssetLoader extends React.Component {
       .replace(/([ ])+/g, "-")
       .replace("'", "")
       .toLowerCase();
-    let cleanImage = `https://vgproassets.nyc3.cdn.digitaloceanspaces.com/${type}/${cleanName}.png`;
+    let cleanImage = `https://pub-75b85d8636374a2db6f7c1bb3c7a1db7.r2.dev/${type}/${cleanName}.png`;
 
     let style = {};
 

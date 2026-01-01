@@ -9,6 +9,7 @@ import { SkeletonWrapper } from "../../common/Skeleton";
 
 import TimeAgo from "../../../i18n/timeAgo.js";
 import Utils from "../../../utils";
+import { PRO_PLAYERS, getPlayerImage } from "../../../utils/mockData";
 
 import * as Styled from "./PlayerInfo.style";
 
@@ -22,16 +23,8 @@ const regions = {
   sa: "South America",
 };
 
-// LUL. THIS SHOULD BE SERVER
-const TRIBE_PLAYERS = [
-  "ttigers",
-  "Oldskool",
-  "gabevizzle",
-  "DNZio",
-  "MaxGreen",
-  "iLoveJoseph",
-  "Xelciar",
-];
+// Get pro player data by name
+const getProPlayer = (name) => PRO_PLAYERS.find(p => p.name === name);
 
 let removeFromList = (fn, name, list) => e => {
   e.preventDefault();
@@ -114,17 +107,17 @@ const PlayerInfo = ({
           : data.ranked5v5Ranking.regional;
     }
 
-    if (TRIBE_PLAYERS.includes(data.name)) {
+    const proPlayer = getProPlayer(data.name);
+    if (proPlayer) {
       team = (
         <Styled.Team>
-          <Styled.TeamPhoto img={`/players/${data.name}.png`} />
+          <Styled.TeamPhoto img={getPlayerImage(data.name)} />
           <Styled.TeamDetails>
             <h4>
               <Trans i18nKey="profile.PlayerOf" />
             </h4>
-            <span>Tribe Gaming</span>
+            <span>{proPlayer.team}</span>
           </Styled.TeamDetails>
-          <Styled.TeamLogo img={"/teams/tribe.png"} />
         </Styled.Team>
       );
     }
@@ -181,38 +174,10 @@ const PlayerInfo = ({
 
         <Styled.Divider />
 
-        {false && (
+        {team && (
           <React.Fragment>
-            <div style={{ textAlign: "center", margin: "10px" }}>
-              <SkeletonWrapper status={status} width="130px" height="35px">
-                {() => (
-                  <iframe
-                    src={`https://emojireact.com/embed?emojis=fire,whale,rocket&url=vgpro.gg/players/${
-                      data.region
-                    }/${data.name}`}
-                    scrolling="no"
-                    frameBorder="0"
-                    style={{
-                      border: "none",
-                      overflow: "hidden",
-                      width: "180px",
-                      height: "35px",
-                    }}
-                    title="iFrame Emoji"
-                    allowtransparency="true"
-                  />
-                )}
-              </SkeletonWrapper>
-            </div>
-
-            {team && (
-              <React.Fragment>
-                <Styled.Divider />
-                {team}
-              </React.Fragment>
-            )}
-
             <Styled.Divider />
+            {team}
           </React.Fragment>
         )}
         <Styled.PlayerStats>
